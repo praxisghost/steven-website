@@ -23,6 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ── Initialize tables (run once on startup) ───────────────────
 async function initDB(): Promise<void> {
   await pool.query(`
+    CREATE TABLE IF NOT EXISTS page_views (
+      id         SERIAL PRIMARY KEY,
+      visited_at TIMESTAMP DEFAULT NOW()
+    );
+  `);
+  await pool.query(`
     CREATE TABLE IF NOT EXISTS contact_messages (
       id         SERIAL PRIMARY KEY,
       name       TEXT NOT NULL,
@@ -40,6 +46,18 @@ async function initDB(): Promise<void> {
   `);
   console.log('DB tables ready.');
 }
+
+// ── API: record a page view and return total count ────────────
+app.post('/api/views', async (_req: Request, res: Response) => {
+  try {
+    await pool.query('INSERT INTO page_views DEFAULT VALUES');
+    const { rows } = await pool.query('SELECT COUNT(*) AS views FROM page_views');
+    res.json({ views: parseInt(rows[0].views, 10) });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'DB error' });
+  }
+});
 
 // ── API: save a contact form message ──────────────────────────
 app.post('/api/contact', async (req: Request, res: Response) => {

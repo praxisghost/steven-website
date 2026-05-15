@@ -1,3 +1,16 @@
+// ── View counter (About page only — fires when #view-count exists) ─
+const viewCountEl = document.getElementById('view-count');
+if (viewCountEl) {
+  fetch('/api/views', { method: 'POST' })
+    .then(r => r.json())
+    .then(data => {
+      viewCountEl.textContent = `Total site views: ${data.views}`;
+    })
+    .catch(() => {
+      viewCountEl.style.display = 'none';
+    });
+}
+
 // ── Contact form ───────────────────────────────────────────────
 const form = document.getElementById('contact-form');
 if (form) {
@@ -41,7 +54,7 @@ if (newsletterForm) {
         body: JSON.stringify({ email }),
       });
       if (res.ok) {
-        status.textContent = 'Subscribed! You\'ll hear from me when something is worth sharing.';
+        status.textContent = "Subscribed! You'll hear from me when something is worth sharing.";
         newsletterForm.reset();
       } else {
         status.textContent = 'Something went wrong. Try again.';

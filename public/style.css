@@ -3,8 +3,8 @@
 
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  background: #fafaf8;
-  color: #1a1a1a;
+  background: #000;
+  color: #fff;
   max-width: 680px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
@@ -13,118 +13,178 @@ body {
 
 /* ── Header ───────────────────────────────────── */
 header {
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 1px solid #333;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
 
 header h1 { font-size: 2rem; letter-spacing: -0.03em; }
-header p  { color: #555; font-size: 0.95rem; margin-top: 0.25rem; }
+header p  { color: #999; font-size: 0.95rem; margin-top: 0.25rem; }
 
-/* ── Nav links (Table of Contents) ───────────── */
+/* ── Nav — text-only, no boxes ───────────────── */
 nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.1rem;
   margin-top: 1.5rem;
 }
 
 nav ul li a {
   display: block;
-  padding: 0.6rem 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.45rem 0;
   text-decoration: none;
-  color: #1a1a1a;
-  background: #fff;
-  transition: background 0.15s, border-color 0.15s;
+  color: #fff;
   font-size: 1.05rem;
+  transition: color 0.25s ease;
 }
 
-nav ul li a:hover {
-  background: #1a1a1a;
-  color: #fafaf8;
-  border-color: #1a1a1a;
+/* Alternating hover: odd → muted blue, even → muted rose */
+nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
+nav ul li:nth-child(even) a:hover { color: #f07878; }
+
+/* ── Sub-nav (Writing hub) ───────────────────── */
+.sub-nav ul {
+  margin-top: 1.25rem;
+  padding-left: 1rem;
+  border-left: 1px solid #333;
+  gap: 0.1rem;
 }
+
+.sub-nav ul li a {
+  font-size: 1rem;
+  color: #ccc;
+  padding: 0.35rem 0;
+  transition: color 0.25s ease;
+}
+
+.sub-nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
+.sub-nav ul li:nth-child(even) a:hover { color: #f07878; }
 
 /* ── Sub-page content ────────────────────────── */
 article { margin-top: 1.5rem; }
-article h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
-article p  { margin-bottom: 1rem; }
+article h2 { font-size: 1.4rem; margin-bottom: 0.75rem; color: #fff; }
+article p  { margin-bottom: 1rem; color: #ccc; }
 
 /* ── Back link ───────────────────────────────── */
 .back-link {
   display: inline-block;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #666;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
-.back-link:hover { text-decoration: underline; }
+.back-link:hover { color: #fff; }
 
-/* ── Contact form ────────────────────────────── */
+/* ── Forms ───────────────────────────────────── */
 form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+
 form input, form textarea {
   padding: 0.6rem 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   border-radius: 4px;
   font-family: inherit;
   font-size: 1rem;
-  background: #fff;
+  background: #111;
+  color: #fff;
 }
+
+form input::placeholder, form textarea::placeholder { color: #555; }
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
 form textarea { min-height: 120px; resize: vertical; }
+
 form button {
   align-self: flex-start;
   padding: 0.6rem 1.4rem;
-  background: #1a1a1a;
-  color: #fafaf8;
+  background: #fff;
+  color: #000;
   border: none;
   border-radius: 4px;
+  font-family: inherit;
   font-size: 1rem;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
-form button:hover { background: #333; }
-#form-status      { font-size: 0.9rem; color: #555; }
-#newsletter-status { font-size: 0.9rem; color: #555; }
+form button:hover { background: #ccc; }
 
-/* ── Section divider (contact page) ─────────── */
+#form-status       { font-size: 0.9rem; color: #888; }
+#newsletter-status { font-size: 0.9rem; color: #888; }
+
+/* ── Section divider ─────────────────────────── */
 .section-divider {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #222;
   margin: 2rem 0;
 }
 
 /* ── Blog list ───────────────────────────────── */
-.blog-intro { color: #555; margin-bottom: 1.5rem; }
+.blog-intro { color: #999; margin-bottom: 1.5rem; }
 
 .blog-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
 .blog-list li {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 .blog-list li a {
-  color: #1a1a1a;
+  color: #fff;
   text-decoration: none;
   font-size: 1.05rem;
+  transition: color 0.2s ease;
 }
-.blog-list li a:hover { text-decoration: underline; }
+.blog-list li a:hover { color: #7eb8f7; }
 
 .blog-date {
   font-size: 0.85rem;
-  color: #888;
+  color: #555;
   white-space: nowrap;
   margin-left: 1rem;
 }
 
-.blog-empty { color: #888; font-style: italic; border-bottom: none; }
+.blog-empty { color: #555; font-style: italic; border-bottom: none; }
+
+/* ── Footer ──────────────────────────────────── */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+footer a:hover { color: #fff; }
+
+#view-count {
+  color: #444;
+  font-size: 0.8rem;
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 480px) {
+  body { padding: 1.5rem 1.25rem 3rem; }
+  header h1 { font-size: 1.6rem; }
+  nav ul li a { font-size: 1rem; padding: 0.5rem 0; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
