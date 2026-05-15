@@ -2,11 +2,20 @@ import express, { Request, Response } from 'express';
 import { Pool }                        from 'pg';
 import path                            from 'path';
 import dotenv                          from 'dotenv';
+import { Resend }                      from 'resend';
 
 dotenv.config();
 
 const app  = express();
 const port = process.env.PORT ?? 3000;
+
+// ── Resend email client (optional — only active if API key is set) ─
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
+
+const CONTACT_FROM  = process.env.CONTACT_FROM_EMAIL  ?? 'onboarding@resend.dev';
+const CONTACT_TO    = process.env.CONTACT_TO_EMAIL    ?? 'stevelegg2000@gmail.com';
 
 // ── PostgreSQL connection ──────────────────────────────────────
 const pool = new Pool({
@@ -73,10 +82,25 @@ app.post('/api/contact', async (req: Request, res: Response) => {
   }
 
   try {
+    // Always save to DB first — messages are never lost even if email fails
     await pool.query(
       'INSERT INTO contact_messages (name, email, message) VALUES ($1, $2, $3)',
       [name, email, message],
     );
+
+    // Send email notification if Resend is configured
+    if (resend) {
+      const { error } = await resend.emails.send({
+        from:    CONTACT_FROM,
+        to:      CONTACT_TO,
+        subject: `New message from ${name}`,
+        text:    `You have a new contact form submission.\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      });
+      if (error) console.error('Resend error:', error);
+    } else {
+      console.warn('RESEND_API_KEY not set — email notification skipped.');
+    }
+
     res.json({ ok: true });
   } catch (err) {
     console.error(err);
