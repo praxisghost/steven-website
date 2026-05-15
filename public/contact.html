@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Steven Legg</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="back-link" href="index.html">← Back</a>
+
+  <header>
+    <h1>Contact</h1>
+  </header>
+
+  <article>
+    <h2>Send a message</h2>
+    <form id="contact-form">
+      <input type="text"  name="name"    placeholder="Your name"    required>
+      <input type="email" name="email"   placeholder="Your email"   required>
+      <textarea           name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="form-status"></p>
+
+    <hr class="section-divider">
+
+    <h2>Newsletter</h2>
+    <p>Occasional updates when I write something worth sharing. No spam.</p>
+    <form id="newsletter-form">
+      <input type="email" name="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="newsletter-status"></p>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>
