@@ -39,10 +39,9 @@ nav ul li a {
   transition: color 0.25s ease;
 }
 
-/* Cycling hover: blue → red → green */
-nav ul li:nth-child(3n+1) a:hover { color: #7eb8f7; }
-nav ul li:nth-child(3n+2) a:hover { color: #f07878; }
-nav ul li:nth-child(3n+3) a:hover { color: #6ecf8c; }
+/* Alternating hover: blue → red → blue → red … */
+nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
+nav ul li:nth-child(even) a:hover { color: #f07878; }
 
 /* ── Sub-nav (Writing hub) ───────────────────── */
 .sub-nav ul {
@@ -59,9 +58,8 @@ nav ul li:nth-child(3n+3) a:hover { color: #6ecf8c; }
   transition: color 0.25s ease;
 }
 
-.sub-nav ul li:nth-child(3n+1) a:hover { color: #7eb8f7; }
-.sub-nav ul li:nth-child(3n+2) a:hover { color: #f07878; }
-.sub-nav ul li:nth-child(3n+3) a:hover { color: #6ecf8c; }
+.sub-nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
+.sub-nav ul li:nth-child(even) a:hover { color: #f07878; }
 
 /* ── Sub-page content ────────────────────────── */
 article { margin-top: 1.5rem; }
@@ -190,4 +188,224 @@ footer a:hover { color: #fff; }
   header h1 { font-size: 1.6rem; }
   nav ul li a { font-size: 1rem; padding: 0.5rem 0; }
   footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════════════
+   LANGUAGE LEARNING PAGES
+   ══════════════════════════════════════════════ */
+
+/* ── Page TOC ─────────────────────────────────── */
+.lang-toc {
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid #333;
+}
+
+.lang-toc li {
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.lang-toc a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.lang-toc a:hover { color: #fff; }
+
+/* ── Section headings ────────────────────────── */
+.lang-section {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #222;
+}
+
+.lang-section h2 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.lang-section h3 {
+  font-size: 1.05rem;
+  color: #ddd;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.lang-section p {
+  color: #ccc;
+  margin-bottom: 0.85rem;
+}
+
+.lang-section ul, .lang-section ol {
+  padding-left: 1.25rem;
+  color: #ccc;
+  margin-bottom: 0.85rem;
+}
+
+.lang-section ul li, .lang-section ol li {
+  margin-bottom: 0.35rem;
+  line-height: 1.65;
+}
+
+.lang-section a {
+  color: #7eb8f7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.lang-section a:hover { color: #fff; }
+
+/* ── Collapsible accordion blocks ────────────── */
+details.accordion {
+  border: 1px solid #222;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+details.accordion > summary {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #ddd;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+details.accordion > summary::-webkit-details-marker { display: none; }
+
+details.accordion > summary::before {
+  content: '▶';
+  font-size: 0.65rem;
+  color: #555;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+details.accordion[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details.accordion > summary:hover {
+  background: #0d0d0d;
+  color: #fff;
+}
+
+details.accordion > summary:hover::before {
+  color: #999;
+}
+
+.accordion-body {
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+/* ── Tables ──────────────────────────────────── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lang-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  color: #ccc;
+  min-width: 320px;
+}
+
+.lang-table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.lang-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #1a1a1a;
+  vertical-align: top;
+}
+
+.lang-table tr:last-child td { border-bottom: none; }
+
+.lang-table code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #6ecf8c;
+  background: #0d0d0d;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+}
+
+/* ── Callout / note block ────────────────────── */
+.lang-note {
+  border-left: 2px solid #444;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ── Chinese / Cantonese pronunciation block ─── */
+.canto-block {
+  border: 1px solid #1e1e1e;
+  border-radius: 3px;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: #999;
+}
+
+.canto-block .canto-char {
+  font-size: 1.2rem;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.canto-block .canto-jyutping {
+  color: #7eb8f7;
+  font-style: italic;
+}
+
+.canto-block .canto-en {
+  color: #ccc;
+  font-style: normal;
+}
+
+/* ── Level badge ─────────────────────────────── */
+.level-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: 'Courier New', monospace;
+  padding: 0.1rem 0.45rem;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.level-badge.beginner   { color: #6ecf8c; border: 1px solid #6ecf8c33; }
+.level-badge.intermed   { color: #7eb8f7; border: 1px solid #7eb8f733; }
+.level-badge.advanced   { color: #f07878; border: 1px solid #f0787833; }
+.level-badge.all-levels { color: #aaa;    border: 1px solid #aaa3; }
+
+/* ── Mobile adjustments for language pages ───── */
+@media (max-width: 480px) {
+  .lang-table th, .lang-table td { padding: 0.4rem 0.5rem; font-size: 0.8rem; }
+  details.accordion > summary { font-size: 0.95rem; padding: 0.65rem 0.75rem; }
+  .accordion-body { padding: 0.75rem 0.75rem 1rem; }
 }
