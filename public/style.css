@@ -209,6 +209,11 @@ form button:hover { background: #ccc; }
 }
 .blog-list li a:hover { color: #7eb8f7; }
 
+/* Playlists: alternating blue/red hover, matching the home-page nav.
+   Overrides the single-colour .blog-list hover above. */
+.playlist-list li:nth-child(odd)  a:hover { color: #7eb8f7; }
+.playlist-list li:nth-child(even) a:hover { color: #f07878; }
+
 .blog-date {
   font-size: 0.85rem;
   color: #555;
