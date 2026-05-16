@@ -1,32 +1,72 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+ *  style.css — site-wide styles
+ *
+ *  Typography: EB Garamond is loaded from Google Fonts via @import below.
+ *  It is a refined, web-optimized old-style serif — literary and minimal,
+ *  in the family of Times / Garamond but cleaner on screens. A robust
+ *  fallback chain keeps the site readable if the network fails.
+ *  ────────────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 /* ── Reset & base ─────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  /* One source of truth for the body font, so anywhere that opts back into
+     a system serif can fall through gracefully. */
+  --font-serif: 'EB Garamond', 'Source Serif Pro', 'Libre Baskerville',
+                Georgia, 'Times New Roman', serif;
+}
+
 body {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   background: #000;
   color: #fff;
   max-width: 680px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
-  line-height: 1.7;
+  /* Slightly tighter line-height suits Garamond's longer ascenders/descenders. */
+  line-height: 1.65;
+  font-weight: 400;
+  /* Improve readability on retina + most modern browsers. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ── Header ───────────────────────────────────── */
+/*
+ * The previous build had a horizontal subpage-indicator line here
+ * (border-bottom). That line has been removed per a prior design pass;
+ * spacing is tuned so the header still feels self-contained without the
+ * divider.
+ */
 header {
-  border-bottom: 1px solid #333;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
   margin-bottom: 2rem;
 }
 
-header h1 { font-size: 2rem; letter-spacing: -0.03em; }
-header p  { color: #999; font-size: 0.95rem; margin-top: 0.25rem; }
+/* Lighter weight + Garamond's natural elegance — refined, never bold. */
+header h1 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+header p  {
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;            /* Garamond italic is gorgeous; subtle accent */
+  margin-top: 0.35rem;
+}
 
 /* ── Nav — text-only, no boxes ───────────────── */
 nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.15rem;
   margin-top: 1.5rem;
 }
 
@@ -35,7 +75,8 @@ nav ul li a {
   padding: 0.45rem 0;
   text-decoration: none;
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 1.15rem;            /* slightly larger to suit the new typography */
+  font-weight: 400;
   transition: color 0.25s ease;
 }
 
@@ -43,18 +84,19 @@ nav ul li a {
 nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
 nav ul li:nth-child(even) a:hover { color: #f07878; }
 
-/* ── Sub-nav (Writing hub) ───────────────────── */
+/* ── Sub-nav (Writing hub, Language Learning hub) ─ */
 .sub-nav ul {
   margin-top: 1.25rem;
   padding-left: 1rem;
   border-left: 1px solid #333;
-  gap: 0.1rem;
+  gap: 0.15rem;
 }
 
+/* Submenu items: slightly larger than before for improved readability. */
 .sub-nav ul li a {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #ccc;
-  padding: 0.35rem 0;
+  padding: 0.4rem 0;
   transition: color 0.25s ease;
 }
 
@@ -63,19 +105,39 @@ nav ul li:nth-child(even) a:hover { color: #f07878; }
 
 /* ── Sub-page content ────────────────────────── */
 article { margin-top: 1.5rem; }
-article h2 { font-size: 1.4rem; margin-bottom: 0.75rem; color: #fff; }
+article h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
 article p  { margin-bottom: 1rem; color: #ccc; }
 
 /* ── Back link ───────────────────────────────── */
 .back-link {
   display: inline-block;
   margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 .back-link:hover { color: #fff; }
+
+/*
+ * Arrow weight bump: the leading "←" is wrapped by script.js in
+ * <span class="arrow">, so the arrow can be styled independently of the
+ * label. We thicken it with -webkit-text-stroke and a tiny scale, keeping
+ * the rest of the link in elegant serif weight.
+ */
+.back-link .arrow {
+  display: inline-block;
+  margin-right: 0.35rem;
+  font-weight: 600;
+  -webkit-text-stroke: 0.6px currentColor;
+  transform: translateY(-0.5px);
+}
 
 /* ── Forms ───────────────────────────────────── */
 form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
@@ -142,7 +204,7 @@ form button:hover { background: #ccc; }
 .blog-list li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   transition: color 0.2s ease;
 }
 .blog-list li a:hover { color: #7eb8f7; }
@@ -164,7 +226,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -185,8 +247,9 @@ footer a:hover { color: #fff; }
 /* ── Mobile ──────────────────────────────────── */
 @media (max-width: 480px) {
   body { padding: 1.5rem 1.25rem 3rem; }
-  header h1 { font-size: 1.6rem; }
-  nav ul li a { font-size: 1rem; padding: 0.5rem 0; }
+  header h1 { font-size: 1.7rem; }
+  nav ul li a { font-size: 1.05rem; padding: 0.5rem 0; }
+  .sub-nav ul li a { font-size: 1.02rem; }
   footer { flex-direction: column; align-items: flex-start; }
 }
 
@@ -203,7 +266,7 @@ footer a:hover { color: #fff; }
 
 .lang-toc li {
   padding: 0.2rem 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .lang-toc a {
@@ -221,14 +284,16 @@ footer a:hover { color: #fff; }
 }
 
 .lang-section h2 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .lang-section h3 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #ddd;
   margin: 1.25rem 0 0.5rem;
 }
@@ -246,7 +311,7 @@ footer a:hover { color: #fff; }
 
 .lang-section ul li, .lang-section ol li {
   margin-bottom: 0.35rem;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .lang-section a {
@@ -267,7 +332,7 @@ details.accordion {
 details.accordion > summary {
   padding: 0.7rem 1rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #ddd;
   list-style: none;
   display: flex;
@@ -279,10 +344,15 @@ details.accordion > summary {
 
 details.accordion > summary::-webkit-details-marker { display: none; }
 
+/*
+ * Accordion arrow — bumped up slightly in weight (text-stroke) and size to
+ * match the back-link arrow treatment site-wide.
+ */
 details.accordion > summary::before {
   content: '▶';
-  font-size: 0.65rem;
-  color: #555;
+  font-size: 0.72rem;
+  color: #666;
+  -webkit-text-stroke: 0.4px currentColor;
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
@@ -297,7 +367,7 @@ details.accordion > summary:hover {
 }
 
 details.accordion > summary:hover::before {
-  color: #999;
+  color: #aaa;
 }
 
 .accordion-body {
@@ -315,7 +385,7 @@ details.accordion > summary:hover::before {
 .lang-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.92rem;
   color: #ccc;
   min-width: 320px;
 }
@@ -326,6 +396,7 @@ details.accordion > summary:hover::before {
   border-bottom: 1px solid #333;
   color: #fff;
   font-size: 0.8rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -341,7 +412,7 @@ details.accordion > summary:hover::before {
 
 .lang-table code {
   font-family: 'Courier New', monospace;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: #6ecf8c;
   background: #0d0d0d;
   padding: 0.1rem 0.3rem;
@@ -354,7 +425,7 @@ details.accordion > summary:hover::before {
   padding: 0.6rem 1rem;
   margin: 1rem 0;
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-style: italic;
 }
 
@@ -364,13 +435,13 @@ details.accordion > summary:hover::before {
   border-radius: 3px;
   padding: 0.75rem 1rem;
   margin: 0.5rem 0;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   color: #999;
 }
 
 .canto-block .canto-char {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #fff;
   display: block;
   margin-bottom: 0.2rem;
@@ -389,7 +460,7 @@ details.accordion > summary:hover::before {
 /* ── Level badge ─────────────────────────────── */
 .level-badge {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-family: 'Courier New', monospace;
   padding: 0.1rem 0.45rem;
   border-radius: 2px;
@@ -405,7 +476,131 @@ details.accordion > summary:hover::before {
 
 /* ── Mobile adjustments for language pages ───── */
 @media (max-width: 480px) {
-  .lang-table th, .lang-table td { padding: 0.4rem 0.5rem; font-size: 0.8rem; }
-  details.accordion > summary { font-size: 0.95rem; padding: 0.65rem 0.75rem; }
+  .lang-table th, .lang-table td { padding: 0.4rem 0.5rem; font-size: 0.82rem; }
+  details.accordion > summary { font-size: 1rem; padding: 0.65rem 0.75rem; }
   .accordion-body { padding: 0.75rem 0.75rem 1rem; }
+}
+
+/* ══════════════════════════════════════════════
+   ABOUT PAGE
+   ══════════════════════════════════════════════ */
+
+.about-intro {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.about-section {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+.about-section:first-of-type {
+  border-top: none;
+  padding-top: 0.5rem;
+}
+
+.about-section h2 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 0.75rem;
+}
+
+.about-section p,
+.about-section li {
+  color: #ccc;
+}
+
+.about-section ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.about-section ul li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.about-section ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0.25rem;
+  color: #555;
+}
+
+.about-section em {
+  color: #7eb8f7;
+  font-style: italic;
+}
+
+/* ══════════════════════════════════════════════
+   BUILT WITH
+   ══════════════════════════════════════════════ */
+
+.built-with {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.built-with h2 {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 1.25rem;
+}
+
+.built-with-grid {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem 1.25rem;
+  padding: 0;
+  margin: 0;
+}
+
+.built-with-grid li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid #1f1f1f;
+  border-radius: 999px;
+  background: #0a0a0a;
+  font-size: 0.9rem;
+  color: #ddd;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.built-with-grid li:hover {
+  border-color: #333;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.built-with-grid li svg,
+.built-with-grid li img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .built-with-grid { gap: 0.6rem 0.75rem; }
+  .built-with-grid li { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
 }

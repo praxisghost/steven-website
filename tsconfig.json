@@ -9,6 +9,6 @@
     "outDir": "./dist",
     "rootDir": "./"
   },
-  "include": ["server.ts"],
+  "include": ["server.ts", "send-newsletter.ts"],
   "exclude": ["node_modules", "dist", "public"]
 }
