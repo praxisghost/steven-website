@@ -4,7 +4,135 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Misc — Steven Legg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Frog Slideshow ────────────────────────── */
+    .frog-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .frog-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .frog-section .frog-intro {
+      font-size: 0.92rem;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .frog-slideshow {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .frog-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #0d0d0d;
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .frog-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.5s ease;
+    }
+
+    .frog-frame img.frog-loading {
+      opacity: 0;
+    }
+
+    .frog-frame img.frog-loaded {
+      opacity: 1;
+    }
+
+    .frog-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #2a2a2a;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .frog-caption {
+      margin-top: 0.85rem;
+      min-height: 2.8rem;
+    }
+
+    .frog-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    .frog-latin {
+      font-size: 0.88rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.15rem;
+    }
+
+    .frog-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .frog-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .frog-btn:hover {
+      border-color: #555;
+      color: #fff;
+    }
+
+    .frog-counter {
+      font-size: 0.8rem;
+      color: #444;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      .frog-section h2 { font-size: 1.15rem; }
+      .frog-name { font-size: 1.05rem; }
+    }
+  </style>
 </head>
 <body>
   <a class="back-link" href="index.html">← Back</a>
@@ -14,7 +142,31 @@
   </header>
 
   <article>
-    <p>Odds and ends that don't fit anywhere else. More coming.</p>
+    <p>Odds &amp; ends that don't fit anywhere else. More coming.</p>
+
+    <!-- ── Frog Slideshow ─────────────────────── -->
+    <section class="frog-section" aria-label="North American frog species gallery">
+      <h2>Frogs of North America</h2>
+      <p class="frog-intro">A rotating gallery of native species. Purely for joy.</p>
+
+      <div class="frog-slideshow">
+        <div class="frog-frame">
+          <div class="frog-placeholder" aria-hidden="true">🐸</div>
+          <img id="frog-img" src="" alt="" class="frog-loading">
+        </div>
+
+        <div class="frog-caption">
+          <div class="frog-name" id="frog-name"></div>
+          <div class="frog-latin" id="frog-latin"></div>
+        </div>
+
+        <div class="frog-controls">
+          <button class="frog-btn" id="frog-prev" aria-label="Previous frog">← Prev</button>
+          <span class="frog-counter" id="frog-counter"></span>
+          <button class="frog-btn" id="frog-next" aria-label="Next frog">Next →</button>
+        </div>
+      </div>
+    </section>
   </article>
 
   <footer>
@@ -22,5 +174,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="misc.js"></script>
 </body>
 </html>

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Steven Legg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,23 +17,29 @@
 
   <article>
     <h2>Send a message</h2>
-    <form id="contact-form">
-      <input type="text"  name="name"    placeholder="Your name"    required>
-      <input type="email" name="email"   placeholder="Your email"   required>
-      <textarea           name="message" placeholder="Your message" required></textarea>
+    <form id="contact-form" novalidate>
+      <input type="text"  name="name"    placeholder="Your name"    required
+             aria-label="Your name"    autocomplete="name"     maxlength="100">
+      <input type="email" name="email"   placeholder="Your email"   required
+             aria-label="Your email"   autocomplete="email"    maxlength="254"
+             inputmode="email">
+      <textarea           name="message" placeholder="Your message" required
+             aria-label="Your message" maxlength="5000"></textarea>
       <button type="submit">Send</button>
     </form>
-    <p id="form-status"></p>
+    <p id="form-status" role="status" aria-live="polite"></p>
 
     <hr class="section-divider">
 
     <h2>Newsletter</h2>
     <p>Occasional updates when I write something worth sharing. No spam.</p>
-    <form id="newsletter-form">
-      <input type="email" name="email" placeholder="Your email address" required>
+    <form id="newsletter-form" novalidate>
+      <input type="email" name="email" placeholder="Your email address" required
+             aria-label="Your email address" autocomplete="email" maxlength="254"
+             inputmode="email">
       <button type="submit">Subscribe</button>
     </form>
-    <p id="newsletter-status"></p>
+    <p id="newsletter-status" role="status" aria-live="polite"></p>
   </article>
 
   <footer>
