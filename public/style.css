@@ -64,6 +64,32 @@ header p  {
   margin-top: 0.35rem;
 }
 
+/*
+ * Tagline — text on the left, leaf emoji visually opposite on the right,
+ * sharing the same baseline so the pair reads as one balanced line. The
+ * flex container fills the header width so the emoji mirrors the text
+ * symmetrically on both desktop and mobile without ever floating into a
+ * corner.
+ */
+header p.tagline {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+header p.tagline .tagline-text {
+  flex: 0 1 auto;
+}
+
+header p.tagline .tagline-emoji {
+  flex: 0 0 auto;
+  font-style: normal;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
 /* ── Nav — text-only, no boxes ───────────────── */
 nav ul {
   list-style: none;
@@ -618,6 +644,43 @@ details.accordion > summary:hover::before {
 @media (max-width: 480px) {
   .built-with-grid { gap: 0.6rem 0.75rem; }
   .built-with-grid li { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
+}
+
+/* ══════════════════════════════════════════════
+   SHAVIAN
+   ══════════════════════════════════════════════
+   The Shavian English page renders text written in the Shavian alphabet
+   (Unicode block U+10450–U+1047F). We self-host the Noto Sans Shavian
+   WOFF2 — covering the entire Shavian block — under /fonts/ so it
+   complies with the existing `font-src 'self'` CSP and works regardless
+   of which fonts the visitor has installed. System-installed Shavian
+   fonts and the serif body stack remain as fallbacks.
+
+   Source: Google Noto / Fontsource — SIL Open Font License v1.1
+   (see /fonts/LICENSE.txt for the full license text).
+   ══════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Noto Sans Shavian';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/NotoSansShavian-Regular.woff2') format('woff2');
+  /* Limit downloads to pages that actually render Shavian glyphs. */
+  unicode-range: U+10450-1047F;
+}
+
+.shavian {
+  font-family: 'Noto Sans Shavian', 'Apple Symbols', 'Segoe UI Historic',
+               'Segoe UI Symbol', 'Andagii', var(--font-body);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 1.5rem 0 1rem;
+}
+
+@media (max-width: 480px) {
+  .shavian { font-size: 1.3rem; }
 }
 
 /* ══════════════════════════════════════════════
