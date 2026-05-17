@@ -2,21 +2,21 @@
  *  style.css — site-wide styles
  *
  *  Typography:
- *    Headers / Nav : Cormorant Garamond — elegant, high-contrast display serif
- *    Body text     : Source Serif 4 — highly readable text-optimised serif
- *  Both are loaded from Google Fonts. Robust fallback chains keep the site
- *  readable if the network fails.
+ *    Everything is Times New Roman — a universally available serif that gives
+ *    the site a literary, classic, understated feel without any web-font
+ *    dependency. No @import, no preconnect, no FOUT. Falls back to the
+ *    platform "Times" and then a generic serif if both are unavailable.
  *  ────────────────────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap');
 
 /* ── Reset & base ─────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Body text: Source Serif 4, with robust fallbacks. */
-  --font-body: 'Source Serif 4', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-  /* Display / nav: Cormorant Garamond — elegant high-contrast serif for headings. */
-  --font-display: 'Cormorant Garamond', 'Garamond', 'EB Garamond', Georgia, serif;
+  /* Single serif stack used everywhere body text appears. */
+  --font-body:    'Times New Roman', Times, 'Liberation Serif', serif;
+  /* Display / nav uses the same family — kept as a separate token so the
+     "display" role can diverge again later without hunting through the file. */
+  --font-display: 'Times New Roman', Times, 'Liberation Serif', serif;
 }
 
 body {
@@ -85,9 +85,11 @@ nav ul li a {
   transition: color 0.25s ease;
 }
 
-/* Alternating hover: blue → red → blue → red … */
-nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
-nav ul li:nth-child(even) a:hover { color: #f07878; }
+/*
+ * Rainbow hover — see "RAINBOW HOVER" block lower in this file for the
+ * full set of rules. Kept in one place so the cycle stays consistent
+ * across main nav, sub-nav, the blog list, and the playlists list.
+ */
 
 /* ── Sub-nav (Writing hub, Language Learning hub) ─ */
 .sub-nav ul {
@@ -108,8 +110,7 @@ nav ul li:nth-child(even) a:hover { color: #f07878; }
   transition: color 0.25s ease;
 }
 
-.sub-nav ul li:nth-child(odd)  a:hover { color: #7eb8f7; }
-.sub-nav ul li:nth-child(even) a:hover { color: #f07878; }
+/* Rainbow hover for sub-nav is defined in the "RAINBOW HOVER" block. */
 
 /* ── Sub-page content ────────────────────────── */
 article { margin-top: 1.5rem; }
@@ -216,12 +217,8 @@ form button:hover { background: #ccc; }
   font-size: 1.1rem;
   transition: color 0.2s ease;
 }
-.blog-list li a:hover { color: #7eb8f7; }
-
-/* Playlists: alternating blue/red hover, matching the home-page nav.
-   Overrides the single-colour .blog-list hover above. */
-.playlist-list li:nth-child(odd)  a:hover { color: #7eb8f7; }
-.playlist-list li:nth-child(even) a:hover { color: #f07878; }
+/* Hover colours for .blog-list and .playlist-list come from the
+   "RAINBOW HOVER" block lower in this file. */
 
 .blog-date {
   font-size: 0.85rem;
@@ -622,3 +619,49 @@ details.accordion > summary:hover::before {
   .built-with-grid { gap: 0.6rem 0.75rem; }
   .built-with-grid li { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
 }
+
+/* ══════════════════════════════════════════════
+   RAINBOW HOVER
+   ══════════════════════════════════════════════
+   Menu items cycle through red → orange → yellow → green → blue → indigo →
+   violet on hover, repeating after every seventh item. The :nth-child(7n+k)
+   selectors do the work: item 1 lights up red, item 2 orange, … item 8
+   loops back to red, etc.
+
+   The same rule set is applied to every navigational list on the site
+   (main nav, sub-nav, blog list, playlists list) so the visual language
+   is identical everywhere. Colours are tuned to stay readable against the
+   black background while keeping the rainbow recognisable.
+
+   The existing `transition: color 0.25s ease;` declarations on the link
+   selectors above still drive the hover animation — these rules only
+   change the destination colour.
+   ══════════════════════════════════════════════ */
+
+nav ul li:nth-child(7n+1) a:hover,
+.sub-nav ul li:nth-child(7n+1) a:hover,
+.blog-list li:nth-child(7n+1) a:hover { color: #f07878; } /* red    */
+
+nav ul li:nth-child(7n+2) a:hover,
+.sub-nav ul li:nth-child(7n+2) a:hover,
+.blog-list li:nth-child(7n+2) a:hover { color: #f0a878; } /* orange */
+
+nav ul li:nth-child(7n+3) a:hover,
+.sub-nav ul li:nth-child(7n+3) a:hover,
+.blog-list li:nth-child(7n+3) a:hover { color: #e8d878; } /* yellow */
+
+nav ul li:nth-child(7n+4) a:hover,
+.sub-nav ul li:nth-child(7n+4) a:hover,
+.blog-list li:nth-child(7n+4) a:hover { color: #7ed895; } /* green  */
+
+nav ul li:nth-child(7n+5) a:hover,
+.sub-nav ul li:nth-child(7n+5) a:hover,
+.blog-list li:nth-child(7n+5) a:hover { color: #7eb8f7; } /* blue   */
+
+nav ul li:nth-child(7n+6) a:hover,
+.sub-nav ul li:nth-child(7n+6) a:hover,
+.blog-list li:nth-child(7n+6) a:hover { color: #9b8df0; } /* indigo */
+
+nav ul li:nth-child(7n+7) a:hover,
+.sub-nav ul li:nth-child(7n+7) a:hover,
+.blog-list li:nth-child(7n+7) a:hover { color: #c888f0; } /* violet */

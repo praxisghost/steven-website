@@ -1,11 +1,19 @@
 /* ─────────────────────────────────────────────────────────────────────────────
  *  misc.js — Frog slideshow for misc.html
  *
- *  Extracted from an inline <script> block so the site can use a strict
- *  Content-Security-Policy of `script-src 'self'` (no `unsafe-inline`).
+ *  Image hosting:
+ *    Photos are served from /img/frogs/<slug>.jpg on this same domain.
+ *    To add or change a frog, drop a photo into public/img/frogs/ with the
+ *    matching slug, then edit the FROGS array below. See the README in
+ *    that folder for sizing/format guidance.
  *
- *  Behaviour matches the original: shuffled deck, auto-advance every 8s,
- *  prev/next buttons, fade-in once each remote image actually loads.
+ *    The previous implementation hot-linked Wikimedia Commons URLs, which
+ *    is fragile: Wikimedia rate-limits/blocks hotlinking from third-party
+ *    sites, thumbnail URLs change when the CDN reorganises, and the
+ *    extra origin forces a wider Content-Security-Policy.
+ *
+ *  Behaviour: shuffled deck, auto-advance every 8s, prev/next buttons,
+ *  fade-in once each image actually loads, pause when the tab is hidden.
  *  ────────────────────────────────────────────────────────────────────────── */
 
 (() => {
@@ -22,30 +30,30 @@
 
   const placeholder = document.querySelector('.frog-placeholder');
 
-  /* Frog data — North American species.
-     Images sourced from Wikimedia Commons (public domain / CC). */
-  const frogs = [
-    { name: 'American Bullfrog',       latin: 'Lithobates catesbeianus',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Rana_catesbeiana_USGS.jpg/640px-Rana_catesbeiana_USGS.jpg' },
-    { name: 'Pacific Tree Frog',       latin: 'Pseudacris regilla',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Pacific_Treefrog_Hyla_regilla.jpg/640px-Pacific_Treefrog_Hyla_regilla.jpg' },
-    { name: 'Wood Frog',               latin: 'Lithobates sylvaticus',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Wood_frog.jpg/640px-Wood_frog.jpg' },
-    { name: 'Green Tree Frog',         latin: 'Dryophytes cinereus',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Hyla_cinerea.jpg/640px-Hyla_cinerea.jpg' },
-    { name: 'Northern Leopard Frog',   latin: 'Lithobates pipiens',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Leopard_frog_122006.jpg/640px-Leopard_frog_122006.jpg' },
-    { name: 'Gray Tree Frog',          latin: 'Dryophytes versicolor',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Hyla_versicolor02.jpg/640px-Hyla_versicolor02.jpg' },
-    { name: 'Spring Peeper',           latin: 'Pseudacris crucifer',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Pseudacris_crucifer_crop.jpg/640px-Pseudacris_crucifer_crop.jpg' },
-    { name: 'Pickerel Frog',           latin: 'Lithobates palustris',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pickerel_Frog_%28Lithobates_palustris%29.jpg/640px-Pickerel_Frog_%28Lithobates_palustris%29.jpg' },
-    { name: 'Red-legged Frog',         latin: 'Rana aurora',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rana_aurora.jpg/640px-Rana_aurora.jpg' },
-    { name: 'American Green Tree Frog',latin: 'Dryophytes cinereus',
-      img:  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hyla_cinerea_on_glass.jpg/640px-Hyla_cinerea_on_glass.jpg' },
+  /* Frog deck — North American species.
+   *
+   * To add a new frog:
+   *   1. Save a photo as  public/img/frogs/<slug>.jpg
+   *   2. Add an entry below with the same `slug`, plus name + latin.
+   *
+   * The URL is derived from `slug`, so there's only one place to keep in
+   * sync. If an image fails to load, the slideshow keeps the placeholder
+   * visible and the auto-advance simply moves on. */
+  const FROGS = [
+    { slug: 'american-bullfrog',        name: 'American Bullfrog',        latin: 'Lithobates catesbeianus' },
+    { slug: 'pacific-tree-frog',        name: 'Pacific Tree Frog',        latin: 'Pseudacris regilla'      },
+    { slug: 'wood-frog',                name: 'Wood Frog',                latin: 'Lithobates sylvaticus'   },
+    { slug: 'green-tree-frog',          name: 'Green Tree Frog',          latin: 'Dryophytes cinereus'     },
+    { slug: 'northern-leopard-frog',    name: 'Northern Leopard Frog',    latin: 'Lithobates pipiens'      },
+    { slug: 'gray-tree-frog',           name: 'Gray Tree Frog',           latin: 'Dryophytes versicolor'   },
+    { slug: 'spring-peeper',            name: 'Spring Peeper',            latin: 'Pseudacris crucifer'     },
+    { slug: 'pickerel-frog',            name: 'Pickerel Frog',            latin: 'Lithobates palustris'    },
+    { slug: 'red-legged-frog',          name: 'Red-legged Frog',          latin: 'Rana aurora'             },
+    { slug: 'american-green-tree-frog', name: 'American Green Tree Frog', latin: 'Dryophytes cinereus'     },
   ];
+
+  /* All photos live under /img/frogs/<slug>.jpg — same origin, CSP-friendly. */
+  const frogs = FROGS.map(f => ({ ...f, img: `/img/frogs/${f.slug}.jpg` }));
 
   /* Shuffle once on page load for a randomised first order. */
   function shuffle(arr) {
