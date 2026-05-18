@@ -5,6 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guitar — Steven Legg</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Scale Player ───────────────────────────────────────────────── */
+    .scale-player {
+      margin: 1rem 0 1.25rem;
+      padding: 1.1rem 1rem 1rem;
+      border: 1px solid #1a1a1a;
+      border-radius: 4px;
+    }
+
+    .scale-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .scale-note {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 2.6rem;
+      padding: 0.4rem 0.5rem;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: background 0.08s ease, border-color 0.08s ease;
+    }
+
+    .note-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #aaa;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .note-interval {
+      font-size: 0.7rem;
+      color: #383838;
+      letter-spacing: 0.04em;
+      margin-top: 0.25rem;
+    }
+
+    .scale-note.active {
+      background: #0b1a0d;
+      border-color: #243824;
+    }
+
+    .scale-note.active .note-name {
+      color: #7ed895;
+    }
+
+    .scale-note.active .note-interval {
+      color: #4a8a5c;
+    }
+
+    .scale-play-btn {
+      display: block;
+      margin: 0 auto;
+      padding: 0.42rem 1.2rem;
+      background: none;
+      border: 1px solid #242424;
+      border-radius: 3px;
+      color: #555;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: border-color 0.18s ease, color 0.18s ease;
+      letter-spacing: 0.03em;
+    }
+
+    .scale-play-btn:hover:not(:disabled) {
+      border-color: #484848;
+      color: #bbb;
+    }
+
+    .scale-play-btn:disabled {
+      opacity: 0.38;
+      cursor: default;
+    }
+
+    @media (max-width: 480px) {
+      .scale-note     { min-width: 2rem;    padding: 0.3rem 0.35rem; }
+      .note-name      { font-size: 1.05rem; }
+      .note-interval  { font-size: 0.63rem; }
+      .scale-play-btn { font-size: 0.78rem; }
+    }
+  </style>
 </head>
 <body>
   <a class="back-link" href="music.html">← Music</a>
@@ -32,6 +120,36 @@
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
+
+        <!-- ── E Major Pentatonic Scale Player ───────────────────── -->
+        <div class="scale-player" id="scale-player" role="region" aria-label="E Major Pentatonic scale player">
+          <div class="scale-row" role="list" aria-label="Scale notes">
+            <div class="scale-note" role="listitem" aria-label="E, root">
+              <span class="note-name">E</span>
+              <span class="note-interval">I</span>
+            </div>
+            <div class="scale-note" role="listitem" aria-label="G, flat third">
+              <span class="note-name">G</span>
+              <span class="note-interval">&#x266D;III</span>
+            </div>
+            <div class="scale-note" role="listitem" aria-label="A, fourth">
+              <span class="note-name">A</span>
+              <span class="note-interval">IV</span>
+            </div>
+            <div class="scale-note" role="listitem" aria-label="B, fifth">
+              <span class="note-name">B</span>
+              <span class="note-interval">V</span>
+            </div>
+            <div class="scale-note" role="listitem" aria-label="D, flat seventh">
+              <span class="note-name">D</span>
+              <span class="note-interval">&#x266D;VII</span>
+            </div>
+          </div>
+          <button class="scale-play-btn" id="scale-play-btn" type="button" aria-label="Play E Major Pentatonic scale ascending">
+            &#x25B6; Play Scale
+          </button>
+        </div>
+
         <ol start="2">
           <li><span class="step">2.</span>E Major Natural</li>
           <li><span class="step">3.</span>E Minor Pentatonic</li>
@@ -128,5 +246,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="guitar-scale.js"></script>
 </body>
 </html>

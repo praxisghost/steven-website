@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turkish Learning — Steven Legg</title>
+  <meta name="description" content="A spaced-repetition vocabulary trainer for Turkish — 100 core words, SM-2 scheduling, and session progress saved in your browser.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── SRS Flashcard ─────────────────────────────────────────────────────── */
+
+    .srs-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.8rem;
+      color: #555;
+      min-height: 1.4rem;
+    }
+
+    .srs-count b { color: #ccc; font-weight: 500; }
+
+    .srs-bar-wrap {
+      flex: 1;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .srs-bar {
+      height: 100%;
+      background: #2e2e2e;
+      border-radius: 1px;
+      transition: width 0.4s ease;
+    }
+
+    /* card */
+    .srs-card {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem 2.25rem;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.2s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .srs-card:hover           { border-color: #2a2a2a; }
+    .srs-card.revealed        { cursor: default; }
+    .srs-card.revealed:hover  { border-color: #1e1e1e; }
+
+    .srs-turkish {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .srs-pos {
+      font-size: 0.75rem;
+      color: #3a3a3a;
+      font-style: italic;
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .srs-divider {
+      width: 2rem;
+      height: 1px;
+      background: #222;
+      margin: 1.25rem auto 1rem;
+      flex-shrink: 0;
+    }
+
+    .srs-english {
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.45;
+    }
+
+    .srs-hint {
+      position: absolute;
+      bottom: 0.7rem;
+      font-size: 0.7rem;
+      color: #2c2c2c;
+      letter-spacing: 0.05em;
+    }
+
+    /* answer buttons */
+    .srs-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      min-height: 2.6rem;
+    }
+
+    .srs-btn {
+      flex: 1;
+      padding: 0.55rem 1rem;
+      border-radius: 3px;
+      background: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+    }
+
+    .srs-btn-again            { border: 1px solid #2e1a1a; color: #c07070; }
+    .srs-btn-again:hover      { background: #1a0a0a; border-color: #c07070; color: #e08888; }
+
+    .srs-btn-good             { border: 1px solid #1a2e1a; color: #7ed895; }
+    .srs-btn-good:hover       { background: #0a180a; border-color: #7ed895; color: #9ef0b0; }
+
+    .srs-key {
+      font-family: 'Courier New', monospace;
+      font-size: 0.67rem;
+      padding: 0.04rem 0.3rem;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .srs-interval {
+      font-size: 0.72rem;
+      opacity: 0.6;
+    }
+
+    /* done / empty screens */
+    .srs-done {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .srs-done-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .srs-done-sub {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+      font-style: italic;
+    }
+
+    .srs-done-stats {
+      color: #444;
+      font-size: 0.82rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+    }
+
+    .srs-action-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .srs-action-btn:hover { border-color: #555; color: #fff; }
+
+    /* keyboard hint row */
+    .srs-shortcuts {
+      font-size: 0.75rem;
+      color: #2e2e2e;
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .srs-shortcuts kbd {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      padding: 0.05rem 0.3rem;
+      border: 1px solid #2a2a2a;
+      border-radius: 2px;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      .srs-turkish  { font-size: 1.85rem; }
+      .srs-english  { font-size: 1.05rem; }
+      .srs-btn      { font-size: 0.82rem; padding: 0.5rem 0.6rem; }
+      .srs-meta     { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-learning.html">← Language Learning</a>
+
+  <header>
+    <h1>Turkish Learning</h1>
+    <p>Türkçe öğrenme — vocabulary trainer &amp; study reference.</p>
+  </header>
+
+  <article>
+
+    <!-- TABLE OF CONTENTS -->
+    <ol class="lang-toc">
+      <li><a href="#about">About Turkish</a></li>
+      <li><a href="#flashcards">Vocabulary Flashcards — SRS Trainer</a></li>
+      <li><a href="#notes">Quick Language Notes</a></li>
+    </ol>
+
+    <!-- ══════════════════════════════════════════
+         1. ABOUT
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="about">
+      <h2>1. About Turkish</h2>
+      <p>Turkish is an agglutinative language of the Turkic family, spoken by roughly 85 million people primarily in Turkey and Cyprus. It is entirely unrelated to English, Arabic, or the major European languages — but it is internally very regular. Once the core grammar rules are learned, they apply consistently with few exceptions, which makes Turkish rewarding for systematic learners.</p>
+
+      <h3>Key features to be aware of from day one</h3>
+      <ul>
+        <li><strong>Vowel harmony.</strong> Turkish vowels form two groups (front: e, i, ö, ü / back: a, ı, o, u). Suffixes change their vowel to harmonize with the last vowel of the root. This governs a large proportion of Turkish grammar and must be internalized early.</li>
+        <li><strong>Agglutination.</strong> Turkish builds meaning by chaining suffixes onto a root. A single Turkish word can express what English requires an entire phrase for (e.g., <em>gelemiyor musunuz?</em> — "are you not able to come?").</li>
+        <li><strong>SOV word order.</strong> The verb comes at the end of the sentence. The subject and object can be moved for emphasis, but the verb is almost always last.</li>
+        <li><strong>No grammatical gender.</strong> Turkish has no masculine/feminine distinction — the same pronoun <em>o</em> covers he, she, and it.</li>
+        <li><strong>Postpositions, not prepositions.</strong> Where English says "for you", Turkish says the equivalent of "you for" — the relational word follows the noun it modifies.</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         2. FLASHCARDS
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="flashcards">
+      <h2>2. Vocabulary Flashcards — SRS Trainer</h2>
+      <p>100 core Turkish words reviewed with a spaced-repetition algorithm. Cards due for review are shown first; new cards are introduced up to 20 per session. Your progress is saved in the browser and carries over between visits.</p>
+
+      <p class="lang-note"><strong>Again</strong> re-queues the card for the end of this session and schedules a 1-day review. <strong>Good</strong> schedules the card at an expanding interval (1 day → 6 days → grows with each correct answer). Intervals are shown on each button before you choose.</p>
+
+      <!-- SRS root — the JS builds everything inside here -->
+      <div id="srs-root"></div>
+
+      <div class="srs-shortcuts" aria-label="Keyboard shortcuts">
+        <span><kbd>Space</kbd> reveal</span>
+        <span><kbd>1</kbd> Again</span>
+        <span><kbd>3</kbd> Good</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         3. NOTES
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="notes">
+      <h2>3. Quick Language Notes</h2>
+
+      <h3>The Turkish Alphabet</h3>
+      <p>Turkish uses a Latin-based alphabet of 29 letters introduced in 1928. Most letters are pronounced as in English, but several require attention:</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Letter</th><th>Approximate sound</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>ç</td><td>"ch" as in <em>church</em></td><td>çok (very)</td></tr>
+            <tr><td>ş</td><td>"sh" as in <em>ship</em></td><td>şimdi (now)</td></tr>
+            <tr><td>ğ</td><td>silent — lengthens the preceding vowel</td><td>dağ (mountain)</td></tr>
+            <tr><td>ı</td><td>a central "uh" vowel — no English equivalent; like the schwa in <em>sofa</em></td><td>kız (girl)</td></tr>
+            <tr><td>ö</td><td>"ur" as in <em>nurse</em> (rounded lips)</td><td>görmek (to see)</td></tr>
+            <tr><td>ü</td><td>"u" as in French <em>tu</em> (rounded front vowel)</td><td>üç (three)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Verb Infinitives</h3>
+      <p>Turkish verb infinitives end in <strong>-mak</strong> or <strong>-mek</strong> (the vowel follows harmony). In the flashcard deck, verbs are listed in infinitive form so you see the root clearly. When conjugating, drop the <em>-mak/-mek</em> to get the stem, then add tense and person suffixes.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Infinitive</th><th>Root</th><th>Present (I)</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>gelmek</td><td>gel-</td><td>geliyorum</td><td>I am coming</td></tr>
+            <tr><td>gitmek</td><td>git-</td><td>gidiyorum</td><td>I am going</td></tr>
+            <tr><td>yapmak</td><td>yap-</td><td>yapıyorum</td><td>I am doing</td></tr>
+            <tr><td>bilmek</td><td>bil-</td><td>biliyorum</td><td>I know</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Negation</h3>
+      <p><strong>değil</strong> — placed after a noun or adjective to negate it. "Ben Türk değilim" = "I am not Turkish."<br>
+      For verb negation, the suffix <strong>-me/-ma</strong> is inserted before the tense suffix: "gelmiyorum" = "I am not coming."</p>
+
+      <h3>The Buffer <em>var</em> / <em>yok</em></h3>
+      <p>Turkish uses <strong>var</strong> ("there is") and <strong>yok</strong> ("there isn't") as standalone words to express existence and possession — no "to have" verb exists. "Param var" (my money there-is) = "I have money." "Param yok" = "I don't have money."</p>
+
+      <p class="lang-note">More content — grammar tables, resources, and reading lists — will be added here as this page develops.</p>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="turkish-srs.js"></script>
+</body>
+</html>
