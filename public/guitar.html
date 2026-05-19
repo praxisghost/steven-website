@@ -61,10 +61,16 @@
       color: #4a8a5c;
     }
 
-    .scale-play-btn {
-      display: block;
-      margin: 0 auto;
-      padding: 0.42rem 1.2rem;
+    .scale-controls {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .scale-btn {
+      flex: 1;
+      max-width: 7.5rem;
+      padding: 0.42rem 0.6rem;
       background: none;
       border: 1px solid #242424;
       border-radius: 3px;
@@ -74,23 +80,39 @@
       cursor: pointer;
       transition: border-color 0.18s ease, color 0.18s ease;
       letter-spacing: 0.03em;
+      white-space: nowrap;
     }
 
-    .scale-play-btn:hover:not(:disabled) {
+    .scale-btn:hover:not(:disabled) {
       border-color: #484848;
       color: #bbb;
     }
 
-    .scale-play-btn:disabled {
-      opacity: 0.38;
+    .scale-btn:disabled {
+      opacity: 0.35;
       cursor: default;
     }
 
+    .scale-btn-stop {
+      border-color: #2e1a1a;
+      color: #664444;
+    }
+
+    .scale-btn-stop:hover:not(:disabled) {
+      border-color: #884444;
+      color: #c07070;
+    }
+
+    .scale-btn.melody-active {
+      border-color: #243824;
+      color: #7ed895;
+    }
+
     @media (max-width: 480px) {
-      .scale-note     { min-width: 2rem;    padding: 0.3rem 0.35rem; }
-      .note-name      { font-size: 1.05rem; }
-      .note-interval  { font-size: 0.63rem; }
-      .scale-play-btn { font-size: 0.78rem; }
+      .scale-note    { min-width: 2rem;    padding: 0.3rem 0.35rem; }
+      .note-name     { font-size: 1.05rem; }
+      .note-interval { font-size: 0.63rem; }
+      .scale-btn     { font-size: 0.75rem; padding: 0.38rem 0.4rem; }
     }
   </style>
 </head>
@@ -128,26 +150,37 @@
               <span class="note-name">E</span>
               <span class="note-interval">I</span>
             </div>
-            <div class="scale-note" role="listitem" aria-label="G, flat third">
-              <span class="note-name">G</span>
-              <span class="note-interval">&#x266D;III</span>
+            <div class="scale-note" role="listitem" aria-label="F-sharp, major second">
+              <span class="note-name">F&#x266F;</span>
+              <span class="note-interval">II</span>
             </div>
-            <div class="scale-note" role="listitem" aria-label="A, fourth">
-              <span class="note-name">A</span>
-              <span class="note-interval">IV</span>
+            <div class="scale-note" role="listitem" aria-label="G-sharp, major third">
+              <span class="note-name">G&#x266F;</span>
+              <span class="note-interval">III</span>
             </div>
-            <div class="scale-note" role="listitem" aria-label="B, fifth">
+            <div class="scale-note" role="listitem" aria-label="B, perfect fifth">
               <span class="note-name">B</span>
               <span class="note-interval">V</span>
             </div>
-            <div class="scale-note" role="listitem" aria-label="D, flat seventh">
-              <span class="note-name">D</span>
-              <span class="note-interval">&#x266D;VII</span>
+            <div class="scale-note" role="listitem" aria-label="C-sharp, major sixth">
+              <span class="note-name">C&#x266F;</span>
+              <span class="note-interval">VI</span>
             </div>
           </div>
-          <button class="scale-play-btn" id="scale-play-btn" type="button" aria-label="Play E Major Pentatonic scale ascending">
-            &#x25B6; Play Scale
-          </button>
+          <div class="scale-controls">
+            <button class="scale-btn" id="scale-play-btn" type="button"
+                    aria-label="Play E Major Pentatonic scale ascending">
+              &#x25B6; Play Scale
+            </button>
+            <button class="scale-btn" id="scale-melody-btn" type="button"
+                    aria-label="Play looping melody using E Major Pentatonic notes">
+              &#x266A; Play Melody
+            </button>
+            <button class="scale-btn scale-btn-stop" id="scale-stop-btn" type="button"
+                    aria-label="Stop all playback" disabled>
+              &#x25A0; Stop
+            </button>
+          </div>
         </div>
 
         <ol start="2">
