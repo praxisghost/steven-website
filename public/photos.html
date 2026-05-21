@@ -4,7 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photos — Steven Legg</title>
+  <meta name="description" content="Photos — Steven Legg's personal photo gallery, including a favorite dog breeds slideshow.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Dog Breeds Slideshow ──────────────────────
+       Consistent with the frog slideshow (misc.html) and salamander
+       slideshow (about.html) in structure and interaction style. */
+
+    .dogs-section {
+      margin-top: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .dogs-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .dogs-section .dogs-intro {
+      font-size: 0.92rem;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .dogs-slideshow {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .dogs-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #0d0d0d;
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dogs-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.5s ease;
+    }
+
+    .dogs-frame img.dog-loading { opacity: 0; }
+    .dogs-frame img.dog-loaded  { opacity: 1; }
+
+    .dogs-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #2a2a2a;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .dog-caption {
+      margin-top: 0.85rem;
+      min-height: 2rem;
+    }
+
+    .dog-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    .dogs-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .dogs-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .dogs-btn:hover {
+      border-color: #555;
+      color: #fff;
+    }
+
+    .dogs-counter {
+      font-size: 0.8rem;
+      color: #444;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      .dogs-section h2 { font-size: 1.15rem; }
+      .dog-name        { font-size: 1.05rem; }
+    }
+  </style>
 </head>
 <body>
   <a class="back-link" href="index.html">← Back</a>
@@ -14,7 +131,35 @@
   </header>
 
   <article>
-    <p>Photos coming soon.</p>
+
+    <!-- ── Favorite Dog Breeds Slideshow ──────────────────────────────
+         11 breed entries.  Images go in /img/dogs/<slug>.jpg.
+         Set active: true in photos.js once each photo is in place.
+         ─────────────────────────────────────────────────────────── -->
+    <section class="dogs-section" aria-label="Favorite dog breeds gallery">
+      <h2>Favorite Dog Breeds</h2>
+      <p class="dogs-intro">A few of my favorite breeds — a rotating gallery.</p>
+
+      <div class="dogs-slideshow">
+        <div class="dogs-frame">
+          <div class="dogs-placeholder" aria-hidden="true">🐕</div>
+          <img id="dog-img" src="" alt="" class="dog-loading">
+        </div>
+
+        <div class="dog-caption">
+          <div class="dog-name" id="dog-name"></div>
+        </div>
+
+        <div class="dogs-controls">
+          <button class="dogs-btn" id="dogs-prev" aria-label="Previous dog breed">← Prev</button>
+          <span class="dogs-counter" id="dogs-counter"></span>
+          <button class="dogs-btn" id="dogs-next" aria-label="Next dog breed">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <p>More photos coming over time.</p>
+
   </article>
 
   <footer>
@@ -22,5 +167,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="photos.js"></script>
 </body>
 </html>

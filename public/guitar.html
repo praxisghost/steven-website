@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guitar — Steven Legg</title>
+  <meta name="description" content="Steven Legg's guitar learning roadmap — scales, progress notes, and an interactive E Major Pentatonic scale player with staff notation.">
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Scale Player ───────────────────────────────────────────────── */
     .scale-player {
-      margin: 1rem 0 1.25rem;
+      margin: 1rem 0 0;
       padding: 1.1rem 1rem 1rem;
       border: 1px solid #1a1a1a;
       border-radius: 4px;
@@ -108,6 +109,98 @@
       color: #7ed895;
     }
 
+    /* ── Music Staff Notation ───────────────────────────────────────── */
+    /*
+     * The notation panel sits directly below the scale player.
+     * It renders an SVG treble-clef staff showing eight note slots for the
+     * E Major Pentatonic scale (ascending + descending). The currently
+     * sounding note is lit green in sync with the audio playback.
+     */
+    .notation-wrap {
+      margin: 0.5rem 0 1.25rem;
+      padding: 0.9rem 1rem 0.75rem;
+      border: 1px solid #161616;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .notation-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #303030;
+      margin-bottom: 0.65rem;
+      user-select: none;
+    }
+
+    .notation-svg {
+      display: block;
+      width: 100%;
+      /* No max-width cap — both scale and melody staffs fill the container.
+         The viewBox handles proportional scaling in both modes. */
+    }
+
+    /* Staff lines and barlines */
+    .sn-staff-line    { stroke: #252525; stroke-width: 1; }
+    .sn-barline       { stroke: #2e2e2e; stroke-width: 1.5; }
+    .sn-barline-thick { stroke: #2e2e2e; stroke-width: 4.5; }
+
+    /* Clef and time-signature text */
+    .sn-clef {
+      fill: #2e2e2e;
+      font-family: 'Times New Roman', Times, serif;
+      font-style: normal;
+    }
+    .sn-timesig {
+      fill: #2e2e2e;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* Note components — default (inactive) state */
+    .sn-head {
+      fill: #252525;
+      transition: fill 0.07s ease;
+    }
+    .sn-stem {
+      stroke: #252525;
+      stroke-width: 1.5;
+      transition: stroke 0.07s ease;
+    }
+    .sn-acc {
+      fill: #252525;
+      font-family: 'Times New Roman', Times, serif;
+      transition: fill 0.07s ease;
+    }
+    .sn-ledger {
+      stroke: #252525;
+      stroke-width: 1;
+      transition: stroke 0.07s ease;
+    }
+
+    /* Active (playing) state — matches .scale-note.active green */
+    .sn-head.active   { fill:   #7ed895; }
+    .sn-stem.active   { stroke: #7ed895; }
+    .sn-acc.active    { fill:   #7ed895; }
+    .sn-ledger.active { stroke: #7ed895; }
+
+    /* Open (hollow) note head — half notes and dotted half notes */
+    .sn-head.open        { fill: #000; stroke: #252525; stroke-width: 1.8; }
+    .sn-head.open.active { fill: #000; stroke: #7ed895; }
+
+    /* Augmentation dot — dotted quarter / dotted half */
+    .sn-dot        { fill: #252525; transition: fill 0.07s ease; }
+    .sn-dot.active { fill: #7ed895; }
+
+    /* Eighth-note flag — single curved stroke from stem top */
+    .sn-flag        { fill: none; stroke: #252525; stroke-width: 1.5;
+                      stroke-linecap: round; transition: stroke 0.07s ease; }
+    .sn-flag.active { stroke: #7ed895; }
+
+    /* Repeat dots */
+    .sn-dot { fill: #252525; }
+
     @media (max-width: 480px) {
       .scale-note    { min-width: 2rem;    padding: 0.3rem 0.35rem; }
       .note-name     { font-size: 1.05rem; }
@@ -182,6 +275,153 @@
             </button>
           </div>
         </div>
+
+        <!-- ── Staff Notation Display ──────────────────────────────
+             Standard treble-clef staff showing the five E Major
+             Pentatonic quarter notes. The active note glows green
+             in sync with the audio, driven by guitar-scale.js.
+             ─────────────────────────────────────────────────────── -->
+        <div class="notation-wrap" id="notation-wrap"
+             role="region" aria-label="Staff notation — synchronized to playback">
+          <div class="notation-label" aria-hidden="true">Staff notation — E Major Pentatonic</div>
+
+          <!--
+            SVG coordinate reference (treble clef, 12 px line spacing):
+              Line 5 (F5)  y = 20
+              Line 4 (D5)  y = 32
+              Line 3 (B4)  y = 44   ← middle line
+              Line 2 (G4)  y = 56
+              Line 1 (E4)  y = 68
+            Spaces (between lines, 6 px increments):
+              Space 4 (E5) y = 26
+              Space 3 (C5) y = 38   ← C#5 lives here
+              Space 2 (A4) y = 50
+              Space 1 (F4) y = 62   ← F#4 lives here
+            Note positions (cx):
+              Note 0  E4   cx = 100   (line 1,   no accidental)
+              Note 1  F#4  cx = 148   (space 1,  ♯ before)
+              Note 2  G#4  cx = 196   (line 2,   ♯ before)
+              Note 3  B4   cx = 244   (line 3,   no accidental)
+              Note 4  C#5  cx = 292   (space 3,  ♯ before)
+            Stems go up from note right edge (cx+8) to (cy−32).
+          -->
+          <!--
+            Staff lines use x2="900" so the viewBox clip (not the lines)
+            controls the visible width in both scale and melody modes.
+            guitar-scale.js updates the viewBox when melody mode begins.
+          -->
+          <svg class="notation-svg"
+               id="notation-svg"
+               viewBox="0 0 590 95"
+               xmlns="http://www.w3.org/2000/svg"
+               aria-hidden="true">
+
+            <!-- ── Staff lines (shared; extend to x2=900 for melody mode) ── -->
+            <line class="sn-staff-line" x1="8" y1="20" x2="900" y2="20"/>
+            <line class="sn-staff-line" x1="8" y1="32" x2="900" y2="32"/>
+            <line class="sn-staff-line" x1="8" y1="44" x2="900" y2="44"/>
+            <line class="sn-staff-line" x1="8" y1="56" x2="900" y2="56"/>
+            <line class="sn-staff-line" x1="8" y1="68" x2="900" y2="68"/>
+
+            <!-- ══════════════════════════════════════════════════════════
+                 SCALE GROUP — visible in scale mode only.
+                 Hidden by JS when melody mode is active.
+                 Contains: opening barline, clef, time sig, 8 fixed notes
+                 (ascending E F# G# B C# then descending B G# F#), final barline.
+
+                 Note slot layout (cx = 76 + slot × 68, viewBox 0 0 590 95):
+                   Slot 0 — E4   cx=76   cy=68  line 1   no acc
+                   Slot 1 — F#4  cx=144  cy=62  space 1  acc ♯ at x=132
+                   Slot 2 — G#4  cx=212  cy=56  line 2   acc ♯ at x=200
+                   Slot 3 — B4   cx=280  cy=44  line 3   no acc
+                   Slot 4 — C#5  cx=348  cy=38  space 3  acc ♯ at x=336
+                   Slot 5 — B4   cx=416  cy=44  line 3   no acc
+                   Slot 6 — G#4  cx=484  cy=56  line 2   acc ♯ at x=472
+                   Slot 7 — F#4  cx=552  cy=62  space 1  acc ♯ at x=540
+                 Accidentals use text-anchor="end" at cx−12 (4 px gap to note head).
+                 Barlines: thin at x=572, thick at x=579.
+            ══════════════════════════════════════════════════════════════ -->
+            <g id="sn-scale-group">
+
+              <!-- Opening barline -->
+              <line class="sn-barline" x1="8" y1="20" x2="8" y2="68"/>
+
+              <!-- Treble clef (𝄞 U+1D11E) — spiral wraps around line 2 (G4, y=56) -->
+              <text class="sn-clef" x="11" y="70" font-size="62"
+                    dominant-baseline="auto">&#x1D11E;</text>
+
+              <!-- 4/4 time signature -->
+              <text class="sn-timesig" x="54" y="50" font-size="19"
+                    text-anchor="middle">4</text>
+              <text class="sn-timesig" x="54" y="69" font-size="19"
+                    text-anchor="middle">4</text>
+
+              <!-- SLOT 0 — E4 (line 1, cy=68, cx=76) -->
+              <text class="sn-acc" id="sn-acc-0"
+                    x="64" y="72" font-size="13" text-anchor="end"
+                    display="none">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-0" x1="84"  y1="68" x2="84"  y2="36"/>
+              <ellipse class="sn-head" id="sn-head-0" cx="76"  cy="68" rx="8" ry="5.5"/>
+
+              <!-- SLOT 1 — F#4 (space 1, cy=62, cx=144) -->
+              <text class="sn-acc" id="sn-acc-1"
+                    x="132" y="66" font-size="13" text-anchor="end">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-1" x1="152" y1="62" x2="152" y2="30"/>
+              <ellipse class="sn-head" id="sn-head-1" cx="144" cy="62" rx="8" ry="5.5"/>
+
+              <!-- SLOT 2 — G#4 (line 2, cy=56, cx=212) -->
+              <text class="sn-acc" id="sn-acc-2"
+                    x="200" y="60" font-size="13" text-anchor="end">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-2" x1="220" y1="56" x2="220" y2="24"/>
+              <ellipse class="sn-head" id="sn-head-2" cx="212" cy="56" rx="8" ry="5.5"/>
+
+              <!-- SLOT 3 — B4 (line 3, cy=44, cx=280) -->
+              <text class="sn-acc" id="sn-acc-3"
+                    x="268" y="48" font-size="13" text-anchor="end"
+                    display="none">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-3" x1="288" y1="44" x2="288" y2="12"/>
+              <ellipse class="sn-head" id="sn-head-3" cx="280" cy="44" rx="8" ry="5.5"/>
+
+              <!-- SLOT 4 — C#5 (space 3, cy=38, cx=348) — top of ascent -->
+              <text class="sn-acc" id="sn-acc-4"
+                    x="336" y="42" font-size="13" text-anchor="end">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-4" x1="356" y1="38" x2="356" y2="6"/>
+              <ellipse class="sn-head" id="sn-head-4" cx="348" cy="38" rx="8" ry="5.5"/>
+
+              <!-- SLOT 5 — B4 (line 3, cy=44, cx=416) — start of descent -->
+              <text class="sn-acc" id="sn-acc-5"
+                    x="404" y="48" font-size="13" text-anchor="end"
+                    display="none">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-5" x1="424" y1="44" x2="424" y2="12"/>
+              <ellipse class="sn-head" id="sn-head-5" cx="416" cy="44" rx="8" ry="5.5"/>
+
+              <!-- SLOT 6 — G#4 (line 2, cy=56, cx=484) -->
+              <text class="sn-acc" id="sn-acc-6"
+                    x="472" y="60" font-size="13" text-anchor="end">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-6" x1="492" y1="56" x2="492" y2="24"/>
+              <ellipse class="sn-head" id="sn-head-6" cx="484" cy="56" rx="8" ry="5.5"/>
+
+              <!-- SLOT 7 — F#4 (space 1, cy=62, cx=552) -->
+              <text class="sn-acc" id="sn-acc-7"
+                    x="540" y="66" font-size="13" text-anchor="end">&#x266F;</text>
+              <line class="sn-stem" id="sn-stem-7" x1="560" y1="62" x2="560" y2="30"/>
+              <ellipse class="sn-head" id="sn-head-7" cx="552" cy="62" rx="8" ry="5.5"/>
+
+              <!-- Final barline (thin + thick) -->
+              <line class="sn-barline"       x1="572" y1="20" x2="572" y2="68"/>
+              <line class="sn-barline-thick" x1="579" y1="20" x2="579" y2="68"/>
+
+            </g><!-- /#sn-scale-group -->
+
+            <!-- ══════════════════════════════════════════════════════════
+                 MELODY GROUP — populated dynamically by guitar-scale.js.
+                 Hidden until melody mode begins. Notes are rendered at
+                 fixed positions; only CSS classes change during playback.
+            ══════════════════════════════════════════════════════════════ -->
+            <g id="sn-melody-group" display="none"></g>
+
+          </svg>
+        </div><!-- /.notation-wrap -->
 
         <ol start="2">
           <li><span class="step">2.</span>E Major Natural</li>

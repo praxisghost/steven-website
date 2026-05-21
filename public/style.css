@@ -227,14 +227,32 @@ form button:hover { background: #ccc; }
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 0.55rem;
 }
 
-.blog-list li {
+/*
+ * Card treatment — each entry is a rounded rectangle that lifts on hover.
+ * The stretched-link technique (a::after covering the li) makes the entire
+ * card clickable while keeping the rainbow hover colour on the text.
+ * Note: do NOT add position:relative to the <a> — the ::after must use the
+ * li as its offset parent so inset:0 covers the whole card, not just the link.
+ */
+.blog-list li:not(.blog-empty) {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #1a1a1a;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  background: #0c0c0c;
+  border: 1px solid #1e1e1e;
+  border-radius: 7px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.blog-list li:not(.blog-empty):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  border-color: #2e2e2e;
 }
 
 .blog-list li a {
@@ -243,17 +261,64 @@ form button:hover { background: #ccc; }
   font-size: 1.1rem;
   transition: color 0.2s ease;
 }
-/* Hover colours for .blog-list and .playlist-list come from the
-   "RAINBOW HOVER" block lower in this file. */
+/* Hover colours for .blog-list come from the "RAINBOW HOVER" block below.
+   Hovering anywhere on the card triggers a:hover because a::after is part
+   of the <a> element, so the rainbow transition fires correctly. */
+
+/* Stretched link — expands the click target to the full card area */
+.blog-list li:not(.blog-empty) a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+}
 
 .blog-date {
   font-size: 0.85rem;
   color: #555;
   white-space: nowrap;
   margin-left: 1rem;
+  /* Sit above the stretched-link overlay so text remains selectable */
+  position: relative;
+  z-index: 1;
 }
 
-.blog-empty { color: #555; font-style: italic; border-bottom: none; }
+.blog-empty { color: #555; font-style: italic; }
+
+/*
+ * Article thumbnail placeholder — a small dark square with a centred SVG icon,
+ * shown to the left of each blog-list article title. When a real thumbnail
+ * image exists it can replace the SVG via a background-image on the element.
+ * position:relative + z-index:1 keeps it above the stretched-link overlay so
+ * it doesn't block pointer events on the card.
+ */
+.article-card-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;        /* allow the link text to shrink/wrap */
+}
+
+.article-thumb {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;          /* sit above the stretched-link ::after overlay */
+}
+
+.article-thumb svg {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  opacity: 0.38;
+}
 
 /* ── Footer ──────────────────────────────────── */
 footer {
