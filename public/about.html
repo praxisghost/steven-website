@@ -6,6 +6,130 @@
   <title>About — Steven Legg</title>
   <meta name="description" content="A bit about Steven Legg — teacher, language learner, and occasional aspirant King of Frogs.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Salamander Slideshow ──────────────────────
+       Mirrors the frog-slideshow styling on misc.html, scoped to
+       its own class names so the two galleries stay independent.
+       Placement: between the About header and the intro paragraphs. */
+
+    .salamander-section {
+      margin-top: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .salamander-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .salamander-section .sal-intro {
+      font-size: 0.92rem;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .salamander-slideshow {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .salamander-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #0d0d0d;
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .salamander-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.5s ease;
+    }
+
+    .salamander-frame img.sal-loading { opacity: 0; }
+    .salamander-frame img.sal-loaded  { opacity: 1; }
+
+    .salamander-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #2a2a2a;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .sal-caption {
+      margin-top: 0.85rem;
+      min-height: 2.8rem;
+    }
+
+    .sal-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    .sal-latin {
+      font-size: 0.88rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.15rem;
+    }
+
+    .sal-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .sal-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .sal-btn:hover {
+      border-color: #555;
+      color: #fff;
+    }
+
+    .sal-counter {
+      font-size: 0.8rem;
+      color: #444;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      .salamander-section h2 { font-size: 1.15rem; }
+      .sal-name { font-size: 1.05rem; }
+    }
+  </style>
 </head>
 <body>
   <a class="back-link" href="index.html">← Back</a>
@@ -16,6 +140,37 @@
   </header>
 
   <article>
+
+    <!-- ── Salamander Slideshow ─────────────────────────────────────
+         Placed between the page header and the intro text, per spec.
+         Template supports 10 slides; images go in /img/salamanders/.
+         Add a photo and matching slug to the SALAMANDERS array in
+         about.js to activate each slide.
+         ─────────────────────────────────────────────────────────── -->
+    <section class="salamander-section"
+             aria-label="Native Salamander Species of North America gallery">
+      <h2>Native Salamanders of North America</h2>
+      <p class="sal-intro">A rotating gallery of native species. Purely for appreciation.</p>
+
+      <div class="salamander-slideshow">
+        <div class="salamander-frame">
+          <div class="salamander-placeholder" aria-hidden="true">🦎</div>
+          <img id="sal-img" src="" alt="" class="sal-loading">
+        </div>
+
+        <div class="sal-caption">
+          <div class="sal-name"   id="sal-name"></div>
+          <div class="sal-latin"  id="sal-latin"></div>
+        </div>
+
+        <div class="sal-controls">
+          <button class="sal-btn" id="sal-prev" aria-label="Previous salamander">← Prev</button>
+          <span class="sal-counter" id="sal-counter"></span>
+          <button class="sal-btn" id="sal-next" aria-label="Next salamander">Next →</button>
+        </div>
+      </div>
+    </section>
+
     <p class="about-intro">
       This site is a personal portfolio, blog, learning resource hub, &amp; just a fun project for myself — a place to document what I'm working on, share things I've found useful, &amp; build something that reflects how I actually think and learn.
     </p>
@@ -168,6 +323,27 @@
           </svg>
           PostgreSQL
         </li>
+        <li>
+          <!-- Railway — deployment platform; brand colour #7C3AED (purple) -->
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="3" fill="#7C3AED"/>
+            <!-- Two rails (vertical) + two cross-ties (horizontal) -->
+            <rect x="11"   y="5"    width="2.5" height="22" rx="1" fill="white"/>
+            <rect x="18.5" y="5"    width="2.5" height="22" rx="1" fill="white"/>
+            <rect x="8.5"  y="10"   width="15"  height="2.5" rx="1" fill="white"/>
+            <rect x="8.5"  y="19.5" width="15"  height="2.5" rx="1" fill="white"/>
+          </svg>
+          Railway
+        </li>
+        <li>
+          <!-- Resend — transactional email API; minimal dark brand -->
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="3" fill="#0f172a"/>
+            <!-- Paper-plane / send icon pointing right -->
+            <path d="M4 6 L28 16 L4 26 V20 L21 16 L4 12 Z" fill="white"/>
+          </svg>
+          Resend
+        </li>
       </ul>
     </section>
   </article>
@@ -178,5 +354,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="about.js"></script>
 </body>
 </html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Türkisch lernen (für Deutschsprachige) — Steven Legg</title>
+  <meta name="description" content="Türkisch für Deutschsprachige — Vokabeltrainer mit Spaced-Repetition, Aussprachehinweise auf Deutsch und Lernreferenz.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── SRS Flashcard ─────────────────────────────────────────────────────── */
+
+    .srs-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.8rem;
+      color: #555;
+      min-height: 1.4rem;
+    }
+
+    .srs-count b { color: #ccc; font-weight: 500; }
+
+    .srs-bar-wrap {
+      flex: 1;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .srs-bar {
+      height: 100%;
+      background: #2e2e2e;
+      border-radius: 1px;
+      transition: width 0.4s ease;
+    }
+
+    /* card */
+    .srs-card {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem 2.25rem;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.2s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .srs-card:hover           { border-color: #2a2a2a; }
+    .srs-card.revealed        { cursor: default; }
+    .srs-card.revealed:hover  { border-color: #1e1e1e; }
+
+    .srs-turkish {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .srs-pos {
+      font-size: 0.75rem;
+      color: #3a3a3a;
+      font-style: italic;
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .srs-divider {
+      width: 2rem;
+      height: 1px;
+      background: #222;
+      margin: 1.25rem auto 1rem;
+      flex-shrink: 0;
+    }
+
+    .srs-english {
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.45;
+    }
+
+    .srs-hint {
+      position: absolute;
+      bottom: 0.7rem;
+      font-size: 0.7rem;
+      color: #2c2c2c;
+      letter-spacing: 0.05em;
+    }
+
+    /* answer buttons */
+    .srs-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      min-height: 2.6rem;
+    }
+
+    .srs-btn {
+      flex: 1;
+      padding: 0.55rem 1rem;
+      border-radius: 3px;
+      background: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+    }
+
+    .srs-btn-again            { border: 1px solid #2e1a1a; color: #c07070; }
+    .srs-btn-again:hover      { background: #1a0a0a; border-color: #c07070; color: #e08888; }
+
+    .srs-btn-good             { border: 1px solid #1a2e1a; color: #7ed895; }
+    .srs-btn-good:hover       { background: #0a180a; border-color: #7ed895; color: #9ef0b0; }
+
+    .srs-key {
+      font-family: 'Courier New', monospace;
+      font-size: 0.67rem;
+      padding: 0.04rem 0.3rem;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .srs-interval {
+      font-size: 0.72rem;
+      opacity: 0.6;
+    }
+
+    /* done / empty screens */
+    .srs-done {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .srs-done-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .srs-done-sub {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+      font-style: italic;
+    }
+
+    .srs-done-stats {
+      color: #444;
+      font-size: 0.82rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+    }
+
+    .srs-action-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .srs-action-btn:hover { border-color: #555; color: #fff; }
+
+    /* keyboard hint row */
+    .srs-shortcuts {
+      font-size: 0.75rem;
+      color: #2e2e2e;
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .srs-shortcuts kbd {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      padding: 0.05rem 0.3rem;
+      border: 1px solid #2a2a2a;
+      border-radius: 2px;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      .srs-turkish  { font-size: 1.85rem; }
+      .srs-english  { font-size: 1.05rem; }
+      .srs-btn      { font-size: 0.82rem; padding: 0.5rem 0.6rem; }
+      .srs-meta     { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html">← Sprachführer</a>
+
+  <header>
+    <h1>Türkisch lernen</h1>
+    <p>Türkçe öğrenme — Vokabeltrainer &amp; Lernreferenz für Deutschsprachige.</p>
+  </header>
+
+  <article>
+
+    <!-- INHALTSVERZEICHNIS -->
+    <ol class="lang-toc">
+      <li><a href="#ueber">Über das Türkische</a></li>
+      <li><a href="#karteikarten">Vokabelkarten — SRS-Trainer</a></li>
+      <li><a href="#notizen">Sprachhinweise im Überblick</a></li>
+      <li><a href="#top500">Top 500 häufigste türkische Wörter</a></li>
+    </ol>
+
+    <!-- ══════════════════════════════════════════
+         1. ÜBER DAS TÜRKISCHE
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="ueber">
+      <h2>1. Über das Türkische</h2>
+      <p>Türkisch ist eine agglutinierende Sprache der Turksprachenfamilie, die von etwa 85 Millionen Menschen gesprochen wird — hauptsächlich in der Türkei und auf Zypern. Es ist mit dem Deutschen, den romanischen Sprachen oder dem Arabischen nicht verwandt, aber es ist in sich selbst sehr regelmäßig. Wer die Kernregeln der Grammatik einmal verinnerlicht hat, kann sie konsistent anwenden, da Ausnahmen selten sind.</p>
+
+      <h3>Gute Nachrichten für Deutschsprachige</h3>
+      <p>Als Deutschsprachige(r) bringst du einen entscheidenden Vorteil mit: Das Türkische besitzt die Vokale <strong>ö</strong> und <strong>ü</strong>, die im Deutschen völlig vertraut sind — Englischsprachige müssen diese Laute mühsam erlernen. Zudem kennst du aus deutschen Nebensätzen bereits das Prinzip, dass das Verb ans Satzende wandert — genau das ist im Türkischen die Standardregel.</p>
+
+      <h3>Wichtige Merkmale vom ersten Tag an</h3>
+      <ul>
+        <li><strong>Vokalharmonie.</strong> Türkische Vokale bilden zwei Gruppen (vorne: e, i, ö, ü / hinten: a, ı, o, u). Suffixe passen ihren Vokal an den letzten Stammvokal an. Diese Regel durchzieht einen Großteil der türkischen Grammatik und muss früh verinnerlicht werden.</li>
+        <li><strong>Agglutination.</strong> Türkisch reiht Suffixe an eine Wortwurzel. Ein einziges türkisches Wort kann ausdrücken, wofür das Deutsche einen ganzen Nebensatz benötigt (z. B. <em>gelemiyor musunuz?</em> — „Können Sie nicht kommen?").</li>
+        <li><strong>SOV-Wortstellung.</strong> Das Verb steht am Satzende — ähnlich wie in deutschen Nebensätzen. Subjekt und Objekt können für Betonung umgestellt werden, das Verb bleibt aber fast immer am Ende.</li>
+        <li><strong>Kein grammatisches Geschlecht.</strong> Türkisch kennt keine Maskulinum/Femininum-Unterscheidung — das Pronomen <em>o</em> deckt er, sie und es ab. Keine Artikel-Deklination, kein Genus.</li>
+        <li><strong>Postpositionen statt Präpositionen.</strong> Wo das Deutsche „für dich" sagt, sagt das Türkische sinngemäß „dich für" — das relationale Wort folgt dem Substantiv.</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         2. VOKABELKARTEN — SRS-TRAINER
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="karteikarten">
+      <h2>2. Vokabelkarten — SRS-Trainer</h2>
+      <p>100 türkische Kernwörter mit einem Spaced-Repetition-Algorithmus. Fällige Karten werden zuerst gezeigt; neue Karten werden pro Sitzung bis zu 20 eingeführt. Dein Fortschritt wird im Browser gespeichert und bleibt zwischen Besuchen erhalten.</p>
+
+      <p class="lang-note"><strong>Nochmal</strong> stellt die Karte ans Ende der aktuellen Sitzung und plant eine Wiederholung nach 1 Tag. <strong>Gut</strong> plant die Karte in einem wachsenden Intervall (1 Tag → 6 Tage → wächst mit jeder richtigen Antwort). Die Intervalle sind auf jedem Knopf sichtbar.</p>
+
+      <!-- SRS root — JS baut alles hier drin auf -->
+      <div id="srs-root"></div>
+
+      <div class="srs-shortcuts" aria-label="Tastaturkürzel">
+        <span><kbd>Space</kbd> aufdecken</span>
+        <span><kbd>1</kbd> Nochmal</span>
+        <span><kbd>3</kbd> Gut</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         3. SPRACHHINWEISE
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="notizen">
+      <h2>3. Sprachhinweise im Überblick</h2>
+
+      <h3>Das türkische Alphabet</h3>
+      <p>Türkisch verwendet seit 1928 ein lateinisches Alphabet mit 29 Buchstaben. Die meisten Buchstaben werden wie im Deutschen gesprochen. Einige erfordern jedoch besondere Aufmerksamkeit:</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Buchstabe</th><th>Aussprache (für Deutschsprachige)</th><th>Beispiel</th></tr></thead>
+          <tbody>
+            <tr><td>c</td><td>wie „dsch" in <em>Dschungel</em></td><td>cam (Glas)</td></tr>
+            <tr><td>ç</td><td>wie „tsch" in <em>Tschüss</em></td><td>çok (sehr)</td></tr>
+            <tr><td>ş</td><td>wie „sch" in <em>Schule</em></td><td>şimdi (jetzt)</td></tr>
+            <tr><td>ğ</td><td>stumm — verlängert den vorherigen Vokal</td><td>dağ (Berg)</td></tr>
+            <tr><td>ı</td><td>dumpfes, zentrales „ä"-Geräusch — wie das e in <em>bitte</em> ohne Lippen­bewegung; kein Pendant im Deutschen</td><td>kız (Mädchen)</td></tr>
+            <tr><td>ö</td><td>genau wie deutsches <em>ö</em> — kein Problem!</td><td>görmek (sehen)</td></tr>
+            <tr><td>ü</td><td>genau wie deutsches <em>ü</em> — kein Problem!</td><td>üç (drei)</td></tr>
+            <tr><td>j</td><td>wie „sh/sch" (französ. <em>journal</em>), nicht wie deutsches „j"</td><td>garaj (Garage)</td></tr>
+            <tr><td>v</td><td>eher wie englisches „w", weicher als deutsches „w"</td><td>var (es gibt)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Verb-Infinitive</h3>
+      <p>Türkische Verb-Infinitive enden auf <strong>-mak</strong> oder <strong>-mek</strong> (der Vokal folgt der Vokalharmonie). Im Vokabeltrainer werden Verben in der Infinitivform angezeigt. Zum Konjugieren entfernt man das <em>-mak/-mek</em> und erhält den Stamm, an den Tempus- und Personalsuffixe angehängt werden.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Infinitiv</th><th>Stamm</th><th>Präsens (ich)</th><th>Bedeutung</th></tr></thead>
+          <tbody>
+            <tr><td>gelmek</td><td>gel-</td><td>geliyorum</td><td>ich komme</td></tr>
+            <tr><td>gitmek</td><td>git-</td><td>gidiyorum</td><td>ich gehe</td></tr>
+            <tr><td>yapmak</td><td>yap-</td><td>yapıyorum</td><td>ich mache</td></tr>
+            <tr><td>bilmek</td><td>bil-</td><td>biliyorum</td><td>ich weiß</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Verneinung</h3>
+      <p><strong>değil</strong> — wird nach einem Substantiv oder Adjektiv gestellt, um es zu verneinen. „Ben Türk değilim" = „Ich bin kein Türke/keine Türkin." Bei Verben wird das Suffix <strong>-me/-ma</strong> vor das Tempussuffix eingefügt: „gelmiyorum" = „Ich komme nicht."</p>
+
+      <h3><em>var</em> und <em>yok</em> — Existenz ausdrücken</h3>
+      <p>Türkisch benutzt <strong>var</strong> („es gibt") und <strong>yok</strong> („es gibt nicht") als eigenständige Wörter für Existenz und Besitz — ein Verb „haben" existiert nicht. „Param var" (wörtlich: „mein Geld — vorhanden") = „Ich habe Geld." „Param yok" = „Ich habe kein Geld." Diese Konstruktion hat keine direkte Entsprechung im Deutschen, ist aber nach kurzer Übung sehr intuitiv.</p>
+
+      <h3>Vokalharmonie — ein kurzes Beispiel</h3>
+      <p>Das Pluralsuffix lautet entweder <strong>-lar</strong> (nach Hintervokalen: a, ı, o, u) oder <strong>-ler</strong> (nach Vordervokalen: e, i, ö, ü). Also: <em>kitap</em> (Buch) → <em>kitaplar</em> (Bücher), aber <em>ev</em> (Haus) → <em>evler</em> (Häuser). Sobald man weiß, welche Vokale welcher Gruppe angehören, funktioniert diese Regel absolut zuverlässig.</p>
+
+      <p class="lang-note">Weitere Grammatiktabellen, Ressourcenlisten und Lesetipps werden hier ergänzt, sobald diese Seite weiterentwickelt wird.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         4. TOP 500 WÖRTER
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="top500">
+      <h2>4. Top 500 häufigste türkische Wörter</h2>
+      <p>Die folgende Tabelle listet die 500 am häufigsten verwendeten türkischen Wörter in der Reihenfolge ihrer Häufigkeit. Verben sind in der Infinitivform angegeben (-mak/-mek); die Konjugationswurzel erhält man durch Weglassen dieses Suffixes. Wer diese Liste beherrscht, kann den Großteil alltäglicher türkischer Texte und Gespräche verstehen.</p>
+      <p class="lang-note">Wörter, die bereits im SRS-Vokabeltrainer enthalten sind (die 100 Kernwörter), erscheinen hier ebenfalls — die Wiederholung des häufigsten Wortschatzes ist beabsichtigt und wertvoll.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead>
+            <tr><th>#</th><th>Türkisch</th><th>Wortart</th><th>Bedeutung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">1–50 — Grundlegende Funktionswörter &amp; wichtigste Verben</td></tr>
+            <tr><td>1</td><td>bir</td><td>Adj. / Zahl</td><td>ein / eine; eins</td></tr>
+            <tr><td>2</td><td>bu</td><td>Pron.</td><td>dieser / diese / dieses</td></tr>
+            <tr><td>3</td><td>ve</td><td>Konj.</td><td>und</td></tr>
+            <tr><td>4</td><td>o</td><td>Pron.</td><td>er; sie; es; jener</td></tr>
+            <tr><td>5</td><td>da / de</td><td>Konj. / Partikel</td><td>auch; ebenfalls; sogar</td></tr>
+            <tr><td>6</td><td>için</td><td>Postp.</td><td>für; um … zu; wegen</td></tr>
+            <tr><td>7</td><td>ile</td><td>Postp.</td><td>mit; durch; und</td></tr>
+            <tr><td>8</td><td>ben</td><td>Pron.</td><td>ich; mich</td></tr>
+            <tr><td>9</td><td>sen</td><td>Pron.</td><td>du (singular, informell)</td></tr>
+            <tr><td>10</td><td>biz</td><td>Pron.</td><td>wir; uns</td></tr>
+            <tr><td>11</td><td>siz</td><td>Pron.</td><td>ihr; Sie (formell)</td></tr>
+            <tr><td>12</td><td>onlar</td><td>Pron.</td><td>sie (Plural); ihnen</td></tr>
+            <tr><td>13</td><td>var</td><td>Existenzwort</td><td>es gibt; vorhanden; haben</td></tr>
+            <tr><td>14</td><td>yok</td><td>Existenzwort</td><td>es gibt nicht; fehlt; nicht haben</td></tr>
+            <tr><td>15</td><td>ne</td><td>Pron.</td><td>was; welcher</td></tr>
+            <tr><td>16</td><td>ki</td><td>Konj. / Partikel</td><td>dass; damit; welcher; weil</td></tr>
+            <tr><td>17</td><td>mi / mı / mu / mü</td><td>Partikel</td><td>Fragepartikel (folgt der Vokalharmonie)</td></tr>
+            <tr><td>18</td><td>çok</td><td>Adv. / Adj.</td><td>sehr; viel; viele; zu viel</td></tr>
+            <tr><td>19</td><td>daha</td><td>Adv.</td><td>mehr; noch; noch nicht; weiter</td></tr>
+            <tr><td>20</td><td>ama</td><td>Konj.</td><td>aber; jedoch; dennoch</td></tr>
+            <tr><td>21</td><td>gibi</td><td>Postp.</td><td>wie; ähnlich wie; als</td></tr>
+            <tr><td>22</td><td>kadar</td><td>Postp.</td><td>bis; so weit wie; so viel wie</td></tr>
+            <tr><td>23</td><td>şey</td><td>Subst.</td><td>Ding; Sache; Gegenstand</td></tr>
+            <tr><td>24</td><td>zaman</td><td>Subst.</td><td>Zeit; Moment; Zeitraum; wann</td></tr>
+            <tr><td>25</td><td>sonra</td><td>Adv. / Postp.</td><td>danach; später; dann; anschließend</td></tr>
+            <tr><td>26</td><td>göre</td><td>Postp.</td><td>gemäß; laut; verglichen mit; für</td></tr>
+            <tr><td>27</td><td>şimdi</td><td>Adv.</td><td>jetzt; gerade; aktuell</td></tr>
+            <tr><td>28</td><td>diye</td><td>Partikel / Konj.</td><td>sagend dass; namens; damit; denkend dass</td></tr>
+            <tr><td>29</td><td>hiç</td><td>Adv. / Adj.</td><td>nie; jemals; überhaupt; keiner</td></tr>
+            <tr><td>30</td><td>nasıl</td><td>Adv.</td><td>wie; auf welche Weise; was für ein</td></tr>
+            <tr><td>31</td><td>neden</td><td>Adv.</td><td>warum; aus welchem Grund</td></tr>
+            <tr><td>32</td><td>nerede</td><td>Adv.</td><td>wo (Ort); an welchem Platz</td></tr>
+            <tr><td>33</td><td>nereye</td><td>Adv.</td><td>wohin; in welche Richtung</td></tr>
+            <tr><td>34</td><td>kim</td><td>Pron.</td><td>wer; wer auch immer</td></tr>
+            <tr><td>35</td><td>her</td><td>Det.</td><td>jeder / jede / jedes; alle</td></tr>
+            <tr><td>36</td><td>en</td><td>Adv.</td><td>am -sten (Superlativmarkierung: en büyük = der größte)</td></tr>
+            <tr><td>37</td><td>bana</td><td>Pron.</td><td>mir; für mich (Dativ von ben)</td></tr>
+            <tr><td>38</td><td>sana</td><td>Pron.</td><td>dir; für dich (Dativ von sen)</td></tr>
+            <tr><td>39</td><td>ona</td><td>Pron.</td><td>ihm / ihr / es (Dativ von o)</td></tr>
+            <tr><td>40</td><td>bunu</td><td>Pron.</td><td>dies (Akkusativ von bu)</td></tr>
+            <tr><td>41</td><td>benim</td><td>Pron.</td><td>mein / meins (Genitiv von ben)</td></tr>
+            <tr><td>42</td><td>senin</td><td>Pron.</td><td>dein / deins (Genitiv von sen)</td></tr>
+            <tr><td>43</td><td>onun</td><td>Pron.</td><td>sein / ihr / es (Genitiv von o)</td></tr>
+            <tr><td>44</td><td>artık</td><td>Adv.</td><td>jetzt; nicht mehr; schon; ab jetzt</td></tr>
+            <tr><td>45</td><td>sadece</td><td>Adv.</td><td>nur; bloß; lediglich; ausschließlich</td></tr>
+            <tr><td>46</td><td>bile</td><td>Partikel</td><td>sogar; obwohl; geschweige denn</td></tr>
+            <tr><td>47</td><td>ya</td><td>Konj. / Partikel</td><td>oder; nun ja; und wenn; hey (expressiv)</td></tr>
+            <tr><td>48</td><td>yani</td><td>Konj. / Adv.</td><td>das heißt; also; mit anderen Worten</td></tr>
+            <tr><td>49</td><td>hep</td><td>Adv.</td><td>immer; ständig; alles davon</td></tr>
+            <tr><td>50</td><td>hiçbir</td><td>Det.</td><td>kein / keine; nicht ein einziger</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">51–100 — Hochfrequente Verben</td></tr>
+            <tr><td>51</td><td>olmak</td><td>Verb</td><td>sein; werden; geschehen; sich ereignen</td></tr>
+            <tr><td>52</td><td>yapmak</td><td>Verb</td><td>tun; machen; bauen; verursachen</td></tr>
+            <tr><td>53</td><td>demek</td><td>Verb</td><td>sagen; bedeuten; nennen</td></tr>
+            <tr><td>54</td><td>gelmek</td><td>Verb</td><td>kommen; ankommen; erreichen</td></tr>
+            <tr><td>55</td><td>gitmek</td><td>Verb</td><td>gehen; weggehen; abfahren</td></tr>
+            <tr><td>56</td><td>bilmek</td><td>Verb</td><td>wissen; können; erkennen</td></tr>
+            <tr><td>57</td><td>istemek</td><td>Verb</td><td>wollen; wünschen; verlangen; bitten um</td></tr>
+            <tr><td>58</td><td>vermek</td><td>Verb</td><td>geben; anbieten; überreichen</td></tr>
+            <tr><td>59</td><td>almak</td><td>Verb</td><td>nehmen; bekommen; kaufen; erhalten</td></tr>
+            <tr><td>60</td><td>görmek</td><td>Verb</td><td>sehen; anschauen; beobachten; erleben</td></tr>
+            <tr><td>61</td><td>bulmak</td><td>Verb</td><td>finden; entdecken; denken; stoßen auf</td></tr>
+            <tr><td>62</td><td>düşünmek</td><td>Verb</td><td>denken; nachdenken; überlegen; grübeln</td></tr>
+            <tr><td>63</td><td>söylemek</td><td>Verb</td><td>sagen; erzählen; sprechen; äußern</td></tr>
+            <tr><td>64</td><td>konuşmak</td><td>Verb</td><td>reden; sprechen; sich unterhalten; diskutieren</td></tr>
+            <tr><td>65</td><td>bakmak</td><td>Verb</td><td>schauen; aufpassen auf; untersuchen; blicken</td></tr>
+            <tr><td>66</td><td>çıkmak</td><td>Verb</td><td>hinausgehen; hervorkommen; entstehen; verlassen</td></tr>
+            <tr><td>67</td><td>açmak</td><td>Verb</td><td>öffnen; einschalten; starten; enthüllen</td></tr>
+            <tr><td>68</td><td>kapatmak</td><td>Verb</td><td>schließen; zumachen; abdecken; ausschalten</td></tr>
+            <tr><td>69</td><td>başlamak</td><td>Verb</td><td>beginnen; anfangen; einleiten</td></tr>
+            <tr><td>70</td><td>bitmek</td><td>Verb</td><td>enden; aufhören; erschöpft sein; ablaufen</td></tr>
+            <tr><td>71</td><td>geçmek</td><td>Verb</td><td>vergehen; vorbeigehen; verstreichen; überqueren</td></tr>
+            <tr><td>72</td><td>kalmak</td><td>Verb</td><td>bleiben; verbleiben; übrig sein; aufhören</td></tr>
+            <tr><td>73</td><td>beklemek</td><td>Verb</td><td>warten; erwarten; sich freuen auf</td></tr>
+            <tr><td>74</td><td>anlamak</td><td>Verb</td><td>verstehen; begreifen; erkennen</td></tr>
+            <tr><td>75</td><td>sevmek</td><td>Verb</td><td>lieben; mögen; gern haben; genießen</td></tr>
+            <tr><td>76</td><td>çalışmak</td><td>Verb</td><td>arbeiten; lernen; sich bemühen; funktionieren</td></tr>
+            <tr><td>77</td><td>yaşamak</td><td>Verb</td><td>leben; wohnen; erleben; überleben</td></tr>
+            <tr><td>78</td><td>getirmek</td><td>Verb</td><td>bringen; holen; hertragen</td></tr>
+            <tr><td>79</td><td>götürmek</td><td>Verb</td><td>wegbringen; hintragen; begleiten</td></tr>
+            <tr><td>80</td><td>kullanmak</td><td>Verb</td><td>benutzen; verwenden; bedienen; fahren</td></tr>
+            <tr><td>81</td><td>okumak</td><td>Verb</td><td>lesen; studieren (an der Uni); rezitieren</td></tr>
+            <tr><td>82</td><td>yazmak</td><td>Verb</td><td>schreiben; buchstabieren; notieren</td></tr>
+            <tr><td>83</td><td>oturmak</td><td>Verb</td><td>sitzen; wohnen; sich niederlassen</td></tr>
+            <tr><td>84</td><td>kalkmak</td><td>Verb</td><td>aufstehen; aufgehen; abfahren; abheben</td></tr>
+            <tr><td>85</td><td>koşmak</td><td>Verb</td><td>rennen; laufen; sprinten</td></tr>
+            <tr><td>86</td><td>yürümek</td><td>Verb</td><td>gehen; laufen; vorankommen; funktionieren</td></tr>
+            <tr><td>87</td><td>tutmak</td><td>Verb</td><td>halten; festhalten; fangen; einstellen; kosten</td></tr>
+            <tr><td>88</td><td>çekmek</td><td>Verb</td><td>ziehen; fotografieren; leiden</td></tr>
+            <tr><td>89</td><td>taşımak</td><td>Verb</td><td>tragen; transportieren; befördern; umziehen</td></tr>
+            <tr><td>90</td><td>öğrenmek</td><td>Verb</td><td>lernen; erfahren; herausfinden</td></tr>
+            <tr><td>91</td><td>öğretmek</td><td>Verb</td><td>lehren; unterrichten; beibringen</td></tr>
+            <tr><td>92</td><td>anlatmak</td><td>Verb</td><td>erklären; erzählen; beschreiben</td></tr>
+            <tr><td>93</td><td>dinlemek</td><td>Verb</td><td>zuhören; hören; gehorchen</td></tr>
+            <tr><td>94</td><td>izlemek</td><td>Verb</td><td>zusehen; verfolgen; beobachten</td></tr>
+            <tr><td>95</td><td>hissetmek</td><td>Verb</td><td>fühlen; spüren; wahrnehmen</td></tr>
+            <tr><td>96</td><td>düşmek</td><td>Verb</td><td>fallen; sinken; abnehmen</td></tr>
+            <tr><td>97</td><td>yükselmek</td><td>Verb</td><td>aufsteigen; steigen; zunehmen; befördert werden</td></tr>
+            <tr><td>98</td><td>değiştirmek</td><td>Verb</td><td>ändern; austauschen; wechseln; ersetzen</td></tr>
+            <tr><td>99</td><td>yardım etmek</td><td>Verbphrase</td><td>helfen; unterstützen; behilflich sein</td></tr>
+            <tr><td>100</td><td>itmek</td><td>Verb</td><td>schieben; stoßen; anschieben</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">101–150 — Menschen, Orte &amp; Zeit</td></tr>
+            <tr><td>101</td><td>adam</td><td>Subst.</td><td>Mann; Person; jemand</td></tr>
+            <tr><td>102</td><td>kadın</td><td>Subst.</td><td>Frau; weiblich; Ehefrau</td></tr>
+            <tr><td>103</td><td>çocuk</td><td>Subst.</td><td>Kind; Junge; junger Mensch</td></tr>
+            <tr><td>104</td><td>arkadaş</td><td>Subst.</td><td>Freund / Freundin; Begleiter; Kumpel</td></tr>
+            <tr><td>105</td><td>aile</td><td>Subst.</td><td>Familie</td></tr>
+            <tr><td>106</td><td>anne</td><td>Subst.</td><td>Mutter; Mama</td></tr>
+            <tr><td>107</td><td>baba</td><td>Subst.</td><td>Vater; Papa</td></tr>
+            <tr><td>108</td><td>kardeş</td><td>Subst.</td><td>Geschwister (Bruder oder Schwester)</td></tr>
+            <tr><td>109</td><td>eş</td><td>Subst.</td><td>Ehepartner; Partner; Entsprechung</td></tr>
+            <tr><td>110</td><td>insan</td><td>Subst.</td><td>Person; Mensch; Menschen</td></tr>
+            <tr><td>111</td><td>ev</td><td>Subst.</td><td>Haus; Zuhause; Haushalt</td></tr>
+            <tr><td>112</td><td>yer</td><td>Subst.</td><td>Ort; Boden; Platz; Stelle; Position</td></tr>
+            <tr><td>113</td><td>şehir</td><td>Subst.</td><td>Stadt; Großstadt; urbane Zone</td></tr>
+            <tr><td>114</td><td>ülke</td><td>Subst.</td><td>Land; Nation; Staat</td></tr>
+            <tr><td>115</td><td>dünya</td><td>Subst.</td><td>Welt; Erde; Globus; Universum</td></tr>
+            <tr><td>116</td><td>yol</td><td>Subst.</td><td>Straße; Weg; Pfad; Reise; Methode</td></tr>
+            <tr><td>117</td><td>sokak</td><td>Subst.</td><td>Gasse; Straße; Allee</td></tr>
+            <tr><td>118</td><td>kapı</td><td>Subst.</td><td>Tür; Tor; Eingang; Möglichkeit</td></tr>
+            <tr><td>119</td><td>pencere</td><td>Subst.</td><td>Fenster</td></tr>
+            <tr><td>120</td><td>oda</td><td>Subst.</td><td>Zimmer; Raum</td></tr>
+            <tr><td>121</td><td>gün</td><td>Subst.</td><td>Tag; Tageszeit; Datum</td></tr>
+            <tr><td>122</td><td>hafta</td><td>Subst.</td><td>Woche</td></tr>
+            <tr><td>123</td><td>ay</td><td>Subst.</td><td>Monat; Mond</td></tr>
+            <tr><td>124</td><td>yıl</td><td>Subst.</td><td>Jahr</td></tr>
+            <tr><td>125</td><td>saat</td><td>Subst.</td><td>Stunde; Uhr; Uhrzeit</td></tr>
+            <tr><td>126</td><td>dakika</td><td>Subst.</td><td>Minute</td></tr>
+            <tr><td>127</td><td>sabah</td><td>Subst.</td><td>Morgen</td></tr>
+            <tr><td>128</td><td>öğle</td><td>Subst.</td><td>Mittagszeit; Mittag</td></tr>
+            <tr><td>129</td><td>akşam</td><td>Subst.</td><td>Abend</td></tr>
+            <tr><td>130</td><td>gece</td><td>Subst.</td><td>Nacht; Nachtzeit</td></tr>
+            <tr><td>131</td><td>bugün</td><td>Subst. / Adv.</td><td>heute</td></tr>
+            <tr><td>132</td><td>yarın</td><td>Subst. / Adv.</td><td>morgen</td></tr>
+            <tr><td>133</td><td>dün</td><td>Subst. / Adv.</td><td>gestern</td></tr>
+            <tr><td>134</td><td>geçen</td><td>Adj.</td><td>letzt-; vergangen; vorherig</td></tr>
+            <tr><td>135</td><td>önce</td><td>Adv. / Postp.</td><td>vorher; zuerst; früher; vor (Zeit)</td></tr>
+            <tr><td>136</td><td>hemen</td><td>Adv.</td><td>sofort; gleich; direkt; fast</td></tr>
+            <tr><td>137</td><td>bazen</td><td>Adv.</td><td>manchmal; gelegentlich</td></tr>
+            <tr><td>138</td><td>genellikle</td><td>Adv.</td><td>allgemein; meistens; im Allgemeinen</td></tr>
+            <tr><td>139</td><td>her zaman</td><td>Adv.</td><td>immer; jederzeit; jedes Mal</td></tr>
+            <tr><td>140</td><td>hiçbir zaman</td><td>Adv.</td><td>nie; niemals; zu keiner Zeit</td></tr>
+            <tr><td>141</td><td>belki</td><td>Adv.</td><td>vielleicht; möglicherweise; eventuell</td></tr>
+            <tr><td>142</td><td>tabii</td><td>Adv. / Adj.</td><td>natürlich; selbstverständlich; gewiss</td></tr>
+            <tr><td>143</td><td>gerçekten</td><td>Adv.</td><td>wirklich; tatsächlich; wahr; in der Tat</td></tr>
+            <tr><td>144</td><td>zaten</td><td>Adv.</td><td>sowieso; ohnehin; schon</td></tr>
+            <tr><td>145</td><td>neyse</td><td>Adv. / Konj.</td><td>naja; egal; nun gut; wie auch immer</td></tr>
+            <tr><td>146</td><td>hâlâ</td><td>Adv.</td><td>noch; immer noch; bis jetzt</td></tr>
+            <tr><td>147</td><td>önümüzdeki</td><td>Adj.</td><td>nächst-; kommend-; der vor uns liegende</td></tr>
+            <tr><td>148</td><td>geçmiş</td><td>Subst. / Adj.</td><td>Vergangenheit; Geschichte; früher; vergangen</td></tr>
+            <tr><td>149</td><td>gelecek</td><td>Subst. / Adj.</td><td>Zukunft; kommend; nächst-</td></tr>
+            <tr><td>150</td><td>şimdiki</td><td>Adj.</td><td>aktuell; gegenwärtig; bestehend</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">151–200 — Adjektive &amp; Beschreibungswörter</td></tr>
+            <tr><td>151</td><td>büyük</td><td>Adj.</td><td>groß; bedeutend; älter (Geschwister)</td></tr>
+            <tr><td>152</td><td>küçük</td><td>Adj.</td><td>klein; gering; jung; unbedeutend</td></tr>
+            <tr><td>153</td><td>yeni</td><td>Adj.</td><td>neu; modern; frisch; aktuell</td></tr>
+            <tr><td>154</td><td>eski</td><td>Adj.</td><td>alt; früher; ehemalig; gebraucht</td></tr>
+            <tr><td>155</td><td>iyi</td><td>Adj.</td><td>gut; wohl; fein; okay</td></tr>
+            <tr><td>156</td><td>kötü</td><td>Adj.</td><td>schlecht; böse; arm; falsch</td></tr>
+            <tr><td>157</td><td>güzel</td><td>Adj.</td><td>schön; hübsch; nett; fein</td></tr>
+            <tr><td>158</td><td>çirkin</td><td>Adj.</td><td>hässlich; unangenehm; unhöflich</td></tr>
+            <tr><td>159</td><td>doğru</td><td>Adj. / Adv.</td><td>richtig; korrekt; wahr; Richtung; geradeaus</td></tr>
+            <tr><td>160</td><td>yanlış</td><td>Adj. / Subst.</td><td>falsch; inkorrekt; Fehler; Irrtum</td></tr>
+            <tr><td>161</td><td>kolay</td><td>Adj.</td><td>leicht; einfach; mühelos</td></tr>
+            <tr><td>162</td><td>zor</td><td>Adj.</td><td>schwer; schwierig; hart; kaum</td></tr>
+            <tr><td>163</td><td>hızlı</td><td>Adj.</td><td>schnell; rasch; flott; zügig</td></tr>
+            <tr><td>164</td><td>yavaş</td><td>Adj.</td><td>langsam; sanft; leise; behutsam</td></tr>
+            <tr><td>165</td><td>kısa</td><td>Adj.</td><td>kurz (Länge oder Dauer); knapp</td></tr>
+            <tr><td>166</td><td>uzun</td><td>Adj.</td><td>lang; groß; weit; ausgedehnt</td></tr>
+            <tr><td>167</td><td>yakın</td><td>Adj. / Adv.</td><td>nah; nahe; bald; vertraut</td></tr>
+            <tr><td>168</td><td>uzak</td><td>Adj. / Adv.</td><td>weit; entfernt; fern; abgelegen</td></tr>
+            <tr><td>169</td><td>açık</td><td>Adj.</td><td>offen; klar; hell (Farbe); offensichtlich</td></tr>
+            <tr><td>170</td><td>kapalı</td><td>Adj.</td><td>geschlossen; zu; bedeckt; bewölkt</td></tr>
+            <tr><td>171</td><td>sıcak</td><td>Adj.</td><td>heiß; warm; herzlich</td></tr>
+            <tr><td>172</td><td>soğuk</td><td>Adj.</td><td>kalt; kühl; unfreundlich</td></tr>
+            <tr><td>173</td><td>temiz</td><td>Adj.</td><td>sauber; ordentlich; rein; netto</td></tr>
+            <tr><td>174</td><td>kirli</td><td>Adj.</td><td>schmutzig; verdreckt; verschmutzt</td></tr>
+            <tr><td>175</td><td>meşgul</td><td>Adj.</td><td>beschäftigt; besetzt; vergeben</td></tr>
+            <tr><td>176</td><td>hazır</td><td>Adj.</td><td>bereit; vorbereitet; verfügbar; fertig</td></tr>
+            <tr><td>177</td><td>farklı</td><td>Adj.</td><td>verschieden; unterschiedlich; anders</td></tr>
+            <tr><td>178</td><td>aynı</td><td>Adj.</td><td>gleich; identisch; derselbe</td></tr>
+            <tr><td>179</td><td>önemli</td><td>Adj.</td><td>wichtig; bedeutend; wesentlich</td></tr>
+            <tr><td>180</td><td>ilginç</td><td>Adj.</td><td>interessant; neugierig; faszinierend</td></tr>
+            <tr><td>181</td><td>güçlü</td><td>Adj.</td><td>stark; mächtig; fähig; robust</td></tr>
+            <tr><td>182</td><td>zayıf</td><td>Adj.</td><td>schwach; dünn; blass; dürftig</td></tr>
+            <tr><td>183</td><td>zengin</td><td>Adj.</td><td>reich; wohlhabend; üppig; vielfältig</td></tr>
+            <tr><td>184</td><td>fakir</td><td>Adj.</td><td>arm; mittellos; bedürftig</td></tr>
+            <tr><td>185</td><td>mutlu</td><td>Adj.</td><td>glücklich; froh; zufrieden; erfreut</td></tr>
+            <tr><td>186</td><td>üzgün</td><td>Adj.</td><td>traurig; betrübt; leid; besorgt</td></tr>
+            <tr><td>187</td><td>yorgun</td><td>Adj.</td><td>müde; erschöpft; abgekämpft</td></tr>
+            <tr><td>188</td><td>hasta</td><td>Adj. / Subst.</td><td>krank; Patient (medizinisch)</td></tr>
+            <tr><td>189</td><td>korkmuş</td><td>Adj.</td><td>erschrocken; verängstigt; verängstigt</td></tr>
+            <tr><td>190</td><td>şaşırmış</td><td>Adj.</td><td>überrascht; verwirrt; verblüfft</td></tr>
+            <tr><td>191</td><td>sinirli</td><td>Adj.</td><td>wütend; gereizt; nervös; angespannt</td></tr>
+            <tr><td>192</td><td>sakin</td><td>Adj.</td><td>ruhig; gelassen; friedlich; still</td></tr>
+            <tr><td>193</td><td>sessiz</td><td>Adj.</td><td>still; lautlos; geräuschlos; zurückhaltend</td></tr>
+            <tr><td>194</td><td>gürültülü</td><td>Adj.</td><td>laut; lärmend; aufgewühlt</td></tr>
+            <tr><td>195</td><td>ağır</td><td>Adj.</td><td>schwer; langsam; ernst; schwerwiegend</td></tr>
+            <tr><td>196</td><td>hafif</td><td>Adj.</td><td>leicht (Gewicht); mild; sanft; leicht</td></tr>
+            <tr><td>197</td><td>tatlı</td><td>Adj.</td><td>süß; niedlich; angenehm; Dessert</td></tr>
+            <tr><td>198</td><td>acı</td><td>Adj. / Subst.</td><td>bitter; scharf; schmerzhaft; Schmerz; Leid</td></tr>
+            <tr><td>199</td><td>taze</td><td>Adj.</td><td>frisch; neu; jung; frisch gemacht</td></tr>
+            <tr><td>200</td><td>kuru</td><td>Adj.</td><td>trocken; getrocknet; welk; eintönig</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">201–250 — Alltagssubstantive</td></tr>
+            <tr><td>201</td><td>iş</td><td>Subst.</td><td>Arbeit; Job; Geschäft; Angelegenheit</td></tr>
+            <tr><td>202</td><td>para</td><td>Subst.</td><td>Geld; Währung; Münze</td></tr>
+            <tr><td>203</td><td>hayat</td><td>Subst.</td><td>Leben; Lebenszeit; Dasein</td></tr>
+            <tr><td>204</td><td>düşünce</td><td>Subst.</td><td>Gedanke; Idee; Meinung; Überlegung</td></tr>
+            <tr><td>205</td><td>söz</td><td>Subst.</td><td>Wort; Rede; Versprechen; Liedtext</td></tr>
+            <tr><td>206</td><td>ses</td><td>Subst.</td><td>Geräusch; Stimme; Lärm; Audio</td></tr>
+            <tr><td>207</td><td>isim</td><td>Subst.</td><td>Name; Substantiv (Grammatik)</td></tr>
+            <tr><td>208</td><td>haber</td><td>Subst.</td><td>Nachricht; Neuigkeit; Information; Bericht</td></tr>
+            <tr><td>209</td><td>kitap</td><td>Subst.</td><td>Buch</td></tr>
+            <tr><td>210</td><td>masa</td><td>Subst.</td><td>Tisch; Schreibtisch</td></tr>
+            <tr><td>211</td><td>sandalye</td><td>Subst.</td><td>Stuhl; Sitz</td></tr>
+            <tr><td>212</td><td>araba</td><td>Subst.</td><td>Auto; Fahrzeug; Wagen</td></tr>
+            <tr><td>213</td><td>yemek</td><td>Subst. / Verb</td><td>Essen; Mahlzeit; Gericht; essen</td></tr>
+            <tr><td>214</td><td>su</td><td>Subst.</td><td>Wasser; Flüssigkeit; Saft</td></tr>
+            <tr><td>215</td><td>ekmek</td><td>Subst.</td><td>Brot; Lebensunterhalt</td></tr>
+            <tr><td>216</td><td>çay</td><td>Subst.</td><td>Tee (zentral in der türkischen Kultur)</td></tr>
+            <tr><td>217</td><td>kahve</td><td>Subst.</td><td>Kaffee</td></tr>
+            <tr><td>218</td><td>et</td><td>Subst.</td><td>Fleisch</td></tr>
+            <tr><td>219</td><td>sebze</td><td>Subst.</td><td>Gemüse</td></tr>
+            <tr><td>220</td><td>meyve</td><td>Subst.</td><td>Obst; Frucht</td></tr>
+            <tr><td>221</td><td>telefon</td><td>Subst.</td><td>Telefon; Handy</td></tr>
+            <tr><td>222</td><td>bilgisayar</td><td>Subst.</td><td>Computer; Rechner</td></tr>
+            <tr><td>223</td><td>fiyat</td><td>Subst.</td><td>Preis; Kosten; Tarif</td></tr>
+            <tr><td>224</td><td>mağaza</td><td>Subst.</td><td>Laden; Geschäft; Kaufhaus</td></tr>
+            <tr><td>225</td><td>market</td><td>Subst.</td><td>Supermarkt; Lebensmittelgeschäft</td></tr>
+            <tr><td>226</td><td>hastane</td><td>Subst.</td><td>Krankenhaus; Klinik</td></tr>
+            <tr><td>227</td><td>okul</td><td>Subst.</td><td>Schule</td></tr>
+            <tr><td>228</td><td>üniversite</td><td>Subst.</td><td>Universität; Hochschule</td></tr>
+            <tr><td>229</td><td>öğrenci</td><td>Subst.</td><td>Schüler / Schülerin; Student / Studentin</td></tr>
+            <tr><td>230</td><td>öğretmen</td><td>Subst.</td><td>Lehrer / Lehrerin; Instruktor</td></tr>
+            <tr><td>231</td><td>doktor</td><td>Subst.</td><td>Arzt / Ärztin; Doktor</td></tr>
+            <tr><td>232</td><td>polis</td><td>Subst.</td><td>Polizei; Polizeibeamter</td></tr>
+            <tr><td>233</td><td>hükümet</td><td>Subst.</td><td>Regierung; Verwaltung</td></tr>
+            <tr><td>234</td><td>seçim</td><td>Subst.</td><td>Wahl; Auswahl; Selektion</td></tr>
+            <tr><td>235</td><td>kanun</td><td>Subst.</td><td>Gesetz; Vorschrift; Regelung</td></tr>
+            <tr><td>236</td><td>mahkeme</td><td>Subst.</td><td>Gericht (juristisch); Tribunal</td></tr>
+            <tr><td>237</td><td>savaş</td><td>Subst.</td><td>Krieg; Schlacht; Konflikt; Kampf</td></tr>
+            <tr><td>238</td><td>barış</td><td>Subst.</td><td>Frieden; Waffenstillstand; Versöhnung</td></tr>
+            <tr><td>239</td><td>sorun</td><td>Subst.</td><td>Problem; Schwierigkeit; Ärger</td></tr>
+            <tr><td>240</td><td>çözüm</td><td>Subst.</td><td>Lösung; Auflösung; Antwort</td></tr>
+            <tr><td>241</td><td>örnek</td><td>Subst. / Adj.</td><td>Beispiel; Muster; Vorbild; vorbildlich</td></tr>
+            <tr><td>242</td><td>sonuç</td><td>Subst.</td><td>Ergebnis; Ausgang; Schlussfolgerung</td></tr>
+            <tr><td>243</td><td>amaç</td><td>Subst.</td><td>Ziel; Zweck; Absicht</td></tr>
+            <tr><td>244</td><td>proje</td><td>Subst.</td><td>Projekt; Plan; Schema</td></tr>
+            <tr><td>245</td><td>rapor</td><td>Subst.</td><td>Bericht; Protokoll; Aufzeichnung</td></tr>
+            <tr><td>246</td><td>plan</td><td>Subst.</td><td>Plan; Schema; Karte; Entwurf</td></tr>
+            <tr><td>247</td><td>karar</td><td>Subst.</td><td>Entscheidung; Beschluss; Urteil</td></tr>
+            <tr><td>248</td><td>durum</td><td>Subst.</td><td>Situation; Zustand; Lage; Position</td></tr>
+            <tr><td>249</td><td>konu</td><td>Subst.</td><td>Thema; Betreff; Angelegenheit</td></tr>
+            <tr><td>250</td><td>mesele</td><td>Subst.</td><td>Sache; Problem; Frage; Angelegenheit</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">251–300 — Weitere häufige Verben</td></tr>
+            <tr><td>251</td><td>hatırlamak</td><td>Verb</td><td>sich erinnern; sich besinnen</td></tr>
+            <tr><td>252</td><td>unutmak</td><td>Verb</td><td>vergessen; liegen lassen</td></tr>
+            <tr><td>253</td><td>kabul etmek</td><td>Verbphrase</td><td>akzeptieren; zustimmen; zugeben; empfangen</td></tr>
+            <tr><td>254</td><td>reddetmek</td><td>Verb</td><td>ablehnen; verweigern; zurückweisen</td></tr>
+            <tr><td>255</td><td>karar vermek</td><td>Verbphrase</td><td>entscheiden; eine Entscheidung treffen</td></tr>
+            <tr><td>256</td><td>seçmek</td><td>Verb</td><td>wählen; auswählen; aussuchen; wählen (Wahl)</td></tr>
+            <tr><td>257</td><td>tercih etmek</td><td>Verbphrase</td><td>bevorzugen; vorziehen; optieren für</td></tr>
+            <tr><td>258</td><td>başarmak</td><td>Verb</td><td>schaffen; erreichen; vollbringen</td></tr>
+            <tr><td>259</td><td>dinlenmek</td><td>Verb</td><td>sich ausruhen; entspannen; Pause machen</td></tr>
+            <tr><td>260</td><td>uyumak</td><td>Verb</td><td>schlafen; einschlafen; dösen</td></tr>
+            <tr><td>261</td><td>uyanmak</td><td>Verb</td><td>aufwachen; bewusst werden; erkennen</td></tr>
+            <tr><td>262</td><td>içmek</td><td>Verb</td><td>trinken; rauchen; einnehmen (Medizin)</td></tr>
+            <tr><td>263</td><td>pişirmek</td><td>Verb</td><td>kochen; backen; Essen zubereiten</td></tr>
+            <tr><td>264</td><td>satın almak</td><td>Verbphrase</td><td>kaufen; erwerben</td></tr>
+            <tr><td>265</td><td>satmak</td><td>Verb</td><td>verkaufen; handeln</td></tr>
+            <tr><td>266</td><td>ödemek</td><td>Verb</td><td>zahlen; bezahlen; begleichen</td></tr>
+            <tr><td>267</td><td>kazanmak</td><td>Verb</td><td>verdienen; gewinnen; erzielen</td></tr>
+            <tr><td>268</td><td>kaybetmek</td><td>Verb</td><td>verlieren; verpassen; verschwenden</td></tr>
+            <tr><td>269</td><td>aramak</td><td>Verb</td><td>suchen; nach etwas suchen; anrufen</td></tr>
+            <tr><td>270</td><td>sormak</td><td>Verb</td><td>fragen; nachfragen; befragen</td></tr>
+            <tr><td>271</td><td>cevaplamak</td><td>Verb</td><td>antworten; beantworten; erwidern</td></tr>
+            <tr><td>272</td><td>uyarmak</td><td>Verb</td><td>warnen; mahnen; alarmieren</td></tr>
+            <tr><td>273</td><td>övmek</td><td>Verb</td><td>loben; würdigen; ein Kompliment machen</td></tr>
+            <tr><td>274</td><td>eleştirmek</td><td>Verb</td><td>kritisieren; rezensieren; analysieren</td></tr>
+            <tr><td>275</td><td>özür dilemek</td><td>Verbphrase</td><td>sich entschuldigen; um Entschuldigung bitten</td></tr>
+            <tr><td>276</td><td>teşekkür etmek</td><td>Verbphrase</td><td>danken; Dankbarkeit ausdrücken</td></tr>
+            <tr><td>277</td><td>kutlamak</td><td>Verb</td><td>feiern; begehen; zelebrieren</td></tr>
+            <tr><td>278</td><td>davet etmek</td><td>Verbphrase</td><td>einladen; einbestellen</td></tr>
+            <tr><td>279</td><td>ziyaret etmek</td><td>Verbphrase</td><td>besuchen; einen Besuch abstatten</td></tr>
+            <tr><td>280</td><td>tanışmak</td><td>Verb</td><td>sich kennenlernen; bekannt werden</td></tr>
+            <tr><td>281</td><td>ayrılmak</td><td>Verb</td><td>trennen; weggehen; abreisen; sich trennen</td></tr>
+            <tr><td>282</td><td>katılmak</td><td>Verb</td><td>beitreten; teilnehmen; zustimmen</td></tr>
+            <tr><td>283</td><td>dönmek</td><td>Verb</td><td>zurückkehren; drehen; rotieren</td></tr>
+            <tr><td>284</td><td>çevirmek</td><td>Verb</td><td>übersetzen; drehen; umgeben; wählen</td></tr>
+            <tr><td>285</td><td>düzeltmek</td><td>Verb</td><td>korrigieren; reparieren; berichtigen</td></tr>
+            <tr><td>286</td><td>geliştirmek</td><td>Verb</td><td>entwickeln; verbessern; fördern; vorantreiben</td></tr>
+            <tr><td>287</td><td>büyümek</td><td>Verb</td><td>wachsen; größer werden; expandieren; reifen</td></tr>
+            <tr><td>288</td><td>küçülmek</td><td>Verb</td><td>schrumpfen; kleiner werden; abnehmen</td></tr>
+            <tr><td>289</td><td>artmak</td><td>Verb</td><td>zunehmen; wachsen; ansteigen; übrig sein</td></tr>
+            <tr><td>290</td><td>azalmak</td><td>Verb</td><td>abnehmen; verringern; sinken; nachlassen</td></tr>
+            <tr><td>291</td><td>görünmek</td><td>Verb</td><td>erscheinen; aussehen; wirken; sichtbar sein</td></tr>
+            <tr><td>292</td><td>kaybolmak</td><td>Verb</td><td>sich verirren; verschwinden</td></tr>
+            <tr><td>293</td><td>ortaya çıkmak</td><td>Verbphrase</td><td>auftauchen; erscheinen; ans Licht kommen</td></tr>
+            <tr><td>294</td><td>bağlamak</td><td>Verb</td><td>verbinden; binden; verknüpfen; befestigen</td></tr>
+            <tr><td>295</td><td>inanmak</td><td>Verb</td><td>glauben; vertrauen; Glauben haben</td></tr>
+            <tr><td>296</td><td>merak etmek</td><td>Verbphrase</td><td>sich fragen; neugierig sein; nachforschen</td></tr>
+            <tr><td>297</td><td>ilgilenmek</td><td>Verb</td><td>sich interessieren für; sich befassen mit</td></tr>
+            <tr><td>298</td><td>tartışmak</td><td>Verb</td><td>diskutieren; streiten; debattieren</td></tr>
+            <tr><td>299</td><td>anlaşmak</td><td>Verb</td><td>sich einigen; einverstanden sein; auskommen</td></tr>
+            <tr><td>300</td><td>çözmek</td><td>Verb</td><td>lösen; aufmachen; aufschnüren; knacken</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">301–350 — Natur, Körper &amp; Gesundheit</td></tr>
+            <tr><td>301</td><td>baş</td><td>Subst.</td><td>Kopf; Chef; Spitze; Anfang</td></tr>
+            <tr><td>302</td><td>göz</td><td>Subst.</td><td>Auge; Zelle; Loch; Masche</td></tr>
+            <tr><td>303</td><td>kulak</td><td>Subst.</td><td>Ohr; Gehör; Griff</td></tr>
+            <tr><td>304</td><td>ağız</td><td>Subst.</td><td>Mund; Öffnung; Eingang; Rand</td></tr>
+            <tr><td>305</td><td>el</td><td>Subst.</td><td>Hand; Geschick; Fremder; Reichweite</td></tr>
+            <tr><td>306</td><td>ayak</td><td>Subst.</td><td>Fuß; Bein; Basis; Standfuß</td></tr>
+            <tr><td>307</td><td>yüz</td><td>Subst. / Zahl</td><td>Gesicht; Oberfläche; hundert</td></tr>
+            <tr><td>308</td><td>kalp</td><td>Subst.</td><td>Herz; Herzmuskel; gefälscht</td></tr>
+            <tr><td>309</td><td>kan</td><td>Subst.</td><td>Blut; Abstammung; Verwandtschaft</td></tr>
+            <tr><td>310</td><td>kemik</td><td>Subst.</td><td>Knochen; Skelett</td></tr>
+            <tr><td>311</td><td>deri</td><td>Subst.</td><td>Haut; Leder; Fell</td></tr>
+            <tr><td>312</td><td>saç</td><td>Subst.</td><td>Haar (auf dem Kopf)</td></tr>
+            <tr><td>313</td><td>diş</td><td>Subst.</td><td>Zahn; Zähne; Dorn; Zahnrad</td></tr>
+            <tr><td>314</td><td>burun</td><td>Subst.</td><td>Nase; Spitze; Kap</td></tr>
+            <tr><td>315</td><td>boyun</td><td>Subst.</td><td>Hals; Schuld; Verpflichtung</td></tr>
+            <tr><td>316</td><td>omuz</td><td>Subst.</td><td>Schulter</td></tr>
+            <tr><td>317</td><td>karın</td><td>Subst.</td><td>Bauch; Unterleib; Magen; Gebärmutter</td></tr>
+            <tr><td>318</td><td>sırt</td><td>Subst.</td><td>Rücken (Körper); Grat</td></tr>
+            <tr><td>319</td><td>ağrı</td><td>Subst.</td><td>Schmerz; Ache; Wehwehchen</td></tr>
+            <tr><td>320</td><td>ilaç</td><td>Subst.</td><td>Medikament; Arznei; Mittel</td></tr>
+            <tr><td>321</td><td>ameliyat</td><td>Subst.</td><td>Operation; chirurgischer Eingriff</td></tr>
+            <tr><td>322</td><td>hastalık</td><td>Subst.</td><td>Krankheit; Erkrankung; Leiden</td></tr>
+            <tr><td>323</td><td>sağlık</td><td>Subst.</td><td>Gesundheit; Wohlbefinden; Prosit (Toast)</td></tr>
+            <tr><td>324</td><td>hava</td><td>Subst.</td><td>Luft; Wetter; Atmosphäre; Brise</td></tr>
+            <tr><td>325</td><td>güneş</td><td>Subst.</td><td>Sonne; Sonnenschein; Sonnenlicht</td></tr>
+            <tr><td>326</td><td>yıldız</td><td>Subst.</td><td>Stern; Sternchen; Prominenter</td></tr>
+            <tr><td>327</td><td>bulut</td><td>Subst.</td><td>Wolke</td></tr>
+            <tr><td>328</td><td>yağmur</td><td>Subst.</td><td>Regen; Niederschlag</td></tr>
+            <tr><td>329</td><td>kar</td><td>Subst.</td><td>Schnee; Gewinn; Profit</td></tr>
+            <tr><td>330</td><td>rüzgâr</td><td>Subst.</td><td>Wind; Brise; Sturm</td></tr>
+            <tr><td>331</td><td>ateş</td><td>Subst.</td><td>Feuer; Flamme; Fieber; Schüsse</td></tr>
+            <tr><td>332</td><td>toprak</td><td>Subst.</td><td>Erde; Boden; Land; Territorium</td></tr>
+            <tr><td>333</td><td>taş</td><td>Subst.</td><td>Stein; Fels; Kiesel; Edelstein</td></tr>
+            <tr><td>334</td><td>ağaç</td><td>Subst.</td><td>Baum; Holz; Nutzholz</td></tr>
+            <tr><td>335</td><td>çiçek</td><td>Subst.</td><td>Blume; Blüte; Pocken</td></tr>
+            <tr><td>336</td><td>hayvan</td><td>Subst.</td><td>Tier; Bestie; Vieh</td></tr>
+            <tr><td>337</td><td>kuş</td><td>Subst.</td><td>Vogel</td></tr>
+            <tr><td>338</td><td>balık</td><td>Subst.</td><td>Fisch; Angeln</td></tr>
+            <tr><td>339</td><td>at</td><td>Subst.</td><td>Pferd</td></tr>
+            <tr><td>340</td><td>köpek</td><td>Subst.</td><td>Hund</td></tr>
+            <tr><td>341</td><td>kedi</td><td>Subst.</td><td>Katze</td></tr>
+            <tr><td>342</td><td>deniz</td><td>Subst.</td><td>Meer; Ozean; großer See</td></tr>
+            <tr><td>343</td><td>nehir</td><td>Subst.</td><td>Fluss</td></tr>
+            <tr><td>344</td><td>dağ</td><td>Subst.</td><td>Berg; Gebirgskette</td></tr>
+            <tr><td>345</td><td>orman</td><td>Subst.</td><td>Wald; Wälder; Dschungel</td></tr>
+            <tr><td>346</td><td>göl</td><td>Subst.</td><td>See; Teich</td></tr>
+            <tr><td>347</td><td>çöl</td><td>Subst.</td><td>Wüste; Ödland</td></tr>
+            <tr><td>348</td><td>ada</td><td>Subst.</td><td>Insel; Häuserblock (Stadtblock)</td></tr>
+            <tr><td>349</td><td>kıyı</td><td>Subst.</td><td>Küste; Ufer; Rand; Seite</td></tr>
+            <tr><td>350</td><td>hava durumu</td><td>Subst.</td><td>Wetterbericht; Wetterverhältnisse</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">351–400 — Gesellschaft, Kultur &amp; abstrakte Begriffe</td></tr>
+            <tr><td>351</td><td>sevgi</td><td>Subst.</td><td>Liebe; Zuneigung; Zärtlichkeit</td></tr>
+            <tr><td>352</td><td>aşk</td><td>Subst.</td><td>romantische Liebe; Leidenschaft; Hingabe</td></tr>
+            <tr><td>353</td><td>nefret</td><td>Subst.</td><td>Hass; Abneigung; Ekel</td></tr>
+            <tr><td>354</td><td>korku</td><td>Subst.</td><td>Angst; Furcht; Schrecken; Phobie</td></tr>
+            <tr><td>355</td><td>umut</td><td>Subst.</td><td>Hoffnung; Erwartung; Aussicht</td></tr>
+            <tr><td>356</td><td>güven</td><td>Subst.</td><td>Vertrauen; Zuversicht; Sicherheit</td></tr>
+            <tr><td>357</td><td>özgürlük</td><td>Subst.</td><td>Freiheit; Unabhängigkeit</td></tr>
+            <tr><td>358</td><td>hak</td><td>Subst.</td><td>Recht; Anspruch; Wahrheit</td></tr>
+            <tr><td>359</td><td>görev</td><td>Subst.</td><td>Pflicht; Aufgabe; Mission; Auftrag</td></tr>
+            <tr><td>360</td><td>sorumluluk</td><td>Subst.</td><td>Verantwortung; Haftung; Rechenschaftspflicht</td></tr>
+            <tr><td>361</td><td>güç</td><td>Subst. / Adj.</td><td>Macht; Stärke; Kraft; schwierig</td></tr>
+            <tr><td>362</td><td>bilgi</td><td>Subst.</td><td>Wissen; Information; Daten</td></tr>
+            <tr><td>363</td><td>eğitim</td><td>Subst.</td><td>Bildung; Ausbildung; Erziehung</td></tr>
+            <tr><td>364</td><td>kültür</td><td>Subst.</td><td>Kultur; Zivilisation; Kultivierung</td></tr>
+            <tr><td>365</td><td>tarih</td><td>Subst.</td><td>Geschichte; Datum; Vergangenheit</td></tr>
+            <tr><td>366</td><td>dil</td><td>Subst.</td><td>Sprache; Zunge</td></tr>
+            <tr><td>367</td><td>sanat</td><td>Subst.</td><td>Kunst; Handwerk; Fertigkeit</td></tr>
+            <tr><td>368</td><td>müzik</td><td>Subst.</td><td>Musik</td></tr>
+            <tr><td>369</td><td>spor</td><td>Subst.</td><td>Sport; Athletik; Bewegung</td></tr>
+            <tr><td>370</td><td>oyun</td><td>Subst.</td><td>Spiel; Schauspiel; Stück; Trick</td></tr>
+            <tr><td>371</td><td>film</td><td>Subst.</td><td>Film; Kino</td></tr>
+            <tr><td>372</td><td>gazete</td><td>Subst.</td><td>Zeitung</td></tr>
+            <tr><td>373</td><td>televizyon</td><td>Subst.</td><td>Fernsehen; TV</td></tr>
+            <tr><td>374</td><td>internet</td><td>Subst.</td><td>Internet; Netz; online</td></tr>
+            <tr><td>375</td><td>toplantı</td><td>Subst.</td><td>Besprechung; Versammlung; Zusammenkunft</td></tr>
+            <tr><td>376</td><td>anlaşma</td><td>Subst.</td><td>Vereinbarung; Abkommen; Verständnis</td></tr>
+            <tr><td>377</td><td>tartışma</td><td>Subst.</td><td>Diskussion; Debatte; Streit</td></tr>
+            <tr><td>378</td><td>değer</td><td>Subst.</td><td>Wert; Bedeutung; Verdienst</td></tr>
+            <tr><td>379</td><td>fayda</td><td>Subst.</td><td>Nutzen; Vorteil; Gewinn</td></tr>
+            <tr><td>380</td><td>zarar</td><td>Subst.</td><td>Schaden; Verlust; Verletzung</td></tr>
+            <tr><td>381</td><td>risk</td><td>Subst.</td><td>Risiko; Gefahr</td></tr>
+            <tr><td>382</td><td>fırsat</td><td>Subst.</td><td>Chance; Gelegenheit; Anlass</td></tr>
+            <tr><td>383</td><td>tehlike</td><td>Subst.</td><td>Gefahr; Risiko; Bedrohung</td></tr>
+            <tr><td>384</td><td>güvenlik</td><td>Subst.</td><td>Sicherheit; Schutz</td></tr>
+            <tr><td>385</td><td>başarı</td><td>Subst.</td><td>Erfolg; Leistung; Errungenschaft</td></tr>
+            <tr><td>386</td><td>gelişme</td><td>Subst.</td><td>Entwicklung; Fortschritt; Verbesserung; Ereignis</td></tr>
+            <tr><td>387</td><td>değişim</td><td>Subst.</td><td>Veränderung; Wandel; Austausch; Tausch</td></tr>
+            <tr><td>388</td><td>yenilik</td><td>Subst.</td><td>Innovation; Neuheit; Erneuerung; Reform</td></tr>
+            <tr><td>389</td><td>ilerleme</td><td>Subst.</td><td>Fortschritt; Vorankommen; Verbesserung</td></tr>
+            <tr><td>390</td><td>toplum</td><td>Subst.</td><td>Gesellschaft; Gemeinschaft; soziale Gruppe</td></tr>
+            <tr><td>391</td><td>ekonomi</td><td>Subst.</td><td>Wirtschaft; Ökonomie</td></tr>
+            <tr><td>392</td><td>siyaset</td><td>Subst.</td><td>Politik; Richtlinie; Diplomatie</td></tr>
+            <tr><td>393</td><td>çevre</td><td>Subst.</td><td>Umwelt; Umgebung; Nachbarschaft</td></tr>
+            <tr><td>394</td><td>enerji</td><td>Subst.</td><td>Energie; Kraft; Schwung</td></tr>
+            <tr><td>395</td><td>teknoloji</td><td>Subst.</td><td>Technologie; Technik</td></tr>
+            <tr><td>396</td><td>bilim</td><td>Subst.</td><td>Wissenschaft; Wissen; Forschung</td></tr>
+            <tr><td>397</td><td>araştırma</td><td>Subst.</td><td>Forschung; Untersuchung; Studie; Umfrage</td></tr>
+            <tr><td>398</td><td>deney</td><td>Subst.</td><td>Experiment; Test; Versuch; Erfahrung</td></tr>
+            <tr><td>399</td><td>keşif</td><td>Subst.</td><td>Entdeckung; Erkundung; Expedition</td></tr>
+            <tr><td>400</td><td>icat</td><td>Subst.</td><td>Erfindung; Gerät; Fabrikation</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">401–450 — Zahlen, Mengen &amp; Richtungen</td></tr>
+            <tr><td>401</td><td>sıfır</td><td>Zahl</td><td>null; nichts</td></tr>
+            <tr><td>402</td><td>iki</td><td>Zahl</td><td>zwei</td></tr>
+            <tr><td>403</td><td>üç</td><td>Zahl</td><td>drei</td></tr>
+            <tr><td>404</td><td>dört</td><td>Zahl</td><td>vier</td></tr>
+            <tr><td>405</td><td>beş</td><td>Zahl</td><td>fünf</td></tr>
+            <tr><td>406</td><td>altı</td><td>Zahl</td><td>sechs</td></tr>
+            <tr><td>407</td><td>yedi</td><td>Zahl</td><td>sieben</td></tr>
+            <tr><td>408</td><td>sekiz</td><td>Zahl</td><td>acht</td></tr>
+            <tr><td>409</td><td>dokuz</td><td>Zahl</td><td>neun</td></tr>
+            <tr><td>410</td><td>on</td><td>Zahl</td><td>zehn</td></tr>
+            <tr><td>411</td><td>yüz</td><td>Zahl</td><td>einhundert</td></tr>
+            <tr><td>412</td><td>bin</td><td>Zahl</td><td>eintausend</td></tr>
+            <tr><td>413</td><td>milyon</td><td>Zahl</td><td>Million</td></tr>
+            <tr><td>414</td><td>milyar</td><td>Zahl</td><td>Milliarde</td></tr>
+            <tr><td>415</td><td>birinci</td><td>Adj.</td><td>erst-; Nummer eins; Spitze</td></tr>
+            <tr><td>416</td><td>ikinci</td><td>Adj.</td><td>zweit-; Vizemeister</td></tr>
+            <tr><td>417</td><td>son</td><td>Adj. / Subst.</td><td>letzt-; final; Ende; jüngst-</td></tr>
+            <tr><td>418</td><td>biraz</td><td>Adv.</td><td>ein bisschen; etwas; ein wenig</td></tr>
+            <tr><td>419</td><td>az</td><td>Adj. / Adv.</td><td>wenig; selten; knapp</td></tr>
+            <tr><td>420</td><td>fazla</td><td>Adj. / Adv.</td><td>zu viel; übermäßig; mehr; extra</td></tr>
+            <tr><td>421</td><td>yeterli</td><td>Adj.</td><td>genug; ausreichend; hinreichend</td></tr>
+            <tr><td>422</td><td>tam</td><td>Adj. / Adv.</td><td>genau; vollständig; ganz; präzise; recht</td></tr>
+            <tr><td>423</td><td>yarı</td><td>Adj. / Subst.</td><td>halb; halb-; teilweise</td></tr>
+            <tr><td>424</td><td>tüm</td><td>Det.</td><td>alle; gesamt; ganz; jeder</td></tr>
+            <tr><td>425</td><td>sağ</td><td>Adj. / Subst.</td><td>rechts; am Leben; rechts (politisch)</td></tr>
+            <tr><td>426</td><td>sol</td><td>Adj. / Subst.</td><td>links; links (politisch)</td></tr>
+            <tr><td>427</td><td>doğu</td><td>Subst.</td><td>Osten; Orient</td></tr>
+            <tr><td>428</td><td>batı</td><td>Subst.</td><td>Westen; Okzident</td></tr>
+            <tr><td>429</td><td>kuzey</td><td>Subst.</td><td>Norden; nördlich</td></tr>
+            <tr><td>430</td><td>güney</td><td>Subst.</td><td>Süden; südlich</td></tr>
+            <tr><td>431</td><td>yukarı</td><td>Adv. / Adj.</td><td>oben; aufwärts; oberhalb; obere</td></tr>
+            <tr><td>432</td><td>aşağı</td><td>Adv. / Adj.</td><td>unten; abwärts; unterhalb; untere</td></tr>
+            <tr><td>433</td><td>ileri</td><td>Adv. / Adj.</td><td>vorwärts; voraus; fortgeschritten; weiter</td></tr>
+            <tr><td>434</td><td>geri</td><td>Adv. / Adj.</td><td>zurück; rückwärts; hinter; langsam (Uhr)</td></tr>
+            <tr><td>435</td><td>içeri</td><td>Adv. / Adj.</td><td>drinnen; einwärts; Inneres</td></tr>
+            <tr><td>436</td><td>dışarı</td><td>Adv. / Adj.</td><td>draußen; auswärts; Äußeres</td></tr>
+            <tr><td>437</td><td>orta</td><td>Adj. / Subst.</td><td>Mitte; Zentrum; mittel-; Durchschnitt</td></tr>
+            <tr><td>438</td><td>kenar</td><td>Subst.</td><td>Rand; Kante; Grenze; Außenbezirk</td></tr>
+            <tr><td>439</td><td>köşe</td><td>Subst.</td><td>Ecke; Winkel; Nische</td></tr>
+            <tr><td>440</td><td>üst</td><td>Subst. / Postp.</td><td>Oben; Oberfläche; oberer Teil; auf</td></tr>
+            <tr><td>441</td><td>alt</td><td>Subst. / Postp.</td><td>Unten; unterer Teil; unter; unterhalb</td></tr>
+            <tr><td>442</td><td>ön</td><td>Subst. / Postp.</td><td>Vorne; Vorderseite; vor; voraus</td></tr>
+            <tr><td>443</td><td>arka</td><td>Subst. / Postp.</td><td>Hinten; Rückseite; hinter; nach</td></tr>
+            <tr><td>444</td><td>yan</td><td>Subst. / Postp.</td><td>Seite; Flanke; neben; nebenan</td></tr>
+            <tr><td>445</td><td>karşı</td><td>Postp. / Adj.</td><td>gegen; gegenüber; gegenüberliegend</td></tr>
+            <tr><td>446</td><td>arasında</td><td>Postp.</td><td>zwischen; unter; inmitten von</td></tr>
+            <tr><td>447</td><td>üzerinde</td><td>Postp.</td><td>auf; darauf; über; oben drauf; über (ein Thema)</td></tr>
+            <tr><td>448</td><td>altında</td><td>Postp.</td><td>unter; unterhalb; darunter</td></tr>
+            <tr><td>449</td><td>yanında</td><td>Postp.</td><td>neben; bei; in der Nähe; mit; an</td></tr>
+            <tr><td>450</td><td>önünde</td><td>Postp.</td><td>vor; davor; vorne</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">451–500 — Reise, Handel &amp; häufige Sonstiges</td></tr>
+            <tr><td>451</td><td>otobüs</td><td>Subst.</td><td>Bus; Reisebus</td></tr>
+            <tr><td>452</td><td>uçak</td><td>Subst.</td><td>Flugzeug; Luftfahrzeug</td></tr>
+            <tr><td>453</td><td>tren</td><td>Subst.</td><td>Zug; Bahn</td></tr>
+            <tr><td>454</td><td>metro</td><td>Subst.</td><td>U-Bahn; Metro</td></tr>
+            <tr><td>455</td><td>taksi</td><td>Subst.</td><td>Taxi; Cab</td></tr>
+            <tr><td>456</td><td>bisiklet</td><td>Subst.</td><td>Fahrrad; Rad</td></tr>
+            <tr><td>457</td><td>gemi</td><td>Subst.</td><td>Schiff; Vessel; Boot (groß)</td></tr>
+            <tr><td>458</td><td>havalimanı</td><td>Subst.</td><td>Flughafen</td></tr>
+            <tr><td>459</td><td>istasyon</td><td>Subst.</td><td>Bahnhof; Haltestelle; Terminal</td></tr>
+            <tr><td>460</td><td>bilet</td><td>Subst.</td><td>Ticket; Fahrkarte; Fahrpreis</td></tr>
+            <tr><td>461</td><td>pasaport</td><td>Subst.</td><td>Reisepass; Pass</td></tr>
+            <tr><td>462</td><td>otel</td><td>Subst.</td><td>Hotel</td></tr>
+            <tr><td>463</td><td>restoran</td><td>Subst.</td><td>Restaurant</td></tr>
+            <tr><td>464</td><td>hesap</td><td>Subst.</td><td>Rechnung; Konto; Berechnung</td></tr>
+            <tr><td>465</td><td>sipariş</td><td>Subst.</td><td>Bestellung (Essen, Waren); Auftrag</td></tr>
+            <tr><td>466</td><td>ödeme</td><td>Subst.</td><td>Zahlung; Gebühr; Rate</td></tr>
+            <tr><td>467</td><td>indirim</td><td>Subst.</td><td>Rabatt; Ermäßigung; Schlussverkauf</td></tr>
+            <tr><td>468</td><td>vergi</td><td>Subst.</td><td>Steuer; Abgabe; Gebühr</td></tr>
+            <tr><td>469</td><td>banka</td><td>Subst.</td><td>Bank; Kreditinstitut</td></tr>
+            <tr><td>470</td><td>kart</td><td>Subst.</td><td>Karte; Ausweis; Kreditkarte</td></tr>
+            <tr><td>471</td><td>şifre</td><td>Subst.</td><td>Passwort; Code; Chiffre; PIN</td></tr>
+            <tr><td>472</td><td>adres</td><td>Subst.</td><td>Adresse; Standort</td></tr>
+            <tr><td>473</td><td>posta</td><td>Subst.</td><td>Post; Brief; Postdienst</td></tr>
+            <tr><td>474</td><td>paket</td><td>Subst.</td><td>Paket; Päckchen; Bündel</td></tr>
+            <tr><td>475</td><td>çanta</td><td>Subst.</td><td>Tasche; Handtasche; Aktentasche</td></tr>
+            <tr><td>476</td><td>anahtar</td><td>Subst.</td><td>Schlüssel; Hinweis; Schalter; Schraubenschlüssel</td></tr>
+            <tr><td>477</td><td>renk</td><td>Subst.</td><td>Farbe; Farbton; Schattierung</td></tr>
+            <tr><td>478</td><td>kırmızı</td><td>Adj.</td><td>rot</td></tr>
+            <tr><td>479</td><td>mavi</td><td>Adj.</td><td>blau</td></tr>
+            <tr><td>480</td><td>yeşil</td><td>Adj.</td><td>grün</td></tr>
+            <tr><td>481</td><td>sarı</td><td>Adj.</td><td>gelb; blass; gelbsüchtig</td></tr>
+            <tr><td>482</td><td>beyaz</td><td>Adj.</td><td>weiß; leer; blass</td></tr>
+            <tr><td>483</td><td>siyah</td><td>Adj.</td><td>schwarz; dunkel</td></tr>
+            <tr><td>484</td><td>gri</td><td>Adj.</td><td>grau</td></tr>
+            <tr><td>485</td><td>turuncu</td><td>Adj.</td><td>orange (Farbe)</td></tr>
+            <tr><td>486</td><td>mor</td><td>Adj.</td><td>lila; violett</td></tr>
+            <tr><td>487</td><td>açıkça</td><td>Adv.</td><td>klar; offen; ehrlich; offensichtlich</td></tr>
+            <tr><td>488</td><td>özellikle</td><td>Adv.</td><td>besonders; insbesondere; speziell</td></tr>
+            <tr><td>489</td><td>kesinlikle</td><td>Adv.</td><td>definitiv; sicher; absolut; auf jeden Fall</td></tr>
+            <tr><td>490</td><td>tamamen</td><td>Adv.</td><td>vollständig; gänzlich; vollkommen; total</td></tr>
+            <tr><td>491</td><td>neredeyse</td><td>Adv.</td><td>fast; beinahe; nahezu; praktisch</td></tr>
+            <tr><td>492</td><td>aslında</td><td>Adv.</td><td>eigentlich; tatsächlich; im Grunde; grundsätzlich</td></tr>
+            <tr><td>493</td><td>her şey</td><td>Subst.-phrase</td><td>alles; alle Dinge</td></tr>
+            <tr><td>494</td><td>hiçbir şey</td><td>Subst.-phrase</td><td>nichts; gar nichts</td></tr>
+            <tr><td>495</td><td>her yer</td><td>Subst.-phrase</td><td>überall; an allen Orten</td></tr>
+            <tr><td>496</td><td>büyük ihtimalle</td><td>Adv.-phrase</td><td>höchstwahrscheinlich; aller Wahrscheinlichkeit nach</td></tr>
+            <tr><td>497</td><td>öte yandan</td><td>Adv.-phrase</td><td>andererseits; unterdessen; im Gegensatz dazu</td></tr>
+            <tr><td>498</td><td>bu yüzden</td><td>Konj.-phrase</td><td>deshalb; daher; aus diesem Grund</td></tr>
+            <tr><td>499</td><td>buna rağmen</td><td>Konj.-phrase</td><td>trotzdem; nichtsdestotrotz; dennoch</td></tr>
+            <tr><td>500</td><td>bir yandan</td><td>Adv.-phrase</td><td>einerseits; auf einer Seite; gleichzeitig</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="turkish-srs-de.js"></script>
+</body>
+</html>

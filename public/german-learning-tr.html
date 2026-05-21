@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almanca Öğrenme Rehberi (Türkçe konuşanlar için) — Steven Legg</title>
+  <meta name="description" content="Türkçe konuşanlar için Almanca öğrenme rehberi — aralıklı tekrar vokabel eğitmeni, telaffuz ve dilbilgisi notları.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── SRS Flashcard ─────────────────────────────────────────────────────── */
+
+    .srs-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.8rem;
+      color: #555;
+      min-height: 1.4rem;
+    }
+
+    .srs-count b { color: #ccc; font-weight: 500; }
+
+    .srs-bar-wrap {
+      flex: 1;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .srs-bar {
+      height: 100%;
+      background: #2e2e2e;
+      border-radius: 1px;
+      transition: width 0.4s ease;
+    }
+
+    .srs-card {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem 2.25rem;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.2s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .srs-card:hover           { border-color: #2a2a2a; }
+    .srs-card.revealed        { cursor: default; }
+    .srs-card.revealed:hover  { border-color: #1e1e1e; }
+
+    .srs-turkish {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .srs-pos {
+      font-size: 0.75rem;
+      color: #3a3a3a;
+      font-style: italic;
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .srs-divider {
+      width: 2rem;
+      height: 1px;
+      background: #222;
+      margin: 1.25rem auto 1rem;
+      flex-shrink: 0;
+    }
+
+    .srs-english {
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.45;
+    }
+
+    .srs-hint {
+      position: absolute;
+      bottom: 0.7rem;
+      font-size: 0.7rem;
+      color: #2c2c2c;
+      letter-spacing: 0.05em;
+    }
+
+    .srs-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      min-height: 2.6rem;
+    }
+
+    .srs-btn {
+      flex: 1;
+      padding: 0.55rem 1rem;
+      border-radius: 3px;
+      background: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+    }
+
+    .srs-btn-again            { border: 1px solid #2e1a1a; color: #c07070; }
+    .srs-btn-again:hover      { background: #1a0a0a; border-color: #c07070; color: #e08888; }
+
+    .srs-btn-good             { border: 1px solid #1a2e1a; color: #7ed895; }
+    .srs-btn-good:hover       { background: #0a180a; border-color: #7ed895; color: #9ef0b0; }
+
+    .srs-key {
+      font-family: 'Courier New', monospace;
+      font-size: 0.67rem;
+      padding: 0.04rem 0.3rem;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .srs-interval {
+      font-size: 0.72rem;
+      opacity: 0.6;
+    }
+
+    .srs-done {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .srs-done-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .srs-done-sub {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+      font-style: italic;
+    }
+
+    .srs-done-stats {
+      color: #444;
+      font-size: 0.82rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+    }
+
+    .srs-action-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .srs-action-btn:hover { border-color: #555; color: #fff; }
+
+    .srs-shortcuts {
+      font-size: 0.75rem;
+      color: #2e2e2e;
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .srs-shortcuts kbd {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      padding: 0.05rem 0.3rem;
+      border: 1px solid #2a2a2a;
+      border-radius: 2px;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      .srs-turkish  { font-size: 1.85rem; }
+      .srs-english  { font-size: 1.05rem; }
+      .srs-btn      { font-size: 0.82rem; padding: 0.5rem 0.6rem; }
+      .srs-meta     { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html">← Dil Rehberleri</a>
+
+  <header>
+    <h1>Almanca Öğrenme Rehberi</h1>
+    <p>Deutsch lernen — Türkçe konuşanlar için vokabel eğitmeni &amp; kapsamlı öğrenme rehberi.</p>
+  </header>
+
+  <article>
+
+    <!-- İÇİNDEKİLER -->
+    <ol class="lang-toc">
+      <li><a href="#almanca-hakkinda">Almanca Hakkında</a></li>
+      <li><a href="#karteikarten">Kelime Kartları — Aralıklı Tekrar</a></li>
+      <li><a href="#notlar">Hızlı Dil Notları</a></li>
+      <li><a href="#top500">En Sık Kullanılan 500 Almanca Kelime</a></li>
+    </ol>
+
+    <!-- ══════════════════════════════════════════
+         1. ALMANCA HAKKINDA
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="almanca-hakkinda">
+      <h2>1. Almanca Hakkında</h2>
+      <p>Almanca (Deutsch), Avrupa'nın en yaygın ana dilidir — yaklaşık 100 milyondan fazla kişi tarafından konuşulur. Almanya, Avusturya ve Lihtenştayn'ın resmi dilidir ve İsviçre'nin dört resmi dilinden biridir. Almanca, Avrupa Birliği'ndeki en geniş kapsamlı ana dilidir.</p>
+
+      <h3>Türkçe Konuşanlar İçin Avantajlar</h3>
+      <p>Türkçe konuşanların Almanca öğrenirken ciddi bir avantajı vardır: Türkçe'deki <strong>ö</strong> ve <strong>ü</strong> sesleri Almanca'da da birebir mevcuttur — İngilizce konuşanlar bu sesleri sıfırdan öğrenmek zorunda kalır. Ayrıca Türkçe dilbilgisi mantığına benzer şekilde, Almanca'da da Türkçe'nin hâl eklerine benzer bir durum sistemi (Kasus) vardır; kavramsal olarak yabancı değildir.</p>
+
+      <h3>Türkçe Konuşanlar İçin Zorluklar</h3>
+      <ul>
+        <li><strong>Gramer cinsiyeti (der / die / das).</strong> Türkçe'de dilbilgisel cinsiyet yoktur — Almanca'da her ismin eril (der), dişil (die) ya da nötr (das) olduğunu ezberlemek gerekir.</li>
+        <li><strong>Dört hâl (Kasus).</strong> Almanca'da Nominativ, Akkusativ, Dativ ve Genitif hâlleri vardır; bu hâller, isim ve sıfat eklerini etkiler. Türkçe'de de hâl ekleri var, bu yüzden kavram aşina gelecektir.</li>
+        <li><strong>Sözdizimi: fiil ikinci sırada.</strong> Türkçe'de fiil cümle sonundadır (SOV). Almanca ana cümlelerinde fiil her zaman ikinci konumdadır (V2 kuralı). Yan cümleler ise Türkçe'ye benzer şekilde fiili sona alır.</li>
+        <li><strong>Güçlü fiiller.</strong> Almanca'nın düzensiz fiilleri (starke Verben), kök değiştirir: <em>fahren → fuhr</em>. Bu listeler ezberlenmesi gerekir.</li>
+        <li><strong>Bileşik kelimeler.</strong> Almanca, Türkçe'nin yapıştırma (agglütinatif) sistemi yerine, iki ya da daha fazla ismi birleştiren dev bileşik kelimeler oluşturur (ör. <em>Donaudampfschifffahrtsgesellschaft</em>).</li>
+      </ul>
+
+      <h3>Neden Almanca?</h3>
+      <ul>
+        <li><strong>Kariyer fırsatları</strong> — Almanya dünyanın en büyük ekonomilerinden birini barındırır; mühendislik, bilim, iş ve akademide Almanca bilgisi büyük avantaj sağlar.</li>
+        <li><strong>Türkiye-Almanya bağlantısı</strong> — Almanya'daki Türk toplumu Avrupa'nın en büyük Türk topluluğudur; pratik konuşma fırsatları çok geniştir.</li>
+        <li><strong>Kültürel erişim</strong> — Alman felsefesi (Kant, Nietzsche, Hegel), müziği (Bach, Beethoven) ve edebiyatı dünya kültürünün temel taşlarından oluşur.</li>
+        <li><strong>AB'de kapı dili</strong> — Almanca bilmek; Hollandaca, İsveççe, Norveçce ve Danca öğrenmesini önemli ölçüde kolaylaştırır.</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         2. KELİME KARTLARI — ARALIKLI TEKRAr
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="karteikarten">
+      <h2>2. Kelime Kartları — Aralıklı Tekrar</h2>
+      <p>100 temel Almanca kelimesi bir aralıklı tekrar algoritmasıyla çalışılır. Tekrarı gelen kartlar önce gösterilir; her oturumda yeni kartlardan en fazla 20 tanesi sunulur. İlerleme durumun tarayıcıda kaydedilir ve ziyaretler arasında devam eder.</p>
+
+      <p class="lang-note"><strong>Tekrar</strong> kartı geçerli oturumun sonuna gönderir ve 1 günlük tekrar planlar. <strong>Biliyorum</strong> kartı büyüyen bir aralıkla planlar (1 gün → 6 gün → her doğru cevapla artar). Aralıklar her düğmede görünür.</p>
+
+      <div id="srs-root"></div>
+
+      <div class="srs-shortcuts" aria-label="Klavye kısayolları">
+        <span><kbd>Space</kbd> göster</span>
+        <span><kbd>1</kbd> Tekrar</span>
+        <span><kbd>3</kbd> Biliyorum</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         3. HIZLI DİL NOTLARI
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="notlar">
+      <h2>3. Hızlı Dil Notları</h2>
+
+      <h3>Almanca Alfabesi ve Telaffuzu</h3>
+      <p>Almanca, 26 harfli standart Latin alfabesini ve dört ek karakteri kullanır: <strong>ä, ö, ü</strong> (umlaut'lar) ve <strong>ß</strong> (Eszett / keskin S). Almanca telaffuzu son derece tutarlıdır — hemen hemen her kelimede her harf aynı sesi temsil eder.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Harf / Sesbirim</th><th>Türkçe Konuşanlar İçin Telaffuz</th><th>Örnek</th></tr></thead>
+          <tbody>
+            <tr><td>ä</td><td>"e" ile "a" arası — Türkçe'deki "e" sesine yakın (ağız biraz daha açık)</td><td>Äpfel (elma)</td></tr>
+            <tr><td>ö</td><td>Türkçe <strong>ö</strong> ile birebir aynı — sorun yok!</td><td>schön (güzel)</td></tr>
+            <tr><td>ü</td><td>Türkçe <strong>ü</strong> ile birebir aynı — sorun yok!</td><td>über (üzerinde)</td></tr>
+            <tr><td>ß</td><td>"ss" olarak okunur — "Straße" → "Strase"</td><td>Straße (cadde)</td></tr>
+            <tr><td>ch</td><td>Türkçe'de yok; "ich" / "mich" gibi kelimelerde "h" ile "ş" arası, yumuşak; "Bach" gibi art damakta, "h" ama daha sert</td><td>ich (ben), Bach (dere)</td></tr>
+            <tr><td>w</td><td>İngilizce "v" gibi — Türkçe "v" değil; "was" = "vas" gibi okunur</td><td>was (ne), Wasser (su)</td></tr>
+            <tr><td>v</td><td>Genellikle "f" gibi okunur</td><td>Vater (baba), Vogel (kuş)</td></tr>
+            <tr><td>z</td><td>"ts" gibi okunur — "Zug" = "tsug"</td><td>Zug (tren), Zeit (zaman)</td></tr>
+            <tr><td>ei</td><td>"ay" gibi okunur — Türkçe "ay" gibi</td><td>mein (benim), Stein (taş)</td></tr>
+            <tr><td>ie</td><td>Uzun "i" — Türkçe "i" ama uzatılarak</td><td>die (o/belirli artikele), sie (o/onlar)</td></tr>
+            <tr><td>eu / äu</td><td>"oy" gibi okunur — Türkçe "oy" gibi</td><td>neu (yeni), Häuser (evler)</td></tr>
+            <tr><td>j</td><td>"y" gibi okunur — "ja" = "ya"</td><td>ja (evet), Jahr (yıl)</td></tr>
+            <tr><td>sp / st</td><td>Sözcük başında "şp" / "şt" gibi okunur</td><td>spielen (oynamak), Straße (cadde)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Gramer Cinsiyeti: der, die, das</h3>
+      <p>Almanca'nın en zorlu özelliklerinden biri her isimdeki gramer cinsiyetidir. Türkçe'de cinsiyet olmadığı için bu kavram yabancıdır. Her Almanca ismi öğrenirken anlamıyla birlikte artikelini de ezberlemek gerekir:</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Artikel</th><th>Cinsiyet</th><th>Örnek</th><th>Türkçe</th></tr></thead>
+          <tbody>
+            <tr><td><strong>der</strong></td><td>eril (maskulin)</td><td>der Mann</td><td>adam</td></tr>
+            <tr><td><strong>die</strong></td><td>dişil (feminin)</td><td>die Frau</td><td>kadın</td></tr>
+            <tr><td><strong>das</strong></td><td>nötr</td><td>das Kind</td><td>çocuk</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Cinsiyet her zaman mantıklı değildir (ör. <em>das Mädchen</em> = "kız çocuğu" nötr). Bu nedenle her yeni ismi artikeliyle birlikte öğrenmek en iyi alışkanlıktır.</p>
+
+      <h3>Dört Hâl Sistemi (Kasus)</h3>
+      <p>Almanca'da dört hâl vardır ve bu hâller artikelleri etkiler. Türkçe'de de hâl ekleri bulunduğundan kavram tamamen yabancı değildir — sadece Almanca'da ek yerine artikel değişir.</p>
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Hâl</th><th>İşlev</th><th>Türkçe Karşılığı</th><th>Örnek</th></tr></thead>
+          <tbody>
+            <tr><td>Nominativ</td><td>Özne</td><td>Yalın hâl</td><td><em>Der Mann</em> schläft. (Adam uyuyor.)</td></tr>
+            <tr><td>Akkusativ</td><td>Nesne (yönelim yok)</td><td>-i/-ı/-u/-ü hâli (belirtme)</td><td>Ich sehe <em>den Mann</em>. (Adamı görüyorum.)</td></tr>
+            <tr><td>Dativ</td><td>Dolaylı nesne</td><td>-e/-a hâli (yönelme)</td><td>Ich helfe <em>dem Mann</em>. (Adama yardım ediyorum.)</td></tr>
+            <tr><td>Genitiv</td><td>Tamlayan / iyelik</td><td>-in/-ın/-un/-ün hâli (ilgi)</td><td>Das Auto <em>des Mannes</em>. (Adamın arabası.)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Sözdizimi — Fiil İkinci Konumda (V2 Kuralı)</h3>
+      <p>Türkçe'de fiil cümle sonuna gelir (Özne-Nesne-Fiil). Almanca ana cümlelerinde ise fiil her zaman <strong>ikinci konumdadır</strong> — ister birinci öge özne olsun, ister zarf. Almanca yan cümlelerinde ise fiil sona gider, bu Türkçe'ye benzerdir.</p>
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Almanca</th><th>Türkçe</th></tr></thead>
+          <tbody>
+            <tr><td>Ich <strong>esse</strong> einen Apfel.</td><td>Ben bir elma yiyorum. (SFO)</td></tr>
+            <tr><td>Heute <strong>esse</strong> ich einen Apfel.</td><td>Bugün bir elma yiyorum. (Zarf öne — fiil yine 2. sırada)</td></tr>
+            <tr><td>…weil ich einen Apfel <strong>esse</strong>.</td><td>…çünkü bir elma yiyorum. (Yan cümle → fiil sonda)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Fiil Çekimi</h3>
+      <p>Almanca fiillerin büyük çoğunluğu düzenlidir (zayıf fiiller). Şimdiki zaman için şahıs ekleri şöyledir:</p>
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Zamir</th><th>Ek</th><th>Örnek (machen)</th><th>Türkçe</th></tr></thead>
+          <tbody>
+            <tr><td>ich</td><td>-e</td><td>ich mache</td><td>yapıyorum</td></tr>
+            <tr><td>du</td><td>-st</td><td>du machst</td><td>yapıyorsun</td></tr>
+            <tr><td>er/sie/es</td><td>-t</td><td>er macht</td><td>yapıyor</td></tr>
+            <tr><td>wir</td><td>-en</td><td>wir machen</td><td>yapıyoruz</td></tr>
+            <tr><td>ihr</td><td>-t</td><td>ihr macht</td><td>yapıyorsunuz</td></tr>
+            <tr><td>sie/Sie</td><td>-en</td><td>sie machen</td><td>yapıyorlar / yapıyorsunuz</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Olumsuzluk</h3>
+      <p>Almanca'da olumsuzluk için iki ana yol vardır: <strong>nicht</strong> (fiil veya sıfat olumsuzlaması — Türkçe <em>değil</em>'e benzer) ve <strong>kein / keine</strong> (isim olumsuzlaması — Türkçe <em>hiç / hiçbir</em>'e benzer).</p>
+      <ul>
+        <li><em>Ich verstehe das <strong>nicht</strong>.</em> = Bunu anlamıyorum. (<em>değil</em> mantığı)</li>
+        <li><em>Ich habe <strong>kein</strong> Geld.</em> = Param yok. (<em>yok</em> / <em>hiç param yok</em> mantığı)</li>
+      </ul>
+
+      <p class="lang-note">Daha fazla dilbilgisi tablosu, kaynak listesi ve okuma tavsiyeleri bu sayfa geliştirildikçe eklenecektir.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         4. EN SIK KULLANILAN 500 ALMANCA KELİME
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="top500">
+      <h2>4. En Sık Kullanılan 500 Almanca Kelime</h2>
+      <p>Aşağıdaki tablo, kullanım sıklığına göre sıralanmış 500 en yaygın Almanca kelimeyi listeler. Fiiller mastar formunda (<em>-en/-n</em>) verilmiştir. Bu listeyi öğrenmek, günlük Almanca metin ve konuşmaların büyük bölümünü kavramayı sağlar.</p>
+      <p class="lang-note">Aralıklı tekrar eğitimindeki 100 temel kelime burada da yer almaktadır — en sık kullanılan kelimelerin tekrarı kasıtlı ve değerlidir.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead>
+            <tr><th>#</th><th>Almanca</th><th>Tür</th><th>Türkçe Anlamı</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">1–50 — Temel İşlev Kelimeleri &amp; En Önemli Fiiller</td></tr>
+            <tr><td>1</td><td>der / die / das</td><td>artikel</td><td>-nın / -nın / -nın (belirli artikel)</td></tr>
+            <tr><td>2</td><td>und</td><td>bağlaç</td><td>ve</td></tr>
+            <tr><td>3</td><td>sein</td><td>fiil</td><td>olmak</td></tr>
+            <tr><td>4</td><td>in</td><td>edat</td><td>içinde; -da/-de</td></tr>
+            <tr><td>5</td><td>ein / eine</td><td>artikel / sayı</td><td>bir</td></tr>
+            <tr><td>6</td><td>von</td><td>edat</td><td>-dan/-den; hakkında; tarafından</td></tr>
+            <tr><td>7</td><td>nicht</td><td>partikül</td><td>değil; -ma/-me</td></tr>
+            <tr><td>8</td><td>ich</td><td>zamir</td><td>ben</td></tr>
+            <tr><td>9</td><td>das</td><td>zamir / artikel</td><td>bu; o (nötr artikel)</td></tr>
+            <tr><td>10</td><td>zu</td><td>edat / partikül</td><td>için; -e/-a; kadar; çok fazla</td></tr>
+            <tr><td>11</td><td>mit</td><td>edat</td><td>ile; birlikte</td></tr>
+            <tr><td>12</td><td>haben</td><td>fiil</td><td>sahip olmak; var olmak (yardımcı)</td></tr>
+            <tr><td>13</td><td>auf</td><td>edat</td><td>üzerinde; -a/-e (yön); açık</td></tr>
+            <tr><td>14</td><td>für</td><td>edat</td><td>için</td></tr>
+            <tr><td>15</td><td>es</td><td>zamir</td><td>o (nötr)</td></tr>
+            <tr><td>16</td><td>sie</td><td>zamir</td><td>o (dişil); onlar; Siz (resmi)</td></tr>
+            <tr><td>17</td><td>an</td><td>edat</td><td>yanında; -da/-de; -a/-e</td></tr>
+            <tr><td>18</td><td>er</td><td>zamir</td><td>o (eril)</td></tr>
+            <tr><td>19</td><td>dass</td><td>bağlaç</td><td>ki; olduğunu; -dığını</td></tr>
+            <tr><td>20</td><td>werden</td><td>fiil</td><td>olmak; -ecek (gelecek); -mak</td></tr>
+            <tr><td>21</td><td>auch</td><td>zarf</td><td>de / da; aynı zamanda; bile</td></tr>
+            <tr><td>22</td><td>als</td><td>bağlaç / edat</td><td>olarak; -dan daha; ne zaman</td></tr>
+            <tr><td>23</td><td>noch</td><td>zarf</td><td>hâlâ; daha; henüz; bir de</td></tr>
+            <tr><td>24</td><td>aber</td><td>bağlaç</td><td>ama; ancak; fakat</td></tr>
+            <tr><td>25</td><td>oder</td><td>bağlaç</td><td>ya da; veya</td></tr>
+            <tr><td>26</td><td>man</td><td>zamir</td><td>insan; kişi (genel özne)</td></tr>
+            <tr><td>27</td><td>aus</td><td>edat</td><td>-dan/-den; çıkarak; yapılmış</td></tr>
+            <tr><td>28</td><td>bei</td><td>edat</td><td>yanında; -da/-de; sırasında</td></tr>
+            <tr><td>29</td><td>so</td><td>zarf / bağlaç</td><td>böyle; öyle; o kadar; bu yüzden</td></tr>
+            <tr><td>30</td><td>wenn</td><td>bağlaç</td><td>eğer; ne zaman (-sa/-se)</td></tr>
+            <tr><td>31</td><td>um</td><td>edat / bağlaç</td><td>için (amaç); etrafında; saat(te)</td></tr>
+            <tr><td>32</td><td>nach</td><td>edat</td><td>-e/-a (yer/yön); sonra; göre</td></tr>
+            <tr><td>33</td><td>schon</td><td>zarf</td><td>zaten; çoktan; şimdiden</td></tr>
+            <tr><td>34</td><td>nur</td><td>zarf</td><td>sadece; yalnızca; bir</td></tr>
+            <tr><td>35</td><td>wir</td><td>zamir</td><td>biz</td></tr>
+            <tr><td>36</td><td>über</td><td>edat</td><td>üzerinde; hakkında; boyunca; -dan fazla</td></tr>
+            <tr><td>37</td><td>ihr</td><td>zamir / edat</td><td>siz (çoğul); onun (dişil)</td></tr>
+            <tr><td>38</td><td>hier</td><td>zarf</td><td>burada; buraya</td></tr>
+            <tr><td>39</td><td>was</td><td>zamir</td><td>ne; olan şey</td></tr>
+            <tr><td>40</td><td>da</td><td>zarf / bağlaç</td><td>orada; çünkü; o zaman</td></tr>
+            <tr><td>41</td><td>mehr</td><td>zarf / sıfat</td><td>daha fazla; artık; çoğul</td></tr>
+            <tr><td>42</td><td>weil</td><td>bağlaç</td><td>çünkü; -dığı için</td></tr>
+            <tr><td>43</td><td>sich</td><td>zamir</td><td>kendini; kendi (dönüşlü)</td></tr>
+            <tr><td>44</td><td>bis</td><td>edat / bağlaç</td><td>kadar; -e değin; ta ki</td></tr>
+            <tr><td>45</td><td>immer</td><td>zarf</td><td>her zaman; daima; giderek</td></tr>
+            <tr><td>46</td><td>vor</td><td>edat</td><td>önünde; önce; -dan; korktukça</td></tr>
+            <tr><td>47</td><td>durch</td><td>edat</td><td>boyunca; aracılığıyla; sayesinde</td></tr>
+            <tr><td>48</td><td>wer</td><td>zamir</td><td>kim</td></tr>
+            <tr><td>49</td><td>diese</td><td>zamir / sıfat</td><td>bu; bu (dişil)</td></tr>
+            <tr><td>50</td><td>alle</td><td>zamir / sıfat</td><td>hepsi; bütün; herkes</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">51–100 — Yüksek Frekanslı Fiiller</td></tr>
+            <tr><td>51</td><td>machen</td><td>fiil</td><td>yapmak; hazırlamak</td></tr>
+            <tr><td>52</td><td>kommen</td><td>fiil</td><td>gelmek</td></tr>
+            <tr><td>53</td><td>gehen</td><td>fiil</td><td>gitmek; yürümek</td></tr>
+            <tr><td>54</td><td>sagen</td><td>fiil</td><td>söylemek; demek</td></tr>
+            <tr><td>55</td><td>wissen</td><td>fiil</td><td>bilmek (bir bilgi)</td></tr>
+            <tr><td>56</td><td>sehen</td><td>fiil</td><td>görmek</td></tr>
+            <tr><td>57</td><td>wollen</td><td>yardımcı fiil</td><td>istemek; -mek istemek</td></tr>
+            <tr><td>58</td><td>geben</td><td>fiil</td><td>vermek</td></tr>
+            <tr><td>59</td><td>nehmen</td><td>fiil</td><td>almak; kabul etmek</td></tr>
+            <tr><td>60</td><td>denken</td><td>fiil</td><td>düşünmek</td></tr>
+            <tr><td>61</td><td>finden</td><td>fiil</td><td>bulmak; değerlendirmek</td></tr>
+            <tr><td>62</td><td>müssen</td><td>yardımcı fiil</td><td>-mek zorunda olmak; gereklilik</td></tr>
+            <tr><td>63</td><td>können</td><td>yardımcı fiil</td><td>yapabilmek; -ebilmek</td></tr>
+            <tr><td>64</td><td>sollen</td><td>yardımcı fiil</td><td>-malı; yapması gerekiyor (başkasına göre)</td></tr>
+            <tr><td>65</td><td>dürfen</td><td>yardımcı fiil</td><td>-e izni olmak; -ebilmek (izin)</td></tr>
+            <tr><td>66</td><td>lassen</td><td>fiil</td><td>bırakmak; yaptırmak; -mekten vazgeçmek</td></tr>
+            <tr><td>67</td><td>halten</td><td>fiil</td><td>tutmak; durmak; düşünmek</td></tr>
+            <tr><td>68</td><td>heißen</td><td>fiil</td><td>adı olmak; -e denmek</td></tr>
+            <tr><td>69</td><td>bleiben</td><td>fiil</td><td>kalmak; devam etmek</td></tr>
+            <tr><td>70</td><td>stehen</td><td>fiil</td><td>durmak; yazmak (metin); olmak</td></tr>
+            <tr><td>71</td><td>liegen</td><td>fiil</td><td>yatmak; bulunmak; uzanmak</td></tr>
+            <tr><td>72</td><td>bringen</td><td>fiil</td><td>getirmek; götürmek</td></tr>
+            <tr><td>73</td><td>schreiben</td><td>fiil</td><td>yazmak</td></tr>
+            <tr><td>74</td><td>lesen</td><td>fiil</td><td>okumak</td></tr>
+            <tr><td>75</td><td>sprechen</td><td>fiil</td><td>konuşmak</td></tr>
+            <tr><td>76</td><td>arbeiten</td><td>fiil</td><td>çalışmak</td></tr>
+            <tr><td>77</td><td>leben</td><td>fiil</td><td>yaşamak</td></tr>
+            <tr><td>78</td><td>fragen</td><td>fiil</td><td>sormak</td></tr>
+            <tr><td>79</td><td>antworten</td><td>fiil</td><td>cevaplamak; yanıtlamak</td></tr>
+            <tr><td>80</td><td>spielen</td><td>fiil</td><td>oynamak; çalmak (müzik)</td></tr>
+            <tr><td>81</td><td>kaufen</td><td>fiil</td><td>satın almak</td></tr>
+            <tr><td>82</td><td>zahlen / bezahlen</td><td>fiil</td><td>ödemek</td></tr>
+            <tr><td>83</td><td>lernen</td><td>fiil</td><td>öğrenmek</td></tr>
+            <tr><td>84</td><td>helfen</td><td>fiil</td><td>yardım etmek</td></tr>
+            <tr><td>85</td><td>brauchen</td><td>fiil</td><td>ihtiyacı olmak; gerekmek</td></tr>
+            <tr><td>86</td><td>hören</td><td>fiil</td><td>duymak; dinlemek</td></tr>
+            <tr><td>87</td><td>zeigen</td><td>fiil</td><td>göstermek</td></tr>
+            <tr><td>88</td><td>glauben</td><td>fiil</td><td>inanmak; zannetmek</td></tr>
+            <tr><td>89</td><td>verstehen</td><td>fiil</td><td>anlamak; kavramak</td></tr>
+            <tr><td>90</td><td>essen</td><td>fiil</td><td>yemek (yemek yemek)</td></tr>
+            <tr><td>91</td><td>trinken</td><td>fiil</td><td>içmek (bir şey içmek)</td></tr>
+            <tr><td>92</td><td>laufen</td><td>fiil</td><td>koşmak; yürümek; işlemek</td></tr>
+            <tr><td>93</td><td>öffnen</td><td>fiil</td><td>açmak</td></tr>
+            <tr><td>94</td><td>schließen</td><td>fiil</td><td>kapatmak; bitirmek</td></tr>
+            <tr><td>95</td><td>beginnen / anfangen</td><td>fiil</td><td>başlamak</td></tr>
+            <tr><td>96</td><td>beenden</td><td>fiil</td><td>bitirmek; sona erdirmek</td></tr>
+            <tr><td>97</td><td>ändern</td><td>fiil</td><td>değiştirmek</td></tr>
+            <tr><td>98</td><td>warten</td><td>fiil</td><td>beklemek</td></tr>
+            <tr><td>99</td><td>fahren</td><td>fiil</td><td>sürmek; gitmek (araçla)</td></tr>
+            <tr><td>100</td><td>reisen</td><td>fiil</td><td>seyahat etmek</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">101–150 — İnsanlar, Yerler &amp; Zaman</td></tr>
+            <tr><td>101</td><td>der Mann</td><td>isim</td><td>adam; erkek</td></tr>
+            <tr><td>102</td><td>die Frau</td><td>isim</td><td>kadın; hanım; eş</td></tr>
+            <tr><td>103</td><td>das Kind</td><td>isim</td><td>çocuk</td></tr>
+            <tr><td>104</td><td>der Freund / die Freundin</td><td>isim</td><td>erkek / kız arkadaş; dost</td></tr>
+            <tr><td>105</td><td>die Familie</td><td>isim</td><td>aile</td></tr>
+            <tr><td>106</td><td>die Mutter</td><td>isim</td><td>anne; mama</td></tr>
+            <tr><td>107</td><td>der Vater</td><td>isim</td><td>baba; papa</td></tr>
+            <tr><td>108</td><td>der Bruder / die Schwester</td><td>isim</td><td>erkek / kız kardeş</td></tr>
+            <tr><td>109</td><td>der Ehepartner / die Ehepartnerin</td><td>isim</td><td>eş; evlilik ortağı</td></tr>
+            <tr><td>110</td><td>der Mensch</td><td>isim</td><td>insan; kişi</td></tr>
+            <tr><td>111</td><td>das Haus</td><td>isim</td><td>ev; bina</td></tr>
+            <tr><td>112</td><td>der Ort / der Platz</td><td>isim</td><td>yer; mekân; alan</td></tr>
+            <tr><td>113</td><td>die Stadt</td><td>isim</td><td>şehir; kent</td></tr>
+            <tr><td>114</td><td>das Land</td><td>isim</td><td>ülke; kırsal; toprak</td></tr>
+            <tr><td>115</td><td>die Welt</td><td>isim</td><td>dünya; evren</td></tr>
+            <tr><td>116</td><td>die Straße</td><td>isim</td><td>cadde; yol; sokak</td></tr>
+            <tr><td>117</td><td>die Gasse</td><td>isim</td><td>dar sokak; geçit</td></tr>
+            <tr><td>118</td><td>die Tür</td><td>isim</td><td>kapı</td></tr>
+            <tr><td>119</td><td>das Fenster</td><td>isim</td><td>pencere</td></tr>
+            <tr><td>120</td><td>das Zimmer / der Raum</td><td>isim</td><td>oda; mekan</td></tr>
+            <tr><td>121</td><td>der Tag</td><td>isim</td><td>gün</td></tr>
+            <tr><td>122</td><td>die Woche</td><td>isim</td><td>hafta</td></tr>
+            <tr><td>123</td><td>der Monat</td><td>isim</td><td>ay (zaman)</td></tr>
+            <tr><td>124</td><td>das Jahr</td><td>isim</td><td>yıl</td></tr>
+            <tr><td>125</td><td>die Stunde</td><td>isim</td><td>saat (zaman birimi)</td></tr>
+            <tr><td>126</td><td>die Minute</td><td>isim</td><td>dakika</td></tr>
+            <tr><td>127</td><td>der Morgen</td><td>isim</td><td>sabah</td></tr>
+            <tr><td>128</td><td>der Mittag</td><td>isim</td><td>öğle; öğleden sonra</td></tr>
+            <tr><td>129</td><td>der Abend</td><td>isim</td><td>akşam</td></tr>
+            <tr><td>130</td><td>die Nacht</td><td>isim</td><td>gece</td></tr>
+            <tr><td>131</td><td>heute</td><td>zarf</td><td>bugün</td></tr>
+            <tr><td>132</td><td>morgen</td><td>zarf</td><td>yarın</td></tr>
+            <tr><td>133</td><td>gestern</td><td>zarf</td><td>dün</td></tr>
+            <tr><td>134</td><td>letzt-</td><td>sıfat</td><td>geçen; son; önceki</td></tr>
+            <tr><td>135</td><td>vorher / früher</td><td>zarf</td><td>önce; daha önce; eskiden</td></tr>
+            <tr><td>136</td><td>sofort / gleich</td><td>zarf</td><td>hemen; derhal; az sonra</td></tr>
+            <tr><td>137</td><td>manchmal</td><td>zarf</td><td>bazen; zaman zaman</td></tr>
+            <tr><td>138</td><td>meistens / normalerweise</td><td>zarf</td><td>genellikle; çoğunlukla</td></tr>
+            <tr><td>139</td><td>immer</td><td>zarf</td><td>her zaman; daima</td></tr>
+            <tr><td>140</td><td>nie / niemals</td><td>zarf</td><td>hiçbir zaman; asla</td></tr>
+            <tr><td>141</td><td>vielleicht</td><td>zarf</td><td>belki; muhtemelen</td></tr>
+            <tr><td>142</td><td>natürlich / selbstverständlich</td><td>zarf</td><td>tabii ki; elbette; doğal olarak</td></tr>
+            <tr><td>143</td><td>wirklich</td><td>zarf</td><td>gerçekten; hakikaten</td></tr>
+            <tr><td>144</td><td>sowieso / ohnehin</td><td>zarf</td><td>zaten; nasıl olsa</td></tr>
+            <tr><td>145</td><td>egal / wie auch immer</td><td>zarf</td><td>neyse; nasıl olursa olsun</td></tr>
+            <tr><td>146</td><td>noch immer / immer noch</td><td>zarf</td><td>hâlâ; daha; henüz</td></tr>
+            <tr><td>147</td><td>nächst-</td><td>sıfat</td><td>bir sonraki; gelecek; yakındaki</td></tr>
+            <tr><td>148</td><td>die Vergangenheit</td><td>isim</td><td>geçmiş; tarih</td></tr>
+            <tr><td>149</td><td>die Zukunft</td><td>isim</td><td>gelecek</td></tr>
+            <tr><td>150</td><td>die Gegenwart</td><td>isim</td><td>şu an; günümüz; şimdiki zaman</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">151–200 — Sıfatlar &amp; Tanımlayıcılar</td></tr>
+            <tr><td>151</td><td>groß</td><td>sıfat</td><td>büyük; önemli; uzun (boy)</td></tr>
+            <tr><td>152</td><td>klein</td><td>sıfat</td><td>küçük; az; genç</td></tr>
+            <tr><td>153</td><td>neu</td><td>sıfat</td><td>yeni; modern; taze</td></tr>
+            <tr><td>154</td><td>alt</td><td>sıfat</td><td>eski; yaşlı; geçmişteki</td></tr>
+            <tr><td>155</td><td>gut</td><td>sıfat</td><td>iyi; güzel; yeterli</td></tr>
+            <tr><td>156</td><td>schlecht</td><td>sıfat</td><td>kötü; berbat</td></tr>
+            <tr><td>157</td><td>schön</td><td>sıfat</td><td>güzel; hoş; sevimli</td></tr>
+            <tr><td>158</td><td>hässlich</td><td>sıfat</td><td>çirkin; hoş olmayan</td></tr>
+            <tr><td>159</td><td>richtig</td><td>sıfat / zarf</td><td>doğru; doğru; gerçekten</td></tr>
+            <tr><td>160</td><td>falsch</td><td>sıfat / isim</td><td>yanlış; hatalı; sahte</td></tr>
+            <tr><td>161</td><td>einfach / leicht</td><td>sıfat</td><td>kolay; basit; sade</td></tr>
+            <tr><td>162</td><td>schwierig / schwer</td><td>sıfat</td><td>zor; güç; ağır</td></tr>
+            <tr><td>163</td><td>schnell</td><td>sıfat / zarf</td><td>hızlı; çabuk</td></tr>
+            <tr><td>164</td><td>langsam</td><td>sıfat / zarf</td><td>yavaş; ağır</td></tr>
+            <tr><td>165</td><td>kurz</td><td>sıfat</td><td>kısa; kısaca; az önce</td></tr>
+            <tr><td>166</td><td>lang</td><td>sıfat</td><td>uzun; uzun süreli</td></tr>
+            <tr><td>167</td><td>nah / nah(e)</td><td>sıfat / zarf</td><td>yakın; yakında</td></tr>
+            <tr><td>168</td><td>weit / fern</td><td>sıfat / zarf</td><td>uzak; uzakta</td></tr>
+            <tr><td>169</td><td>offen</td><td>sıfat</td><td>açık; şeffaf; kabul edici</td></tr>
+            <tr><td>170</td><td>geschlossen</td><td>sıfat</td><td>kapalı; kapalı uçlu</td></tr>
+            <tr><td>171</td><td>heiß / warm</td><td>sıfat</td><td>sıcak / ılık</td></tr>
+            <tr><td>172</td><td>kalt / kühl</td><td>sıfat</td><td>soğuk / serin</td></tr>
+            <tr><td>173</td><td>sauber</td><td>sıfat</td><td>temiz; düzenli</td></tr>
+            <tr><td>174</td><td>schmutzig</td><td>sıfat</td><td>kirli; pis</td></tr>
+            <tr><td>175</td><td>beschäftigt</td><td>sıfat</td><td>meşgul; yoğun</td></tr>
+            <tr><td>176</td><td>bereit / fertig</td><td>sıfat</td><td>hazır; tamamlanmış</td></tr>
+            <tr><td>177</td><td>verschieden / unterschiedlich</td><td>sıfat</td><td>farklı; çeşitli</td></tr>
+            <tr><td>178</td><td>gleich / identisch</td><td>sıfat</td><td>aynı; eşit; hemen</td></tr>
+            <tr><td>179</td><td>wichtig</td><td>sıfat</td><td>önemli; ciddi</td></tr>
+            <tr><td>180</td><td>interessant</td><td>sıfat</td><td>ilginç; merak uyandırıcı</td></tr>
+            <tr><td>181</td><td>stark / kräftig</td><td>sıfat</td><td>güçlü; kuvvetli</td></tr>
+            <tr><td>182</td><td>schwach</td><td>sıfat</td><td>zayıf; hafif</td></tr>
+            <tr><td>183</td><td>reich</td><td>sıfat</td><td>zengin; varlıklı</td></tr>
+            <tr><td>184</td><td>arm</td><td>sıfat</td><td>yoksul; fakir</td></tr>
+            <tr><td>185</td><td>glücklich</td><td>sıfat</td><td>mutlu; şanslı</td></tr>
+            <tr><td>186</td><td>traurig / traurig</td><td>sıfat</td><td>üzgün; üzücü</td></tr>
+            <tr><td>187</td><td>müde</td><td>sıfat</td><td>yorgun; bitkin</td></tr>
+            <tr><td>188</td><td>krank</td><td>sıfat</td><td>hasta; rahatsız</td></tr>
+            <tr><td>189</td><td>ängstlich / verängstigt</td><td>sıfat</td><td>korkmuş; kaygılı</td></tr>
+            <tr><td>190</td><td>überrascht</td><td>sıfat</td><td>şaşırmış</td></tr>
+            <tr><td>191</td><td>wütend / ärgerlich</td><td>sıfat</td><td>sinirli; kızgın</td></tr>
+            <tr><td>192</td><td>ruhig</td><td>sıfat</td><td>sakin; sessiz; huzurlu</td></tr>
+            <tr><td>193</td><td>still / leise</td><td>sıfat</td><td>sessiz; gürültüsüz</td></tr>
+            <tr><td>194</td><td>laut</td><td>sıfat</td><td>gürültülü; yüksek sesli</td></tr>
+            <tr><td>195</td><td>schwer / ernst</td><td>sıfat</td><td>ağır; ciddi; önemli</td></tr>
+            <tr><td>196</td><td>leicht / sanft</td><td>sıfat</td><td>hafif; kolay; yumuşak</td></tr>
+            <tr><td>197</td><td>süß</td><td>sıfat</td><td>tatlı; şirin; sevimli</td></tr>
+            <tr><td>198</td><td>bitter / scharf</td><td>sıfat</td><td>acı; sert; keskin</td></tr>
+            <tr><td>199</td><td>frisch</td><td>sıfat</td><td>taze; ferah; yeni</td></tr>
+            <tr><td>200</td><td>trocken</td><td>sıfat</td><td>kuru; yavan; sıkıcı</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">201–250 — Günlük İsimler</td></tr>
+            <tr><td>201</td><td>die Arbeit / der Job</td><td>isim</td><td>iş; meslek</td></tr>
+            <tr><td>202</td><td>das Geld</td><td>isim</td><td>para; nakit</td></tr>
+            <tr><td>203</td><td>das Leben</td><td>isim</td><td>hayat; yaşam</td></tr>
+            <tr><td>204</td><td>der Gedanke</td><td>isim</td><td>düşünce; fikir</td></tr>
+            <tr><td>205</td><td>das Wort</td><td>isim</td><td>kelime; söz</td></tr>
+            <tr><td>206</td><td>das Geräusch / die Stimme</td><td>isim</td><td>ses; gürültü; ses (insan)</td></tr>
+            <tr><td>207</td><td>der Name</td><td>isim</td><td>isim; ad</td></tr>
+            <tr><td>208</td><td>die Nachricht / die Neuigkeit</td><td>isim</td><td>haber; mesaj</td></tr>
+            <tr><td>209</td><td>das Buch</td><td>isim</td><td>kitap</td></tr>
+            <tr><td>210</td><td>der Tisch</td><td>isim</td><td>masa; sıra</td></tr>
+            <tr><td>211</td><td>der Stuhl</td><td>isim</td><td>sandalye</td></tr>
+            <tr><td>212</td><td>das Auto / der Wagen</td><td>isim</td><td>araba; taşıt</td></tr>
+            <tr><td>213</td><td>das Essen</td><td>isim</td><td>yemek; öğün</td></tr>
+            <tr><td>214</td><td>das Wasser</td><td>isim</td><td>su</td></tr>
+            <tr><td>215</td><td>das Brot</td><td>isim</td><td>ekmek</td></tr>
+            <tr><td>216</td><td>der Tee</td><td>isim</td><td>çay</td></tr>
+            <tr><td>217</td><td>der Kaffee</td><td>isim</td><td>kahve</td></tr>
+            <tr><td>218</td><td>das Fleisch</td><td>isim</td><td>et; kasap</td></tr>
+            <tr><td>219</td><td>das Gemüse</td><td>isim</td><td>sebze</td></tr>
+            <tr><td>220</td><td>das Obst / die Frucht</td><td>isim</td><td>meyve</td></tr>
+            <tr><td>221</td><td>das Telefon / das Handy</td><td>isim</td><td>telefon; cep telefonu</td></tr>
+            <tr><td>222</td><td>der Computer</td><td>isim</td><td>bilgisayar</td></tr>
+            <tr><td>223</td><td>der Preis</td><td>isim</td><td>fiyat; ödül</td></tr>
+            <tr><td>224</td><td>das Geschäft / der Laden</td><td>isim</td><td>dükkan; mağaza; iş</td></tr>
+            <tr><td>225</td><td>der Supermarkt</td><td>isim</td><td>süpermarket</td></tr>
+            <tr><td>226</td><td>das Krankenhaus</td><td>isim</td><td>hastane</td></tr>
+            <tr><td>227</td><td>die Schule</td><td>isim</td><td>okul</td></tr>
+            <tr><td>228</td><td>die Universität</td><td>isim</td><td>üniversite</td></tr>
+            <tr><td>229</td><td>der Schüler / die Schülerin</td><td>isim</td><td>öğrenci (ilk/orta)</td></tr>
+            <tr><td>230</td><td>der Lehrer / die Lehrerin</td><td>isim</td><td>öğretmen</td></tr>
+            <tr><td>231</td><td>der Arzt / die Ärztin</td><td>isim</td><td>doktor; hekim</td></tr>
+            <tr><td>232</td><td>die Polizei</td><td>isim</td><td>polis</td></tr>
+            <tr><td>233</td><td>die Regierung</td><td>isim</td><td>hükümet</td></tr>
+            <tr><td>234</td><td>die Wahl</td><td>isim</td><td>seçim; tercih</td></tr>
+            <tr><td>235</td><td>das Gesetz</td><td>isim</td><td>kanun; yasa</td></tr>
+            <tr><td>236</td><td>das Gericht</td><td>isim</td><td>mahkeme; yemek (tabak)</td></tr>
+            <tr><td>237</td><td>der Krieg</td><td>isim</td><td>savaş</td></tr>
+            <tr><td>238</td><td>der Frieden</td><td>isim</td><td>barış</td></tr>
+            <tr><td>239</td><td>das Problem</td><td>isim</td><td>sorun; problem</td></tr>
+            <tr><td>240</td><td>die Lösung</td><td>isim</td><td>çözüm</td></tr>
+            <tr><td>241</td><td>das Beispiel</td><td>isim</td><td>örnek; numune</td></tr>
+            <tr><td>242</td><td>das Ergebnis</td><td>isim</td><td>sonuç; netice</td></tr>
+            <tr><td>243</td><td>das Ziel</td><td>isim</td><td>hedef; amaç</td></tr>
+            <tr><td>244</td><td>das Projekt</td><td>isim</td><td>proje</td></tr>
+            <tr><td>245</td><td>der Bericht</td><td>isim</td><td>rapor; habar</td></tr>
+            <tr><td>246</td><td>der Plan</td><td>isim</td><td>plan; proje</td></tr>
+            <tr><td>247</td><td>die Entscheidung</td><td>isim</td><td>karar</td></tr>
+            <tr><td>248</td><td>die Situation / der Zustand</td><td>isim</td><td>durum; hal</td></tr>
+            <tr><td>249</td><td>das Thema</td><td>isim</td><td>konu; tema</td></tr>
+            <tr><td>250</td><td>die Sache / die Angelegenheit</td><td>isim</td><td>mesele; konu; nesne</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">251–300 — Daha Fazla Yaygın Fiil</td></tr>
+            <tr><td>251</td><td>sich erinnern</td><td>fiil</td><td>hatırlamak</td></tr>
+            <tr><td>252</td><td>vergessen</td><td>fiil</td><td>unutmak</td></tr>
+            <tr><td>253</td><td>akzeptieren / annehmen</td><td>fiil</td><td>kabul etmek</td></tr>
+            <tr><td>254</td><td>ablehnen / verweigern</td><td>fiil</td><td>reddetmek</td></tr>
+            <tr><td>255</td><td>entscheiden</td><td>fiil</td><td>karar vermek</td></tr>
+            <tr><td>256</td><td>wählen / auswählen</td><td>fiil</td><td>seçmek</td></tr>
+            <tr><td>257</td><td>bevorzugen</td><td>fiil</td><td>tercih etmek</td></tr>
+            <tr><td>258</td><td>schaffen / erreichen</td><td>fiil</td><td>başarmak; ulaşmak</td></tr>
+            <tr><td>259</td><td>sich ausruhen</td><td>fiil</td><td>dinlenmek</td></tr>
+            <tr><td>260</td><td>schlafen</td><td>fiil</td><td>uyumak</td></tr>
+            <tr><td>261</td><td>aufwachen</td><td>fiil</td><td>uyanmak</td></tr>
+            <tr><td>262</td><td>trinken</td><td>fiil</td><td>içmek</td></tr>
+            <tr><td>263</td><td>kochen</td><td>fiil</td><td>pişirmek; yemek yapmak</td></tr>
+            <tr><td>264</td><td>kaufen / einkaufen</td><td>fiil</td><td>satın almak</td></tr>
+            <tr><td>265</td><td>verkaufen</td><td>fiil</td><td>satmak</td></tr>
+            <tr><td>266</td><td>bezahlen</td><td>fiil</td><td>ödemek</td></tr>
+            <tr><td>267</td><td>verdienen / gewinnen</td><td>fiil</td><td>kazanmak</td></tr>
+            <tr><td>268</td><td>verlieren</td><td>fiil</td><td>kaybetmek</td></tr>
+            <tr><td>269</td><td>suchen</td><td>fiil</td><td>aramak; bakmak</td></tr>
+            <tr><td>270</td><td>fragen</td><td>fiil</td><td>sormak</td></tr>
+            <tr><td>271</td><td>antworten</td><td>fiil</td><td>cevaplamak</td></tr>
+            <tr><td>272</td><td>warnen</td><td>fiil</td><td>uyarmak</td></tr>
+            <tr><td>273</td><td>loben</td><td>fiil</td><td>övmek</td></tr>
+            <tr><td>274</td><td>kritisieren</td><td>fiil</td><td>eleştirmek</td></tr>
+            <tr><td>275</td><td>sich entschuldigen</td><td>fiil</td><td>özür dilemek</td></tr>
+            <tr><td>276</td><td>danken</td><td>fiil</td><td>teşekkür etmek</td></tr>
+            <tr><td>277</td><td>feiern</td><td>fiil</td><td>kutlamak</td></tr>
+            <tr><td>278</td><td>einladen</td><td>fiil</td><td>davet etmek</td></tr>
+            <tr><td>279</td><td>besuchen</td><td>fiil</td><td>ziyaret etmek</td></tr>
+            <tr><td>280</td><td>kennenlernen</td><td>fiil</td><td>tanışmak</td></tr>
+            <tr><td>281</td><td>trennen / verlassen</td><td>fiil</td><td>ayrılmak</td></tr>
+            <tr><td>282</td><td>teilnehmen / mitmachen</td><td>fiil</td><td>katılmak</td></tr>
+            <tr><td>283</td><td>zurückkehren / umkehren</td><td>fiil</td><td>dönmek</td></tr>
+            <tr><td>284</td><td>übersetzen</td><td>fiil</td><td>çevirmek; tercüme etmek</td></tr>
+            <tr><td>285</td><td>korrigieren / reparieren</td><td>fiil</td><td>düzeltmek; onarmak</td></tr>
+            <tr><td>286</td><td>entwickeln / verbessern</td><td>fiil</td><td>geliştirmek</td></tr>
+            <tr><td>287</td><td>wachsen</td><td>fiil</td><td>büyümek; gelişmek</td></tr>
+            <tr><td>288</td><td>schrumpfen</td><td>fiil</td><td>küçülmek; azalmak</td></tr>
+            <tr><td>289</td><td>zunehmen / steigen</td><td>fiil</td><td>artmak; çoğalmak</td></tr>
+            <tr><td>290</td><td>abnehmen / sinken</td><td>fiil</td><td>azalmak; düşmek</td></tr>
+            <tr><td>291</td><td>erscheinen / aussehen</td><td>fiil</td><td>görünmek; belirmek</td></tr>
+            <tr><td>292</td><td>verschwinden</td><td>fiil</td><td>kaybolmak</td></tr>
+            <tr><td>293</td><td>auftauchen</td><td>fiil</td><td>ortaya çıkmak</td></tr>
+            <tr><td>294</td><td>verbinden</td><td>fiil</td><td>bağlamak; birleştirmek</td></tr>
+            <tr><td>295</td><td>glauben / vertrauen</td><td>fiil</td><td>inanmak; güvenmek</td></tr>
+            <tr><td>296</td><td>sich fragen / neugierig sein</td><td>fiil</td><td>merak etmek</td></tr>
+            <tr><td>297</td><td>sich interessieren</td><td>fiil</td><td>ilgilenmek</td></tr>
+            <tr><td>298</td><td>diskutieren / streiten</td><td>fiil</td><td>tartışmak</td></tr>
+            <tr><td>299</td><td>sich einigen</td><td>fiil</td><td>anlaşmak; uzlaşmak</td></tr>
+            <tr><td>300</td><td>lösen</td><td>fiil</td><td>çözmek; çözümlemek</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">301–350 — Doğa, Vücut &amp; Sağlık</td></tr>
+            <tr><td>301</td><td>der Kopf</td><td>isim</td><td>baş; kafa</td></tr>
+            <tr><td>302</td><td>das Auge</td><td>isim</td><td>göz</td></tr>
+            <tr><td>303</td><td>das Ohr</td><td>isim</td><td>kulak</td></tr>
+            <tr><td>304</td><td>der Mund</td><td>isim</td><td>ağız</td></tr>
+            <tr><td>305</td><td>die Hand</td><td>isim</td><td>el</td></tr>
+            <tr><td>306</td><td>der Fuß</td><td>isim</td><td>ayak</td></tr>
+            <tr><td>307</td><td>das Gesicht</td><td>isim</td><td>yüz; surat</td></tr>
+            <tr><td>308</td><td>das Herz</td><td>isim</td><td>kalp; yürek</td></tr>
+            <tr><td>309</td><td>das Blut</td><td>isim</td><td>kan</td></tr>
+            <tr><td>310</td><td>der Knochen</td><td>isim</td><td>kemik</td></tr>
+            <tr><td>311</td><td>die Haut</td><td>isim</td><td>deri; cilt</td></tr>
+            <tr><td>312</td><td>das Haar</td><td>isim</td><td>saç</td></tr>
+            <tr><td>313</td><td>der Zahn</td><td>isim</td><td>diş</td></tr>
+            <tr><td>314</td><td>die Nase</td><td>isim</td><td>burun</td></tr>
+            <tr><td>315</td><td>der Hals</td><td>isim</td><td>boyun; boğaz</td></tr>
+            <tr><td>316</td><td>die Schulter</td><td>isim</td><td>omuz</td></tr>
+            <tr><td>317</td><td>der Bauch / der Magen</td><td>isim</td><td>karın; mide</td></tr>
+            <tr><td>318</td><td>der Rücken</td><td>isim</td><td>sırt</td></tr>
+            <tr><td>319</td><td>der Schmerz</td><td>isim</td><td>ağrı; acı</td></tr>
+            <tr><td>320</td><td>das Medikament / die Arznei</td><td>isim</td><td>ilaç</td></tr>
+            <tr><td>321</td><td>die Operation</td><td>isim</td><td>ameliyat; operasyon</td></tr>
+            <tr><td>322</td><td>die Krankheit</td><td>isim</td><td>hastalık</td></tr>
+            <tr><td>323</td><td>die Gesundheit</td><td>isim</td><td>sağlık</td></tr>
+            <tr><td>324</td><td>die Luft / das Wetter</td><td>isim</td><td>hava (atmosfer); hava (meteoroloji)</td></tr>
+            <tr><td>325</td><td>die Sonne</td><td>isim</td><td>güneş</td></tr>
+            <tr><td>326</td><td>der Stern</td><td>isim</td><td>yıldız</td></tr>
+            <tr><td>327</td><td>die Wolke</td><td>isim</td><td>bulut</td></tr>
+            <tr><td>328</td><td>der Regen</td><td>isim</td><td>yağmur</td></tr>
+            <tr><td>329</td><td>der Schnee</td><td>isim</td><td>kar</td></tr>
+            <tr><td>330</td><td>der Wind</td><td>isim</td><td>rüzgar</td></tr>
+            <tr><td>331</td><td>das Feuer</td><td>isim</td><td>ateş; yangın</td></tr>
+            <tr><td>332</td><td>die Erde / der Boden</td><td>isim</td><td>toprak; yer; dünya</td></tr>
+            <tr><td>333</td><td>der Stein</td><td>isim</td><td>taş; kaya</td></tr>
+            <tr><td>334</td><td>der Baum</td><td>isim</td><td>ağaç</td></tr>
+            <tr><td>335</td><td>die Blume</td><td>isim</td><td>çiçek</td></tr>
+            <tr><td>336</td><td>das Tier</td><td>isim</td><td>hayvan</td></tr>
+            <tr><td>337</td><td>der Vogel</td><td>isim</td><td>kuş</td></tr>
+            <tr><td>338</td><td>der Fisch</td><td>isim</td><td>balık</td></tr>
+            <tr><td>339</td><td>das Pferd</td><td>isim</td><td>at</td></tr>
+            <tr><td>340</td><td>der Hund</td><td>isim</td><td>köpek</td></tr>
+            <tr><td>341</td><td>die Katze</td><td>isim</td><td>kedi</td></tr>
+            <tr><td>342</td><td>das Meer / der Ozean</td><td>isim</td><td>deniz; okyanus</td></tr>
+            <tr><td>343</td><td>der Fluss</td><td>isim</td><td>nehir; ırmak</td></tr>
+            <tr><td>344</td><td>der Berg</td><td>isim</td><td>dağ</td></tr>
+            <tr><td>345</td><td>der Wald</td><td>isim</td><td>orman</td></tr>
+            <tr><td>346</td><td>der See</td><td>isim</td><td>göl</td></tr>
+            <tr><td>347</td><td>die Wüste</td><td>isim</td><td>çöl</td></tr>
+            <tr><td>348</td><td>die Insel</td><td>isim</td><td>ada</td></tr>
+            <tr><td>349</td><td>die Küste</td><td>isim</td><td>kıyı; sahil</td></tr>
+            <tr><td>350</td><td>das Wetter</td><td>isim</td><td>hava durumu</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">351–400 — Toplum, Kültür &amp; Soyut Kavramlar</td></tr>
+            <tr><td>351</td><td>die Liebe</td><td>isim</td><td>sevgi; aşk</td></tr>
+            <tr><td>352</td><td>die Leidenschaft</td><td>isim</td><td>tutku; ihtiras</td></tr>
+            <tr><td>353</td><td>der Hass</td><td>isim</td><td>nefret</td></tr>
+            <tr><td>354</td><td>die Angst / die Furcht</td><td>isim</td><td>korku; endişe</td></tr>
+            <tr><td>355</td><td>die Hoffnung</td><td>isim</td><td>umut</td></tr>
+            <tr><td>356</td><td>das Vertrauen</td><td>isim</td><td>güven</td></tr>
+            <tr><td>357</td><td>die Freiheit</td><td>isim</td><td>özgürlük</td></tr>
+            <tr><td>358</td><td>das Recht</td><td>isim</td><td>hak; doğruluk; sağ</td></tr>
+            <tr><td>359</td><td>die Pflicht</td><td>isim</td><td>görev; yükümlülük</td></tr>
+            <tr><td>360</td><td>die Verantwortung</td><td>isim</td><td>sorumluluk</td></tr>
+            <tr><td>361</td><td>die Macht / die Kraft</td><td>isim</td><td>güç; iktidar; kuvvet</td></tr>
+            <tr><td>362</td><td>das Wissen</td><td>isim</td><td>bilgi; bilim</td></tr>
+            <tr><td>363</td><td>die Bildung</td><td>isim</td><td>eğitim; öğrenim</td></tr>
+            <tr><td>364</td><td>die Kultur</td><td>isim</td><td>kültür; uygarlık</td></tr>
+            <tr><td>365</td><td>die Geschichte</td><td>isim</td><td>tarih; hikaye</td></tr>
+            <tr><td>366</td><td>die Sprache</td><td>isim</td><td>dil; lisan</td></tr>
+            <tr><td>367</td><td>die Kunst</td><td>isim</td><td>sanat</td></tr>
+            <tr><td>368</td><td>die Musik</td><td>isim</td><td>müzik</td></tr>
+            <tr><td>369</td><td>der Sport</td><td>isim</td><td>spor</td></tr>
+            <tr><td>370</td><td>das Spiel</td><td>isim</td><td>oyun; maç</td></tr>
+            <tr><td>371</td><td>der Film</td><td>isim</td><td>film; sinema</td></tr>
+            <tr><td>372</td><td>die Zeitung</td><td>isim</td><td>gazete</td></tr>
+            <tr><td>373</td><td>der Fernseher</td><td>isim</td><td>televizyon</td></tr>
+            <tr><td>374</td><td>das Internet</td><td>isim</td><td>internet</td></tr>
+            <tr><td>375</td><td>das Meeting / die Besprechung</td><td>isim</td><td>toplantı; görüşme</td></tr>
+            <tr><td>376</td><td>die Vereinbarung</td><td>isim</td><td>anlaşma; uzlaşı</td></tr>
+            <tr><td>377</td><td>die Diskussion / der Streit</td><td>isim</td><td>tartışma; münazara</td></tr>
+            <tr><td>378</td><td>der Wert</td><td>isim</td><td>değer; kıymet</td></tr>
+            <tr><td>379</td><td>der Vorteil / der Nutzen</td><td>isim</td><td>fayda; avantaj</td></tr>
+            <tr><td>380</td><td>der Schaden / der Verlust</td><td>isim</td><td>zarar; kayıp</td></tr>
+            <tr><td>381</td><td>das Risiko</td><td>isim</td><td>risk; tehlike</td></tr>
+            <tr><td>382</td><td>die Chance / die Gelegenheit</td><td>isim</td><td>fırsat; şans</td></tr>
+            <tr><td>383</td><td>die Gefahr</td><td>isim</td><td>tehlike; riziko</td></tr>
+            <tr><td>384</td><td>die Sicherheit</td><td>isim</td><td>güvenlik; emniyet</td></tr>
+            <tr><td>385</td><td>der Erfolg</td><td>isim</td><td>başarı</td></tr>
+            <tr><td>386</td><td>die Entwicklung</td><td>isim</td><td>gelişme; ilerleme; kalkınma</td></tr>
+            <tr><td>387</td><td>die Veränderung</td><td>isim</td><td>değişim; dönüşüm</td></tr>
+            <tr><td>388</td><td>die Innovation</td><td>isim</td><td>yenilik; icat</td></tr>
+            <tr><td>389</td><td>der Fortschritt</td><td>isim</td><td>ilerleme; gelişim</td></tr>
+            <tr><td>390</td><td>die Gesellschaft</td><td>isim</td><td>toplum; şirket</td></tr>
+            <tr><td>391</td><td>die Wirtschaft</td><td>isim</td><td>ekonomi; ticaret</td></tr>
+            <tr><td>392</td><td>die Politik</td><td>isim</td><td>siyaset; politika</td></tr>
+            <tr><td>393</td><td>die Umwelt</td><td>isim</td><td>çevre; doğa</td></tr>
+            <tr><td>394</td><td>die Energie</td><td>isim</td><td>enerji</td></tr>
+            <tr><td>395</td><td>die Technologie</td><td>isim</td><td>teknoloji</td></tr>
+            <tr><td>396</td><td>die Wissenschaft</td><td>isim</td><td>bilim</td></tr>
+            <tr><td>397</td><td>die Forschung</td><td>isim</td><td>araştırma</td></tr>
+            <tr><td>398</td><td>das Experiment</td><td>isim</td><td>deney</td></tr>
+            <tr><td>399</td><td>die Entdeckung</td><td>isim</td><td>keşif</td></tr>
+            <tr><td>400</td><td>die Erfindung</td><td>isim</td><td>icat</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">401–450 — Sayılar, Miktarlar &amp; Yönler</td></tr>
+            <tr><td>401</td><td>null</td><td>sayı</td><td>sıfır</td></tr>
+            <tr><td>402</td><td>zwei</td><td>sayı</td><td>iki</td></tr>
+            <tr><td>403</td><td>drei</td><td>sayı</td><td>üç</td></tr>
+            <tr><td>404</td><td>vier</td><td>sayı</td><td>dört</td></tr>
+            <tr><td>405</td><td>fünf</td><td>sayı</td><td>beş</td></tr>
+            <tr><td>406</td><td>sechs</td><td>sayı</td><td>altı</td></tr>
+            <tr><td>407</td><td>sieben</td><td>sayı</td><td>yedi</td></tr>
+            <tr><td>408</td><td>acht</td><td>sayı</td><td>sekiz</td></tr>
+            <tr><td>409</td><td>neun</td><td>sayı</td><td>dokuz</td></tr>
+            <tr><td>410</td><td>zehn</td><td>sayı</td><td>on</td></tr>
+            <tr><td>411</td><td>hundert</td><td>sayı</td><td>yüz</td></tr>
+            <tr><td>412</td><td>tausend</td><td>sayı</td><td>bin</td></tr>
+            <tr><td>413</td><td>eine Million</td><td>sayı</td><td>milyon</td></tr>
+            <tr><td>414</td><td>eine Milliarde</td><td>sayı</td><td>milyar</td></tr>
+            <tr><td>415</td><td>erst-</td><td>sıfat</td><td>birinci; ilk</td></tr>
+            <tr><td>416</td><td>zweit-</td><td>sıfat</td><td>ikinci</td></tr>
+            <tr><td>417</td><td>letzt-</td><td>sıfat / isim</td><td>son; final</td></tr>
+            <tr><td>418</td><td>ein bisschen</td><td>zarf</td><td>biraz; az</td></tr>
+            <tr><td>419</td><td>wenig</td><td>sıfat / zarf</td><td>az; birkaç</td></tr>
+            <tr><td>420</td><td>zu viel</td><td>sıfat / zarf</td><td>fazla; çok fazla</td></tr>
+            <tr><td>421</td><td>genug</td><td>sıfat</td><td>yeterli; yeterince</td></tr>
+            <tr><td>422</td><td>genau</td><td>sıfat / zarf</td><td>tam; kesin; doğru</td></tr>
+            <tr><td>423</td><td>halb</td><td>sıfat / isim</td><td>yarım; yarı</td></tr>
+            <tr><td>424</td><td>ganz / alle</td><td>belirteç</td><td>tüm; bütün; her</td></tr>
+            <tr><td>425</td><td>rechts</td><td>sıfat / isim</td><td>sağ; sağda</td></tr>
+            <tr><td>426</td><td>links</td><td>sıfat / isim</td><td>sol; solda</td></tr>
+            <tr><td>427</td><td>Osten</td><td>isim</td><td>doğu</td></tr>
+            <tr><td>428</td><td>Westen</td><td>isim</td><td>batı</td></tr>
+            <tr><td>429</td><td>Norden</td><td>isim</td><td>kuzey</td></tr>
+            <tr><td>430</td><td>Süden</td><td>isim</td><td>güney</td></tr>
+            <tr><td>431</td><td>oben</td><td>zarf / sıfat</td><td>yukarıda; üstte</td></tr>
+            <tr><td>432</td><td>unten</td><td>zarf / sıfat</td><td>aşağıda; altta</td></tr>
+            <tr><td>433</td><td>vorwärts</td><td>zarf / sıfat</td><td>ileri; öne</td></tr>
+            <tr><td>434</td><td>zurück / rückwärts</td><td>zarf / sıfat</td><td>geri; arkaya</td></tr>
+            <tr><td>435</td><td>drinnen / innen</td><td>zarf / sıfat</td><td>içeride; içinde</td></tr>
+            <tr><td>436</td><td>draußen / außen</td><td>zarf / sıfat</td><td>dışarıda; dışında</td></tr>
+            <tr><td>437</td><td>die Mitte</td><td>sıfat / isim</td><td>orta; merkez</td></tr>
+            <tr><td>438</td><td>der Rand / die Kante</td><td>isim</td><td>kenar; sınır</td></tr>
+            <tr><td>439</td><td>die Ecke</td><td>isim</td><td>köşe; bucak</td></tr>
+            <tr><td>440</td><td>oben / obenauf</td><td>isim / edat</td><td>üst; üzeri</td></tr>
+            <tr><td>441</td><td>unten / darunter</td><td>isim / edat</td><td>alt; aşağı</td></tr>
+            <tr><td>442</td><td>vorne</td><td>isim / edat</td><td>ön; öne</td></tr>
+            <tr><td>443</td><td>hinten</td><td>isim / edat</td><td>arka; geride</td></tr>
+            <tr><td>444</td><td>daneben / neben</td><td>isim / edat</td><td>yan; yanında; yanı sıra</td></tr>
+            <tr><td>445</td><td>gegen / gegenüber</td><td>edat / sıfat</td><td>karşı; karşısında</td></tr>
+            <tr><td>446</td><td>zwischen / unter</td><td>edat</td><td>arasında; ortasında</td></tr>
+            <tr><td>447</td><td>auf / über</td><td>edat</td><td>üzerinde; üstünde; hakkında</td></tr>
+            <tr><td>448</td><td>unter / darunter</td><td>edat</td><td>altında; aşağısında</td></tr>
+            <tr><td>449</td><td>neben / dabei</td><td>edat</td><td>yanında; hemen yanı başında</td></tr>
+            <tr><td>450</td><td>vor / davor</td><td>edat</td><td>önünde; karşısında</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">451–500 — Seyahat, Ticaret &amp; Sık Kullanılan Diğerleri</td></tr>
+            <tr><td>451</td><td>der Bus</td><td>isim</td><td>otobüs</td></tr>
+            <tr><td>452</td><td>das Flugzeug</td><td>isim</td><td>uçak</td></tr>
+            <tr><td>453</td><td>der Zug</td><td>isim</td><td>tren</td></tr>
+            <tr><td>454</td><td>die U-Bahn</td><td>isim</td><td>metro</td></tr>
+            <tr><td>455</td><td>das Taxi</td><td>isim</td><td>taksi</td></tr>
+            <tr><td>456</td><td>das Fahrrad</td><td>isim</td><td>bisiklet</td></tr>
+            <tr><td>457</td><td>das Schiff</td><td>isim</td><td>gemi; vapur</td></tr>
+            <tr><td>458</td><td>der Flughafen</td><td>isim</td><td>havalimanı</td></tr>
+            <tr><td>459</td><td>der Bahnhof</td><td>isim</td><td>tren garı; istasyon</td></tr>
+            <tr><td>460</td><td>die Fahrkarte / das Ticket</td><td>isim</td><td>bilet</td></tr>
+            <tr><td>461</td><td>der Reisepass</td><td>isim</td><td>pasaport</td></tr>
+            <tr><td>462</td><td>das Hotel</td><td>isim</td><td>otel</td></tr>
+            <tr><td>463</td><td>das Restaurant</td><td>isim</td><td>restoran; lokanta</td></tr>
+            <tr><td>464</td><td>die Rechnung</td><td>isim</td><td>fatura; hesap; hesap cetveli</td></tr>
+            <tr><td>465</td><td>die Bestellung</td><td>isim</td><td>sipariş; rezervasyon</td></tr>
+            <tr><td>466</td><td>die Zahlung</td><td>isim</td><td>ödeme</td></tr>
+            <tr><td>467</td><td>der Rabatt</td><td>isim</td><td>indirim</td></tr>
+            <tr><td>468</td><td>die Steuer</td><td>isim</td><td>vergi; dümen</td></tr>
+            <tr><td>469</td><td>die Bank</td><td>isim</td><td>banka; bank</td></tr>
+            <tr><td>470</td><td>die Karte / die Kreditkarte</td><td>isim</td><td>kart; kredi kartı</td></tr>
+            <tr><td>471</td><td>das Passwort</td><td>isim</td><td>şifre; parola</td></tr>
+            <tr><td>472</td><td>die Adresse</td><td>isim</td><td>adres</td></tr>
+            <tr><td>473</td><td>die Post</td><td>isim</td><td>posta; PTT</td></tr>
+            <tr><td>474</td><td>das Paket</td><td>isim</td><td>paket; koli</td></tr>
+            <tr><td>475</td><td>die Tasche</td><td>isim</td><td>çanta; cep</td></tr>
+            <tr><td>476</td><td>der Schlüssel</td><td>isim</td><td>anahtar</td></tr>
+            <tr><td>477</td><td>die Farbe</td><td>isim</td><td>renk; boya</td></tr>
+            <tr><td>478</td><td>rot</td><td>sıfat</td><td>kırmızı</td></tr>
+            <tr><td>479</td><td>blau</td><td>sıfat</td><td>mavi</td></tr>
+            <tr><td>480</td><td>grün</td><td>sıfat</td><td>yeşil</td></tr>
+            <tr><td>481</td><td>gelb</td><td>sıfat</td><td>sarı</td></tr>
+            <tr><td>482</td><td>weiß</td><td>sıfat</td><td>beyaz</td></tr>
+            <tr><td>483</td><td>schwarz</td><td>sıfat</td><td>siyah</td></tr>
+            <tr><td>484</td><td>grau</td><td>sıfat</td><td>gri</td></tr>
+            <tr><td>485</td><td>orange</td><td>sıfat</td><td>turuncu</td></tr>
+            <tr><td>486</td><td>lila / violett</td><td>sıfat</td><td>mor</td></tr>
+            <tr><td>487</td><td>klar / deutlich</td><td>zarf</td><td>açıkça; net bir şekilde</td></tr>
+            <tr><td>488</td><td>besonders</td><td>zarf</td><td>özellikle; bilhassa</td></tr>
+            <tr><td>489</td><td>definitiv / sicher</td><td>zarf</td><td>kesinlikle; mutlaka</td></tr>
+            <tr><td>490</td><td>völlig / vollständig</td><td>zarf</td><td>tamamen; tamamen</td></tr>
+            <tr><td>491</td><td>fast / beinahe</td><td>zarf</td><td>neredeyse; hemen hemen</td></tr>
+            <tr><td>492</td><td>eigentlich / tatsächlich</td><td>zarf</td><td>aslında; gerçekte</td></tr>
+            <tr><td>493</td><td>alles</td><td>isim cümlesi</td><td>her şey; hepsi</td></tr>
+            <tr><td>494</td><td>nichts</td><td>isim cümlesi</td><td>hiçbir şey</td></tr>
+            <tr><td>495</td><td>überall</td><td>isim cümlesi</td><td>her yer; her taraf</td></tr>
+            <tr><td>496</td><td>höchstwahrscheinlich</td><td>zarf cümlesi</td><td>büyük ihtimalle</td></tr>
+            <tr><td>497</td><td>andererseits</td><td>zarf cümlesi</td><td>öte yandan; bir taraftan</td></tr>
+            <tr><td>498</td><td>deswegen / deshalb</td><td>bağlaç cümlesi</td><td>bu yüzden; bu nedenle</td></tr>
+            <tr><td>499</td><td>trotzdem / dennoch</td><td>bağlaç cümlesi</td><td>buna rağmen; yine de</td></tr>
+            <tr><td>500</td><td>einerseits</td><td>zarf cümlesi</td><td>bir yandan; bir açıdan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="german-srs-tr.js"></script>
+</body>
+</html>
