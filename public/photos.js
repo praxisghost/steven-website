@@ -6,11 +6,11 @@
  *  each image actually loads, pauses when the tab is hidden.
  *
  *  Image hosting:
- *    Photos are served from /img/dogs/<slug>.jpg on this same domain.
+ *    Photos are served from /img/dogs/<filename>.jpeg on this same domain.
  *
  *  To add a breed photo:
- *    1. Save the photo as  public/img/dogs/<slug>.jpg
- *    2. Change `active: false` to `active: true` for that entry below.
+ *    1. Save the photo as  public/img/dogs/<filename>.jpeg
+ *    2. Add a new entry to ALL_DOGS below (active: true).
  *
  *  Slides without an active photo are skipped so the slideshow only
  *  cycles through slides that have real images.
@@ -29,27 +29,27 @@
   const placeholder = document.querySelector('.dogs-placeholder');
 
   /* ── Breed deck ───────────────────────────────────────────────────────────
-   * 11 entries.  Set active: true once you've dropped the matching photo
-   * into /img/dogs/<slug>.jpg.
+   * 11 entries — all photos live in /img/dogs/<slug>.jpeg.
+   * slug must match the filename exactly (including case).
    * ────────────────────────────────────────────────────────────────────── */
   const ALL_DOGS = [
-    { slug: 'beagle',                     name: 'Beagle',                              active: false },
-    { slug: 'german-shepherd',            name: 'German Shepherd',                     active: false },
-    { slug: 'german-pinscher',            name: 'German Pinscher (large)',              active: false },
-    { slug: 'pointer',                    name: 'Pointer',                             active: false },
-    { slug: 'black-labrador',             name: 'Black Labrador Retriever',            active: false },
-    { slug: 'american-foxhound',          name: 'American Foxhound',                   active: false },
-    { slug: 'border-collie-gsd-mix',      name: 'Border Collie / German Shepherd Mix', active: false },
-    { slug: 'foxhound-border-collie-mix', name: 'Foxhound / Border Collie Mix',        active: false },
-    { slug: 'rottweiler',                 name: 'Rottweiler',                          active: false },
-    { slug: 'rottweiler-gsd-mix',         name: 'Rottweiler / German Shepherd Mix',    active: false },
-    { slug: 'dalmatian',                  name: 'Dalmatian',                           active: false },
+    { slug: 'beagle',                       name: 'Beagle',                              active: true  },
+    { slug: 'labrador-retriever',           name: 'Labrador Retriever',                  active: true  },
+    { slug: 'German-Pinscher',              name: 'German Pinscher',                     active: true  },
+    { slug: 'coonhound-pointer',            name: 'Coonhound / Pointer Mix',             active: true  },
+    { slug: 'AmericanFoxhound-BorderCollie',name: 'American Foxhound / Border Collie Mix',active: true },
+    { slug: 'GermanShepherd-BorderCollie',  name: 'German Shepherd / Border Collie Mix', active: true  },
+    { slug: 'doberman-germanshepherd',      name: 'Doberman / German Shepherd Mix',      active: true  },
+    { slug: 'Doberman-Dalmation',           name: 'Doberman / Dalmatian Mix',            active: true  },
+    { slug: 'dalmation',                    name: 'Dalmatian',                           active: true  },
+    { slug: 'greatdane-dalmation',          name: 'Great Dane / Dalmatian Mix',          active: true  },
+    { slug: 'greatdane-germanshepherd',     name: 'Great Dane / German Shepherd Mix',    active: true  },
   ];
 
   /* Build the active deck — only slides that have photos */
   const activeDeck = ALL_DOGS
     .filter(d => d.active)
-    .map(d => ({ ...d, img: `/img/dogs/${d.slug}.jpg` }));
+    .map(d => ({ ...d, img: `/img/dogs/${d.slug}.jpeg` }));
 
   /* If no photos are ready yet, show placeholder and disable controls */
   if (activeDeck.length === 0) {
