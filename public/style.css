@@ -359,6 +359,22 @@ footer a:hover { color: #fff; }
    LANGUAGE LEARNING PAGES
    ══════════════════════════════════════════════ */
 
+/*
+ * .lang-from — the "(from English)" / "(Türkçe)" parenthetical that
+ * follows the target language name in headings and nav links.
+ *
+ * Using em units keeps the proportion consistent regardless of whether
+ * the span appears inside an h1 (2.3 rem) or a sub-nav link (1.2 rem).
+ * font-weight and color are explicitly reset so the parenthetical reads
+ * as secondary without requiring separate overrides per context.
+ */
+.lang-from {
+  font-size: 0.72em;
+  font-weight: 400;
+  color: #888;
+  letter-spacing: 0.01em;
+}
+
 /* ── Page TOC ─────────────────────────────────── */
 .lang-toc {
   margin: 1.5rem 0 2rem;
