@@ -54,6 +54,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      /* Bias toward the top of each photo so dog faces (typically in the
+         upper portion of the frame) stay visible regardless of image ratio. */
+      object-position: center top;
       display: block;
       transition: opacity 0.5s ease;
     }
