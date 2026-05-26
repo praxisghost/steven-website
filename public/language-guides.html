@@ -4,30 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Language Guides — Language Learning — Steven Legg</title>
-  <meta name="description" content="Language-specific study guides for Mandarin, Cantonese, German, Turkish, and Spanish.">
+  <meta name="description" content="Language-specific study guides for Mandarin, Cantonese, German, Turkish, and Spanish — grouped by the learner's native language.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .l1-group {
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .l1-group h2 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #ddd;
+      margin-bottom: 0.15rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.55rem;
+    }
+    .l1-group h2 .l1-flag {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .l1-group .l1-caption {
+      color: #666;
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-left: 2rem;
+      margin-bottom: 0.6rem;
+    }
+    .l1-group ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 1rem;
+    }
+    .l1-group li {
+      padding: 0.35rem 0;
+      padding-left: 2rem;
+      border-bottom: 1px solid #131313;
+    }
+    .l1-group li:last-child { border-bottom: none; }
+    .l1-group li a {
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .l1-group li a .l2-flag { font-size: 1.05rem; }
+    .l1-group li a .l2-name { font-size: 1rem; }
+    .l1-group li a:hover .l2-name { color: #f0a878; }
+  </style>
 </head>
 <body>
   <a class="back-link" href="language-learning.html">← Language Learning</a>
 
   <header>
     <h1>Language Guides</h1>
-    <p>Grammar references, resource lists, &amp; study notes for each language.</p>
+    <p>Grammar references, resource lists, &amp; study notes — grouped by the learner's native language (L1).</p>
   </header>
 
   <article>
-    <nav class="sub-nav" aria-label="Language guides">
+
+    <section class="l1-group" aria-label="From English">
+      <h2><span class="l1-flag" aria-hidden="true">🇬🇧</span> From English — English speakers</h2>
+      <p class="l1-caption">Eight target languages, each starting from an English L1.</p>
       <ul>
-        <li><a href="cantonese-learning.html">Cantonese <span class="lang-from">(from English)</span></a></li>
-        <li><a href="cantonese-from-mandarin.html">粤语<span class="lang-from">（普通话母语者）</span></a></li>
-        <li><a href="german-learning.html">German <span class="lang-from">(from English)</span></a></li>
-        <li><a href="german-learning-tr.html">Almanca <span class="lang-from">(Türkçe)</span></a></li>
-        <li><a href="mandarin-learning.html">Mandarin <span class="lang-from">(from English)</span></a></li>
-        <li><a href="spanish-learning.html">Spanish <span class="lang-from">(from English)</span></a></li>
-        <li><a href="turkish-learning.html">Turkish <span class="lang-from">(from English)</span></a></li>
-        <li><a href="turkish-learning-de.html">Türkisch <span class="lang-from">(Deutsch)</span></a></li>
+        <li><a href="cantonese-learning.html"><span class="l2-flag" aria-hidden="true">🇭🇰</span><span class="l2-name">Cantonese</span></a></li>
+        <li><a href="german-learning.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">German</span></a></li>
+        <li><a href="mandarin-learning.html"><span class="l2-flag" aria-hidden="true">🇨🇳</span><span class="l2-name">Mandarin</span></a></li>
+        <li><a href="punjabi-from-english.html"><span class="l2-flag" aria-hidden="true">🇵🇰</span><span class="l2-name">Punjabi</span></a></li>
+        <li><a href="spanish-learning.html"><span class="l2-flag" aria-hidden="true">🇪🇸</span><span class="l2-name">Spanish</span></a></li>
+        <li><a href="turkish-learning.html"><span class="l2-flag" aria-hidden="true">🇹🇷</span><span class="l2-name">Turkish</span></a></li>
+        <li><a href="ukrainian-from-english.html"><span class="l2-flag" aria-hidden="true">🇺🇦</span><span class="l2-name">Ukrainian</span></a></li>
+        <li><a href="vietnamese-from-english.html"><span class="l2-flag" aria-hidden="true">🇻🇳</span><span class="l2-name">Vietnamese</span></a></li>
       </ul>
-    </nav>
+    </section>
+
+    <section class="l1-group" aria-label="From Mandarin">
+      <h2><span class="l1-flag" aria-hidden="true">🇨🇳</span> 普通话母语者</h2>
+      <p class="l1-caption">面向普通话母语者的语言学习指南，涵盖语法对比、发音对照与资源推荐。</p>
+      <ul>
+        <li><a href="cantonese-from-mandarin.html"><span class="l2-flag" aria-hidden="true">🇭🇰</span><span class="l2-name">粤语</span></a></li>
+        <li><a href="german-from-mandarin.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">德语</span></a></li>
+        <li><a href="punjabi-from-mandarin.html"><span class="l2-flag" aria-hidden="true">🇵🇰</span><span class="l2-name">旁遮普语</span></a></li>
+        <li><a href="spanish-from-mandarin.html"><span class="l2-flag" aria-hidden="true">🇪🇸</span><span class="l2-name">西班牙语</span></a></li>
+        <li><a href="turkish-from-mandarin.html"><span class="l2-flag" aria-hidden="true">🇹🇷</span><span class="l2-name">土耳其语</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Cantonese">
+      <h2><span class="l1-flag" aria-hidden="true">🇭🇰</span> 廣東話母語者</h2>
+      <p class="l1-caption">為廣東話母語者整理，著重粵普聲調對應、用字差異及語法對比。</p>
+      <ul>
+        <li><a href="farsi-from-cantonese.html"><span class="l2-flag" aria-hidden="true">🇮🇷</span><span class="l2-name">波斯語</span></a></li>
+        <li><a href="german-from-cantonese.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">德文</span></a></li>
+        <li><a href="mandarin-from-cantonese.html"><span class="l2-flag" aria-hidden="true">🇨🇳</span><span class="l2-name">普通話</span></a></li>
+        <li><a href="spanish-from-cantonese.html"><span class="l2-flag" aria-hidden="true">🇪🇸</span><span class="l2-name">西班牙文</span></a></li>
+        <li><a href="turkish-from-cantonese.html"><span class="l2-flag" aria-hidden="true">🇹🇷</span><span class="l2-name">土耳其文</span></a></li>
+        <li><a href="vietnamese-from-cantonese.html"><span class="l2-flag" aria-hidden="true">🇻🇳</span><span class="l2-name">越南文</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From German">
+      <h2><span class="l1-flag" aria-hidden="true">🇩🇪</span> Deutschsprachige</h2>
+      <p class="l1-caption">Sprachführer mit deutschen Erklärungen, Grammatikvergleichen und Ressourcenlisten.</p>
+      <ul>
+        <li><a href="farsi-from-german.html"><span class="l2-flag" aria-hidden="true">🇮🇷</span><span class="l2-name">Persisch</span></a></li>
+        <li><a href="spanish-from-german.html"><span class="l2-flag" aria-hidden="true">🇪🇸</span><span class="l2-name">Spanisch</span></a></li>
+        <li><a href="turkish-learning-de.html"><span class="l2-flag" aria-hidden="true">🇹🇷</span><span class="l2-name">Türkisch</span></a></li>
+        <li><a href="ukrainian-from-german.html"><span class="l2-flag" aria-hidden="true">🇺🇦</span><span class="l2-name">Ukrainisch</span></a></li>
+        <li><a href="vietnamese-from-german.html"><span class="l2-flag" aria-hidden="true">🇻🇳</span><span class="l2-name">Vietnamesisch</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Turkish">
+      <h2><span class="l1-flag" aria-hidden="true">🇹🇷</span> Türkçe konuşanlar</h2>
+      <p class="l1-caption">Türkçe açıklamalı dil rehberleri, gramer karşılaştırmaları ve kaynak önerileri ile.</p>
+      <ul>
+        <li><a href="cantonese-from-turkish.html"><span class="l2-flag" aria-hidden="true">🇭🇰</span><span class="l2-name">Kantonca</span></a></li>
+        <li><a href="farsi-from-turkish.html"><span class="l2-flag" aria-hidden="true">🇮🇷</span><span class="l2-name">Farsça</span></a></li>
+        <li><a href="german-learning-tr.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">Almanca</span></a></li>
+        <li><a href="mandarin-from-turkish.html"><span class="l2-flag" aria-hidden="true">🇨🇳</span><span class="l2-name">Mandarin Çincesi</span></a></li>
+        <li><a href="spanish-from-turkish.html"><span class="l2-flag" aria-hidden="true">🇪🇸</span><span class="l2-name">İspanyolca</span></a></li>
+        <li><a href="vietnamese-from-turkish.html"><span class="l2-flag" aria-hidden="true">🇻🇳</span><span class="l2-name">Vietnamca</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Spanish">
+      <h2><span class="l1-flag" aria-hidden="true">🇪🇸</span> Hispanohablantes</h2>
+      <p class="l1-caption">Guías con explicaciones en español, comparaciones gramaticales y recursos curados.</p>
+      <ul>
+        <li><a href="cantonese-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇭🇰</span><span class="l2-name">Cantonés</span></a></li>
+        <li><a href="farsi-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇮🇷</span><span class="l2-name">Persa</span></a></li>
+        <li><a href="german-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">Alemán</span></a></li>
+        <li><a href="mandarin-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇨🇳</span><span class="l2-name">Mandarín</span></a></li>
+        <li><a href="turkish-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇹🇷</span><span class="l2-name">Turco</span></a></li>
+        <li><a href="ukrainian-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇺🇦</span><span class="l2-name">Ucraniano</span></a></li>
+        <li><a href="vietnamese-from-spanish.html"><span class="l2-flag" aria-hidden="true">🇻🇳</span><span class="l2-name">Vietnamita</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Persian" dir="ltr">
+      <h2><span class="l1-flag" aria-hidden="true">🇮🇷</span> فارسی‌زبانان</h2>
+      <p class="l1-caption" dir="rtl" style="text-align:right;margin-right:2rem;margin-left:0;">راهنماهای یادگیری زبان با توضیحات فارسی، مقایسه‌های دستوری و منابع گزیده.</p>
+      <ul>
+        <li><a href="cantonese-from-farsi.html"><span class="l2-flag" aria-hidden="true">🇭🇰</span><span class="l2-name">کانتونی</span></a></li>
+        <li><a href="german-from-persian.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">آلمانی</span></a></li>
+        <li><a href="turkish-from-farsi.html"><span class="l2-flag" aria-hidden="true">🇹🇷</span><span class="l2-name">ترکی</span></a></li>
+        <li><a href="vietnamese-from-farsi.html"><span class="l2-flag" aria-hidden="true">🇻🇳</span><span class="l2-name">ویتنامی</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Punjabi">
+      <h2><span class="l1-flag" aria-hidden="true">🇵🇰</span> ਪੰਜਾਬੀ ਬੋਲਣ ਵਾਲੇ</h2>
+      <p class="l1-caption">ਪੰਜਾਬੀ ਬੋਲਣ ਵਾਲਿਆਂ ਲਈ ਭਾਸ਼ਾ ਸਿੱਖਣ ਦੇ ਗਾਈਡ — ਵਿਆਕਰਨ ਤੁਲਨਾ ਅਤੇ ਸਰੋਤਾਂ ਸਮੇਤ।</p>
+      <ul>
+        <li><a href="farsi-from-punjabi.html"><span class="l2-flag" aria-hidden="true">🇮🇷</span><span class="l2-name">ਫ਼ਾਰਸੀ</span></a></li>
+        <li><a href="german-from-punjabi.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">ਜਰਮਨ</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Ukrainian">
+      <h2><span class="l1-flag" aria-hidden="true">🇺🇦</span> Україномовні</h2>
+      <p class="l1-caption">Посібники з вивчення мов з поясненнями українською, граматичними порівняннями та рекомендаціями ресурсів.</p>
+      <ul>
+        <li><a href="cantonese-from-ukrainian.html"><span class="l2-flag" aria-hidden="true">🇭🇰</span><span class="l2-name">Кантонська</span></a></li>
+        <li><a href="german-from-ukrainian.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">Німецька</span></a></li>
+      </ul>
+    </section>
+
+    <section class="l1-group" aria-label="From Vietnamese">
+      <h2><span class="l1-flag" aria-hidden="true">🇻🇳</span> Người Việt</h2>
+      <p class="l1-caption">Hướng dẫn học ngôn ngữ bằng tiếng Việt, đối chiếu ngữ pháp và gợi ý tài nguyên.</p>
+      <ul>
+        <li><a href="german-from-vietnamese.html"><span class="l2-flag" aria-hidden="true">🇩🇪</span><span class="l2-name">Tiếng Đức</span></a></li>
+      </ul>
+    </section>
+
   </article>
 
   <footer>

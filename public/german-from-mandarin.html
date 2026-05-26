@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德語（普通話母語者）— Steven Legg</title>
+  <meta name="description" content="為普通話母語者準備的德語學習指南，含間隔重複單字訓練、文法說明、書籍、YouTube 頻道及學習工具推薦。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .srs-meta{display:flex;align-items:center;gap:1.25rem;margin-bottom:.85rem;font-size:.8rem;color:#555;min-height:1.4rem;}
+    .srs-count b{color:#ccc;font-weight:500;}
+    .srs-bar-wrap{flex:1;height:2px;background:#1a1a1a;border-radius:1px;overflow:hidden;}
+    .srs-bar{height:100%;background:#2e2e2e;border-radius:1px;transition:width .4s ease;}
+    .srs-card{border:1px solid #1e1e1e;border-radius:4px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.25rem;cursor:pointer;user-select:none;transition:border-color .2s ease;text-align:center;position:relative;}
+    .srs-card:hover{border-color:#2a2a2a;}.srs-card.revealed{cursor:default;}.srs-card.revealed:hover{border-color:#1e1e1e;}
+    .srs-turkish{font-family:var(--font-display);font-size:2.2rem;font-weight:500;color:#fff;letter-spacing:.01em;line-height:1.2;}
+    .srs-pos{font-size:.75rem;color:#3a3a3a;font-style:italic;margin-top:.5rem;letter-spacing:.04em;}
+    .srs-divider{width:2rem;height:1px;background:#222;margin:1.25rem auto 1rem;flex-shrink:0;}
+    .srs-english{font-size:1.2rem;color:#bbb;line-height:1.45;}
+    .srs-hint{position:absolute;bottom:.7rem;font-size:.7rem;color:#2c2c2c;letter-spacing:.05em;}
+    .srs-actions{display:flex;gap:.75rem;margin-top:.75rem;min-height:2.6rem;}
+    .srs-btn{flex:1;padding:.55rem 1rem;border-radius:3px;background:none;font-family:var(--font-body);font-size:.9rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease;display:flex;align-items:center;justify-content:center;gap:.55rem;}
+    .srs-btn-again{border:1px solid #2e1a1a;color:#c07070;}.srs-btn-again:hover{background:#1a0a0a;border-color:#c07070;color:#e08888;}
+    .srs-btn-good{border:1px solid #1a2e1a;color:#7ed895;}.srs-btn-good:hover{background:#0a180a;border-color:#7ed895;color:#9ef0b0;}
+    .srs-key{font-family:'Courier New',monospace;font-size:.67rem;padding:.04rem .3rem;border:1px solid currentColor;border-radius:2px;opacity:.5;flex-shrink:0;}
+    .srs-interval{font-size:.72rem;opacity:.6;}
+    .srs-done{border:1px solid #1e1e1e;border-radius:4px;text-align:center;padding:3rem 1.5rem;}
+    .srs-done-title{font-family:var(--font-display);font-size:1.4rem;font-weight:500;color:#fff;margin-bottom:.4rem;}
+    .srs-done-sub{color:#555;font-size:.9rem;margin-bottom:.85rem;font-style:italic;}
+    .srs-done-stats{color:#444;font-size:.82rem;margin-bottom:1.5rem;line-height:1.9;}
+    .srs-action-btn{background:none;border:1px solid #2a2a2a;color:#666;font-family:var(--font-body);font-size:.85rem;padding:.45rem 1.1rem;border-radius:3px;cursor:pointer;transition:border-color .2s ease,color .2s ease;}
+    .srs-action-btn:hover{border-color:#555;color:#fff;}
+    .srs-shortcuts{font-size:.75rem;color:#2e2e2e;margin-top:.6rem;display:flex;gap:1rem;justify-content:center;}
+    .srs-shortcuts kbd{font-family:'Courier New',monospace;font-size:.68rem;padding:.05rem .3rem;border:1px solid #2a2a2a;border-radius:2px;color:#333;}
+    @media(max-width:480px){.srs-turkish{font-size:1.85rem;}.srs-english{font-size:1.05rem;}.srs-btn{font-size:.82rem;padding:.5rem .6rem;}.srs-meta{gap:.75rem;}}
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html">← 語言學習指南</a>
+
+  <header>
+    <h1>德語 <span class="lang-from">（普通話母語者）</span></h1>
+    <p>Deutsch lernen — 為普通話母語者整理的德語自學指南，從入門到中級。</p>
+  </header>
+
+  <article>
+
+    <!-- 目錄 -->
+    <ol class="lang-toc">
+      <li><a href="#srs">間隔重複單字訓練</a></li>
+      <li><a href="#intro">德語簡介</a></li>
+      <li><a href="#pronunciation">發音與字母</a></li>
+      <li><a href="#grammar">文法基礎</a></li>
+      <li><a href="#sentence">常用句型</a></li>
+      <li><a href="#phrases">常用短語與對話</a></li>
+      <li><a href="#apps">應用程式與工具</a></li>
+      <li><a href="#books">書籍</a></li>
+      <li><a href="#audio">音頻與聽力</a></li>
+      <li><a href="#youtube">YouTube 頻道</a></li>
+      <li><a href="#tutors">家教與課程</a></li>
+      <li><a href="#films">電影</a></li>
+      <li><a href="#study">學習策略</a></li>
+    </ol>
+
+    <!-- 1. SRS -->
+    <div class="lang-section" id="srs">
+      <h2>1. 間隔重複單字訓練</h2>
+      <p>以下訓練器內建 100 個德語核心單字，搭配 SM-2 間隔重複演算法，依照你的記憶狀況智慧排程複習時間。點擊卡片顯示中文翻譯；進度自動儲存於瀏覽器。</p>
+      <p>按 <kbd>空格</kbd>/<kbd>Enter</kbd> 翻牌，<kbd>1</kbd> 表示再試，<kbd>3</kbd> 表示記住了。</p>
+      <div id="srs-root" style="max-width:480px;margin:1.5rem 0;"></div>
+      <div class="srs-shortcuts">
+        <span><kbd>Space</kbd>/<kbd>Enter</kbd> 翻牌</span>
+        <span><kbd>1</kbd> 再試</span>
+        <span><kbd>3</kbd> 記住了</span>
+      </div>
+    </div>
+
+    <!-- 2. 簡介 -->
+    <div class="lang-section" id="intro">
+      <h2>2. 德語簡介</h2>
+      <p>德語（Deutsch）是超過一億人的母語，是歐盟使用最廣泛的母語，也是德國、奧地利、列支敦斯登的官方語言，及瑞士的四種官方語言之一。</p>
+
+      <h3>為什麼學德語？</h3>
+      <ul>
+        <li><strong>職業機會</strong> — 德國擁有全球最大的經濟體之一；德語能力在工程、科學、商業與學術界均有極大價值。</li>
+        <li><strong>文化底蘊</strong> — 德語文學（歌德、卡夫卡、黑塞）、哲學（康德、尼采、黑格爾）、音樂（巴赫、貝多芬、布拉姆斯）影響深遠。</li>
+        <li><strong>旅遊</strong> — 親歷德奧瑞三國（DACH 地區）時，掌握語言能使體驗更加豐富。</li>
+        <li><strong>學術優勢</strong> — 德語是全球第二常用的科學語言。</li>
+        <li><strong>橋樑語言</strong> — 學會德語後，荷蘭語、瑞典語、挪威語及丹麥語的學習難度將大幅降低。</li>
+      </ul>
+
+      <h3>對普通話母語者的挑戰與優勢</h3>
+      <p>普通話與德語的距離比與英語還要遠——前者是分析型孤立語、無屈折變化；後者是高度屈折的印歐語、保留四格與三性。但反過來，<strong>有幾個普通話特性是其他語言的學習者沒有的優勢</strong>：</p>
+      <ul>
+        <li><strong>複合詞直覺</strong> — 這是普通話母語者最大的隱形優勢。德語以「自由複合」聞名（Krankenhaus = 病人＋房子 = 醫院；Handschuh = 手＋鞋 = 手套；Fernseher = 遠＋看者 = 電視機）。這套構詞邏輯與普通話的「火車、電腦、手機、長頸鹿」幾乎一一對應——拆解新詞時你不需要重新建立直覺，可以直接借用中文的合成詞思維。</li>
+        <li><strong>聲調背景的副作用</strong> — 你習慣對音高敏感，這對德語的句調與重音（特別是分離動詞回到句末時的語調）有幫助。但要警惕一個反向干擾：德語沒有詞彙聲調，初學時容易把每個音節都讀成第一聲（高平），聽起來會「機械化」。</li>
+        <li><strong>圓唇前元音直接可用</strong> — 德語 <strong>ü</strong> 與普通話的 ü（「魚、語、女」）發音完全相同；<strong>ö</strong> 則接近普通話 e（「鵝、餓」）加上圓唇。英語母語者在這兩個音上要苦練數月，你幾乎是零成本就會。</li>
+        <li><strong>挑戰：四個全新範疇</strong> — 普通話<strong>沒有冠詞、沒有性、沒有格、沒有動詞變位</strong>，這四件事德語都有。最費力的不是記住規則，而是接受「同一個名詞會因為它在句中的角色而改變前面的冠詞」這件事根本上的反直覺。</li>
+        <li><strong>挑戰：複數</strong> — 普通話只用「們」標記人稱代詞和少數人類名詞的複數；德語每個名詞都有複數形式，且分為八種以上的不同變化模式（-e、-en、-er、-s、變音、零變化等），需要連同性別一起當作詞典條目記憶。</li>
+      </ul>
+
+      <h3>學習時間預期</h3>
+      <p>美國外交學院（FSI）將德語列為第二類語言（Category II），<strong>對英語母語者</strong>達到專業工作能力約需 750 學時。普通話母語者沒有同源詞優勢，實際所需時間通常更長——務實的估計是 1000–1200 學時，相當於每天 60 分鐘、堅持 3 年左右達到 B2 水平。</p>
+    </div>
+
+    <!-- 3. 發音 -->
+    <div class="lang-section" id="pronunciation">
+      <h2>3. 發音與字母</h2>
+      <p>德語發音高度規律，每個字母在幾乎所有單詞中代表相同的音。德語使用標準 26 個拉丁字母，另加四個特殊字符：<strong>ä、ö、ü</strong>（變音符）及 <strong>ß</strong>（Eszett，相當於雙 s）。</p>
+
+      <details class="accordion">
+        <summary>關鍵字母發音對照</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>字母</th><th>近似發音</th><th>例詞</th><th>中文意思</th></tr></thead>
+              <tbody>
+                <tr><td><code>ä</code></td><td>類似「欸」（短e）</td><td>Ähre</td><td>穀穗</td></tr>
+                <tr><td><code>ö</code></td><td>嘟嘴說「e」，如普通話「餓」的圓唇版</td><td>schön</td><td>漂亮</td></tr>
+                <tr><td><code>ü</code></td><td>與普通話 ü 完全相同，如「魚、語」</td><td>über</td><td>越過</td></tr>
+                <tr><td><code>ß</code></td><td>相當於雙 s</td><td>Straße</td><td>街道</td></tr>
+                <tr><td><code>w</code></td><td>發英語 v 的音</td><td>Wasser</td><td>水</td></tr>
+                <tr><td><code>v</code></td><td>本族詞中發 f 音（Vater、vier、von）；拉丁／法語外來詞中保留 v 音（Vase、Vegetarier、Klavier）</td><td>Vater / Vase</td><td>父親／花瓶</td></tr>
+                <tr><td><code>z</code></td><td>發「ts」音，如「Cat's」的 ts</td><td>Zeit</td><td>時間</td></tr>
+                <tr><td><code>j</code></td><td>發英語 y 的音，如「yes」</td><td>Jahr</td><td>年</td></tr>
+                <tr><td><code>ch</code></td><td>a/o/u 後：喉音（如蘇格蘭語 loch）；e/i 後：軟嘶聲</td><td>Bach / ich</td><td>溪流／我</td></tr>
+                <tr><td><code>sch</code></td><td>英語「sh」音</td><td>Schule</td><td>學校</td></tr>
+                <tr><td><code>sp / st</code></td><td>詞首時讀「shp / sht」</td><td>sprechen / Stadt</td><td>說話／城市</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- 4. 文法 -->
+    <div class="lang-section" id="grammar">
+      <h2>4. 文法基礎</h2>
+      <p>德語文法以邏輯性見長，核心規律掌握後，建構正確句子的速度會大幅提升。</p>
+
+      <details class="accordion">
+        <summary>名詞性別與冠詞</summary>
+        <div class="accordion-body">
+          <p>德語每個名詞都有性別之分：陽性（<strong>der</strong>）、陰性（<strong>die</strong>）、中性（<strong>das</strong>）。性別通常須與名詞一起記憶。</p>
+          <p><strong>記憶策略：</strong>永遠連同冠詞一起背誦。不要只背「Hund」，要背「der Hund（狗）」。這個習慣在學習格變化時能省去大量功夫。</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>詞尾規律</th><th>通常為</th><th>例詞</th></tr></thead>
+              <tbody>
+                <tr><td>-er, -en, -el</td><td>陽性</td><td>der Lehrer（老師）, der Wagen（車）</td></tr>
+                <tr><td>-ung, -heit, -keit, -schaft, -tion</td><td>陰性</td><td>die Zeitung（報紙）, die Freiheit（自由）</td></tr>
+                <tr><td>-chen, -lein（小稱後綴）</td><td>中性</td><td>das Mädchen（女孩）</td></tr>
+                <tr><td>-ium, -um, -ment</td><td>中性</td><td>das Argument（論點）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>定冠詞四格變化</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>性別</th><th>主格（誰）</th><th>賓格（什麼）</th><th>與格（給誰）</th><th>屬格（誰的）</th></tr></thead>
+              <tbody>
+                <tr><td>陽性</td><td><code>der</code></td><td><code>den</code></td><td><code>dem</code></td><td><code>des</code></td></tr>
+                <tr><td>陰性</td><td><code>die</code></td><td><code>die</code></td><td><code>der</code></td><td><code>der</code></td></tr>
+                <tr><td>中性</td><td><code>das</code></td><td><code>das</code></td><td><code>dem</code></td><td><code>des</code></td></tr>
+                <tr><td>複數</td><td><code>die</code></td><td><code>die</code></td><td><code>den</code></td><td><code>der</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>人稱代詞</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>人稱</th><th>德語</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>第一人稱單數</td><td><code>ich</code></td><td>我</td></tr>
+                <tr><td>第二人稱單數（非正式）</td><td><code>du</code></td><td>你</td></tr>
+                <tr><td>第二人稱單數（正式）</td><td><code>Sie</code></td><td>您</td></tr>
+                <tr><td>第三人稱單數（陽）</td><td><code>er</code></td><td>他</td></tr>
+                <tr><td>第三人稱單數（陰）</td><td><code>sie</code></td><td>她</td></tr>
+                <tr><td>第三人稱單數（中）</td><td><code>es</code></td><td>它</td></tr>
+                <tr><td>第一人稱複數</td><td><code>wir</code></td><td>我們</td></tr>
+                <tr><td>第二人稱複數（非正式）</td><td><code>ihr</code></td><td>你們</td></tr>
+                <tr><td>第三人稱複數</td><td><code>sie</code></td><td>他們</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lang-note">與朋友、家人、兒童使用 <em>du</em>；與陌生人、專業人士及長輩使用 <em>Sie</em>（始終大寫）。</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 5. 句型 -->
+    <div class="lang-section" id="sentence">
+      <h2>5. 常用句型</h2>
+
+      <details class="accordion">
+        <summary>V2 規則 — 動詞永遠在主句第二位</summary>
+        <div class="accordion-body">
+          <p>在德語主句中，變位動詞<strong>始終位於第二個成分</strong>。第一個成分可以是主語、賓語或時間地點狀語，但動詞必須緊隨其後。</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>第一位</th><th>第二位（動詞）</th><th>其餘</th></tr></thead>
+              <tbody>
+                <tr><td>Ich</td><td>trinke</td><td>jeden Morgen Kaffee. <em>（我每天早上喝咖啡。）</em></td></tr>
+                <tr><td>Jeden Morgen</td><td>trinke</td><td>ich Kaffee. <em>（每天早上我喝咖啡。）</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>否定 — nicht 與 kein</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>nicht</strong> — 否定動詞、形容詞或有定冠詞的名詞：<em>Ich schlafe nicht.（我沒有睡覺。）</em></li>
+            <li><strong>kein</strong> — 否定原本使用不定冠詞的名詞：<em>Ich habe kein Auto.（我沒有車。）</em></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>從句 — 動詞移至句尾</summary>
+        <div class="accordion-body">
+          <p>在從句中（由 dass、weil、wenn、ob 引導），變位動詞移至句末。</p>
+          <p><em>Ich weiß, dass er kommt.</em> — 我知道他會來。<br>
+          <em>Ich gehe nicht, weil ich müde bin.</em> — 因為我很累，所以我不去。</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 6. 短語 -->
+    <div class="lang-section" id="phrases">
+      <h2>6. 常用短語與對話</h2>
+
+      <details class="accordion">
+        <summary>問候與道別</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>德語</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>Guten Morgen</td><td>早安</td></tr>
+                <tr><td>Guten Tag</td><td>你好（正式）</td></tr>
+                <tr><td>Guten Abend</td><td>晚安（見面時）</td></tr>
+                <tr><td>Hallo / Hi</td><td>嗨（非正式）</td></tr>
+                <tr><td>Tschüss</td><td>再見（非正式）</td></tr>
+                <tr><td>Auf Wiedersehen</td><td>再見（正式）</td></tr>
+                <tr><td>Gute Nacht</td><td>晚安（道別時）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>自我介紹與基本對話</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>德語</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>Wie heißen Sie? / Wie heißt du?</td><td>您叫什麼名字？／你叫什麼名字？</td></tr>
+                <tr><td>Ich heiße…</td><td>我叫……</td></tr>
+                <tr><td>Wie geht es Ihnen? / Wie geht es dir?</td><td>您好嗎？／你好嗎？</td></tr>
+                <tr><td>Mir geht es gut, danke.</td><td>我很好，謝謝。</td></tr>
+                <tr><td>Woher kommen Sie?</td><td>您從哪裡來？</td></tr>
+                <tr><td>Ich komme aus China.</td><td>我來自中國。</td></tr>
+                <tr><td>Sprechen Sie Chinesisch?</td><td>您說中文嗎？</td></tr>
+                <tr><td>Ich spreche ein bisschen Deutsch.</td><td>我會說一點德語。</td></tr>
+                <tr><td>Ich verstehe nicht.</td><td>我不明白。</td></tr>
+                <tr><td>Können Sie das wiederholen?</td><td>您能重複一遍嗎？</td></tr>
+                <tr><td>Bitte / Danke schön</td><td>請／非常感謝</td></tr>
+                <tr><td>Entschuldigung</td><td>對不起、打擾一下</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- 7. 應用程式 -->
+    <div class="lang-section" id="apps">
+      <h2>7. 應用程式與工具</h2>
+      <p class="lang-note">針對普通話母語者，需要區分「介面語言」與「教學內容語言」。下列工具中，<strong>Pleco 之外</strong>絕大多數都以英語為介面，但其音頻、文字與字典本身對普通話母語者依然可用——你可以把英文講解當成「不存在」，直接使用語料部分。</p>
+      <ul>
+        <li><strong><a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a></strong> <em>（介面支援中文）</em> — 最有效的記憶工具，採用 SM-2 或 FSRS 演算法。桌面版及 Android 版免費，iOS 版約 25 美元。<a href="https://ankiweb.net/shared/decks/german" target="_blank" rel="noopener">AnkiWeb 牌組庫</a>有現成的「德語–中文」對照牌組可以下載。</li>
+        <li><strong><a href="https://www.lingq.com/" target="_blank" rel="noopener">LingQ</a></strong> <em>（介面支援繁體／簡體中文）</em> — 中級學習者最有效的擴展閱讀平台。可匯入 EPUB 並提供母語音頻與中文釋義；其「Lessons」目錄裡有大量分級德語文本。</li>
+        <li><strong><a href="https://www.languagereactor.com/" target="_blank" rel="noopener">Language Reactor</a></strong> — Chrome 擴充功能，在 Netflix 與 YouTube 上顯示德語＋中文雙語字幕，並可一鍵把生詞匯出到 Anki。</li>
+        <li><strong><a href="https://dict.leo.org/chinesisch-deutsch/" target="_blank" rel="noopener">LEO 中德詞典</a></strong> — 德國本土的免費中德／德中詞典，例句豐富，討論區裡的詞義辨析帖極具參考價值。手機 App 與網頁版皆免費。</li>
+        <li><strong><a href="https://www.pons.com/uebersetzung/chinesisch-deutsch" target="_blank" rel="noopener">PONS 中德詞典</a></strong> — 另一個高質量的中德詞典，發音示範與動詞變位表（Pons.com/verbtabellen）做得極好。</li>
+        <li><strong><a href="https://en.langenscheidt.com/german-chinese/" target="_blank" rel="noopener">Langenscheidt 中德辭典</a></strong> — 紙本與線上版皆有，傳統德國權威字典出版社，適合進階學習者。</li>
+      </ul>
+      <p class="lang-note">不適合普通話母語者的工具：<strong>Duolingo</strong>目前<strong>不</strong>提供「從中文學德語」課程，只能從英文出發學德語——如果你的英語不夠流利，效率會非常差。<strong>Babbel</strong>同樣未支援中文介面。<strong>Kobo</strong>並非德國最普及的電子閱讀器；德國本土最主流的是 <strong>Tolino</strong>（由 Hugendubel、Thalia、Weltbild 等書店聯盟推出），其次才是 Kindle。如需在德國買電子書，Tolino 商店與 amazon.de 都是合法管道。</p>
+    </div>
+
+    <!-- 8. 書籍 -->
+    <div class="lang-section" id="books">
+      <h2>8. 書籍</h2>
+
+      <h3>中文出版的德語教材</h3>
+      <ul>
+        <li><strong>《新求精德語強化教程》</strong>（同濟大學出版社）— 中國大陸最廣泛使用的德語教材，分初級、中級、高級三套，覆蓋 A1–C1。語法解釋以中文為主，最適合自學中文母語者；對應的習題冊有詳解。如果你打算赴德留學考 DSH 或 TestDaF，這套是事實上的標準。</li>
+        <li><strong>《當代大學德語》</strong>（外語教學與研究出版社）— 北京外國語大學主編，與《新求精》並列為大陸最主流的兩套教材。語感培養偏會話，難度比《新求精》溫和一些。</li>
+        <li><strong>《走遍德國》（Schritte international）中文版</strong> — Hueber 出版社授權的中文版本，由原德國教材配上中文註解與翻譯。德式教學法配上中文導入，是兩全的折衷選擇。</li>
+        <li><strong>《朗氏德漢雙解大詞典》</strong>（外研社）— Langenscheidt 授權的中文版，每個詞條都附中文釋義加德語釋義，是案頭參考的最高選擇。</li>
+      </ul>
+
+      <h3>德國原版分級讀物（中級可起步）</h3>
+      <ul>
+        <li><strong>Klett「Leichte Literatur」與 Hueber「Lektüren für Jugendliche」系列</strong> — 德國本土最常見的兩套德語分級讀物（Leichte Literatur），明確標註 A1/A2/B1/B2 CEFR 等級，文末附詞彙表與練習。比英美出版的「Short Stories in German」更貼近德語語感。</li>
+        <li><strong>Olly Richards《Short Stories in German for Beginners / Intermediate》</strong> — 釋義為英語，需要中等英語能力配合使用；故事結構容易跟讀，適合作為補充而非主軸。</li>
+        <li><a href="https://www.dw.com/de/deutsch-lernen/nachrichten/s-8030" target="_blank" rel="noopener">DW Nachrichten in einfacher Sprache</a> — 德國之聲每日「慢速新聞」，含逐字稿與 MP3。屬於 B1–B2 級實用聽讀材料。</li>
+      </ul>
+
+      <h3>過渡到原文閱讀（B1+ 推薦順序）</h3>
+      <ol>
+        <li><strong>《Der Vorleser》</strong>（朗讀者）— Bernhard Schlink，語言乾淨，篇幅適中，有中文譯本可對照。</li>
+        <li><strong>《Tschick》</strong>— Wolfgang Herrndorf，當代青少年小說，口語化敘述，對掌握日常德語極有幫助。</li>
+        <li><strong>《Momo》</strong>— Michael Ende，兒童文學但語言精美，B2 可讀。</li>
+        <li><strong>《Harry Potter und der Stein der Weisen》</strong>— 中文版你大概率讀過，劇情熟悉，B1+ 即可挑戰。</li>
+      </ol>
+
+      <h3>德語古典文學（C1+，建議搭配中譯本對讀）</h3>
+      <ul>
+        <li><em>Die Verwandlung</em>（變形記）— 卡夫卡</li>
+        <li><em>Faust: Eine Tragödie</em>（浮士德）— 歌德</li>
+        <li><em>Demian / Siddhartha</em>— 黑塞</li>
+        <li><em>Der Zauberberg</em>（魔山）— 托馬斯·曼</li>
+      </ul>
+      <p class="lang-note">這些經典都有人民文學出版社或上海譯文等出版的中譯本——強烈建議「左中右德」對讀，比硬啃原文有效率得多。</p>
+    </div>
+
+    <!-- 9. 音頻 -->
+    <div class="lang-section" id="audio">
+      <h2>9. 音頻與聽力</h2>
+      <ul>
+        <li><span class="level-badge beginner">初級</span> — <a href="https://www.dw.com/en/learn-german/s-2469" target="_blank" rel="noopener">德國之聲（DW）— 初學者德語音頻</a></li>
+        <li><span class="level-badge beginner">初級</span> — <a href="https://www.youtube.com/playlist?list=PLF9mJC4RrjIhS4MMm0x72-v4vH9epMHib" target="_blank" rel="noopener">Super Easy German 播放清單</a></li>
+        <li><span class="level-badge intermed">中級</span> — <a href="https://www.youtube.com/c/easygerman" target="_blank" rel="noopener">Easy German</a> — 附德英雙語字幕的街頭訪問</li>
+        <li><span class="level-badge intermed">中級</span> — <a href="https://www.kurzgesagt.org/" target="_blank" rel="noopener">Kurzgesagt — Dinge Erklärt</a> — 德語動畫科普短片</li>
+        <li><span class="level-badge advanced">高級</span> — <a href="https://www.ted.com/talks?language=de" target="_blank" rel="noopener">德語 TED 演講</a></li>
+      </ul>
+    </div>
+
+    <!-- 10. YouTube -->
+    <div class="lang-section" id="youtube">
+      <h2>10. YouTube 頻道</h2>
+      <ul>
+        <li><strong><a href="https://www.youtube.com/@easygerman" target="_blank" rel="noopener">Easy German</a></strong> — 各程度均有播放清單（A1 至 C1），是目前最優質的德語學習頻道之一。</li>
+        <li><strong><a href="https://www.youtube.com/@kurzgesagt" target="_blank" rel="noopener">Kurzgesagt — Dinge Erklärt</a></strong> — 動畫科普短片，適合中高級學習者。</li>
+        <li><strong><a href="https://learngerman.dw.com/" target="_blank" rel="noopener">DW — Deutsch lernen mit DW</a></strong> — 德國之聲提供的免費結構化線上課程，從 A1 至 C1。</li>
+      </ul>
+    </div>
+
+    <!-- 11. 家教 -->
+    <div class="lang-section" id="tutors">
+      <h2>11. 家教與課程</h2>
+
+      <h3>線上家教</h3>
+      <ul>
+        <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> — 尋找德語家教的最佳平台。可篩選來自德國、奧地利或瑞士的老師，費用合理。先觀看老師的自我介紹影片，預訂試聽課後再考慮購買套課。使用推薦碼 <code>f0Fcbf</code> 可享首堂課折扣 5 美元。</li>
+        <li><strong><a href="https://preply.com/" target="_blank" rel="noopener">Preply</a></strong> — 功能與 iTalki 相近的另一選擇。</li>
+      </ul>
+
+      <h3>機構課程</h3>
+      <ul>
+        <li><strong><a href="https://www.goethe.de/en/spr/kur/onl.html" target="_blank" rel="noopener">歌德學院線上課程</a></strong> — 德國官方文化機構提供的結構化課程。</li>
+        <li><strong><a href="https://learngerman.dw.com/" target="_blank" rel="noopener">DW 德語線上課程</a></strong> — 免費結構化課程，A1 至 C1。</li>
+      </ul>
+    </div>
+
+    <!-- 12. 電影 -->
+    <div class="lang-section" id="films">
+      <h2>12. 電影</h2>
+      <p>觀看德語電影是同步提升聽力與文化理解最有效的方式之一。</p>
+
+      <details class="accordion">
+        <summary>德語經典電影推薦</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><em>Metropolis</em>（1927）— 弗里茨·朗</li>
+            <li><em>Das Boot（潛艇風暴）</em>（1981）— 沃爾夫岡·彼得森</li>
+            <li><em>Good Bye Lenin!</em>（2003）— 沃爾夫岡·貝克爾</li>
+            <li><em>Der Untergang（帝國毀滅）</em>（2004）— 奧利弗·希施比格爾</li>
+            <li><em>Lola Rennt（蘿拉快跑）</em>（1998）— 湯姆·提克威</li>
+            <li><em>Im Westen nichts Neues（西線無戰事）</em>（2022）— Netflix 奧斯卡獲獎作品</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>德語 Netflix 影集</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Dark（黑暗）</strong> — 高度評價的德語科幻懸疑劇</li>
+            <li><strong>Babylon Berlin</strong> — 威瑪共和國時代的犯罪劇</li>
+            <li><strong>How to Sell Drugs Online (Fast)</strong> — 現代喜劇劇情片</li>
+          </ul>
+          <p class="lang-note">搭配 <a href="https://www.languagereactor.com/" target="_blank" rel="noopener">Language Reactor</a> 使用，可顯示雙語字幕及彈出式定義。</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 13. 學習策略 -->
+    <div class="lang-section" id="study">
+      <h2>13. 學習策略</h2>
+
+      <h3>核心原則</h3>
+      <ul>
+        <li>每天學習，即使只有很短的時間。持續性遠比單次學習時長重要。</li>
+        <li>優先培養口語與聽力，再注重閱讀與寫作。</li>
+        <li>選定一套教材後堅持完成，不要頻繁更換。</li>
+        <li>文法學習應輔助語言輸入（閱讀與聽力），而非取而代之。</li>
+        <li>背誦名詞時務必連同冠詞一起記憶（der/die/das）。</li>
+      </ul>
+
+      <details class="accordion">
+        <summary>初學者每週學習計劃（4–5 小時）</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>星期</th><th>學習活動</th><th>時長</th></tr></thead>
+              <tbody>
+                <tr><td>週一</td><td>Anki 複習 + 1 個文法主題</td><td>30–40 分鐘</td></tr>
+                <tr><td>週二</td><td>Anki 複習 + 聽力（Easy German / DW）</td><td>30 分鐘</td></tr>
+                <tr><td>週三</td><td>Anki 複習 + iTalki 口語課</td><td>45–60 分鐘</td></tr>
+                <tr><td>週四</td><td>Anki 複習 + 閱讀（分級讀本）</td><td>30 分鐘</td></tr>
+                <tr><td>週五</td><td>Anki 複習 + 詞彙複習</td><td>30 分鐘</td></tr>
+                <tr><td>週六</td><td>沉浸式輸入 — 德語影集或電影</td><td>60 分鐘以上</td></tr>
+                <tr><td>週日</td><td>輕鬆複習或休息</td><td>15–20 分鐘</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <p class="lang-note">如需推薦資源或有任何疑問，歡迎聯繫：<a href="mailto:stevelegg2000@gmail.com">stevelegg2000@gmail.com</a></p>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="german-srs-zht.js"></script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آلمانی (فارسی‌زبانان) — Steven Legg</title>
+  <meta name="description" content="راهنمای یادگیری زبان آلمانی برای فارسی‌زبانان، شامل تمرین‌کارت‌های تکرار فاصله‌دار، آموزش گرامر، کتاب، پادکست و ابزارهای یادگیری.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .srs-meta{display:flex;align-items:center;gap:1.25rem;margin-bottom:.85rem;font-size:.8rem;color:#555;min-height:1.4rem;flex-direction:row-reverse;}
+    .srs-count b{color:#ccc;font-weight:500;}
+    .srs-bar-wrap{flex:1;height:2px;background:#1a1a1a;border-radius:1px;overflow:hidden;}
+    .srs-bar{height:100%;background:#2e2e2e;border-radius:1px;transition:width .4s ease;}
+    .srs-card{border:1px solid #1e1e1e;border-radius:4px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.25rem;cursor:pointer;user-select:none;transition:border-color .2s ease;text-align:center;position:relative;}
+    .srs-card:hover{border-color:#2a2a2a;}.srs-card.revealed{cursor:default;}.srs-card.revealed:hover{border-color:#1e1e1e;}
+    .srs-turkish{font-family:var(--font-display);font-size:2.2rem;font-weight:500;color:#fff;letter-spacing:.01em;line-height:1.2;direction:ltr;}
+    .srs-pos{font-size:.75rem;color:#3a3a3a;font-style:italic;margin-top:.5rem;letter-spacing:.04em;}
+    .srs-divider{width:2rem;height:1px;background:#222;margin:1.25rem auto 1rem;flex-shrink:0;}
+    .srs-english{font-size:1.2rem;color:#bbb;line-height:1.45;}
+    .srs-hint{position:absolute;bottom:.7rem;font-size:.7rem;color:#2c2c2c;letter-spacing:.05em;}
+    .srs-actions{display:flex;gap:.75rem;margin-top:.75rem;min-height:2.6rem;flex-direction:row-reverse;}
+    .srs-btn{flex:1;padding:.55rem 1rem;border-radius:3px;background:none;font-family:var(--font-body);font-size:.9rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease;display:flex;align-items:center;justify-content:center;gap:.55rem;}
+    .srs-btn-again{border:1px solid #2e1a1a;color:#c07070;}.srs-btn-again:hover{background:#1a0a0a;border-color:#c07070;color:#e08888;}
+    .srs-btn-good{border:1px solid #1a2e1a;color:#7ed895;}.srs-btn-good:hover{background:#0a180a;border-color:#7ed895;color:#9ef0b0;}
+    .srs-key{font-family:'Courier New',monospace;font-size:.67rem;padding:.04rem .3rem;border:1px solid currentColor;border-radius:2px;opacity:.5;flex-shrink:0;}
+    .srs-interval{font-size:.72rem;opacity:.6;}
+    .srs-done{border:1px solid #1e1e1e;border-radius:4px;text-align:center;padding:3rem 1.5rem;}
+    .srs-done-title{font-family:var(--font-display);font-size:1.4rem;font-weight:500;color:#fff;margin-bottom:.4rem;}
+    .srs-done-sub{color:#555;font-size:.9rem;margin-bottom:.85rem;font-style:italic;}
+    .srs-done-stats{color:#444;font-size:.82rem;margin-bottom:1.5rem;line-height:1.9;}
+    .srs-action-btn{background:none;border:1px solid #2a2a2a;color:#666;font-family:var(--font-body);font-size:.85rem;padding:.45rem 1.1rem;border-radius:3px;cursor:pointer;transition:border-color .2s ease,color .2s ease;}
+    .srs-action-btn:hover{border-color:#555;color:#fff;}
+    .srs-shortcuts{font-size:.75rem;color:#2e2e2e;margin-top:.6rem;display:flex;gap:1rem;justify-content:center;direction:ltr;}
+    .srs-shortcuts kbd{font-family:'Courier New',monospace;font-size:.68rem;padding:.05rem .3rem;border:1px solid #2a2a2a;border-radius:2px;color:#333;}
+    @media(max-width:480px){.srs-turkish{font-size:1.85rem;}.srs-english{font-size:1.05rem;}.srs-btn{font-size:.82rem;padding:.5rem .6rem;}.srs-meta{gap:.75rem;}}
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html" style="direction:ltr;display:inline-block;">← Language Guides</a>
+
+  <header>
+    <h1>آلمانی <span class="lang-from">（فارسی‌زبانان）</span></h1>
+    <p>Deutsch lernen — راهنمای خودآموز زبان آلمانی برای فارسی‌زبانان، از مبتدی تا متوسط.</p>
+  </header>
+
+  <article>
+
+    <!-- فهرست مطالب -->
+    <ol class="lang-toc">
+      <li><a href="#srs">تمرین لغات با تکرار فاصله‌دار</a></li>
+      <li><a href="#intro">معرفی زبان آلمانی</a></li>
+      <li><a href="#pronunciation">تلفظ و الفبا</a></li>
+      <li><a href="#grammar">اصول گرامر</a></li>
+      <li><a href="#sentence">ساختارهای جمله</a></li>
+      <li><a href="#phrases">عبارات و مکالمات رایج</a></li>
+      <li><a href="#apps">اپلیکیشن‌ها و ابزارها</a></li>
+      <li><a href="#books">کتاب‌ها</a></li>
+      <li><a href="#audio">فایل‌های صوتی و تقویت شنیداری</a></li>
+      <li><a href="#youtube">کانال‌های یوتیوب</a></li>
+      <li><a href="#tutors">معلم خصوصی و دوره‌های آموزشی</a></li>
+      <li><a href="#films">فیلم‌ها</a></li>
+      <li><a href="#study">استراتژی یادگیری</a></li>
+    </ol>
+
+    <!-- ۱. تکرار فاصله‌دار -->
+    <div class="lang-section" id="srs">
+      <h2>۱. تمرین لغات با تکرار فاصله‌دار</h2>
+      <p>این ابزار شامل ۱۰۰ لغت پایه آلمانی است و از الگوریتم SM-2 برای زمان‌بندی هوشمند مرور استفاده می‌کند. برای مشاهده ترجمه فارسی روی کارت کلیک کنید؛ پیشرفت شما به‌صورت خودکار در مرورگر ذخیره می‌شود.</p>
+      <p>برای برگرداندن کارت <kbd>Space</kbd>/<kbd>Enter</kbd>، برای «دوباره» کلید <kbd>1</kbd>، و برای «یاد گرفتم» کلید <kbd>3</kbd> را بزنید.</p>
+      <div id="srs-root" style="max-width:480px;margin:1.5rem 0;"></div>
+      <div class="srs-shortcuts">
+        <span><kbd>Space</kbd>/<kbd>Enter</kbd> برگرداندن</span>
+        <span><kbd>1</kbd> دوباره</span>
+        <span><kbd>3</kbd> یاد گرفتم</span>
+      </div>
+    </div>
+
+    <!-- ۲. معرفی -->
+    <div class="lang-section" id="intro">
+      <h2>۲. معرفی زبان آلمانی</h2>
+      <p>زبان آلمانی (Deutsch) با بیش از صد میلیون گویشور بومی، پرگویشورترین زبان مادری در اتحادیه اروپا است. این زبان زبان رسمی آلمان، اتریش و لیختن‌اشتاین است و یکی از چهار زبان رسمی سوئیس به شمار می‌رود.</p>
+
+      <h3>چرا آلمانی بیاموزیم؟</h3>
+      <ul>
+        <li><strong>فرصت‌های شغلی</strong> — آلمان یکی از بزرگ‌ترین اقتصادهای جهان را دارد؛ مهارت زبان آلمانی در مهندسی، علوم، تجارت و دانشگاه بسیار ارزشمند است.</li>
+        <li><strong>دسترسی به فرهنگ</strong> — ادبیات (گوته، کافکا، هسه)، فلسفه (کانت، نیچه، هگل) و موسیقی کلاسیک (باخ، بتهوون، برامس) آلمانی‌زبان تأثیر عمیقی بر تمدن بشری گذاشته‌اند.</li>
+        <li><strong>سفر</strong> — سفر به منطقه DACH (آلمان، اتریش، سوئیس) با دانستن زبان بسیار غنی‌تر می‌شود.</li>
+        <li><strong>مزیت علمی</strong> — آلمانی دومین زبان پرکاربرد در نشریات علمی جهان است.</li>
+        <li><strong>زبان پل</strong> — یادگیری آلمانی، فراگیری هلندی، سوئدی، نروژی و دانمارکی را بسیار آسان‌تر می‌کند.</li>
+      </ul>
+
+      <h3>مزایا و چالش‌ها برای فارسی‌زبانان</h3>
+      <p>فارسی و آلمانی هر دو از خانواده‌ی هندواروپایی هستند — و این بسیار بیش از یک نکته‌ی تاریخی است؛ این هم‌خانوادگی برای شما در چندین لایه‌ی واقعی به‌صورت کمک عمل می‌کند:</p>
+      <ul>
+        <li><strong>هم‌ریشه‌های فراوان (cognates)</strong> — واژگان خویشاوندی، اعداد و بسیاری از مفاهیم پایه ریشه‌ی مشترک دارند: <em>Bruder ↔ برادر</em>؛ <em>Mutter ↔ مادر</em>؛ <em>Tochter ↔ دختر</em>؛ <em>Name ↔ نام</em>؛ <em>neu ↔ نو</em>؛ <em>jung ↔ جوان</em>؛ <em>zwei ↔ دو</em>؛ <em>drei ↔ سه</em>؛ <em>sechs ↔ شش</em>؛ <em>Stern ↔ ستاره</em>؛ <em>Tür ↔ در</em>. وقتی واژه‌ی تازه‌ای می‌بینید، یک لحظه مکث کنید و ببینید آیا چیزی در فارسی شبیه آن می‌شناسید — اغلب جواب مثبت است.</li>
+        <li><strong>صرف فعل به‌جای ضمیر</strong> — در فارسی فعل برحسب شخص و شمار صرف می‌شود (می‌روم، می‌روی، می‌رود …). همین منطق در آلمانی هم برقرار است (ich gehe, du gehst, er geht). برخلاف انگلیسی‌زبان‌ها که این مفهوم برایشان کاملاً تازه است، شما با ساختار آن آشنایید — فقط شکل پایان‌ها فرق می‌کند.</li>
+        <li><strong>تمایز رسمی/غیررسمی</strong> — <strong>du</strong> و <strong>Sie</strong> در آلمانی دقیقاً همان تمایز <strong>تو</strong> و <strong>شما</strong> در فارسی است. شما این تمایز اجتماعی را در گوشت و خونتان دارید؛ تنها لازم است یاد بگیرید مرز فرهنگی آلمانی آن (مثلاً همکار، فروشنده، رئیس) را تشخیص دهید.</li>
+        <li><strong>«خ» ، «ش» و «ر»</strong> — برخلاف انگلیسی‌زبان‌ها که با <em>Bach</em>, <em>schön</em>, و <em>r</em> خرخره‌ای ماه‌ها کلنجار می‌روند، شما هر سه‌ی اینها را با خود از زبان مادری دارید. <em>ch</em> در <em>Buch</em> دقیقاً همان <em>خ</em>؛ <em>sch</em> دقیقاً همان <em>ش</em>؛ و <em>r</em> آلمانی استاندارد به <em>غ</em> فارسی نزدیک‌تر است تا به r ایتالیایی.</li>
+        <li><strong>چالش بزرگ ۱: جنس دستوری</strong> — فارسی هیچ جنس دستوری ندارد (همان <em>او</em> برای زن، مرد و حتی شیء). در آلمانی هر اسم یکی از سه جنس (der/die/das) را دارد و این تعیین می‌کند که حروف تعریف، ضمایر و صفت‌ها چگونه تغییر کنند. این برای شما یک مفهوم کاملاً تازه است و باید از روز اول هر اسم را همراه با حرف تعریفش حفظ کنید.</li>
+        <li><strong>چالش بزرگ ۲: چهار حالت اسمی</strong> — فارسی نشانه‌ی مفعولی (را) و حروف اضافه دارد، ولی نظام حالت (Kasus) ندارد. در آلمانی نقش دستوری اسم در جمله، شکل حروف تعریف، صفت‌ها و حتی برخی اسم‌ها را تغییر می‌دهد (der Mann → den Mann → dem Mann → des Mannes). این محور اصلی دشواری آلمانی برای فارسی‌زبان است.</li>
+        <li><strong>چالش بزرگ ۳: ساختار جمله</strong> — فارسی پایه SOV است (فعل در آخر می‌آید). آلمانی دو نظام موازی دارد: در جمله‌ی اصلی فعل صرف‌شده در جایگاه دوم می‌نشیند (V2)، اما در جمله‌ی پیرو فعل به آخر می‌رود. این یعنی برای جمله‌های پیرو، چیدمان آلمانی نزدیک به فارسی است — اما برای جمله‌ی اصلی باید عادت ذهنی نو بسازید.</li>
+        <li><strong>چالش بزرگ ۴: واج‌های گرد جلویی (ö، ü)</strong> — این صداها در فارسی نیستند. <em>ü</em> را با گرد کردن لب‌ها هنگام گفتن «ای» و <em>ö</em> را با گرد کردن لب‌ها هنگام گفتن «اِ» تمرین کنید. این تنها بخش از تلفظ آلمانی است که شما نسبت به یک انگلیسی‌زبان مزیت چندانی ندارید.</li>
+      </ul>
+    </div>
+
+    <!-- ۳. تلفظ -->
+    <div class="lang-section" id="pronunciation">
+      <h2>۳. تلفظ و الفبا</h2>
+      <p>آلمانی از الفبای لاتین ۲۶ حرفی به‌علاوه چهار نویسه ویژه استفاده می‌کند: <strong>ä، ö، ü</strong> (اوملاوت) و <strong>ß</strong> (معادل ss).</p>
+
+      <details class="accordion">
+        <summary>نکات کلیدی تلفظ برای فارسی‌زبانان</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>حرف</th><th>تلفظ تقریبی</th><th>مثال</th><th>معنی</th></tr></thead>
+              <tbody>
+                <tr><td><code>ä</code></td><td>مانند «اَ» در «بَد» فارسی</td><td>Ähre</td><td>خوشه گندم</td></tr>
+                <tr><td><code>ö</code></td><td>لب‌ها را گرد کنید، بگویید «اِ» — صدای جدیدی برای شما</td><td>schön</td><td>زیبا</td></tr>
+                <tr><td><code>ü</code></td><td>لب‌ها را گرد کنید، بگویید «ای» — صدای جدیدی برای شما</td><td>über</td><td>بالاتر از</td></tr>
+                <tr><td><code>ß</code></td><td>معادل «ss» — یعنی «س» قوی</td><td>Straße</td><td>خیابان</td></tr>
+                <tr><td><code>w</code></td><td>مانند «و» فارسی در «وقت»</td><td>Wasser</td><td>آب</td></tr>
+                <tr><td><code>v</code></td><td>در واژگان آلمانی اصیل مانند «ف» (Vater, vier)؛ در وام‌واژه‌های لاتین/فرانسوی مانند «و» فارسی (Vase, Vegetarier)</td><td>Vater / Vase</td><td>پدر / گلدان</td></tr>
+                <tr><td><code>z</code></td><td>مانند «تس» — مثل دو حرف ت+س که بدون درنگ گفته شوند</td><td>Zeit</td><td>زمان</td></tr>
+                <tr><td><code>j</code></td><td>مانند «ی» در «یار» فارسی</td><td>Jahr</td><td>سال</td></tr>
+                <tr><td><code>ch</code> (بعد از a/o/u)</td><td>دقیقاً «خ» فارسی — این صدا را آماده دارید</td><td>Buch</td><td>کتاب</td></tr>
+                <tr><td><code>ch</code> (بعد از e/i)</td><td>صدای میانی نرم بین «ش» و «هـ» — برای فارسی‌زبان تازه است؛ آن را به سمت «هیش» نزدیک کنید نه «ش» محکم</td><td>ich</td><td>من</td></tr>
+                <tr><td><code>sch</code></td><td>دقیقاً «ش» فارسی</td><td>Schule</td><td>مدرسه</td></tr>
+                <tr><td><code>r</code> (در آغاز یا میان واژه)</td><td>آلمانی استاندارد: نزدیک به «غ» فارسی — یک خرخره‌ی نرم. (در پایان واژه اغلب تبدیل به «اَ» می‌شود: <em>Mutter</em> ≈ «موتا».)</td><td>Brot</td><td>نان</td></tr>
+                <tr><td><code>h</code> (بعد از مصوت)</td><td>تلفظ نمی‌شود — فقط مصوت قبل را بلند می‌کند: <em>Sohn</em> = «زُون»، نه «زُهن»</td><td>Sohn</td><td>پسر</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ۴. گرامر -->
+    <div class="lang-section" id="grammar">
+      <h2>۴. اصول گرامر</h2>
+      <p>گرامر آلمانی شهرت پیچیدگی دارد، اما قوانین آن منطقی و منسجم هستند. تسلط بر چند مفهوم کلیدی از همان ابتدا، سرعت ساختن جملات صحیح را به‌شدت افزایش می‌دهد.</p>
+
+      <details class="accordion">
+        <summary>جنس دستوری و حروف تعریف</summary>
+        <div class="accordion-body">
+          <p>هر اسم آلمانی یکی از سه جنس دارد: مذکر (<strong>der</strong>)، مؤنث (<strong>die</strong>)، یا خنثی (<strong>das</strong>). جنس باید همراه با اسم حفظ شود.</p>
+          <p><strong>استراتژی حفظ:</strong> همیشه اسم را با حرف تعریفش بیاموزید. نگویید «Hund» — بگویید «der Hund (سگ)». این عادت در یادگیری حالت‌های چهارگانه وقت و انرژی زیادی صرفه‌جویی می‌کند.</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>پسوند</th><th>معمولاً</th><th>مثال</th></tr></thead>
+              <tbody>
+                <tr><td>-er, -en, -el</td><td>مذکر</td><td>der Lehrer (معلم)، der Wagen (ماشین)</td></tr>
+                <tr><td>-ung, -heit, -keit, -schaft, -tion</td><td>مؤنث</td><td>die Zeitung (روزنامه)، die Freiheit (آزادی)</td></tr>
+                <tr><td>-chen, -lein (تصغیر)</td><td>خنثی</td><td>das Mädchen (دختر)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>حروف تعریف معین در چهار حالت</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>جنس</th><th>فاعلی</th><th>مفعولی مستقیم</th><th>مفعولی غیرمستقیم</th><th>اضافی</th></tr></thead>
+              <tbody>
+                <tr><td>مذکر</td><td><code>der</code></td><td><code>den</code></td><td><code>dem</code></td><td><code>des</code></td></tr>
+                <tr><td>مؤنث</td><td><code>die</code></td><td><code>die</code></td><td><code>der</code></td><td><code>der</code></td></tr>
+                <tr><td>خنثی</td><td><code>das</code></td><td><code>das</code></td><td><code>dem</code></td><td><code>des</code></td></tr>
+                <tr><td>جمع</td><td><code>die</code></td><td><code>die</code></td><td><code>den</code></td><td><code>der</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>ضمایر شخصی</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>شخص</th><th>آلمانی</th><th>فارسی</th></tr></thead>
+              <tbody>
+                <tr><td>اول شخص مفرد</td><td><code>ich</code></td><td>من</td></tr>
+                <tr><td>دوم شخص مفرد (غیررسمی)</td><td><code>du</code></td><td>تو</td></tr>
+                <tr><td>دوم شخص مفرد (رسمی)</td><td><code>Sie</code></td><td>شما (احترامی)</td></tr>
+                <tr><td>سوم شخص مفرد مذکر</td><td><code>er</code></td><td>او (مذکر)</td></tr>
+                <tr><td>سوم شخص مفرد مؤنث</td><td><code>sie</code></td><td>او (مؤنث)</td></tr>
+                <tr><td>سوم شخص مفرد خنثی</td><td><code>es</code></td><td>آن</td></tr>
+                <tr><td>اول شخص جمع</td><td><code>wir</code></td><td>ما</td></tr>
+                <tr><td>دوم شخص جمع (غیررسمی)</td><td><code>ihr</code></td><td>شما (جمع)</td></tr>
+                <tr><td>سوم شخص جمع</td><td><code>sie</code></td><td>آن‌ها</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lang-note">با دوستان، خانواده و کودکان از <em>du</em> استفاده کنید. با غریبه‌ها، متخصصان و افراد مسن‌تر از <em>Sie</em> (همیشه با حرف بزرگ) استفاده کنید.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ۵. ساختار جمله -->
+    <div class="lang-section" id="sentence">
+      <h2>۵. ساختارهای جمله</h2>
+
+      <details class="accordion">
+        <summary>قانون V2 — فعل همیشه در جایگاه دوم</summary>
+        <div class="accordion-body">
+          <p>در جملات اصلی آلمانی، فعل صرف‌شده <strong>همیشه در جایگاه دوم</strong> قرار می‌گیرد. عنصر اول می‌تواند فاعل، مفعول، یا قید زمان/مکان باشد — اما فعل باید دوم بیاید.</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>جایگاه اول</th><th>جایگاه دوم (فعل)</th><th>بقیه جمله</th></tr></thead>
+              <tbody>
+                <tr><td>Ich</td><td>trinke</td><td>jeden Morgen Kaffee. <em>(من هر صبح قهوه می‌نوشم.)</em></td></tr>
+                <tr><td>Jeden Morgen</td><td>trinke</td><td>ich Kaffee. <em>(هر صبح من قهوه می‌نوشم.)</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>نفی — nicht و kein</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>nicht</strong> — برای نفی فعل، صفت یا اسم با حرف تعریف معین: <em>Ich schlafe nicht.</em> (من نمی‌خوابم.)</li>
+            <li><strong>kein</strong> — برای نفی اسمی که با حرف تعریف نامعین می‌آید: <em>Ich habe kein Auto.</em> (من ماشین ندارم.)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>جملات وابسته — فعل به آخر می‌رود</summary>
+        <div class="accordion-body">
+          <p>در جملات وابسته (که با dass، weil، wenn، ob شروع می‌شوند)، فعل صرف‌شده به انتهای جمله منتقل می‌شود.</p>
+          <p><em>Ich weiß, dass er kommt.</em> — می‌دانم که او می‌آید.<br>
+          <em>Ich gehe nicht, weil ich müde bin.</em> — نمی‌روم چون خسته‌ام.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ۶. عبارات رایج -->
+    <div class="lang-section" id="phrases">
+      <h2>۶. عبارات و مکالمات رایج</h2>
+
+      <details class="accordion">
+        <summary>سلام و خداحافظی</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>آلمانی</th><th>فارسی</th></tr></thead>
+              <tbody>
+                <tr><td>Guten Morgen</td><td>صبح بخیر</td></tr>
+                <tr><td>Guten Tag</td><td>روز بخیر (رسمی)</td></tr>
+                <tr><td>Guten Abend</td><td>عصر/شب بخیر (هنگام دیدار)</td></tr>
+                <tr><td>Hallo / Hi</td><td>سلام (غیررسمی)</td></tr>
+                <tr><td>Tschüss</td><td>خداحافظ (غیررسمی)</td></tr>
+                <tr><td>Auf Wiedersehen</td><td>خداحافظ (رسمی)</td></tr>
+                <tr><td>Gute Nacht</td><td>شب بخیر (هنگام جدا شدن)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>معرفی و مکالمه پایه</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>آلمانی</th><th>فارسی</th></tr></thead>
+              <tbody>
+                <tr><td>Wie heißen Sie? / Wie heißt du?</td><td>اسم شما/تو چیست؟</td></tr>
+                <tr><td>Ich heiße…</td><td>اسم من … است.</td></tr>
+                <tr><td>Wie geht es Ihnen? / Wie geht es dir?</td><td>حالتان/حالت چطور است؟</td></tr>
+                <tr><td>Mir geht es gut, danke.</td><td>حالم خوب است، ممنون.</td></tr>
+                <tr><td>Woher kommen Sie?</td><td>از کجا هستید؟</td></tr>
+                <tr><td>Ich komme aus dem Iran.</td><td>من از ایران هستم.</td></tr>
+                <tr><td>Ich spreche ein bisschen Deutsch.</td><td>من کمی آلمانی صحبت می‌کنم.</td></tr>
+                <tr><td>Ich verstehe nicht.</td><td>نمی‌فهمم.</td></tr>
+                <tr><td>Können Sie das wiederholen?</td><td>می‌توانید تکرار کنید؟</td></tr>
+                <tr><td>Bitte / Danke schön</td><td>خواهش می‌کنم / خیلی ممنون</td></tr>
+                <tr><td>Entschuldigung</td><td>ببخشید</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ۷. اپلیکیشن‌ها -->
+    <div class="lang-section" id="apps">
+      <h2>۷. اپلیکیشن‌ها و ابزارها</h2>
+      <p class="lang-note">واقعیت تلخ: اکثر اپلیکیشن‌های شناخته‌شده‌ی یادگیری زبان (Duolingo، Babbel، Busuu، Rosetta Stone) <strong>زبان فارسی را به‌عنوان زبان مبدأ پشتیبانی نمی‌کنند</strong>. یعنی برای استفاده از آن‌ها باید آلمانی را از طریق انگلیسی بیاموزید. اگر انگلیسی شما خوب است، این گزینه‌ها در دسترس‌اند؛ در غیر این صورت، ابزارهای زیر که با فارسی سازگارند بسیار کارآمدترند:</p>
+      <ul>
+        <li><strong><a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a></strong> — رابط کاربری فارسی دارد و کارت‌ها را می‌توان کاملاً به فارسی نوشت. در AnkiWeb دک‌های آماده‌ی «آلمانی-فارسی» مانند <em>Almani Vazhe</em> و <em>Goethe A1/A2 Wortschatz mit Farsi</em> در دسترس‌اند.</li>
+        <li><strong><a href="https://dict.leo.org/" target="_blank" rel="noopener">LEO</a></strong> و <strong><a href="https://www.pons.com/" target="_blank" rel="noopener">PONS</a></strong> — هیچ‌کدام فارسی ندارند؛ اما برای ساخت پل می‌توان از <a href="https://de.langenscheidt.com/deutsch-persisch/" target="_blank" rel="noopener">Langenscheidt آلمانی-فارسی</a> استفاده کرد که یکی از معدود دیکشنری‌های دوزبانه‌ی واقعی است.</li>
+        <li><strong><a href="https://www.dw.com/fa-ir/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A2%D9%84%D9%85%D8%A7%D9%86%DB%8C/s-12126" target="_blank" rel="noopener">DW Farsi — آموزش آلمانی</a></strong> — بخش فارسی دویچه وله مجموعه‌ی منظمی از درس‌های آلمانی به فارسی ارائه می‌دهد، با فایل‌های صوتی و تمرین. کاملاً رایگان.</li>
+        <li><strong><a href="https://www.languagereactor.com/" target="_blank" rel="noopener">Language Reactor</a></strong> — افزونه کروم؛ زبان ترجمه را روی «Persian» تنظیم کنید تا روی نتفلیکس و یوتیوب زیرنویس دوزبانه‌ی آلمانی-فارسی داشته باشید.</li>
+        <li><strong><a href="https://www.lingq.com/" target="_blank" rel="noopener">LingQ</a></strong> — رابط فارسی ندارد ولی ترجمه‌ی فارسی واژه‌ها در حین خواندن کار می‌کند (با Google Translate ادغام شده). برای سطح A2 به بالا مفید.</li>
+        <li><strong>دیکشنری Aryanpur (آریان‌پور)</strong> — برای پل‌زنی واژگانی از طریق انگلیسی (آلمانی → انگلیسی → فارسی) مفید است.</li>
+      </ul>
+    </div>
+
+    <!-- ۸. کتاب‌ها -->
+    <div class="lang-section" id="books">
+      <h2>۸. کتاب‌ها</h2>
+
+      <h3>کتاب‌های فارسی-آلمانی (مبتدی)</h3>
+      <ul>
+        <li><strong>«آلمانی در ۳۰ روز» (Deutsch in 30 Tagen)</strong> از Langenscheidt — نسخه‌ی فارسی این مجموعه‌ی محبوب توسط انتشارات شباهنگ در ایران بازنشر شده است. توضیحات گرامری به فارسی، کاربر-پسند برای خودآموزان.</li>
+        <li><strong>«مکالمات روزمره‌ی آلمانی»</strong> — انتشارات استاندارد، با فایل صوتی همراه. مناسب آماده‌سازی برای سفر یا شروع کار با مدرس.</li>
+        <li><strong>«گرامر آلمانی برای فارسی‌زبانان» — حسن قریب</strong> — توضیح نظام‌مند گرامر آلمانی با اصطلاحات و مقایسه‌های فارسی. یکی از معدود کتاب‌های واقعاً برای زبان‌آموز فارسی‌زبان نوشته شده.</li>
+        <li><strong>«فرهنگ آلمانی-فارسی Langenscheidt» (Langenscheidt Persisch-Deutsch)</strong> — مرجع استاندارد دو-طرفه؛ نسخه‌ی کوچک و بزرگ دارد.</li>
+      </ul>
+
+      <h3>کتاب‌های آلمانی استاندارد (بهترین مسیر برای سطح‌های A1–B1)</h3>
+      <ul>
+        <li><strong>«Schritte plus Neu» (Hueber) یا «Menschen» (Hueber)</strong> — کتاب‌های اصلی دوره‌های آلمانی در اکثر آموزشگاه‌های گوته‌انستیتو و VHS در آلمان. تمرین‌محور، با CD صوتی.</li>
+        <li><strong>«Aspekte neu» (Klett) یا «Sicher!» (Hueber)</strong> — برای سطح B1 به بالا، استاندارد آماده‌سازی برای TestDaF و DSH.</li>
+        <li><strong>«Grammatik aktiv» (Cornelsen)</strong> — کتاب گرامر منسجم با تمرین، اگر می‌خواهید فقط گرامر کار کنید.</li>
+      </ul>
+
+      <h3>متون درجه‌بندی‌شده و ادبیات (B1 به بالا)</h3>
+      <ul>
+        <li><strong>سری «Leichte Literatur» از Klett</strong> — داستان‌های کوتاه آلمانی با درجه‌بندی A1/A2/B1، با واژه‌نامه در پایان. بهترین نقطه‌ی شروع خواندن اصیل آلمانی.</li>
+        <li><a href="https://www.dw.com/de/deutsch-lernen/nachrichten/s-8030" target="_blank" rel="noopener">DW «Langsam gesprochene Nachrichten»</a> — اخبار آرام DW با متن کامل؛ سطح B1–B2.</li>
+        <li><strong>«Der Vorleser»</strong> (برنهارد شلینک)، <strong>«Tschick»</strong> (هرندرف)، <strong>«Momo»</strong> (میشائیل اِنده) — مسیر تدریجی به سمت ادبیات معاصر، با ترجمه‌ی فارسی موجود در ایران.</li>
+      </ul>
+
+      <h3>ادبیات کلاسیک آلمانی (با ترجمه‌های موجود فارسی)</h3>
+      <ul>
+        <li><em>Die Verwandlung</em> (مسخ) — کافکا (ترجمه‌ی صادق هدایت)</li>
+        <li><em>Faust</em> (فاوست) — گوته (ترجمه‌ی مسعود نقاش‌زاده، انتشارات نیلوفر)</li>
+        <li><em>Siddhartha / Demian</em> — هرمان هسه (ترجمه‌های متعدد، از جمله سروش حبیبی)</li>
+        <li><em>Der Zauberberg</em> (کوه جادو) — توماس مان (ترجمه‌ی حسن نکوروح)</li>
+      </ul>
+      <p class="lang-note">برای متون کلاسیک، خواندن «دو-ستونی» (ترجمه‌ی فارسی در کنار متن آلمانی) کارآمدتر از تلاش برای فهمیدن متن اصلی به‌تنهایی است.</p>
+    </div>
+
+    <!-- ۹. صوتی -->
+    <div class="lang-section" id="audio">
+      <h2>۹. فایل‌های صوتی و تقویت شنیداری</h2>
+      <ul>
+        <li><span class="level-badge beginner">مبتدی</span> — <a href="https://www.dw.com/en/learn-german/s-2469" target="_blank" rel="noopener">DW — Deutsch lernen (آلمانی آسان)</a></li>
+        <li><span class="level-badge beginner">مبتدی</span> — <a href="https://www.youtube.com/playlist?list=PLF9mJC4RrjIhS4MMm0x72-v4vH9epMHib" target="_blank" rel="noopener">Super Easy German (پلی‌لیست یوتیوب)</a></li>
+        <li><span class="level-badge intermed">متوسط</span> — <a href="https://www.youtube.com/c/easygerman" target="_blank" rel="noopener">Easy German</a> — مصاحبه‌های خیابانی با زیرنویس دوزبانه</li>
+        <li><span class="level-badge intermed">متوسط</span> — <a href="https://www.kurzgesagt.org/" target="_blank" rel="noopener">Kurzgesagt — Dinge Erklärt</a> — ویدیوهای انیمیشن علمی به آلمانی</li>
+        <li><span class="level-badge advanced">پیشرفته</span> — <a href="https://www.ted.com/talks?language=de" target="_blank" rel="noopener">سخنرانی‌های TED به آلمانی</a></li>
+      </ul>
+    </div>
+
+    <!-- ۱۰. یوتیوب -->
+    <div class="lang-section" id="youtube">
+      <h2>۱۰. کانال‌های یوتیوب</h2>
+
+      <h3>کانال‌های فارسی‌زبان آموزش آلمانی (یک جامعه‌ی پررونق)</h3>
+      <p>به‌خاطر مهاجرت گسترده‌ی فارسی‌زبانان به آلمان و اتریش، چندین مدرس فارسی‌زبان محتوای آموزشی منظم و باکیفیت تولید می‌کنند. شروع با این کانال‌ها می‌تواند درک گرامر را به‌مراتب سریع‌تر کند:</p>
+      <ul>
+        <li><strong>«آلمانی با حمید»</strong> (Almani ba Hamid) — توضیح گرامر آلمانی به فارسی، با تمرکز بر سطح A1 تا B1.</li>
+        <li><strong>«آلمانی با کیمیا»</strong> — توضیح کاربردی نکات گرامری دشوار، با مقایسه‌های فارسی-آلمانی.</li>
+        <li><strong>«Sprachclub»</strong> (یگانه برزآبادی) — مدرس مقیم آلمان، با محتوای منظم برای سطح‌های A1 تا B2.</li>
+        <li><strong>«آموزش زبان آلمانی با محمود حسینی»</strong> — دوره‌های منظم با تأکید بر آماده‌سازی برای آزمون‌های گوته.</li>
+      </ul>
+      <p class="lang-note">پیش از خرید دوره یا اشتراک، ابتدا چند ویدیوی رایگان هر کانال را ببینید تا با سبک توضیح مدرس راحت باشید. کیفیت و سبک تدریس بین این کانال‌ها بسیار متفاوت است.</p>
+
+      <h3>کانال‌های آلمانی‌زبان (آلمانی به آلمانی)</h3>
+      <ul>
+        <li><strong><a href="https://www.youtube.com/@easygerman" target="_blank" rel="noopener">Easy German</a></strong> — مصاحبه‌های خیابانی با زیرنویس دوزبانه آلمانی-انگلیسی. از سطح A2 شروع کنید.</li>
+        <li><strong><a href="https://www.youtube.com/@kurzgesagt" target="_blank" rel="noopener">Kurzgesagt — Dinge Erklärt</a></strong> — ویدیوهای علمی انیمیشنی؛ مناسب سطح B1+. زبان رسمی و واژگان علمی فراوان.</li>
+        <li><strong><a href="https://learngerman.dw.com/" target="_blank" rel="noopener">DW — Deutsch lernen</a></strong> — دوره‌های رایگان ساختارمند از A1 تا C1، با مجموعه‌های ویژه‌ی مهاجران.</li>
+        <li><strong><a href="https://www.youtube.com/@DWnews" target="_blank" rel="noopener">DW Nachrichten</a></strong> — اخبار رسمی DW؛ زبان معیار و واضح، عالی برای تمرین تلفظ پخش‌گونه.</li>
+      </ul>
+    </div>
+
+    <!-- ۱۱. معلم خصوصی -->
+    <div class="lang-section" id="tutors">
+      <h2>۱۱. معلم خصوصی و دوره‌های آموزشی</h2>
+
+      <h3>معلم خصوصی آنلاین</h3>
+      <ul>
+        <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> — بهترین پلتفرم برای یافتن معلم خصوصی آلمانی. می‌توانید معلمانی از آلمان، اتریش یا سوئیس پیدا کنید. ابتدا ویدیوی معرفی معلم را ببینید، سپس یک کلاس آزمایشی (کمی ارزان‌تر) رزرو کنید. با کد معرفی <code>f0Fcbf</code> تخفیف ۵ دلاری برای اولین کلاس دریافت کنید.</li>
+        <li><strong><a href="https://preply.com/" target="_blank" rel="noopener">Preply</a></strong> — گزینه مشابه iTalki.</li>
+      </ul>
+
+      <h3>دوره‌های سازمانی</h3>
+      <ul>
+        <li><strong><a href="https://www.goethe.de/en/spr/kur/onl.html" target="_blank" rel="noopener">دوره‌های آنلاین انستیتو گوته</a></strong> — دوره‌های ساختارمند از نهاد رسمی فرهنگی آلمان.</li>
+        <li><strong><a href="https://learngerman.dw.com/" target="_blank" rel="noopener">Deutsch lernen mit DW</a></strong> — دوره‌های ساختارمند رایگان آنلاین از A1 تا C1.</li>
+      </ul>
+    </div>
+
+    <!-- ۱۲. فیلم -->
+    <div class="lang-section" id="films">
+      <h2>۱۲. فیلم‌ها</h2>
+      <p>تماشای فیلم آلمانی یکی از مؤثرترین راه‌ها برای تقویت همزمان مهارت شنیداری و درک فرهنگی است.</p>
+
+      <details class="accordion">
+        <summary>فیلم‌های پیشنهادی</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><em>Das Boot (زیردریایی)</em> (۱۹۸۱) — ولفگانگ پترسن</li>
+            <li><em>Good Bye Lenin!</em> (۲۰۰۳) — ولفگانگ بکر</li>
+            <li><em>Der Untergang (سقوط)</em> (۲۰۰۴)</li>
+            <li><em>Lola Rennt (لولا می‌دود)</em> (۱۹۹۸) — تام تیکور</li>
+            <li><em>Im Westen nichts Neues (در جبهه غرب خبری نیست)</em> (۲۰۲۲) — برنده اسکار، در نتفلیکس</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>سریال‌های آلمانی نتفلیکس</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Dark (تاریکی)</strong> — سریال علمی‌تخیلی فوق‌العاده</li>
+            <li><strong>Babylon Berlin</strong> — درام جنایی در دوران جمهوری وایمار</li>
+            <li><strong>How to Sell Drugs Online (Fast)</strong> — کمدی‌درام مدرن</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- ۱۳. استراتژی -->
+    <div class="lang-section" id="study">
+      <h2>۱۳. استراتژی یادگیری</h2>
+
+      <h3>اصول اساسی</h3>
+      <ul>
+        <li>هر روز مطالعه کنید، حتی اگر کوتاه باشد. پیوستگی از مدت زمان هر جلسه مهم‌تر است.</li>
+        <li>ابتدا بر مهارت‌های گفتاری و شنیداری تمرکز کنید، سپس خواندن و نوشتن.</li>
+        <li>به یک منبع یا کتاب آموزشی پایبند باشید و آن را کامل کنید.</li>
+        <li>مطالعه گرامر باید مکمل input (خواندن و شنیدن) باشد، نه جایگزین آن.</li>
+        <li>هنگام حفظ اسم‌ها، حرف تعریف آن‌ها را نیز حفظ کنید (der/die/das).</li>
+      </ul>
+
+      <details class="accordion">
+        <summary>برنامه هفتگی پیشنهادی برای مبتدیان (۴–۵ ساعت در هفته)</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>روز</th><th>فعالیت</th><th>مدت</th></tr></thead>
+              <tbody>
+                <tr><td>شنبه</td><td>مرور Anki + ۱ موضوع گرامر</td><td>۳۰–۴۰ دقیقه</td></tr>
+                <tr><td>یکشنبه</td><td>مرور Anki + تمرین شنیداری (Easy German / DW)</td><td>۳۰ دقیقه</td></tr>
+                <tr><td>دوشنبه</td><td>مرور Anki + کلاس مکالمه (iTalki)</td><td>۴۵–۶۰ دقیقه</td></tr>
+                <tr><td>سه‌شنبه</td><td>مرور Anki + خواندن (داستان‌های کوتاه)</td><td>۳۰ دقیقه</td></tr>
+                <tr><td>چهارشنبه</td><td>مرور Anki + مرور لغت</td><td>۳۰ دقیقه</td></tr>
+                <tr><td>پنج‌شنبه</td><td>تماشای سریال یا فیلم آلمانی</td><td>۶۰+ دقیقه</td></tr>
+                <tr><td>جمعه</td><td>مرور سبک یا استراحت</td><td>۱۵–۲۰ دقیقه</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <p class="lang-note">برای پیشنهاد منابع بیشتر یا هر سوالی: <a href="mailto:stevelegg2000@gmail.com">stevelegg2000@gmail.com</a></p>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer" style="direction:ltr;display:inline-block;">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="german-srs-fa.js"></script>
+</body>
+</html>

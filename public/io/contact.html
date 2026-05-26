@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="io">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakto — Steven Legg</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="back-link" href="index.html">← Retroe</a>
+
+  <header>
+    <h1>Kontakto</h1>
+  </header>
+
+  <article>
+    <h2>Sendar mesajo</h2>
+    <form id="contact-form" novalidate>
+      <input type="text"  name="name"    placeholder="Vua nomo"     required
+             aria-label="Vua nomo"     autocomplete="name"     maxlength="100">
+      <input type="email" name="email"   placeholder="Vua retposto" required
+             aria-label="Vua retposto" autocomplete="email"    maxlength="254"
+             inputmode="email">
+      <textarea           name="message" placeholder="Vua mesajo"   required
+             aria-label="Vua mesajo"   maxlength="5000"></textarea>
+      <button type="submit">Sendar</button>
+    </form>
+    <p id="form-status" role="status" aria-live="polite"></p>
+
+    <hr class="section-divider">
+
+    <h2>Novajo-letro</h2>
+    <p>Okazional informi kande me skribas ulo digna por divisar. Sen spamo.</p>
+    <form id="newsletter-form" novalidate>
+      <input type="email" name="email" placeholder="Vua retposta adreso" required
+             aria-label="Vua retposta adreso" autocomplete="email" maxlength="254"
+             inputmode="email">
+      <button type="submit">Subskribar</button>
+    </form>
+    <p id="newsletter-status" role="status" aria-live="polite"></p>
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

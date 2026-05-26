@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="isv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Steven Legg</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="back-link" href="index.html">← Nazad</a>
+
+  <header>
+    <h1>Kontakt</h1>
+  </header>
+
+  <article>
+    <h2>Poslati pismo</h2>
+    <form id="contact-form" novalidate>
+      <input type="text"  name="name"    placeholder="Vaše imě"     required
+             aria-label="Vaše imě"     autocomplete="name"     maxlength="100">
+      <input type="email" name="email"   placeholder="Vaš e-mail"   required
+             aria-label="Vaš e-mail"   autocomplete="email"    maxlength="254"
+             inputmode="email">
+      <textarea           name="message" placeholder="Vaše pismo"   required
+             aria-label="Vaše pismo"   maxlength="5000"></textarea>
+      <button type="submit">Poslati</button>
+    </form>
+    <p id="form-status" role="status" aria-live="polite"></p>
+
+    <hr class="section-divider">
+
+    <h2>Novinarski list</h2>
+    <p>Občasne aktualizacije kogda napisujem nešto vrědnoe dlja sdělenja. Bez spamu.</p>
+    <form id="newsletter-form" novalidate>
+      <input type="email" name="email" placeholder="Vaš e-mail adres" required
+             aria-label="Vaš e-mail adres" autocomplete="email" maxlength="254"
+             inputmode="email">
+      <button type="submit">Naročiti se</button>
+    </form>
+    <p id="newsletter-status" role="status" aria-live="polite"></p>
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
