@@ -2,21 +2,57 @@
  *  style.css — site-wide styles
  *
  *  Typography:
- *    Everything is Times New Roman — a universally available serif that gives
- *    the site a literary, classic, understated feel without any web-font
- *    dependency. No @import, no preconnect, no FOUT. Falls back to the
- *    platform "Times" and then a generic serif if both are unavailable.
+ *    Open Sans (self-hosted via fontsource WOFF2 files — no external requests,
+ *    GDPR-friendly, no FOUT flash). Subsets: latin, latin-ext, cyrillic,
+ *    greek, vietnamese. Weights: 400 / 600 / 700, each with italic.
+ *    Script-specific overrides (Japanese, Arabic/Persian, Gurmukhi) remain
+ *    below so each script renders in an appropriate system font.
  *  ────────────────────────────────────────────────────────────────────────── */
+
+/* ── Open Sans — self-hosted (subsets: latin, latin-ext, cyrillic, greek, vietnamese)
+   Fontsource v5 WOFF2 files, no external requests, GDPR-friendly.
+   Each @font-face block covers one script subset so the browser only
+   downloads what the displayed text actually needs. ──────────────────────── */
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-vietnamese-400-normal.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-greek-400-normal.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-cyrillic-400-normal.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-ext-400-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-400-normal.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-vietnamese-400-italic.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-greek-400-italic.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-cyrillic-400-italic.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-ext-400-italic.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-400-italic.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-vietnamese-600-normal.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-greek-600-normal.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-cyrillic-600-normal.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-ext-600-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-600-normal.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-vietnamese-600-italic.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-greek-600-italic.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-cyrillic-600-italic.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-ext-600-italic.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-600-italic.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-vietnamese-700-normal.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-greek-700-normal.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-cyrillic-700-normal.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-ext-700-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-700-normal.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-vietnamese-700-italic.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-greek-700-italic.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-cyrillic-700-italic.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-ext-700-italic.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-700-italic.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 
 /* ── Reset & base ─────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   /* Single serif stack used everywhere body text appears. */
-  --font-body:    'Times New Roman', Times, 'Liberation Serif', serif;
+  --font-body:    'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   /* Display / nav uses the same family — kept as a separate token so the
      "display" role can diverge again later without hunting through the file. */
-  --font-display: 'Times New Roman', Times, 'Liberation Serif', serif;
+  --font-display: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 body {
@@ -26,8 +62,8 @@ body {
   max-width: 680px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
-  /* Slightly tighter line-height suits Garamond's longer ascenders/descenders. */
-  line-height: 1.65;
+  /* Open Sans is a humanist sans-serif — 1.6 gives comfortable reading density. */
+  line-height: 1.6;
   font-weight: 400;
   /* Improve readability on retina + most modern browsers. */
   -webkit-font-smoothing: antialiased;
@@ -47,7 +83,7 @@ header {
   margin-bottom: 2rem;
 }
 
-/* Cormorant Garamond's high-contrast elegance shines at display sizes. */
+/* Open Sans at display size — slightly tighter letter-spacing for headings. */
 header h1 {
   font-family: var(--font-display);
   font-size: 2.3rem;
@@ -550,6 +586,94 @@ details.accordion > summary:hover::before {
   font-style: italic;
 }
 
+/* ── Anki guide: screenshot figures ─────────── */
+.anki-fig {
+  margin: 1.25rem 0 1.5rem;
+  border: 1px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.anki-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.anki-fig figcaption {
+  font-size: 0.82rem;
+  color: #666;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #1a1a1a;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Narrow-dialog variant: centres small screenshots */
+.anki-fig--narrow {
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Anki guide: tip & warning callouts ─────── */
+.anki-tip {
+  border-left: 2px solid #6ecf8c;
+  background: rgba(110,207,140,0.05);
+  padding: 0.65rem 1rem;
+  margin: 0.75rem 0 1rem;
+  border-radius: 0 3px 3px 0;
+  font-size: 0.93rem;
+  color: #bbb;
+  line-height: 1.55;
+}
+
+.anki-warning {
+  border-left: 2px solid #f7c77e;
+  background: rgba(247,199,126,0.05);
+  padding: 0.65rem 1rem;
+  margin: 0.75rem 0 1rem;
+  border-radius: 0 3px 3px 0;
+  font-size: 0.93rem;
+  color: #bbb;
+  line-height: 1.55;
+}
+
+/* ── Anki guide: code & prompt blocks ────────── */
+pre.anki-code {
+  background: #0d0d0d;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  overflow-x: auto;
+  font-size: 0.78rem;
+  color: #6ecf8c;
+  line-height: 1.65;
+  border: 1px solid #1a1a1a;
+  margin: 0.5rem 0 0.75rem;
+  white-space: pre;
+  font-family: 'Courier New', monospace;
+}
+
+pre.anki-prompt {
+  background: #0d0d0d;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  overflow-x: auto;
+  font-size: 0.78rem;
+  color: #ccc;
+  line-height: 1.65;
+  border: 1px solid #1a1a1a;
+  margin: 0.5rem 0 0.75rem;
+  white-space: pre;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Anki guide: key-term colour ─────────────── */
+.anki-term {
+  color: #7eb8f7;
+}
+
 /* ── Chinese / Cantonese pronunciation block ─── */
 .canto-block {
   border: 1px solid #1e1e1e;
@@ -961,7 +1085,10 @@ nav ul li:nth-child(7n+7) a:hover,
  *  script.js; styles live here so the page never flashes an unstyled control.
  *  ────────────────────────────────────────────────────────────────────────── */
 
+/* TEMPORARILY HIDDEN — widget has a bug; code preserved for future fix.
+   To restore: remove the display:none rule and the comment block. */
 .lang-switcher {
+  display: none !important;
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -1039,3 +1166,760 @@ body.translated-rtl { top: 0 !important; }
   box-shadow: none !important;
 }
 
+/* ══════════════════════════════════════════════
+   SRS FLASHCARD WIDGET
+   Shared across all language-guide pages that
+   include an SRS component. Previously duplicated
+   as inline <style> blocks on each page.
+   ══════════════════════════════════════════════ */
+
+.srs-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.8rem;
+  color: #555;
+  min-height: 1.4rem;
+}
+
+.srs-count b { color: #ccc; font-weight: 500; }
+
+.srs-bar-wrap {
+  flex: 1;
+  height: 2px;
+  background: #1a1a1a;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.srs-bar {
+  height: 100%;
+  background: #2e2e2e;
+  border-radius: 1px;
+  transition: width 0.4s ease;
+}
+
+.srs-card {
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem 2.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s ease;
+  text-align: center;
+  position: relative;
+}
+
+.srs-card:hover           { border-color: #2a2a2a; }
+.srs-card.revealed        { cursor: default; }
+.srs-card.revealed:hover  { border-color: #1e1e1e; }
+
+/* The "prompt" side of the flashcard (target-language word).
+   Historically named .srs-turkish; the name is preserved to avoid
+   breaking existing JS, but the style applies to all language SRS widgets. */
+.srs-turkish {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.srs-pos {
+  font-size: 0.75rem;
+  color: #3a3a3a;
+  font-style: italic;
+  margin-top: 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+.srs-divider {
+  width: 2rem;
+  height: 1px;
+  background: #222;
+  margin: 1.25rem auto 1rem;
+  flex-shrink: 0;
+}
+
+/* The "answer" side (L1 translation) */
+.srs-english {
+  font-size: 1.2rem;
+  color: #bbb;
+  line-height: 1.45;
+}
+
+.srs-hint {
+  position: absolute;
+  bottom: 0.7rem;
+  font-size: 0.7rem;
+  color: #2c2c2c;
+  letter-spacing: 0.05em;
+}
+
+.srs-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  min-height: 2.6rem;
+}
+
+.srs-btn {
+  flex: 1;
+  padding: 0.55rem 1rem;
+  border-radius: 3px;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.srs-btn-again            { border: 1px solid #2e1a1a; color: #c07070; }
+.srs-btn-again:hover      { background: #1a0a0a; border-color: #c07070; color: #e08888; }
+
+.srs-btn-good             { border: 1px solid #1a2e1a; color: #7ed895; }
+.srs-btn-good:hover       { background: #0a180a; border-color: #7ed895; color: #9ef0b0; }
+
+.srs-key {
+  font-family: 'Courier New', monospace;
+  font-size: 0.67rem;
+  padding: 0.04rem 0.3rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.srs-interval { font-size: 0.72rem; opacity: 0.6; }
+
+.srs-done {
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.srs-done-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.srs-done-sub {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+
+.srs-done-stats {
+  color: #444;
+  font-size: 0.82rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+}
+
+.srs-action-btn {
+  background: none;
+  border: 1px solid #2a2a2a;
+  color: #666;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.srs-action-btn:hover { border-color: #555; color: #fff; }
+
+.srs-shortcuts {
+  font-size: 0.75rem;
+  color: #2e2e2e;
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.srs-shortcuts kbd {
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  padding: 0.05rem 0.3rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 2px;
+  color: #333;
+}
+
+@media (max-width: 480px) {
+  .srs-turkish  { font-size: 1.85rem; }
+  .srs-english  { font-size: 1.05rem; }
+  .srs-btn      { font-size: 0.82rem; padding: 0.5rem 0.6rem; }
+  .srs-meta     { gap: 0.75rem; }
+}
+
+/* ══════════════════════════════════════════════
+   RTL LAYOUT — Persian (Farsi) guide pages
+   Applied when <html dir="rtl"> is set. The
+   back-link and .lang-from spans are forced LTR
+   so the arrow and parenthetical always read
+   left-to-right regardless of base direction.
+   ══════════════════════════════════════════════ */
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .back-link {
+  direction: ltr;
+  display: inline-block;
+}
+
+html[dir="rtl"] .lang-from {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+html[dir="rtl"] .lang-table {
+  direction: rtl;
+}
+
+html[dir="rtl"] .lang-table th,
+html[dir="rtl"] .lang-table td {
+  text-align: right;
+}
+
+/* SRS meta bar reversed for RTL — progress bar should still read left→right
+   so the bar grows in the correct visual direction */
+html[dir="rtl"] .srs-meta {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .srs-bar {
+  transform: scaleX(-1);
+}
+
+/* ══════════════════════════════════════════════
+   MULTILINGUAL TYPOGRAPHY — SCRIPT SUPPORT
+   System-font stacks for each writing system.
+   No web-font downloads — falls back to the
+   body serif stack when a script font is absent.
+   ══════════════════════════════════════════════ */
+
+/* Persian / Arabic script
+   Noto Naskh is the finest free Naskh face; most iOS/Android devices
+   have a system Arabic font. Windows uses Times New Roman Arabic. */
+:lang(fa) {
+  font-family:
+    'Noto Naskh Arabic', 'Scheherazade New', 'Arabic Typesetting',
+    'Times New Roman Arabic', 'Geeza Pro', 'Al Bayan',
+    var(--font-body);
+  line-height: 1.9;   /* Arabic needs more vertical rhythm */
+}
+
+/* Punjabi — Gurmukhi script (India) / Shahmukhi (Arabic, Pakistan).
+   Pages on this site use Gurmukhi. */
+:lang(pa) {
+  font-family:
+    'Noto Serif Gurmukhi', 'Raavi', 'Sat Sargun',
+    var(--font-body);
+  line-height: 1.85;
+}
+
+/* Simplified Chinese (Mandarin) */
+:lang(zh-Hans),
+:lang(zh-CN) {
+  font-family:
+    'Noto Serif SC', 'Source Han Serif SC', 'Songti SC',
+    'STSong', 'SimSun',
+    var(--font-body);
+  line-height: 1.75;
+  word-break: break-all; /* prevent CJK overflow */
+}
+
+/* Traditional Chinese (Cantonese, Taiwanese Mandarin) */
+:lang(zh-Hant),
+:lang(zh-TW),
+:lang(zh-HK) {
+  font-family:
+    'Noto Serif TC', 'Source Han Serif TC', 'Songti TC',
+    'STSong', 'MingLiU',
+    var(--font-body);
+  line-height: 1.75;
+  word-break: break-all;
+}
+
+/* Japanese — prefers proportional Mincho (serif) faces */
+:lang(ja) {
+  font-family:
+    'Hiragino Mincho ProN', 'Hiragino Mincho Pro',
+    'Yu Mincho', 'YuMincho',
+    'MS Mincho', 'MS PMincho',
+    var(--font-body);
+  line-height: 1.85;
+  word-break: break-all;
+}
+
+/* Russian / Ukrainian — Cyrillic
+   Times New Roman has good Cyrillic coverage on all platforms.
+   Noto Serif provides a consistent fallback on Linux. */
+:lang(ru),
+:lang(uk) {
+  /* Open Sans has a Cyrillic subset — clean, modern Cyrillic rendering. */
+  font-family:
+    'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Vietnamese — Latin script with extensive diacritics.
+   Times New Roman covers the full Unicode Latin Extended Additional
+   block (U+1E00–U+1EFF). The explicit stack just makes it more
+   reliable on systems where the default serif is incomplete. */
+:lang(vi) {
+  /* Open Sans has a Vietnamese subset — use it as primary. System serif fallback. */
+  font-family:
+    'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   AUTH PAGES — signup, login, reset-password, account dashboard
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Privacy notice box — displayed prominently on signup.html.
+   High-contrast border so it reads as distinct from body copy. */
+.auth-notice {
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.auth-notice strong {
+  color: #e0e0e0;
+}
+
+.auth-notice ul {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.auth-notice li {
+  margin-bottom: 0.25rem;
+}
+
+/* Inline error / success message below forms */
+.auth-status {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.5rem;
+  min-height: 1.4em;
+}
+
+.auth-status.error   { color: #e07070; }
+.auth-status.success { color: #7ec87e; }
+
+/* Small helper text below inputs (e.g., "Forgot password?") */
+.auth-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: -0.25rem;
+}
+
+.auth-meta a {
+  color: #999;
+  text-decoration: underline;
+}
+
+.auth-meta a:hover { color: #fff; }
+
+/* Account dashboard — SRS progress grid */
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.progress-card {
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.progress-card .pair-label {
+  font-weight: bold;
+  color: #e0e0e0;
+  margin-bottom: 0.35rem;
+}
+
+.progress-card .pair-stats {
+  color: #888;
+  font-size: 0.82rem;
+}
+
+/* Progress bar within a card */
+.progress-bar-wrap {
+  background: #222;
+  border-radius: 2px;
+  height: 4px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #aaa;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Saved guides list */
+.saved-guides-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.saved-guides-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #222;
+  font-size: 0.9rem;
+}
+
+.saved-guides-list li:last-child { border-bottom: none; }
+
+.saved-guides-list a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.saved-guides-list a:hover { color: #fff; text-decoration: underline; }
+
+.saved-guides-list .unsave-btn {
+  background: none;
+  border: 1px solid #333;
+  border-radius: 3px;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.5rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.saved-guides-list .unsave-btn:hover {
+  color: #e07070;
+  border-color: #e07070;
+}
+
+/* Danger zone (account deletion) */
+.danger-zone {
+  border: 1px solid #4a2020;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin-top: 2rem;
+}
+
+.danger-zone h3 {
+  color: #c07070;
+  margin-bottom: 0.5rem;
+}
+
+.danger-zone p {
+  font-size: 0.88rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.btn-danger {
+  background: transparent;
+  border: 1px solid #7a3030;
+  border-radius: 4px;
+  color: #c07070;
+  cursor: pointer;
+  font-size: 0.88rem;
+  padding: 0.45rem 1rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-danger:hover {
+  background: #7a3030;
+  color: #fff;
+}
+
+/* Two-step reset form phases */
+.reset-phase { display: none; }
+.reset-phase.active { display: block; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LANGUAGE GUIDES PAGE — language-guides.html
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Filter bar ────────────────────────────────────────────────────────── */
+.guide-filter-bar {
+  margin: 1.5rem 0 1rem;
+}
+
+.guide-filter-bar .filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.guide-filter-bar .filter-label {
+  font-size: 0.78rem;
+  color: #555;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-right: 0.25rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filter-pill {
+  appearance: none;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 20px;
+  color: #888;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1.5;
+}
+
+.filter-pill:hover {
+  border-color: #666;
+  color: #ccc;
+}
+
+.filter-pill.active {
+  background: #2a2a2a;
+  border-color: #aaa;
+  color: #fff;
+}
+
+.guide-search-wrap {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.guide-search-wrap input {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #ccc;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem 0.4rem 2rem;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.guide-search-wrap input:focus {
+  border-color: #555;
+  outline: none;
+}
+
+.guide-search-wrap input::placeholder { color: #444; }
+
+.guide-search-wrap::before {
+  content: '⌕';
+  position: absolute;
+  left: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #444;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.filter-clear {
+  appearance: none;
+  background: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  padding: 0.2rem 0;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.filter-clear:hover { color: #aaa; }
+
+.filter-results-count {
+  font-size: 0.8rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+  min-height: 1.2em;
+}
+
+/* ── L1 group sections ─────────────────────────────────────────────────── */
+.l1-group {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.l1-group h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #ddd;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.l1-group h2 .l1-flag {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Custom icon (img) within the flag slot */
+.l1-group h2 .l1-flag img,
+.l2-flag img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.l1-group .l1-caption {
+  color: #555;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.l1-group ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1rem;
+}
+
+.l1-group li {
+  padding: 0.3rem 0;
+  padding-left: 2rem;
+  border-bottom: 1px solid #111;
+}
+
+.l1-group li:last-child { border-bottom: none; }
+
+.l1-group li a {
+  color: #ccc;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.l1-group li a .l2-flag { font-size: 1rem; line-height: 1; }
+.l1-group li a .l2-name { font-size: 0.95rem; }
+.l1-group li a:hover .l2-name { color: #fff; }
+
+/* Hidden during filter */
+.l1-group[hidden],
+.l1-group li[hidden] { display: none !important; }
+
+/* Custom icon sizing — match emoji visual weight */
+.lang-icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1em;
+  vertical-align: middle;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HOMEPAGE LEAF ANIMATION
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Replace old .tagline-emoji reference */
+.tagline-leaf-wrap {
+  position: relative;
+  display: inline-block;
+  /* Prevents the falling leaf from reflowing the tagline text */
+  width: 1.6em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+.tagline-leaf {
+  display: inline-block;
+  cursor: default;
+  font-size: 1.2rem;
+  line-height: 1;
+  transform-origin: top center;
+  will-change: transform, opacity;
+  /* Base state: resting, visible */
+  opacity: 1;
+  transform: rotate(0deg) translateX(0) translateY(0);
+}
+
+/* ── Wind gust spans (created by JS, absolutely positioned) ─────────────── */
+.leaf-wind {
+  position: fixed;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.18);
+  pointer-events: none;
+  white-space: nowrap;
+  will-change: transform, opacity;
+  /* Animation applied inline by JS with staggered delays */
+}
+
+/* ── Leaf keyframes ─────────────────────────────────────────────────────── */
+
+/* Wind-tilt: leaf tilts right as wind passes */
+@keyframes leaf-wind-tilt {
+  0%   { transform: rotate(0deg); }
+  30%  { transform: rotate(18deg) scaleX(0.9); }
+  60%  { transform: rotate(-6deg) scaleX(1.05); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Natural sway before falling — gentle pendulum */
+@keyframes leaf-sway {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(8deg); }
+  50%  { transform: rotate(-5deg); }
+  75%  { transform: rotate(6deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+/* Wind gust: travels right across the viewport and fades */
+@keyframes wind-gust {
+  0%   { transform: translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  80%  { opacity: 0.6; }
+  100% { transform: translateX(55vw); opacity: 0; }
+}

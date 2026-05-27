@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — Steven Legg</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="back-link" href="index.html">← Back</a>
+
+  <header>
+    <h1>Create Account</h1>
+  </header>
+
+  <article>
+
+    <p>An account lets you save your spaced-repetition progress across devices and bookmark language guides.</p>
+
+    <div class="auth-notice">
+      <strong>Creating an account does not subscribe you to the newsletter.</strong>
+      Your email address is used only for:
+      <ul>
+        <li>Signing in to your account</li>
+        <li>Sending a reset code if you forget your password (only when you request it)</li>
+      </ul>
+      Your email will never be used for advertising, marketing outreach, newsletters, data brokerage, or sharing with any third party. If you want to subscribe to the newsletter separately, you can do so on the <a href="contact.html">contact page</a>.
+    </div>
+
+    <form id="signup-form" novalidate>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email address"
+        required
+        aria-label="Email address"
+        autocomplete="email"
+        maxlength="254"
+        inputmode="email"
+      >
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password (8 characters minimum)"
+        required
+        aria-label="Password"
+        autocomplete="new-password"
+        minlength="8"
+        maxlength="128"
+      >
+      <input
+        type="password"
+        name="confirm"
+        id="confirm"
+        placeholder="Confirm password"
+        required
+        aria-label="Confirm password"
+        autocomplete="new-password"
+        maxlength="128"
+      >
+      <button type="submit">Create Account</button>
+    </form>
+
+    <p id="signup-status" class="auth-status" role="status" aria-live="polite"></p>
+
+    <p class="auth-meta">Already have an account? <a href="login.html">Sign in</a></p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const form   = document.getElementById('signup-form');
+      const status = document.getElementById('signup-status');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        status.textContent = '';
+        status.className   = 'auth-status';
+
+        const email    = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirm  = document.getElementById('confirm').value;
+
+        if (password !== confirm) {
+          status.textContent = 'Passwords do not match.';
+          status.classList.add('error');
+          return;
+        }
+        if (password.length < 8) {
+          status.textContent = 'Password must be at least 8 characters.';
+          status.classList.add('error');
+          return;
+        }
+
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled    = true;
+        btn.textContent = 'Creating account…';
+
+        try {
+          const res  = await fetch('/api/auth/signup', {
+            method:      'POST',
+            headers:     { 'Content-Type': 'application/json' },
+            body:        JSON.stringify({ email, password }),
+            credentials: 'same-origin',
+          });
+          const data = await res.json();
+
+          if (res.ok) {
+            status.textContent = 'Account created. Redirecting…';
+            status.classList.add('success');
+            window.location.href = 'account.html';
+          } else {
+            status.textContent = data.error || 'Something went wrong.';
+            status.classList.add('error');
+            btn.disabled    = false;
+            btn.textContent = 'Create Account';
+          }
+        } catch {
+          status.textContent = 'Network error. Please try again.';
+          status.classList.add('error');
+          btn.disabled    = false;
+          btn.textContent = 'Create Account';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

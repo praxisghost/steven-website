@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanisch lernen (für Deutschsprachige) — Steven Legg</title>
+  <meta name="description" content="Spanisch für Deutschsprachige — Vokabeltrainer mit Spaced-Repetition, Aussprachehinweise auf Deutsch und Lernreferenz.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── SRS Flashcard ─────────────────────────────────────────────────────── */
+
+    .srs-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.8rem;
+      color: #555;
+      min-height: 1.4rem;
+    }
+
+    .srs-count b { color: #ccc; font-weight: 500; }
+
+    .srs-bar-wrap {
+      flex: 1;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .srs-bar {
+      height: 100%;
+      background: #2e2e2e;
+      border-radius: 1px;
+      transition: width 0.4s ease;
+    }
+
+    .srs-card {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem 2.25rem;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.2s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .srs-card:hover           { border-color: #2a2a2a; }
+    .srs-card.revealed        { cursor: default; }
+    .srs-card.revealed:hover  { border-color: #1e1e1e; }
+
+    .srs-turkish {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .srs-pos {
+      font-size: 0.75rem;
+      color: #3a3a3a;
+      font-style: italic;
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .srs-divider {
+      width: 2rem;
+      height: 1px;
+      background: #222;
+      margin: 1.25rem auto 1rem;
+      flex-shrink: 0;
+    }
+
+    .srs-english {
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.45;
+    }
+
+    .srs-hint {
+      position: absolute;
+      bottom: 0.7rem;
+      font-size: 0.7rem;
+      color: #2c2c2c;
+      letter-spacing: 0.05em;
+    }
+
+    .srs-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      min-height: 2.6rem;
+    }
+
+    .srs-btn {
+      flex: 1;
+      padding: 0.55rem 1rem;
+      border-radius: 3px;
+      background: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+    }
+
+    .srs-btn-again            { border: 1px solid #2e1a1a; color: #c07070; }
+    .srs-btn-again:hover      { background: #1a0a0a; border-color: #c07070; color: #e08888; }
+
+    .srs-btn-good             { border: 1px solid #1a2e1a; color: #7ed895; }
+    .srs-btn-good:hover       { background: #0a180a; border-color: #7ed895; color: #9ef0b0; }
+
+    .srs-key {
+      font-family: 'Courier New', monospace;
+      font-size: 0.67rem;
+      padding: 0.04rem 0.3rem;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .srs-interval {
+      font-size: 0.72rem;
+      opacity: 0.6;
+    }
+
+    .srs-done {
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .srs-done-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .srs-done-sub {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+      font-style: italic;
+    }
+
+    .srs-done-stats {
+      color: #444;
+      font-size: 0.82rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+    }
+
+    .srs-action-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .srs-action-btn:hover { border-color: #555; color: #fff; }
+
+    .srs-shortcuts {
+      font-size: 0.75rem;
+      color: #2e2e2e;
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .srs-shortcuts kbd {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      padding: 0.05rem 0.3rem;
+      border: 1px solid #2a2a2a;
+      border-radius: 2px;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      .srs-turkish  { font-size: 1.85rem; }
+      .srs-english  { font-size: 1.05rem; }
+      .srs-btn      { font-size: 0.82rem; padding: 0.5rem 0.6rem; }
+      .srs-meta     { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html">← Sprachlernführer</a>
+
+  <header>
+    <h1>Spanisch lernen</h1>
+    <p>Aprender español — Vokabeltrainer &amp; Lernreferenz für Deutschsprachige.</p>
+  </header>
+
+  <article>
+
+    <!-- INHALTSVERZEICHNIS -->
+    <ol class="lang-toc">
+      <li><a href="#ueber">Über das Spanische</a></li>
+      <li><a href="#karteikarten">Vokabelkarten — SRS-Trainer</a></li>
+      <li><a href="#notizen">Sprachhinweise im Überblick</a></li>
+      <li><a href="#top500">Top 500 häufigste spanische Wörter</a></li>
+    </ol>
+
+    <!-- ══════════════════════════════════════════
+         1. ÜBER DAS SPANISCHE
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="ueber">
+      <h2>1. Über das Spanische</h2>
+      <p>Spanisch (Español / Castellano) ist mit etwa 500 Millionen Muttersprachlern eine der meistgesprochenen Sprachen der Welt und offizielle Sprache von 20 Ländern. Es ist die Hauptsprache Lateinamerikas sowie Spaniens und gehört zur romanischen Sprachfamilie — gemeinsam mit Französisch, Portugiesisch, Italienisch und Rumänisch.</p>
+
+      <h3>Gute Nachrichten für Deutschsprachige</h3>
+      <p>Als Deutschsprachige(r) bringst du einige nützliche Vorteile mit:</p>
+      <ul>
+        <li><strong>Grammatisches Geschlecht.</strong> Im Deutschen kennst du bereits das Konzept des grammatischen Geschlechts (maskulin / feminin / neutrum). Das Spanische hat zwei Genera (maskulin / feminin) — weniger als das Deutsche, aber das Prinzip ist dir vertraut.</li>
+        <li><strong>Gemeinsame Lehnwörter.</strong> Viele Wörter internationalen Ursprungs sind in beiden Sprachen ähnlich — etwa <em>Hotel, Restaurant, Museum, Telefon, Computer, Universität</em>. Diese sogenannten Kognaten erleichtern den Einstieg erheblich.</li>
+        <li><strong>Latein als gemeinsame Basis.</strong> Hast du Latein gelernt? Dann wirst du im Spanischen viele Wurzeln wiedererkennen — romanische Sprachen stammen direkt vom Latein ab.</li>
+        <li><strong>Regelmäßige Aussprache.</strong> Spanisch wird nahezu konsequent so ausgesprochen, wie es geschrieben steht — das ist ein großer Vorteil gegenüber Englisch oder Französisch.</li>
+      </ul>
+
+      <h3>Herausforderungen für Deutschsprachige</h3>
+      <ul>
+        <li><strong>Zwei Verben für „sein" (ser vs. estar).</strong> Im Deutschen sagst du <em>Ich bin Deutscher</em> und <em>Ich bin müde</em> mit demselben Verb. Spanisch zwingt dich zur Wahl: dauerhafte Eigenschaft, Beruf, Herkunft, Identität → <em>ser</em> (<em>Soy alemán</em>); Ort, vorübergehender Zustand, Gefühl → <em>estar</em> (<em>Estoy cansado / en casa</em>). Auch fortgeschrittene Lernende verwechseln das jahrelang.</li>
+        <li><strong>Konjunktiv (subjuntivo) — kein Vergleich zum deutschen Konjunktiv.</strong> Der deutsche Konjunktiv I/II ist im Alltag fast verschwunden (außer indirekte Rede, „würde"-Höflichkeit). Der spanische <em>subjuntivo</em> ist dagegen <strong>überall</strong>: <em>quiero que vengas</em>, <em>es importante que sepas</em>, <em>para que entiendas</em>, <em>no creo que sea verdad</em>, <em>cuando llegues</em> (Zukunft). Wer nur Indikativ benutzt, klingt verständlich, aber sofort „nicht-muttersprachlich".</li>
+        <li><strong>Mehr Zeitformen als im Deutschen.</strong> Im Präsens sind die sechs Personalendungen ähnlich aufwändig wie im Deutschen. Das eigentliche Problem ist die Anzahl der Vergangenheitsformen: Spanisch unterscheidet zwingend <em>Indefinido</em> (abgeschlossen, einmalig: <em>ayer comí paella</em>) von <em>Imperfecto</em> (Hintergrund, gewohnt, beschreibend: <em>de niño, siempre comía paella</em>). Im Deutschen reicht oft das Perfekt. Plus: Subjuntivo Presente, Subjuntivo Imperfecto, Condicional, Futuro — alles regelmäßig benutzt.</li>
+        <li><strong>Wortstellung — flexibler, aber nicht beliebig.</strong> Spanisch ist im Kern SVO. Inversion (Verb vor Subjekt) ist häufiger als im Deutschen, vor allem nach Frageadverbien (<em>¿Cómo está Juan?</em>) und in literarischer Sprache. Aber das deutsche V2-Schema (Verb in der zweiten Position der Hauptsatzklammer) gilt im Spanischen nicht. Das Ungewöhnlichste für Deutsche ist die <strong>Stellung der Klitika</strong>: Pronominalobjekte rücken vor das konjugierte Verb (<em>Te lo digo</em>, nicht <em>*Digo te lo</em>; nur am Infinitiv/Imperativ hängen sie hinten: <em>dímelo</em>).</li>
+        <li><strong>Neue Laute.</strong> Das einfach gerollte <em>r</em> (zwischen Vokalen: <em>pero</em>) und das mehrfach gerollte <em>rr</em> (<em>perro</em>) sind ungewohnt — das deutsche Standard-<em>r</em> ist uvular (Zäpfchen-r), kein Zungenspitzen-r. Bayrische, fränkische und österreichische Sprecher mit Zungenspitzen-r haben hier einen klaren Startvorteil; alle anderen müssen die Rolle bewusst trainieren. Das <em>j</em> liegt ungefähr beim deutschen <em>ch</em> in <em>Bach</em>, und das <em>ñ</em> beim <em>nj</em> in <em>Sanjak</em>.</li>
+        <li><strong>Falsche Freunde durch lateinische Lehnwortschicht.</strong> Beide Sprachen teilen viele lateinisch-griechische Internationalismen — manche bedeuten aber Verschiedenes: <em>embarazada</em> (schwanger, nicht: peinlich berührt), <em>constipado</em> (erkältet, nicht: verstopft), <em>fábrica</em> (Fabrik, nicht: Stoff/Gewebe), <em>sensible</em> (empfindlich, nicht: vernünftig), <em>actual</em> (gegenwärtig, nicht: tatsächlich), <em>compromiso</em> (Verpflichtung, nicht nur: Kompromiss).</li>
+      </ul>
+
+      <h3>Warum Spanisch?</h3>
+      <ul>
+        <li><strong>Globale Reichweite</strong> — Spanisch öffnet die Türen zu 20 Ländern auf drei Kontinenten: Lateinamerika, Spanien und Teilen der USA (über 40 Millionen Sprecher).</li>
+        <li><strong>Brücke zu anderen romanischen Sprachen</strong> — Wer Spanisch beherrscht, kann Portugiesisch, Italienisch und Französisch deutlich schneller erlernen.</li>
+        <li><strong>Reise &amp; Kultur</strong> — Lateinamerikanische und spanische Kultur, Literatur, Musik und Küche sind weltweit präsent und von enormer Tiefe.</li>
+        <li><strong>Karriere</strong> — Spanischkenntnisse sind in Wirtschaft, Diplomatie, Gesundheit und NGOs international sehr gefragt.</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         2. VOKABELKARTEN — SRS-TRAINER
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="karteikarten">
+      <h2>2. Vokabelkarten — SRS-Trainer</h2>
+      <p>100 spanische Kernwörter mit einem Spaced-Repetition-Algorithmus. Fällige Karten werden zuerst gezeigt; neue Karten werden pro Sitzung bis zu 20 eingeführt. Dein Fortschritt wird im Browser gespeichert und bleibt zwischen Besuchen erhalten.</p>
+
+      <p class="lang-note"><strong>Nochmal</strong> stellt die Karte ans Ende der aktuellen Sitzung und plant eine Wiederholung nach 1 Tag. <strong>Gut</strong> plant die Karte in einem wachsenden Intervall (1 Tag → 6 Tage → wächst mit jeder richtigen Antwort). Die Intervalle sind auf jedem Knopf sichtbar.</p>
+
+      <div id="srs-root"></div>
+
+      <div class="srs-shortcuts" aria-label="Tastaturkürzel">
+        <span><kbd>Space</kbd> aufdecken</span>
+        <span><kbd>1</kbd> Nochmal</span>
+        <span><kbd>3</kbd> Gut</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         3. SPRACHHINWEISE
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="notizen">
+      <h2>3. Sprachhinweise im Überblick</h2>
+
+      <h3>Das spanische Alphabet &amp; Aussprache</h3>
+      <p>Spanisch verwendet das lateinische Alphabet mit einem Zusatzbuchstaben: <strong>ñ</strong> (wie <em>ny</em> in „Cañon"). Die Aussprache ist sehr regelmäßig — jeder Buchstabe hat fast immer denselben Lautwert.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Buchstabe / Laut</th><th>Aussprache (für Deutschsprachige)</th><th>Beispiel</th></tr></thead>
+          <tbody>
+            <tr><td>a, e, i, o, u</td><td>Reine Vokale wie im Deutschen — keine Umlaute oder Diphthonge</td><td>casa (Haus), mesa (Tisch)</td></tr>
+            <tr><td>c (vor e/i)</td><td>In Lateinamerika: wie deutsches „s"; in Spanien: wie „th" im Englischen</td><td>ciudad (Stadt), cena (Abendessen)</td></tr>
+            <tr><td>c (vor a/o/u)</td><td>wie deutsches „k"</td><td>casa (Haus), comer (essen)</td></tr>
+            <tr><td>g (vor e/i)</td><td>wie ein hartes „ch" in „Bach" — rauh und kehlig</td><td>gente (Leute), girar (drehen)</td></tr>
+            <tr><td>g (vor a/o/u)</td><td>wie deutsches „g"</td><td>gato (Katze), gordo (fett)</td></tr>
+            <tr><td>h</td><td>immer stumm</td><td>hablar (sprechen), hotel (Hotel)</td></tr>
+            <tr><td>j</td><td>wie ein hartes „ch" in „Bach" — noch stärker</td><td>jardín (Garten), ojo (Auge)</td></tr>
+            <tr><td>ll</td><td>in den meisten Dialekten wie „y" in „ja"</td><td>llegar (ankommen), calle (Straße)</td></tr>
+            <tr><td>ñ</td><td>wie „ny" — ähnlich dem „ni" in „Spanien"</td><td>año (Jahr), mañana (Morgen / morgen)</td></tr>
+            <tr><td>qu</td><td>wie deutsches „k" — das u wird nicht gesprochen</td><td>que (dass/was), querer (wollen)</td></tr>
+            <tr><td>r</td><td>einfaches gerolltes r — ähnlich einem weichen Zungen-r</td><td>pero (aber), para (für)</td></tr>
+            <tr><td>rr</td><td>stark gerolltes r — im Deutschen kein direktes Äquivalent</td><td>perro (Hund), carro (Auto)</td></tr>
+            <tr><td>v</td><td>identisch mit „b" ausgesprochen — kein Unterschied im Spanischen</td><td>vino (Wein), vivir (leben)</td></tr>
+            <tr><td>z</td><td>in Lateinamerika: wie „s"; in Spanien: wie „th"</td><td>zapato (Schuh), zona (Zone)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Grammatisches Geschlecht: maskulin &amp; feminin</h3>
+      <p>Spanisch hat zwei grammatische Genera — maskulin (<em>el</em>) und feminin (<em>la</em>). Anders als im Deutschen gibt es kein Neutrum. Viele Substantive folgen erkennbaren Mustern:</p>
+      <ul>
+        <li>Auf <strong>-o</strong> endende Substantive sind meist maskulin: <em>el libro</em> (das Buch), <em>el tiempo</em> (die Zeit / das Wetter)</li>
+        <li>Auf <strong>-a</strong> endende Substantive sind meist feminin: <em>la casa</em> (das Haus), <em>la mesa</em> (der Tisch)</li>
+        <li>Ausnahmen gibt es — Geschlecht immer zusammen mit dem Substantiv lernen.</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Artikel</th><th>Genus</th><th>Beispiel</th><th>Deutsch</th></tr></thead>
+          <tbody>
+            <tr><td><strong>el</strong></td><td>maskulin (Singular)</td><td>el hombre</td><td>der Mann</td></tr>
+            <tr><td><strong>la</strong></td><td>feminin (Singular)</td><td>la mujer</td><td>die Frau</td></tr>
+            <tr><td><strong>los</strong></td><td>maskulin (Plural)</td><td>los hombres</td><td>die Männer</td></tr>
+            <tr><td><strong>las</strong></td><td>feminin (Plural)</td><td>las mujeres</td><td>die Frauen</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ser vs. Estar — beide bedeuten „sein"</h3>
+      <p>Das ist eine der größten Herausforderungen für Deutschsprachige. Das Spanische unterscheidet:</p>
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Verb</th><th>Verwendung</th><th>Beispiel</th><th>Deutsch</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ser</strong></td><td>Dauerhaftes Sein: Herkunft, Identität, Material, Zeit</td><td>Soy alemán.</td><td>Ich bin Deutscher.</td></tr>
+            <tr><td><strong>ser</strong></td><td>Beruf, Persönlichkeit, Beziehung</td><td>Ella es médica.</td><td>Sie ist Ärztin.</td></tr>
+            <tr><td><strong>estar</strong></td><td>Ort, vorübergehender Zustand, Gefühl</td><td>Estoy en casa.</td><td>Ich bin zu Hause.</td></tr>
+            <tr><td><strong>estar</strong></td><td>Befindlichkeit, Ergebnis einer Handlung</td><td>Estoy cansado.</td><td>Ich bin müde.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Verb-Konjugation im Präsens</h3>
+      <p>Spanische Verben werden nach drei Konjugationsklassen geordnet: -<strong>ar</strong>, -<strong>er</strong>, -<strong>ir</strong>. Das Pronomen kann oft weggelassen werden, da die Endung die Person bereits anzeigt.</p>
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>Pronomen</th><th>hablar (-ar)</th><th>comer (-er)</th><th>vivir (-ir)</th><th>Deutsch</th></tr></thead>
+          <tbody>
+            <tr><td>yo</td><td>hablo</td><td>como</td><td>vivo</td><td>ich spreche / esse / lebe</td></tr>
+            <tr><td>tú</td><td>hablas</td><td>comes</td><td>vives</td><td>du sprichst / isst / lebst</td></tr>
+            <tr><td>él/ella</td><td>habla</td><td>come</td><td>vive</td><td>er/sie spricht / isst / lebt</td></tr>
+            <tr><td>nosotros</td><td>hablamos</td><td>comemos</td><td>vivimos</td><td>wir sprechen / essen / leben</td></tr>
+            <tr><td>vosotros</td><td>habláis</td><td>coméis</td><td>vivís</td><td>ihr sprecht / esst / lebt</td></tr>
+            <tr><td>ellos/ustedes</td><td>hablan</td><td>comen</td><td>viven</td><td>sie / Sie sprechen / essen / leben</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Verneinung</h3>
+      <p>Im Spanischen wird <strong>no</strong> direkt vor das Verb gestellt — keine Unterscheidung wie <em>nicht</em> / <em>kein</em> im Deutschen erforderlich.</p>
+      <ul>
+        <li><em>No hablo alemán.</em> = Ich spreche kein Deutsch.</li>
+        <li><em>No tengo dinero.</em> = Ich habe kein Geld.</li>
+      </ul>
+
+      <h3>Empfohlene Ressourcen für Deutschsprachige</h3>
+      <p>Deutsch ist nach Englisch die zweitgrößte Verlagssprache für Spanisch-Lehrmaterial — Hueber, Klett, Cornelsen, Langenscheidt und Pons haben jeweils umfangreiche Spanisch-Reihen. Es lohnt sich, deutschsprachige Materialien zu nutzen, weil Erklärungen Grammatikbegriffe (Akkusativ, Konjunktiv, Reflexivpronomen) konsequent aus dem Deutschen übersetzen.</p>
+
+      <h4>Lehrbücher (A1 → B2)</h4>
+      <ul>
+        <li><strong>„Con gusto nuevo" (Klett)</strong> — Sehr verbreitetes Lehrwerk an Volkshochschulen, mit deutschem Begleitheft und MP3-Audio. Klar gestufte A1/A2/B1-Reihe.</li>
+        <li><strong>„Caminos hoy" (Klett)</strong> — Alternative zu Con gusto, mit etwas mehr Landeskunde-Schwerpunkt.</li>
+        <li><strong>„PONS Power-Sprachkurs Spanisch"</strong> — Selbstlernkurs A1–A2 mit deutschen Erklärungen, ideal für Pendler oder Autodidakten.</li>
+        <li><strong>„Hueber Spanisch — kurz &amp; schmerzlos"</strong> — Kompakter Einstieg mit deutscher Anleitung; gut für einen 4-Wochen-Crashkurs vor einer Reise.</li>
+      </ul>
+
+      <h4>Grammatik &amp; Referenz</h4>
+      <ul>
+        <li><strong>„Spanische Grammatik" — Helga Halm-Karadeniz (Hueber) oder die „Grammatik kurz &amp; bündig Spanisch" (Klett)</strong> — Beide auf Deutsch erklärt; gut zum Nachschlagen.</li>
+        <li><strong>„Langenscheidt Verbtabellen Spanisch"</strong> — Konjugationsmuster für alle wichtigen unregelmäßigen Verben — ein Muss am Schreibtisch.</li>
+        <li><strong>„PONS Großwörterbuch Spanisch–Deutsch / Deutsch–Spanisch"</strong> oder die kostenlose <a href="https://de.pons.com/" target="_blank" rel="noopener">PONS Online-Version</a> — Beispielsätze gut, App vorhanden.</li>
+        <li><strong><a href="https://dict.leo.org/spanisch-deutsch/" target="_blank" rel="noopener">LEO Spanisch–Deutsch</a></strong> — Kostenlos, sehr aktive Diskussionsforen für Bedeutungsnuancen; oft das schnellste Online-Wörterbuch im deutschsprachigen Raum.</li>
+      </ul>
+
+      <h4>Apps &amp; Online</h4>
+      <ul>
+        <li><strong>Duolingo</strong> — Bietet einen vollständigen Spanisch-Kurs <em>für Deutschsprachige</em> (anders als die Mandarin- oder Persisch-Lerner) — der Standard-Einstieg, wenn man tägliche Routine aufbauen will.</li>
+        <li><strong>Babbel</strong> — In Berlin entwickelt, deutscher Erklärungstext erstklassig; A1–B1 sind besonders solide. Bezahlung erforderlich.</li>
+        <li><strong><a href="https://www.dw.com/de/deutsche-welle/s-12076" target="_blank" rel="noopener">Deutsche Welle</a></strong> — Bietet zwar selbst keinen Spanisch-Kurs, aber die spanische DW-Welle (<a href="https://www.dw.com/es" target="_blank" rel="noopener">dw.com/es</a>) liefert Nachrichten und Reportagen, die man als Deutscher gut quervergleichen kann.</li>
+        <li><strong><a href="https://www.languagereactor.com/" target="_blank" rel="noopener">Language Reactor</a></strong> — Chrome-Erweiterung; setzt „Übersetzungssprache: Deutsch" und gibt dir auf Netflix/YouTube zweisprachige spanisch-deutsche Untertitel.</li>
+        <li><strong>Anki</strong> — Auf AnkiWeb gibt es zahlreiche „Spanisch–Deutsch"-Decks, z. B. zur Wortliste des Goethe-Instituts oder zu „Curso de Español A1–B1".</li>
+      </ul>
+
+      <h4>YouTube &amp; Podcasts</h4>
+      <ul>
+        <li><strong><a href="https://www.youtube.com/@easyspanish" target="_blank" rel="noopener">Easy Spanish</a></strong> — Schwesterkanal von Easy German; Straßeninterviews mit zweisprachigen Spanisch-Englisch-Untertiteln (nicht Deutsch, aber für Deutschsprachige problemlos nutzbar). Beginne mit der „Super Easy Spanish"-Playlist.</li>
+        <li><strong>„Spanisch lernen mit Sandra" / „Spanisch mit Christian"</strong> — Zwei deutschsprachige YouTuber, die Spanisch von A1 bis B2 mit deutscher Erklärungssprache unterrichten. Sehr nützlich für die Grammatik-Lücken zwischen Lehrbuchkapiteln.</li>
+        <li><strong>„News in Slow Spanish"</strong> — Langsam gesprochene Nachrichten mit Transkript, hervorragend für B1+ Hörverstehen.</li>
+        <li><strong>„Radio Ambulante"</strong> (NPR) — Hochwertige Reportagen aus ganz Lateinamerika, B2+. Transkripte über die Lupa-App mit eingebautem Wörterbuch.</li>
+      </ul>
+
+      <h4>Tandempartner &amp; Unterricht</h4>
+      <ul>
+        <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> — Spanischlehrer aus Spanien, Mexiko, Argentinien, Kolumbien, Peru — du kannst dir den Akzent gezielt aussuchen. Tipp: zuerst eine Probestunde mit zwei Lehrkräften aus verschiedenen Regionen buchen, um zu hören, welches Spanisch dir besser gefällt.</li>
+        <li><strong><a href="https://www.tandem.net/" target="_blank" rel="noopener">Tandem-App</a></strong> — Berliner Firma; gute Filter, um spanische Muttersprachler zu finden, die Deutsch lernen wollen.</li>
+        <li><strong>Volkshochschulen (VHS)</strong> — In Deutschland, Österreich und der Schweiz unschlagbar günstig (oft &lt; 8 €/Stunde im Gruppenkurs), didaktisch zuverlässig.</li>
+        <li><strong><a href="https://www.cervantes.de/" target="_blank" rel="noopener">Instituto Cervantes</a></strong> (Berlin, München, Bremen, Frankfurt, Hamburg) — Offizielle spanische Kulturinstitution; teurer als VHS, aber Prüfungszentrum für DELE-Zertifikate.</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         4. TOP 500 WÖRTER
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="top500">
+      <h2>4. Top 500 häufigste spanische Wörter</h2>
+      <p>Die folgende Tabelle listet die 500 am häufigsten verwendeten spanischen Wörter in der Reihenfolge ihrer Häufigkeit. Verben sind in der Infinitivform angegeben. Wer diese Liste beherrscht, kann den Großteil alltäglicher spanischer Texte und Gespräche verstehen.</p>
+      <p class="lang-note">Wörter, die bereits im SRS-Vokabeltrainer enthalten sind (die 100 Kernwörter), erscheinen hier ebenfalls — die Wiederholung des häufigsten Wortschatzes ist beabsichtigt und wertvoll.</p>
+
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead>
+            <tr><th>#</th><th>Spanisch</th><th>Wortart</th><th>Bedeutung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">1–50 — Grundlegende Funktionswörter &amp; wichtigste Verben</td></tr>
+            <tr><td>1</td><td>de</td><td>Präp.</td><td>von / aus / über / -s (Genitiv)</td></tr>
+            <tr><td>2</td><td>la / el / los / las</td><td>Artikel</td><td>die / der / die (Pl.) — bestimmter Artikel</td></tr>
+            <tr><td>3</td><td>que</td><td>Konj. / Pron.</td><td>dass / was / welcher / als</td></tr>
+            <tr><td>4</td><td>en</td><td>Präp.</td><td>in / an / auf / bei</td></tr>
+            <tr><td>5</td><td>y</td><td>Konj.</td><td>und</td></tr>
+            <tr><td>6</td><td>a</td><td>Präp.</td><td>zu / nach / an / um (Zeit)</td></tr>
+            <tr><td>7</td><td>los</td><td>Artikel</td><td>die (maskulin Plural)</td></tr>
+            <tr><td>8</td><td>se</td><td>Pron.</td><td>sich (Reflexivpronomen)</td></tr>
+            <tr><td>9</td><td>no</td><td>Partikel</td><td>nicht / nein</td></tr>
+            <tr><td>10</td><td>un / una</td><td>Artikel / Zahl</td><td>ein / eine; eins</td></tr>
+            <tr><td>11</td><td>por</td><td>Präp.</td><td>für / durch / wegen / pro</td></tr>
+            <tr><td>12</td><td>con</td><td>Präp.</td><td>mit</td></tr>
+            <tr><td>13</td><td>su</td><td>Pron.</td><td>sein / ihr / Ihr (Possessiv)</td></tr>
+            <tr><td>14</td><td>para</td><td>Präp.</td><td>für / um … zu / nach (Richtung)</td></tr>
+            <tr><td>15</td><td>es</td><td>Verb</td><td>ist (3. Person Sg. von ser)</td></tr>
+            <tr><td>16</td><td>una</td><td>Artikel</td><td>eine</td></tr>
+            <tr><td>17</td><td>al</td><td>Kontraktion</td><td>an den / zu dem (a + el)</td></tr>
+            <tr><td>18</td><td>del</td><td>Kontraktion</td><td>von dem / des (de + el)</td></tr>
+            <tr><td>19</td><td>lo</td><td>Pron. / Artikel</td><td>es / ihn / das (neutrale Form)</td></tr>
+            <tr><td>20</td><td>como</td><td>Konj. / Adv.</td><td>wie / als / da (weil)</td></tr>
+            <tr><td>21</td><td>más</td><td>Adv. / Adj.</td><td>mehr / noch / plus</td></tr>
+            <tr><td>22</td><td>pero</td><td>Konj.</td><td>aber / jedoch</td></tr>
+            <tr><td>23</td><td>sus</td><td>Pron.</td><td>seine / ihre / Ihre (Plural)</td></tr>
+            <tr><td>24</td><td>le</td><td>Pron.</td><td>ihm / ihr (Dativ)</td></tr>
+            <tr><td>25</td><td>ya</td><td>Adv.</td><td>schon / jetzt / nicht mehr</td></tr>
+            <tr><td>26</td><td>o</td><td>Konj.</td><td>oder</td></tr>
+            <tr><td>27</td><td>este</td><td>Pron. / Adj.</td><td>dieser / diese / dieses</td></tr>
+            <tr><td>28</td><td>si</td><td>Konj.</td><td>wenn / falls / ob</td></tr>
+            <tr><td>29</td><td>me</td><td>Pron.</td><td>mir / mich (Reflexivpronomen)</td></tr>
+            <tr><td>30</td><td>porque</td><td>Konj.</td><td>weil / denn</td></tr>
+            <tr><td>31</td><td>esta</td><td>Pron. / Adj.</td><td>diese (feminin)</td></tr>
+            <tr><td>32</td><td>entre</td><td>Präp.</td><td>zwischen / unter / bei</td></tr>
+            <tr><td>33</td><td>cuando</td><td>Konj. / Adv.</td><td>wenn / als / wann</td></tr>
+            <tr><td>34</td><td>muy</td><td>Adv.</td><td>sehr</td></tr>
+            <tr><td>35</td><td>sin</td><td>Präp.</td><td>ohne</td></tr>
+            <tr><td>36</td><td>sobre</td><td>Präp.</td><td>über / auf / gegen (Zeit)</td></tr>
+            <tr><td>37</td><td>también</td><td>Adv.</td><td>auch / ebenfalls</td></tr>
+            <tr><td>38</td><td>me</td><td>Pron.</td><td>mich / mir</td></tr>
+            <tr><td>39</td><td>hasta</td><td>Präp.</td><td>bis / sogar</td></tr>
+            <tr><td>40</td><td>hay</td><td>Verb</td><td>es gibt / es ist (vorhanden)</td></tr>
+            <tr><td>41</td><td>donde</td><td>Adv.</td><td>wo / wohin</td></tr>
+            <tr><td>42</td><td>quien</td><td>Pron.</td><td>wer / der/die (Relativ)</td></tr>
+            <tr><td>43</td><td>desde</td><td>Präp.</td><td>seit / von … an</td></tr>
+            <tr><td>44</td><td>todo</td><td>Adj. / Pron.</td><td>alle / ganz / jeder</td></tr>
+            <tr><td>45</td><td>nos</td><td>Pron.</td><td>uns (Reflexiv- / Objektpronomen)</td></tr>
+            <tr><td>46</td><td>durante</td><td>Präp.</td><td>während / über (Zeitraum)</td></tr>
+            <tr><td>47</td><td>estados</td><td>Subst. (Pl.)</td><td>Staaten / Zustände</td></tr>
+            <tr><td>48</td><td>todos</td><td>Adj. / Pron.</td><td>alle</td></tr>
+            <tr><td>49</td><td>uno</td><td>Zahl / Pron.</td><td>eins / man / jemand</td></tr>
+            <tr><td>50</td><td>les</td><td>Pron.</td><td>ihnen / euch (Dativ Plural)</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">51–100 — Hochfrequente Verben</td></tr>
+            <tr><td>51</td><td>ser</td><td>Verb</td><td>sein (Identität, Herkunft, dauerhaft)</td></tr>
+            <tr><td>52</td><td>estar</td><td>Verb</td><td>sein (Ort, Zustand, vorübergehend)</td></tr>
+            <tr><td>53</td><td>tener</td><td>Verb</td><td>haben / besitzen</td></tr>
+            <tr><td>54</td><td>hacer</td><td>Verb</td><td>machen / tun</td></tr>
+            <tr><td>55</td><td>poder</td><td>Verb</td><td>können / dürfen</td></tr>
+            <tr><td>56</td><td>decir</td><td>Verb</td><td>sagen / erzählen</td></tr>
+            <tr><td>57</td><td>ir</td><td>Verb</td><td>gehen / fahren</td></tr>
+            <tr><td>58</td><td>ver</td><td>Verb</td><td>sehen</td></tr>
+            <tr><td>59</td><td>dar</td><td>Verb</td><td>geben</td></tr>
+            <tr><td>60</td><td>saber</td><td>Verb</td><td>wissen / können (Fähigkeit/Wissen)</td></tr>
+            <tr><td>61</td><td>querer</td><td>Verb</td><td>wollen / mögen / lieben</td></tr>
+            <tr><td>62</td><td>llegar</td><td>Verb</td><td>ankommen / erreichen</td></tr>
+            <tr><td>63</td><td>pasar</td><td>Verb</td><td>passieren / vergehen / vorbeigehen</td></tr>
+            <tr><td>64</td><td>deber</td><td>Verb</td><td>sollen / müssen / schulden</td></tr>
+            <tr><td>65</td><td>poner</td><td>Verb</td><td>stellen / setzen / legen</td></tr>
+            <tr><td>66</td><td>parecer</td><td>Verb</td><td>scheinen / aussehen / wirken</td></tr>
+            <tr><td>67</td><td>quedar</td><td>Verb</td><td>bleiben / übrigbleiben / sich treffen</td></tr>
+            <tr><td>68</td><td>creer</td><td>Verb</td><td>glauben / denken / meinen</td></tr>
+            <tr><td>69</td><td>hablar</td><td>Verb</td><td>sprechen / reden</td></tr>
+            <tr><td>70</td><td>llevar</td><td>Verb</td><td>tragen / mitnehmen / führen</td></tr>
+            <tr><td>71</td><td>dejar</td><td>Verb</td><td>lassen / aufhören / hinterlassen</td></tr>
+            <tr><td>72</td><td>seguir</td><td>Verb</td><td>folgen / weitermachen / fortfahren</td></tr>
+            <tr><td>73</td><td>encontrar</td><td>Verb</td><td>finden / treffen</td></tr>
+            <tr><td>74</td><td>llamar</td><td>Verb</td><td>anrufen / nennen / rufen</td></tr>
+            <tr><td>75</td><td>venir</td><td>Verb</td><td>kommen</td></tr>
+            <tr><td>76</td><td>pensar</td><td>Verb</td><td>denken / nachdenken</td></tr>
+            <tr><td>77</td><td>salir</td><td>Verb</td><td>hinausgehen / ausgehen / abfahren</td></tr>
+            <tr><td>78</td><td>volver</td><td>Verb</td><td>zurückkehren / wieder (+ Inf.)</td></tr>
+            <tr><td>79</td><td>tomar</td><td>Verb</td><td>nehmen / trinken</td></tr>
+            <tr><td>80</td><td>conocer</td><td>Verb</td><td>kennen / kennenlernen</td></tr>
+            <tr><td>81</td><td>vivir</td><td>Verb</td><td>leben / wohnen</td></tr>
+            <tr><td>82</td><td>sentir</td><td>Verb</td><td>fühlen / spüren / bedauern</td></tr>
+            <tr><td>83</td><td>tratar</td><td>Verb</td><td>behandeln / versuchen / handeln</td></tr>
+            <tr><td>84</td><td>mirar</td><td>Verb</td><td>schauen / anschauen / ansehen</td></tr>
+            <tr><td>85</td><td>contar</td><td>Verb</td><td>erzählen / zählen / rechnen</td></tr>
+            <tr><td>86</td><td>empezar</td><td>Verb</td><td>anfangen / beginnen</td></tr>
+            <tr><td>87</td><td>esperar</td><td>Verb</td><td>warten / hoffen / erwarten</td></tr>
+            <tr><td>88</td><td>buscar</td><td>Verb</td><td>suchen</td></tr>
+            <tr><td>89</td><td>existir</td><td>Verb</td><td>existieren / vorhanden sein</td></tr>
+            <tr><td>90</td><td>entrar</td><td>Verb</td><td>eintreten / hineingehen</td></tr>
+            <tr><td>91</td><td>trabajar</td><td>Verb</td><td>arbeiten</td></tr>
+            <tr><td>92</td><td>escribir</td><td>Verb</td><td>schreiben</td></tr>
+            <tr><td>93</td><td>perder</td><td>Verb</td><td>verlieren / verpassen</td></tr>
+            <tr><td>94</td><td>producir</td><td>Verb</td><td>produzieren / herstellen</td></tr>
+            <tr><td>95</td><td>ocurrir</td><td>Verb</td><td>geschehen / vorkommen</td></tr>
+            <tr><td>96</td><td>entender</td><td>Verb</td><td>verstehen / begreifen</td></tr>
+            <tr><td>97</td><td>pedir</td><td>Verb</td><td>bitten / bestellen / verlangen</td></tr>
+            <tr><td>98</td><td>recibir</td><td>Verb</td><td>empfangen / bekommen</td></tr>
+            <tr><td>99</td><td>recordar</td><td>Verb</td><td>sich erinnern / erinnern (jdn.)</td></tr>
+            <tr><td>100</td><td>terminar</td><td>Verb</td><td>beenden / aufhören / enden</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">101–150 — Menschen, Orte &amp; Zeit</td></tr>
+            <tr><td>101</td><td>hombre</td><td>Subst.</td><td>Mann / Mensch</td></tr>
+            <tr><td>102</td><td>mujer</td><td>Subst.</td><td>Frau</td></tr>
+            <tr><td>103</td><td>niño / niña</td><td>Subst.</td><td>Kind / Junge / Mädchen</td></tr>
+            <tr><td>104</td><td>amigo / amiga</td><td>Subst.</td><td>Freund / Freundin</td></tr>
+            <tr><td>105</td><td>familia</td><td>Subst.</td><td>Familie</td></tr>
+            <tr><td>106</td><td>madre</td><td>Subst.</td><td>Mutter</td></tr>
+            <tr><td>107</td><td>padre</td><td>Subst.</td><td>Vater</td></tr>
+            <tr><td>108</td><td>hermano / hermana</td><td>Subst.</td><td>Bruder / Schwester</td></tr>
+            <tr><td>109</td><td>esposo / esposa</td><td>Subst.</td><td>Ehemann / Ehefrau</td></tr>
+            <tr><td>110</td><td>persona</td><td>Subst.</td><td>Person / Mensch</td></tr>
+            <tr><td>111</td><td>casa</td><td>Subst.</td><td>Haus / Zuhause</td></tr>
+            <tr><td>112</td><td>lugar</td><td>Subst.</td><td>Ort / Platz / Stelle</td></tr>
+            <tr><td>113</td><td>ciudad</td><td>Subst.</td><td>Stadt</td></tr>
+            <tr><td>114</td><td>país</td><td>Subst.</td><td>Land / Staat</td></tr>
+            <tr><td>115</td><td>mundo</td><td>Subst.</td><td>Welt / Universum</td></tr>
+            <tr><td>116</td><td>calle</td><td>Subst.</td><td>Straße / Gasse</td></tr>
+            <tr><td>117</td><td>puerta</td><td>Subst.</td><td>Tür / Tor / Eingang</td></tr>
+            <tr><td>118</td><td>ventana</td><td>Subst.</td><td>Fenster</td></tr>
+            <tr><td>119</td><td>cuarto / habitación</td><td>Subst.</td><td>Zimmer / Raum</td></tr>
+            <tr><td>120</td><td>día</td><td>Subst.</td><td>Tag</td></tr>
+            <tr><td>121</td><td>semana</td><td>Subst.</td><td>Woche</td></tr>
+            <tr><td>122</td><td>mes</td><td>Subst.</td><td>Monat</td></tr>
+            <tr><td>123</td><td>año</td><td>Subst.</td><td>Jahr</td></tr>
+            <tr><td>124</td><td>hora</td><td>Subst.</td><td>Stunde / Uhrzeit</td></tr>
+            <tr><td>125</td><td>minuto</td><td>Subst.</td><td>Minute</td></tr>
+            <tr><td>126</td><td>mañana</td><td>Subst. / Adv.</td><td>Morgen / morgen</td></tr>
+            <tr><td>127</td><td>tarde</td><td>Subst. / Adv.</td><td>Nachmittag / spät</td></tr>
+            <tr><td>128</td><td>noche</td><td>Subst.</td><td>Nacht / Abend</td></tr>
+            <tr><td>129</td><td>hoy</td><td>Adv.</td><td>heute</td></tr>
+            <tr><td>130</td><td>ayer</td><td>Adv.</td><td>gestern</td></tr>
+            <tr><td>131</td><td>ahora</td><td>Adv.</td><td>jetzt / gerade</td></tr>
+            <tr><td>132</td><td>antes</td><td>Adv.</td><td>vorher / früher</td></tr>
+            <tr><td>133</td><td>después</td><td>Adv.</td><td>danach / später</td></tr>
+            <tr><td>134</td><td>siempre</td><td>Adv.</td><td>immer / stets</td></tr>
+            <tr><td>135</td><td>nunca</td><td>Adv.</td><td>nie / niemals</td></tr>
+            <tr><td>136</td><td>todavía</td><td>Adv.</td><td>noch / immer noch</td></tr>
+            <tr><td>137</td><td>ya</td><td>Adv.</td><td>schon / jetzt / nicht mehr</td></tr>
+            <tr><td>138</td><td>pronto</td><td>Adv.</td><td>bald / schnell</td></tr>
+            <tr><td>139</td><td>tarde</td><td>Adv.</td><td>spät</td></tr>
+            <tr><td>140</td><td>temprano</td><td>Adv.</td><td>früh / frühzeitig</td></tr>
+            <tr><td>141</td><td>veces</td><td>Subst. (Pl.)</td><td>Male / Mal (a veces = manchmal)</td></tr>
+            <tr><td>142</td><td>vez</td><td>Subst.</td><td>Mal / einmal</td></tr>
+            <tr><td>143</td><td>momento</td><td>Subst.</td><td>Moment / Augenblick</td></tr>
+            <tr><td>144</td><td>tiempo</td><td>Subst.</td><td>Zeit / Wetter</td></tr>
+            <tr><td>145</td><td>pasado</td><td>Adj. / Subst.</td><td>vergangen / Vergangenheit</td></tr>
+            <tr><td>146</td><td>futuro</td><td>Subst. / Adj.</td><td>Zukunft / zukünftig</td></tr>
+            <tr><td>147</td><td>presente</td><td>Subst. / Adj.</td><td>Gegenwart / gegenwärtig / anwesend</td></tr>
+            <tr><td>148</td><td>próximo / siguiente</td><td>Adj.</td><td>nächst- / folgend</td></tr>
+            <tr><td>149</td><td>último</td><td>Adj.</td><td>letzt- / jüngst</td></tr>
+            <tr><td>150</td><td>primero</td><td>Adj.</td><td>erst- / anfänglich</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">151–200 — Adjektive &amp; Beschreibungswörter</td></tr>
+            <tr><td>151</td><td>grande</td><td>Adj.</td><td>groß / bedeutend</td></tr>
+            <tr><td>152</td><td>pequeño</td><td>Adj.</td><td>klein / gering</td></tr>
+            <tr><td>153</td><td>nuevo</td><td>Adj.</td><td>neu / modern</td></tr>
+            <tr><td>154</td><td>viejo</td><td>Adj.</td><td>alt / ehemalig</td></tr>
+            <tr><td>155</td><td>bueno</td><td>Adj.</td><td>gut</td></tr>
+            <tr><td>156</td><td>malo</td><td>Adj.</td><td>schlecht / böse</td></tr>
+            <tr><td>157</td><td>bonito / hermoso</td><td>Adj.</td><td>schön / hübsch</td></tr>
+            <tr><td>158</td><td>feo</td><td>Adj.</td><td>hässlich</td></tr>
+            <tr><td>159</td><td>verdadero / correcto</td><td>Adj.</td><td>wahr / richtig</td></tr>
+            <tr><td>160</td><td>falso</td><td>Adj.</td><td>falsch / unecht</td></tr>
+            <tr><td>161</td><td>fácil</td><td>Adj.</td><td>leicht / einfach</td></tr>
+            <tr><td>162</td><td>difícil</td><td>Adj.</td><td>schwer / schwierig</td></tr>
+            <tr><td>163</td><td>rápido</td><td>Adj.</td><td>schnell / rasch</td></tr>
+            <tr><td>164</td><td>lento</td><td>Adj.</td><td>langsam</td></tr>
+            <tr><td>165</td><td>corto</td><td>Adj.</td><td>kurz</td></tr>
+            <tr><td>166</td><td>largo</td><td>Adj.</td><td>lang / weit</td></tr>
+            <tr><td>167</td><td>cerca</td><td>Adj. / Adv.</td><td>nah / in der Nähe</td></tr>
+            <tr><td>168</td><td>lejos</td><td>Adj. / Adv.</td><td>weit / entfernt</td></tr>
+            <tr><td>169</td><td>abierto</td><td>Adj.</td><td>offen / geöffnet</td></tr>
+            <tr><td>170</td><td>cerrado</td><td>Adj.</td><td>geschlossen / zu</td></tr>
+            <tr><td>171</td><td>caliente / cálido</td><td>Adj.</td><td>heiß / warm</td></tr>
+            <tr><td>172</td><td>frío</td><td>Adj.</td><td>kalt / kühl</td></tr>
+            <tr><td>173</td><td>limpio</td><td>Adj.</td><td>sauber / rein</td></tr>
+            <tr><td>174</td><td>sucio</td><td>Adj.</td><td>schmutzig / dreckig</td></tr>
+            <tr><td>175</td><td>ocupado</td><td>Adj.</td><td>beschäftigt / besetzt</td></tr>
+            <tr><td>176</td><td>listo / preparado</td><td>Adj.</td><td>bereit / fertig</td></tr>
+            <tr><td>177</td><td>diferente</td><td>Adj.</td><td>verschieden / anders</td></tr>
+            <tr><td>178</td><td>mismo / igual</td><td>Adj.</td><td>gleich / identisch</td></tr>
+            <tr><td>179</td><td>importante</td><td>Adj.</td><td>wichtig / bedeutend</td></tr>
+            <tr><td>180</td><td>interesante</td><td>Adj.</td><td>interessant</td></tr>
+            <tr><td>181</td><td>fuerte</td><td>Adj.</td><td>stark / laut / kräftig</td></tr>
+            <tr><td>182</td><td>débil</td><td>Adj.</td><td>schwach / leise</td></tr>
+            <tr><td>183</td><td>rico</td><td>Adj.</td><td>reich / lecker</td></tr>
+            <tr><td>184</td><td>pobre</td><td>Adj.</td><td>arm / ärmlich</td></tr>
+            <tr><td>185</td><td>feliz</td><td>Adj.</td><td>glücklich / froh</td></tr>
+            <tr><td>186</td><td>triste</td><td>Adj.</td><td>traurig</td></tr>
+            <tr><td>187</td><td>cansado</td><td>Adj.</td><td>müde / erschöpft</td></tr>
+            <tr><td>188</td><td>enfermo</td><td>Adj.</td><td>krank</td></tr>
+            <tr><td>189</td><td>asustado</td><td>Adj.</td><td>verängstigt / erschrocken</td></tr>
+            <tr><td>190</td><td>sorprendido</td><td>Adj.</td><td>überrascht</td></tr>
+            <tr><td>191</td><td>enojado / enfadado</td><td>Adj.</td><td>wütend / verärgert</td></tr>
+            <tr><td>192</td><td>tranquilo</td><td>Adj.</td><td>ruhig / gelassen / friedlich</td></tr>
+            <tr><td>193</td><td>silencioso</td><td>Adj.</td><td>still / lautlos</td></tr>
+            <tr><td>194</td><td>ruidoso</td><td>Adj.</td><td>laut / lärmend</td></tr>
+            <tr><td>195</td><td>serio</td><td>Adj.</td><td>ernst / ernsthaft</td></tr>
+            <tr><td>196</td><td>ligero</td><td>Adj.</td><td>leicht (Gewicht) / sanft</td></tr>
+            <tr><td>197</td><td>dulce</td><td>Adj.</td><td>süß / sanft</td></tr>
+            <tr><td>198</td><td>amargo / picante</td><td>Adj.</td><td>bitter / scharf</td></tr>
+            <tr><td>199</td><td>fresco</td><td>Adj.</td><td>frisch / kühl</td></tr>
+            <tr><td>200</td><td>seco</td><td>Adj.</td><td>trocken / dürr</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">201–250 — Alltagssubstantive</td></tr>
+            <tr><td>201</td><td>trabajo</td><td>Subst.</td><td>Arbeit / Job</td></tr>
+            <tr><td>202</td><td>dinero</td><td>Subst.</td><td>Geld</td></tr>
+            <tr><td>203</td><td>vida</td><td>Subst.</td><td>Leben / Lebenszeit</td></tr>
+            <tr><td>204</td><td>idea / pensamiento</td><td>Subst.</td><td>Idee / Gedanke</td></tr>
+            <tr><td>205</td><td>palabra</td><td>Subst.</td><td>Wort</td></tr>
+            <tr><td>206</td><td>voz / sonido</td><td>Subst.</td><td>Stimme / Geräusch</td></tr>
+            <tr><td>207</td><td>nombre</td><td>Subst.</td><td>Name</td></tr>
+            <tr><td>208</td><td>noticia</td><td>Subst.</td><td>Nachricht / Neuigkeit</td></tr>
+            <tr><td>209</td><td>libro</td><td>Subst.</td><td>Buch</td></tr>
+            <tr><td>210</td><td>mesa</td><td>Subst.</td><td>Tisch</td></tr>
+            <tr><td>211</td><td>silla</td><td>Subst.</td><td>Stuhl</td></tr>
+            <tr><td>212</td><td>coche / carro</td><td>Subst.</td><td>Auto</td></tr>
+            <tr><td>213</td><td>comida</td><td>Subst.</td><td>Essen / Mahlzeit</td></tr>
+            <tr><td>214</td><td>agua</td><td>Subst.</td><td>Wasser</td></tr>
+            <tr><td>215</td><td>pan</td><td>Subst.</td><td>Brot</td></tr>
+            <tr><td>216</td><td>té</td><td>Subst.</td><td>Tee</td></tr>
+            <tr><td>217</td><td>café</td><td>Subst.</td><td>Kaffee</td></tr>
+            <tr><td>218</td><td>carne</td><td>Subst.</td><td>Fleisch</td></tr>
+            <tr><td>219</td><td>verdura</td><td>Subst.</td><td>Gemüse</td></tr>
+            <tr><td>220</td><td>fruta</td><td>Subst.</td><td>Obst / Frucht</td></tr>
+            <tr><td>221</td><td>teléfono</td><td>Subst.</td><td>Telefon</td></tr>
+            <tr><td>222</td><td>computadora / ordenador</td><td>Subst.</td><td>Computer</td></tr>
+            <tr><td>223</td><td>precio</td><td>Subst.</td><td>Preis</td></tr>
+            <tr><td>224</td><td>tienda</td><td>Subst.</td><td>Laden / Geschäft</td></tr>
+            <tr><td>225</td><td>supermercado</td><td>Subst.</td><td>Supermarkt</td></tr>
+            <tr><td>226</td><td>hospital</td><td>Subst.</td><td>Krankenhaus</td></tr>
+            <tr><td>227</td><td>escuela</td><td>Subst.</td><td>Schule</td></tr>
+            <tr><td>228</td><td>universidad</td><td>Subst.</td><td>Universität</td></tr>
+            <tr><td>229</td><td>estudiante</td><td>Subst.</td><td>Schüler / Student</td></tr>
+            <tr><td>230</td><td>profesor / maestra</td><td>Subst.</td><td>Lehrer / Lehrerin</td></tr>
+            <tr><td>231</td><td>médico / doctor</td><td>Subst.</td><td>Arzt / Doktor</td></tr>
+            <tr><td>232</td><td>policía</td><td>Subst.</td><td>Polizei / Polizist</td></tr>
+            <tr><td>233</td><td>gobierno</td><td>Subst.</td><td>Regierung</td></tr>
+            <tr><td>234</td><td>elección</td><td>Subst.</td><td>Wahl</td></tr>
+            <tr><td>235</td><td>ley</td><td>Subst.</td><td>Gesetz</td></tr>
+            <tr><td>236</td><td>tribunal / corte</td><td>Subst.</td><td>Gericht (juristisch)</td></tr>
+            <tr><td>237</td><td>guerra</td><td>Subst.</td><td>Krieg</td></tr>
+            <tr><td>238</td><td>paz</td><td>Subst.</td><td>Frieden</td></tr>
+            <tr><td>239</td><td>problema</td><td>Subst.</td><td>Problem</td></tr>
+            <tr><td>240</td><td>solución</td><td>Subst.</td><td>Lösung</td></tr>
+            <tr><td>241</td><td>ejemplo</td><td>Subst.</td><td>Beispiel</td></tr>
+            <tr><td>242</td><td>resultado</td><td>Subst.</td><td>Ergebnis / Resultat</td></tr>
+            <tr><td>243</td><td>objetivo / meta</td><td>Subst.</td><td>Ziel / Absicht</td></tr>
+            <tr><td>244</td><td>proyecto</td><td>Subst.</td><td>Projekt</td></tr>
+            <tr><td>245</td><td>informe</td><td>Subst.</td><td>Bericht</td></tr>
+            <tr><td>246</td><td>plan</td><td>Subst.</td><td>Plan</td></tr>
+            <tr><td>247</td><td>decisión</td><td>Subst.</td><td>Entscheidung</td></tr>
+            <tr><td>248</td><td>situación</td><td>Subst.</td><td>Situation / Lage</td></tr>
+            <tr><td>249</td><td>tema / asunto</td><td>Subst.</td><td>Thema / Angelegenheit</td></tr>
+            <tr><td>250</td><td>cosa</td><td>Subst.</td><td>Ding / Sache</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">251–300 — Weitere häufige Verben</td></tr>
+            <tr><td>251</td><td>recordar</td><td>Verb</td><td>sich erinnern / erinnern</td></tr>
+            <tr><td>252</td><td>olvidar</td><td>Verb</td><td>vergessen</td></tr>
+            <tr><td>253</td><td>aceptar</td><td>Verb</td><td>akzeptieren / annehmen</td></tr>
+            <tr><td>254</td><td>rechazar</td><td>Verb</td><td>ablehnen / zurückweisen</td></tr>
+            <tr><td>255</td><td>decidir</td><td>Verb</td><td>entscheiden</td></tr>
+            <tr><td>256</td><td>elegir / escoger</td><td>Verb</td><td>wählen / aussuchen</td></tr>
+            <tr><td>257</td><td>preferir</td><td>Verb</td><td>vorziehen / bevorzugen</td></tr>
+            <tr><td>258</td><td>lograr / conseguir</td><td>Verb</td><td>schaffen / erreichen</td></tr>
+            <tr><td>259</td><td>descansar</td><td>Verb</td><td>sich ausruhen / rasten</td></tr>
+            <tr><td>260</td><td>dormir</td><td>Verb</td><td>schlafen</td></tr>
+            <tr><td>261</td><td>despertar</td><td>Verb</td><td>aufwachen / wecken</td></tr>
+            <tr><td>262</td><td>beber</td><td>Verb</td><td>trinken</td></tr>
+            <tr><td>263</td><td>cocinar</td><td>Verb</td><td>kochen / zubereiten</td></tr>
+            <tr><td>264</td><td>comprar</td><td>Verb</td><td>kaufen / einkaufen</td></tr>
+            <tr><td>265</td><td>vender</td><td>Verb</td><td>verkaufen</td></tr>
+            <tr><td>266</td><td>pagar</td><td>Verb</td><td>zahlen / bezahlen</td></tr>
+            <tr><td>267</td><td>ganar</td><td>Verb</td><td>gewinnen / verdienen</td></tr>
+            <tr><td>268</td><td>perder</td><td>Verb</td><td>verlieren / verpassen</td></tr>
+            <tr><td>269</td><td>buscar</td><td>Verb</td><td>suchen / nachschlagen</td></tr>
+            <tr><td>270</td><td>preguntar</td><td>Verb</td><td>fragen</td></tr>
+            <tr><td>271</td><td>responder / contestar</td><td>Verb</td><td>antworten / beantworten</td></tr>
+            <tr><td>272</td><td>advertir</td><td>Verb</td><td>warnen</td></tr>
+            <tr><td>273</td><td>alabar / elogiar</td><td>Verb</td><td>loben</td></tr>
+            <tr><td>274</td><td>criticar</td><td>Verb</td><td>kritisieren</td></tr>
+            <tr><td>275</td><td>disculparse</td><td>Verb</td><td>sich entschuldigen</td></tr>
+            <tr><td>276</td><td>agradecer</td><td>Verb</td><td>danken / dankbar sein</td></tr>
+            <tr><td>277</td><td>celebrar</td><td>Verb</td><td>feiern / begehen</td></tr>
+            <tr><td>278</td><td>invitar</td><td>Verb</td><td>einladen</td></tr>
+            <tr><td>279</td><td>visitar</td><td>Verb</td><td>besuchen</td></tr>
+            <tr><td>280</td><td>conocer</td><td>Verb</td><td>kennenlernen / kennen</td></tr>
+            <tr><td>281</td><td>separar / irse</td><td>Verb</td><td>trennen / weggehen</td></tr>
+            <tr><td>282</td><td>participar</td><td>Verb</td><td>teilnehmen</td></tr>
+            <tr><td>283</td><td>volver / regresar</td><td>Verb</td><td>zurückkehren / wiederkommen</td></tr>
+            <tr><td>284</td><td>traducir</td><td>Verb</td><td>übersetzen</td></tr>
+            <tr><td>285</td><td>corregir / reparar</td><td>Verb</td><td>korrigieren / reparieren</td></tr>
+            <tr><td>286</td><td>desarrollar / mejorar</td><td>Verb</td><td>entwickeln / verbessern</td></tr>
+            <tr><td>287</td><td>crecer</td><td>Verb</td><td>wachsen / wachsen</td></tr>
+            <tr><td>288</td><td>reducir</td><td>Verb</td><td>reduzieren / verringern</td></tr>
+            <tr><td>289</td><td>aumentar</td><td>Verb</td><td>zunehmen / steigern</td></tr>
+            <tr><td>290</td><td>disminuir</td><td>Verb</td><td>abnehmen / sinken</td></tr>
+            <tr><td>291</td><td>aparecer</td><td>Verb</td><td>erscheinen / auftauchen</td></tr>
+            <tr><td>292</td><td>desaparecer</td><td>Verb</td><td>verschwinden</td></tr>
+            <tr><td>293</td><td>surgir</td><td>Verb</td><td>entstehen / auftauchen</td></tr>
+            <tr><td>294</td><td>conectar</td><td>Verb</td><td>verbinden / verknüpfen</td></tr>
+            <tr><td>295</td><td>creer</td><td>Verb</td><td>glauben / meinen</td></tr>
+            <tr><td>296</td><td>preguntarse</td><td>Verb</td><td>sich fragen / sich wundern</td></tr>
+            <tr><td>297</td><td>interesarse</td><td>Verb</td><td>sich interessieren für</td></tr>
+            <tr><td>298</td><td>preocuparse</td><td>Verb</td><td>sich Sorgen machen</td></tr>
+            <tr><td>299</td><td>cuidar</td><td>Verb</td><td>sich kümmern um / pflegen</td></tr>
+            <tr><td>300</td><td>ayudar</td><td>Verb</td><td>helfen / unterstützen</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">301–350 — Bewegung &amp; Handlungen</td></tr>
+            <tr><td>301</td><td>correr</td><td>Verb</td><td>rennen / laufen</td></tr>
+            <tr><td>302</td><td>caminar</td><td>Verb</td><td>gehen / spazieren</td></tr>
+            <tr><td>303</td><td>sentar</td><td>Verb</td><td>setzen / hinsetzen</td></tr>
+            <tr><td>304</td><td>levantarse</td><td>Verb</td><td>aufstehen / aufgehen</td></tr>
+            <tr><td>305</td><td>caer</td><td>Verb</td><td>fallen / hinfallen</td></tr>
+            <tr><td>306</td><td>lanzar / tirar</td><td>Verb</td><td>werfen / schmeißen</td></tr>
+            <tr><td>307</td><td>coger / agarrar</td><td>Verb</td><td>greifen / nehmen</td></tr>
+            <tr><td>308</td><td>empujar</td><td>Verb</td><td>schieben / stoßen</td></tr>
+            <tr><td>309</td><td>jalar / tirar</td><td>Verb</td><td>ziehen</td></tr>
+            <tr><td>310</td><td>abrir</td><td>Verb</td><td>öffnen / aufmachen</td></tr>
+            <tr><td>311</td><td>cerrar</td><td>Verb</td><td>schließen / zumachen</td></tr>
+            <tr><td>312</td><td>leer</td><td>Verb</td><td>lesen</td></tr>
+            <tr><td>313</td><td>escribir</td><td>Verb</td><td>schreiben</td></tr>
+            <tr><td>314</td><td>escuchar</td><td>Verb</td><td>zuhören / hören</td></tr>
+            <tr><td>315</td><td>tocar</td><td>Verb</td><td>berühren / spielen (Instrument)</td></tr>
+            <tr><td>316</td><td>jugar</td><td>Verb</td><td>spielen (Sport/Spiel)</td></tr>
+            <tr><td>317</td><td>cantar</td><td>Verb</td><td>singen</td></tr>
+            <tr><td>318</td><td>bailar</td><td>Verb</td><td>tanzen</td></tr>
+            <tr><td>319</td><td>reír</td><td>Verb</td><td>lachen</td></tr>
+            <tr><td>320</td><td>llorar</td><td>Verb</td><td>weinen</td></tr>
+            <tr><td>321</td><td>gritar</td><td>Verb</td><td>schreien / rufen</td></tr>
+            <tr><td>322</td><td>susurrar</td><td>Verb</td><td>flüstern</td></tr>
+            <tr><td>323</td><td>respirar</td><td>Verb</td><td>atmen</td></tr>
+            <tr><td>324</td><td>comer</td><td>Verb</td><td>essen</td></tr>
+            <tr><td>325</td><td>beber</td><td>Verb</td><td>trinken</td></tr>
+            <tr><td>326</td><td>viajar</td><td>Verb</td><td>reisen</td></tr>
+            <tr><td>327</td><td>conducir / manejar</td><td>Verb</td><td>fahren / lenken</td></tr>
+            <tr><td>328</td><td>volar</td><td>Verb</td><td>fliegen</td></tr>
+            <tr><td>329</td><td>nadar</td><td>Verb</td><td>schwimmen</td></tr>
+            <tr><td>330</td><td>construir</td><td>Verb</td><td>bauen / konstruieren</td></tr>
+            <tr><td>331</td><td>romper</td><td>Verb</td><td>brechen / kaputtmachen</td></tr>
+            <tr><td>332</td><td>juntar / unir</td><td>Verb</td><td>zusammenfügen / verbinden</td></tr>
+            <tr><td>333</td><td>compartir</td><td>Verb</td><td>teilen / mitteilen</td></tr>
+            <tr><td>334</td><td>cambiar</td><td>Verb</td><td>ändern / wechseln</td></tr>
+            <tr><td>335</td><td>mejorar</td><td>Verb</td><td>verbessern</td></tr>
+            <tr><td>336</td><td>aprender</td><td>Verb</td><td>lernen</td></tr>
+            <tr><td>337</td><td>enseñar</td><td>Verb</td><td>lehren / zeigen</td></tr>
+            <tr><td>338</td><td>estudiar</td><td>Verb</td><td>studieren / lernen</td></tr>
+            <tr><td>339</td><td>practicar</td><td>Verb</td><td>üben / praktizieren</td></tr>
+            <tr><td>340</td><td>explicar</td><td>Verb</td><td>erklären</td></tr>
+            <tr><td>341</td><td>demostrar</td><td>Verb</td><td>zeigen / demonstrieren</td></tr>
+            <tr><td>342</td><td>mostrar</td><td>Verb</td><td>zeigen</td></tr>
+            <tr><td>343</td><td>crear</td><td>Verb</td><td>erschaffen / erstellen</td></tr>
+            <tr><td>344</td><td>diseñar</td><td>Verb</td><td>entwerfen / gestalten</td></tr>
+            <tr><td>345</td><td>planear / planificar</td><td>Verb</td><td>planen</td></tr>
+            <tr><td>346</td><td>organizar</td><td>Verb</td><td>organisieren</td></tr>
+            <tr><td>347</td><td>preparar</td><td>Verb</td><td>vorbereiten</td></tr>
+            <tr><td>348</td><td>comenzar / iniciar</td><td>Verb</td><td>beginnen / starten</td></tr>
+            <tr><td>349</td><td>terminar / acabar</td><td>Verb</td><td>beenden / abschließen</td></tr>
+            <tr><td>350</td><td>continuar</td><td>Verb</td><td>weitermachen / fortsetzen</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">351–400 — Körper, Gesundheit &amp; Gefühle</td></tr>
+            <tr><td>351</td><td>cabeza</td><td>Subst.</td><td>Kopf</td></tr>
+            <tr><td>352</td><td>cara</td><td>Subst.</td><td>Gesicht</td></tr>
+            <tr><td>353</td><td>ojo</td><td>Subst.</td><td>Auge</td></tr>
+            <tr><td>354</td><td>boca</td><td>Subst.</td><td>Mund</td></tr>
+            <tr><td>355</td><td>mano</td><td>Subst.</td><td>Hand</td></tr>
+            <tr><td>356</td><td>pie</td><td>Subst.</td><td>Fuß</td></tr>
+            <tr><td>357</td><td>corazón</td><td>Subst.</td><td>Herz</td></tr>
+            <tr><td>358</td><td>salud</td><td>Subst.</td><td>Gesundheit</td></tr>
+            <tr><td>359</td><td>dolor</td><td>Subst.</td><td>Schmerz</td></tr>
+            <tr><td>360</td><td>amor</td><td>Subst.</td><td>Liebe</td></tr>
+            <tr><td>361</td><td>miedo</td><td>Subst.</td><td>Angst / Furcht</td></tr>
+            <tr><td>362</td><td>alegría</td><td>Subst.</td><td>Freude / Fröhlichkeit</td></tr>
+            <tr><td>363</td><td>tristeza</td><td>Subst.</td><td>Traurigkeit</td></tr>
+            <tr><td>364</td><td>enojo / enfado</td><td>Subst.</td><td>Ärger / Wut</td></tr>
+            <tr><td>365</td><td>esperanza</td><td>Subst.</td><td>Hoffnung</td></tr>
+            <tr><td>366</td><td>sueño</td><td>Subst.</td><td>Traum / Schlaf</td></tr>
+            <tr><td>367</td><td>hambre</td><td>Subst.</td><td>Hunger</td></tr>
+            <tr><td>368</td><td>sed</td><td>Subst.</td><td>Durst</td></tr>
+            <tr><td>369</td><td>fuerza</td><td>Subst.</td><td>Kraft / Stärke</td></tr>
+            <tr><td>370</td><td>energía</td><td>Subst.</td><td>Energie</td></tr>
+            <tr><td>371</td><td>mente</td><td>Subst.</td><td>Geist / Verstand</td></tr>
+            <tr><td>372</td><td>memoria</td><td>Subst.</td><td>Gedächtnis / Erinnerung</td></tr>
+            <tr><td>373</td><td>atención</td><td>Subst.</td><td>Aufmerksamkeit</td></tr>
+            <tr><td>374</td><td>confianza</td><td>Subst.</td><td>Vertrauen</td></tr>
+            <tr><td>375</td><td>respeto</td><td>Subst.</td><td>Respekt / Achtung</td></tr>
+            <tr><td>376</td><td>verdad</td><td>Subst.</td><td>Wahrheit</td></tr>
+            <tr><td>377</td><td>mentira</td><td>Subst.</td><td>Lüge</td></tr>
+            <tr><td>378</td><td>libertad</td><td>Subst.</td><td>Freiheit</td></tr>
+            <tr><td>379</td><td>justicia</td><td>Subst.</td><td>Gerechtigkeit</td></tr>
+            <tr><td>380</td><td>éxito</td><td>Subst.</td><td>Erfolg</td></tr>
+            <tr><td>381</td><td>fracaso</td><td>Subst.</td><td>Misserfolg / Scheitern</td></tr>
+            <tr><td>382</td><td>oportunidad</td><td>Subst.</td><td>Gelegenheit / Chance</td></tr>
+            <tr><td>383</td><td>peligro</td><td>Subst.</td><td>Gefahr</td></tr>
+            <tr><td>384</td><td>suerte</td><td>Subst.</td><td>Glück / Zufall</td></tr>
+            <tr><td>385</td><td>riesgo</td><td>Subst.</td><td>Risiko</td></tr>
+            <tr><td>386</td><td>experiencia</td><td>Subst.</td><td>Erfahrung</td></tr>
+            <tr><td>387</td><td>conocimiento</td><td>Subst.</td><td>Wissen / Kenntnis</td></tr>
+            <tr><td>388</td><td>habilidad</td><td>Subst.</td><td>Fähigkeit / Geschick</td></tr>
+            <tr><td>389</td><td>voluntad</td><td>Subst.</td><td>Wille / Absicht</td></tr>
+            <tr><td>390</td><td>intención</td><td>Subst.</td><td>Absicht / Vorhaben</td></tr>
+            <tr><td>391</td><td>actitud</td><td>Subst.</td><td>Einstellung / Haltung</td></tr>
+            <tr><td>392</td><td>costumbre</td><td>Subst.</td><td>Gewohnheit / Brauch</td></tr>
+            <tr><td>393</td><td>cultura</td><td>Subst.</td><td>Kultur</td></tr>
+            <tr><td>394</td><td>tradición</td><td>Subst.</td><td>Tradition</td></tr>
+            <tr><td>395</td><td>historia</td><td>Subst.</td><td>Geschichte / Geschichten</td></tr>
+            <tr><td>396</td><td>arte</td><td>Subst.</td><td>Kunst</td></tr>
+            <tr><td>397</td><td>música</td><td>Subst.</td><td>Musik</td></tr>
+            <tr><td>398</td><td>deporte</td><td>Subst.</td><td>Sport</td></tr>
+            <tr><td>399</td><td>juego</td><td>Subst.</td><td>Spiel</td></tr>
+            <tr><td>400</td><td>fiesta</td><td>Subst.</td><td>Party / Fest / Feiertag</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">401–450 — Natur &amp; Umwelt</td></tr>
+            <tr><td>401</td><td>tierra</td><td>Subst.</td><td>Erde / Land / Boden</td></tr>
+            <tr><td>402</td><td>mar</td><td>Subst.</td><td>Meer</td></tr>
+            <tr><td>403</td><td>río</td><td>Subst.</td><td>Fluss</td></tr>
+            <tr><td>404</td><td>montaña</td><td>Subst.</td><td>Berg</td></tr>
+            <tr><td>405</td><td>árbol</td><td>Subst.</td><td>Baum</td></tr>
+            <tr><td>406</td><td>flor</td><td>Subst.</td><td>Blume</td></tr>
+            <tr><td>407</td><td>animal</td><td>Subst.</td><td>Tier</td></tr>
+            <tr><td>408</td><td>cielo</td><td>Subst.</td><td>Himmel</td></tr>
+            <tr><td>409</td><td>sol</td><td>Subst.</td><td>Sonne</td></tr>
+            <tr><td>410</td><td>luna</td><td>Subst.</td><td>Mond</td></tr>
+            <tr><td>411</td><td>estrella</td><td>Subst.</td><td>Stern</td></tr>
+            <tr><td>412</td><td>lluvia</td><td>Subst.</td><td>Regen</td></tr>
+            <tr><td>413</td><td>viento</td><td>Subst.</td><td>Wind</td></tr>
+            <tr><td>414</td><td>nieve</td><td>Subst.</td><td>Schnee</td></tr>
+            <tr><td>415</td><td>fuego</td><td>Subst.</td><td>Feuer</td></tr>
+            <tr><td>416</td><td>luz</td><td>Subst.</td><td>Licht</td></tr>
+            <tr><td>417</td><td>oscuridad / sombra</td><td>Subst.</td><td>Dunkelheit / Schatten</td></tr>
+            <tr><td>418</td><td>aire</td><td>Subst.</td><td>Luft</td></tr>
+            <tr><td>419</td><td>naturaleza</td><td>Subst.</td><td>Natur</td></tr>
+            <tr><td>420</td><td>medioambiente</td><td>Subst.</td><td>Umwelt</td></tr>
+            <tr><td>421</td><td>norte</td><td>Subst.</td><td>Norden</td></tr>
+            <tr><td>422</td><td>sur</td><td>Subst.</td><td>Süden</td></tr>
+            <tr><td>423</td><td>este</td><td>Subst.</td><td>Osten</td></tr>
+            <tr><td>424</td><td>oeste</td><td>Subst.</td><td>Westen</td></tr>
+            <tr><td>425</td><td>derecha</td><td>Subst. / Adj.</td><td>rechts / Recht</td></tr>
+            <tr><td>426</td><td>izquierda</td><td>Subst. / Adj.</td><td>links</td></tr>
+            <tr><td>427</td><td>arriba</td><td>Adv.</td><td>oben / nach oben</td></tr>
+            <tr><td>428</td><td>abajo</td><td>Adv.</td><td>unten / nach unten</td></tr>
+            <tr><td>429</td><td>adelante</td><td>Adv.</td><td>vorwärts / vorne</td></tr>
+            <tr><td>430</td><td>atrás</td><td>Adv.</td><td>hinten / zurück</td></tr>
+            <tr><td>431</td><td>dentro</td><td>Adv. / Präp.</td><td>innen / drinnen</td></tr>
+            <tr><td>432</td><td>fuera</td><td>Adv. / Präp.</td><td>außen / draußen</td></tr>
+            <tr><td>433</td><td>aquí / acá</td><td>Adv.</td><td>hier</td></tr>
+            <tr><td>434</td><td>allí / allá</td><td>Adv.</td><td>dort / da drüben</td></tr>
+            <tr><td>435</td><td>cerca</td><td>Adv.</td><td>nah / in der Nähe</td></tr>
+            <tr><td>436</td><td>lejos</td><td>Adv.</td><td>weit / entfernt</td></tr>
+            <tr><td>437</td><td>espacio</td><td>Subst.</td><td>Raum / Platz / Weltall</td></tr>
+            <tr><td>438</td><td>centro</td><td>Subst.</td><td>Mitte / Zentrum</td></tr>
+            <tr><td>439</td><td>borde / límite</td><td>Subst.</td><td>Rand / Grenze</td></tr>
+            <tr><td>440</td><td>camino</td><td>Subst.</td><td>Weg / Pfad</td></tr>
+            <tr><td>441</td><td>puente</td><td>Subst.</td><td>Brücke</td></tr>
+            <tr><td>442</td><td>edificio</td><td>Subst.</td><td>Gebäude</td></tr>
+            <tr><td>443</td><td>habitación</td><td>Subst.</td><td>Zimmer / Raum</td></tr>
+            <tr><td>444</td><td>cocina</td><td>Subst.</td><td>Küche</td></tr>
+            <tr><td>445</td><td>baño</td><td>Subst.</td><td>Bad / Badezimmer</td></tr>
+            <tr><td>446</td><td>jardín</td><td>Subst.</td><td>Garten</td></tr>
+            <tr><td>447</td><td>parque</td><td>Subst.</td><td>Park</td></tr>
+            <tr><td>448</td><td>mercado</td><td>Subst.</td><td>Markt</td></tr>
+            <tr><td>449</td><td>banco</td><td>Subst.</td><td>Bank / Bank (Sitzgelegenheit)</td></tr>
+            <tr><td>450</td><td>aeropuerto</td><td>Subst.</td><td>Flughafen</td></tr>
+
+            <tr><td colspan="4" style="color:#555;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;padding-top:0.75rem;">451–500 — Reise, Technologie &amp; Gesellschaft</td></tr>
+            <tr><td>451</td><td>idioma / lengua</td><td>Subst.</td><td>Sprache</td></tr>
+            <tr><td>452</td><td>palabra</td><td>Subst.</td><td>Wort</td></tr>
+            <tr><td>453</td><td>frase / oración</td><td>Subst.</td><td>Satz / Phrase</td></tr>
+            <tr><td>454</td><td>pregunta</td><td>Subst.</td><td>Frage</td></tr>
+            <tr><td>455</td><td>respuesta</td><td>Subst.</td><td>Antwort</td></tr>
+            <tr><td>456</td><td>conversación</td><td>Subst.</td><td>Gespräch / Unterhaltung</td></tr>
+            <tr><td>457</td><td>mensaje</td><td>Subst.</td><td>Nachricht / Botschaft</td></tr>
+            <tr><td>458</td><td>correo electrónico</td><td>Subst.</td><td>E-Mail</td></tr>
+            <tr><td>459</td><td>red / internet</td><td>Subst.</td><td>Netzwerk / Internet</td></tr>
+            <tr><td>460</td><td>aplicación</td><td>Subst.</td><td>App / Anwendung</td></tr>
+            <tr><td>461</td><td>pantalla</td><td>Subst.</td><td>Bildschirm</td></tr>
+            <tr><td>462</td><td>datos</td><td>Subst. (Pl.)</td><td>Daten</td></tr>
+            <tr><td>463</td><td>sistema</td><td>Subst.</td><td>System</td></tr>
+            <tr><td>464</td><td>proceso</td><td>Subst.</td><td>Prozess / Verfahren</td></tr>
+            <tr><td>465</td><td>empresa / compañía</td><td>Subst.</td><td>Unternehmen / Firma</td></tr>
+            <tr><td>466</td><td>negocio</td><td>Subst.</td><td>Geschäft / Handel</td></tr>
+            <tr><td>467</td><td>reunión</td><td>Subst.</td><td>Besprechung / Treffen</td></tr>
+            <tr><td>468</td><td>contrato</td><td>Subst.</td><td>Vertrag</td></tr>
+            <tr><td>469</td><td>acuerdo</td><td>Subst.</td><td>Abkommen / Einigung</td></tr>
+            <tr><td>470</td><td>servicio</td><td>Subst.</td><td>Dienstleistung / Service</td></tr>
+            <tr><td>471</td><td>producto</td><td>Subst.</td><td>Produkt</td></tr>
+            <tr><td>472</td><td>calidad</td><td>Subst.</td><td>Qualität</td></tr>
+            <tr><td>473</td><td>precio</td><td>Subst.</td><td>Preis / Kosten</td></tr>
+            <tr><td>474</td><td>beneficio</td><td>Subst.</td><td>Vorteil / Nutzen / Gewinn</td></tr>
+            <tr><td>475</td><td>costo / coste</td><td>Subst.</td><td>Kosten</td></tr>
+            <tr><td>476</td><td>inversión</td><td>Subst.</td><td>Investition</td></tr>
+            <tr><td>477</td><td>crecimiento</td><td>Subst.</td><td>Wachstum</td></tr>
+            <tr><td>478</td><td>sociedad</td><td>Subst.</td><td>Gesellschaft</td></tr>
+            <tr><td>479</td><td>comunidad</td><td>Subst.</td><td>Gemeinschaft</td></tr>
+            <tr><td>480</td><td>grupo</td><td>Subst.</td><td>Gruppe</td></tr>
+            <tr><td>481</td><td>equipo</td><td>Subst.</td><td>Team / Mannschaft</td></tr>
+            <tr><td>482</td><td>líder</td><td>Subst.</td><td>Anführer / Leader</td></tr>
+            <tr><td>483</td><td>miembro</td><td>Subst.</td><td>Mitglied</td></tr>
+            <tr><td>484</td><td>clase / tipo</td><td>Subst.</td><td>Art / Sorte / Klasse</td></tr>
+            <tr><td>485</td><td>nivel</td><td>Subst.</td><td>Niveau / Ebene</td></tr>
+            <tr><td>486</td><td>paso</td><td>Subst.</td><td>Schritt</td></tr>
+            <tr><td>487</td><td>camino</td><td>Subst.</td><td>Weg / Pfad / Methode</td></tr>
+            <tr><td>488</td><td>forma / manera</td><td>Subst.</td><td>Art und Weise / Form</td></tr>
+            <tr><td>489</td><td>parte</td><td>Subst.</td><td>Teil / Anteil</td></tr>
+            <tr><td>490</td><td>tipo / clase</td><td>Subst.</td><td>Typ / Art</td></tr>
+            <tr><td>491</td><td>caso</td><td>Subst.</td><td>Fall / Situation</td></tr>
+            <tr><td>492</td><td>punto</td><td>Subst.</td><td>Punkt / Stelle</td></tr>
+            <tr><td>493</td><td>hecho</td><td>Subst.</td><td>Tatsache / Tat</td></tr>
+            <tr><td>494</td><td>razón</td><td>Subst.</td><td>Grund / Vernunft</td></tr>
+            <tr><td>495</td><td>condición</td><td>Subst.</td><td>Bedingung / Zustand</td></tr>
+            <tr><td>496</td><td>análisis</td><td>Subst.</td><td>Analyse</td></tr>
+            <tr><td>497</td><td>método</td><td>Subst.</td><td>Methode</td></tr>
+            <tr><td>498</td><td>teoría</td><td>Subst.</td><td>Theorie</td></tr>
+            <tr><td>499</td><td>práctica</td><td>Subst.</td><td>Praxis / Übung</td></tr>
+            <tr><td>500</td><td>respuesta</td><td>Subst.</td><td>Antwort / Reaktion</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="spanish-srs-de.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
