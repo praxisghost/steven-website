@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>土耳其語（普通話母語者）— Steven Legg</title>
+  <meta name="description" content="為普通話母語者準備的土耳其語學習指南，含間隔重複單字訓練、文法說明、書籍、YouTube 頻道及學習工具推薦。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .srs-meta{display:flex;align-items:center;gap:1.25rem;margin-bottom:.85rem;font-size:.8rem;color:#555;min-height:1.4rem;}
+    .srs-count b{color:#ccc;font-weight:500;}
+    .srs-bar-wrap{flex:1;height:2px;background:#1a1a1a;border-radius:1px;overflow:hidden;}
+    .srs-bar{height:100%;background:#2e2e2e;border-radius:1px;transition:width .4s ease;}
+    .srs-card{border:1px solid #1e1e1e;border-radius:4px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.25rem;cursor:pointer;user-select:none;transition:border-color .2s ease;text-align:center;position:relative;}
+    .srs-card:hover{border-color:#2a2a2a;}.srs-card.revealed{cursor:default;}.srs-card.revealed:hover{border-color:#1e1e1e;}
+    .srs-turkish{font-family:var(--font-display);font-size:2.2rem;font-weight:500;color:#fff;letter-spacing:.01em;line-height:1.2;}
+    .srs-pos{font-size:.75rem;color:#3a3a3a;font-style:italic;margin-top:.5rem;letter-spacing:.04em;}
+    .srs-divider{width:2rem;height:1px;background:#222;margin:1.25rem auto 1rem;flex-shrink:0;}
+    .srs-english{font-size:1.2rem;color:#bbb;line-height:1.45;}
+    .srs-hint{position:absolute;bottom:.7rem;font-size:.7rem;color:#2c2c2c;letter-spacing:.05em;}
+    .srs-actions{display:flex;gap:.75rem;margin-top:.75rem;min-height:2.6rem;}
+    .srs-btn{flex:1;padding:.55rem 1rem;border-radius:3px;background:none;font-family:var(--font-body);font-size:.9rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease;display:flex;align-items:center;justify-content:center;gap:.55rem;}
+    .srs-btn-again{border:1px solid #2e1a1a;color:#c07070;}.srs-btn-again:hover{background:#1a0a0a;border-color:#c07070;color:#e08888;}
+    .srs-btn-good{border:1px solid #1a2e1a;color:#7ed895;}.srs-btn-good:hover{background:#0a180a;border-color:#7ed895;color:#9ef0b0;}
+    .srs-key{font-family:'Courier New',monospace;font-size:.67rem;padding:.04rem .3rem;border:1px solid currentColor;border-radius:2px;opacity:.5;flex-shrink:0;}
+    .srs-interval{font-size:.72rem;opacity:.6;}
+    .srs-done{border:1px solid #1e1e1e;border-radius:4px;text-align:center;padding:3rem 1.5rem;}
+    .srs-done-title{font-family:var(--font-display);font-size:1.4rem;font-weight:500;color:#fff;margin-bottom:.4rem;}
+    .srs-done-sub{color:#555;font-size:.9rem;margin-bottom:.85rem;font-style:italic;}
+    .srs-done-stats{color:#444;font-size:.82rem;margin-bottom:1.5rem;line-height:1.9;}
+    .srs-action-btn{background:none;border:1px solid #2a2a2a;color:#666;font-family:var(--font-body);font-size:.85rem;padding:.45rem 1.1rem;border-radius:3px;cursor:pointer;transition:border-color .2s ease,color .2s ease;}
+    .srs-action-btn:hover{border-color:#555;color:#fff;}
+    .srs-shortcuts{font-size:.75rem;color:#2e2e2e;margin-top:.6rem;display:flex;gap:1rem;justify-content:center;}
+    .srs-shortcuts kbd{font-family:'Courier New',monospace;font-size:.68rem;padding:.05rem .3rem;border:1px solid #2a2a2a;border-radius:2px;color:#333;}
+    @media(max-width:480px){.srs-turkish{font-size:1.85rem;}.srs-english{font-size:1.05rem;}.srs-btn{font-size:.82rem;padding:.5rem .6rem;}.srs-meta{gap:.75rem;}}
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html">← 語言學習指南</a>
+
+  <header>
+    <h1>土耳其語 <span class="lang-from">（普通話母語者）</span></h1>
+    <p>Türkçe öğrenme — 為普通話母語者整理的土耳其語自學指南，從入門到中級。</p>
+  </header>
+
+  <article>
+
+    <!-- 目錄 -->
+    <ol class="lang-toc">
+      <li><a href="#srs">間隔重複單字訓練</a></li>
+      <li><a href="#intro">土耳其語簡介</a></li>
+      <li><a href="#pronunciation">發音與字母</a></li>
+      <li><a href="#grammar">文法基礎</a></li>
+      <li><a href="#phrases">常用短語與對話</a></li>
+      <li><a href="#apps">應用程式與工具</a></li>
+      <li><a href="#books">書籍</a></li>
+      <li><a href="#audio">音頻與聽力</a></li>
+      <li><a href="#youtube">YouTube 頻道</a></li>
+      <li><a href="#tutors">家教與課程</a></li>
+      <li><a href="#tv">土耳其影集與電影</a></li>
+      <li><a href="#study">學習策略</a></li>
+    </ol>
+
+    <!-- 1. SRS -->
+    <div class="lang-section" id="srs">
+      <h2>1. 間隔重複單字訓練</h2>
+      <p>以下訓練器內建 100 個土耳其語核心單字，搭配 SM-2 間隔重複演算法，依照你的記憶狀況智慧排程複習時間。點擊卡片顯示中文翻譯；進度自動儲存於瀏覽器。</p>
+      <p>按 <kbd>空格</kbd>/<kbd>Enter</kbd> 翻牌，<kbd>1</kbd> 表示再試，<kbd>3</kbd> 表示記住了。</p>
+      <div id="srs-root" style="max-width:480px;margin:1.5rem 0;"></div>
+      <div class="srs-shortcuts">
+        <span><kbd>Space</kbd>/<kbd>Enter</kbd> 翻牌</span>
+        <span><kbd>1</kbd> 再試</span>
+        <span><kbd>3</kbd> 記住了</span>
+      </div>
+    </div>
+
+    <!-- 2. 簡介 -->
+    <div class="lang-section" id="intro">
+      <h2>2. 土耳其語簡介</h2>
+      <p>土耳其語（Türkçe）是突厥語系語言，約有 8,500 萬母語使用者，主要分布於土耳其與賽普勒斯。它與英語、阿拉伯語及歐洲主要語言毫無親屬關係，但其內部規律性極高——掌握核心文法規則後，這些規則幾乎適用於所有情況，例外甚少，對有系統學習習慣的學習者而言極為友善。</p>
+
+      <h3>為什麼學土耳其語？</h3>
+      <ul>
+        <li><strong>橋樑語言</strong> — 土耳其語是突厥語系中使用人數最多的語言，掌握它後，學習哈薩克語、烏茲別克語、阿塞拜疆語等語言的難度會大幅降低。</li>
+        <li><strong>文化底蘊</strong> — 土耳其擁有橫跨歐亞的深厚文明，奧斯曼帝國歷史、伊斯蘭藝術與建築、古典文學，以及在全球大受歡迎的現代戲劇與音樂，令人嘆為觀止。</li>
+        <li><strong>旅遊</strong> — 伊斯坦堡、卡帕多西亞、愛琴海沿岸等地是熱門旅遊勝地；懂土耳其語能帶來截然不同的體驗。</li>
+        <li><strong>商業機遇</strong> — 土耳其是全球二十大經濟體之一，是連接歐洲、中東與中亞的重要樞紐。</li>
+        <li><strong>娛樂內容</strong> — 土耳其影集（dizi）在中東、北非、中亞乃至拉丁美洲掀起熱潮，是極豐富的語言學習素材。</li>
+      </ul>
+
+      <h3>對普通話母語者的挑戰與優勢</h3>
+      <p>普通話與土耳其語在語言類型上差異極大，但也存在若干對學習者有利的因素：</p>
+      <ul>
+        <li><strong>挑戰</strong> — 土耳其語是黏著語，透過在詞根後疊加後綴來表達文法關係；SOV（主語－賓語－動詞）語序意味著動詞永遠位於句尾；母音和諧律要求後綴的母音隨詞根母音變化，需要時間內化。</li>
+        <li><strong>優勢</strong> — 無文法性別（土耳其語用同一個代詞 <em>o</em> 指稱他、她、它，與普通話的「他／她／它」發音相同的邏輯相近）；拼寫高度規律，幾乎怎麼寫就怎麼讀；普通話學習者普遍擅長系統性背誦，對記憶後綴規律大有裨益。</li>
+        <li><strong>有趣連結</strong> — 土耳其語的 <em>çay</em>（茶）經由波斯語 <em>چای</em> 借自中古漢語的「茶」，是兩種語言間最直接的同源詞之一。其他借自漢語的詞彙還有 <em>kâğıt</em>（紙，源自蒙古語再上溯漢字）。但這類同源詞數量很少，不能依賴；多數土耳其詞彙來自突厥固有詞或阿拉伯語、波斯語、法語借詞。土耳其語無聲調，對習慣了四聲的普通話學習者而言是一大解脫。</li>
+      </ul>
+
+      <h3>學習時間預期</h3>
+      <p>美國外交學院將土耳其語列為四類語言（最高難度），專業工作能力約需 1,100 課時。然而，對普通話母語者而言，由於兩種語言都不依賴字母拼音，且都擅長系統性記憶，實際進步速度往往快於預期。每天持續學習 30–60 分鐘，數月內即可達到基礎溝通水平。</p>
+    </div>
+
+    <!-- 3. 發音 -->
+    <div class="lang-section" id="pronunciation">
+      <h2>3. 發音與字母</h2>
+      <p>土耳其語使用 1928 年引入的 29 個拉丁字母。大多數字母發音接近英語，但以下幾個需要特別注意：</p>
+
+      <details class="accordion">
+        <summary>特殊字母發音對照</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>字母</th><th>近似發音</th><th>例詞</th><th>中文意思</th></tr></thead>
+              <tbody>
+                <tr><td><code>ç</code></td><td>「ch」音，如「吃」的聲母</td><td>çay</td><td>茶</td></tr>
+                <tr><td><code>ş</code></td><td>「sh」音，如「師」的聲母</td><td>şimdi</td><td>現在</td></tr>
+                <tr><td><code>ğ</code></td><td>無聲，延長前面的母音</td><td>dağ</td><td>山</td></tr>
+                <tr><td><code>ı</code>（無點 i）</td><td>央元音，類似普通話「資、詞」的韻母</td><td>kız</td><td>女孩</td></tr>
+                <tr><td><code>ö</code></td><td>嘟嘴說「e」，與普通話「餓」類似但圓唇</td><td>görmek</td><td>看見</td></tr>
+                <tr><td><code>ü</code></td><td>與普通話 ü 完全相同，如「魚、語」</td><td>üç</td><td>三</td></tr>
+                <tr><td><code>c</code></td><td>發「j」音，如「借」的聲母</td><td>can</td><td>靈魂、生命</td></tr>
+                <tr><td><code>j</code></td><td>發法語「j」，如「日」的聲母（摩擦音）</td><td>ajan</td><td>特工</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>母音和諧律（Ünlü Uyumu）</summary>
+        <div class="accordion-body">
+          <p>母音和諧律是土耳其語最重要的語音規則：後綴的母音必須與詞根的最後一個母音「和諧」。母音分為兩組：</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>組別</th><th>母音</th><th>說明</th></tr></thead>
+              <tbody>
+                <tr><td>後母音（Back）</td><td>a、ı、o、u</td><td>舌位靠後</td></tr>
+                <tr><td>前母音（Front）</td><td>e、i、ö、ü</td><td>舌位靠前</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>舉例：複數後綴 <strong>-lar / -ler</strong>。<em>araba</em>（車）→ <em>arabalar</em>（車們）；<em>ev</em>（家）→ <em>evler</em>（家們）。後綴的母音跟隨詞根的最後一個母音，前後各就各位。</p>
+          <p class="lang-note">早期只需記住規律，不用強記每個後綴形式——接觸足夠多的例子後，正確形式會自然浮現。</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 4. 文法 -->
+    <div class="lang-section" id="grammar">
+      <h2>4. 文法基礎</h2>
+      <p>土耳其語是黏著語，意即文法關係透過在詞根後依序疊加後綴來表達。掌握幾個核心後綴，即可大幅擴展表達能力。</p>
+
+      <details class="accordion">
+        <summary>SOV 語序 — 動詞永遠在句尾</summary>
+        <div class="accordion-body">
+          <p>土耳其語的基本語序是<strong>主語－賓語－動詞</strong>，動詞幾乎永遠位於句尾。</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>土耳其語</th><th>字面順序</th><th>中文意思</th></tr></thead>
+              <tbody>
+                <tr><td>Ben seni seviyorum.</td><td>我 你 愛著（動詞）</td><td>我愛你。</td></tr>
+                <tr><td>O kitap okuyor.</td><td>他 書 讀著（動詞）</td><td>他在讀書。</td></tr>
+                <tr><td>Türkçe öğrenmek istiyorum.</td><td>土耳其語 學 想要（動詞）</td><td>我想學土耳其語。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>格後綴（Hâl Ekleri）</summary>
+        <div class="accordion-body">
+          <p>土耳其語有六個格，透過後綴附加在名詞上來表示語法功能，取代了英語的介詞：</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>格</th><th>功能</th><th>後綴示例</th><th>例詞</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>主格（Nominative）</td><td>主語</td><td>—（無後綴）</td><td>ev</td><td>家（主語）</td></tr>
+                <tr><td>賓格（Accusative）</td><td>特指賓語</td><td>-i / -ı / -u / -ü</td><td>evi</td><td>（那個）家（賓語）</td></tr>
+                <tr><td>與格（Dative）</td><td>向、給、到</td><td>-e / -a</td><td>eve</td><td>到家</td></tr>
+                <tr><td>位格（Locative）</td><td>在……裡／上</td><td>-de / -da / -te / -ta</td><td>evde</td><td>在家</td></tr>
+                <tr><td>離格（Ablative）</td><td>從……來</td><td>-den / -dan / -ten / -tan</td><td>evden</td><td>從家</td></tr>
+                <tr><td>屬格（Genitive）</td><td>的（所有格）</td><td>-in / -ın / -un / -ün</td><td>evin</td><td>家的</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lang-note">後綴的母音遵循母音和諧律，輔音在某些情況下會因清濁而交替（如 -de 在清音後變 -te）。</p>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>人稱代詞與動詞人稱後綴</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>人稱</th><th>代詞</th><th>中文</th><th>動詞後綴示例（現在進行時）</th></tr></thead>
+              <tbody>
+                <tr><td>第一人稱單數</td><td>ben</td><td>我</td><td>geliyorum（我來）</td></tr>
+                <tr><td>第二人稱單數</td><td>sen</td><td>你</td><td>geliyorsun（你來）</td></tr>
+                <tr><td>第三人稱單數</td><td>o</td><td>他／她／它</td><td>geliyor（他來）</td></tr>
+                <tr><td>第一人稱複數</td><td>biz</td><td>我們</td><td>geliyoruz（我們來）</td></tr>
+                <tr><td>第二人稱複數／敬稱</td><td>siz</td><td>你們／您</td><td>geliyorsunuz（你們來）</td></tr>
+                <tr><td>第三人稱複數</td><td>onlar</td><td>他們</td><td>geliyorlar（他們來）</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lang-note">土耳其語無文法性別：<em>o</em> 同時表示「他」、「她」、「它」，與普通話「他／她」發音一致是個有趣的巧合。</p>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>否定</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>動詞否定</strong> — 在動詞詞根後加 <strong>-me / -ma</strong>（遵循母音和諧律）：<em>geliyorum</em>（我來）→ <em>gelmiyorum</em>（我不來）。</li>
+            <li><strong>名詞／形容詞否定</strong> — 使用獨立詞 <strong>değil</strong>：<em>Ben Türk değilim.</em>（我不是土耳其人。）</li>
+            <li><strong>var / yok</strong> — <em>var</em>（有）的否定形式是 <em>yok</em>（沒有）：<em>Param var.</em>（我有錢。）→ <em>Param yok.</em>（我沒錢。）</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- 5. 短語 -->
+    <div class="lang-section" id="phrases">
+      <h2>5. 常用短語與對話</h2>
+
+      <details class="accordion">
+        <summary>問候與道別</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>土耳其語</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>Merhaba</td><td>你好（通用問候）</td></tr>
+                <tr><td>Günaydın</td><td>早安</td></tr>
+                <tr><td>İyi günler</td><td>祝你今天愉快（白天道別）</td></tr>
+                <tr><td>İyi akşamlar</td><td>晚安（傍晚問候或道別）</td></tr>
+                <tr><td>İyi geceler</td><td>晚安（睡前）</td></tr>
+                <tr><td>Hoşça kal</td><td>再見（留下的人說）</td></tr>
+                <tr><td>Güle güle</td><td>再見（送別的人說）</td></tr>
+                <tr><td>Görüşürüz</td><td>回頭見</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>自我介紹與基本對話</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>土耳其語</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>Adınız ne? / Adın ne?</td><td>您叫什麼名字？／你叫什麼名字？</td></tr>
+                <tr><td>Benim adım…</td><td>我的名字是……</td></tr>
+                <tr><td>Nasılsınız? / Nasılsın?</td><td>您好嗎？／你好嗎？</td></tr>
+                <tr><td>İyiyim, teşekkürler.</td><td>我很好，謝謝。</td></tr>
+                <tr><td>Nerelisiniz?</td><td>您是哪裡人？</td></tr>
+                <tr><td>Çinliyim.</td><td>我是中國人。</td></tr>
+                <tr><td>Türkçe öğreniyorum.</td><td>我正在學土耳其語。</td></tr>
+                <tr><td>Türkçem çok iyi değil.</td><td>我的土耳其語不太好。</td></tr>
+                <tr><td>Anlamıyorum.</td><td>我不明白。</td></tr>
+                <tr><td>Tekrar söyler misiniz?</td><td>您能再說一遍嗎？</td></tr>
+                <tr><td>Lütfen / Teşekkürler / Rica ederim</td><td>請／謝謝／不客氣</td></tr>
+                <tr><td>Özür dilerim</td><td>對不起、打擾一下</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>實用旅遊短語</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>土耳其語</th><th>中文</th></tr></thead>
+              <tbody>
+                <tr><td>… nerede?</td><td>……在哪裡？</td></tr>
+                <tr><td>Ne kadar?</td><td>多少錢？</td></tr>
+                <tr><td>Hesap lütfen.</td><td>請結帳。</td></tr>
+                <tr><td>Menü alabilir miyim?</td><td>我可以要一份菜單嗎？</td></tr>
+                <tr><td>Su lütfen.</td><td>請給我水。</td></tr>
+                <tr><td>Çok güzel!</td><td>太美了！太棒了！</td></tr>
+                <tr><td>Yardım edebilir misiniz?</td><td>您能幫我嗎？</td></tr>
+                <tr><td>İngilizce biliyor musunuz?</td><td>您會說英語嗎？</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- 6. 應用程式 -->
+    <div class="lang-section" id="apps">
+      <h2>6. 應用程式與工具</h2>
+      <p class="lang-note">重要：<strong>Duolingo、Pimsleur、Babbel 等主流語言應用目前都不支援「從中文學土耳其語」</strong>——它們的土耳其語課程僅以英語為媒介語。如果你的英語不流利，這些平台的實用性會大打折扣。下列推薦中已標明哪些對中文母語者真正友好。</p>
+      <ul>
+        <li><strong><a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a></strong> <em>（介面支援繁／簡中文）</em> — 最有效的記憶工具，採用 SM-2 或 FSRS 演算法。桌面與 Android 免費，iOS 約 25 美元。建議在 AnkiWeb 搜索「Turkish Chinese」或自製「土漢」對照牌組。</li>
+        <li><strong><a href="https://www.lingq.com/" target="_blank" rel="noopener">LingQ</a></strong> <em>（介面支援中文）</em> — 適合中級以上的閱讀／聽力平台，內建中文翻譯（含 Google Translate 整合），可匯入 EPUB 土耳其語電子書。</li>
+        <li><strong><a href="https://www.languagereactor.com/" target="_blank" rel="noopener">Language Reactor</a></strong> — Chrome 擴充功能，將翻譯語言設為「Chinese (Traditional/Simplified)」即可在 Netflix 與 YouTube 上顯示土中雙語字幕，是觀看土耳其影集學語言最強的搭配。</li>
+        <li><strong>外研社《新土耳其語教程》、《土耳其語基礎教程》等大陸出版教材的配套電子資源</strong> — 詳見下方書籍區。對於沒有英語背景的學習者，這些是真正的核心教材。</li>
+        <li><strong>Tureng / Glosbe 土漢／土英詞典</strong>（<a href="https://tureng.com/" target="_blank" rel="noopener">tureng.com</a> 為土英最大線上詞典；<a href="https://glosbe.com/tr/zh" target="_blank" rel="noopener">Glosbe</a> 提供土中雙向）— 兩者搭配使用，可覆蓋大多數查詞需求。</li>
+      </ul>
+      <p class="lang-note">下列工具<strong>主要以英語為媒介</strong>，僅推薦給英語水平至少 B2 以上者：<strong>Duolingo</strong>（土耳其語從英語）、<strong>Pimsleur</strong>（土耳其語從英語的純音頻課程）、<strong>TurkishClass101</strong>（Innovative Language；英語講解）。它們本身內容質量不錯，但對英語不強的學習者效率會打折扣。</p>
+    </div>
+
+    <!-- 7. 書籍 -->
+    <div class="lang-section" id="books">
+      <h2>7. 書籍</h2>
+
+      <h3>中文出版的土耳其語教材（推薦給中文母語者作為主軸）</h3>
+      <ul>
+        <li><strong>《新土耳其語教程》</strong>（陳鵬編，外語教學與研究出版社）— 北京外國語大學土耳其語專業的標準教材，分初、中、高級三冊；課文配中文翻譯與詳細的中文語法解釋，附音頻。中國大陸最廣泛使用的土語教材。</li>
+        <li><strong>《土耳其語基礎教程》</strong>（劉鈞燕主編，外研社）— 另一套大陸主流教材，內容更注重會話與當代用法。</li>
+        <li><strong>《土漢大詞典》</strong>（外研社）— 收錄超過 6 萬詞條，是目前最完整的土漢詞典；案頭參考首選。</li>
+        <li><strong>《漢土詞典》</strong>（北京外國語大學編）— 中查土的搭配工具書。</li>
+      </ul>
+
+      <h3>土耳其原版教材（B1 以上可用，全土語環境）</h3>
+      <ul>
+        <li><strong>《Yedi İklim Türkçe》（Yunus Emre Enstitüsü 出品）</strong> — 土耳其官方對外土語教學的標準教材，分 A1 至 C1 六冊，全土語講解、附音頻與工作本。國際公認且免費 PDF 可在 Yunus Emre 官網下載部分樣本。適合中級以後配合中文教材使用。</li>
+        <li><strong>《İstanbul Türkçe Öğretim Seti》</strong>（伊斯坦堡大學出品）— 與 Yedi İklim 並列為兩大土耳其本土主流對外土語教材。</li>
+      </ul>
+
+      <h3>英語媒介的入門讀本（供英語良好者參考）</h3>
+      <ul>
+        <li><strong>Colloquial Turkish</strong>（Ad Backus，Routledge）— 標準的英語自學教材，含 CD 音頻。需要中等英語能力。</li>
+        <li><strong>Teach Yourself Complete Turkish</strong>（Asuman Çelen Pollard）— 結構完整的英語自學課本。</li>
+        <li><strong>Short Stories in Turkish for Beginners / Intermediate</strong>（Olly Richards）— 故事編排優秀，但<strong>所有詞彙表與解釋都是英文</strong>，需中等英語才能使用。</li>
+        <li><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">Project Gutenberg</a> — 收錄部分土耳其語公版電子書，可作為閱讀練習素材（無翻譯，需自查）。</li>
+      </ul>
+
+      <h3>土耳其語文學（B2+，建議搭配中譯本對讀）</h3>
+      <ul>
+        <li><strong>《我的名字叫紅》（Benim Adım Kırmızı）</strong> — 奧罕·帕慕克。中譯本由沈志興譯，上海人民出版社。</li>
+        <li><strong>《雪》（Kar）</strong> — 奧罕·帕慕克。中譯本由楊衛東譯。</li>
+        <li><strong>《伊斯坦堡：一座城市的記憶》（İstanbul: Hatıralar ve Şehir）</strong> — 奧罕·帕慕克的非虛構，城市散文體裁，語言比小說平易。</li>
+        <li><strong>《瘦子梅梅德》（İnce Memed）</strong> — 亞沙爾·凱末爾（Yaşar Kemal）。安納托利亞鄉村史詩，譯林出版社有中譯本。</li>
+      </ul>
+    </div>
+
+    <!-- 8. 音頻 -->
+    <div class="lang-section" id="audio">
+      <h2>8. 音頻與聽力</h2>
+      <ul>
+        <li><span class="level-badge beginner">初級</span> — <a href="https://www.pimsleur.com/learn-turkish" target="_blank" rel="noopener">Pimsleur 土耳其語</a> — 純音頻課程，適合通勤時使用</li>
+        <li><span class="level-badge beginner">初級</span> — <a href="https://turkishteacher101.com/" target="_blank" rel="noopener">TurkishClass101</a> — 結構化音頻與視頻課程，免費版內容豐富</li>
+        <li><span class="level-badge intermed">中級</span> — <a href="https://www.youtube.com/@EasyTurkish" target="_blank" rel="noopener">Easy Turkish — YouTube</a> — 附雙語字幕的街頭訪問，接觸真實語速</li>
+        <li><span class="level-badge intermed">中級</span> — 土耳其廣播電視（TRT） — <a href="https://www.trtdinle.com/" target="_blank" rel="noopener">TRT Dinle</a> 提供大量免費廣播節目</li>
+        <li><span class="level-badge advanced">高級</span> — <a href="https://www.ted.com/talks?language=tr" target="_blank" rel="noopener">土耳其語 TED 演講</a> — 各類主題的高品質演講</li>
+      </ul>
+    </div>
+
+    <!-- 9. YouTube -->
+    <div class="lang-section" id="youtube">
+      <h2>9. YouTube 頻道</h2>
+      <ul>
+        <li><strong><a href="https://www.youtube.com/@EasyTurkish" target="_blank" rel="noopener">Easy Turkish</a></strong> — 隸屬於 Easy Languages 系列，附土耳其語與英語雙語字幕的街頭訪問，是最受推薦的初中級聽力資源之一。</li>
+        <li><strong><a href="https://www.youtube.com/@turkishteacher101" target="_blank" rel="noopener">TurkishClass101</a></strong> — 系統化的影片課程，涵蓋從字母到進階文法的完整範圍，免費影片數量龐大。</li>
+        <li><strong><a href="https://www.youtube.com/@LearnTurkishWithSelin" target="_blank" rel="noopener">Learn Turkish with Selin</a></strong> — 由母語老師主持，以清晰的英語解說土耳其語文法與詞彙，適合初學者。</li>
+        <li><strong><a href="https://www.youtube.com/@turkishwithmelisa" target="_blank" rel="noopener">Turkish with Melisa</a></strong> — 生活化對話練習與日常詞彙，節奏輕鬆，適合初中級學習者。</li>
+      </ul>
+    </div>
+
+    <!-- 10. 家教 -->
+    <div class="lang-section" id="tutors">
+      <h2>10. 家教與課程</h2>
+
+      <h3>線上家教</h3>
+      <ul>
+        <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> — 尋找土耳其語家教的最佳平台。土耳其語家教費用相對合理，可篩選來自伊斯坦堡、安卡拉等地的老師，或選擇專攻特定口音或方向（會話、文法、商務）的老師。先觀看老師的自我介紹影片，預訂試聽課後再考慮購買套課。使用推薦碼 <code>f0Fcbf</code> 可享首堂課折扣 5 美元。</li>
+        <li><strong><a href="https://preply.com/" target="_blank" rel="noopener">Preply</a></strong> — 功能與 iTalki 相近，擁有大量土耳其語家教，可按評分與時薪篩選。</li>
+      </ul>
+
+      <h3>機構課程</h3>
+      <ul>
+        <li><strong><a href="https://www.turkishteacher101.com/" target="_blank" rel="noopener">TurkishClass101</a></strong> — 線上課程平台，提供從 A1 至進階的系統化課程，含音頻、字幕及單字表。</li>
+        <li><strong>土耳其海外文化中心（Yunus Emre Enstitüsü）</strong> — 土耳其官方文化機構，在多個城市提供土耳其語課程，部分城市設有實體中心，亦提供線上課程。</li>
+      </ul>
+    </div>
+
+    <!-- 11. 影集與電影 -->
+    <div class="lang-section" id="tv">
+      <h2>11. 土耳其影集與電影</h2>
+      <p>土耳其影集（dizi）以製作精良、情節緊湊著稱，在全球各地擁有廣大粉絲群，同時也是學習土耳其語最有效的沉浸式素材之一。搭配 <a href="https://www.languagereactor.com/" target="_blank" rel="noopener">Language Reactor</a> 使用可顯示可點擊的雙語字幕。</p>
+
+      <details class="accordion">
+        <summary>推薦土耳其影集</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Diriliş: Ertuğrul（復活：埃爾圖魯爾）</strong> — 史詩級歷史劇，講述奧斯曼帝國建立前的故事，台詞清晰，語速適中，適合中級以上學習者。</li>
+            <li><strong>Aşk-ı Memnu（禁忌之愛）</strong> — 經典愛情劇，對話豐富，日常用語出現頻率高，是詞彙學習的好素材。</li>
+            <li><strong>Kara Para Aşk（黑錢愛情）</strong> — 懸疑愛情劇，節奏明快，對話自然流暢，適合中級學習者。</li>
+            <li><strong>Çukur（坑）</strong> — 犯罪家族題材，語言豐富多樣，包含大量伊斯坦堡口語。</li>
+            <li><strong>Fatih Harbiye</strong> — 較為輕鬆的都市愛情劇，對話語速較慢，適合初級至中級學習者。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>推薦土耳其電影</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><em>Yol（道路）</em>（1982）— 伊爾馬茲·古內（Yılmaz Güney）導演，坎城金棕櫚獎作品，土耳其電影史上最重要的作品之一。</li>
+            <li><em>Nuri Bilge Ceylan</em> 系列 — 《冬眠》（Kış Uykusu，2014 年坎城金棕櫚獎）、《遠方》（Uzak）等。對話深刻，適合高級學習者。</li>
+            <li><em>Vizontele</em>（2001）— 輕鬆喜劇，語言樸實接地，非常適合語言學習。</li>
+            <li><em>G.O.R.A.</em>（2004）— 土耳其科幻喜劇，幽默輕鬆，口語用語豐富。</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- 12. 學習策略 -->
+    <div class="lang-section" id="study">
+      <h2>12. 學習策略</h2>
+
+      <h3>核心原則</h3>
+      <ul>
+        <li>每天學習，即使只有很短的時間。對土耳其語而言，持續性比單次學習時長更重要。</li>
+        <li>盡早開口練習——土耳其語發音規律，不要因為文法不完整就推遲口語練習。</li>
+        <li>優先記憶後綴模式，而非死背每個變化形式；理解規律後，大量的形式會自然推導出來。</li>
+        <li>早期投入大量時間內化母音和諧律，後期學習會因此輕鬆得多。</li>
+        <li>選定一套教材後堅持完成，不要頻繁更換。</li>
+      </ul>
+
+      <details class="accordion">
+        <summary>初學者每週學習計劃（4–5 小時）</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>星期</th><th>學習活動</th><th>時長</th></tr></thead>
+              <tbody>
+                <tr><td>週一</td><td>Anki 複習 + 1 個文法主題（格後綴或動詞時態）</td><td>30–40 分鐘</td></tr>
+                <tr><td>週二</td><td>Anki 複習 + 聽力（Easy Turkish / TurkishClass101）</td><td>30 分鐘</td></tr>
+                <tr><td>週三</td><td>Anki 複習 + iTalki 口語課</td><td>45–60 分鐘</td></tr>
+                <tr><td>週四</td><td>Anki 複習 + 閱讀（分級讀本）</td><td>30 分鐘</td></tr>
+                <tr><td>週五</td><td>Anki 複習 + 詞彙與短語複習</td><td>30 分鐘</td></tr>
+                <tr><td>週六</td><td>沉浸式輸入 — 土耳其影集（搭配 Language Reactor）</td><td>60 分鐘以上</td></tr>
+                <tr><td>週日</td><td>輕鬆複習或休息</td><td>15–20 分鐘</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <p class="lang-note">如需推薦資源或有任何疑問，歡迎聯繫：<a href="mailto:stevelegg2000@gmail.com">stevelegg2000@gmail.com</a></p>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="turkish-srs-zht.js"></script>
+</body>
+</html>

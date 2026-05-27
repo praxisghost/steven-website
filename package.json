@@ -1,6 +1,6 @@
 {
   "name": "steven-website",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "main": "server.ts",
   "scripts": {
     "start": "tsx server.ts",
@@ -9,14 +9,18 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.18.0",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.0",
     "resend": "^6.12.3",
-    "tsx": "^4.22.0"
+    "tsx": "^4.22.0",
+    "bcryptjs": "^2.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^25.8.0",
     "@types/pg": "^8.20.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "@types/bcryptjs": "^2.4.6"
   }
 }

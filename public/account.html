@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account — Steven Legg</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="back-link" href="index.html">← Back</a>
+
+  <header>
+    <h1>Account</h1>
+  </header>
+
+  <article id="account-loading">
+    <p style="color:#555;">Loading…</p>
+  </article>
+
+  <article id="account-content" style="display:none;">
+
+    <section>
+      <h2>Welcome</h2>
+      <p id="account-email" style="color:#888; font-size:0.9rem;"></p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SRS Progress -->
+    <section>
+      <h2>SRS Progress</h2>
+      <p id="srs-empty" style="color:#555; font-size:0.9rem; display:none;">
+        No SRS sessions yet. Your spaced-repetition progress will appear here after completing a flashcard session on any language guide.
+      </p>
+      <div class="progress-grid" id="srs-grid"></div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Saved guides -->
+    <section>
+      <h2>Saved Guides</h2>
+      <p id="guides-empty" style="color:#555; font-size:0.9rem; display:none;">
+        No saved guides yet. Guides you bookmark will appear here.
+      </p>
+      <ul class="saved-guides-list" id="saved-guides-list"></ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Account settings -->
+    <section>
+      <h2>Change Password</h2>
+      <form id="change-password-form" novalidate>
+        <input
+          type="password"
+          name="current"
+          id="cp-current"
+          placeholder="Current password"
+          required
+          aria-label="Current password"
+          autocomplete="current-password"
+          maxlength="128"
+        >
+        <input
+          type="password"
+          name="new"
+          id="cp-new"
+          placeholder="New password (8 characters minimum)"
+          required
+          aria-label="New password"
+          autocomplete="new-password"
+          minlength="8"
+          maxlength="128"
+        >
+        <button type="submit">Update Password</button>
+      </form>
+      <p id="cp-status" class="auth-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Sign out -->
+    <section>
+      <button id="signout-btn" type="button" class="filter-pill" style="margin-top:0.5rem;">Sign out</button>
+      <p id="signout-status" class="auth-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Danger zone -->
+    <div class="danger-zone">
+      <h3>Delete Account</h3>
+      <p>Permanently deletes your account, SRS progress, and saved guides. This cannot be undone.</p>
+      <button id="delete-btn" class="btn-danger" type="button">Delete my account</button>
+      <p id="delete-status" class="auth-status" role="status" aria-live="polite"></p>
+    </div>
+
+  </article>
+
+  <!-- Not logged in view -->
+  <article id="account-guest" style="display:none;">
+    <p>You need to be signed in to view your account.</p>
+    <p class="auth-meta" style="margin-top:0.75rem;"><a href="login.html">Sign in</a> &nbsp;·&nbsp; <a href="signup.html">Create account</a></p>
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+
+    const GUIDE_NAMES = {
+      '/cantonese-learning.html':       'Cantonese (from English)',
+      '/cherokee-from-english.html':    'Cherokee (from English)',
+      '/cherokee-from-spanish.html':    'Cherokee (from Spanish)',
+      '/navajo-from-english.html':      'Navajo (from English)',
+      '/navajo-from-spanish.html':      'Navajo (from Spanish)',
+      '/ainu-from-japanese.html':       'Ainu (from Japanese)',
+      '/german-learning.html':          'German (from English)',
+      '/mandarin-learning.html':        'Mandarin (from English)',
+      '/spanish-learning.html':         'Spanish (from English)',
+      '/turkish-learning.html':         'Turkish (from English)',
+      '/ukrainian-from-english.html':   'Ukrainian (from English)',
+      '/vietnamese-from-english.html':  'Vietnamese (from English)',
+      '/punjabi-from-english.html':     'Punjabi (from English)',
+      '/spanish-from-russian.html':     'Spanish (from Russian)',
+    };
+
+    const PAIR_NAMES = {
+      'chr-en': 'Cherokee ← English',
+      'chr-es': 'Cherokee ← Spanish',
+      'nv-en':  'Navajo ← English',
+      'nv-es':  'Navajo ← Spanish',
+      'ain-ja': 'Ainu ← Japanese',
+      'de-en':  'German ← English',
+      'es-en':  'Spanish ← English',
+      'tr-en':  'Turkish ← English',
+      'es-ru':  'Spanish ← Russian',
+      'yue-en': 'Cantonese ← English',
+    };
+
+    async function loadAccount() {
+      // 1. Verify session
+      let me;
+      try {
+        const r = await fetch('/api/auth/me', { credentials: 'same-origin' });
+        if (!r.ok) {
+          showGuest();
+          return;
+        }
+        me = await r.json();
+      } catch {
+        showGuest();
+        return;
+      }
+
+      // 2. Show content
+      document.getElementById('account-loading').style.display = 'none';
+      document.getElementById('account-content').style.display = '';
+      document.getElementById('account-email').textContent = me.email;
+
+      // 3. Load SRS progress and saved guides in parallel
+      const [srsData, guidesData] = await Promise.allSettled([
+        fetch('/api/srs/load', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : {}),
+        fetch('/api/guides/saved', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : []),
+      ]);
+
+      renderSRS(srsData.status === 'fulfilled' ? srsData.value : {});
+      renderGuides(guidesData.status === 'fulfilled' ? guidesData.value : []);
+    }
+
+    function showGuest() {
+      document.getElementById('account-loading').style.display = 'none';
+      document.getElementById('account-guest').style.display   = '';
+    }
+
+    /* ── SRS progress grid ──────────────────────────────────────── */
+    function renderSRS(data) {
+      const grid  = document.getElementById('srs-grid');
+      const empty = document.getElementById('srs-empty');
+      const pairs = Object.keys(data);
+
+      if (!pairs.length) {
+        empty.style.display = '';
+        return;
+      }
+
+      pairs.forEach(pair => {
+        const state = data[pair];
+        if (typeof state !== 'object' || !state) return;
+
+        const keys      = Object.keys(state);
+        const total     = keys.length || 1;
+        // Count cards that have been seen at least once (reps > 0)
+        const learned   = keys.filter(k => state[k] && state[k].reps > 0).length;
+        const pct       = Math.round((learned / total) * 100);
+        const label     = PAIR_NAMES[pair] || pair;
+
+        const card = document.createElement('div');
+        card.className = 'progress-card';
+        card.innerHTML =
+          '<div class="pair-label">' + label + '</div>' +
+          '<div class="pair-stats">' + learned + ' / ' + total + ' cards seen</div>' +
+          '<div class="progress-bar-wrap">' +
+            '<div class="progress-bar-fill" style="width:' + pct + '%"></div>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+    }
+
+    /* ── Saved guides list ──────────────────────────────────────── */
+    function renderGuides(guides) {
+      const list  = document.getElementById('saved-guides-list');
+      const empty = document.getElementById('guides-empty');
+
+      if (!guides.length) {
+        empty.style.display = '';
+        return;
+      }
+
+      guides.forEach(item => {
+        const url   = item.guide_url;
+        const label = GUIDE_NAMES[url] || url;
+
+        const li   = document.createElement('li');
+        const link = document.createElement('a');
+        link.href        = url;
+        link.textContent = label;
+
+        const unsave = document.createElement('button');
+        unsave.className   = 'unsave-btn';
+        unsave.textContent = 'Remove';
+        unsave.addEventListener('click', async () => {
+          try {
+            await fetch('/api/guides/save', {
+              method:      'POST',
+              headers:     { 'Content-Type': 'application/json' },
+              body:        JSON.stringify({ url, remove: true }),
+              credentials: 'same-origin',
+            });
+            li.remove();
+            if (!document.querySelector('#saved-guides-list li')) {
+              empty.style.display = '';
+            }
+          } catch { /* silent */ }
+        });
+
+        li.appendChild(link);
+        li.appendChild(unsave);
+        list.appendChild(li);
+      });
+    }
+
+    /* ── Change password ────────────────────────────────────────── */
+    const cpForm   = document.getElementById('change-password-form');
+    const cpStatus = document.getElementById('cp-status');
+
+    cpForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      cpStatus.textContent = '';
+      cpStatus.className   = 'auth-status';
+
+      const current  = document.getElementById('cp-current').value;
+      const newPwd   = document.getElementById('cp-new').value;
+
+      if (!current || !newPwd) {
+        cpStatus.textContent = 'Both fields are required.';
+        cpStatus.classList.add('error');
+        return;
+      }
+      if (newPwd.length < 8) {
+        cpStatus.textContent = 'New password must be at least 8 characters.';
+        cpStatus.classList.add('error');
+        return;
+      }
+
+      cpStatus.textContent = 'Updating…';
+      cpStatus.classList.add('info');
+      try {
+        const res  = await fetch('/api/auth/change-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({ current, password: newPwd }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          cpStatus.textContent = 'Password updated successfully.';
+          cpStatus.classList.add('success');
+          cpForm.reset();
+        } else {
+          cpStatus.textContent = data.error || 'Could not update password. Check your current password and try again.';
+          cpStatus.classList.add('error');
+        }
+      } catch {
+        cpStatus.textContent = 'Network error — please try again.';
+        cpStatus.classList.add('error');
+      }
+    });
+
+    /* ── Sign out ───────────────────────────────────────────────── */
+    document.getElementById('signout-btn').addEventListener('click', async () => {
+      try {
+        await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
+      } catch { /* silent */ }
+      window.location.href = 'index.html';
+    });
+
+    /* ── Delete account ─────────────────────────────────────────── */
+    const deleteBtn    = document.getElementById('delete-btn');
+    const deleteStatus = document.getElementById('delete-status');
+    let   deleteArmed  = false;
+
+    // Inject a password input just before the button (hidden until armed)
+    const deletePwdInput = document.createElement('input');
+    deletePwdInput.type        = 'password';
+    deletePwdInput.placeholder = 'Enter your password to confirm';
+    deletePwdInput.id          = 'delete-pwd';
+    deletePwdInput.className   = 'auth-input';
+    deletePwdInput.style.cssText = 'display:none;margin-bottom:0.6rem;width:100%;';
+    deleteBtn.parentNode.insertBefore(deletePwdInput, deleteBtn);
+
+    deleteBtn.addEventListener('click', async () => {
+      if (!deleteArmed) {
+        deleteArmed = true;
+        deletePwdInput.style.display = '';
+        deletePwdInput.focus();
+        deleteBtn.textContent    = 'Confirm — permanently delete my account';
+        deleteBtn.style.borderColor = '#c07070';
+        deleteStatus.textContent = '';
+        deleteStatus.className   = 'auth-status';
+        setTimeout(() => {
+          if (deleteArmed) {
+            deleteArmed = false;
+            deletePwdInput.style.display = 'none';
+            deletePwdInput.value = '';
+            deleteBtn.textContent    = 'Delete my account';
+            deleteBtn.style.borderColor = '';
+          }
+        }, 10000);
+        return;
+      }
+
+      const pwd = deletePwdInput.value;
+      if (!pwd) {
+        deleteStatus.textContent = 'Please enter your password to confirm deletion.';
+        deleteStatus.className   = 'auth-status error';
+        return;
+      }
+
+      deleteBtn.disabled    = true;
+      deleteBtn.textContent = 'Deleting…';
+      deleteStatus.textContent = '';
+      deleteStatus.className   = 'auth-status';
+
+      try {
+        const res  = await fetch('/api/auth/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({ password: pwd }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          deleteStatus.textContent = 'Account deleted. Redirecting…';
+          deleteStatus.className   = 'auth-status success';
+          setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+        } else {
+          deleteBtn.disabled    = false;
+          deleteBtn.textContent = 'Confirm — permanently delete my account';
+          deleteStatus.textContent = data.error || 'Incorrect password or server error. Try again.';
+          deleteStatus.className   = 'auth-status error';
+        }
+      } catch {
+        deleteBtn.disabled    = false;
+        deleteBtn.textContent = 'Confirm — permanently delete my account';
+        deleteStatus.textContent = 'Network error — please try again.';
+        deleteStatus.className   = 'auth-status error';
+      }
+    });
+
+    loadAccount();
+  })();
+  </script>
+</body>
+</html>

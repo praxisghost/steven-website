@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>普通話（廣東話母語者）— Steven Legg</title>
+  <meta name="description" content="為廣東話母語者準備的普通話學習指南，含間隔重複單字訓練、文法說明、書籍、YouTube 頻道及學習工具推薦。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .srs-meta{display:flex;align-items:center;gap:1.25rem;margin-bottom:.85rem;font-size:.8rem;color:#555;min-height:1.4rem;}
+    .srs-count b{color:#ccc;font-weight:500;}
+    .srs-bar-wrap{flex:1;height:2px;background:#1a1a1a;border-radius:1px;overflow:hidden;}
+    .srs-bar{height:100%;background:#2e2e2e;border-radius:1px;transition:width .4s ease;}
+    .srs-card{border:1px solid #1e1e1e;border-radius:4px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.25rem;cursor:pointer;user-select:none;transition:border-color .2s ease;text-align:center;position:relative;}
+    .srs-card:hover{border-color:#2a2a2a;}.srs-card.revealed{cursor:default;}.srs-card.revealed:hover{border-color:#1e1e1e;}
+    .srs-turkish{font-family:var(--font-display);font-size:2.2rem;font-weight:500;color:#fff;letter-spacing:.01em;line-height:1.2;}
+    .srs-pos{font-size:.75rem;color:#3a3a3a;font-style:italic;margin-top:.5rem;letter-spacing:.04em;}
+    .srs-divider{width:2rem;height:1px;background:#222;margin:1.25rem auto 1rem;flex-shrink:0;}
+    .srs-english{font-size:1.2rem;color:#bbb;line-height:1.45;}
+    .srs-hint{position:absolute;bottom:.7rem;font-size:.7rem;color:#2c2c2c;letter-spacing:.05em;}
+    .srs-actions{display:flex;gap:.75rem;margin-top:.75rem;min-height:2.6rem;}
+    .srs-btn{flex:1;padding:.55rem 1rem;border-radius:3px;background:none;font-family:var(--font-body);font-size:.9rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease;display:flex;align-items:center;justify-content:center;gap:.55rem;}
+    .srs-btn-again{border:1px solid #2e1a1a;color:#c07070;}.srs-btn-again:hover{background:#1a0a0a;border-color:#c07070;color:#e08888;}
+    .srs-btn-good{border:1px solid #1a2e1a;color:#7ed895;}.srs-btn-good:hover{background:#0a180a;border-color:#7ed895;color:#9ef0b0;}
+    .srs-key{font-family:'Courier New',monospace;font-size:.67rem;padding:.04rem .3rem;border:1px solid currentColor;border-radius:2px;opacity:.5;flex-shrink:0;}
+    .srs-interval{font-size:.72rem;opacity:.6;}
+    .srs-done{border:1px solid #1e1e1e;border-radius:4px;text-align:center;padding:3rem 1.5rem;}
+    .srs-done-title{font-family:var(--font-display);font-size:1.4rem;font-weight:500;color:#fff;margin-bottom:.4rem;}
+    .srs-done-sub{color:#555;font-size:.9rem;margin-bottom:.85rem;font-style:italic;}
+    .srs-done-stats{color:#444;font-size:.82rem;margin-bottom:1.5rem;line-height:1.9;}
+    .srs-action-btn{background:none;border:1px solid #2a2a2a;color:#666;font-family:var(--font-body);font-size:.85rem;padding:.45rem 1.1rem;border-radius:3px;cursor:pointer;transition:border-color .2s ease,color .2s ease;}
+    .srs-action-btn:hover{border-color:#555;color:#fff;}
+    .srs-shortcuts{font-size:.75rem;color:#2e2e2e;margin-top:.6rem;display:flex;gap:1rem;justify-content:center;}
+    .srs-shortcuts kbd{font-family:'Courier New',monospace;font-size:.68rem;padding:.05rem .3rem;border:1px solid #2a2a2a;border-radius:2px;color:#333;}
+    @media(max-width:480px){.srs-turkish{font-size:1.85rem;}.srs-english{font-size:1.05rem;}.srs-btn{font-size:.82rem;padding:.5rem .6rem;}.srs-meta{gap:.75rem;}}
+  </style>
+</head>
+<body>
+  <a class="back-link" href="language-guides.html">← 語言學習指南</a>
+
+  <header>
+    <h1>普通話 <span class="lang-from">（廣東話母語者）</span></h1>
+    <p>學普通話 — 為廣東話母語者整理的普通話自學指南，專注兩種語言之間的差異。</p>
+  </header>
+
+  <article>
+
+    <!-- 目錄 -->
+    <ol class="lang-toc">
+      <li><a href="#srs">間隔重複單字訓練</a></li>
+      <li><a href="#intro">普通話簡介</a></li>
+      <li><a href="#tones">聲調系統</a></li>
+      <li><a href="#differences">粵普主要詞彙差異</a></li>
+      <li><a href="#grammar">文法差異</a></li>
+      <li><a href="#particles">語氣助詞對照</a></li>
+      <li><a href="#sentences">常用句型</a></li>
+      <li><a href="#apps">應用程式與工具</a></li>
+      <li><a href="#books">書籍</a></li>
+      <li><a href="#audio">音頻與聽力</a></li>
+      <li><a href="#youtube">YouTube 頻道</a></li>
+      <li><a href="#tutors">家教與課程</a></li>
+      <li><a href="#study">學習策略</a></li>
+    </ol>
+
+    <!-- 1. SRS -->
+    <div class="lang-section" id="srs">
+      <h2>1. 間隔重複單字訓練</h2>
+      <p>以下訓練器內建 100 個普通話核心詞彙，搭配 SM-2 間隔重複演算法，依照你嘅記憶狀況智慧排程複習時間。正面顯示普通話字（繁體／簡體），背面顯示廣東話對應詞。點擊卡片顯示答案；進度自動儲存於瀏覽器。</p>
+      <p>按 <kbd>空格</kbd>/<kbd>Enter</kbd> 翻牌，<kbd>1</kbd> 再試，<kbd>3</kbd> 記住咗。</p>
+      <div id="srs-root" style="max-width:480px;margin:1.5rem 0;"></div>
+      <div class="srs-shortcuts">
+        <span><kbd>Space</kbd>/<kbd>Enter</kbd> 翻牌</span>
+        <span><kbd>1</kbd> 再試</span>
+        <span><kbd>3</kbd> 記住咗</span>
+      </div>
+    </div>
+
+    <!-- 2. 簡介 -->
+    <div class="lang-section" id="intro">
+      <h2>2. 普通話簡介</h2>
+      <p>普通話（Pǔtōnghuà）係中國大陸嘅官方語言，亦係台灣（稱「國語」）同新加坡（稱「華語」）嘅官方語言之一。全球有超過十億人以普通話為母語或第二語言，係世界上母語使用人數最多嘅語言。</p>
+      <p>對廣東話母語者嚟講，學普通話有一定優勢：兩者共用大量漢字，閱讀能力可以迅速建立。但係口語詞彙、聲調系統同埋語氣助詞都有顯著差異，需要特別注意。</p>
+      <p>書面語方面，香港廣東話傳統上使用繁體字，普通話書面語則視乎地區——中國大陸用簡體字，台灣用繁體字。兩套字形都值得認識，尤其如果你打算去大陸工作或生活。</p>
+    </div>
+
+    <!-- 3. 聲調 -->
+    <div class="lang-section" id="tones">
+      <h2>3. 聲調系統</h2>
+      <p>廣東話有九個聲調（六個主要聲調加三個入聲），而普通話只有四個聲調加一個輕聲。聲調數量雖然少咗，但唔代表容易——普通話聲調嘅音高模式同廣東話完全唔同，需要重新建立肌肉記憶。</p>
+
+      <table class="lang-table">
+        <thead>
+          <tr><th>聲調</th><th>拼音標記</th><th>音高走向</th><th>例字</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>第一聲（陰平）</td><td>ā（橫線）</td><td>高平調 55</td><td>媽 mā</td></tr>
+          <tr><td>第二聲（陽平）</td><td>á（上揚）</td><td>升調 35</td><td>麻 má</td></tr>
+          <tr><td>第三聲（上聲）</td><td>ǎ（V形）</td><td>降升調 214</td><td>馬 mǎ</td></tr>
+          <tr><td>第四聲（去聲）</td><td>à（下降）</td><td>降調 51</td><td>罵 mà</td></tr>
+          <tr><td>輕聲</td><td>無標記</td><td>短促輕讀</td><td>嗎 ma</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>廣東話背景的挑戰：</strong>廣東話第一聲（陰平 55）同普通話第一聲（55）幾乎一致；但廣東話母語者讀普通話第二聲時常常「升得唔夠高」——廣東話陰上（25/35）係從中音起升，而普通話第二聲（35）係由中起升到高位，需要較大幅度。普通話第三聲（上聲 214）係降升調，但<strong>實際口語中</strong>除咗單字朗讀或句末位置，幾乎永遠讀成低降平調（21），呢個叫「半上」，初學者好容易以為「上聲」就係教科書上嘅 214，結果聽落怪怪哋。</p>
+      <p><strong>變調規則：</strong>兩個第三聲相連時，前一個變第二聲，例如「你好」（nǐ hǎo）實讀 níhǎo——呢個係<strong>上聲連讀變調</strong>。另外，「不」（bù）喺第四聲前變第二聲：「不是」bú shì；「一」（yī）喺第四聲前變第二聲、其他聲前變第四聲：「一個」yí gè、「一天」yì tiān。廣東話冇類似嘅自動變調，需要特別記。</p>
+
+      <h3>廣東話 ⇄ 普通話聲調對應（歷史規律）</h3>
+      <p>呢個係廣東話母語者最大嘅秘密武器：因為廣東話保留咗中古漢語「陰陽四聲」嘅完整對立，而普通話喺合併後仍然保留咗「平分陰陽」嘅痕跡——所以你由廣東話聲調出發，<strong>多數情況下</strong>可以推算普通話聲調，準確率遠高於英語母語者死記硬背。</p>
+      <div class="table-wrap">
+        <table class="lang-table">
+          <thead><tr><th>廣東話聲調</th><th>多數對應普通話</th><th>例字</th></tr></thead>
+          <tbody>
+            <tr><td>1 聲（陰平 55）</td><td>第一聲</td><td>東 dōng、天 tiān、高 gāo</td></tr>
+            <tr><td>2 聲（陰上 25）</td><td>第三聲</td><td>好 hǎo、買 mǎi、走 zǒu</td></tr>
+            <tr><td>3 聲（陰去 33）</td><td>第四聲</td><td>四 sì、去 qù、看 kàn</td></tr>
+            <tr><td>4 聲（陽平 21）</td><td>第二聲</td><td>來 lái、人 rén、明 míng</td></tr>
+            <tr><td>5 聲（陽上 23）</td><td>第三聲（部分第四聲）</td><td>女 nǚ、有 yǒu、馬 mǎ</td></tr>
+            <tr><td>6 聲（陽去 22）</td><td>第四聲</td><td>大 dà、是 shì、用 yòng</td></tr>
+            <tr><td>入聲（1/3/6 短促，韻尾 -p/-t/-k）</td><td>分散落入 1/2/3/4 各聲（無規律）</td><td>一 yī、十 shí、白 bái、國 guó</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="lang-note">入聲字嘅普通話讀音係廣東話母語者最不能靠規律推算嘅一類——古入聲字喺普通話已經派入舒聲，唔同字嘅去向冇規律可循。建議遇到入聲字時主動標記查證，例如「白 baak6 → bái」、「十 sap6 → shí」、「鴨 aap3 → yā」、「國 gwok3 → guó」。</p>
+
+      <p><strong>學習建議：</strong>初學時要大聲誇張地讀出聲調，唔好太保守。錄低自己讀音同母語者對比。Pleco 嘅免費版本內建拼音聲調配色（一聲紅、二聲綠、三聲藍、四聲紫），對視覺記憶有幫助。</p>
+    </div>
+
+    <!-- 4. 詞彙差異 -->
+    <div class="lang-section" id="differences">
+      <h2>4. 粵普主要詞彙差異</h2>
+      <p>廣東話同普通話之間有大量詞彙差異——即係同一個意思，兩種語言用完全唔同嘅字或詞。以下係廣東話母語者最常遇到嘅高頻詞彙對照。</p>
+
+      <table class="lang-table">
+        <thead>
+          <tr><th>意思</th><th>廣東話</th><th>普通話</th><th>拼音</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>他／她</td><td>佢</td><td>他／她</td><td>tā</td></tr>
+          <tr><td>我們</td><td>我哋</td><td>我們／我们</td><td>wǒmen</td></tr>
+          <tr><td>你們</td><td>你哋</td><td>你們／你们</td><td>nǐmen</td></tr>
+          <tr><td>他們</td><td>佢哋</td><td>他們／他们</td><td>tāmen</td></tr>
+          <tr><td>吃</td><td>食</td><td>吃</td><td>chī</td></tr>
+          <tr><td>喝</td><td>飲</td><td>喝</td><td>hē</td></tr>
+          <tr><td>看</td><td>睇</td><td>看</td><td>kàn</td></tr>
+          <tr><td>說話</td><td>講</td><td>說</td><td>shuō</td></tr>
+          <tr><td>走路</td><td>行</td><td>走</td><td>zǒu</td></tr>
+          <tr><td>跑</td><td>走</td><td>跑</td><td>pǎo</td></tr>
+          <tr><td>找</td><td>搵</td><td>找</td><td>zhǎo</td></tr>
+          <tr><td>喜歡</td><td>鍾意</td><td>喜歡／喜欢</td><td>xǐhuan</td></tr>
+          <tr><td>來</td><td>嚟</td><td>來／来</td><td>lái</td></tr>
+          <tr><td>給</td><td>俾</td><td>給／给</td><td>gěi</td></tr>
+          <tr><td>現在</td><td>而家</td><td>現在／现在</td><td>xiànzài</td></tr>
+          <tr><td>今天</td><td>今日</td><td>今天</td><td>jīntiān</td></tr>
+          <tr><td>明天</td><td>聽日</td><td>明天</td><td>míngtiān</td></tr>
+          <tr><td>昨天</td><td>琴日</td><td>昨天</td><td>zuótiān</td></tr>
+          <tr><td>剛才</td><td>啱啱</td><td>剛才／刚才</td><td>gāngcái</td></tr>
+          <tr><td>不</td><td>唔</td><td>不</td><td>bù / bú</td></tr>
+          <tr><td>沒有</td><td>冇</td><td>沒有／没有</td><td>méiyǒu</td></tr>
+          <tr><td>東西／事物</td><td>嘢</td><td>東西／东西</td><td>dōngxi</td></tr>
+          <tr><td>衣服</td><td>衫</td><td>衣服</td><td>yīfu</td></tr>
+          <tr><td>房子</td><td>屋</td><td>房子</td><td>fángzi</td></tr>
+          <tr><td>錢</td><td>錢（口語亦稱「銀」/「銀紙」）</td><td>錢／钱</td><td>qián</td></tr>
+          <tr><td>小朋友</td><td>細路</td><td>小孩</td><td>xiǎohái</td></tr>
+          <tr><td>大哥</td><td>大佬</td><td>大哥</td><td>dàgē</td></tr>
+          <tr><td>姐姐</td><td>家姐</td><td>姐姐</td><td>jiějie</td></tr>
+          <tr><td>弟弟</td><td>細佬</td><td>弟弟</td><td>dìdi</td></tr>
+          <tr><td>妹妹</td><td>細妹</td><td>妹妹</td><td>mèimei</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>特別注意：</strong>廣東話嘅「走」係指「跑」，但普通話嘅「走」係「走路、步行」。廣東話嘅「行」係指「走路」，但普通話嘅「行」通常係「可以、行得通」嘅意思。呢兩個字係廣東話母語者最容易講錯嘅詞。</p>
+    </div>
+
+    <!-- 5. 文法差異 -->
+    <div class="lang-section" id="grammar">
+      <h2>5. 文法差異</h2>
+      <p>廣東話同普通話喺基本語序上一致（SVO），但喺幾個細節上差異會令你「直譯」嘅普通話聽落怪。重點唔係結構完全唔同，而係<strong>同一個語義範疇用唔同嘅字</strong>，或者一方比另一方使用得更頻繁。</p>
+
+      <p><strong>處置句（賓語提前）：</strong>普通話日常口語極常用「把」，廣東話母語者習慣用「將」——「將」喺普通話亦合語法，但語感偏書面，會令你嘅口語顯得文雅或老派。要練習主動用「把」。</p>
+      <ul>
+        <li>廣東話：我將本書放係枱面 → 普通話自然講法：我把書放在桌上（用「我將書放在桌上」唔錯但偏文）</li>
+      </ul>
+
+      <p><strong>被動：</strong>廣東話用「俾／畀」可以同時表達「給」、「被」、「讓」三種意思；普通話則分成「給／被／讓」三個唔同嘅字，<strong>不能</strong>用「給」做被動標記嘅頻率亦比廣東話低。</p>
+      <ul>
+        <li>廣東話：我俾老師鬧咗。/ 俾枝筆我。/ 我俾佢入嚟。</li>
+        <li>普通話：我<strong>被</strong>老師罵了。/ <strong>給</strong>我一枝筆。/ 我<strong>讓</strong>他進來。</li>
+      </ul>
+
+      <p><strong>程度／狀態補語「得」：</strong>普通話同廣東話<strong>都</strong>用「得」連接動詞同程度／狀態補語——廣東話母語者真正要注意嘅唔係「冇呢個結構」，而係「補語部分要用普通話詞彙、保留動詞時要重複」：</p>
+      <ul>
+        <li>廣東話：佢跑得好快 → 普通話：他跑得很快 / 他<strong>跑步跑</strong>得很快（帶賓語時動詞重複）</li>
+        <li>廣東話：我食得好飽 → 普通話：我吃得很飽</li>
+      </ul>
+
+      <p><strong>「是……的」強調結構：</strong>普通話用「是……的」夾住已發生動作嘅時間、地點、方式或施事者，廣東話通常用句末「㗎」或「嘅」表達相近意味——直接翻譯會丟失重音感。</p>
+      <ul>
+        <li>廣東話：我係琴日嚟㗎。 → 普通話：我<strong>是</strong>昨天來<strong>的</strong>。</li>
+        <li>廣東話：呢本書係喺香港買嘅。 → 普通話：這本書<strong>是</strong>在香港買<strong>的</strong>。</li>
+      </ul>
+
+      <p><strong>方向補語：</strong>兩種語言都有方向補語體系，但廣東話多用單音節「上、落、入、出、埋、開、返」搭配「嚟／去」，普通話則更頻繁地把方向動詞「起來、下去、過去、出來」融入動詞短語，並且喺抽象用法（如「想起來」「說下去」「看出來」）上遠比廣東話發達。</p>
+      <ul>
+        <li>廣東話：行返嚟 → 普通話：走回來</li>
+        <li>廣東話：諗起 → 普通話：想起來</li>
+        <li>廣東話：（無對應慣用語） → 普通話：堅持下去、看不出來（抽象用法）</li>
+      </ul>
+    </div>
+
+    <!-- 6. 語氣助詞 -->
+    <div class="lang-section" id="particles">
+      <h2>6. 語氣助詞對照</h2>
+      <p>語氣助詞係廣東話同普通話差異最大嘅地方之一。廣東話嘅語氣助詞系統遠比普通話豐富，但普通話都有自己一套需要掌握嘅助詞。</p>
+
+      <table class="lang-table">
+        <thead>
+          <tr><th>功能</th><th>廣東話助詞</th><th>普通話對應</th><th>例句（普通話）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>結構助詞（的）</td><td>嘅</td><td>的</td><td>我的書（我嘅書）</td></tr>
+          <tr><td>完成態</td><td>咗</td><td>了</td><td>我吃了（我食咗）</td></tr>
+          <tr><td>語氣（變化）</td><td>喇</td><td>了</td><td>他來了（佢嚟喇）</td></tr>
+          <tr><td>疑問（嗎）</td><td>咩</td><td>嗎</td><td>你去嗎？（你去咩？）</td></tr>
+          <tr><td>正在進行</td><td>緊</td><td>在／正在</td><td>我在吃飯（我食緊飯）</td></tr>
+          <tr><td>持續狀態</td><td>住</td><td>著／着</td><td>門開著（門開住）</td></tr>
+          <tr><td>經歷過</td><td>過</td><td>過</td><td>我去過（相同）</td></tr>
+          <tr><td>選擇疑問</td><td>定係</td><td>還是／还是</td><td>咖啡還是茶？</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>重點：</strong>廣東話嘅「了」（完成態）分拆成兩個助詞：「咗」表示動作完成，「喇」表示情況改變。但普通話統一用「了」，喺唔同位置有唔同意思。呢個係廣東話母語者學普通話時常見嘅混淆點。</p>
+      <p>普通話嘅「著」（zhe，讀輕聲）表示持續狀態（如「門開著」），同廣東話嘅「住」功能相近，但讀音完全唔同。</p>
+    </div>
+
+    <!-- 7. 常用句型 -->
+    <div class="lang-section" id="sentences">
+      <h2>7. 常用句型</h2>
+      <p>以下係日常生活中最常用嘅普通話句型，附廣東話對照幫助理解差異。</p>
+
+      <table class="lang-table">
+        <thead>
+          <tr><th>意思</th><th>普通話</th><th>拼音</th><th>廣東話</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>你好</td><td>你好</td><td>Nǐ hǎo</td><td>你好</td></tr>
+          <tr><td>謝謝</td><td>謝謝</td><td>Xièxie</td><td>唔該 / 多謝</td></tr>
+          <tr><td>對不起</td><td>對不起</td><td>Duìbuqǐ</td><td>唔好意思</td></tr>
+          <tr><td>沒關係</td><td>沒關係</td><td>Méiguānxi</td><td>冇問題 / 唔緊要</td></tr>
+          <tr><td>我聽不懂</td><td>我聽不懂</td><td>Wǒ tīng bu dǒng</td><td>我唔明</td></tr>
+          <tr><td>請說慢一點</td><td>請說慢一點</td><td>Qǐng shuō màn yīdiǎn</td><td>唔該講慢啲</td></tr>
+          <tr><td>這個多少錢？</td><td>這個多少錢？</td><td>Zhège duōshǎo qián?</td><td>呢個幾多錢？</td></tr>
+          <tr><td>在哪裏？</td><td>在哪裏？</td><td>Zài nǎlǐ?</td><td>喺邊度？</td></tr>
+          <tr><td>我想要……</td><td>我想要……</td><td>Wǒ xiǎng yào…</td><td>我想要……</td></tr>
+          <tr><td>可以嗎？</td><td>可以嗎？</td><td>Kěyǐ ma?</td><td>得唔得？</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>注意：</strong>廣東話「唔該」（感謝別人服務）同「多謝」（感謝別人送東西或好意）有分別，但普通話統一用「謝謝」。學習初期唔使分得咁細，但值得了解。</p>
+    </div>
+
+    <!-- 8. 應用程式 -->
+    <div class="lang-section" id="apps">
+      <h2>8. 應用程式與工具</h2>
+      <p class="lang-note">幾乎所有市面上嘅普通話 App 都以英語為媒介語——專為粵語母語者設計嘅應用基本上唔存在。下列推薦中嘅 App 介面多為英文，但因為你睇得明漢字，可以直接跳過英文講解，集中用呢啲工具嘅<strong>音頻、字典、抄寫</strong>功能。</p>
+      <p><strong>Pleco</strong>（iOS／Android，核心免費）— 廣東話母語者必裝。內建「Cantonese Pronunciation」設定，可同時顯示拼音同粵拼，方便確認「呢個普通話字喺廣東話讀咩」。離線基本字典免費，付費附加可解鎖更專業嘅詞典與例句庫。</p>
+      <p><strong>Anki</strong>（桌面／Android 免費，iOS 約 US$25）— 開源間隔重複系統。可以自製「廣東話 → 普通話」對照卡組，把上文嘅詞彙差異表變成自己嘅複習隊列，呢個比直接背英文釋義有效率得多。</p>
+      <p><strong>注音輸入法</strong>或<strong>拼音輸入法</strong>— 強烈建議廣東話母語者轉用拼音打字一段時間（即使你打字仍用倉頡／速成），因為每打一個字都係一次聲調默寫練習，係日常被動聲調訓練嘅最佳途徑。</p>
+      <p><strong>iTalki</strong>（italki.com）— 可篩選同時識講廣東話嘅普通話導師，呢類導師熟悉粵普學習者嘅典型錯誤（聲調、量詞、把字句等），講解效率高過完全唔識廣東話嘅導師。</p>
+      <p><strong>HSK 詞彙表</strong>— HSK 1–4 涵蓋日常用語，對你嚟講識嘅字多、唔識嘅多數係讀音同普通話獨有嘅詞，建議直接由 HSK 3 開始挑生詞，唔好由 HSK 1 由頭嚟。</p>
+      <p class="lang-note">不建議：<strong>Duolingo</strong>嘅普通話課程內容對你嚟講太淺、節奏太慢；<strong>HelloChinese</strong>定位入門英語母語者，對廣東話母語者大部分內容都係已知；<strong>Yoyo Chinese</strong>主要解釋漢字概念，對識字嘅你冗餘度高。</p>
+    </div>
+
+    <!-- 9. 書籍 -->
+    <div class="lang-section" id="books">
+      <h2>9. 書籍</h2>
+      <p><strong>《新實用漢語課本》（New Practical Chinese Reader）</strong>係內地大學廣泛使用嘅普通話教材，覆蓋面廣，適合有意考HSK或進修中文系課程嘅學習者。</p>
+      <p><strong>《當代中文》（A Course in Contemporary Chinese）</strong>係台灣出版嘅普通話教材，使用繁體字，對廣東話母語者可能更親切，亦包含真實對話同文化知識。</p>
+      <p><strong>《普通話正音詞典》</strong>專門針對廣東話母語者學習普通話標準讀音而設，標注拼音同廣東話讀音對比，有助改善發音。</p>
+      <p><strong>《漢語語法》（Chinese: A Comprehensive Grammar）</strong>by Yip Po-Ching 及 Don Rimmington — 深入講解普通話文法結構，適合想深入理解語法嘅中高級學習者。</p>
+      <p><strong>分級讀物：</strong>The Chairman's Bao 網站提供HSK分級嘅真實新聞文章，可以閱讀適合自己程度嘅中文時事。</p>
+    </div>
+
+    <!-- 10. 音頻 -->
+    <div class="lang-section" id="audio">
+      <h2>10. 音頻與聽力</h2>
+      <p><strong>ChinesePod</strong>（chinesepod.com）提供大量普通話聽力材料，分初、中、高級，部分內容免費。播客形式學習，適合通勤或日常收聽。</p>
+      <p><strong>Mandarin Corner</strong>係一個YouTube同播客頻道，以真實對話為主，語速自然，適合中級以上學習者。</p>
+      <p><strong>台灣公視</strong>（pts.org.tw）同<strong>CCTV</strong>：收看普通話電視新聞係改善聆聽理解嘅好方法，新聞播音員嘅普通話標準清晰，適合訓練耳朵。</p>
+      <p><strong>語言交換：</strong>用HelloTalk或Tandem搵普通話母語者做語言交換，互相練習對方嘅語言。作為廣東話母語者，你嘅廣東話技能係一個寶貴嘅交換資源，因為好多大陸普通話母語者都想學廣東話。</p>
+    </div>
+
+    <!-- 11. YouTube -->
+    <div class="lang-section" id="youtube">
+      <h2>11. YouTube 頻道</h2>
+      <p><strong>Mandarin Corner</strong>（@MandarinCorner）提供由初級到高級嘅普通話教學視頻，有清晰拼音字幕，對聲調學習很有幫助。</p>
+      <p><strong>Yoyo Chinese</strong>（@yoyochinese）由美籍華人 Yangyang Cheng 主持，以英語解釋普通話文法，但廣東話母語者一樣可以受益於佢對文法難點嘅深入分析。</p>
+      <p><strong>LearnChineseWithEase</strong>提供日常對話練習視頻，貼近真實生活語境，適合補充課本學習。</p>
+      <p><strong>《流利說》</strong>（LiuliShuo）係大陸流行嘅普通話學習平台，視頻課程結合AI口語測評，適合希望用科技輔助學習嘅人。</p>
+      <p><strong>台灣劇集同電影：</strong>台灣出品嘅劇集語速相對慢，發音清晰，字幕亦容易跟讀，係訓練聽力嘅好材料。可以先開繁體字幕，熟悉後嘗試無字幕收看。</p>
+    </div>
+
+    <!-- 12. 家教 -->
+    <div class="lang-section" id="tutors">
+      <h2>12. 家教與課程</h2>
+      <p><strong>iTalki</strong>（italki.com）係搵普通話家教最方便嘅平台，可以按預算、時間同教學風格篩選教師，提供試堂優惠。建議搜尋有教過廣東話母語者或香港學生經驗嘅導師，佢哋通常更了解你面對嘅特定難點。</p>
+      <p><strong>Preply</strong>同樣係可靠嘅家教平台，師資多元，適合需要固定時間表嘅學習者。</p>
+      <p><strong>香港各大學語言中心</strong>：香港大學、香港中文大學、香港城市大學等均有提供普通話進修課程，部分課程專為廣東話母語者而設，師資熟悉兩種語言之間嘅差異。</p>
+      <p><strong>語言交換夥伴：</strong>透過HelloTalk、Tandem或Facebook語言學習群組搵普通話母語者做互助練習，廣東話母語者喺語言交換市場上非常受歡迎。</p>
+    </div>
+
+    <!-- 13. 學習策略 -->
+    <div class="lang-section" id="study">
+      <h2>13. 學習策略</h2>
+      <p><strong>優先攻克聲調：</strong>廣東話母語者已經對聲調語言有直覺，但普通話聲調同廣東話差異顯著。建議第一個月專注聲調，用大量錄音同跟讀練習建立正確嘅音高記憶，避免日後養成難改嘅壞習慣。</p>
+      <p><strong>拼音作為橋樑：</strong>拼音係羅馬字拼音系統，係普通話嘅重要學習工具。即使最終目標係流利口語，喺初期掌握拼音可以大大加快學習速度。特別注意 x、q、zh、ch、sh、r 等廣東話冇對應音嘅聲母。</p>
+      <p><strong>詞彙對比學習：</strong>主動建立一份「粵普差異詞彙表」，記錄廣東話同普通話嘅對應詞。呢個方法比單純背普通話詞彙更有效率，因為你可以利用已有嘅廣東話知識作為錨點。</p>
+      <p><strong>閱讀快速進步：</strong>因為廣東話同普通話共用大量漢字，你嘅閱讀能力可以相對快速提升。建議盡早開始閱讀簡單普通話文章，結合上下文猜測生詞意思，培養閱讀流暢度。</p>
+      <p><strong>輸出練習不可少：</strong>大量輸入（聽、讀）之外，必須配合輸出（說、寫）練習。每日安排 15–20 分鐘同母語者對話或大聲朗讀，對聲調同語感嘅改善幫助極大。</p>
+      <p><strong>善用你嘅廣東話優勢：</strong>遇到普通話字詞時，嘗試聯繫廣東話讀音——好多情況下，兩者嘅漢字相同或相近，意思一樣，只係讀音唔同。呢種「漢字橋樑」係廣東話母語者學普通話最大嘅天然優勢。</p>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="mandarin-srs-yue.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

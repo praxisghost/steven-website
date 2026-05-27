@@ -11,14 +11,14 @@
 
   <header>
     <h1>Anki Guide</h1>
-    <p>Two 90-minute workshops covering setup, spaced repetition, audio generation, card styling, &amp; AI-generated cards.</p>
+    <p>A practical, visual guide covering setup, spaced repetition, audio generation, card styling, &amp; AI-assisted card creation.</p>
   </header>
 
   <article>
 
     <!-- TABLE OF CONTENTS -->
     <ol class="lang-toc">
-      <li><a href="#workshop1">Workshop 1 — Getting Set Up &amp; Your First Cards</a></li>
+      <li><a href="#part1">Part 1 — Getting Set Up &amp; Your First Cards</a></li>
       <li><a href="#w1-why">Why Anki Works</a></li>
       <li><a href="#w1-setup">Getting Started</a></li>
       <li><a href="#w1-settings">Tweaking Settings for Best Results</a></li>
@@ -26,60 +26,140 @@
       <li><a href="#w1-notes">Notes, Cards &amp; Note Types</a></li>
       <li><a href="#w1-notetype">Creating Your Note Type</a></li>
       <li><a href="#w1-first">Adding Your First Note</a></li>
-      <li><a href="#workshop2">Workshop 2 — Audio, Card Styling &amp; AI-Generated Cards</a></li>
+      <li><a href="#part2">Part 2 — Audio, Card Styling &amp; AI-Generated Cards</a></li>
       <li><a href="#w2-hypertts">HyperTTS — Automatic Audio</a></li>
       <li><a href="#w2-styling">Styling Your Cards</a></li>
       <li><a href="#w2-ai">Creating Cards with AI</a></li>
     </ol>
 
     <!-- ══════════════════════════════════════════
-         WORKSHOP 1
+         PART 1 HEADER
     ══════════════════════════════════════════ -->
-    <div class="lang-section" id="workshop1">
-      <h2>Workshop 1 of 2 — Getting Set Up &amp; Your First Cards</h2>
-      <p class="lang-note">90 minutes · Covers: why spaced repetition works, initial setup, FSRS, note types, &amp; creating your first cards.</p>
+    <div class="lang-section" id="part1">
+      <h2>Part 1 — Getting Set Up &amp; Your First Cards</h2>
+      <p>This section takes you from a fresh install to a working vocabulary deck with your own custom note type. By the end you'll have a properly configured Anki setup and a clear mental model of how the whole system fits together.</p>
     </div>
 
     <!-- 1. WHY ANKI WORKS -->
     <div class="lang-section" id="w1-why">
       <h2>1. Why Anki Works</h2>
-      <p>Anki is a flashcard app built around <strong>spaced repetition</strong> — a technique that shows you a piece of information just before you're likely to forget it. Instead of cramming, you review at growing intervals, &amp; each successful recall makes the memory last even longer.</p>
+      <p>Anki is a flashcard app built around <strong class="anki-term">spaced repetition</strong> — a memorisation technique that exploits two well-documented principles of memory science.</p>
+      <p>The first is the <strong>forgetting curve</strong>, described by Hermann Ebbinghaus in the 1880s: without reinforcement, memory decays rapidly and predictably over time. The second is the <strong>spacing effect</strong>: reviewing information at growing intervals dramatically slows this decay, because each successful recall while a memory is still accessible — but beginning to fade — strengthens it far more than reviewing it when it's still fresh.</p>
+      <p>Anki schedules every card individually so it reappears just before you'd naturally forget it. Cards you know well appear less and less frequently. Cards you're struggling with reappear sooner. Over time, solidly-known cards might come up only once every few months — which means you can maintain a large vocabulary with a surprisingly small daily review load.</p>
+
+      <details class="accordion" open>
+        <summary>FSRS vs SM-2 — which algorithm does Anki use?</summary>
+        <div class="accordion-body">
+          <p>Anki's original scheduling algorithm was <strong>SM-2</strong> (SuperMemo 2), developed in the 1980s. It's reliable and widely proven. However, modern research has produced a successor: <strong class="anki-term">FSRS</strong> (Free Spaced Repetition Scheduler), which builds an individual memory model for each card rather than applying a universal formula.</p>
+          <p>FSRS typically reduces total review time while maintaining the same — or better — retention rate. It's now built into Anki and is the recommended algorithm for new users. We enable it in Section 3.</p>
+        </div>
+      </details>
+
+      <details class="accordion" open>
+        <summary>Active recall vs passive review — why it matters</summary>
+        <div class="accordion-body">
+          <p>Flashcards force you to <strong>actively retrieve</strong> a piece of information from memory before seeing the answer. This is called the <strong>testing effect</strong> (or retrieval practice effect), and it produces considerably stronger, more durable memories than passively re-reading notes or highlighting text.</p>
+          <p>Crucially, even a <em>failed</em> attempt to recall something — where you guess wrong before flipping the card — improves later retention more than never testing yourself at all. The mental effort of trying to retrieve, even unsuccessfully, is what drives the memory consolidation.</p>
+          <p>This is why learners who use Anki consistently see results that feel disproportionate to the time invested.</p>
+        </div>
+      </details>
     </div>
 
     <!-- 2. GETTING STARTED -->
     <div class="lang-section" id="w1-setup">
       <h2>2. Getting Started</h2>
+      <p>Download Anki from the official site. The desktop app is free for Windows, macOS, and Linux. A companion mobile app lets you review on your phone, automatically synced to your desktop collection via a free AnkiWeb account.</p>
 
-      <h3>Checklist</h3>
-      <ul>
-        <li>Download Anki from <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">apps.ankiweb.net</a></li>
-        <li>Create an account with your email &amp; verify it</li>
-        <li>Sign in on your computer — &amp; on your phone if you have it</li>
-      </ul>
+      <figure class="anki-fig">
+        <img src="anki-images/anki-download-page.png" alt="Anki download page at apps.ankiweb.net showing options for Windows, macOS, Linux, iOS, and Android">
+        <figcaption>The official download page — <strong>apps.ankiweb.net</strong>. Download the version for your platform. AnkiDroid (Android) is free; AnkiMobile (iOS) is a paid one-time purchase that funds ongoing development of the free desktop app.</figcaption>
+      </figure>
+
+      <figure class="anki-fig">
+        <img src="anki-images/anki-launcher-installer.png" alt="Anki Launcher terminal showing options: Latest Anki, Choose a version, Allow betas, Cache downloads, Uninstall">
+        <figcaption>On macOS, opening the downloaded <code>.dmg</code> launches this installer prompt. Press <strong>Enter</strong> to install the latest stable version — option 1 is the right choice for most users.</figcaption>
+      </figure>
+
+      <h3>Setup checklist</h3>
+      <ol>
+        <li>Download and install Anki from <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">apps.ankiweb.net</a></li>
+        <li>Create a free <strong>AnkiWeb account</strong> with your email address and verify it</li>
+        <li>In the desktop app, click <strong>Sync</strong> in the top bar — Anki will ask for your account credentials</li>
+        <li>Optionally: install AnkiDroid (Android) or AnkiMobile (iOS) and sign in to the same account for seamless cross-device sync</li>
+      </ol>
+
+      <figure class="anki-fig">
+        <img src="anki-images/anki-main-screen.png" alt="Anki main screen showing the Decks list with a Default deck, navigation bar, and activity summary">
+        <figcaption>Anki's main screen after a fresh install. The navigation bar at the top gives you access to Decks, Add, Browse, Stats, and Sync. Below the deck list, Anki shows how many cards you studied today — once you have review history, the heatmap (installed in Section 4) appears here.</figcaption>
+      </figure>
+
+      <figure class="anki-fig anki-fig--narrow">
+        <img src="anki-images/anki-sync-account-dialog.png" alt="Account Required dialog showing email and password fields for AnkiWeb sync">
+        <figcaption>When you first click Sync, Anki prompts for your AnkiWeb credentials. Enter your email and password to connect your collection to the cloud — all future syncs happen with a single click.</figcaption>
+      </figure>
+
+      <div class="anki-tip">
+        <strong>Tip:</strong> Sync after every session. It takes one click and ensures you never lose progress if something goes wrong with your device.
+      </div>
     </div>
 
     <!-- 3. SETTINGS -->
     <div class="lang-section" id="w1-settings">
       <h2>3. Tweaking Settings for Best Results</h2>
-      <p>Anki's defaults are fine, but a few changes make a big difference. Open <strong>Preferences</strong> (Anki → Preferences) &amp; your Deck Options to apply these before you add your first card.</p>
+      <p>Anki's defaults are functional, but a few targeted changes make a significant difference. The most important change — enabling <strong class="anki-term">FSRS</strong> — should be done before you add your first card, as it affects how all future cards are scheduled.</p>
 
-      <details class="accordion">
-        <summary>3a · Enable FSRS (Free Spaced Repetition Scheduler)</summary>
+      <details class="accordion" open>
+        <summary>3a · Enable FSRS (the modern scheduler)</summary>
         <div class="accordion-body">
-          <p>FSRS is a modern algorithm that outperforms Anki's original SM-2 scheduler. It builds a personalised memory model for each card.</p>
+          <p>FSRS is Anki's modern scheduling algorithm. It outperforms SM-2 by building an individual memory model for each card, adapting to your personal memory patterns over time rather than applying a one-size-fits-all formula.</p>
+          <p>To access these settings, click the <strong>gear icon (⚙)</strong> beside your deck and choose <strong>Options</strong>:</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-deck-gear-menu.png" alt="Deck list with gear icon dropdown open showing Rename, Options, Export, and Delete">
+            <figcaption>Click the <strong>⚙ gear icon</strong> beside your deck name, then choose <strong>Options</strong> to open the deck settings panel.</figcaption>
+          </figure>
+
+          <p>Scroll down past Daily Limits and New Cards to reach the <strong>FSRS</strong> section:</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-options-fsrs.png" alt="FSRS section in Anki deck options showing the FSRS toggle enabled and Desired retention at 89%">
+            <figcaption>The <strong>FSRS</strong> section in deck options. Toggle FSRS <strong>on</strong>, set Desired Retention to <code>0.90</code>, and click <strong>Save</strong>. Once you've completed a few hundred reviews, return here and click <strong>Optimise Current Preset</strong> to calibrate the model to your actual memory performance.</figcaption>
+          </figure>
+
           <ol>
-            <li>Go to <strong>Tools → Preferences → Review</strong> tab</li>
-            <li>Turn on <strong>FSRS</strong> — this enables the smarter scheduler</li>
-            <li>Set <strong>Desired retention</strong> to <code>0.90</code> (90%) — a good balance between workload &amp; recall</li>
-            <li>Click <strong>Optimise</strong> after you've built up at least a few hundred reviews to personalise the model to you</li>
+            <li>Scroll to the <strong>FSRS</strong> section within Options</li>
+            <li>Toggle <strong>FSRS on</strong></li>
+            <li>Set <strong>Desired retention</strong> to <code>0.90</code> — this means Anki aims for you to correctly recall 90% of cards when they come due</li>
+            <li>Click <strong>Save</strong></li>
+            <li>After 300+ reviews: return here and click <strong>Optimise Current Preset</strong> to personalise the model to you</li>
           </ol>
+
+          <div class="anki-warning">
+            <strong>Note:</strong> Setting desired retention above 95% dramatically increases your daily review load with diminishing returns on memory strength. 90% is the recommended sweet spot for most language learners.
+          </div>
         </div>
       </details>
 
-      <details class="accordion">
-        <summary>3b · Deck Preset Settings</summary>
+      <details class="accordion" open>
+        <summary>3b · Daily Limits &amp; New Cards — keeping workload sustainable</summary>
         <div class="accordion-body">
-          <p>Go to a deck → <strong>Options</strong> (gear icon). These settings apply to all decks using that preset. Keep new cards per day manageable — starting at 10–20 per day is recommended for most learners.</p>
+          <p>The top portion of Options controls how many new cards Anki introduces each day and how many reviews it schedules.</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-options-daily-limits.png" alt="Anki Options panel showing Daily Limits with New cards/day set to 15, Maximum reviews/day set to 9999, and the New Cards and Lapses sections below">
+            <figcaption>The <strong>Daily Limits</strong> section. New cards/day controls how many fresh cards enter your learning queue each day. Maximum reviews/day should be set very high — let FSRS manage your actual review load naturally.</figcaption>
+          </figure>
+
+          <p>Key settings explained:</p>
+          <ul>
+            <li><strong>New cards/day:</strong> Start conservatively — <code>10–15</code> per day is a sustainable pace for most learners. Every new card you introduce now creates future review obligations. It's easy to add more later; recovering from a backlog is demoralising.</li>
+            <li><strong>Maximum reviews/day:</strong> Set this to <code>9999</code> (effectively unlimited) and let FSRS decide the actual workload. Artificially capping reviews causes cards to pile up and undermines the whole scheduling system.</li>
+            <li><strong>Learning steps:</strong> The default <code>1m 10m</code> is sensible — a brand-new card reappears after 1 minute, then 10 minutes, before graduating to day-length intervals. Leave this as-is when starting out.</li>
+          </ul>
+
+          <div class="anki-warning">
+            <strong>Important:</strong> It's tempting to set new cards/day high when you're motivated. Resist this. 20 new cards/day compounds into 150+ daily reviews within a month. Build the habit first; increase the number once daily review feels effortless.
+          </div>
         </div>
       </details>
     </div>
@@ -87,29 +167,77 @@
     <!-- 4. HEATMAP -->
     <div class="lang-section" id="w1-heatmap">
       <h2>4. Install Review Heatmap</h2>
-      <p>Review Heatmap adds a GitHub-style activity chart to your home screen so you can see your review streaks at a glance.</p>
+      <p><strong>Review Heatmap</strong> adds a GitHub-style contribution calendar to your Anki main screen, showing at a glance which days you reviewed and how many cards you studied. Seeing your streak visualised is one of the most effective motivation tools in the Anki ecosystem — the desire to keep the grid unbroken is a surprisingly powerful force.</p>
+
+      <figure class="anki-fig">
+        <img src="anki-images/review-heatmap-ankiweb-page.png" alt="Review Heatmap add-on page on AnkiWeb showing description and over 2,000 positive ratings">
+        <figcaption><strong>Review Heatmap</strong> on AnkiWeb — one of the most widely-used Anki add-ons, with over 2,000 positive ratings. It displays a colour-coded activity grid on your main screen, updated after every review session.</figcaption>
+      </figure>
+
+      <p>Installing any Anki add-on follows the same two-step process. First, open the add-ons manager via <strong>Tools → Add-ons</strong>:</p>
+
+      <figure class="anki-fig">
+        <img src="anki-images/anki-tools-addons-menu.png" alt="Anki Tools menu open with Add-ons highlighted, showing other menu items and a heatmap visible in the background">
+        <figcaption>Open <strong>Tools → Add-ons</strong> to reach the add-ons manager. You can see the Review Heatmap already active in the background — this is what your main screen will look like once it's installed.</figcaption>
+      </figure>
+
+      <p>Then click <strong>Get Add-ons…</strong> to open the install dialog:</p>
+
+      <figure class="anki-fig">
+        <img src="anki-images/anki-install-addon-dialog.png" alt="Add-ons window with the Install Add-on dialog open, showing a Code input field, Browse Add-ons button, and OK button">
+        <figcaption>The <strong>Install Add-on</strong> dialog. Paste the numeric add-on code here and click OK. Anki fetches and installs the add-on directly from AnkiWeb — no manual download needed.</figcaption>
+      </figure>
+
       <ol>
-        <li>Open <strong>Tools → Add-ons → Get Add-ons</strong></li>
+        <li>Go to <strong>Tools → Add-ons → Get Add-ons…</strong></li>
         <li>Enter code <code>1771074083</code></li>
-        <li>Click OK &amp; wait for the download to finish</li>
-        <li>Restart Anki — the heatmap appears on your main screen automatically</li>
+        <li>Click <strong>OK</strong> and wait for the download to complete</li>
+        <li><strong>Restart Anki</strong> — the heatmap appears on your main screen automatically after restarting</li>
       </ol>
+
+      <div class="anki-tip">
+        <strong>Tip:</strong> After restarting, customise the heatmap appearance via <strong>Tools → Review Heatmap Options</strong>. You can adjust the colour scheme, the date range shown, and which activity metrics are displayed.
+      </div>
     </div>
 
     <!-- 5. NOTES, CARDS, NOTE TYPES -->
     <div class="lang-section" id="w1-notes">
       <h2>5. Notes, Cards &amp; Note Types</h2>
-      <p>The most important concept to grasp: in Anki you don't create <em>cards</em> directly — you create <strong>notes</strong>, &amp; Anki generates one or more cards from each note automatically.</p>
+      <p>This is the most important conceptual distinction in Anki, and it's worth making sure it's clear before you build anything: you don't create <em>cards</em> directly — you create <strong class="anki-term">notes</strong>, and Anki generates one or more <strong class="anki-term">cards</strong> from each note automatically.</p>
+      <p>A <strong>note</strong> is a unit of information — for example: a German word, its translation, an example sentence, and its grammatical gender. A <strong>card</strong> is a specific testable question generated from that note — "what is the German word for X?" or "what does Y mean?". One note can generate multiple cards testing different directions, all sharing the same underlying data.</p>
+      <p>This means if you spot a mistake in a word's translation, you fix it in one place — the note — and both the recognition card and the recall card are updated automatically.</p>
 
-      <details class="accordion">
+      <details class="accordion" open>
         <summary>What is a Note Type?</summary>
         <div class="accordion-body">
-          <p>A note type is a reusable template that defines:</p>
+          <p>A <strong class="anki-term">note type</strong> (also called a note model) is a reusable template that defines three things:</p>
           <ul>
-            <li>Which <strong>fields</strong> exist (e.g. Word, Translation, Audio, Example Sentence)</li>
-            <li>How those fields are used to generate <strong>card templates</strong></li>
+            <li>Which <strong>fields</strong> each note has (e.g. Word, Translation, Audio, Example Sentence, Notes)</li>
+            <li>Which <strong>card templates</strong> are generated from those fields (e.g. Word → Translation, Translation → Word)</li>
+            <li>The <strong>HTML and CSS</strong> that controls how those cards look</li>
           </ul>
-          <p>Change a note type, &amp; every note using it updates automatically.</p>
+          <p>Change anything in the note type — a field name, a card template, the CSS — and every note using that type updates automatically across your entire collection.</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-note-types-manager.png" alt="Anki Note Types manager showing Basic, Basic (and reversed card), Cloze, Image Occlusion, and other default note types">
+            <figcaption>The Note Types manager (<strong>Tools → Manage Note Types</strong>). Anki comes with several built-in types: Basic (two fields), Basic (and reversed card) (generates both directions automatically), Cloze (for fill-in-the-blank cards), and Image Occlusion. For language learning, you'll create a custom type with dedicated fields for audio, example sentences, and grammar notes.</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details class="accordion" open>
+        <summary>Why create a custom note type instead of just using Basic?</summary>
+        <div class="accordion-body">
+          <p>Anki's built-in <strong>Basic</strong> note type has only two fields: Front and Back. That works for simple trivia, but for language learning you want more structure.</p>
+          <p>A custom note type lets you:</p>
+          <ul>
+            <li>Store <strong>structured data</strong> for each vocabulary item — word, translation, audio, example sentence, grammatical notes — in dedicated fields</li>
+            <li>Generate <strong>multiple card directions</strong> from a single note entry (recognition, recall, listening)</li>
+            <li>Use add-ons like <strong>HyperTTS</strong> to automatically fill the Audio field across your whole deck</li>
+            <li>Style cards consistently with shared CSS — one design change updates every card in the note type</li>
+            <li>Import <strong>AI-generated vocabulary lists</strong> cleanly, with each column mapping to the correct field</li>
+          </ul>
+          <p>It takes about 5–10 minutes to set up once. Every card you ever add afterward benefits from that structure.</p>
         </div>
       </details>
     </div>
@@ -118,45 +246,90 @@
     <div class="lang-section" id="w1-notetype">
       <h2>6. Creating Your Note Type</h2>
 
-      <details class="accordion">
+      <details class="accordion" open>
         <summary>6a · Add a new note type</summary>
         <div class="accordion-body">
           <ol>
             <li>Open <strong>Tools → Manage Note Types</strong></li>
-            <li>Click <strong>Add → choose Add: Basic</strong> → name it, e.g. <em>Language Vocab</em></li>
-            <li>Click <strong>Fields</strong> &amp; set up your fields (see suggestions below)</li>
-            <li>Click <strong>Cards</strong> to design your card templates</li>
+            <li>Click <strong>Add</strong></li>
+            <li>Select <strong>Add: Basic</strong> as your starting point — you'll customise it fully in the next steps</li>
+            <li>Name it something clear: e.g. <em>Language Vocab</em>, <em>German Vocab</em>, <em>Mandarin Words</em></li>
+            <li>Click <strong>OK</strong></li>
           </ol>
+
+          <figure class="anki-fig anki-fig--narrow">
+            <img src="anki-images/anki-choose-note-type.png" alt="Choose Note Type dialog showing Basic, Basic (and reversed card), Cloze, and other options with a Choose button">
+            <figcaption>Choose <strong>Basic</strong> as your starting point when adding a new note type. You'll replace its default fields and card templates with your own in the following steps.</figcaption>
+          </figure>
         </div>
       </details>
 
-      <details class="accordion">
-        <summary>6b · Suggested fields</summary>
+      <details class="accordion" open>
+        <summary>6b · Configure your fields</summary>
         <div class="accordion-body">
+          <p>With your new note type selected in the Note Types manager, click <strong>Fields</strong>. You'll see the default Front and Back fields. Rename and add fields to match the structure you need:</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-fields-editor.png" alt="Fields editor showing a list of fields with Add, Delete, Rename, and Reposition buttons on the right">
+            <figcaption>The <strong>Fields editor</strong>. Use <strong>Rename</strong> to rename existing fields, <strong>Add</strong> to create new ones, and <strong>Reposition</strong> to change their order. The order here determines how they appear in the Add Note dialog.</figcaption>
+          </figure>
+
+          <p>Suggested field structure for a language learning note type:</p>
           <div class="table-wrap">
             <table class="lang-table">
-              <thead><tr><th>Field</th><th>Purpose</th></tr></thead>
+              <thead><tr><th>Field name</th><th>Purpose</th></tr></thead>
               <tbody>
-                <tr><td><code>Word</code></td><td>The target-language word or phrase</td></tr>
-                <tr><td><code>Translation</code></td><td>Your native-language meaning</td></tr>
-                <tr><td><code>Audio</code></td><td>Pronunciation sound file (auto-filled by HyperTTS in Workshop 2)</td></tr>
+                <tr><td><code>Word</code></td><td>The target-language word or phrase — this is what HyperTTS reads to generate audio</td></tr>
+                <tr><td><code>Translation</code></td><td>Meaning in your native language</td></tr>
+                <tr><td><code>Audio</code></td><td>Pronunciation sound file — <em>leave blank</em>; HyperTTS fills this automatically in Part 2</td></tr>
                 <tr><td><code>Example Sentence</code></td><td>An in-context example in the target language</td></tr>
-                <tr><td><code>Notes</code></td><td>Gender, register, grammar notes, or memory hooks</td></tr>
+                <tr><td><code>Notes</code></td><td>Grammatical gender, register, irregular forms, or personal memory hooks</td></tr>
               </tbody>
             </table>
+          </div>
+
+          <div class="anki-tip">
+            <strong>Tip:</strong> Field names are case-sensitive in Anki templates. Stick to consistent capitalisation — <code>Word</code>, <code>Translation</code>, <code>Audio</code> — to avoid mismatches when you write card templates or import AI-generated card lists.
           </div>
         </div>
       </details>
 
-      <details class="accordion">
-        <summary>6c · Suggested card templates</summary>
+      <details class="accordion" open>
+        <summary>6c · Design your card templates</summary>
         <div class="accordion-body">
+          <p>Click <strong>Cards</strong> to open the card template editor. This is where you define what each side of a card looks like, using HTML for structure and CSS for appearance.</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-card-template-editor.png" alt="Card Types editor showing Front Template, Back Template, and Styling tabs on the left and a live preview panel on the right">
+            <figcaption>The <strong>card template editor</strong>. Three tabs on the left — Front Template, Back Template, Styling — and a live preview on the right that updates as you type. Field values are inserted using double curly braces: <code>&#123;&#123;Word&#125;&#125;</code>, <code>&#123;&#123;Translation&#125;&#125;</code>, etc.</figcaption>
+          </figure>
+
+          <p>The three tabs serve distinct purposes:</p>
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>Tab</th><th>What goes here</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Front Template</strong></td><td>HTML that renders the question side of the card</td></tr>
+                <tr><td><strong>Back Template</strong></td><td>HTML for the answer side — typically starts with <code>&#123;&#123;FrontSide&#125;&#125;</code> to include the question, then adds the answer</td></tr>
+                <tr><td><strong>Styling (CSS)</strong></td><td>CSS rules that apply to both sides of every card in this note type</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Suggested card templates:</strong></p>
           <ul>
-            <li><strong>Template 1 — Recognition:</strong> Word → Translation + Audio + Example</li>
+            <li><strong>Template 1 — Recognition:</strong> Word + Audio → Translation + Example Sentence + Notes</li>
             <li><strong>Template 2 — Recall:</strong> Translation → Word + Audio</li>
             <li><strong>Template 3 — Listening:</strong> Audio only → Word + Translation</li>
           </ul>
-          <p class="lang-note">Starting with Templates 1 &amp; 2 is sufficient for most learners. Add Template 3 once you have audio in your deck.</p>
+          <p class="lang-note">Templates 1 &amp; 2 are sufficient for most learners. Add Template 3 once you have audio in your deck — it's an effective way to build listening comprehension without any extra note-taking effort.</p>
+
+          <p>To add a second card template, click <strong>Options → Add Card Type</strong> in the template editor:</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/anki-card-type-options-menu.png" alt="Card type Options dropdown menu showing Add Card Type, Remove Card Type, Rename Card Type, and other options">
+            <figcaption>Click <strong>Options → Add Card Type</strong> to create an additional template within the same note type. Each template generates a separate card from each note — so two templates means two cards per vocabulary entry.</figcaption>
+          </figure>
         </div>
       </details>
     </div>
@@ -164,76 +337,118 @@
     <!-- 7. FIRST NOTE -->
     <div class="lang-section" id="w1-first">
       <h2>7. Adding Your First Note</h2>
+      <p>From Anki's main screen, click <strong>Add</strong> (or press <kbd>A</kbd>) to open the note editor. Before typing anything, check that the <strong>Type</strong> dropdown at the top shows your custom note type — not the default Basic.</p>
+
+      <figure class="anki-fig">
+        <img src="anki-images/anki-add-note-dialog.png" alt="Anki Add Note dialog showing Type: Basic and Deck: Default dropdowns, with Front and Back input fields and formatting toolbar">
+        <figcaption>The <strong>Add Note</strong> dialog. Change the <strong>Type</strong> dropdown (top left) to your custom note type before entering anything. The <strong>Deck</strong> dropdown lets you choose which deck receives the new note.</figcaption>
+      </figure>
+
       <ol>
-        <li>From the main screen click <strong>Add</strong> (or press <code>A</code>)</li>
-        <li>Make sure the Note Type at the top shows your new type</li>
-        <li>Fill in each field: Word, Translation, Example Sentence, Notes</li>
-        <li>Leave Audio blank for now — we'll fill it automatically in Workshop 2</li>
-        <li>Click <strong>Add</strong> — you've created your first note!</li>
-        <li>Add two or three more notes so you have something to review</li>
-        <li>Click <strong>Study Now</strong> on your deck &amp; do your first review session</li>
+        <li>Click <strong>Add</strong> on the main screen (or press <kbd>A</kbd>)</li>
+        <li>Confirm the <strong>Type</strong> dropdown shows your custom note type</li>
+        <li>Fill in <strong>Word</strong> — the target-language word or phrase you want to learn</li>
+        <li>Fill in <strong>Translation</strong> — the meaning in your native language</li>
+        <li>Add an <strong>Example Sentence</strong> if you have one — even a rough one helps anchor the word in context</li>
+        <li>Add <strong>Notes</strong> if relevant — gender, register, a memorable association, an irregular form</li>
+        <li>Leave <strong>Audio</strong> blank — HyperTTS fills this across your whole deck in Part 2</li>
+        <li>Click <strong>Add</strong> to save. The dialog stays open so you can add the next note immediately.</li>
+        <li>Add 5–10 notes, then click <strong>Study Now</strong> on your deck to do your first review session</li>
       </ol>
-      <p class="lang-note">Workshop 2 covers: Audio with HyperTTS · Card styling · Creating cards with AI (DeepSeek / ChatGPT / Claude)</p>
+
+      <div class="anki-tip">
+        <strong>On quality:</strong> A note anchored to a real encounter — a word from a film you just watched, a phrase a native speaker used in conversation — is far more memorable than a dictionary entry added in bulk. Where possible, add words you've actually encountered rather than working through wordlists mechanically. Both approaches work; the first one sticks faster.
+      </div>
     </div>
 
     <!-- ══════════════════════════════════════════
-         WORKSHOP 2
+         PART 2 HEADER
     ══════════════════════════════════════════ -->
-    <div class="lang-section" id="workshop2">
-      <h2>Workshop 2 of 2 — Audio, Card Styling &amp; AI-Generated Cards</h2>
-      <p class="lang-note">90 minutes · Covers: HyperTTS automatic audio, card HTML/CSS styling, &amp; generating card batches with AI tools.</p>
+    <div class="lang-section" id="part2">
+      <h2>Part 2 — Audio, Card Styling &amp; AI-Generated Cards</h2>
+      <p>This section covers three tools that take your Anki setup from functional to excellent: <strong>HyperTTS</strong> for automatic audio generation across your whole deck, <strong>card template styling</strong> for clean and readable card design, and <strong>AI-assisted card creation</strong> for building large high-quality decks quickly.</p>
     </div>
 
     <!-- 1. HYPERTTS -->
     <div class="lang-section" id="w2-hypertts">
       <h2>1. HyperTTS — Automatic Audio</h2>
-      <p>HyperTTS is an Anki add-on that uses text-to-speech (or real recordings where available) to fill your Audio field automatically for entire decks — no manual recording needed.</p>
+      <p>HyperTTS is an Anki add-on that automatically fills your Audio field using text-to-speech (TTS). It connects to <strong>VocabAI</strong>, which provides access to high-quality voices from Google, Azure, Amazon, ElevenLabs, and others. You point it at your Word field, choose a voice, and it generates audio for every note in your deck — typically in under a minute, with no manual recording required.</p>
 
-      <details class="accordion">
+      <details class="accordion" open>
         <summary>1a · Install HyperTTS</summary>
         <div class="accordion-body">
+          <figure class="anki-fig">
+            <img src="anki-images/hypertts-ankiweb-page.png" alt="HyperTTS add-on page on AnkiWeb showing its description and high rating">
+            <figcaption><strong>HyperTTS</strong> on AnkiWeb. It integrates with VocabAI to give you access to dozens of high-quality TTS voices across a wide range of languages — including less commonly covered languages where good TTS options are otherwise hard to find.</figcaption>
+          </figure>
+
           <ol>
-            <li>In Anki: <strong>Tools → Add-ons → Get Add-ons</strong></li>
+            <li>In Anki: <strong>Tools → Add-ons → Get Add-ons…</strong></li>
             <li>Enter code <code>1508862472</code></li>
-            <li>Click OK &amp; restart Anki</li>
+            <li>Click <strong>OK</strong> and wait for the download</li>
+            <li><strong>Restart Anki</strong> — after restarting, you'll see HyperTTS entries in the Tools menu</li>
           </ol>
         </div>
       </details>
 
-      <details class="accordion">
-        <summary>1b · Create a free AwesomeTTS Cloud account</summary>
+      <details class="accordion" open>
+        <summary>1b · Create a free VocabAI account</summary>
         <div class="accordion-body">
-          <p>HyperTTS connects to the AwesomeTTS Cloud service for high-quality voices. You get a free tier with plenty of monthly characters.</p>
+          <p>HyperTTS connects to <a href="https://www.vocab.ai" target="_blank" rel="noopener">VocabAI</a> for voice access. A free account is available with a generous monthly character allowance — sufficient for a typical language learner's workflow.</p>
+
+          <figure class="anki-fig">
+            <img src="anki-images/vocabai-signup-page.png" alt="VocabAI signup page at vocab.ai/signup showing pricing options and voice provider list">
+            <figcaption>Sign up at <strong>vocab.ai/signup</strong>. The free tier covers most language learners' needs. Paid plans give access to premium voices (ElevenLabs, Forvo recordings) and higher monthly limits.</figcaption>
+          </figure>
+
+          <figure class="anki-fig">
+            <img src="anki-images/vocabai-app-login.png" alt="VocabAI app login page at app.vocab.ai showing Sign Up and Sign In options">
+            <figcaption>After signing up, log in at <strong>app.vocab.ai</strong> to reach your dashboard, where you'll find your API key.</figcaption>
+          </figure>
+
           <ol>
-            <li>Go to <a href="https://app.hypertts.io" target="_blank" rel="noopener">app.hypertts.io</a> &amp; create a free account</li>
-            <li>Copy your API key from the dashboard</li>
+            <li>Go to <a href="https://www.vocab.ai/signup" target="_blank" rel="noopener">vocab.ai/signup</a> and create a free account</li>
+            <li>Verify your email, then log in at <a href="https://app.vocab.ai" target="_blank" rel="noopener">app.vocab.ai</a></li>
+            <li>Copy your <strong>API key</strong> from the dashboard</li>
           </ol>
         </div>
       </details>
 
-      <details class="accordion">
-        <summary>1c · Connect HyperTTS to your account</summary>
+      <details class="accordion" open>
+        <summary>1c · Connect HyperTTS to your VocabAI account</summary>
         <div class="accordion-body">
           <ol>
-            <li>In Anki: <strong>HyperTTS → Settings</strong></li>
-            <li>Paste your API key into the <em>AwesomeTTS API Key</em> field</li>
-            <li>Click <strong>Verify</strong> — you should see your account status &amp; character balance</li>
+            <li>In Anki: <strong>Tools → HyperTTS: Services Configuration</strong></li>
+            <li>Find <strong>VocabAI</strong> in the services list</li>
+            <li>Paste your API key into the field provided</li>
+            <li>Click <strong>Verify</strong> — you should see your account status and remaining character balance confirmed</li>
           </ol>
+          <div class="anki-tip">
+            <strong>Tip:</strong> After connecting, test on a single word before running across your whole deck. Go to <strong>Tools → HyperTTS: Preferences</strong>, pick a voice, and preview it. Some voices handle certain languages better than others — a quick listen now saves you from redoing hundreds of cards later.
+          </div>
         </div>
       </details>
 
-      <details class="accordion">
+      <details class="accordion" open>
         <summary>1d · Add audio to your deck</summary>
         <div class="accordion-body">
           <ol>
-            <li>Select your deck in the main screen</li>
-            <li>Click <strong>HyperTTS → Add Audio to Deck</strong></li>
-            <li>Source field: <em>Word</em> (or whichever field has the target-language text)</li>
-            <li>Target field: <em>Audio</em></li>
-            <li>Choose a voice — pick a native speaker voice for your target language</li>
-            <li>Click <strong>Preview</strong> on a sample card to check the quality</li>
-            <li>Click <strong>Add Audio</strong> — HyperTTS fills the Audio field for every note in the deck</li>
+            <li>Open the <strong>Browse</strong> window and select all notes in your deck (Ctrl+A / Cmd+A)</li>
+            <li>With notes selected, go to <strong>HyperTTS → Add Audio (Note Types)</strong></li>
+            <li>Set <strong>Source field</strong> to <em>Word</em> — the field containing your target-language text</li>
+            <li>Set <strong>Target field</strong> to <em>Audio</em></li>
+            <li>Choose a <strong>voice</strong> — select a native-speaker voice for your target language. Browse by language and listen to samples.</li>
+            <li>Click <strong>Preview Sound</strong> on a sample card to verify the quality sounds natural</li>
+            <li>Click <strong>Apply to Notes</strong> — HyperTTS processes all selected notes and fills the Audio field for each one</li>
           </ol>
+          <figure class="anki-fig">
+            <img src="anki-images/hypertts-add-audio-dialog.png" alt="HyperTTS Add Audio (Easy) dialog showing Source Text set to a field and a sample sentence in the preview">
+            <figcaption>The <strong>HyperTTS: Add Audio (Easy)</strong> dialog. Set <em>Source Text</em> to your Word field, choose a voice below, then preview a sample before applying to all notes.</figcaption>
+          </figure>
+
+          <div class="anki-warning">
+            <strong>Important:</strong> Always preview before applying to the full deck. TTS quality varies significantly between voices and languages. A few seconds of listening now prevents you from having to re-run the process on hundreds of cards.
+          </div>
         </div>
       </details>
     </div>
@@ -241,41 +456,53 @@
     <!-- 2. STYLING -->
     <div class="lang-section" id="w2-styling">
       <h2>2. Styling Your Cards</h2>
-      <p>Card styling lives inside your note type's card templates. You write standard HTML for the layout &amp; CSS for the appearance. Open: <strong>Tools → Manage Note Types → [your type] → Cards</strong></p>
+      <p>Card styling is done entirely within your note type's card templates, using standard <strong>HTML</strong> for layout and <strong>CSS</strong> for appearance. Open the template editor via: <strong>Tools → Manage Note Types → [your type] → Cards</strong>.</p>
+      <p>The CSS you write here applies to <em>every card generated by this note type</em> — one design change instantly updates your entire deck. Card styling renders consistently on desktop, iOS, and Android.</p>
 
-      <details class="accordion">
-        <summary>2a · The three panes</summary>
-        <div class="accordion-body">
-          <div class="table-wrap">
-            <table class="lang-table">
-              <thead><tr><th>Pane</th><th>What to put here</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Front Template</strong></td><td>HTML that renders the front of the card (the question)</td></tr>
-                <tr><td><strong>Back Template</strong></td><td>HTML that renders the back (includes the front via <code>{{FrontSide}}</code>)</td></tr>
-                <tr><td><strong>Styling (CSS)</strong></td><td>CSS rules that apply to both sides of all cards in this note type</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>2b · A clean starter template</summary>
+      <details class="accordion" open>
+        <summary>2a · A clean starter template</summary>
         <div class="accordion-body">
           <p><strong>Front Template:</strong></p>
-          <pre style="background:#0d0d0d;padding:0.75rem 1rem;border-radius:3px;overflow-x:auto;font-size:0.8rem;color:#6ecf8c;line-height:1.6;">&#123;&#123;Word&#125;&#125;
+          <pre class="anki-code">&#123;&#123;Word&#125;&#125;
 &#123;&#123;Audio&#125;&#125;</pre>
+
           <p><strong>Back Template:</strong></p>
-          <pre style="background:#0d0d0d;padding:0.75rem 1rem;border-radius:3px;overflow-x:auto;font-size:0.8rem;color:#6ecf8c;line-height:1.6;">&#123;&#123;FrontSide&#125;&#125;
+          <pre class="anki-code">&#123;&#123;FrontSide&#125;&#125;
 &lt;hr id=answer&gt;
 &lt;div class="translation"&gt;&#123;&#123;Translation&#125;&#125;&lt;/div&gt;
 &lt;div class="example"&gt;&#123;&#123;Example Sentence&#125;&#125;&lt;/div&gt;
 &lt;div class="notes"&gt;&#123;&#123;Notes&#125;&#125;&lt;/div&gt;</pre>
+
           <p><strong>Styling (CSS):</strong></p>
-          <pre style="background:#0d0d0d;padding:0.75rem 1rem;border-radius:3px;overflow-x:auto;font-size:0.8rem;color:#6ecf8c;line-height:1.6;">.card { font-family: sans-serif; font-size: 20px; text-align: center; color: #fff; background: #1a1a1a; }
+          <pre class="anki-code">.card {
+  font-family: sans-serif;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 1.5em;
+}
+
 .translation { color: #7eb8f7; margin-top: 0.5em; }
-.example { color: #aaa; font-style: italic; margin-top: 0.5em; font-size: 0.85em; }
-.notes { color: #666; font-size: 0.75em; margin-top: 0.5em; }</pre>
+.example     { color: #aaa; font-style: italic; margin-top: 0.5em; font-size: 0.82em; }
+.notes       { color: #666; font-size: 0.72em; margin-top: 0.5em; }</pre>
+
+          <div class="anki-tip">
+            <strong>Tip:</strong> Anki's card rendering is essentially a browser view. You have access to full CSS — flexbox, custom fonts, colours, animations — and it works consistently across desktop, AnkiDroid, and AnkiMobile.
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion" open>
+        <summary>2b · Styling principles for language learning cards</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Use a large font for the tested word:</strong> 22px or higher. You're testing recognition and recall, not reading small print. The target word should be immediately legible.</li>
+            <li><strong>Establish a colour hierarchy:</strong> Bright/white for the word being tested; a mid-tone colour for the translation; dimmer still for example sentences and notes. This lets you scan a card in half a second.</li>
+            <li><strong>Use conditional fields</strong> to avoid blank space. Wrap optional fields in <code>&#123;&#123;#FieldName&#125;&#125;&hellip;&#123;&#123;/FieldName&#125;&#125;</code> — the block only renders if the field contains content.</li>
+            <li><strong>Dark backgrounds</strong> are easier on the eyes during long review sessions. The example CSS above uses near-black — adjust to your preference.</li>
+            <li><strong>Keep it simple.</strong> A clean, fast-to-read card is more effective than a visually complex one. Every second spent parsing the layout is a second not spent on the actual memory work.</li>
+          </ul>
         </div>
       </details>
     </div>
@@ -283,69 +510,92 @@
     <!-- 3. AI CARDS -->
     <div class="lang-section" id="w2-ai">
       <h2>3. Creating Cards with AI</h2>
-      <p>AI tools (DeepSeek, ChatGPT, Claude) can generate ready-to-import card lists in seconds. You paste a prompt, get a spreadsheet-style list back, &amp; import it straight into Anki.</p>
+      <p>AI tools — DeepSeek, ChatGPT, Claude — can generate complete, ready-to-import card lists in seconds. The workflow: write a structured prompt specifying your fields and output format, paste the AI response into a text file, and import it directly into Anki. A well-written prompt produces 20–30 high-quality vocabulary cards in under a minute.</p>
 
-      <details class="accordion">
-        <summary>3a · The basic approach</summary>
+      <details class="accordion" open>
+        <summary>3a · The import workflow</summary>
         <div class="accordion-body">
           <ol>
-            <li>Write a prompt that specifies your fields &amp; format (see examples below)</li>
-            <li>Paste the AI's output into a plain text file or Google Sheets</li>
-            <li>In Anki: <strong>File → Import</strong></li>
+            <li>Write a prompt specifying your exact fields and output format (see examples below)</li>
+            <li>Copy the AI's output into a plain <code>.txt</code> file</li>
+            <li>In Anki: click <strong>Import File</strong> on the main screen (or <strong>File → Import</strong>)</li>
+            <li>Set the field separator to <strong>Tab</strong></li>
             <li>Match each column to the correct field in your note type</li>
-            <li>Click Import — your cards appear instantly</li>
+            <li>Set the import behaviour to <strong>Add notes</strong> for new cards, or <strong>Update notes where first field matches</strong> to avoid duplicates</li>
+            <li>Click <strong>Import</strong> — cards appear in your deck instantly</li>
           </ol>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>3b · Sample prompt for vocabulary cards</summary>
-        <div class="accordion-body">
-          <p>Paste this prompt (adapt the language &amp; topic as needed):</p>
-          <pre style="background:#0d0d0d;padding:0.75rem 1rem;border-radius:3px;overflow-x:auto;font-size:0.8rem;color:#ccc;line-height:1.6;">Generate 20 German vocabulary flashcard entries for household items.
-Output as tab-separated values with no header row.
-Columns in this exact order: German word, English translation, example sentence in German, grammar notes (gender/plural).
-No markdown formatting, no asterisks, no backticks.</pre>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>3c · Tips for better AI output</summary>
-        <div class="accordion-body">
-          <ul>
-            <li>Always ask for <strong>no header row</strong> &amp; specify the exact separator (tab is most reliable)</li>
-            <li>For languages with gendered nouns, ask for gender in the Notes column</li>
-            <li>Ask for <strong>no markdown formatting</strong> — asterisks &amp; backticks break the import</li>
-            <li>Generate in batches of 20–30 rather than 100+ to keep quality consistent</li>
-            <li>Always spot-check a sample before running HyperTTS on the whole batch</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>3d · AI tool quick comparison</summary>
-        <div class="accordion-body">
-          <div class="table-wrap">
-            <table class="lang-table">
-              <thead><tr><th>Tool</th><th>Cost</th><th>Strengths for Anki</th></tr></thead>
-              <tbody>
-                <tr><td><strong>DeepSeek</strong></td><td>Free tier</td><td>Excellent for language vocab; fast; handles Asian languages well</td></tr>
-                <tr><td><strong>ChatGPT</strong></td><td>Free / paid</td><td>Nuanced grammar notes; handles many languages; reliable formatting</td></tr>
-                <tr><td><strong>Claude</strong></td><td>Free / paid</td><td>Strong grammar explanations; good for sentence examples &amp; context</td></tr>
-              </tbody>
-            </table>
+          <div class="anki-tip">
+            <strong>Tip:</strong> After importing, spot-check 5–10 cards for accuracy before running HyperTTS. AI tools occasionally produce minor errors in grammar notes or produce slightly unnatural example sentences. It's much faster to catch this now — before audio is attached to every card.
           </div>
         </div>
       </details>
 
-      <h3>Workshop 2 Final Checklist</h3>
+      <details class="accordion" open>
+        <summary>3b · Sample prompt for vocabulary cards</summary>
+        <div class="accordion-body">
+          <p>Paste this template directly into any AI tool and adapt the language and topic:</p>
+          <pre class="anki-prompt">Generate 20 German vocabulary flashcard entries for household items.
+Output as tab-separated values with no header row.
+Columns in this exact order:
+  1. German word or phrase
+  2. English translation
+  3. Example sentence in German (natural, contemporary usage)
+  4. Grammar notes (grammatical gender for nouns; irregular forms if relevant)
+
+Rules:
+- No markdown formatting, no asterisks, no backticks
+- No header row
+- Tab-separated only — no commas, no pipes
+- One entry per line</pre>
+
+          <div class="anki-tip">
+            <strong>Tip:</strong> The grammar notes column is particularly valuable for gendered languages. Ask for grammatical gender, plural forms, and any irregular patterns — information that would otherwise require manual lookup for each word.
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion" open>
+        <summary>3c · Tips for better AI output</summary>
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Always specify no header row</strong> and the exact separator. Tabs are the most reliable choice for Anki imports — commas cause problems with sentences that contain commas.</li>
+            <li><strong>Explicitly ban markdown formatting</strong> — asterisks, backticks, and bullet points break the import silently and are hard to spot until you're reviewing.</li>
+            <li><strong>Generate in batches of 20–30</strong> rather than 100+ at once. Quality is more consistent in smaller batches, and you can review each batch before importing the next.</li>
+            <li><strong>Ask for high-frequency vocabulary</strong> within your topic, not exhaustive lists. The 20 most common kitchen words are more useful than 100 obscure ones.</li>
+            <li><strong>Request natural, contemporary example sentences</strong> rather than textbook-style ones. Modern AI generally does this well if you specify it explicitly.</li>
+            <li><strong>Spot-check before running HyperTTS.</strong> AI is highly reliable but not perfect. Five minutes of checking now prevents audio being generated for cards you'll need to delete later.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion" open>
+        <summary>3d · AI tool quick comparison</summary>
+        <div class="accordion-body">
+          <div class="table-wrap">
+            <table class="lang-table">
+              <thead><tr><th>Tool</th><th>Cost</th><th>Strengths for Anki card generation</th></tr></thead>
+              <tbody>
+                <tr><td><strong>DeepSeek</strong></td><td>Free tier available</td><td>Excellent for Asian language vocabulary; fast; handles complex scripts and tone notation reliably</td></tr>
+                <tr><td><strong>ChatGPT</strong></td><td>Free / paid tiers</td><td>Nuanced grammar notes; handles a wide range of languages; highly reliable output formatting</td></tr>
+                <tr><td><strong>Claude</strong></td><td>Free / paid tiers</td><td>Strong grammar explanations; natural-sounding example sentences; follows format instructions precisely</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lang-note">All three tools generate high-quality language flashcards. Use whichever you already have access to — the prompt template above works with any of them.</p>
+        </div>
+      </details>
+
+      <h3>Final Checklist</h3>
       <ul>
-        <li>HyperTTS installed &amp; connected to AwesomeTTS Cloud</li>
-        <li>Audio added to at least one deck</li>
-        <li>Card templates styled with custom HTML/CSS</li>
-        <li>At least one batch of AI-generated cards imported</li>
+        <li>HyperTTS installed and connected to VocabAI with a verified API key</li>
+        <li>Audio generated and previewed for at least one deck</li>
+        <li>Card templates styled with custom HTML/CSS matching your preferences</li>
+        <li>At least one batch of AI-generated cards imported and spot-checked for accuracy</li>
       </ul>
-      <p class="lang-note">You now have a fully configured Anki system. The rest is consistency. Good luck!</p>
+
+      <div class="anki-tip">
+        <strong>You're set up.</strong> You now have a fully configured Anki system: smart FSRS scheduling, automatic high-quality audio, styled cards, and a fast pipeline for generating new vocabulary. The one thing left to do is show up every day. Even 10–15 minutes of reviews keeps a large deck under control — and consistent daily review compounds into a fluency that irregular cramming simply cannot match.
+      </div>
     </div>
 
   </article>
