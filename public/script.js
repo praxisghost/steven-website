@@ -290,7 +290,10 @@
   }
 
   function initLangSwitcher() {
-    if (document.querySelector('.lang-switcher')) return;
+    // TEMPORARILY DISABLED — widget has a bug; CSS also hides .lang-switcher.
+    // To re-enable: remove this return statement and the display:none in style.css.
+    return;
+    if (document.querySelector('.lang-switcher')) return; // eslint-disable-line no-unreachable
 
     let stored = 'en';
     try { stored = localStorage.getItem('siteLang') || 'en'; } catch (e) { /* ignore */ }
