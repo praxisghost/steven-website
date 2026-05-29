@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>愛努語 — 廣東話使用者學習指南 — Steven Legg</title>
+  <meta name="description" content="廣東話使用者學習愛努語（Ainu itak）指南：沙流方言、詞末輔音、動詞人稱詞綴、名詞融入結構、學習資源與文化背景。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← 語言指南</a>
+
+<header>
+  <h1>愛努語 <span class="lang-from">廣東話使用者適用</span></h1>
+  <p>Ainu itak — 北海道、樺太及千島列島愛努民族的語言。孤立語言，無已知親屬語系，現正積極進行語言復興。</p>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">詞彙閃卡</a></li>
+  <li><a href="#vocab">核心詞彙（1–300）</a></li>
+  <li><a href="#intro">愛努語現況</a></li>
+  <li><a href="#difficulty">廣東話使用者學習難度</a></li>
+  <li><a href="#writing">書寫系統</a></li>
+  <li><a href="#pronunciation">發音</a></li>
+  <li><a href="#grammar">文法概要</a></li>
+  <li><a href="#mistakes">常見學習錯誤</a></li>
+  <li><a href="#resources">學習資源</a></li>
+  <li><a href="#media">媒體與輸入</a></li>
+  <li><a href="#strategy">學習策略</a></li>
+  <li><a href="#cultural">文化背景</a></li>
+  <li><a href="#related">相關指南</a></li>
+</ol>
+
+
+<!-- SRS -->
+<div class="lang-section" id="srs">
+  <h2>1. 詞彙閃卡</h2>
+  <p>40張卡片，涵蓋沙流方言的核心詞彙。正面顯示愛努語（拉丁字母），背面顯示廣東話釋義及注釋。學習進度儲存於瀏覽器。</p>
+  <p><kbd>空格</kbd>/<kbd>Enter</kbd> 翻面 · <kbd>1</kbd> 再練習 · <kbd>3</kbd> 已掌握</p>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">載入卡片中…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-turkish" id="srs-front">—</div>
+      <div class="srs-native" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">再練習</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">已掌握</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">顯示答案</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>今日練習完成，明天再來。</p>
+      <button class="srs-btn" id="srs-restart">重新開始</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>空格</kbd>/<kbd>Enter</kbd> 翻面</span>
+    <span><kbd>1</kbd> 再練習</span>
+    <span><kbd>3</kbd> 已掌握</span>
+  </div>
+</div>
+<script src="ainu-srs-yue.js" defer></script>
+
+
+<!-- VOCAB FREQUENCY SECTION -->
+<div class="lang-section" id="vocab">
+  <h2>2. 核心詞彙（1–300）</h2>
+  <p>以沙流方言（平取方言）為基礎，記錄最完整的愛努語詞彙。拉丁字母為學術標準，片假名為日本語境常用表記。英文釋義供參考，廣東話學習者可對照自身語言知識理解。</p>
+  <div class="guide-search-wrap" style="margin-bottom:1rem;">
+    <input type="search" class="vocab-search" placeholder="篩選詞彙…" aria-label="篩選詞彙" autocomplete="off">
+  </div>
+  <div class="table-wrap">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>愛努語（拉丁字母）</th><th>片假名</th><th>English</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>irankarapte</td><td>イランカラプテ</td><td>hello / I humbly touch your heart</td></tr>
+        <tr><td>2</td><td>iyayraykere</td><td>イヤイライケレ</td><td>thank you</td></tr>
+        <tr><td>3</td><td>pirka</td><td>ピリカ</td><td>good / beautiful / fine</td></tr>
+        <tr><td>4</td><td>ku=an</td><td>クアン</td><td>I am (well)</td></tr>
+        <tr><td>5</td><td>hawe an a?</td><td>ハウェアナ</td><td>Did you say something? / Pardon?</td></tr>
+        <tr><td>6</td><td>eani e=an ya?</td><td>エアニ エアン ヤ</td><td>Are you well?</td></tr>
+        <tr><td>7</td><td>arki</td><td>アルキ</td><td>come (imperative, informal)</td></tr>
+        <tr><td>8</td><td>ek</td><td>エク</td><td>to come</td></tr>
+        <tr><td>9</td><td>arpa</td><td>アルパ</td><td>to go</td></tr>
+        <tr><td>10</td><td>kay</td><td>カイ</td><td>to do / to make</td></tr>
+        <tr><td>11</td><td>ayne</td><td>アイネ</td><td>after / when / because</td></tr>
+        <tr><td>12</td><td>somo</td><td>ソモ</td><td>no / not</td></tr>
+        <tr><td>13</td><td>kuani / ane</td><td>クアニ / アネ</td><td>I / me</td></tr>
+        <tr><td>14</td><td>eani</td><td>エアニ</td><td>you (singular)</td></tr>
+        <tr><td>15</td><td>ene</td><td>エネ</td><td>he / she / they</td></tr>
+        <tr><td>16</td><td>tanpe</td><td>タンペ</td><td>this (thing)</td></tr>
+        <tr><td>17</td><td>nepki</td><td>ネプキ</td><td>that (thing)</td></tr>
+        <tr><td>18</td><td>ney</td><td>ネイ</td><td>who</td></tr>
+        <tr><td>19</td><td>hemanta</td><td>ヘマンタ</td><td>what</td></tr>
+        <tr><td>20</td><td>hunak</td><td>フナク</td><td>where</td></tr>
+        <tr><td>21</td><td>hunakta</td><td>フナクタ</td><td>where (at)</td></tr>
+        <tr><td>22</td><td>hemanki</td><td>ヘマンキ</td><td>which</td></tr>
+        <tr><td>23</td><td>shine</td><td>シネ</td><td>one</td></tr>
+        <tr><td>24</td><td>tu</td><td>トゥ</td><td>two</td></tr>
+        <tr><td>25</td><td>re</td><td>レ</td><td>three</td></tr>
+        <tr><td>26</td><td>ine</td><td>イネ</td><td>four</td></tr>
+        <tr><td>27</td><td>ashikne</td><td>アシクネ</td><td>five</td></tr>
+        <tr><td>28</td><td>iwan</td><td>イワン</td><td>six</td></tr>
+        <tr><td>29</td><td>arwan</td><td>アルワン</td><td>seven</td></tr>
+        <tr><td>30</td><td>tupesan</td><td>トゥペサン</td><td>eight</td></tr>
+        <tr><td>31</td><td>shinepesan</td><td>シネペサン</td><td>nine</td></tr>
+        <tr><td>32</td><td>wan</td><td>ワン</td><td>ten</td></tr>
+        <tr><td>33</td><td>wan e' shine</td><td>ワンエシネ</td><td>eleven</td></tr>
+        <tr><td>34</td><td>hotne</td><td>ホッネ</td><td>twenty</td></tr>
+        <tr><td>35</td><td>re-wan</td><td>レワン</td><td>thirty</td></tr>
+        <tr><td>36</td><td>ine-wan</td><td>イネワン</td><td>forty</td></tr>
+        <tr><td>37</td><td>ashikne-wan</td><td>アシクネワン</td><td>fifty</td></tr>
+        <tr><td>38</td><td>tekehe</td><td>テケヘ</td><td>hand / arm</td></tr>
+        <tr><td>39</td><td>kenehe</td><td>ケネヘ</td><td>tooth</td></tr>
+        <tr><td>40</td><td>siri</td><td>シリ</td><td>eye / face / state / weather</td></tr>
+        <tr><td>41</td><td>cikir</td><td>チキリ</td><td>leg / foot</td></tr>
+        <tr><td>42</td><td>rikun</td><td>リクン</td><td>head / above</td></tr>
+        <tr><td>43</td><td>ninkari</td><td>ニンカリ</td><td>ear</td></tr>
+        <tr><td>44</td><td>etunne</td><td>エトゥンネ</td><td>nose</td></tr>
+        <tr><td>45</td><td>patek</td><td>パテク</td><td>mouth</td></tr>
+        <tr><td>46</td><td>pake</td><td>パケ</td><td>head</td></tr>
+        <tr><td>47</td><td>os</td><td>オシ</td><td>back / behind</td></tr>
+        <tr><td>48</td><td>pon</td><td>ポン</td><td>small (also: child)</td></tr>
+        <tr><td>49</td><td>kamuy-ninkari</td><td>カムイニンカリ</td><td>earring (lit. spirit-ear)</td></tr>
+        <tr><td>50</td><td>upas</td><td>ウパス</td><td>snow / white</td></tr>
+        <tr><td>51</td><td>siknu</td><td>シクヌ</td><td>to live / to be alive</td></tr>
+        <tr><td>52</td><td>mokor</td><td>モコル</td><td>to sleep</td></tr>
+        <tr><td>53</td><td>ray</td><td>ライ</td><td>to die</td></tr>
+        <tr><td>54</td><td>ruy</td><td>ルイ</td><td>heavy</td></tr>
+        <tr><td>55</td><td>suy</td><td>スイ</td><td>again</td></tr>
+        <tr><td>56</td><td>ay</td><td>アイ</td><td>thorn / spine</td></tr>
+        <tr><td>57</td><td>tura</td><td>トゥラ</td><td>together with / companion</td></tr>
+        <tr><td>58</td><td>cep</td><td>チェプ</td><td>fish (general)</td></tr>
+        <tr><td>59</td><td>cikap</td><td>チカプ</td><td>bird (general)</td></tr>
+        <tr><td>60</td><td>seta</td><td>セタ</td><td>dog</td></tr>
+        <tr><td>61</td><td>kamuy / kimun kamuy</td><td>カムイ / キムンカムイ</td><td>bear (lit. mountain god)</td></tr>
+        <tr><td>62</td><td>upas-cikap</td><td>ウパスチカプ</td><td>owl (lit. snow bird)</td></tr>
+        <tr><td>63</td><td>repun kamuy</td><td>レプンカムイ</td><td>killer whale (lit. offshore god)</td></tr>
+        <tr><td>64</td><td>mosir-kur</td><td>モシリクル</td><td>sea lion (lit. island person)</td></tr>
+        <tr><td>65</td><td>cep-kor-kamuy</td><td>チェプコルカムイ</td><td>osprey (lit. fish-holding god)</td></tr>
+        <tr><td>66</td><td>sara-ur</td><td>サラウル</td><td>fox (lit. tail-having)</td></tr>
+        <tr><td>67</td><td>morew</td><td>モレウ</td><td>winding / snake (old term)</td></tr>
+        <tr><td>68</td><td>poro-kimun-kamuy</td><td>ポロキムンカムイ</td><td>brown bear (big mountain god)</td></tr>
+        <tr><td>69</td><td>tuyre</td><td>トゥイレ</td><td>rabbit / hare</td></tr>
+        <tr><td>70</td><td>repun</td><td>レプン</td><td>offshore / open sea</td></tr>
+        <tr><td>71</td><td>huci kamuy</td><td>フチカムイ</td><td>fire goddess (grandmother deity)</td></tr>
+        <tr><td>72</td><td>rim</td><td>リム</td><td>edge / rim</td></tr>
+        <tr><td>73</td><td>cep-wakka</td><td>チェプワッカ</td><td>salmon (lit. fish-water)</td></tr>
+        <tr><td>74</td><td>sakehe</td><td>サケヘ</td><td>salmon (Saru dialect)</td></tr>
+        <tr><td>75</td><td>cisama</td><td>チサマ</td><td>cormorant</td></tr>
+        <tr><td>76</td><td>upopo</td><td>ウポポ</td><td>song / singing bird sounds</td></tr>
+        <tr><td>77</td><td>korkew</td><td>コルケウ</td><td>crane (red-crowned)</td></tr>
+        <tr><td>78</td><td>wakka</td><td>ワッカ</td><td>water</td></tr>
+        <tr><td>79</td><td>pet</td><td>ペッ</td><td>river</td></tr>
+        <tr><td>80</td><td>nupuri</td><td>ヌプリ</td><td>mountain</td></tr>
+        <tr><td>81</td><td>kim</td><td>キム</td><td>mountain / highlands / forest</td></tr>
+        <tr><td>82</td><td>or</td><td>オル</td><td>place / there / from</td></tr>
+        <tr><td>83</td><td>ota</td><td>オタ</td><td>sand / beach</td></tr>
+        <tr><td>84</td><td>to</td><td>ト</td><td>lake / pond</td></tr>
+        <tr><td>85</td><td>sir</td><td>シル</td><td>sky / weather / nature</td></tr>
+        <tr><td>86</td><td>rera</td><td>レラ</td><td>wind</td></tr>
+        <tr><td>87</td><td>rup</td><td>ルプ</td><td>cloud</td></tr>
+        <tr><td>88</td><td>apekasi</td><td>アペカシ</td><td>fog (lit. fire-smoke)</td></tr>
+        <tr><td>89</td><td>ipe-un-mat</td><td>イペウンマッ</td><td>sea (lit. place-where-food-is)</td></tr>
+        <tr><td>90</td><td>atui</td><td>アトゥイ</td><td>sea / ocean</td></tr>
+        <tr><td>91</td><td>moshir</td><td>モシリ</td><td>land / island / world</td></tr>
+        <tr><td>92</td><td>ta</td><td>タ</td><td>here / this place</td></tr>
+        <tr><td>93</td><td>ne</td><td>ネ</td><td>to be / is / at</td></tr>
+        <tr><td>94</td><td>sat</td><td>サッ</td><td>dry / dried</td></tr>
+        <tr><td>95</td><td>numa</td><td>ヌマ</td><td>swamp / marsh</td></tr>
+        <tr><td>96</td><td>sey</td><td>セイ</td><td>waterfall</td></tr>
+        <tr><td>97</td><td>pirima</td><td>ピリマ</td><td>good weather / clear sky</td></tr>
+        <tr><td>98</td><td>upas</td><td>ウパス</td><td>snow</td></tr>
+        <tr><td>99</td><td>nis</td><td>ニシ</td><td>sky (elevated)</td></tr>
+        <tr><td>100</td><td>tono</td><td>トノ</td><td>chief / lord / hill summit</td></tr>
+        <tr><td>101</td><td>ipe</td><td>イペ</td><td>food / to eat</td></tr>
+        <tr><td>102</td><td>e=</td><td>エ</td><td>to eat / to drink (prefix form)</td></tr>
+        <tr><td>103</td><td>amam</td><td>アマム</td><td>grain / millet / crops</td></tr>
+        <tr><td>104</td><td>sakehe</td><td>サケヘ</td><td>sake / fermented drink / salmon</td></tr>
+        <tr><td>105</td><td>cep-ipe</td><td>チェプイペ</td><td>fish meal / eating fish</td></tr>
+        <tr><td>106</td><td>kam</td><td>カム</td><td>meat</td></tr>
+        <tr><td>107</td><td>poro-ipe</td><td>ポロイペ</td><td>feast / big meal</td></tr>
+        <tr><td>108</td><td>ohaw</td><td>オハウ</td><td>soup / stew (traditional Ainu dish)</td></tr>
+        <tr><td>109</td><td>cep-ohaw</td><td>チェプオハウ</td><td>fish soup</td></tr>
+        <tr><td>110</td><td>poro-kina</td><td>ポロキナ</td><td>wild vegetables (large plants)</td></tr>
+        <tr><td>111</td><td>kina</td><td>キナ</td><td>grass / herbs / greens</td></tr>
+        <tr><td>112</td><td>mo</td><td>モ</td><td>quiet / calm</td></tr>
+        <tr><td>113</td><td>aramu</td><td>アラム</td><td>to think / to remember</td></tr>
+        <tr><td>114</td><td>ku=e</td><td>クエ</td><td>I drink</td></tr>
+        <tr><td>115</td><td>aep</td><td>アエプ</td><td>food (things to eat, collective)</td></tr>
+        <tr><td>116</td><td>fure</td><td>フレ</td><td>red</td></tr>
+        <tr><td>117</td><td>siwnin</td><td>シウニン</td><td>blue / indigo</td></tr>
+        <tr><td>118</td><td>sirani</td><td>シラニ</td><td>white / pale</td></tr>
+        <tr><td>119</td><td>kunne</td><td>クンネ</td><td>black / dark</td></tr>
+        <tr><td>120</td><td>hurenin</td><td>フレニン</td><td>orange-red</td></tr>
+        <tr><td>121</td><td>repun-sir</td><td>レプンシル</td><td>gray (lit. offshore sky color)</td></tr>
+        <tr><td>122</td><td>pirka-chiri</td><td>ピリカチリ</td><td>bright / light-colored</td></tr>
+        <tr><td>123</td><td>karkar</td><td>カルカル</td><td>yellow-ish / golden</td></tr>
+        <tr><td>124</td><td>rikun</td><td>リクン</td><td>above / up</td></tr>
+        <tr><td>125</td><td>tura</td><td>トゥラ</td><td>beside / alongside</td></tr>
+        <tr><td>126</td><td>or ta</td><td>オルタ</td><td>at that place / there</td></tr>
+        <tr><td>127</td><td>rep</td><td>レプ</td><td>offshore / seaward</td></tr>
+        <tr><td>128</td><td>nup</td><td>ヌプ</td><td>field / plain / inland</td></tr>
+        <tr><td>129</td><td>un</td><td>ウン</td><td>toward / into / at</td></tr>
+        <tr><td>130</td><td>eturupak</td><td>エトゥルパク</td><td>the other side / far shore</td></tr>
+        <tr><td>131</td><td>ruwenashnu</td><td>ルウェナシュヌ</td><td>forward / ahead</td></tr>
+        <tr><td>132</td><td>oshike</td><td>オシケ</td><td>bottom / lower part</td></tr>
+        <tr><td>133</td><td>tane</td><td>タネ</td><td>now</td></tr>
+        <tr><td>134</td><td>anakne</td><td>アナクネ</td><td>as for / topic marker</td></tr>
+        <tr><td>135</td><td>nem</td><td>ネム</td><td>all / every time</td></tr>
+        <tr><td>136</td><td>toyta</td><td>トイタ</td><td>tomorrow</td></tr>
+        <tr><td>137</td><td>siran</td><td>シラン</td><td>yesterday / past</td></tr>
+        <tr><td>138</td><td>shir</td><td>シル</td><td>daytime / condition</td></tr>
+        <tr><td>139</td><td>kashu</td><td>カシュ</td><td>above / over (time past)</td></tr>
+        <tr><td>140</td><td>wakka-sap</td><td>ワッカサプ</td><td>dawn (lit. water-comes-down)</td></tr>
+        <tr><td>141</td><td>huci-up</td><td>フチウプ</td><td>evening / fire-time</td></tr>
+        <tr><td>142</td><td>paye</td><td>パイェ</td><td>to pass / elapse (time)</td></tr>
+        <tr><td>143</td><td>ek</td><td>エク</td><td>to come</td></tr>
+        <tr><td>144</td><td>arpa</td><td>アルパ</td><td>to go / to leave</td></tr>
+        <tr><td>145</td><td>ipe</td><td>イペ</td><td>to eat</td></tr>
+        <tr><td>146</td><td>e</td><td>エ</td><td>to eat / drink (transitive prefix)</td></tr>
+        <tr><td>147</td><td>ku=an</td><td>クアン</td><td>I exist / I am</td></tr>
+        <tr><td>148</td><td>kor</td><td>コル</td><td>to have / to hold / to possess</td></tr>
+        <tr><td>149</td><td>as</td><td>アシ</td><td>to stand</td></tr>
+        <tr><td>150</td><td>rok</td><td>ロク</td><td>to sit / to stay</td></tr>
+        <tr><td>151</td><td>mokor</td><td>モコル</td><td>to sleep</td></tr>
+        <tr><td>152</td><td>ray</td><td>ライ</td><td>to die</td></tr>
+        <tr><td>153</td><td>siknu</td><td>シクヌ</td><td>to live / be alive</td></tr>
+        <tr><td>154</td><td>ye</td><td>イェ</td><td>to say / to speak</td></tr>
+        <tr><td>155</td><td>itak</td><td>イタク</td><td>to speak / language / word</td></tr>
+        <tr><td>156</td><td>nu</td><td>ヌ</td><td>to hear / to listen</td></tr>
+        <tr><td>157</td><td>tere</td><td>テレ</td><td>to run</td></tr>
+        <tr><td>158</td><td>hopunke</td><td>ホプンケ</td><td>to get up / to stand up</td></tr>
+        <tr><td>159</td><td>oman</td><td>オマン</td><td>to go (honorific)</td></tr>
+        <tr><td>160</td><td>paye</td><td>パイェ</td><td>to go (plural subject) / to pass</td></tr>
+        <tr><td>161</td><td>rura</td><td>ルラ</td><td>to send</td></tr>
+        <tr><td>162</td><td>kore</td><td>コレ</td><td>to give</td></tr>
+        <tr><td>163</td><td>koyki</td><td>コイキ</td><td>to hit / to beat</td></tr>
+        <tr><td>164</td><td>tumam</td><td>トゥマム</td><td>to carry on back</td></tr>
+        <tr><td>165</td><td>tura</td><td>トゥラ</td><td>to accompany / to be with</td></tr>
+        <tr><td>166</td><td>uk</td><td>ウク</td><td>to take / to receive</td></tr>
+        <tr><td>167</td><td>eramuan</td><td>エラムアン</td><td>to understand / to know</td></tr>
+        <tr><td>168</td><td>aramu</td><td>アラム</td><td>to think / to feel</td></tr>
+        <tr><td>169</td><td>utar</td><td>ウタル</td><td>people / companion</td></tr>
+        <tr><td>170</td><td>pon</td><td>ポン</td><td>to be small / child</td></tr>
+        <tr><td>171</td><td>poro</td><td>ポロ</td><td>to be big / large</td></tr>
+        <tr><td>172</td><td>pirka</td><td>ピリカ</td><td>to be good / beautiful</td></tr>
+        <tr><td>173</td><td>wen</td><td>ウェン</td><td>to be bad / evil</td></tr>
+        <tr><td>174</td><td>somo</td><td>ソモ</td><td>not / to not be</td></tr>
+        <tr><td>175</td><td>ne</td><td>ネ</td><td>to be / equals</td></tr>
+        <tr><td>176</td><td>an</td><td>アン</td><td>to exist / there is</td></tr>
+        <tr><td>177</td><td>isam</td><td>イサム</td><td>to not exist / there is not</td></tr>
+        <tr><td>178</td><td>rayke</td><td>ライケ</td><td>to kill</td></tr>
+        <tr><td>179</td><td>tuypa</td><td>トゥイパ</td><td>to pull</td></tr>
+        <tr><td>180</td><td>chi</td><td>チ</td><td>we (inclusive)</td></tr>
+        <tr><td>181</td><td>tura-ye</td><td>トゥライェ</td><td>to say together / chorus</td></tr>
+        <tr><td>182</td><td>eripak</td><td>エリパク</td><td>to know (well)</td></tr>
+        <tr><td>183</td><td>soyenpa</td><td>ソイェンパ</td><td>to dance (old term)</td></tr>
+        <tr><td>184</td><td>upopo</td><td>ウポポ</td><td>to sing (circle song)</td></tr>
+        <tr><td>185</td><td>ukoitak</td><td>ウコイタク</td><td>to converse / talk with each other</td></tr>
+        <tr><td>186</td><td>osura</td><td>オスラ</td><td>to turn back / return</td></tr>
+        <tr><td>187</td><td>arki</td><td>アルキ</td><td>come! (imperative)</td></tr>
+        <tr><td>188</td><td>enu</td><td>エヌ</td><td>to hear / understand (variant)</td></tr>
+        <tr><td>189</td><td>renkayne</td><td>レンカイネ</td><td>to touch / handle</td></tr>
+        <tr><td>190</td><td>esaman</td><td>エサマン</td><td>to look for</td></tr>
+        <tr><td>191</td><td>chikappo</td><td>チカッポ</td><td>birds (collective, affectionate)</td></tr>
+        <tr><td>192</td><td>teksam</td><td>テクサム</td><td>nearby / beside</td></tr>
+        <tr><td>193</td><td>poronno</td><td>ポロンノ</td><td>greatly / very much</td></tr>
+        <tr><td>194</td><td>ponno</td><td>ポンノ</td><td>slightly / a little</td></tr>
+        <tr><td>195</td><td>yayeykosanu</td><td>ヤイェイコサヌ</td><td>to be careful / watch oneself</td></tr>
+        <tr><td>196</td><td>pirka</td><td>ピリカ</td><td>good / beautiful / fine</td></tr>
+        <tr><td>197</td><td>wen</td><td>ウェン</td><td>bad / evil / ugly</td></tr>
+        <tr><td>198</td><td>poro</td><td>ポロ</td><td>big / large</td></tr>
+        <tr><td>199</td><td>pon</td><td>ポン</td><td>small / little</td></tr>
+        <tr><td>200</td><td>ruy</td><td>ルイ</td><td>heavy</td></tr>
+        <tr><td>201</td><td>ramah</td><td>ラマ</td><td>light (weight)</td></tr>
+        <tr><td>202</td><td>sunke</td><td>スンケ</td><td>true / real</td></tr>
+        <tr><td>203</td><td>somo-sunke</td><td>ソモスンケ</td><td>false / untrue</td></tr>
+        <tr><td>204</td><td>tuyma</td><td>トゥイマ</td><td>far / distant</td></tr>
+        <tr><td>205</td><td>teksam</td><td>テクサム</td><td>near / close</td></tr>
+        <tr><td>206</td><td>pirima</td><td>ピリマ</td><td>clear / bright (sky/weather)</td></tr>
+        <tr><td>207</td><td>kunne-sir</td><td>クンネシル</td><td>dark (weather)</td></tr>
+        <tr><td>208</td><td>rikun</td><td>リクン</td><td>high / above</td></tr>
+        <tr><td>209</td><td>otta</td><td>オッタ</td><td>thick / dense</td></tr>
+        <tr><td>210</td><td>ram</td><td>ラム</td><td>heart / mind / feeling</td></tr>
+        <tr><td>211</td><td>rayram</td><td>ライラム</td><td>calm-hearted / gentle</td></tr>
+        <tr><td>212</td><td>yupo</td><td>ユポ</td><td>elder brother (dear / respected)</td></tr>
+        <tr><td>213</td><td>hupo</td><td>フポ</td><td>elder sister</td></tr>
+        <tr><td>214</td><td>hapo</td><td>ハポ</td><td>mother</td></tr>
+        <tr><td>215</td><td>michi</td><td>ミチ</td><td>road / path</td></tr>
+        <tr><td>216</td><td>kamuy</td><td>カムイ</td><td>god / spirit / divine being</td></tr>
+        <tr><td>217</td><td>inaw</td><td>イナウ</td><td>ritual shaved stick offering</td></tr>
+        <tr><td>218</td><td>iyomante</td><td>イヨマンテ</td><td>bear-sending ceremony</td></tr>
+        <tr><td>219</td><td>yukar</td><td>ユカル</td><td>epic poem / oral tradition</td></tr>
+        <tr><td>220</td><td>upopo</td><td>ウポポ</td><td>circle song / communal singing</td></tr>
+        <tr><td>221</td><td>kamuychiri</td><td>カムイチリ</td><td>divine bird</td></tr>
+        <tr><td>222</td><td>cikoikip</td><td>チコイキプ</td><td>sacred object / treasure</td></tr>
+        <tr><td>223</td><td>nusa</td><td>ヌサ</td><td>altar / prayer site</td></tr>
+        <tr><td>224</td><td>hekachi</td><td>ヘカチ</td><td>child / young person</td></tr>
+        <tr><td>225</td><td>mat</td><td>マッ</td><td>woman / wife</td></tr>
+        <tr><td>226</td><td>ekashi</td><td>エカシ</td><td>grandfather / elder man</td></tr>
+        <tr><td>227</td><td>huci</td><td>フチ</td><td>grandmother / elder woman / fire goddess</td></tr>
+        <tr><td>228</td><td>utar</td><td>ウタル</td><td>people / clan / community</td></tr>
+        <tr><td>229</td><td>kotan</td><td>コタン</td><td>village / settlement</td></tr>
+        <tr><td>230</td><td>iyotanke</td><td>イヨタンケ</td><td>feast / communal gathering</td></tr>
+        <tr><td>231</td><td>ne</td><td>ネ</td><td>to be (copula)</td></tr>
+        <tr><td>232</td><td>an</td><td>アン</td><td>there is / exists</td></tr>
+        <tr><td>233</td><td>isam</td><td>イサム</td><td>there is not</td></tr>
+        <tr><td>234</td><td>ka</td><td>カ</td><td>also / too</td></tr>
+        <tr><td>235</td><td>nankore</td><td>ナンコレ</td><td>maybe / perhaps</td></tr>
+        <tr><td>236</td><td>somo</td><td>ソモ</td><td>no / not</td></tr>
+        <tr><td>237</td><td>ya</td><td>ヤ</td><td>question particle</td></tr>
+        <tr><td>238</td><td>wa</td><td>ワ</td><td>and / while / because (conjunctive)</td></tr>
+        <tr><td>239</td><td>ruwe ne</td><td>ルウェネ</td><td>it is the case that / evidential</td></tr>
+        <tr><td>240</td><td>oasi</td><td>オアシ</td><td>already / completed</td></tr>
+        <tr><td>241</td><td>ayne</td><td>アイネ</td><td>after / when</td></tr>
+        <tr><td>242</td><td>hunak ta</td><td>フナクタ</td><td>where (location question)</td></tr>
+        <tr><td>243</td><td>hemanta</td><td>ヘマンタ</td><td>what</td></tr>
+        <tr><td>244</td><td>ney</td><td>ネイ</td><td>who</td></tr>
+        <tr><td>245</td><td>nep</td><td>ネプ</td><td>what (thing)</td></tr>
+        <tr><td>246</td><td>pon-mat</td><td>ポンマッ</td><td>girl (lit. small woman)</td></tr>
+        <tr><td>247</td><td>pon-kur</td><td>ポンクル</td><td>boy (lit. small person)</td></tr>
+        <tr><td>248</td><td>kur</td><td>クル</td><td>person / human being</td></tr>
+        <tr><td>249</td><td>ainu</td><td>アイヌ</td><td>human being / person / Ainu person</td></tr>
+        <tr><td>250</td><td>sisampe</td><td>シサンペ</td><td>Japanese person (Wajin)</td></tr>
+        <tr><td>251</td><td>rep-un-kur</td><td>レプンクル</td><td>person from offshore / visitor</td></tr>
+        <tr><td>252</td><td>mosir-un-kur</td><td>モシリウンクル</td><td>local person / islander</td></tr>
+        <tr><td>253</td><td>chashi</td><td>チャシ</td><td>fort / stronghold</td></tr>
+        <tr><td>254</td><td>pon-seta</td><td>ポンセタ</td><td>puppy (lit. small dog)</td></tr>
+        <tr><td>255</td><td>cep-kor</td><td>チェプコル</td><td>to have fish / fish-bearing</td></tr>
+        <tr><td>256</td><td>wakka-ush</td><td>ワッカウシ</td><td>water-having / with water</td></tr>
+        <tr><td>257</td><td>kimun</td><td>キムン</td><td>mountain (compound prefix)</td></tr>
+        <tr><td>258</td><td>nupuri-ta</td><td>ヌプリタ</td><td>at the mountain</td></tr>
+        <tr><td>259</td><td>pet-kor-mat</td><td>ペッコルマッ</td><td>woman of the river</td></tr>
+        <tr><td>260</td><td>puri</td><td>プリ</td><td>custom / habit / way of doing</td></tr>
+        <tr><td>261</td><td>itak</td><td>イタク</td><td>word / speech / language</td></tr>
+        <tr><td>262</td><td>ok</td><td>オク</td><td>sound / voice</td></tr>
+        <tr><td>263</td><td>aw</td><td>アウ</td><td>voice / word</td></tr>
+        <tr><td>264</td><td>chi=kor</td><td>チコル</td><td>we have / our</td></tr>
+        <tr><td>265</td><td>cise</td><td>チセ</td><td>house / building</td></tr>
+        <tr><td>266</td><td>cise-kor</td><td>チセコル</td><td>household / homeowner</td></tr>
+        <tr><td>267</td><td>kor-kur</td><td>コルクル</td><td>owner / possessor</td></tr>
+        <tr><td>268</td><td>upas-sir</td><td>ウパスシル</td><td>snowy weather</td></tr>
+        <tr><td>269</td><td>seta-kor-kur</td><td>セタコルクル</td><td>dog owner</td></tr>
+        <tr><td>270</td><td>toy</td><td>トイ</td><td>earth / soil / ground</td></tr>
+        <tr><td>271</td><td>mun</td><td>ムン</td><td>grass / weed</td></tr>
+        <tr><td>272</td><td>pis</td><td>ピシ</td><td>pebble / small stone</td></tr>
+        <tr><td>273</td><td>tuye</td><td>トゥイェ</td><td>to cut</td></tr>
+        <tr><td>274</td><td>sapa</td><td>サパ</td><td>head (anatomical, also: leader)</td></tr>
+        <tr><td>275</td><td>nima</td><td>ニマ</td><td>bowl / dish</td></tr>
+        <tr><td>276</td><td>sinrit</td><td>シンリッ</td><td>cradle / baby carrier</td></tr>
+        <tr><td>277</td><td>aep</td><td>アエプ</td><td>food (things to eat, collective)</td></tr>
+        <tr><td>278</td><td>ro</td><td>ロ</td><td>to be contained / inside</td></tr>
+        <tr><td>279</td><td>tura-an</td><td>トゥラアン</td><td>to be together / accompany</td></tr>
+        <tr><td>280</td><td>etara</td><td>エタラ</td><td>clean / pure</td></tr>
+        <tr><td>281</td><td>koro</td><td>コロ</td><td>to have / to keep</td></tr>
+        <tr><td>282</td><td>renkayne</td><td>レンカイネ</td><td>to touch / feel</td></tr>
+        <tr><td>283</td><td>tewke</td><td>テウケ</td><td>to gather / collect</td></tr>
+        <tr><td>284</td><td>ewen</td><td>エウェン</td><td>to be difficult / hard</td></tr>
+        <tr><td>285</td><td>ko=kor</td><td>ココル</td><td>I keep / I hold (first person)</td></tr>
+        <tr><td>286</td><td>mosirpa</td><td>モシリパ</td><td>world / land-spreading</td></tr>
+        <tr><td>287</td><td>ney un</td><td>ネイウン</td><td>toward whom / where to</td></tr>
+        <tr><td>288</td><td>oka</td><td>オカ</td><td>to remain / stay behind</td></tr>
+        <tr><td>289</td><td>oka-wa</td><td>オカワ</td><td>staying / while staying</td></tr>
+        <tr><td>290</td><td>pirika-sir</td><td>ピリカシル</td><td>beautiful weather / fine day</td></tr>
+        <tr><td>291</td><td>kay-no</td><td>カイノ</td><td>surely / certainly</td></tr>
+        <tr><td>292</td><td>eani-a</td><td>エアニア</td><td>are you? (question form)</td></tr>
+        <tr><td>293</td><td>ashiri</td><td>アシリ</td><td>new / fresh</td></tr>
+        <tr><td>294</td><td>shiri-piri</td><td>シリピリ</td><td>drizzle / fine rain</td></tr>
+        <tr><td>295</td><td>huci-ape</td><td>フチアペ</td><td>hearth fire / grandmother's fire</td></tr>
+        <tr><td>296</td><td>arpetkur</td><td>アルペットクル</td><td>river person / river dweller</td></tr>
+        <tr><td>297</td><td>sumari</td><td>スマリ</td><td>fox</td></tr>
+        <tr><td>298</td><td>rera-mat</td><td>レラマッ</td><td>wind woman (poetic/mythological)</td></tr>
+        <tr><td>299</td><td>iporo</td><td>イポロ</td><td>throat / gullet</td></tr>
+        <tr><td>300</td><td>ainu-itak</td><td>アイヌイタク</td><td>Ainu language (lit. Ainu speech)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- INTRO -->
+<div class="lang-section" id="intro">
+  <h2>3. 愛努語現況</h2>
+
+  <p>愛努語（Ainu itak，字面意思為「愛努人的話語」）是日本北海道、樺太（薩哈林島）及千島列島愛努民族的語言。它是一種孤立語言——目前尚未確認與任何已知語系有親屬關係。</p>
+
+  <p>此語言已極度瀕危。20世紀後半，流利母語者大多相繼離世。2019年，日本政府正式承認愛努人為原住民族；2020年，北海道白老町的國立愛努民族博物館「民族共生象徵空間（Upopoy）」正式開幕，為語言復興注入新動力。</p>
+
+  <h3>廣東話使用者學習愛努語的動機</h3>
+  <ul>
+    <li><strong>香港及廣東人對日本文化的熟悉程度</strong> — 廣東話使用者普遍接觸日本文化及日語，對北海道地名（如「札幌」、「函館」等漢字表記）有一定認識，而這些地名大多源自愛努語。</li>
+    <li><strong>詞末輔音的優勢</strong> — 廣東話有豐富的詞末輔音系統（-p、-t、-k、-m、-n、-ng），這與愛努語的詞末輔音結構高度相似，令廣東話使用者在發音上比普通話或日語使用者更具優勢。</li>
+    <li><strong>語言學上的稀有性</strong> — 愛努語是世界上少數孤立語言之一，學習它能讓你接觸到一種與任何歐亞語系都截然不同的語言結構。</li>
+    <li><strong>語言復興參與</strong> — 學習愛努語是對這一復興運動的國際支持。</li>
+  </ul>
+</div>
+
+
+<!-- DIFFICULTY -->
+<div class="lang-section" id="difficulty">
+  <h2>4. 廣東話使用者學習難度</h2>
+
+  <p>廣東話使用者在學習愛努語時，擁有一個非常顯著的優勢：詞末輔音。廣東話有 -p、-t、-k、-m、-n、-ng 等詞末輔音，這使得廣東話使用者在處理愛努語詞末輔音時比普通話或日語使用者輕鬆得多。</p>
+
+  <h3>廣東話使用者的優勢</h3>
+  <ul>
+    <li><strong>詞末輔音（最重要優勢）</strong> — 廣東話的入聲（-p、-t、-k）及鼻音韻尾（-m、-n、-ng）與愛努語的詞末輔音系統高度對應。例如，廣東話「笠」(-p)、「核」(-k)、「心」(-m) 等字的韻尾發音方式，與愛努語 <em>rep</em>（海方向）、<em>pak</em>（頂部）、<em>kim</em>（山）的詞末輔音相近。</li>
+    <li><strong>SOV語序的接受度</strong> — 廣東話本身的語序比普通話更靈活，學習SOV語序的調適相對容易。</li>
+    <li><strong>無聲調干擾</strong> — 愛努語沒有聲調系統，廣東話使用者不需要「遺忘」聲調習慣——因為愛努語根本不用。</li>
+    <li><strong>對日本文化的熟悉度</strong> — 廣東話使用者普遍接觸過日本媒體及日語資料，愛努語的日語學習資源（大多為日文）對有日語基礎者更易取用。</li>
+  </ul>
+
+  <h3>主要挑戰</h3>
+  <ul>
+    <li><strong>動詞人稱前綴系統</strong> — 愛努語動詞需附加人稱前綴，這是廣東話所沒有的語法特徵。</li>
+    <li><strong>名詞融入（Noun Incorporation）</strong> — 愛努語可將名詞目的語直接融入動詞詞幹，形成複合表達，這在廣東話中不存在。</li>
+    <li><strong>學習資源極度匱乏</strong> — 中文（繁體或簡體）的愛努語學習資料幾乎不存在，學習者需使用日文或英文資源。</li>
+    <li><strong>缺乏母語者社群</strong> — 無法找到流利的母語者練習對話。</li>
+  </ul>
+
+  <p class="lang-note">詞末輔音是廣東話使用者學習愛努語最重要的結構性優勢。好好利用這一點。</p>
+</div>
+
+
+<!-- WRITING -->
+<div class="lang-section" id="writing">
+  <h2>5. 書寫系統</h2>
+
+  <p>愛努語沒有傳統固有的書寫系統。現代使用兩種書寫方式：</p>
+
+  <h3>拉丁字母（學術及國際標準）</h3>
+  <p>學術研究及許多復興教育材料使用拉丁字母表記，可以精確表達詞末輔音。廣東話使用者可直接閱讀拉丁字母，這是學習愛努語的主要書寫系統。</p>
+
+  <h3>片假名（日語語境標準）</h3>
+  <p>日語語境下（教材、博物館展示、語言課程等）使用片假名表記愛努語，有時搭配擴展片假名字元（ㇷ゚、ㇰ、ㇺ等）來表示詞末輔音。有日語基礎的廣東話使用者將會接觸到此系統。</p>
+
+  <div class="table-wrap">
+    <table class="lang-table">
+      <thead><tr><th>拉丁字母</th><th>片假名</th><th>廣東話近似韻尾</th><th>意思</th></tr></thead>
+      <tbody>
+        <tr><td>pet</td><td>ペッ</td><td>「核」(-t) 的韻尾</td><td>河流</td></tr>
+        <tr><td>kim</td><td>キム・キㇺ</td><td>「心」(-m) 的韻尾</td><td>山</td></tr>
+        <tr><td>rep</td><td>レプ</td><td>「笠」(-p) 的韻尾</td><td>向海方向</td></tr>
+        <tr><td>kamuy</td><td>カムイ</td><td>半元音 -y</td><td>神靈</td></tr>
+        <tr><td>wakka</td><td>ワッカ</td><td>重輔音（促音）</td><td>水</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- PRONUNCIATION -->
+<div class="lang-section" id="pronunciation">
+  <h2>6. 發音</h2>
+
+  <p>愛努語有五個元音（a、i、u、e、o），與廣東話的元音系統不同但並不複雜。愛努語沒有聲調，廣東話使用者無需擔心聲調轉換問題。</p>
+
+  <h3>詞末輔音：廣東話使用者的天然優勢</h3>
+  <p>廣東話的入聲及鼻音韻尾與愛努語詞末輔音高度對應：</p>
+  <div class="table-wrap">
+    <table class="lang-table">
+      <thead><tr><th>愛努語詞末輔音</th><th>例詞</th><th>意思</th><th>廣東話對應</th></tr></thead>
+      <tbody>
+        <tr><td>-p</td><td>rep</td><td>向海方向</td><td>如「笠」、「雜」的 -p 韻尾</td></tr>
+        <tr><td>-t</td><td>pet</td><td>河流</td><td>如「核」、「刻」的 -t 韻尾</td></tr>
+        <tr><td>-k</td><td>pak</td><td>頂部</td><td>如「客」、「各」的 -k 韻尾</td></tr>
+        <tr><td>-m</td><td>kim</td><td>山</td><td>如「心」、「金」的 -m 韻尾</td></tr>
+        <tr><td>-n</td><td>tan</td><td>這個</td><td>如「天」、「連」的 -n 韻尾</td></tr>
+        <tr><td>-r</td><td>por</td><td>大洞</td><td>無直接對應，需單獨練習</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>重輔音（促音）</h3>
+  <p>愛努語有重輔音（如 <em>wakka</em> 的 -kk-），類似廣東話中某些字的輔音延長感，或日語促音（っ）的概念。廣東話使用者一般能較快適應。</p>
+</div>
+
+
+<!-- GRAMMAR -->
+<div class="lang-section" id="grammar">
+  <h2>7. 文法概要</h2>
+
+  <h3>語序：主語–賓語–動詞（SOV）</h3>
+  <p>愛努語採用SOV語序，即「我魚吃」而非「我吃魚」。廣東話使用者雖然習慣SVO語序，但由於廣東話語序靈活，這種調適相對可行。</p>
+
+  <h3>動詞人稱前綴</h3>
+  <p>愛努語動詞需要附加人稱前綴，表示主語和賓語的人稱：</p>
+  <div class="table-wrap">
+    <table class="lang-table">
+      <thead><tr><th>愛努語</th><th>分析</th><th>廣東話意思</th></tr></thead>
+      <tbody>
+        <tr><td>ku=ipe</td><td>ku=（我）+ ipe（吃）</td><td>我食</td></tr>
+        <tr><td>e-ipe</td><td>e-（你）+ ipe（吃）</td><td>你食</td></tr>
+        <tr><td>ipe</td><td>無前綴（第三人稱單數）</td><td>佢食</td></tr>
+        <tr><td>ku=e-kore</td><td>ku=（我）+ e-（給你）+ kore（給）</td><td>我俾你</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>名詞融入</h3>
+  <p>愛努語可將名詞賓語直接融入動詞詞幹：<em>ipe</em>（吃）→ <em>kam-ipe</em>（吃肉，<em>kam</em> = 肉）。這是廣東話所沒有的語法結構。</p>
+
+  <h3>後置詞而非前置詞</h3>
+  <p>愛努語使用後置詞（類似廣東話部分助詞的位置），空間關係詞位於名詞之後。</p>
+</div>
+
+
+<!-- MISTAKES -->
+<div class="lang-section" id="mistakes">
+  <h2>8. 常見學習錯誤</h2>
+  <ul>
+    <li><strong>忽略動詞人稱前綴。</strong>單獨說 <em>ipe</em> 代表「佢食」（第三人稱），而非「我食」。必須從學習初期就將人稱前綴視為動詞不可分割的部分。</li>
+    <li><strong>混淆方言。</strong>愛努語各方言差異顯著。建議始終以沙流方言資料為主要學習基礎。</li>
+    <li><strong>過度依賴片假名資料。</strong>片假名無法完整呈現愛努語的音韻結構，拉丁字母應為主要參考。</li>
+    <li><strong>忽略重輔音的音長區別。</strong><em>wakka</em>（水）和 <em>waka</em> 是不同的詞（若後者存在的話）。重輔音的長度是音位上有意義的區別。</li>
+    <li><strong>設定不切實際的目標。</strong>由於缺乏活躍的母語者社群，愛努語學習的進度測量方式與一般語言不同，應以語法理解和文本閱讀為目標。</li>
+  </ul>
+</div>
+
+
+<!-- RESOURCES -->
+<div class="lang-section" id="resources">
+  <h2>9. 學習資源</h2>
+
+  <p class="lang-note">中文（廣東話或普通話）的愛努語資源幾乎不存在，需借助日文或英文資源。</p>
+
+  <h3>日文資源（最豐富）</h3>
+  <ul>
+    <li><strong>田村すず子著《アイヌ語沙流方言辞典》</strong>（草風館）— 沙流方言最完整的詞典，有日語基礎者的基本參考書。</li>
+    <li><strong>中川裕著《アイヌ語をフィールドワークする》</strong>（大修館書店）— 平易近人的愛努語入門書。</li>
+    <li><strong>Upopoy官方網站（upopoy.jp）</strong> — 國立愛努民族博物館，提供部分語言教育資源。</li>
+  </ul>
+
+  <h3>英文資源</h3>
+  <ul>
+    <li><strong>Batchelor, John — <em>An Ainu-English-Japanese Dictionary</em>（1905年）</strong> — 最早的英文愛努語詞典，已數位化。</li>
+    <li><strong>FirstVoices 愛努語</strong> — 社區維護的音訊詞彙庫（firstvoices.com）。</li>
+    <li><strong>NHK World 愛努語內容</strong> — 部分英文字幕視頻。</li>
+  </ul>
+</div>
+
+
+<!-- MEDIA -->
+<div class="lang-section" id="media">
+  <h2>10. 媒體與輸入</h2>
+
+  <p>現代愛努語媒體極為有限。以下是目前可取用的主要資源：</p>
+  <ul>
+    <li><strong>口承文學錄音存檔（ユカラ等）</strong> — 北海道各大學圖書館及道立圖書館存有愛努語口頭史詩和歌謠的錄音，是主要的音訊輸入來源。</li>
+    <li><strong>NHK World 愛努語視頻</strong> — 短片介紹詞彙和文化，部分附英文字幕。</li>
+    <li><strong>Upopoy 音訊及視頻存檔</strong> — 博物館網站提供部分語音記錄。</li>
+    <li><strong>YouTube</strong> — 語言學者及文化工作者製作的愛努語介紹視頻，數量有限但有助於聆聽語音。</li>
+  </ul>
+</div>
+
+
+<!-- STRATEGY -->
+<div class="lang-section" id="strategy">
+  <h2>11. 學習策略</h2>
+  <ol>
+    <li><strong>充分發揮詞末輔音優勢。</strong>廣東話入聲韻尾與愛努語詞末輔音高度對應，要有意識地利用這一優勢，建立正確的發音習慣。</li>
+    <li><strong>優先學習沙流方言。</strong>這是資料最完整的方言，也是現代復興教育的主要基礎。</li>
+    <li><strong>從動詞人稱系統入手。</strong>不要單獨記憶動詞詞根，要將人稱前綴視為動詞不可分割的部分，從一開始就一起學習。</li>
+    <li><strong>善用日文資源。</strong>廣東話使用者若有日語基礎，可以取用最豐富的愛努語學習材料。</li>
+    <li><strong>利用本頁詞彙表作為核心參考。</strong>300個基本詞彙覆蓋愛努語最重要的基礎詞彙，定期複習。</li>
+    <li><strong>儘早聆聽錄音材料。</strong>即使無法完全理解，聆聽母語者或接近母語者的音聲對建立正確音韻認識至關重要。</li>
+  </ol>
+</div>
+
+
+<!-- CULTURAL -->
+<div class="lang-section" id="cultural">
+  <h2>12. 文化背景</h2>
+
+  <p>學習愛努語並非文化中立的行為。愛努民族在日本明治維新後的同化政策下，被長期迫使放棄語言和文化。1899年的《北海道舊土人保護法》實際上限制了愛努族的文化活動，語言的消亡在很多情況下是政策性的直接後果。</p>
+
+  <h3>神靈（カムイ / kamuy）的世界觀</h3>
+  <p>愛努的世界觀認為自然界萬物皆有神靈（<em>kamuy</em>）寄宿。棕熊是山之神靈（<em>kimun kamuy</em>），是「熊靈送還儀式」（<em>iyomante</em>）的核心。這種世界觀深植於愛努語詞彙之中——學習詞語，即是接觸這種宇宙觀。</p>
+
+  <h3>口承文學傳統</h3>
+  <p>愛努文化擁有豐富的口承文學傳統，包括英雄史詩（<em>yukar</em>）、民間故事（<em>uwepeker</em>）及圓舞歌謠（<em>upopo</em>）。知里幸惠（1903–1922）首次將愛努口承文學記錄成文字，其著作《アイヌ神謠集》是語言和文學保存的里程碑。</p>
+
+  <h3>對外來學習者的思考</h3>
+  <p>非愛努背景的學習者——包括廣東話使用者——在接觸愛努語時，應以尊重和謙遜的態度對待這個語言背後的歷史和社群。儀式性及宗教性的知識屬於特定族群，一般語言學習不應涉及。請尊重愛努社群對語言使用邊界的指引。</p>
+</div>
+
+
+<!-- RELATED -->
+<div class="lang-section" id="related">
+  <h2>13. 相關指南</h2>
+  <ul>
+    <li><a href="ainu-from-japanese.html">愛努語（日語話者適用）</a></li>
+    <li><a href="ainu-from-english.html">Ainu for English speakers</a></li>
+    <li><a href="ainu-from-mandarin.html">愛努語（普通話使用者適用）</a></li>
+    <li><a href="language-guides.html">所有語言指南</a></li>
+  </ul>
+</div>
+
+  <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
+  </footer>
+</body>
+</html>

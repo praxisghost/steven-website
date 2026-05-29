@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chichewa for English Speakers — Steven Legg</title>
+  <meta name="description" content="Comprehensive Chichewa guide for English speakers. Noun classes, verb tenses, pronunciation, culture, and 200+ vocabulary words.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Language Guides</a>
+
+<header>
+  <h1>Chichewa <span class="lang-from">for English speakers</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Flashcards</a></li>
+  <li><a href="#intro">What is Chichewa?</a></li>
+  <li><a href="#vocab">Core Vocabulary</a></li>
+  <li><a href="#grammar">Grammar</a></li>
+  <li><a href="#pronunciation">Pronunciation</a></li>
+  <li><a href="#mistakes">Common Mistakes</a></li>
+  <li><a href="#resources">Resources</a></li>
+  <li><a href="#culture">Culture</a></li>
+  <li><a href="#related">Related Guides</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Flashcards</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="chichewa-srs-en.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. What is Chichewa?</h2>
+  <p>Chichewa (also called Chewa or Nyanja) is a Bantu language and the national language of Malawi, spoken by approximately 70% of the population. It is also spoken in parts of Zambia (where it is called Nyanja), Mozambique, and Zimbabwe, with roughly 12–15 million native speakers. It is the most widely spoken indigenous language in Malawi and is used in government, education, and media alongside English.</p>
+  <p>Chichewa uses the Latin alphabet and is written phonetically — almost every letter is pronounced consistently, making reading straightforward once you learn the sounds. The language has a rich grammatical structure built on <strong>noun classes</strong>, <strong>subject concords</strong>, <strong>verb extensions</strong>, and a system of tenses formed by inserting markers into the verb.</p>
+  <h3>Why learn Chichewa?</h3>
+  <ul>
+    <li><strong>Connect with Malawi</strong> — Malawi is known as the "Warm Heart of Africa." Speaking even basic Chichewa is warmly received and opens doors that English never will.</li>
+    <li><strong>Gateway to Bantu languages</strong> — Chichewa shares structural features with Swahili, Zulu, Shona, and dozens of other Bantu languages spoken across sub-Saharan Africa.</li>
+    <li><strong>Accessible script</strong> — Latin alphabet, consistent phonology, no tones marked in writing.</li>
+    <li><strong>Vibrant culture</strong> — Access to Malawian music (Gule Wamkulu, gospel, pop), literature, and oral traditions directly.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Core Vocabulary (1–203)</h2>
+  <p>High-frequency words and phrases. Use the search box to filter.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>Chichewa</th><th>English</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered by chichewa-srs-en.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Essential Grammar</h2>
+
+  <h3>Noun Classes</h3>
+  <p>The most important concept in Chichewa (and all Bantu languages) is the <strong>noun class system</strong>. Every noun belongs to a class, identified by its prefix. Agreement markers on verbs, adjectives, and pronouns must match the noun class. The main classes are:</p>
+  <div class="table-scroll">
+    <table class="lang-table">
+      <thead><tr><th>Class</th><th>Singular prefix</th><th>Plural prefix</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td>Persons</td><td>mu-</td><td>a-</td><td>munthu / anthu (person/people), mwana / ana (child/children)</td></tr>
+        <tr><td>Trees/plants</td><td>mu-</td><td>mi-</td><td>mtengo / mitengo (tree/trees), mtsinje / mitsinje (river/rivers)</td></tr>
+        <tr><td>Things/languages</td><td>chi-</td><td>zi-</td><td>chinthu / zinthu (thing/things), Chichewa (the language)</td></tr>
+        <tr><td>Fruits/collections</td><td>li-</td><td>ma-</td><td>dzina / maina (name/names), bonde / mabonde (valley/valleys)</td></tr>
+        <tr><td>Small things</td><td>ka-</td><td>ti-</td><td>kanyama (small animal), kamwana (small child)</td></tr>
+        <tr><td>Infinitives</td><td>ku-</td><td>—</td><td>kudya (eating/to eat), kupita (going/to go)</td></tr>
+        <tr><td>Place (surface)</td><td>pa-</td><td>—</td><td>panjira (on the path), pabwalo (in the courtyard)</td></tr>
+        <tr><td>Place (inside)</td><td>m'-</td><td>—</td><td>m'nyumba (inside the house), m'madzi (in the water)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Subject Concords</h3>
+  <p>Every verb in Chichewa begins with a <strong>subject concord</strong> — a short prefix that agrees with the subject's noun class. For people and personal pronouns:</p>
+  <div class="table-scroll">
+    <table class="lang-table">
+      <thead><tr><th>Person</th><th>Concord</th><th>Example (present)</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>I (ine)</td><td>ndi-</td><td>Ndikudya</td><td>I am eating</td></tr>
+        <tr><td>You sg (iwe)</td><td>u-</td><td>Ukudya</td><td>You are eating</td></tr>
+        <tr><td>He/she (iye)</td><td>a-</td><td>Akudya</td><td>He/she is eating</td></tr>
+        <tr><td>We (ife)</td><td>ti-</td><td>Tikudya</td><td>We are eating</td></tr>
+        <tr><td>You pl (inu)</td><td>mu-</td><td>Mukudya</td><td>You all are eating</td></tr>
+        <tr><td>They (iwo)</td><td>a-</td><td>Akudya</td><td>They are eating</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Verb Tenses</h3>
+  <p>Tense is expressed by inserting a <strong>tense marker</strong> between the subject concord and the verb root:</p>
+  <div class="table-scroll">
+    <table class="lang-table">
+      <thead><tr><th>Tense</th><th>Marker</th><th>Example</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>Present progressive</td><td>ku-</td><td>Ndi<strong>ku</strong>dya</td><td>I am eating</td></tr>
+        <tr><td>Simple past</td><td>na-</td><td>Ndi<strong>na</strong>dya</td><td>I ate</td></tr>
+        <tr><td>Habitual past</td><td>ma-</td><td>Ndi<strong>ma</strong>dya</td><td>I used to eat / I eat (regularly)</td></tr>
+        <tr><td>Future</td><td>dza-</td><td>Ndi<strong>dza</strong>dya</td><td>I will eat</td></tr>
+        <tr><td>Negative (present)</td><td>si- … ku-</td><td><strong>Si</strong>ndikudya</td><td>I am not eating</td></tr>
+        <tr><td>Negative (past)</td><td>si- … na-</td><td><strong>Si</strong>ndinadya</td><td>I did not eat</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Verb Extensions</h3>
+  <p>Chichewa verbs can be modified by inserting <strong>extensions</strong> before the final -a:</p>
+  <ul>
+    <li><strong>Causative -its-</strong>: kudya (to eat) → kudyetsa (to feed, cause to eat)</li>
+    <li><strong>Passive -idw-</strong>: kupha (to kill) → kuphedwa (to be killed)</li>
+    <li><strong>Applicative -ir-</strong>: kupita (to go) → kupitira (to go for / on behalf of)</li>
+    <li><strong>Reciprocal -an-</strong>: kukonda (to love) → kukondan (to love each other)</li>
+  </ul>
+
+  <h3>Questions</h3>
+  <p>Yes/no questions are formed by rising intonation alone. Question words:</p>
+  <ul>
+    <li><strong>Chiyani?</strong> — What?</li>
+    <li><strong>Ndani?</strong> — Who?</li>
+    <li><strong>Kuti?</strong> — Where?</li>
+    <li><strong>Liti?</strong> — When?</li>
+    <li><strong>Chifukwa chiyani?</strong> — Why? (lit. because of what?)</li>
+    <li><strong>Bwanji?</strong> — How?</li>
+    <li><strong>Angati?</strong> — How many?</li>
+  </ul>
+</div>
+<div class="lang-section" id="pronunciation">
+  <h2>5. Pronunciation Guide</h2>
+  <p>Chichewa spelling is largely phonetic. Each letter has one consistent sound. Tones exist but are not marked in standard writing.</p>
+  <div class="table-scroll">
+    <table class="lang-table">
+      <thead><tr><th>Letter/Cluster</th><th>Sound</th><th>Example</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>a</td><td>/a/</td><td>madzi (water)</td><td>Like 'a' in "father"</td></tr>
+        <tr><td>e</td><td>/e/</td><td>mtengo (tree)</td><td>Like 'e' in "bed"</td></tr>
+        <tr><td>i</td><td>/i/</td><td>ine (I)</td><td>Like 'ee' in "feet"</td></tr>
+        <tr><td>o</td><td>/o/</td><td>moto (fire)</td><td>Like 'o' in "more"</td></tr>
+        <tr><td>u</td><td>/u/</td><td>mutu (head)</td><td>Like 'oo' in "food"</td></tr>
+        <tr><td>ch</td><td>/tʃ/</td><td>chakudya (food)</td><td>Like 'ch' in "church"</td></tr>
+        <tr><td>ph</td><td>/pʰ/</td><td>phiri (hill)</td><td>Aspirated 'p' — NOT like English 'f'</td></tr>
+        <tr><td>th</td><td>/tʰ/</td><td>nthaka (soil)</td><td>Aspirated 't' — NOT like English 'th'</td></tr>
+        <tr><td>kh</td><td>/kʰ/</td><td>khumi (ten)</td><td>Aspirated 'k'</td></tr>
+        <tr><td>ng'</td><td>/ŋ/</td><td>ng'ombe (cow)</td><td>Velar nasal — like 'ng' in "singing" but at start of word</td></tr>
+        <tr><td>mb</td><td>/mb/</td><td>mbuzi (goat)</td><td>Prenasalized b — say 'm' then 'b' quickly</td></tr>
+        <tr><td>nd</td><td>/nd/</td><td>ndege (aeroplane)</td><td>Prenasalized d</td></tr>
+        <tr><td>nj</td><td>/ndʒ/</td><td>njoka (snake)</td><td>Prenasalized 'j' — like 'ndj'</td></tr>
+        <tr><td>nk</td><td>/ŋk/</td><td>nkhumba (pig)</td><td>Prenasalized k</td></tr>
+        <tr><td>mw</td><td>/mʷ/</td><td>mwana (child)</td><td>Labialized 'm' — 'm' with rounded lips</td></tr>
+        <tr><td>nts</td><td>/nts/</td><td>ntchito (work)</td><td>Prenasalized ts-affricate</td></tr>
+        <tr><td>w</td><td>/w/</td><td>iwe (you)</td><td>Like English 'w'</td></tr>
+        <tr><td>y</td><td>/j/</td><td>iyo (it)</td><td>Like English 'y' in "yes"</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Prenasalized consonants</strong> (mb, nd, nj, nk, ng) are a key feature of Chichewa and most Bantu languages. They begin with a nasal and move immediately to the stop — both sounds are part of a single syllable onset. English has these only at the <em>end</em> of words ("lam<strong>b</strong>", "ba<strong>nd</strong>"), never the start. With practice they become natural.</p>
+</div>
+<div class="lang-section" id="mistakes">
+  <h2>6. Common Mistakes for English Speakers</h2>
+  <ul>
+    <li><strong>Treating "ph" as /f/</strong> — In Chichewa, "ph" is an aspirated /p/, not /f/. "Phiri" (hill) starts with a puffed-out 'p', not 'f'.</li>
+    <li><strong>Ignoring noun class agreement</strong> — Adjectives and verbs must agree with the noun class. "Mwana wabwino" (good child) uses "wa-" because mwana is mu- class; "Chinthu chabwino" (good thing) uses "cha-" for chi- class.</li>
+    <li><strong>Omitting the subject concord</strong> — You cannot say just "kudya" for "I eat." The subject concord is mandatory: "Ndimadya" (I eat regularly).</li>
+    <li><strong>Confusing "kumva" (hear/understand) with "kuona" (see)</strong> — "Sindimva Chichewa" means "I don't understand Chichewa," not "I don't hear it."</li>
+    <li><strong>Using "ayi" for all negation</strong> — "Ayi" is for answering yes/no questions ("No"). Sentence negation uses "si-": "Sindikudziwa" (I don't know).</li>
+    <li><strong>Prenasalized consonants</strong> — Avoid separating mb, nd, nj into two syllables. "Nkhuku" is two syllables (nkhu-ku), not three.</li>
+    <li><strong>Word order with objects</strong> — Objects follow the verb directly: "Ndikufuna madzi" (I want water), NOT "Ndikufuna [madzi] ku…"</li>
+  </ul>
+</div>
+<div class="lang-section" id="resources">
+  <h2>7. Learning Resources</h2>
+  <ul>
+    <li><strong>Peace Corps Chichewa Course</strong> — Free downloadable manual from USAID/Peace Corps, used by volunteers in Malawi. Comprehensive and practical.</li>
+    <li><strong>Chichewa.com</strong> — Online Chichewa–English dictionary and phrasebook.</li>
+    <li><strong>UCLA Chichewa Grammar</strong> — Academic reference grammar available online.</li>
+    <li><strong>Malawi Broadcasting Corporation (MBC)</strong> — Listen to Chichewa news and radio programmes online at mbc.mw.</li>
+    <li><strong>YouTube</strong> — Search "learn Chichewa" or "Chichewa lessons" for video courses from Malawian teachers.</li>
+    <li><strong>Bible in Chichewa (Baibulo Lopatulika)</strong> — Widely available and useful for intermediate readers — familiar texts in Chichewa.</li>
+    <li><strong>Pimsleur Chichewa</strong> — Audio-based course covering basic to intermediate conversational Chichewa.</li>
+  </ul>
+</div>
+<div class="lang-section" id="culture">
+  <h2>8. Culture &amp; Context</h2>
+  <h3>The Warm Heart of Africa</h3>
+  <p>Malawi is nicknamed the "Warm Heart of Africa" for the friendliness of its people. Greeting properly is essential — in Malawian culture, it is rude to walk past someone without greeting them. Learning "Muli bwanji?" and "Ndiri bwino, zikomo" will earn genuine appreciation.</p>
+  <h3>Nsima — The National Dish</h3>
+  <p><strong>Nsima</strong> is the cornerstone of Malawian cuisine: a stiff, smooth porridge made from ground maize flour, cooked to a thick consistency. It is eaten with the hands, rolled into a ball, and dipped into <strong>ndiwo</strong> (relish) — typically beans, vegetables, fish (especially chambo, a tilapia from Lake Malawi), or meat. Saying "Ndakhuta" (I am full/satisfied) after a meal is a polite way to compliment the cook.</p>
+  <h3>Gule Wamkulu</h3>
+  <p><strong>Gule Wamkulu</strong> (the Great Dance) is a sacred masked dance of the Chewa people, recognised by UNESCO as an Intangible Cultural Heritage of Humanity. The masked performers (called <em>nyau</em>) represent spirits of the dead and wild animals. It is performed at funerals, initiations, and community events.</p>
+  <h3>Language and Identity</h3>
+  <p>Chichewa was declared the national language of Malawi in 1968. The name "Chichewa" itself follows Bantu naming conventions: "chi-" is the noun class prefix for languages, and "-chewa" refers to the Chewa people. "Nyanja" (lake) is what Zambian speakers often call the language, referencing Lake Malawi.</p>
+  <h3>Greetings and Respect</h3>
+  <p>Elders are addressed as <strong>Bambo</strong> (for men) or <strong>Mayi</strong> (for women), regardless of relation — it is a respectful term meaning "father" and "mother." When receiving something (a gift, food, payment), it is polite to receive with both hands or to cup one hand over the other.</p>
+</div>
+<div class="lang-section" id="related">
+  <h2>9. Related Guides</h2>
+  <ul>
+    <li><a href="chichewa-from-french.html">Chichewa for French speakers</a></li>
+    <li><a href="chichewa-from-portuguese.html">Chichewa for Portuguese speakers</a></li>
+    <li><a href="swahili-from-english.html">Swahili for English speakers</a></li>
+    <li><a href="lingala-from-english.html">Lingala for English speakers</a></li>
+    <li><a href="language-guides.html">All language guides</a></li>
+  </ul>
+</div>
+
+  <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
+</body>
+</html>

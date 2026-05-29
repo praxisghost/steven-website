@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>Steven Legg</h1>
+    <h1><a href="about.html" class="site-title-link">Steven Legg</a></h1>
     <p class="tagline">
       <span class="tagline-text">Just following my rainbow</span>
       <span class="tagline-leaf-wrap" aria-hidden="true">
@@ -19,25 +19,43 @@
 
   <nav>
     <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="art.html">Art</a></li>
-      <li><a href="book-reviews.html">Book Reviews</a></li>
-      <li><a href="career.html">Career</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="language-learning.html">Language Learning</a></li>
-      <li><a href="misc.html">Misc</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="photos.html">Photos</a></li>
-      <li><a href="sports.html">Sports</a></li>
-      <li><a href="writing.html">Writing</a></li>
+      <li><a href="about.html">🧭 About</a></li>
+      <li><a href="art.html">🎨 Art</a></li>
+      <li><a href="book-reviews.html">📚 Book Reviews</a></li>
+      <li><a href="career.html">💼 Career</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+      <li><a href="language-learning.html">🗣️ Language Learning</a></li>
+      <li><a href="misc.html">🗂️ Misc</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="photos.html">📷 Photos</a></li>
+      <li><a href="sports.html">⚽ Sports</a></li>
+      <li><a href="writing.html">✍️ Writing</a></li>
     </ul>
   </nav>
 
   <footer>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
   </footer>
 
   <script src="script.js"></script>
   <script src="leaf.js"></script>
+  <script>
+    /* Rainbow sweep on "Just following my rainbow" — 5 s cooldown */
+    (function () {
+      const tagline = document.querySelector('.tagline-text');
+      if (!tagline) return;
+      let ready = true;
+      tagline.addEventListener('mouseenter', function () {
+        if (!ready) return;
+        ready = false;
+        tagline.classList.add('rainbow-sweep');
+        tagline.addEventListener('animationend', function () {
+          tagline.classList.remove('rainbow-sweep');
+          setTimeout(function () { ready = true; }, 5000);
+        }, { once: true });
+      });
+    })();
+  </script>
 </body>
 </html>

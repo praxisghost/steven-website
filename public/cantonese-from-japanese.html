@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>広東語 — 日本語話者のための学習ガイド — Steven Legg</title>
+  <meta name="description" content="日本語話者のための広東語学習ガイド。6〜9声調、語末子音（-p/-t/-k）、繁体字漢字との関係、語彙の類似と落とし穴、学習資源を詳解。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← 言語ガイド</a>
+
+<header>
+  <h1>広東語 <span class="lang-from">日本語話者のために</span></h1>
+  <p>粵語 — 香港・広東省・海外華人コミュニティで話される生きた言語。6〜9の声調と語末子音を持つ、音韻的に豊かな言語です。</p>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">単語フラッシュカード</a></li>
+  <li><a href="#intro">広東語とは</a></li>
+  <li><a href="#difficulty">日本語話者にとっての難易度</a></li>
+  <li><a href="#writing">表記体系</a></li>
+  <li><a href="#pronunciation">音韻・発音</a></li>
+  <li><a href="#grammar">文法の概要</a></li>
+  <li><a href="#kanji">漢字の知識の活用と落とし穴</a></li>
+  <li><a href="#mistakes">学習者がおかしやすいミス</a></li>
+  <li><a href="#resources">学習資源</a></li>
+  <li><a href="#media">メディアとインプット</a></li>
+  <li><a href="#strategy">学習戦略</a></li>
+  <li><a href="#cultural">文化的背景</a></li>
+  <li><a href="#vocab">コア語彙（1–300）</a></li>
+  <li><a href="#related">関連ガイド</a></li>
+</ol>
+
+
+<!-- SRS -->
+<div class="lang-section" id="srs">
+  <h2>1. 単語フラッシュカード</h2>
+  <p>40枚のカードで広東語の基本語彙・声調・重要フレーズを学びます。表面に広東語（ジュッピン表記）、裏面に日本語の意味と声調の説明。学習の進捗はブラウザに保存されます。</p>
+  <p><kbd>スペース</kbd>/<kbd>Enter</kbd> で反転 · <kbd>1</kbd> もう一度 · <kbd>3</kbd> 覚えた</p>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">カードを読み込み中…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-turkish" id="srs-front">—</div>
+      <div class="srs-native" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">もう一度</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">覚えた</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">答えを見る</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>今日の分は終了です。明日また来てください。</p>
+      <button class="srs-btn" id="srs-restart">最初からやり直す</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>スペース</kbd>/<kbd>Enter</kbd> 反転</span>
+    <span><kbd>1</kbd> もう一度</span>
+    <span><kbd>3</kbd> 覚えた</span>
+  </div>
+</div>
+<script src="cantonese-srs-ja.js" defer></script>
+
+
+<!-- INTRO -->
+<div class="lang-section" id="intro">
+  <h2>2. 広東語とは</h2>
+
+  <p>広東語（粵語、Yue Chinese）は中国語の一変種であり、香港・マカオ・広東省・広西省南部、および世界各地の海外華人コミュニティで話されています。話者数は約8,000〜8,500万人と推定されています。香港では広東語が公用語のひとつであり、映画・音楽・メディアの豊かなポップカルチャーが世界中に影響を与えてきました。</p>
+
+  <p>言語学的には、広東語は普通話（北京語/標準中国語）とは別の言語として分類されることが多く、相互理解性は低いです。声調の数は広東語の方が多く（6〜9声調）、語末子音の体系も異なります。繁体字漢字を使用する点は日本語の漢字学習に近い感覚があります。</p>
+
+  <h3>日本語話者が広東語を学ぶ理由</h3>
+  <ul>
+    <li><strong>漢字の知識の活用</strong> — 広東語は繁体字漢字を使用します。日本語の漢字（特に音読み）は広東語読みとの比較が可能で、多くの語彙の足がかりになります。</li>
+    <li><strong>豊かな映像・音楽文化</strong> — 香港映画（ジャッキー・チェン、ウォン・カーウァイ）、広東語ポップス（粵語流行曲）は世界的に知名度があり、インプット素材が豊富です。</li>
+    <li><strong>実用性の高さ</strong> — 香港・深圳・シンガポールなど経済的に重要な地域でのコミュニケーションに役立ちます。</li>
+    <li><strong>中国語系言語の入口</strong> — 広東語を学ぶことで、漢字圏の言語学習の基盤が形成されます。</li>
+  </ul>
+</div>
+
+
+<!-- DIFFICULTY -->
+<div class="lang-section" id="difficulty">
+  <h2>3. 日本語話者にとっての難易度</h2>
+
+  <p>広東語は日本語話者にとって難しい言語ですが、有利な点もあります。FSI（米国外務省研究所）では中国語族をカテゴリーIV（最難）に分類していますが、日本語話者は漢字という強力な武器を持っています。</p>
+
+  <h3>日本語話者の有利な点</h3>
+  <ul>
+    <li><strong>漢字の読み書き</strong> — 広東語の繁体字は日本の漢字と多くが重なります。日本語の漢字の意味が広東語でも通じる場合が多く、読み書きの習得速度が大幅に上がります。</li>
+    <li><strong>漢字の音読みとの対応</strong> — 日本語の音読みは中古中国語（中原音韻）に由来しており、広東語も同じ源から発展した言語です。たとえば「山」（さん/サン）は広東語で「saan1」（山）と似た音です。</li>
+    <li><strong>語末子音の感覚</strong> — 日本語には促音（っ）と撥音（ん）があり、広東語の入声（-p/-t/-k）と鼻音韻尾（-m/-n/-ng）への感覚を養いやすいです。</li>
+    <li><strong>SOVではなくSVO</strong> — 広東語は英語と同じSVO語順です。日本語と異なりますが、SOVから逸脱するのは英語学習で経験済みの人も多いです。</li>
+  </ul>
+
+  <h3>日本語話者にとっての困難な点</h3>
+  <ul>
+    <li><strong>6〜9の声調</strong> — 広東語の声調体系は日本語には存在しない概念です。平声・上声・去声・入声の区別、さらに陰陽の区別（陰平・陽平・陰上・陽上・陰去・陽去・陰入・中入・陽入）が音韻上の最大の課題です。</li>
+    <li><strong>語末子音（-p/-t/-k）の発音</strong> — 日本語にはない語末閉鎖音の習得が必要です。ただし、促音「っ」の感覚が参考になります。</li>
+    <li><strong>声調と漢字の分離</strong> — 広東語では同じ漢字でも声調が違うと意味が変わります。漢字の意味は分かっても声調を間違えると伝わりません。</li>
+    <li><strong>繁体字への適応</strong> — 日本の漢字（新字体）と繁体字は形が異なる場合があります（例：「読」→「讀」、「国」→「國」）。</li>
+  </ul>
+
+  <p class="lang-note">学習時間の目安：声調の基礎を把握するまで3〜6か月。日常会話レベルまで1〜2年。漢字の知識があるため読み書きの習得は他の言語話者より速いです。</p>
+</div>
+
+
+<!-- WRITING -->
+<div class="lang-section" id="writing">
+  <h2>4. 表記体系</h2>
+
+  <p>広東語の書き言葉は主に繁体字漢字です。ローマ字転写にはいくつかの方式がありますが、最も標準的なのはジュッピン（粤拼、Jyutping）です。</p>
+
+  <h3>ジュッピン（Jyutping）声調表記</h3>
+  <div class="table-wrap">
+    <table class="lang-table">
+      <thead><tr><th>声調番号</th><th>名称</th><th>例</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>陰平（高平）</td><td>si1</td><td>詩</td></tr>
+        <tr><td>2</td><td>陰上（高上昇）</td><td>si2</td><td>史</td></tr>
+        <tr><td>3</td><td>陰去（中平）</td><td>si3</td><td>試</td></tr>
+        <tr><td>4</td><td>陽平（低落下）</td><td>si4</td><td>時</td></tr>
+        <tr><td>5</td><td>陽上（低上昇）</td><td>si5</td><td>市</td></tr>
+        <tr><td>6</td><td>陽去（低平）</td><td>si6</td><td>事</td></tr>
+        <tr><td>7</td><td>陰入（高短）</td><td>sik1</td><td>色</td></tr>
+        <tr><td>8</td><td>中入（中短）</td><td>sik3 (variant)</td><td>—</td></tr>
+        <tr><td>9</td><td>陽入（低短）</td><td>sik6</td><td>食</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- PRONUNCIATION -->
+<div class="lang-section" id="pronunciation">
+  <h2>5. 音韻・発音</h2>
+
+  <h3>声調：最大の課題</h3>
+  <p>広東語の声調は6（または9）種類あります。日本語には語彙的な声調がないため、これはゼロからの習得です。声調を間違えると完全に別の意味になります：「買」（maai5）と「賣」（maai6）は一音の違いで「買う」と「売る」が逆になります。</p>
+
+  <h3>語末子音（入声）</h3>
+  <p>広東語には語末閉鎖音（-p、-t、-k）と鼻音韻尾（-m、-n、-ng）があります。日本語話者への対応：</p>
+  <div class="table-wrap">
+    <table class="lang-table">
+      <thead><tr><th>語末子音</th><th>広東語例</th><th>日本語の参考</th></tr></thead>
+      <tbody>
+        <tr><td>-p</td><td>sap1（十）</td><td>促音「っ」の -p バリアント</td></tr>
+        <tr><td>-t</td><td>jat1（一）</td><td>促音「っ」の -t バリアント</td></tr>
+        <tr><td>-k</td><td>sik6（食）</td><td>促音「っ」の -k バリアント</td></tr>
+        <tr><td>-m</td><td>jam2（飲）</td><td>撥音「ん」の -m バリアント</td></tr>
+        <tr><td>-n</td><td>san1（新）</td><td>撥音「ん」の -n バリアント</td></tr>
+        <tr><td>-ng</td><td>joeng4（羊）</td><td>撥音「ん」の -ng バリアント</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- GRAMMAR -->
+<div class="lang-section" id="grammar">
+  <h2>6. 文法の概要</h2>
+
+  <p>広東語はSVO語順（主語-動詞-目的語）を基本とし、文法的な性・格変化がありません。助詞体系は日本語より少なく、語順が文法的役割を担います。</p>
+
+  <h3>主な文法的特徴</h3>
+  <ul>
+    <li><strong>アスペクト助詞</strong> — 「完了」「継続」「経験」を示す助詞（咗〈zo2〉、緊〈gan2〉、過〈gwo3〉など）があります。日本語のテンス・アスペクトと異なる体系ですが、概念的には理解しやすい部分もあります。</li>
+    <li><strong>量詞（分類詞）</strong> — 物を数えるとき、名詞の種類に応じた量詞が必要です（例：「一本の本」→「一本書 jat1 bun2 syu1」）。日本語の助数詞と似た概念です。</li>
+    <li><strong>文末助詞</strong> — 広東語には豊富な文末助詞（語気助詞）があります（啊/ah、喇/laa3、囉/lo3など）。日本語の「ね」「よ」「か」に相当します。</li>
+    <li><strong>声調サンドヒ</strong> — 話し言葉では声調が前後の音節の影響で変化することがあります（変調）。</li>
+  </ul>
+</div>
+
+
+<!-- KANJI -->
+<div class="lang-section" id="kanji">
+  <h2>7. 漢字の知識の活用と落とし穴</h2>
+
+  <h3>漢字の強み</h3>
+  <p>日本語の漢字知識は広東語学習において強力な武器です。多くの語彙が共通の漢字で表記されており、文章を読む際に内容の推測が可能です。特に学術・専門語彙では対応が明確です。</p>
+
+  <h3>落とし穴：「偽の友人」（False Friends）</h3>
+  <p>しかし、注意が必要な落とし穴もあります：</p>
+  <div class="table-wrap">
+    <table class="lang-table">
+      <thead><tr><th>漢字</th><th>日本語での意味</th><th>広東語での意味</th></tr></thead>
+      <tbody>
+        <tr><td>湯（tong1）</td><td>お湯（hot water）</td><td>スープ（soup）</td></tr>
+        <tr><td>手紙（sau2 zi2）</td><td>手紙（letter）</td><td>トイレットペーパー（toilet paper）</td></tr>
+        <tr><td>娘（noeng4）</td><td>娘（daughter）</td><td>女の子（girl）</td></tr>
+        <tr><td>走（zau2）</td><td>走る（to run）</td><td>去る・出る（to leave）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>漢字の「見た目」に頼りすぎると誤解を招くことがあります。音と意味を対でしっかり確認することが重要です。</p>
+</div>
+
+
+<!-- MISTAKES -->
+<div class="lang-section" id="mistakes">
+  <h2>8. 学習者がおかしやすいミス</h2>
+  <ul>
+    <li><strong>声調を省略する。</strong>声調は文法的なノイズではなく語彙の核心部分です。声調なしで話すと理解されないことが多くあります。</li>
+    <li><strong>普通話の発音を流用する。</strong>広東語と普通話は別の音韻体系を持ちます。普通話のピンイン読みで広東語を発音しようとすると根本的な誤りが生まれます。</li>
+    <li><strong>日本語漢字の意味を直接適用する。</strong>「偽の友人」のリストを意識し、広東語固有の語彙意味を確認してください。</li>
+    <li><strong>書き言葉と話し言葉を混同する。</strong>広東語には正式な書き言葉（書面語）と話し言葉（口語）に大きな差があります。教材が書き言葉を扱っているのか口語を扱っているのかを常に意識してください。</li>
+    <li><strong>入声（-p/-t/-k）を曖昧にする。</strong>語末閉鎖音は声調の一部であり、省略すると異なる声調・語彙に聞こえます。</li>
+  </ul>
+</div>
+
+
+<!-- RESOURCES -->
+<div class="lang-section" id="resources">
+  <h2>9. 学習資源</h2>
+
+  <h3>アプリ・オンライン</h3>
+  <ul>
+    <li><strong>CantoDict (cantonese.sheik.co.uk)</strong> — 広東語-英語辞典。ジュッピン表記と声調付き。</li>
+    <li><strong>Pleco</strong> — 最も信頼性の高い中国語辞典アプリ。広東語のジュッピン表記と音声再生に対応。</li>
+    <li><strong>Cantonese.org（廣州話正音字典）</strong> — 発音確認に有用。</li>
+  </ul>
+
+  <h3>書籍</h3>
+  <ul>
+    <li><strong>Cantonese: A Comprehensive Grammar（Matthew Chen, Yiu-Kwan Man）</strong> — 英語での最も包括的な文法書のひとつ。</li>
+    <li><strong>粤语入门（香港中文大学）</strong> — 広東語話者向けの体系的な教材。</li>
+  </ul>
+
+  <h3>メディア</h3>
+  <ul>
+    <li><strong>TVB（香港テレビ放送）</strong> — 広東語テレビドラマ・バラエティのアーカイブが多数あります。</li>
+    <li><strong>香港映画</strong> — ウォン・カーウァイ、ジョニー・トーなどの監督作品は自然な広東語が聞けます。</li>
+  </ul>
+</div>
+
+
+<!-- MEDIA -->
+<div class="lang-section" id="media">
+  <h2>10. メディアとインプット</h2>
+
+  <p>広東語は生きた言語であり、豊富なインプット素材があります。これはアイヌ語やナバホ語とは対照的な恵まれた環境です。</p>
+  <ul>
+    <li><strong>YouTubeの広東語コンテンツ</strong> — 香港のYouTuberによる日常会話・料理・旅行動画など多数。</li>
+    <li><strong>広東語ポップス（粵語流行曲）</strong> — 陳奕迅（Eason Chan）、鄧紫棋（G.E.M.）などのアーティストの曲で自然な広東語のリズムに慣れる。</li>
+    <li><strong>香港ドラマ（テレビB）</strong> — 警察ドラマ・ファミリードラマなど、日常会話の広東語が豊富。</li>
+    <li><strong>映画（香港ノワール・コメディ）</strong> — ジャッキー・チェン、チョウ・ユンファ出演作品など。</li>
+    <li><strong>Podcast</strong> — 広東語母語話者向けのPodcastが多数。ニュース・時事・エンターテインメント系が充実。</li>
+  </ul>
+</div>
+
+
+<!-- STRATEGY -->
+<div class="lang-section" id="strategy">
+  <h2>11. 学習戦略</h2>
+  <ol>
+    <li><strong>声調を最初から真剣に取り組む。</strong>後から修正するのは難しい。最初の1〜2か月は声調の習得を最優先にしてください。</li>
+    <li><strong>ジュッピン（粤拼）を最初に学ぶ。</strong>広東語の標準ローマ字転写を最初にマスターすると、辞書・アプリ・教材の使いこなしが格段に楽になります。</li>
+    <li><strong>漢字の利点を最大化する。</strong>読み書きは他言語話者より速く習得できます。積極的に漢字ルートから語彙を増やしてください。</li>
+    <li><strong>「偽の友人」リストを早期に確認する。</strong>日本語漢字との意味の差異を意識して学ぶことで、誤解を防げます。</li>
+    <li><strong>本物の広東語音声を大量に聞く。</strong>声調は耳から習得する部分が大きい。声調の確認は常に音声で行ってください。</li>
+    <li><strong>書き言葉と口語を使い分ける。</strong>会話を目標とするなら口語資料を、読解を目標とするなら書き言葉資料を中心に使いましょう。</li>
+  </ol>
+</div>
+
+
+<!-- CULTURAL -->
+<div class="lang-section" id="cultural">
+  <h2>12. 文化的背景</h2>
+
+  <p>広東語は単なる言語ではなく、香港・広東の文化的アイデンティティと深く結びついています。特に香港では、普通話（標準中国語）への言語的圧力が続くなかで、広東語の維持・発展は政治的な意味を持つこともあります。</p>
+
+  <h3>粵語流行曲（广东话流行歌曲）</h3>
+  <p>1970〜80年代から続く広東語ポップスの文化は、アジア全域に影響を与えました。テレサ・テン（邓丽君）、許冠傑（サミュエル・ホイ）から現代の陳奕迅まで、音楽を通じた広東語学習は文化的文脈と共に語彙を習得できる有効な方法です。</p>
+
+  <h3>飲茶（飲茶文化）</h3>
+  <p>「飲茶」（ヤムチャ、yam2 caa4）— 点心（ディムサム）を食べながらお茶を楽しむ広東の食文化——は世界中に広がっています。飲茶の語彙（腸粉、蝦餃、叉焼包など）は日本語話者にも漢字から意味が推測しやすく、実用的な入口になります。</p>
+
+  <h3>香港映画の遺産</h3>
+  <p>1980〜90年代の香港映画黄金期（ジョン・ウー、ジャッキー・チェン、チョウ・ユンファ）は世界的なポップカルチャーに多大な影響を与えました。これらの映画を原語（広東語）で視聴することは、本物の言語接触と文化理解を同時に達成できます。</p>
+</div>
+
+
+
+
+<!-- ══════════════════════════════════════════════
+     コア語彙 1–300
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="vocab">
+  <h2>14. コア語彙 1–300</h2>
+  <p>広東語の最重要語彙300語。広東語（Jyutping 発音記号）・日本語訳で構成。検索ボックスで絞り込みできます。</p>
+  <div class="guide-search-wrap" style="margin-bottom:1rem;">
+    <input type="search" class="vocab-search" placeholder="語彙を検索…" aria-label="語彙を検索" autocomplete="off">
+  </div>
+  <div class="table-wrap">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>広東語</th><th>Jyutping</th><th>日本語</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>我</td><td>ngo5</td><td>私・僕</td></tr>
+        <tr><td>2</td><td>你</td><td>nei5</td><td>あなた</td></tr>
+        <tr><td>3</td><td>佢</td><td>keoi5</td><td>彼・彼女</td></tr>
+        <tr><td>4</td><td>係</td><td>hai6</td><td>～です（be動詞）</td></tr>
+        <tr><td>5</td><td>唔係</td><td>m4 hai6</td><td>～ではない</td></tr>
+        <tr><td>6</td><td>有</td><td>jau5</td><td>ある・いる・持っている</td></tr>
+        <tr><td>7</td><td>冇</td><td>mou5</td><td>ない・いない</td></tr>
+        <tr><td>8</td><td>嘅</td><td>ge3</td><td>～の（所有・強調助詞）</td></tr>
+        <tr><td>9</td><td>喺</td><td>hai2</td><td>～にいる・ある</td></tr>
+        <tr><td>10</td><td>同</td><td>tung4</td><td>～と一緒に・そして</td></tr>
+        <tr><td>11</td><td>唔</td><td>m4</td><td>～しない（否定）</td></tr>
+        <tr><td>12</td><td>好</td><td>hou2</td><td>良い・とても</td></tr>
+        <tr><td>13</td><td>識</td><td>sik1</td><td>～できる・知っている</td></tr>
+        <tr><td>14</td><td>知</td><td>zi1</td><td>知っている</td></tr>
+        <tr><td>15</td><td>去</td><td>heoi3</td><td>行く</td></tr>
+        <tr><td>16</td><td>嚟</td><td>lai4</td><td>来る</td></tr>
+        <tr><td>17</td><td>食</td><td>sik6</td><td>食べる</td></tr>
+        <tr><td>18</td><td>飲</td><td>jam2</td><td>飲む</td></tr>
+        <tr><td>19</td><td>睇</td><td>tai2</td><td>見る・読む</td></tr>
+        <tr><td>20</td><td>講</td><td>gong2</td><td>話す・言う</td></tr>
+        <tr><td>21</td><td>話</td><td>waa6</td><td>言う</td></tr>
+        <tr><td>22</td><td>做</td><td>zou6</td><td>する・作る</td></tr>
+        <tr><td>23</td><td>想</td><td>soeng2</td><td>～したい・思う</td></tr>
+        <tr><td>24</td><td>幫</td><td>bong1</td><td>手伝う</td></tr>
+        <tr><td>25</td><td>問</td><td>man6</td><td>聞く・質問する</td></tr>
+        <tr><td>26</td><td>答</td><td>daap3</td><td>答える</td></tr>
+        <tr><td>27</td><td>買</td><td>maai5</td><td>買う</td></tr>
+        <tr><td>28</td><td>賣</td><td>maai6</td><td>売る</td></tr>
+        <tr><td>29</td><td>用</td><td>jung6</td><td>使う</td></tr>
+        <tr><td>30</td><td>叫</td><td>giu3</td><td>呼ぶ・名前は～</td></tr>
+        <tr><td>31</td><td>俾</td><td>bei2</td><td>あげる・与える</td></tr>
+        <tr><td>32</td><td>攞</td><td>lo2</td><td>取る・持っていく</td></tr>
+        <tr><td>33</td><td>放</td><td>fong3</td><td>置く・離す</td></tr>
+        <tr><td>34</td><td>搵</td><td>wan2</td><td>探す・稼ぐ</td></tr>
+        <tr><td>35</td><td>見</td><td>gin3</td><td>会う・見える</td></tr>
+        <tr><td>36</td><td>聽</td><td>teng1</td><td>聞く</td></tr>
+        <tr><td>37</td><td>打</td><td>daa2</td><td>打つ・電話をかける</td></tr>
+        <tr><td>38</td><td>寫</td><td>se2</td><td>書く</td></tr>
+        <tr><td>39</td><td>讀</td><td>duk6</td><td>読む（音読）</td></tr>
+        <tr><td>40</td><td>學</td><td>hok6</td><td>学ぶ</td></tr>
+        <tr><td>41</td><td>教</td><td>gaau3</td><td>教える</td></tr>
+        <tr><td>42</td><td>住</td><td>zyu6</td><td>住む</td></tr>
+        <tr><td>43</td><td>走</td><td>zau2</td><td>走る・去る</td></tr>
+        <tr><td>44</td><td>坐</td><td>co5</td><td>座る</td></tr>
+        <tr><td>45</td><td>企</td><td>kei5</td><td>立つ</td></tr>
+        <tr><td>46</td><td>訓覺</td><td>fan3 gaau3</td><td>眠る</td></tr>
+        <tr><td>47</td><td>起身</td><td>hei2 san1</td><td>起きる</td></tr>
+        <tr><td>48</td><td>返</td><td>faan1</td><td>戻る・帰る</td></tr>
+        <tr><td>49</td><td>出</td><td>ceot1</td><td>出る</td></tr>
+        <tr><td>50</td><td>入</td><td>jap6</td><td>入る</td></tr>
+        <tr><td>51</td><td>一</td><td>jat1</td><td>1</td></tr>
+        <tr><td>52</td><td>二</td><td>ji6</td><td>2</td></tr>
+        <tr><td>53</td><td>三</td><td>saam1</td><td>3</td></tr>
+        <tr><td>54</td><td>四</td><td>sei3</td><td>4</td></tr>
+        <tr><td>55</td><td>五</td><td>ng5</td><td>5</td></tr>
+        <tr><td>56</td><td>六</td><td>luk6</td><td>6</td></tr>
+        <tr><td>57</td><td>七</td><td>cat1</td><td>7</td></tr>
+        <tr><td>58</td><td>八</td><td>baat3</td><td>8</td></tr>
+        <tr><td>59</td><td>九</td><td>gau2</td><td>9</td></tr>
+        <tr><td>60</td><td>十</td><td>sap6</td><td>10</td></tr>
+        <tr><td>61</td><td>百</td><td>baak3</td><td>百</td></tr>
+        <tr><td>62</td><td>千</td><td>cin1</td><td>千</td></tr>
+        <tr><td>63</td><td>萬</td><td>maan6</td><td>万</td></tr>
+        <tr><td>64</td><td>零</td><td>ling4</td><td>ゼロ</td></tr>
+        <tr><td>65</td><td>兩</td><td>loeng5</td><td>2つ（量詞と使用）</td></tr>
+        <tr><td>66</td><td>我哋</td><td>ngo5 dei6</td><td>私たち</td></tr>
+        <tr><td>67</td><td>你哋</td><td>nei5 dei6</td><td>あなたたち</td></tr>
+        <tr><td>68</td><td>佢哋</td><td>keoi5 dei6</td><td>彼ら</td></tr>
+        <tr><td>69</td><td>呢</td><td>ni1</td><td>この</td></tr>
+        <tr><td>70</td><td>嗰</td><td>go2</td><td>あの・その</td></tr>
+        <tr><td>71</td><td>邊個</td><td>bin1 go3</td><td>どれ・誰</td></tr>
+        <tr><td>72</td><td>咩</td><td>me1</td><td>何（疑問）</td></tr>
+        <tr><td>73</td><td>點</td><td>dim2</td><td>どう・どのように</td></tr>
+        <tr><td>74</td><td>幾時</td><td>gei2 si4</td><td>いつ</td></tr>
+        <tr><td>75</td><td>幾多</td><td>gei2 do1</td><td>いくつ・いくら</td></tr>
+        <tr><td>76</td><td>點解</td><td>dim2 gaai2</td><td>なぜ</td></tr>
+        <tr><td>77</td><td>邊度</td><td>bin1 dou6</td><td>どこ</td></tr>
+        <tr><td>78</td><td>而家</td><td>ji4 gaa1</td><td>今</td></tr>
+        <tr><td>79</td><td>尋日</td><td>cam4 jat6</td><td>昨日</td></tr>
+        <tr><td>80</td><td>聽日</td><td>ting1 jat6</td><td>明日</td></tr>
+        <tr><td>81</td><td>今日</td><td>gam1 jat6</td><td>今日</td></tr>
+        <tr><td>82</td><td>下晝</td><td>haa6 zau3</td><td>午後</td></tr>
+        <tr><td>83</td><td>朝早</td><td>ziu1 zou2</td><td>朝・午前</td></tr>
+        <tr><td>84</td><td>夜晚</td><td>je6 maan5</td><td>夜</td></tr>
+        <tr><td>85</td><td>已經</td><td>ji5 ging1</td><td>すでに</td></tr>
+        <tr><td>86</td><td>仲</td><td>zung6</td><td>まだ・さらに</td></tr>
+        <tr><td>87</td><td>先</td><td>sin1</td><td>先に・まず</td></tr>
+        <tr><td>88</td><td>之後</td><td>zi1 hau6</td><td>～の後</td></tr>
+        <tr><td>89</td><td>啱啱</td><td>ngaam1 ngaam1</td><td>ちょうど・さっき</td></tr>
+        <tr><td>90</td><td>大</td><td>daai6</td><td>大きい</td></tr>
+        <tr><td>91</td><td>細</td><td>sai3</td><td>小さい</td></tr>
+        <tr><td>92</td><td>高</td><td>gou1</td><td>高い・背が高い</td></tr>
+        <tr><td>93</td><td>矮</td><td>ai2</td><td>低い・背が低い</td></tr>
+        <tr><td>94</td><td>長</td><td>coeng4</td><td>長い</td></tr>
+        <tr><td>95</td><td>短</td><td>dyun2</td><td>短い</td></tr>
+        <tr><td>96</td><td>靚</td><td>leng3</td><td>綺麗・かっこいい</td></tr>
+        <tr><td>97</td><td>新</td><td>san1</td><td>新しい</td></tr>
+        <tr><td>98</td><td>舊</td><td>gau6</td><td>古い</td></tr>
+        <tr><td>99</td><td>快</td><td>faai3</td><td>速い</td></tr>
+        <tr><td>100</td><td>慢</td><td>maan6</td><td>遅い</td></tr>
+        <tr><td>101</td><td>貴</td><td>gwai3</td><td>高い（値段）</td></tr>
+        <tr><td>102</td><td>平</td><td>peng4</td><td>安い</td></tr>
+        <tr><td>103</td><td>辣</td><td>laat6</td><td>辛い</td></tr>
+        <tr><td>104</td><td>甜</td><td>tim4</td><td>甘い</td></tr>
+        <tr><td>105</td><td>鮮</td><td>sin1</td><td>新鮮・美味しい</td></tr>
+        <tr><td>106</td><td>頭</td><td>tau4</td><td>頭</td></tr>
+        <tr><td>107</td><td>眼</td><td>ngaan5</td><td>目</td></tr>
+        <tr><td>108</td><td>耳</td><td>ji5</td><td>耳</td></tr>
+        <tr><td>109</td><td>鼻</td><td>bei6</td><td>鼻</td></tr>
+        <tr><td>110</td><td>口</td><td>hau2</td><td>口</td></tr>
+        <tr><td>111</td><td>牙</td><td>ngaa4</td><td>歯</td></tr>
+        <tr><td>112</td><td>頸</td><td>geng2</td><td>首</td></tr>
+        <tr><td>113</td><td>手</td><td>sau2</td><td>手</td></tr>
+        <tr><td>114</td><td>腳</td><td>goek3</td><td>足</td></tr>
+        <tr><td>115</td><td>心</td><td>sam1</td><td>心・心臓</td></tr>
+        <tr><td>116</td><td>肚</td><td>tou5</td><td>お腹</td></tr>
+        <tr><td>117</td><td>背</td><td>bui3</td><td>背中</td></tr>
+        <tr><td>118</td><td>面</td><td>min6</td><td>顔</td></tr>
+        <tr><td>119</td><td>爸爸</td><td>baa4 baa1</td><td>お父さん</td></tr>
+        <tr><td>120</td><td>媽媽</td><td>maa4 maa1</td><td>お母さん</td></tr>
+        <tr><td>121</td><td>哥哥</td><td>go4 go1</td><td>お兄さん</td></tr>
+        <tr><td>122</td><td>姐姐</td><td>ze4 ze1</td><td>お姉さん</td></tr>
+        <tr><td>123</td><td>弟弟</td><td>dai6 dai2</td><td>弟</td></tr>
+        <tr><td>124</td><td>妹妹</td><td>mui6 mui2</td><td>妹</td></tr>
+        <tr><td>125</td><td>老公</td><td>lou5 gung1</td><td>夫</td></tr>
+        <tr><td>126</td><td>老婆</td><td>lou5 po4</td><td>妻</td></tr>
+        <tr><td>127</td><td>仔</td><td>zai2</td><td>息子</td></tr>
+        <tr><td>128</td><td>女</td><td>neoi2</td><td>娘</td></tr>
+        <tr><td>129</td><td>朋友</td><td>pang4 jau5</td><td>友達</td></tr>
+        <tr><td>130</td><td>飯</td><td>faan6</td><td>ご飯・食事</td></tr>
+        <tr><td>131</td><td>麵</td><td>min6</td><td>麺</td></tr>
+        <tr><td>132</td><td>水</td><td>seoi2</td><td>水</td></tr>
+        <tr><td>133</td><td>茶</td><td>caa4</td><td>お茶</td></tr>
+        <tr><td>134</td><td>咖啡</td><td>gaa3 fe1</td><td>コーヒー</td></tr>
+        <tr><td>135</td><td>肉</td><td>juk6</td><td>肉</td></tr>
+        <tr><td>136</td><td>雞</td><td>gai1</td><td>鶏</td></tr>
+        <tr><td>137</td><td>魚</td><td>jyu2</td><td>魚</td></tr>
+        <tr><td>138</td><td>菜</td><td>coi3</td><td>野菜・おかず</td></tr>
+        <tr><td>139</td><td>湯</td><td>tong1</td><td>スープ</td></tr>
+        <tr><td>140</td><td>點心</td><td>dim2 sam1</td><td>飲茶・点心</td></tr>
+        <tr><td>141</td><td>蛋</td><td>daan6</td><td>卵</td></tr>
+        <tr><td>142</td><td>車</td><td>ce1</td><td>車</td></tr>
+        <tr><td>143</td><td>巴士</td><td>baa1 si2</td><td>バス</td></tr>
+        <tr><td>144</td><td>地鐵</td><td>dei6 tit3</td><td>地下鉄</td></tr>
+        <tr><td>145</td><td>的士</td><td>dik1 si6</td><td>タクシー</td></tr>
+        <tr><td>146</td><td>飛機</td><td>fei1 gei1</td><td>飛行機</td></tr>
+        <tr><td>147</td><td>學校</td><td>hok6 haau6</td><td>学校</td></tr>
+        <tr><td>148</td><td>醫院</td><td>ji1 jyun2</td><td>病院</td></tr>
+        <tr><td>149</td><td>超市</td><td>ciu1 si5</td><td>スーパー</td></tr>
+        <tr><td>150</td><td>餐廳</td><td>caan1 teng1</td><td>レストラン</td></tr>
+        <tr><td>151</td><td>酒店</td><td>zau2 dim3</td><td>ホテル</td></tr>
+        <tr><td>152</td><td>廁所</td><td>ci3 so2</td><td>トイレ</td></tr>
+        <tr><td>153</td><td>出口</td><td>ceot1 hau2</td><td>出口</td></tr>
+        <tr><td>154</td><td>㗎</td><td>gaa3</td><td>～よ（断定）</td></tr>
+        <tr><td>155</td><td>囉</td><td>lo3</td><td>～だよ（当然）</td></tr>
+        <tr><td>156</td><td>喎</td><td>wo3</td><td>～らしい（伝聞）</td></tr>
+        <tr><td>157</td><td>咋</td><td>zaa3</td><td>だけ・しか</td></tr>
+        <tr><td>158</td><td>都</td><td>dou1</td><td>も・どれも</td></tr>
+        <tr><td>159</td><td>喺度</td><td>hai2 dou6</td><td>～にいる・いる</td></tr>
+        <tr><td>160</td><td>番</td><td>faan1</td><td>～し返す（方向補語）</td></tr>
+        <tr><td>161</td><td>紅</td><td>hung4</td><td>赤</td></tr>
+        <tr><td>162</td><td>藍</td><td>laam4</td><td>青・紺</td></tr>
+        <tr><td>163</td><td>綠</td><td>luk6</td><td>緑</td></tr>
+        <tr><td>164</td><td>黃</td><td>wong4</td><td>黄色</td></tr>
+        <tr><td>165</td><td>白</td><td>baak6</td><td>白</td></tr>
+        <tr><td>166</td><td>黑</td><td>hak1</td><td>黒</td></tr>
+        <tr><td>167</td><td>紫</td><td>zi2</td><td>紫</td></tr>
+        <tr><td>168</td><td>橙</td><td>caang2</td><td>オレンジ</td></tr>
+        <tr><td>169</td><td>粉紅</td><td>fan2 hung4</td><td>ピンク</td></tr>
+        <tr><td>170</td><td>灰</td><td>fui1</td><td>グレー</td></tr>
+        <tr><td>171</td><td>錢</td><td>cin2</td><td>お金</td></tr>
+        <tr><td>172</td><td>時間</td><td>si4 gaan3</td><td>時間</td></tr>
+        <tr><td>173</td><td>電話</td><td>din6 waa2</td><td>電話</td></tr>
+        <tr><td>174</td><td>手機</td><td>sau2 gei1</td><td>スマートフォン</td></tr>
+        <tr><td>175</td><td>電腦</td><td>din6 nou5</td><td>コンピュータ</td></tr>
+        <tr><td>176</td><td>衫</td><td>saam1</td><td>服・シャツ</td></tr>
+        <tr><td>177</td><td>褲</td><td>fu3</td><td>ズボン</td></tr>
+        <tr><td>178</td><td>鞋</td><td>haai4</td><td>靴</td></tr>
+        <tr><td>179</td><td>書</td><td>syu1</td><td>本</td></tr>
+        <tr><td>180</td><td>天氣</td><td>tin1 hei3</td><td>天気</td></tr>
+        <tr><td>181</td><td>日</td><td>jat6</td><td>日・太陽</td></tr>
+        <tr><td>182</td><td>月</td><td>jyut6</td><td>月</td></tr>
+        <tr><td>183</td><td>雨</td><td>jyu5</td><td>雨</td></tr>
+        <tr><td>184</td><td>風</td><td>fung1</td><td>風</td></tr>
+        <tr><td>185</td><td>熱</td><td>jit6</td><td>暑い・熱い</td></tr>
+        <tr><td>186</td><td>凍</td><td>dung3</td><td>寒い・冷たい</td></tr>
+        <tr><td>187</td><td>廣東話</td><td>gwong2 dung1 waa2</td><td>広東語</td></tr>
+        <tr><td>188</td><td>香港</td><td>hoeng1 gong2</td><td>香港</td></tr>
+        <tr><td>189</td><td>飲茶</td><td>jam2 caa4</td><td>飲茶（ヤムチャ）</td></tr>
+        <tr><td>190</td><td>多謝</td><td>do1 ze6</td><td>ありがとう（正式）</td></tr>
+        <tr><td>191</td><td>唔該</td><td>m4 goi1</td><td>ありがとう（サービス）・すみません</td></tr>
+        <tr><td>192</td><td>唔好意思</td><td>m4 hou2 ji3 si1</td><td>すみません・恐れ入ります</td></tr>
+        <tr><td>193</td><td>冇錯</td><td>mou5 co3</td><td>間違いない・そのとおり</td></tr>
+        <tr><td>194</td><td>搞掂</td><td>gaau2 dim6</td><td>完了・解決した</td></tr>
+        <tr><td>195</td><td>唔使</td><td>m4 sai2</td><td>必要ない・結構</td></tr>
+        <tr><td>196</td><td>得</td><td>dak1</td><td>OK・できる・良い</td></tr>
+        <tr><td>197</td><td>頂</td><td>ding2</td><td>最高・すごい（スラング）</td></tr>
+        <tr><td>198</td><td>勁</td><td>ging6</td><td>すごい・強い</td></tr>
+        <tr><td>199</td><td>開心</td><td>hoi1 sam1</td><td>嬉しい・楽しい</td></tr>
+        <tr><td>200</td><td>唔開心</td><td>m4 hoi1 sam1</td><td>悲しい・不満</td></tr>
+        <tr><td>201</td><td>記得</td><td>gei3 dak1</td><td>覚えている</td></tr>
+        <tr><td>202</td><td>唔記得</td><td>m4 gei3 dak1</td><td>忘れた</td></tr>
+        <tr><td>203</td><td>了解</td><td>liu5 gaai2</td><td>理解する</td></tr>
+        <tr><td>204</td><td>同意</td><td>tung4 ji3</td><td>同意する</td></tr>
+        <tr><td>205</td><td>一齊</td><td>jat1 cai4</td><td>一緒に</td></tr>
+        <tr><td>206</td><td>自己</td><td>zi6 gei2</td><td>自分</td></tr>
+        <tr><td>207</td><td>人</td><td>jan4</td><td>人</td></tr>
+        <tr><td>208</td><td>男人</td><td>naam4 jan4</td><td>男性</td></tr>
+        <tr><td>209</td><td>女人</td><td>neoi5 jan4</td><td>女性</td></tr>
+        <tr><td>210</td><td>細路</td><td>sai3 lou6</td><td>子供</td></tr>
+        <tr><td>211</td><td>上</td><td>soeng5</td><td>上がる・乗る</td></tr>
+        <tr><td>212</td><td>落</td><td>lok6</td><td>降りる・下がる</td></tr>
+        <tr><td>213</td><td>開</td><td>hoi1</td><td>開ける</td></tr>
+        <tr><td>214</td><td>關</td><td>gwaan1</td><td>閉める</td></tr>
+        <tr><td>215</td><td>等</td><td>dang2</td><td>待つ</td></tr>
+        <tr><td>216</td><td>完</td><td>jyun4</td><td>終わる</td></tr>
+        <tr><td>217</td><td>開始</td><td>hoi1 ci2</td><td>始まる・始める</td></tr>
+        <tr><td>218</td><td>繼續</td><td>gai3 zuk6</td><td>続ける</td></tr>
+        <tr><td>219</td><td>停</td><td>ting4</td><td>止まる・止める</td></tr>
+        <tr><td>220</td><td>試</td><td>si3</td><td>試す</td></tr>
+        <tr><td>221</td><td>借</td><td>ze3</td><td>借りる・貸す</td></tr>
+        <tr><td>222</td><td>還</td><td>waan4</td><td>返す</td></tr>
+        <tr><td>223</td><td>帶</td><td>daai3</td><td>連れていく・持っていく</td></tr>
+        <tr><td>224</td><td>送</td><td>sung3</td><td>送る・プレゼントする</td></tr>
+        <tr><td>225</td><td>揀</td><td>gaan2</td><td>選ぶ</td></tr>
+        <tr><td>226</td><td>換</td><td>wun6</td><td>交換する・着替える</td></tr>
+        <tr><td>227</td><td>洗</td><td>sai2</td><td>洗う</td></tr>
+        <tr><td>228</td><td>煮</td><td>zyu2</td><td>料理する</td></tr>
+        <tr><td>229</td><td>切</td><td>cit3</td><td>切る</td></tr>
+        <tr><td>230</td><td>燒</td><td>siu1</td><td>焼く</td></tr>
+        <tr><td>231</td><td>炒</td><td>caau2</td><td>炒める</td></tr>
+        <tr><td>232</td><td>蒸</td><td>zing1</td><td>蒸す</td></tr>
+        <tr><td>233</td><td>笑</td><td>siu3</td><td>笑う</td></tr>
+        <tr><td>234</td><td>喊</td><td>haam3</td><td>泣く</td></tr>
+        <tr><td>235</td><td>擔心</td><td>daam1 sam1</td><td>心配する</td></tr>
+        <tr><td>236</td><td>驚</td><td>geng1</td><td>怖い・驚く</td></tr>
+        <tr><td>237</td><td>鍾意</td><td>zung1 ji3</td><td>好き</td></tr>
+        <tr><td>238</td><td>唔鍾意</td><td>m4 zung1 ji3</td><td>嫌い</td></tr>
+        <tr><td>239</td><td>聲調（第1聲）</td><td>seng1 diu6 (1)</td><td>高平調 ā</td></tr>
+        <tr><td>240</td><td>聲調（第2聲）</td><td>seng1 diu6 (2)</td><td>中上調 á</td></tr>
+        <tr><td>241</td><td>聲調（第3聲）</td><td>seng1 diu6 (3)</td><td>中平調 a</td></tr>
+        <tr><td>242</td><td>聲調（第4聲）</td><td>seng1 diu6 (4)</td><td>低降調 à</td></tr>
+        <tr><td>243</td><td>聲調（第5聲）</td><td>seng1 diu6 (5)</td><td>低上調 ǎ</td></tr>
+        <tr><td>244</td><td>聲調（第6聲）</td><td>seng1 diu6 (6)</td><td>低平調 a̤</td></tr>
+        <tr><td>245</td><td>好多</td><td>hou2 do1</td><td>たくさん・多い</td></tr>
+        <tr><td>246</td><td>少少</td><td>siu2 siu2</td><td>少し</td></tr>
+        <tr><td>247</td><td>冇問題</td><td>mou5 man6 tai4</td><td>問題ない</td></tr>
+        <tr><td>248</td><td>係咁</td><td>hai6 gam2</td><td>そういうもの・仕方ない</td></tr>
+        <tr><td>249</td><td>點都好</td><td>dim2 dou1 hou2</td><td>いずれにせよ良い</td></tr>
+        <tr><td>250</td><td>算</td><td>syun3</td><td>まあいいか・あきらめる</td></tr>
+        <tr><td>251</td><td>係唔係</td><td>hai6 m4 hai6</td><td>そうですか？</td></tr>
+        <tr><td>252</td><td>得唔得</td><td>dak1 m4 dak1</td><td>できますか？</td></tr>
+        <tr><td>253</td><td>傾計</td><td>king1 gai3</td><td>話す・チャットする</td></tr>
+        <tr><td>254</td><td>行街</td><td>haang4 gaai1</td><td>街を歩く・買い物</td></tr>
+        <tr><td>255</td><td>唞</td><td>tau2</td><td>休む</td></tr>
+        <tr><td>256</td><td>咖喱</td><td>gaa3 lei1</td><td>カレー</td></tr>
+        <tr><td>257</td><td>叉燒</td><td>caa1 siu1</td><td>チャーシュー</td></tr>
+        <tr><td>258</td><td>燒賣</td><td>siu1 maai2</td><td>焼売</td></tr>
+        <tr><td>259</td><td>蝦餃</td><td>haa1 gaau2</td><td>エビ餃子</td></tr>
+        <tr><td>260</td><td>腸粉</td><td>coeng4 fan2</td><td>腸粉（ライスロール）</td></tr>
+        <tr><td>261</td><td>奶茶</td><td>naai5 caa4</td><td>ミルクティー（港式）</td></tr>
+        <tr><td>262</td><td>凍</td><td>dung3</td><td>冷たい・アイス（飲み物に）</td></tr>
+        <tr><td>263</td><td>熱</td><td>jit6</td><td>温かい・ホット（飲み物）</td></tr>
+        <tr><td>264</td><td>走</td><td>zau2</td><td>抜き（コーヒーなど糖抜き）</td></tr>
+        <tr><td>265</td><td>少甜</td><td>siu2 tim4</td><td>甘さ控えめ</td></tr>
+        <tr><td>266</td><td>埋單</td><td>maai4 daan1</td><td>お会計</td></tr>
+        <tr><td>267</td><td>打包</td><td>daa2 baau1</td><td>テイクアウト</td></tr>
+        <tr><td>268</td><td>外賣</td><td>ngoi6 maai6</td><td>デリバリー・持ち帰り</td></tr>
+        <tr><td>269</td><td>銀行</td><td>ngan4 hong4</td><td>銀行</td></tr>
+        <tr><td>270</td><td>警察</td><td>ging2 caat3</td><td>警察</td></tr>
+        <tr><td>271</td><td>救護車</td><td>gau3 wu6 ce1</td><td>救急車</td></tr>
+        <tr><td>272</td><td>火警</td><td>fo2 ging2</td><td>火災警報</td></tr>
+        <tr><td>273</td><td>危險</td><td>ngai4 him2</td><td>危険</td></tr>
+        <tr><td>274</td><td>小心</td><td>siu2 sam1</td><td>気をつけて</td></tr>
+        <tr><td>275</td><td>唔好</td><td>m4 hou2</td><td>～してはいけない</td></tr>
+        <tr><td>276</td><td>請</td><td>cing2</td><td>お願いします・どうぞ</td></tr>
+        <tr><td>277</td><td>對唔住</td><td>deoi3 m4 zyu6</td><td>ごめんなさい</td></tr>
+        <tr><td>278</td><td>冇所謂</td><td>mou5 so2 wai6</td><td>どういたしまして・かまいません</td></tr>
+        <tr><td>279</td><td>係喎</td><td>hai6 wo3</td><td>そうですね（気づき）</td></tr>
+        <tr><td>280</td><td>即係</td><td>zik1 hai6</td><td>つまり・すなわち</td></tr>
+        <tr><td>281</td><td>如果</td><td>jyu4 gwo2</td><td>もし～なら</td></tr>
+        <tr><td>282</td><td>因為</td><td>jan1 wai6</td><td>なぜなら</td></tr>
+        <tr><td>283</td><td>但係</td><td>daan6 hai6</td><td>しかし</td></tr>
+        <tr><td>284</td><td>所以</td><td>so2 ji5</td><td>だから・それで</td></tr>
+        <tr><td>285</td><td>雖然</td><td>seoi1 jin4</td><td>～にもかかわらず</td></tr>
+        <tr><td>286</td><td>定係</td><td>ding6 hai6</td><td>それとも</td></tr>
+        <tr><td>287</td><td>同埋</td><td>tung4 maai4</td><td>そして・～と</td></tr>
+        <tr><td>288</td><td>比較</td><td>bei2 gaau3</td><td>比較すると・より</td></tr>
+        <tr><td>289</td><td>最</td><td>zeoi3</td><td>最も・一番</td></tr>
+        <tr><td>290</td><td>幾</td><td>gei2</td><td>かなり・～いくつ</td></tr>
+        <tr><td>291</td><td>咁</td><td>gam3</td><td>そんなに・このように</td></tr>
+        <tr><td>292</td><td>噉</td><td>gam2</td><td>そのように（口語）</td></tr>
+        <tr><td>293</td><td>真係</td><td>zan1 hai6</td><td>本当に</td></tr>
+        <tr><td>294</td><td>假係</td><td>gaa2 hai6</td><td>嘘の・フェイクの</td></tr>
+        <tr><td>295</td><td>又</td><td>jau6</td><td>また・さらに</td></tr>
+        <tr><td>296</td><td>唔係好</td><td>m4 hai6 hou2</td><td>あまり良くない</td></tr>
+        <tr><td>297</td><td>幾好</td><td>gei2 hou2</td><td>かなり良い</td></tr>
+        <tr><td>298</td><td>超好</td><td>ciu1 hou2</td><td>超良い・最高</td></tr>
+        <tr><td>299</td><td>唔知</td><td>m4 zi1</td><td>知らない・わからない</td></tr>
+        <tr><td>300</td><td>多謝晒</td><td>do1 ze6 saai3</td><td>どうもありがとうございました</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="lang-section" id="related">
+  <h2>13. 関連ガイド</h2>
+  <ul>
+    <li><a href="ainu-from-japanese.html">アイヌ語（日本語話者向け）</a></li>
+    <li><a href="turkish-from-japanese.html">トルコ語（日本語話者向け）</a></li>
+    <li><a href="ukrainian-from-japanese.html">ウクライナ語（日本語話者向け）</a></li>
+    <li><a href="language-guides.html">すべての言語ガイド</a></li>
+  </ul>
+</div>
+
+  <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
+  </footer>
+</body>
+</html>

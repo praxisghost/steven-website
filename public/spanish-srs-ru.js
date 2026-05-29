@@ -187,6 +187,11 @@
   if (elRestart) elRestart.addEventListener('click', () => {
     buildQueue(); elDone.style.display = 'none'; showCard();
   });
+  document.addEventListener('keydown', (e) => {
+    if ((e.key === ' ' || e.key === 'Enter') && elFlip.style.display !== 'none') { e.preventDefault(); flip(); }
+    if (e.key === '1' && elControls.style.display !== 'none') { state = updateCard(state, current, 1); saveState(state); queue.push(current); current = null; showCard(); }
+    if (e.key === '3' && elControls.style.display !== 'none') { answer(5); }
+  });
 
   buildQueue();
   showCard();

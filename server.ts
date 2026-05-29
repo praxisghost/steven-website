@@ -839,6 +839,25 @@ app.get('/api/guides/saved', requireAuth, async (_req: Request, res: Response) =
   }
 });
 
+// GET /api/contact/messages — return contact messages submitted by this user's email
+app.get('/api/contact/messages', requireAuth, async (_req: Request, res: Response) => {
+  const auth = res.locals['auth'] as JwtPayload;
+  try {
+    // Look up the user's email first
+    const userRow = await pool.query('SELECT email FROM users WHERE id = $1', [auth.userId]);
+    if (!userRow.rows.length) return res.status(404).json({ error: 'User not found' });
+    const email = userRow.rows[0].email;
+    const { rows } = await pool.query(
+      'SELECT name, message, created_at FROM contact_messages WHERE email = $1 ORDER BY created_at DESC',
+      [email],
+    );
+    res.json(rows);
+  } catch (err) {
+    console.error('contact/messages error:', err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 // ─────────────────────────────────────────────────────────────────────────────
 // FALLBACK + ERROR HANDLING
 // ─────────────────────────────────────────────────────────────────────────────

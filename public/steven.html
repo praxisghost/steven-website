@@ -15,8 +15,67 @@
 
   <article>
     <p>More about Steven coming soon.</p>
-  </article>
+    <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
 
   <script src="script.js"></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
+  </footer>
 </body>
 </html>

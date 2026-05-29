@@ -19,9 +19,20 @@
 
   <article id="account-content" style="display:none;">
 
+    <!-- Profile picture -->
     <section>
-      <h2>Welcome</h2>
-      <p id="account-email" style="color:#888; font-size:0.9rem;"></p>
+      <div class="profile-pic-section">
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" id="profile-avatar-display">
+            <span id="profile-avatar-placeholder">👤</span>
+            <img id="profile-avatar-img" src="" alt="Profile picture" style="display:none;">
+          </div>
+          <button class="profile-edit-btn" id="profile-edit-btn" title="Change profile picture" aria-label="Change profile picture">✏️</button>
+        </div>
+        <p class="profile-privacy-note">Profile picture is private — only visible to you.</p>
+        <input type="file" id="profile-pic-input" accept="image/*" style="display:none;" aria-label="Upload profile picture">
+      </div>
+      <p id="account-email" style="color:#888; font-size:0.9rem; text-align:center; margin-top:0.25rem;"></p>
     </section>
 
     <hr class="section-divider">
@@ -44,6 +55,31 @@
         No saved guides yet. Guides you bookmark will appear here.
       </p>
       <ul class="saved-guides-list" id="saved-guides-list"></ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <hr class="section-divider">
+
+    <!-- Previous contact messages -->
+    <section>
+      <h2>Your Messages</h2>
+      <p id="messages-empty" style="color:#555; font-size:0.9rem; display:none;">
+        No messages yet. Messages you send via the contact form will appear here.
+      </p>
+      <ul class="contact-messages-list" id="contact-messages-list"></ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Private text storage -->
+    <section>
+      <h2>Private Notes</h2>
+      <p style="color:#555; font-size:0.85rem; margin-bottom:0.6rem;">A scratchpad for your own use — saved locally in your browser, never sent to any server.</p>
+      <div class="private-notes-wrap">
+        <textarea id="private-notes" placeholder="Paste or type anything here…" aria-label="Private notes"></textarea>
+      </div>
+      <p class="private-notes-save-status" id="notes-save-status"></p>
     </section>
 
     <hr class="section-divider">
@@ -160,14 +196,19 @@
       document.getElementById('account-content').style.display = '';
       document.getElementById('account-email').textContent = me.email;
 
-      // 3. Load SRS progress and saved guides in parallel
-      const [srsData, guidesData] = await Promise.allSettled([
+      // 3. Load SRS progress, saved guides, and contact messages in parallel
+      const [srsData, guidesData, messagesData] = await Promise.allSettled([
         fetch('/api/srs/load', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : {}),
         fetch('/api/guides/saved', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : []),
+        fetch('/api/contact/messages', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : []),
       ]);
 
       renderSRS(srsData.status === 'fulfilled' ? srsData.value : {});
       renderGuides(guidesData.status === 'fulfilled' ? guidesData.value : []);
+      renderMessages(messagesData.status === 'fulfilled' ? messagesData.value : []);
+
+      // 4. Load profile pic from localStorage
+      loadProfilePic();
     }
 
     function showGuest() {
@@ -251,6 +292,75 @@
         list.appendChild(li);
       });
     }
+
+    /* ── Contact messages ──────────────────────────────────────── */
+    function renderMessages(messages) {
+      const list  = document.getElementById('contact-messages-list');
+      const empty = document.getElementById('messages-empty');
+      if (!messages.length) { empty.style.display = ''; return; }
+      messages.forEach(function (msg) {
+        const li   = document.createElement('li');
+        li.className = 'contact-message-item';
+        const date = new Date(msg.created_at);
+        const dateStr = date.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+        li.innerHTML =
+          '<div class="contact-message-date">' + dateStr + '</div>' +
+          '<div class="contact-message-body">' + escapeHtml(msg.message) + '</div>';
+        list.appendChild(li);
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    /* ── Profile picture (localStorage) ────────────────────────── */
+    function loadProfilePic() {
+      const stored = localStorage.getItem('profile-pic');
+      if (stored) showAvatar(stored);
+    }
+
+    function showAvatar(dataUrl) {
+      const img         = document.getElementById('profile-avatar-img');
+      const placeholder = document.getElementById('profile-avatar-placeholder');
+      img.src           = dataUrl;
+      img.style.display = '';
+      placeholder.style.display = 'none';
+    }
+
+    document.getElementById('profile-edit-btn').addEventListener('click', function () {
+      document.getElementById('profile-pic-input').click();
+    });
+
+    document.getElementById('profile-pic-input').addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (ev) {
+        const dataUrl = ev.target.result;
+        localStorage.setItem('profile-pic', dataUrl);
+        showAvatar(dataUrl);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    /* ── Private notes (localStorage) ──────────────────────────── */
+    const notesArea   = document.getElementById('private-notes');
+    const noteStatus  = document.getElementById('notes-save-status');
+    notesArea.value   = localStorage.getItem('private-notes') || '';
+
+    let notesSaveTimer;
+    notesArea.addEventListener('input', function () {
+      clearTimeout(notesSaveTimer);
+      noteStatus.textContent = '';
+      notesSaveTimer = setTimeout(function () {
+        localStorage.setItem('private-notes', notesArea.value);
+        noteStatus.textContent = 'Saved.';
+        setTimeout(function () { noteStatus.textContent = ''; }, 2000);
+      }, 800);
+    });
 
     /* ── Change password ────────────────────────────────────────── */
     const cpForm   = document.getElementById('change-password-form');
