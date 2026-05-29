@@ -4,36 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Con-Lang — Steven Legg</title>
+  <meta name="description" content="Guides and notes on constructed languages — Esperanto, Novial, Ido, Interslavic, Klingon, and Interlingua.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="back-link" href="writing.html">← Writing</a>
+  <a class="back-link" href="language-learning.html">← Language Learning</a>
 
   <header>
     <h1>Con-Lang</h1>
+    <p>Guides to constructed and auxiliary languages — from century-old internationalist projects to fictional alien tongues.</p>
   </header>
 
   <article>
-    <p>Notes on constructed languages — a couple borrowed, a couple my own.</p>
-
     <nav class="sub-nav">
       <ul>
         <li><a href="esperanto.html">Esperanto</a></li>
-        <!-- intergermanic.html hidden (incomplete) — restore by un-commenting:
-        <li><a href="intergermanic.html">Intergermanic</a></li>
-        -->
+        <li><a href="novial.html">Novial</a></li>
+        <li><a href="ido.html">Ido</a></li>
+        <li><a href="interslavic.html">Interslavic</a></li>
+        <li><a href="klingon.html">Klingon</a></li>
         <li><a href="interlingua.html">Interlingua</a></li>
-        <!-- kesin.html hidden (incomplete) — restore by un-commenting:
-        <li><a href="kesin.html">Kesin</a></li>
-        -->
       </ul>
     </nav>
-  </article>
+    <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
 
   <footer>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
 </body>
 </html>

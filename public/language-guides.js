@@ -25,14 +25,20 @@
     persian:    'فارسی',      punjabi:    'ਪੰਜਾਬੀ',
     ukrainian:  'Українська', vietnamese: 'Tiếng Việt',
     french:     'Français',   japanese:   '日本語',
-    russian:    'Русский',
+    russian:    'Русский',    korean:     '한국어',
+    portuguese: 'Português',
   };
 
   const L2_LABELS = {
     ainu:       'Ainu',       cantonese:  'Cantonese',
+    chichewa:   'Chichewa',   lingala:    'Lingala',
+    swahili:    'Swahili',
     cherokee:   'Cherokee',   german:     'German',
+    haitian:    'Haitian Creole',
+    louisiana:  'Louisiana French',
     mandarin:   'Mandarin',   navajo:     'Navajo',
     persian:    'Persian',    punjabi:    'Punjabi',
+    quebecois:  'Québécois',
     spanish:    'Spanish',    turkish:    'Turkish',
     ukrainian:  'Ukrainian',  vietnamese: 'Vietnamese',
   };

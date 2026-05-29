@@ -147,30 +147,6 @@
          Add a photo and matching slug to the SALAMANDERS array in
          about.js to activate each slide.
          ─────────────────────────────────────────────────────────── -->
-    <section class="salamander-section"
-             aria-label="Native Salamander Species of North America gallery">
-      <h2>Native Salamanders of North America</h2>
-      <p class="sal-intro">A rotating gallery of native species. Purely for appreciation.</p>
-
-      <div class="salamander-slideshow">
-        <div class="salamander-frame">
-          <div class="salamander-placeholder" aria-hidden="true">🦎</div>
-          <img id="sal-img" src="" alt="" class="sal-loading">
-        </div>
-
-        <div class="sal-caption">
-          <div class="sal-name"   id="sal-name"></div>
-          <div class="sal-latin"  id="sal-latin"></div>
-        </div>
-
-        <div class="sal-controls">
-          <button class="sal-btn" id="sal-prev" aria-label="Previous salamander">← Prev</button>
-          <span class="sal-counter" id="sal-counter"></span>
-          <button class="sal-btn" id="sal-next" aria-label="Next salamander">Next →</button>
-        </div>
-      </div>
-    </section>
-
     <p class="about-intro">
       This site is a personal portfolio, blog, learning resource hub, &amp; just a fun project for myself — a place to document what I'm working on, share things I've found useful, &amp; build something that reflects how I actually think and learn.
     </p>
@@ -263,6 +239,30 @@
       </ul>
     </section>
 
+    <section class="salamander-section"
+             aria-label="Native Salamander Species of North America gallery">
+      <h2>Native Salamanders of North America</h2>
+      <p class="sal-intro">A rotating gallery of native species. Purely for appreciation.</p>
+
+      <div class="salamander-slideshow">
+        <div class="salamander-frame">
+          <div class="salamander-placeholder" aria-hidden="true">🦎</div>
+          <img id="sal-img" src="" alt="" class="sal-loading">
+        </div>
+
+        <div class="sal-caption">
+          <div class="sal-name"   id="sal-name"></div>
+          <div class="sal-latin"  id="sal-latin"></div>
+        </div>
+
+        <div class="sal-controls">
+          <button class="sal-btn" id="sal-prev" aria-label="Previous salamander">← Prev</button>
+          <span class="sal-counter" id="sal-counter"></span>
+          <button class="sal-btn" id="sal-next" aria-label="Next salamander">Next →</button>
+        </div>
+      </div>
+    </section>
+
     <section class="about-section">
       <h2>Why This Site Exists</h2>
       <p>
@@ -346,14 +346,70 @@
         </li>
       </ul>
     </section>
-  </article>
+    <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
 
   <footer>
     <span id="view-count"></span>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
   </footer>
 
   <script src="script.js"></script>
   <script src="about.js"></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
 </body>
 </html>

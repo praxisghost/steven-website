@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ウクライナ語 — 日本語話者のための学習ガイド — Steven Legg</title>
+  <meta name="description" content="日本語話者のためのウクライナ語学習ガイド。キリル文字、スラヴ語族の位置づけ、格変化、発音、学習資源、文化的背景を詳解。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← 言語ガイド</a>
+
+<header>
+  <h1>ウクライナ語 <span class="lang-from">日本語話者のために</span></h1>
+  <p>Українська мова — 東スラヴ語群に属し、約4,000万人が話す言語。独自のキリル文字と豊かな文学・音楽の伝統を持つ。</p>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">単語フラッシュカード</a></li>
+  <li><a href="#vocab">基本語彙（1–300）</a></li>
+  <li><a href="#intro">ウクライナ語とは</a></li>
+  <li><a href="#difficulty">日本語話者にとっての難易度</a></li>
+  <li><a href="#writing">表記体系</a></li>
+  <li><a href="#pronunciation">音韻・発音</a></li>
+  <li><a href="#grammar">文法の概要</a></li>
+  <li><a href="#cases">格変化の仕組み</a></li>
+  <li><a href="#mistakes">学習者がおかしやすいミス</a></li>
+  <li><a href="#resources">学習資源</a></li>
+  <li><a href="#media">メディアとインプット</a></li>
+  <li><a href="#strategy">学習戦略</a></li>
+  <li><a href="#cultural">文化的背景</a></li>
+  <li><a href="#related">関連ガイド</a></li>
+</ol>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 1 — SRS
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="srs">
+  <h2>1. 単語フラッシュカード</h2>
+  <p>40枚のカードで、ウクライナ語の基本語彙・文法用語・日常表現を学びます。表面にウクライナ語（キリル文字）、裏面に日本語の意味とローマ字表記。学習の進捗はブラウザに保存されます。</p>
+  <p><kbd>スペース</kbd>/<kbd>Enter</kbd> で反転 · <kbd>1</kbd> もう一度 · <kbd>3</kbd> 覚えた</p>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">カードを読み込み中…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-turkish" id="srs-front">—</div>
+      <div class="srs-native" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">もう一度</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">覚えた</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">答えを見る</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>今日の分は終了です。明日また来てください。</p>
+      <button class="srs-btn" id="srs-restart">最初からやり直す</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>スペース</kbd>/<kbd>Enter</kbd> 反転</span>
+    <span><kbd>1</kbd> もう一度</span>
+    <span><kbd>3</kbd> 覚えた</span>
+  </div>
+</div>
+<script src="ukrainian-srs-ja.js" defer></script>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 2 — 紹介
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="intro">
+  <h2>2. ウクライナ語とは</h2>
+
+  <p>ウクライナ語（Українська мова）は東スラヴ語群に属し、ロシア語・ベラルーシ語と同じグループをなします。約4,000万人が話し、ウクライナの公用語です。西スラヴ語群（ポーランド語・チェコ語など）や南スラヴ語群（セルビア語・クロアチア語など）とも共通の特徴を持ち、スラヴ語族全体（約4億人以上の話者）への入口となります。</p>
+
+  <p>ウクライナ語は独自の文化・文学・音楽の伝統を持ちます。タラス・シェフチェンコ（1814〜1861）はウクライナ語文学の父とされ、詩人・芸術家として国民的英雄です。その文学作品はウクライナ語の標準化に大きく貢献しました。現代では、言語の保護と復興が重要な文化的・政治的課題となっています。</p>
+
+  <h3>日本語話者がウクライナ語を学ぶ理由</h3>
+  <ul>
+    <li><strong>スラヴ語族全体への基盤</strong> — ウクライナ語を学ぶことでロシア語、ポーランド語、チェコ語、セルビア語など20以上の近縁言語への理解が深まります。</li>
+    <li><strong>豊かな文学・音楽</strong> — シェフチェンコの詩、ウクライナ民謡（думи / dumy）、現代ポップ・クラシック音楽は、言語を直接通して楽しめる豊かな文化資源です。</li>
+    <li><strong>歴史・地政学的関心</strong> — 東欧の歴史、ソビエト後の独立国家の発展、現代の政治情勢に関心がある人にとって、ウクライナ語は一次資料に直接アクセスする手段です。</li>
+    <li><strong>語学の挑戦として</strong> — キリル文字の習得、格変化、スラヴ語特有の子音連続は、語学学習者に新しい認知的挑戦を提供します。</li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 3 — 難易度
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="difficulty">
+  <h2>3. 日本語話者にとっての難易度</h2>
+
+  <p>米国外務省語学学院（FSI）はウクライナ語をカテゴリーIV（英語話者にとって最難関言語群）に分類しています。日本語話者にとっても決して容易ではありませんが、いくつかの側面では英語話者よりも有利な点があります。</p>
+
+  <h3>難しい点</h3>
+  <ul>
+    <li><strong>キリル文字</strong> — 日本語話者には馴染みのない文字体系です。ただし文字数は33文字（ウクライナ語特有のは、є、і、ї、ґを含む）で、ひらがな・カタカナの合計よりも少ない。2〜4週間で習得可能です。</li>
+    <li><strong>格変化（7格）</strong> — 名詞・形容詞・代名詞がすべて7つの格で変化します。日本語の助詞に概念的には近いですが、名詞の性（男性・女性・中性）と数によって語尾が変わるため、習得には時間がかかります。</li>
+    <li><strong>動詞のアスペクト</strong> — 完了体（一回的・完結した行為）と不完了体（継続的・反復的行為）の区別はスラヴ語特有のカテゴリーです。日本語には対応する概念がなく、習得に苦労する日本語話者が多い。</li>
+    <li><strong>語彙の共通点が少ない</strong> — 日本語との語彙的共通点はほぼなし。現代ウクライナ語には英語・フランス語からの借用語も一部あるため（телефон、інтернет、ресторан）、そこに足がかりを見つけることができます。</li>
+  </ul>
+
+  <h3>意外と学びやすい点</h3>
+  <ul>
+    <li><strong>発音の規則性</strong> — ウクライナ語の発音はスペリング通りに読めることが多く、サイレントレターや不規則な発音は比較的少ない。</li>
+    <li><strong>語彙の一貫性</strong> — スラヴ語根は一定のパターンを持ち、語根から多数の単語を派生させるシステムを理解すると語彙習得が加速します。</li>
+  </ul>
+
+  <p><strong>目安の学習時間（日本語話者）：</strong>基本的な会話力まで約600〜900時間。</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 4 — 文字体系
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="writing">
+  <h2>4. 表記体系</h2>
+
+  <p>ウクライナ語は独自のキリル文字（ウクライナ語アルファベット）33文字を使用します。同じキリル文字を使うロシア語とは4文字異なります（ウクライナ語固有：є, і, ї, ґ；ロシア語にあってウクライナ語にない：э, ъ, ы, ё）。</p>
+
+  <table class="lang-table">
+    <thead><tr><th>文字</th><th>ローマ字</th><th>発音の目安</th></tr></thead>
+    <tbody>
+      <tr><td>А а</td><td>a</td><td>日本語の「ア」</td></tr>
+      <tr><td>Б б</td><td>b</td><td>「バ行」の子音</td></tr>
+      <tr><td>В в</td><td>v</td><td>英語のv（歯唇音）</td></tr>
+      <tr><td>Г г</td><td>h</td><td>「ハ行」よりも有声的</td></tr>
+      <tr><td>Ґ ґ</td><td>g</td><td>「ガ行」の子音</td></tr>
+      <tr><td>Д д</td><td>d</td><td>「ダ行」の子音</td></tr>
+      <tr><td>Е е</td><td>e</td><td>日本語の「エ」</td></tr>
+      <tr><td>Є є</td><td>ye</td><td>「イェ」（前母音化したe）</td></tr>
+      <tr><td>Ж ж</td><td>zh</td><td>フランス語のj（有声摩擦音）</td></tr>
+      <tr><td>З з</td><td>z</td><td>「ザ行」の子音</td></tr>
+      <tr><td>И и</td><td>y</td><td>「イ」と「ウ」の中間</td></tr>
+      <tr><td>І і</td><td>i</td><td>日本語の「イ」</td></tr>
+      <tr><td>Ї ї</td><td>yi</td><td>「ヤ行」のiに近い</td></tr>
+      <tr><td>Й й</td><td>y</td><td>「ヤ行」の子音</td></tr>
+      <tr><td>К к</td><td>k</td><td>「カ行」の子音</td></tr>
+      <tr><td>Л л</td><td>l</td><td>「ラ行」の子音</td></tr>
+      <tr><td>М м</td><td>m</td><td>「マ行」の子音</td></tr>
+      <tr><td>Н н</td><td>n</td><td>「ナ行」の子音</td></tr>
+      <tr><td>О о</td><td>o</td><td>日本語の「オ」</td></tr>
+      <tr><td>П п</td><td>p</td><td>「パ行」の子音</td></tr>
+      <tr><td>Р р</td><td>r</td><td>巻き舌のr</td></tr>
+      <tr><td>С с</td><td>s</td><td>「サ行」の子音</td></tr>
+      <tr><td>Т т</td><td>t</td><td>「タ行」の子音</td></tr>
+      <tr><td>У у</td><td>u</td><td>日本語の「ウ」</td></tr>
+      <tr><td>Ф ф</td><td>f</td><td>英語のf（歯唇音）</td></tr>
+      <tr><td>Х х</td><td>kh</td><td>「ハ行」よりも摩擦的</td></tr>
+      <tr><td>Ц ц</td><td>ts</td><td>「ツ」の子音</td></tr>
+      <tr><td>Ч ч</td><td>ch</td><td>「チ」の子音</td></tr>
+      <tr><td>Ш ш</td><td>sh</td><td>「シュ」の子音</td></tr>
+      <tr><td>Щ щ</td><td>shch</td><td>「シチュ」に近い</td></tr>
+      <tr><td>Ь ь</td><td>（軟化符号）</td><td>前の子音を軟化させる</td></tr>
+      <tr><td>Ю ю</td><td>yu</td><td>「ユ」</td></tr>
+      <tr><td>Я я</td><td>ya</td><td>「ヤ」</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 5 — 発音
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="pronunciation">
+  <h2>5. 音韻・発音</h2>
+
+  <h3>ウクライナ語発音の特徴</h3>
+  <ul>
+    <li><strong>И（ウクライナ語のи）</strong> — ロシア語のыに相当しますが、より前舌的。「イ」と「ウ」の中間音で、日本語には存在しない。</li>
+    <li><strong>Г г（有声軟口蓋摩擦音）</strong> — ロシア語のГ（硬口蓋破裂音）とは異なり、ウクライナ語のГは英語の "h" に近い有声摩擦音です。</li>
+    <li><strong>アクセント（強勢）</strong> — ウクライナ語のアクセントは移動性で、単語の位置が変わることがあります。辞書でアクセント位置を確認する習慣が重要です。</li>
+    <tr><strong>軟化符号（Ь）</strong> — 子音の後に付き、その子音を軟化（口蓋化）させます。日本語の拗音（きゃ、にゃなど）に似た概念です。</tr>
+    <li><strong>子音連続</strong> — ウクライナ語には日本語にない子音連続が多数あります（例：стр-, зн-, тр-）。初期は発音が難しく感じますが、慣れると読み書きは規則的です。</li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 6 — 文法
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="grammar">
+  <h2>6. 文法の概要</h2>
+
+  <h3>語順</h3>
+  <p>ウクライナ語は格変化が豊富なため、語順は比較的自由ですが、基本はSVO（主語・動詞・目的語）です。強調したい要素を文頭や文末に移動させることができます。これは日本語（SOV）とは異なりますが、格変化が語句の役割を示すため、語順の変化による意味の変化は少ない。</p>
+
+  <h3>名詞の性</h3>
+  <p>すべての名詞は男性・女性・中性の三性のいずれかに属します。語尾から性を推測できることが多い（-а/-я で終わる名詞の多くは女性、子音で終わる名詞の多くは男性、-о/-е で終わる名詞の多くは中性）。</p>
+
+  <h3>動詞の活用</h3>
+  <p>ウクライナ語の動詞は人称・数・時制によって活用します。さらに完了体と不完了体の区別（アスペクト）がすべての動詞にあります。</p>
+
+  <table class="lang-table">
+    <thead><tr><th>人称</th><th>читати（読む・不完了）</th><th>意味</th></tr></thead>
+    <tbody>
+      <tr><td>я（私）</td><td>читаю</td><td>私は読む</td></tr>
+      <tr><td>ти（あなた）</td><td>читаєш</td><td>あなたは読む</td></tr>
+      <tr><td>він/вона（彼/彼女）</td><td>читає</td><td>彼/彼女は読む</td></tr>
+      <tr><td>ми（私たち）</td><td>читаємо</td><td>私たちは読む</td></tr>
+      <tr><td>ви（あなたたち）</td><td>читаєте</td><td>あなたたちは読む</td></tr>
+      <tr><td>вони（彼ら）</td><td>читають</td><td>彼らは読む</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 7 — 格変化
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="cases">
+  <h2>7. 格変化の仕組み</h2>
+
+  <p>ウクライナ語には7つの格があります。日本語の助詞に概念的には対応しますが、名詞の性・数に応じて語尾が変化する点が異なります。</p>
+
+  <table class="lang-table">
+    <thead><tr><th>格</th><th>機能</th><th>日本語の対応</th><th>例（книга「本」）</th></tr></thead>
+    <tbody>
+      <tr><td>主格（називний）</td><td>主語</td><td>〜が / 〜は</td><td>книга</td></tr>
+      <tr><td>生格（родовий）</td><td>所有・否定・数量</td><td>〜の / 〜がない</td><td>книги</td></tr>
+      <tr><td>与格（давальний）</td><td>間接目的語・方向</td><td>〜に</td><td>книзі</td></tr>
+      <tr><td>対格（знахідний）</td><td>直接目的語</td><td>〜を</td><td>книгу</td></tr>
+      <tr><td>造格（орудний）</td><td>手段・同伴</td><td>〜で / 〜と</td><td>книгою</td></tr>
+      <tr><td>処格（місцевий）</td><td>場所</td><td>〜に（場所）</td><td>книзі（前置詞と共に）</td></tr>
+      <tr><td>呼格（кличний）</td><td>呼びかけ</td><td>〜よ / 〜さん（呼びかけ）</td><td>книго</td></tr>
+    </tbody>
+  </table>
+
+  <p>日本語話者への注記：格変化の概念自体は日本語の格助詞（が、を、に、で、と、から、の）と対応させると理解しやすい。難しいのは名詞の性と数によって語尾形が変わる点です。表を覚えるより、例文を多量にインプットする方が実用的です。</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 8 — ミス
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="mistakes">
+  <h2>8. 学習者がおかしやすいミス</h2>
+
+  <ul>
+    <li><strong>アスペクトの無視</strong> — 完了体と不完了体を混同することは、スラヴ語学習者最大のつまずきポイントです。「昨日本を読んだ（読み終えた）」と「昨日本を読んでいた（読んでいる途中だった）」は異なる動詞形を必要とします。</li>
+    <li><strong>軟化符号（Ь）の見落とし</strong> — 軟化符号は発音に影響するだけでなく、格変化の形も変えることがあります。</li>
+    <li><strong>ГとҐの混同</strong> — ウクライナ語のГは有声摩擦音（英語の h に近い）で、ロシア語のГ（破裂音）とは異なります。ґは破裂音のgです。</li>
+    <li><strong>ロシア語との混同</strong> — ウクライナ語とロシア語は似ていますが、異なる言語です。ロシア語学習者はウクライナ語固有の発音・語彙・文法規則を別に習得する必要があります。</li>
+    <li><strong>格変化の過剰な規則化</strong> — 不規則変化する名詞（例：дитина（子供）→ 複数形 діти）は例外として個別に覚える必要があります。</li>
+    <li><strong>動詞の運動表現</strong> — 「行く」「歩く」「乗り物で行く」はそれぞれ別の動詞です。さらに方向性（目的地への一方向移動 vs 習慣的往来）でも動詞が変わります。</li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 9 — リソース
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="resources">
+  <h2>9. 学習資源</h2>
+
+  <h3>日本語話者向けリソース</h3>
+  <ul>
+    <li><strong>書籍：『ウクライナ語入門』（大学書林）</strong> — 日本語で書かれたウクライナ語入門書として最も入手しやすい一冊。</li>
+    <li><strong>オンライン：Ukrainian Lessons Podcast</strong> — 英語での解説ですが、発音や文法を丁寧に説明。初心者から中級者まで対応。</li>
+    <li><strong>アプリ：Duolingo</strong> — ウクライナ語コースあり。語彙と基本文法の導入に適しています。</li>
+    <li><strong>アプリ：Anki + ウクライナ語デッキ</strong> — AnkiWebに多数のコミュニティ作成デッキがあります。キリル文字と語彙の同時学習に最適。</li>
+    <li><strong>辞書：dict.cc（ウクライナ語版）</strong> — 詳細な例文と音声付き。オンラインで無料アクセス可能。</li>
+  </ul>
+
+  <h3>中上級者向け</h3>
+  <ul>
+    <li><strong>Colloquial Ukrainian（Routledge）</strong> — 英語解説の教科書。会話中心で実用的。</li>
+    <li><strong>Ukrainian: A Comprehensive Grammar（Routledge）</strong> — 文法の深い参照に。</li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 10 — メディア
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="media">
+  <h2>10. メディアとインプット</h2>
+
+  <h3>テレビドラマ・映画</h3>
+  <p>ウクライナのテレビドラマ・映画はYouTubeやウクライナのストリーミングサービスで視聴できます。ウクライナ語字幕付きで視聴することが最大の学習効果をもたらします。</p>
+  <ul>
+    <li><strong>Слуга народу（スルハ・ナロドゥ / 国民の僕）</strong> — VolodymyrZelensky主演のウクライナ語コメディドラマ。Netflixで視聴可能。自然なウクライナ語が学べる。</li>
+    <li><strong>Кіборги（キボルヒ / サイボーグ）</strong> — ウクライナの戦争映画。ウクライナ語の感情的・軍事的語彙に触れられる。</li>
+  </ul>
+
+  <h3>音楽</h3>
+  <p>ウクライナの音楽は多様です。伝統的なウクライナ民謡（народні пісні）から現代のポップ（Okean Elzy、Jamalaなど）まで幅広い。歌詞をウクライナ語原文と日本語訳で照合する学習法が語彙増強に効果的です。</p>
+  <ul>
+    <li><strong>Океан Ельзи（Okean Elzy）</strong> — ウクライナ最大のロックバンド。現代的なウクライナ語の語彙が豊富。</li>
+    <li><strong>Джамала（Jamala）</strong> — クリミア・タタール系ウクライナ人歌手。ユーロビジョン2016優勝者。</li>
+  </ul>
+
+  <h3>YouTube・ポッドキャスト</h3>
+  <ul>
+    <li><strong>Learn Ukrainian with Yuliya</strong> — YouTube。キリル文字から始める初心者向けコンテンツ。</li>
+    <li><strong>Ukrainian Lessons Podcast</strong> — 英語解説。A1からB2レベルまで系統的に学べる。</li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 11 — 学習戦略
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="strategy">
+  <h2>11. 学習戦略</h2>
+
+  <p><strong>フェーズ1（0〜4週間）：キリル文字と基本発音</strong></p>
+  <p>まずキリル文字の読み書きを習得します。33文字を2〜4週間で覚えることは十分可能です。その際、ウクライナ語に固有の文字（є, і, ї, ґ）とロシア語との違いを意識してください。文字を覚えたら、簡単な単語を声に出して読む練習を始めましょう。</p>
+
+  <p><strong>フェーズ2（1〜3ヶ月）：基本文法と格の導入</strong></p>
+  <p>格変化の全体像を一度に覚えようとせず、主格と対格（最も頻繁に使う格）から始めます。1週間に1格を習得するペースで進めると無理がありません。各格を覚えるには例文を5〜10文暗唱することが最も効果的です。</p>
+
+  <p><strong>フェーズ3（3ヶ月〜）：音声メディアへの沈浸</strong></p>
+  <p>基礎文法が固まったらウクライナ語音声への露出量を増やします。キリル文字字幕付きのドラマ視聴、ウクライナ語の歌詞を読みながら音楽を聴くことが効果的です。</p>
+
+  <h3>日本語話者向けの特別なアドバイス</h3>
+  <p>日本語はSOV語順ですが、ウクライナ語の基本はSVOです。この語順の違いは英語に近い部分です。ただしウクライナ語は格変化が豊富なため語順が比較的自由で、文脈次第でSOVになることも多い。この柔軟性は日本語話者にとって慣れると利点になります。</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 12 — 文化的背景
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="cultural">
+  <h2>12. 文化的背景</h2>
+
+  <h3>ウクライナの文化的アイデンティティ</h3>
+  <p>ウクライナ文化は東スラヴ、ビザンツ、ポーランド・リトアニア、コサック（козаки）の伝統が交差する独自の文化です。ウクライナ刺繍（вишиванка / vyshyvanka）、コサックの民謡・叙事詩（думи / dumy）、ウクライナ料理（ボルシチ、ヴァレーニク）は文化の重要な要素です。</p>
+
+  <h3>言語と文化的アイデンティティ</h3>
+  <p>ウクライナ語は単なるコミュニケーション手段以上の意味を持ちます。言語はウクライナの国民的アイデンティティと独立性の象徴です。歴史的に、ウクライナ語はさまざまな時代に抑圧されてきました。現代のウクライナ人にとって、ウクライナ語で話すことは文化的・政治的な表明でもあります。</p>
+
+  <h3>敬語と対人関係</h3>
+  <p>ウクライナ語にも二人称の区別があります。ти（インフォーマル）とви（フォーマル・敬称）。初対面や公式な場ではвиを使いましょう。</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 13 — 関連ガイド
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="related">
+  <h2>13. 関連ガイド</h2>
+  <ul>
+    <li><a href="ukrainian-from-english.html">ウクライナ語（英語話者向け）</a></li>
+    <li><a href="turkish-from-japanese.html">トルコ語（日本語話者向け）</a></li>
+    <li><a href="cantonese-from-japanese.html">広東語（日本語話者向け）</a></li>
+    <li><a href="ainu-from-japanese.html">アイヌ語（日本語話者向け）</a></li>
+    <li><a href="language-guides.html">すべての言語ガイド</a></li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     セクション 14 — 語彙
+══════════════════════════════════════════════ -->
+<div class="lang-section" id="vocab">
+  <h2>14. 基本語彙（1–300）</h2>
+  <p>ウクライナ語の基本語彙300語です。ローマ字表記はおおよその発音の目安です。実際の発音はキリル文字で確認してください。</p>
+  <div class="guide-search-wrap" style="margin-bottom:1rem;">
+    <input type="search" class="vocab-search" placeholder="語彙を絞り込む…" aria-label="語彙を絞り込む" autocomplete="off">
+  </div>
+  <div class="table-wrap">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>ウクライナ語</th><th>ローマ字</th><th>日本語</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>привіт</td><td>Pryvit</td><td>こんにちは</td></tr>
+        <tr><td>2</td><td>добрий ранок</td><td>Dobryy ranok</td><td>おはようございます</td></tr>
+        <tr><td>3</td><td>добрий вечір</td><td>Dobryy vechir</td><td>こんばんは</td></tr>
+        <tr><td>4</td><td>дякую</td><td>Dyakuyu</td><td>ありがとうございます</td></tr>
+        <tr><td>5</td><td>будь ласка</td><td>Bud' laska</td><td>お願いします</td></tr>
+        <tr><td>6</td><td>так</td><td>Tak</td><td>はい</td></tr>
+        <tr><td>7</td><td>ні</td><td>Ni</td><td>いいえ</td></tr>
+        <tr><td>8</td><td>добре</td><td>Dobre</td><td>わかった / 良い</td></tr>
+        <tr><td>9</td><td>вибачте</td><td>Vybachte</td><td>すみません</td></tr>
+        <tr><td>10</td><td>до побачення</td><td>Do pobachennya</td><td>さようなら</td></tr>
+        <tr><td>11</td><td>я</td><td>Ya</td><td>私</td></tr>
+        <tr><td>12</td><td>ти</td><td>Ty</td><td>あなた（インフォーマル）</td></tr>
+        <tr><td>13</td><td>він</td><td>Vin</td><td>彼</td></tr>
+        <tr><td>14</td><td>вона</td><td>Vona</td><td>彼女</td></tr>
+        <tr><td>15</td><td>ми</td><td>My</td><td>私たち</td></tr>
+        <tr><td>16</td><td>ви</td><td>Vy</td><td>あなたたち / あなた（敬）</td></tr>
+        <tr><td>17</td><td>вони</td><td>Vony</td><td>彼ら</td></tr>
+        <tr><td>18</td><td>це</td><td>Tse</td><td>これ / これは</td></tr>
+        <tr><td>19</td><td>що</td><td>Shcho</td><td>何</td></tr>
+        <tr><td>20</td><td>хто</td><td>Khto</td><td>誰</td></tr>
+        <tr><td>21</td><td>де</td><td>De</td><td>どこ</td></tr>
+        <tr><td>22</td><td>коли</td><td>Koly</td><td>いつ</td></tr>
+        <tr><td>23</td><td>як</td><td>Yak</td><td>どのように</td></tr>
+        <tr><td>24</td><td>чому</td><td>Chomu</td><td>なぜ</td></tr>
+        <tr><td>25</td><td>є</td><td>Ye</td><td>ある / いる（3人称）</td></tr>
+        <tr><td>26</td><td>немає</td><td>Nemaie</td><td>ない / いない</td></tr>
+        <tr><td>27</td><td>вода</td><td>Voda</td><td>水</td></tr>
+        <tr><td>28</td><td>хліб</td><td>Khlib</td><td>パン</td></tr>
+        <tr><td>29</td><td>їжа</td><td>Yizha</td><td>食べ物</td></tr>
+        <tr><td>30</td><td>будинок</td><td>Budynok</td><td>建物 / 家</td></tr>
+        <tr><td>31</td><td>дім</td><td>Dim</td><td>家 / 家庭</td></tr>
+        <tr><td>32</td><td>машина</td><td>Mashyna</td><td>車</td></tr>
+        <tr><td>33</td><td>гроші</td><td>Hroshi</td><td>お金</td></tr>
+        <tr><td>34</td><td>книга</td><td>Knyha</td><td>本</td></tr>
+        <tr><td>35</td><td>двері</td><td>Dveri</td><td>ドア</td></tr>
+        <tr><td>36</td><td>вікно</td><td>Vikno</td><td>窓</td></tr>
+        <tr><td>37</td><td>стіл</td><td>Stil</td><td>テーブル</td></tr>
+        <tr><td>38</td><td>стілець</td><td>Stilets</td><td>椅子</td></tr>
+        <tr><td>39</td><td>дорога</td><td>Doroha</td><td>道 / 道路</td></tr>
+        <tr><td>40</td><td>місто</td><td>Misto</td><td>都市</td></tr>
+        <tr><td>41</td><td>село</td><td>Selo</td><td>村</td></tr>
+        <tr><td>42</td><td>школа</td><td>Shkola</td><td>学校</td></tr>
+        <tr><td>43</td><td>лікарня</td><td>Likarnya</td><td>病院</td></tr>
+        <tr><td>44</td><td>магазин</td><td>Mahasyn</td><td>店</td></tr>
+        <tr><td>45</td><td>готель</td><td>Hotel</td><td>ホテル</td></tr>
+        <tr><td>46</td><td>літак</td><td>Litak</td><td>飛行機</td></tr>
+        <tr><td>47</td><td>потяг</td><td>Potyah</td><td>電車</td></tr>
+        <tr><td>48</td><td>автобус</td><td>Avtobus</td><td>バス</td></tr>
+        <tr><td>49</td><td>корабель</td><td>Korabel</td><td>船</td></tr>
+        <tr><td>50</td><td>великий</td><td>Velykyy</td><td>大きい</td></tr>
+        <tr><td>51</td><td>маленький</td><td>Malenkyy</td><td>小さい</td></tr>
+        <tr><td>52</td><td>добрий</td><td>Dobryy</td><td>良い</td></tr>
+        <tr><td>53</td><td>поганий</td><td>Pohanyy</td><td>悪い</td></tr>
+        <tr><td>54</td><td>новий</td><td>Novyy</td><td>新しい</td></tr>
+        <tr><td>55</td><td>старий</td><td>Staryy</td><td>古い</td></tr>
+        <tr><td>56</td><td>швидкий</td><td>Shvydkyy</td><td>速い</td></tr>
+        <tr><td>57</td><td>повільний</td><td>Povilnyy</td><td>遅い</td></tr>
+        <tr><td>58</td><td>довгий</td><td>Dovhyy</td><td>長い</td></tr>
+        <tr><td>59</td><td>короткий</td><td>Korotkyy</td><td>短い</td></tr>
+        <tr><td>60</td><td>гарячий</td><td>Haryachyy</td><td>熱い / 暑い</td></tr>
+        <tr><td>61</td><td>холодний</td><td>Kholodnyy</td><td>冷たい / 寒い</td></tr>
+        <tr><td>62</td><td>гарний</td><td>Harnyy</td><td>美しい</td></tr>
+        <tr><td>63</td><td>складний</td><td>Skladnyy</td><td>難しい</td></tr>
+        <tr><td>64</td><td>легкий</td><td>Lehkyy</td><td>簡単 / 軽い</td></tr>
+        <tr><td>65</td><td>дешевий</td><td>Deshevyy</td><td>安い</td></tr>
+        <tr><td>66</td><td>дорогий</td><td>Dorohi</td><td>高い（値段）</td></tr>
+        <tr><td>67</td><td>чистий</td><td>Chystyy</td><td>清潔な</td></tr>
+        <tr><td>68</td><td>брудний</td><td>Brudnyy</td><td>汚い</td></tr>
+        <tr><td>69</td><td>їсти</td><td>Yisty</td><td>食べる</td></tr>
+        <tr><td>70</td><td>пити</td><td>Pyty</td><td>飲む</td></tr>
+        <tr><td>71</td><td>іти</td><td>Ity</td><td>行く</td></tr>
+        <tr><td>72</td><td>приходити</td><td>Prykhodoty</td><td>来る</td></tr>
+        <tr><td>73</td><td>бачити</td><td>Bachyty</td><td>見る</td></tr>
+        <tr><td>74</td><td>чути</td><td>Chuty</td><td>聞く / 感じる</td></tr>
+        <tr><td>75</td><td>говорити</td><td>Hovoryty</td><td>話す</td></tr>
+        <tr><td>76</td><td>писати</td><td>Pysaty</td><td>書く</td></tr>
+        <tr><td>77</td><td>читати</td><td>Chytaty</td><td>読む</td></tr>
+        <tr><td>78</td><td>розуміти</td><td>Rozumikhty</td><td>理解する</td></tr>
+        <tr><td>79</td><td>знати</td><td>Znaty</td><td>知っている</td></tr>
+        <tr><td>80</td><td>хотіти</td><td>Khotity</td><td>欲しい / 望む</td></tr>
+        <tr><td>81</td><td>любити</td><td>Lyubyty</td><td>愛する / 好む</td></tr>
+        <tr><td>82</td><td>робити</td><td>Robyty</td><td>する</td></tr>
+        <tr><td>83</td><td>брати</td><td>Braty</td><td>取る</td></tr>
+        <tr><td>84</td><td>давати</td><td>Davaty</td><td>あげる</td></tr>
+        <tr><td>85</td><td>знаходити</td><td>Znakhodyty</td><td>見つける</td></tr>
+        <tr><td>86</td><td>відкривати</td><td>Vidkryvaty</td><td>開ける</td></tr>
+        <tr><td>87</td><td>закривати</td><td>Zakryvaty</td><td>閉める</td></tr>
+        <tr><td>88</td><td>один</td><td>Odyn</td><td>1</td></tr>
+        <tr><td>89</td><td>два</td><td>Dva</td><td>2</td></tr>
+        <tr><td>90</td><td>три</td><td>Try</td><td>3</td></tr>
+        <tr><td>91</td><td>чотири</td><td>Chotyry</td><td>4</td></tr>
+        <tr><td>92</td><td>п'ять</td><td>Pyat</td><td>5</td></tr>
+        <tr><td>93</td><td>шість</td><td>Shist</td><td>6</td></tr>
+        <tr><td>94</td><td>сім</td><td>Sim</td><td>7</td></tr>
+        <tr><td>95</td><td>вісім</td><td>Visim</td><td>8</td></tr>
+        <tr><td>96</td><td>дев'ять</td><td>Devyat</td><td>9</td></tr>
+        <tr><td>97</td><td>десять</td><td>Desyat</td><td>10</td></tr>
+        <tr><td>98</td><td>двадцять</td><td>Dvadtsyat</td><td>20</td></tr>
+        <tr><td>99</td><td>тридцять</td><td>Trydtsyat</td><td>30</td></tr>
+        <tr><td>100</td><td>сорок</td><td>Sorok</td><td>40</td></tr>
+        <tr><td>101</td><td>п'ятдесят</td><td>Pyatdesyat</td><td>50</td></tr>
+        <tr><td>102</td><td>сто</td><td>Sto</td><td>100</td></tr>
+        <tr><td>103</td><td>тисяча</td><td>Tysyacha</td><td>1000</td></tr>
+        <tr><td>104</td><td>сьогодні</td><td>Sohodni</td><td>今日</td></tr>
+        <tr><td>105</td><td>завтра</td><td>Zavtra</td><td>明日</td></tr>
+        <tr><td>106</td><td>вчора</td><td>Vchora</td><td>昨日</td></tr>
+        <tr><td>107</td><td>ранок</td><td>Ranok</td><td>朝</td></tr>
+        <tr><td>108</td><td>день</td><td>Den</td><td>昼 / 日</td></tr>
+        <tr><td>109</td><td>вечір</td><td>Vechir</td><td>夕方</td></tr>
+        <tr><td>110</td><td>ніч</td><td>Nich</td><td>夜</td></tr>
+        <tr><td>111</td><td>тиждень</td><td>Tyzhden</td><td>週</td></tr>
+        <tr><td>112</td><td>місяць</td><td>Misyats</td><td>月</td></tr>
+        <tr><td>113</td><td>рік</td><td>Rik</td><td>年</td></tr>
+        <tr><td>114</td><td>зараз</td><td>Zaraz</td><td>今</td></tr>
+        <tr><td>115</td><td>потім</td><td>Potim</td><td>後で</td></tr>
+        <tr><td>116</td><td>раніше</td><td>Ranishe</td><td>前に</td></tr>
+        <tr><td>117</td><td>чоловік</td><td>Cholovik</td><td>男性 / 夫</td></tr>
+        <tr><td>118</td><td>жінка</td><td>Zhinka</td><td>女性 / 妻</td></tr>
+        <tr><td>119</td><td>дитина</td><td>Dytyna</td><td>子供</td></tr>
+        <tr><td>120</td><td>немовля</td><td>Nemovlya</td><td>赤ちゃん</td></tr>
+        <tr><td>121</td><td>сім'я</td><td>Simya</td><td>家族</td></tr>
+        <tr><td>122</td><td>мама</td><td>Mama</td><td>母</td></tr>
+        <tr><td>123</td><td>тато</td><td>Tato</td><td>父</td></tr>
+        <tr><td>124</td><td>брат</td><td>Brat</td><td>兄弟</td></tr>
+        <tr><td>125</td><td>сестра</td><td>Sestra</td><td>姉妹</td></tr>
+        <tr><td>126</td><td>друг</td><td>Druh</td><td>友達</td></tr>
+        <tr><td>127</td><td>вчитель</td><td>Vchytel</td><td>教師</td></tr>
+        <tr><td>128</td><td>лікар</td><td>Likar</td><td>医師</td></tr>
+        <tr><td>129</td><td>поліція</td><td>Politsiya</td><td>警察</td></tr>
+        <tr><td>130</td><td>мова</td><td>Mova</td><td>言語</td></tr>
+        <tr><td>131</td><td>українська</td><td>Ukrayinska</td><td>ウクライナ語</td></tr>
+        <tr><td>132</td><td>японська</td><td>Yaponska</td><td>日本語</td></tr>
+        <tr><td>133</td><td>англійська</td><td>Anhliys'ka</td><td>英語</td></tr>
+        <tr><td>134</td><td>слово</td><td>Slovo</td><td>単語</td></tr>
+        <tr><td>135</td><td>речення</td><td>Rechennya</td><td>文</td></tr>
+        <tr><td>136</td><td>питання</td><td>Pytannya</td><td>質問</td></tr>
+        <tr><td>137</td><td>відповідь</td><td>Vidpovid</td><td>答え</td></tr>
+        <tr><td>138</td><td>червоний</td><td>Chervonyy</td><td>赤</td></tr>
+        <tr><td>139</td><td>синій</td><td>Syniy</td><td>青</td></tr>
+        <tr><td>140</td><td>зелений</td><td>Zelenyy</td><td>緑</td></tr>
+        <tr><td>141</td><td>жовтий</td><td>Zhovtyy</td><td>黄色</td></tr>
+        <tr><td>142</td><td>білий</td><td>Bilyy</td><td>白</td></tr>
+        <tr><td>143</td><td>чорний</td><td>Chornyy</td><td>黒</td></tr>
+        <tr><td>144</td><td>помаранчевий</td><td>Pomaranchevyy</td><td>オレンジ色</td></tr>
+        <tr><td>145</td><td>фіолетовий</td><td>Fioletovyy</td><td>紫</td></tr>
+        <tr><td>146</td><td>сонце</td><td>Sontse</td><td>太陽</td></tr>
+        <tr><td>147</td><td>місяць (небо)</td><td>Misyats</td><td>月（天体）</td></tr>
+        <tr><td>148</td><td>зірка</td><td>Zirka</td><td>星</td></tr>
+        <tr><td>149</td><td>хмара</td><td>Khmara</td><td>雲</td></tr>
+        <tr><td>150</td><td>дощ</td><td>Doshch</td><td>雨</td></tr>
+        <tr><td>151</td><td>сніг</td><td>Snig</td><td>雪</td></tr>
+        <tr><td>152</td><td>вітер</td><td>Viter</td><td>風</td></tr>
+        <tr><td>153</td><td>погода</td><td>Pohoda</td><td>天気</td></tr>
+        <tr><td>154</td><td>вогонь</td><td>Vohon</td><td>火</td></tr>
+        <tr><td>155</td><td>море</td><td>More</td><td>海</td></tr>
+        <tr><td>156</td><td>річка</td><td>Richka</td><td>川</td></tr>
+        <tr><td>157</td><td>озеро</td><td>Ozero</td><td>湖</td></tr>
+        <tr><td>158</td><td>гора</td><td>Hora</td><td>山</td></tr>
+        <tr><td>159</td><td>дерево</td><td>Derevo</td><td>木</td></tr>
+        <tr><td>160</td><td>квітка</td><td>Kvitka</td><td>花</td></tr>
+        <tr><td>161</td><td>тварина</td><td>Tvaryna</td><td>動物</td></tr>
+        <tr><td>162</td><td>собака</td><td>Sobaka</td><td>犬</td></tr>
+        <tr><td>163</td><td>кіт</td><td>Kit</td><td>猫</td></tr>
+        <tr><td>164</td><td>кінь</td><td>Kin</td><td>馬</td></tr>
+        <tr><td>165</td><td>риба</td><td>Ryba</td><td>魚</td></tr>
+        <tr><td>166</td><td>птах</td><td>Ptakh</td><td>鳥</td></tr>
+        <tr><td>167</td><td>м'ясо</td><td>Myaso</td><td>肉</td></tr>
+        <tr><td>168</td><td>овочі</td><td>Ovochi</td><td>野菜</td></tr>
+        <tr><td>169</td><td>фрукти</td><td>Frukty</td><td>果物</td></tr>
+        <tr><td>170</td><td>молоко</td><td>Moloko</td><td>牛乳</td></tr>
+        <tr><td>171</td><td>сир</td><td>Syr</td><td>チーズ</td></tr>
+        <tr><td>172</td><td>яйце</td><td>Yaytse</td><td>卵</td></tr>
+        <tr><td>173</td><td>цукор</td><td>Tsukor</td><td>砂糖</td></tr>
+        <tr><td>174</td><td>сіль</td><td>Sil</td><td>塩</td></tr>
+        <tr><td>175</td><td>чай</td><td>Chay</td><td>お茶</td></tr>
+        <tr><td>176</td><td>кава</td><td>Kava</td><td>コーヒー</td></tr>
+        <tr><td>177</td><td>пиво</td><td>Pyvo</td><td>ビール</td></tr>
+        <tr><td>178</td><td>голова</td><td>Holova</td><td>頭</td></tr>
+        <tr><td>179</td><td>очі</td><td>Ochi</td><td>目</td></tr>
+        <tr><td>180</td><td>вухо</td><td>Vukho</td><td>耳</td></tr>
+        <tr><td>181</td><td>ніс</td><td>Nis</td><td>鼻</td></tr>
+        <tr><td>182</td><td>рот</td><td>Rot</td><td>口</td></tr>
+        <tr><td>183</td><td>рука</td><td>Ruka</td><td>手 / 腕</td></tr>
+        <tr><td>184</td><td>нога</td><td>Noha</td><td>足 / 脚</td></tr>
+        <tr><td>185</td><td>серце</td><td>Sertse</td><td>心臓</td></tr>
+        <tr><td>186</td><td>мозок</td><td>Mozok</td><td>脳</td></tr>
+        <tr><td>187</td><td>шкіра</td><td>Shkira</td><td>皮膚</td></tr>
+        <tr><td>188</td><td>волосся</td><td>Volossia</td><td>髪</td></tr>
+        <tr><td>189</td><td>зуб</td><td>Zub</td><td>歯</td></tr>
+        <tr><td>190</td><td>Україна</td><td>Ukrayina</td><td>ウクライナ</td></tr>
+        <tr><td>191</td><td>Японія</td><td>Yaponiya</td><td>日本</td></tr>
+        <tr><td>192</td><td>українець</td><td>Ukrayinets</td><td>ウクライナ人</td></tr>
+        <tr><td>193</td><td>японець</td><td>Yaponets</td><td>日本人</td></tr>
+        <tr><td>194</td><td>дуже</td><td>Duzhe</td><td>とても</td></tr>
+        <tr><td>195</td><td>трохи</td><td>Trokhy</td><td>少し</td></tr>
+        <tr><td>196</td><td>все</td><td>Vse</td><td>すべて</td></tr>
+        <tr><td>197</td><td>ніколи</td><td>Nikoly</td><td>決して〜ない</td></tr>
+        <tr><td>198</td><td>тільки</td><td>Tilky</td><td>ただ〜だけ</td></tr>
+        <tr><td>199</td><td>може</td><td>Mozhe</td><td>たぶん</td></tr>
+        <tr><td>200</td><td>звичайно</td><td>Zvychaino</td><td>もちろん</td></tr>
+        <tr><td>201</td><td>і</td><td>I</td><td>そして</td></tr>
+        <tr><td>202</td><td>але</td><td>Ale</td><td>しかし</td></tr>
+        <tr><td>203</td><td>або</td><td>Abo</td><td>または</td></tr>
+        <tr><td>204</td><td>якщо</td><td>Yakshcho</td><td>もし</td></tr>
+        <tr><td>205</td><td>тому що</td><td>Tomu shcho</td><td>なぜなら</td></tr>
+        <tr><td>206</td><td>з</td><td>Z</td><td>〜と / 〜から</td></tr>
+        <tr><td>207</td><td>до</td><td>Do</td><td>〜まで / 〜へ</td></tr>
+        <tr><td>208</td><td>від</td><td>Vid</td><td>〜から</td></tr>
+        <tr><td>209</td><td>для</td><td>Dlya</td><td>〜のために</td></tr>
+        <tr><td>210</td><td>про</td><td>Pro</td><td>〜について</td></tr>
+        <tr><td>211</td><td>без</td><td>Bez</td><td>〜なしで</td></tr>
+        <tr><td>212</td><td>після</td><td>Pislia</td><td>〜の後</td></tr>
+        <tr><td>213</td><td>перед</td><td>Pered</td><td>〜の前</td></tr>
+        <tr><td>214</td><td>відмінок</td><td>Vidminok</td><td>格（文法）</td></tr>
+        <tr><td>215</td><td>називний</td><td>Nazyvnyy</td><td>主格</td></tr>
+        <tr><td>216</td><td>родовий</td><td>Rodovyy</td><td>生格</td></tr>
+        <tr><td>217</td><td>давальний</td><td>Davalnyy</td><td>与格</td></tr>
+        <tr><td>218</td><td>знахідний</td><td>Znakhidnyy</td><td>対格</td></tr>
+        <tr><td>219</td><td>орудний</td><td>Orudnyy</td><td>造格</td></tr>
+        <tr><td>220</td><td>місцевий</td><td>Mistsevyy</td><td>処格</td></tr>
+        <tr><td>221</td><td>кличний</td><td>Klychnyy</td><td>呼格</td></tr>
+        <tr><td>222</td><td>рід</td><td>Rid</td><td>性（文法）</td></tr>
+        <tr><td>223</td><td>чоловічий рід</td><td>Cholovichyy rid</td><td>男性名詞</td></tr>
+        <tr><td>224</td><td>жіночий рід</td><td>Zhinochyy rid</td><td>女性名詞</td></tr>
+        <tr><td>225</td><td>середній рід</td><td>Serednyy rid</td><td>中性名詞</td></tr>
+        <tr><td>226</td><td>однина</td><td>Odnya</td><td>単数</td></tr>
+        <tr><td>227</td><td>множина</td><td>Mnozhyna</td><td>複数</td></tr>
+        <tr><td>228</td><td>дієслово</td><td>Diyeslovo</td><td>動詞</td></tr>
+        <tr><td>229</td><td>іменник</td><td>Imennyk</td><td>名詞</td></tr>
+        <tr><td>230</td><td>прикметник</td><td>Prykmetnyk</td><td>形容詞</td></tr>
+        <tr><td>231</td><td>прислівник</td><td>Pryslivnyk</td><td>副詞</td></tr>
+        <tr><td>232</td><td>час</td><td>Chas</td><td>時制</td></tr>
+        <tr><td>233</td><td>теперішній час</td><td>Teperishniy chas</td><td>現在時制</td></tr>
+        <tr><td>234</td><td>минулий час</td><td>Mynulyy chas</td><td>過去時制</td></tr>
+        <tr><td>235</td><td>майбутній час</td><td>Maybutniy chas</td><td>未来時制</td></tr>
+        <tr><td>236</td><td>стверджувальний</td><td>Stverdzhuvalnyy</td><td>肯定の</td></tr>
+        <tr><td>237</td><td>заперечний</td><td>Zaperechnyy</td><td>否定の</td></tr>
+        <tr><td>238</td><td>щасливий</td><td>Shchaslyvyy</td><td>幸せな</td></tr>
+        <tr><td>239</td><td>сумний</td><td>Sumnyy</td><td>悲しい</td></tr>
+        <tr><td>240</td><td>сердитий</td><td>Serdytyy</td><td>怒っている</td></tr>
+        <tr><td>241</td><td>здивований</td><td>Zdyvovanyy</td><td>驚いた</td></tr>
+        <tr><td>242</td><td>втомлений</td><td>Vtomlenyi</td><td>疲れた</td></tr>
+        <tr><td>243</td><td>голодний</td><td>Holodnyy</td><td>空腹な</td></tr>
+        <tr><td>244</td><td>ситий</td><td>Sytyy</td><td>満腹な</td></tr>
+        <tr><td>245</td><td>хворий</td><td>Khvoryy</td><td>病気の</td></tr>
+        <tr><td>246</td><td>здоровий</td><td>Zdorovyy</td><td>健康な</td></tr>
+        <tr><td>247</td><td>зайнятий</td><td>Zainyatyy</td><td>忙しい</td></tr>
+        <tr><td>248</td><td>вільний</td><td>Vilnyy</td><td>暇な / 自由な</td></tr>
+        <tr><td>249</td><td>сміятися</td><td>Smiyatysya</td><td>笑う</td></tr>
+        <tr><td>250</td><td>плакати</td><td>Plakaty</td><td>泣く</td></tr>
+        <tr><td>251</td><td>бігти</td><td>Bihty</td><td>走る</td></tr>
+        <tr><td>252</td><td>ходити</td><td>Khodyty</td><td>歩く</td></tr>
+        <tr><td>253</td><td>сидіти</td><td>Sydity</td><td>座る</td></tr>
+        <tr><td>254</td><td>стояти</td><td>Stoyaty</td><td>立つ</td></tr>
+        <tr><td>255</td><td>спати</td><td>Spaty</td><td>眠る</td></tr>
+        <tr><td>256</td><td>прокидатися</td><td>Prokydatysya</td><td>目が覚める</td></tr>
+        <tr><td>257</td><td>навчатися</td><td>Navchatysya</td><td>勉強する</td></tr>
+        <tr><td>258</td><td>відпочивати</td><td>Vidpochyvaty</td><td>休む</td></tr>
+        <tr><td>259</td><td>грати</td><td>Hraty</td><td>遊ぶ / 演奏する</td></tr>
+        <tr><td>260</td><td>співати</td><td>Spivaty</td><td>歌う</td></tr>
+        <tr><td>261</td><td>танцювати</td><td>Tantsyuvaty</td><td>踊る</td></tr>
+        <tr><td>262</td><td>готувати</td><td>Hotuvaty</td><td>料理する</td></tr>
+        <tr><td>263</td><td>купувати</td><td>Kupuvaty</td><td>購入する</td></tr>
+        <tr><td>264</td><td>продавати</td><td>Prodavaty</td><td>売る</td></tr>
+        <tr><td>265</td><td>платити</td><td>Platyty</td><td>支払う</td></tr>
+        <tr><td>266</td><td>питати</td><td>Pytaty</td><td>尋ねる</td></tr>
+        <tr><td>267</td><td>відповідати</td><td>Vidpovidaty</td><td>返答する</td></tr>
+        <tr><td>268</td><td>думати</td><td>Dumaty</td><td>考える</td></tr>
+        <tr><td>269</td><td>пам'ятати</td><td>Pamyataty</td><td>思い出す</td></tr>
+        <tr><td>270</td><td>забувати</td><td>Zabuvaty</td><td>忘れる</td></tr>
+        <tr><td>271</td><td>вчити</td><td>Vchyty</td><td>学ぶ / 教える</td></tr>
+        <tr><td>272</td><td>допомагати</td><td>Dopomagaty</td><td>助ける</td></tr>
+        <tr><td>273</td><td>чекати</td><td>Chekaty</td><td>待つ</td></tr>
+        <tr><td>274</td><td>починати</td><td>Pochynaty</td><td>始める</td></tr>
+        <tr><td>275</td><td>закінчувати</td><td>Zakinchuvaty</td><td>終える</td></tr>
+        <tr><td>276</td><td>продовжувати</td><td>Prodovzhuvaty</td><td>続ける</td></tr>
+        <tr><td>277</td><td>право</td><td>Pravo</td><td>右</td></tr>
+        <tr><td>278</td><td>ліво</td><td>Livo</td><td>左</td></tr>
+        <tr><td>279</td><td>прямо</td><td>Pryamo</td><td>まっすぐ</td></tr>
+        <tr><td>280</td><td>назад</td><td>Nazad</td><td>後ろ / 戻る</td></tr>
+        <tr><td>281</td><td>вперед</td><td>Vpered</td><td>前方</td></tr>
+        <tr><td>282</td><td>вгору</td><td>Vhoru</td><td>上</td></tr>
+        <tr><td>283</td><td>вниз</td><td>Vnyz</td><td>下</td></tr>
+        <tr><td>284</td><td>близько</td><td>Blyzko</td><td>近い</td></tr>
+        <tr><td>285</td><td>далеко</td><td>Daleko</td><td>遠い</td></tr>
+        <tr><td>286</td><td>вулиця</td><td>Vulytsya</td><td>通り</td></tr>
+        <tr><td>287</td><td>площа</td><td>Ploshcha</td><td>広場</td></tr>
+        <tr><td>288</td><td>парк</td><td>Park</td><td>公園</td></tr>
+        <tr><td>289</td><td>музей</td><td>Muzey</td><td>博物館</td></tr>
+        <tr><td>290</td><td>бібліотека</td><td>Biblioteka</td><td>図書館</td></tr>
+        <tr><td>291</td><td>ресторан</td><td>Restoran</td><td>レストラン</td></tr>
+        <tr><td>292</td><td>берег</td><td>Bereh</td><td>海岸 / 岸</td></tr>
+        <tr><td>293</td><td>ліс</td><td>Lis</td><td>森</td></tr>
+        <tr><td>294</td><td>пустеля</td><td>Pustelya</td><td>砂漠</td></tr>
+        <tr><td>295</td><td>історія</td><td>Istoriya</td><td>歴史</td></tr>
+        <tr><td>296</td><td>культура</td><td>Kultura</td><td>文化</td></tr>
+        <tr><td>297</td><td>музика</td><td>Muzyka</td><td>音楽</td></tr>
+        <tr><td>298</td><td>мистецтво</td><td>Mystetstvo</td><td>芸術</td></tr>
+        <tr><td>299</td><td>спорт</td><td>Sport</td><td>スポーツ</td></tr>
+        <tr><td>300</td><td>футбол</td><td>Futbol</td><td>サッカー</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div class="save-article-btn-wrap">
+    <button class="save-article-btn" id="save-article-btn" type="button">
+      <span id="save-article-icon">🔖</span>
+      <span id="save-article-label">Save this page</span>
+    </button>
+  </div>
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <a href="account.html" class="footer-account-link">Account</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+  <script>
+  /* Save Article — saves/unsaves current page to account bookmarks */
+  (function () {
+    const btn   = document.getElementById('save-article-btn');
+    const icon  = document.getElementById('save-article-icon');
+    const label = document.getElementById('save-article-label');
+    if (!btn) return;
+    const url = '/' + window.location.pathname.split('/').pop();
+
+    function setSaved(saved) {
+      if (saved) {
+        btn.classList.add('saved');
+        icon.textContent  = '✅';
+        label.textContent = 'Saved';
+      } else {
+        btn.classList.remove('saved');
+        icon.textContent  = '🔖';
+        label.textContent = 'Save this page';
+      }
+    }
+
+    // Check if already saved (requires login; fail silently if not)
+    fetch('/api/guides/saved', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        const saved = list.some(function (g) { return g.guide_url === url; });
+        setSaved(saved);
+      })
+      .catch(function () {});
+
+    btn.addEventListener('click', function () {
+      const isSaved = btn.classList.contains('saved');
+      fetch('/api/guides/save', {
+        method:      'POST',
+        headers:     { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body:        JSON.stringify({ url: url, remove: isSaved }),
+      })
+        .then(function (r) {
+          if (r.status === 401) {
+            window.location.href = 'login.html';
+            return;
+          }
+          if (r.ok) setSaved(!isSaved);
+        })
+        .catch(function () {});
+    });
+  })();
+  </script>
+</body>
+</html>
