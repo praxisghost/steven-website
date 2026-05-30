@@ -29,13 +29,6 @@
 
     <hr class="section-divider">
 
-    <h2>Create an Account</h2>
-    <p>Save your SRS progress across devices, bookmark pages, and store private notes.</p>
-    <p><a href="signup.html" class="filter-pill" style="display:inline-block; text-decoration:none; margin-top:0.25rem;">Create Account →</a></p>
-    <p style="font-size:0.82rem; color:#555; margin-top:0.4rem;">Already have one? <a href="login.html">Sign in</a></p>
-
-    <hr class="section-divider">
-
     <h2>Newsletter</h2>
     <p>Occasional updates when I write something worth sharing. No spam.</p>
     <form id="newsletter-form" novalidate>
@@ -45,68 +38,12 @@
       <button type="submit">Subscribe</button>
     </form>
     <p id="newsletter-status" role="status" aria-live="polite"></p>
-    <div class="save-article-btn-wrap">
-    <button class="save-article-btn" id="save-article-btn" type="button">
-      <span id="save-article-icon">🔖</span>
-      <span id="save-article-label">Save this page</span>
-    </button>
-  </div>
 </article>
 
   <footer>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
-    <a href="account.html" class="footer-account-link">Account</a>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-  /* Save Article — saves/unsaves current page to account bookmarks */
-  (function () {
-    const btn   = document.getElementById('save-article-btn');
-    const icon  = document.getElementById('save-article-icon');
-    const label = document.getElementById('save-article-label');
-    if (!btn) return;
-    const url = '/' + window.location.pathname.split('/').pop();
-
-    function setSaved(saved) {
-      if (saved) {
-        btn.classList.add('saved');
-        icon.textContent  = '✅';
-        label.textContent = 'Saved';
-      } else {
-        btn.classList.remove('saved');
-        icon.textContent  = '🔖';
-        label.textContent = 'Save this page';
-      }
-    }
-
-    // Check if already saved (requires login; fail silently if not)
-    fetch('/api/guides/saved', { credentials: 'same-origin' })
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (list) {
-        const saved = list.some(function (g) { return g.guide_url === url; });
-        setSaved(saved);
-      })
-      .catch(function () {});
-
-    btn.addEventListener('click', function () {
-      const isSaved = btn.classList.contains('saved');
-      fetch('/api/guides/save', {
-        method:      'POST',
-        headers:     { 'Content-Type': 'application/json' },
-        credentials: 'same-origin',
-        body:        JSON.stringify({ url: url, remove: isSaved }),
-      })
-        .then(function (r) {
-          if (r.status === 401) {
-            window.location.href = 'signup.html';
-            return;
-          }
-          if (r.ok) setSaved(!isSaved);
-        })
-        .catch(function () {});
-    });
-  })();
-  </script>
 </body>
 </html>

@@ -21,68 +21,12 @@
                 <li><a href="isms/absurdism.html">Absurdism</a></li>        <li><a href="isms/altruism.html">Altruism</a></li>        <li><a href="isms/anarchism.html">Anarchism</a></li>        <li><a href="isms/capitalism.html">Capitalism</a></li>        <li><a href="isms/communism.html">Communism</a></li>        <li><a href="isms/constitutionalism.html">Constitutionalism</a></li>        <li><a href="isms/egoism.html">Egoism</a></li>        <li><a href="isms/environmentalism.html">Environmentalism</a></li>        <li><a href="isms/existentialism.html">Existentialism</a></li>        <li><a href="isms/feudalism.html">Feudalism</a></li>        <li><a href="isms/feminism.html">Feminism</a></li>        <li><a href="isms/hedonism.html">Hedonism</a></li>        <li><a href="isms/idealism.html">Idealism</a></li>        <li><a href="isms/imperialism.html">Imperialism</a></li>        <li><a href="isms/isolationism.html">Isolationism</a></li>        <li><a href="isms/journalism.html">Journalism</a></li>        <li><a href="isms/modernism.html">Modernism</a></li>        <li><a href="isms/narcissism.html">Narcissism</a></li>        <li><a href="isms/nationalism.html">Nationalism</a></li>        <li><a href="isms/nihilism.html">Nihilism</a></li>        <li><a href="isms/optimism.html">Optimism</a></li>        <li><a href="isms/pessimism.html">Pessimism</a></li>        <li><a href="isms/post-modernism.html">Post-Modernism</a></li>        <li><a href="isms/post-post-modernism.html">Post-Post-Modernism</a></li>        <li><a href="isms/realism.html">Realism</a></li>        <li><a href="isms/romanticism.html">Romanticism</a></li>       <li><a href="isms/skepticism.html">Skepticism</a></li>        <li><a href="isms/socialism.html">Socialism</a></li>        <li><a href="isms/stoicism.html">Stoicism</a></li>        <li><a href="isms/surrealism.html">Surrealism</a></li>        <li><a href="isms/syndicalism.html">Syndicalism</a></li>        <li><a href="isms/totalitarianism.html">Totalitarianism</a></li>        <li><a href="isms/traditionalism.html">Traditionalism</a></li>
       </ul>
     </nav>
-    <div class="save-article-btn-wrap">
-    <button class="save-article-btn" id="save-article-btn" type="button">
-      <span id="save-article-icon">🔖</span>
-      <span id="save-article-label">Save this page</span>
-    </button>
-  </div>
 </article>
 
   <footer>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
-    <a href="account.html" class="footer-account-link">Account</a>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-  /* Save Article — saves/unsaves current page to account bookmarks */
-  (function () {
-    const btn   = document.getElementById('save-article-btn');
-    const icon  = document.getElementById('save-article-icon');
-    const label = document.getElementById('save-article-label');
-    if (!btn) return;
-    const url = '/' + window.location.pathname.split('/').pop();
-
-    function setSaved(saved) {
-      if (saved) {
-        btn.classList.add('saved');
-        icon.textContent  = '✅';
-        label.textContent = 'Saved';
-      } else {
-        btn.classList.remove('saved');
-        icon.textContent  = '🔖';
-        label.textContent = 'Save this page';
-      }
-    }
-
-    // Check if already saved (requires login; fail silently if not)
-    fetch('/api/guides/saved', { credentials: 'same-origin' })
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (list) {
-        const saved = list.some(function (g) { return g.guide_url === url; });
-        setSaved(saved);
-      })
-      .catch(function () {});
-
-    btn.addEventListener('click', function () {
-      const isSaved = btn.classList.contains('saved');
-      fetch('/api/guides/save', {
-        method:      'POST',
-        headers:     { 'Content-Type': 'application/json' },
-        credentials: 'same-origin',
-        body:        JSON.stringify({ url: url, remove: isSaved }),
-      })
-        .then(function (r) {
-          if (r.status === 401) {
-            window.location.href = 'signup.html';
-            return;
-          }
-          if (r.ok) setSaved(!isSaved);
-        })
-        .catch(function () {});
-    });
-  })();
-  </script>
 </body>
 </html>
