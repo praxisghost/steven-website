@@ -37,6 +37,26 @@
 
     <hr class="section-divider">
 
+    <!-- Streak -->
+    <section>
+      <h2>Streak</h2>
+      <div class="streak-display" id="streak-display">
+        <div class="streak-stat">
+          <span class="streak-number" id="streak-current">0</span>
+          <span class="streak-label">day streak</span>
+        </div>
+        <div class="streak-stat">
+          <span class="streak-number" id="streak-longest">0</span>
+          <span class="streak-label">longest streak</span>
+        </div>
+      </div>
+      <p id="streak-note" style="color:#555; font-size:0.82rem; margin-top:0.5rem;">
+        Streak increases when you complete an SRS session each day.
+      </p>
+    </section>
+
+    <hr class="section-divider">
+
     <!-- SRS Progress -->
     <section>
       <h2>SRS Progress</h2>
@@ -56,8 +76,6 @@
       </p>
       <ul class="saved-guides-list" id="saved-guides-list"></ul>
     </section>
-
-    <hr class="section-divider">
 
     <hr class="section-divider">
 
@@ -147,34 +165,183 @@
     'use strict';
 
     const GUIDE_NAMES = {
-      '/cantonese-learning.html':       'Cantonese (from English)',
-      '/cherokee-from-english.html':    'Cherokee (from English)',
-      '/cherokee-from-spanish.html':    'Cherokee (from Spanish)',
-      '/navajo-from-english.html':      'Navajo (from English)',
-      '/navajo-from-spanish.html':      'Navajo (from Spanish)',
-      '/ainu-from-japanese.html':       'Ainu (from Japanese)',
-      '/german-learning.html':          'German (from English)',
-      '/mandarin-learning.html':        'Mandarin (from English)',
-      '/spanish-learning.html':         'Spanish (from English)',
-      '/turkish-learning.html':         'Turkish (from English)',
-      '/ukrainian-from-english.html':   'Ukrainian (from English)',
-      '/vietnamese-from-english.html':  'Vietnamese (from English)',
-      '/punjabi-from-english.html':     'Punjabi (from English)',
-      '/spanish-from-russian.html':     'Spanish (from Russian)',
+      /* African languages */
+      '/chichewa-from-english.html':        'Chichewa (from English)',
+      '/chichewa-from-french.html':         'Chichewa (from French)',
+      '/chichewa-from-portuguese.html':     'Chichewa (from Portuguese)',
+      '/kinyarwanda-from-english.html':     'Kinyarwanda (from English)',
+      '/kinyarwanda-from-french.html':      'Kinyarwanda (from French)',
+      '/kinyarwanda-from-portuguese.html':  'Kinyarwanda (from Portuguese)',
+      '/lingala-from-english.html':         'Lingala (from English)',
+      '/lingala-from-french.html':          'Lingala (from French)',
+      '/lingala-from-portuguese.html':      'Lingala (from Portuguese)',
+      '/swahili-from-english.html':         'Swahili (from English)',
+      '/swahili-from-french.html':          'Swahili (from French)',
+      '/swahili-from-portuguese.html':      'Swahili (from Portuguese)',
+      '/umbundu-from-english.html':         'Umbundu (from English)',
+      '/umbundu-from-french.html':          'Umbundu (from French)',
+      '/umbundu-from-portuguese.html':      'Umbundu (from Portuguese)',
+      /* Indigenous languages */
+      '/ainu-from-cantonese.html':          'Ainu (from Cantonese)',
+      '/ainu-from-english.html':            'Ainu (from English)',
+      '/ainu-from-japanese.html':           'Ainu (from Japanese)',
+      '/ainu-from-korean.html':             'Ainu (from Korean)',
+      '/ainu-from-mandarin.html':           'Ainu (from Mandarin)',
+      '/cherokee-from-english.html':        'Cherokee (from English)',
+      '/cherokee-from-spanish.html':        'Cherokee (from Spanish)',
+      '/navajo-from-english.html':          'Navajo (from English)',
+      '/navajo-from-spanish.html':          'Navajo (from Spanish)',
+      '/quechua-from-english.html':         'Quechua (from English)',
+      '/quechua-from-french.html':          'Quechua (from French)',
+      '/quechua-from-portuguese.html':      'Quechua (from Portuguese)',
+      '/quechua-from-spanish.html':         'Quechua (from Spanish)',
+      /* East Asian */
+      '/cantonese-learning.html':           'Cantonese (from English)',
+      '/cantonese-from-farsi.html':         'Cantonese (from Farsi)',
+      '/cantonese-from-french.html':        'Cantonese (from French)',
+      '/cantonese-from-japanese.html':      'Cantonese (from Japanese)',
+      '/cantonese-from-mandarin.html':      'Cantonese (from Mandarin)',
+      '/cantonese-from-spanish.html':       'Cantonese (from Spanish)',
+      '/cantonese-from-turkish.html':       'Cantonese (from Turkish)',
+      '/cantonese-from-ukrainian.html':     'Cantonese (from Ukrainian)',
+      '/cantonese-from-vietnamese.html':    'Cantonese (from Vietnamese)',
+      '/mandarin-learning.html':            'Mandarin (from English)',
+      '/mandarin-from-cantonese.html':      'Mandarin (from Cantonese)',
+      '/mandarin-from-spanish.html':        'Mandarin (from Spanish)',
+      '/mandarin-from-turkish.html':        'Mandarin (from Turkish)',
+      /* European */
+      '/german-learning.html':              'German (from English)',
+      '/german-learning-tr.html':           'German (from Turkish)',
+      '/german-from-cantonese.html':        'German (from Cantonese)',
+      '/german-from-french.html':           'German (from French)',
+      '/german-from-japanese.html':         'German (from Japanese)',
+      '/german-from-mandarin.html':         'German (from Mandarin)',
+      '/german-from-persian.html':          'German (from Persian)',
+      '/german-from-punjabi.html':          'German (from Punjabi)',
+      '/german-from-russian.html':          'German (from Russian)',
+      '/german-from-spanish.html':          'German (from Spanish)',
+      '/german-from-ukrainian.html':        'German (from Ukrainian)',
+      '/german-from-vietnamese.html':       'German (from Vietnamese)',
+      '/spanish-learning.html':             'Spanish (from English)',
+      '/spanish-from-cantonese.html':       'Spanish (from Cantonese)',
+      '/spanish-from-german.html':          'Spanish (from German)',
+      '/spanish-from-mandarin.html':        'Spanish (from Mandarin)',
+      '/spanish-from-russian.html':         'Spanish (from Russian)',
+      '/spanish-from-turkish.html':         'Spanish (from Turkish)',
+      '/ukrainian-from-english.html':       'Ukrainian (from English)',
+      '/ukrainian-from-french.html':        'Ukrainian (from French)',
+      '/ukrainian-from-german.html':        'Ukrainian (from German)',
+      '/ukrainian-from-japanese.html':      'Ukrainian (from Japanese)',
+      '/ukrainian-from-spanish.html':       'Ukrainian (from Spanish)',
+      '/ukrainian-from-vietnamese.html':    'Ukrainian (from Vietnamese)',
+      /* Turkish */
+      '/turkish-learning.html':             'Turkish (from English)',
+      '/turkish-learning-de.html':          'Turkish (from German)',
+      '/turkish-from-cantonese.html':       'Turkish (from Cantonese)',
+      '/turkish-from-farsi.html':           'Turkish (from Farsi)',
+      '/turkish-from-french.html':          'Turkish (from French)',
+      '/turkish-from-japanese.html':        'Turkish (from Japanese)',
+      '/turkish-from-mandarin.html':        'Turkish (from Mandarin)',
+      '/turkish-from-spanish.html':         'Turkish (from Spanish)',
+      '/turkish-from-vietnamese.html':      'Turkish (from Vietnamese)',
+      /* Vietnamese */
+      '/vietnamese-from-cantonese.html':    'Vietnamese (from Cantonese)',
+      '/vietnamese-from-english.html':      'Vietnamese (from English)',
+      '/vietnamese-from-farsi.html':        'Vietnamese (from Farsi)',
+      '/vietnamese-from-german.html':       'Vietnamese (from German)',
+      '/vietnamese-from-spanish.html':      'Vietnamese (from Spanish)',
+      '/vietnamese-from-turkish.html':      'Vietnamese (from Turkish)',
+      /* South Asian */
+      '/punjabi-from-english.html':         'Punjabi (from English)',
+      '/punjabi-from-mandarin.html':        'Punjabi (from Mandarin)',
+      /* Farsi */
+      '/farsi-from-cantonese.html':         'Farsi (from Cantonese)',
+      '/farsi-from-german.html':            'Farsi (from German)',
+      '/farsi-from-punjabi.html':           'Farsi (from Punjabi)',
+      '/farsi-from-spanish.html':           'Farsi (from Spanish)',
+      '/farsi-from-turkish.html':           'Farsi (from Turkish)',
+      /* Creole & regional French */
+      '/haitian-creole-from-french.html':   'Haitian Creole (from French)',
+      '/louisiana-french-from-french.html': 'Louisiana French (from French)',
+      '/quebecois-from-french.html':        'Québécois (from French)',
     };
 
     const PAIR_NAMES = {
+      /* Chichewa */
+      'ny-en': 'Chichewa ← English',
+      'ny-fr': 'Chichewa ← French',
+      'ny-pt': 'Chichewa ← Portuguese',
+      /* Kinyarwanda */
+      'ki-en': 'Kinyarwanda ← English',
+      'ki-fr': 'Kinyarwanda ← French',
+      'ki-pt': 'Kinyarwanda ← Portuguese',
+      /* Lingala */
+      'ln-en': 'Lingala ← English',
+      'ln-fr': 'Lingala ← French',
+      'ln-pt': 'Lingala ← Portuguese',
+      /* Swahili */
+      'sw-en': 'Swahili ← English',
+      'sw-fr': 'Swahili ← French',
+      'sw-pt': 'Swahili ← Portuguese',
+      /* Indigenous */
+      'ain-ja': 'Ainu ← Japanese',
       'chr-en': 'Cherokee ← English',
       'chr-es': 'Cherokee ← Spanish',
       'nv-en':  'Navajo ← English',
       'nv-es':  'Navajo ← Spanish',
-      'ain-ja': 'Ainu ← Japanese',
+      /* Cantonese */
+      'yue-en': 'Cantonese ← English',
+      'yue-fr': 'Cantonese ← French',
+      'yue-vi': 'Cantonese ← Vietnamese',
+      /* Turkish */
+      'tr-en':  'Turkish ← English',
+      'tr-fr':  'Turkish ← French',
+      'tr-ja':  'Turkish ← Japanese',
+      'tr-vi':  'Turkish ← Vietnamese',
+      /* Ukrainian */
+      'uk-fr':  'Ukrainian ← French',
+      'uk-ja':  'Ukrainian ← Japanese',
+      'uk-vi':  'Ukrainian ← Vietnamese',
+      /* Other */
       'de-en':  'German ← English',
       'es-en':  'Spanish ← English',
-      'tr-en':  'Turkish ← English',
       'es-ru':  'Spanish ← Russian',
-      'yue-en': 'Cantonese ← English',
+      'ht-fr':  'Haitian Creole ← French',
+      'la-fr':  'Louisiana French ← French',
+      'qc-fr':  'Québécois ← French',
     };
+
+    /* ── Sync localStorage SRS state to server ──────────────────────────
+       Scans for all keys starting with "srs_" in localStorage and pushes
+       each to /api/srs/save. This runs on account page load so streak and
+       server-side progress stay up to date after SRS sessions on any guide.
+       Failures are silent — localStorage remains the authoritative source.
+    ──────────────────────────────────────────────────────────────────── */
+    async function syncLocalSRSToServer() {
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('srs_')) keys.push(k);
+      }
+      if (!keys.length) return;
+
+      for (const key of keys) {
+        const pair = key.slice(4); // strip "srs_"
+        if (!pair) continue;
+        let state;
+        try { state = JSON.parse(localStorage.getItem(key) || 'null'); } catch { continue; }
+        if (!state || typeof state !== 'object') continue;
+
+        try {
+          await fetch('/api/srs/save', {
+            method:      'POST',
+            headers:     { 'Content-Type': 'application/json' },
+            credentials: 'same-origin',
+            body:        JSON.stringify({ pair, state }),
+          });
+        } catch { /* silent — offline or rate-limited */ }
+      }
+    }
 
     async function loadAccount() {
       // 1. Verify session
@@ -196,7 +363,22 @@
       document.getElementById('account-content').style.display = '';
       document.getElementById('account-email').textContent = me.email;
 
-      // 3. Load SRS progress, saved guides, and contact messages in parallel
+      // 2b. Render streak from /me response
+      document.getElementById('streak-current').textContent = me.streakDays  || 0;
+      document.getElementById('streak-longest').textContent = me.longestStreak || 0;
+
+      // 3a. Sync any localStorage SRS data to the server (updates streak too),
+      //     then refresh /me so streak numbers reflect the sync.
+      await syncLocalSRSToServer();
+      try {
+        const refreshed = await fetch('/api/auth/me', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : null);
+        if (refreshed) {
+          document.getElementById('streak-current').textContent = refreshed.streakDays  || 0;
+          document.getElementById('streak-longest').textContent = refreshed.longestStreak || 0;
+        }
+      } catch { /* silent */ }
+
+      // 3b. Load SRS progress, saved guides, and contact messages in parallel
       const [srsData, guidesData, messagesData] = await Promise.allSettled([
         fetch('/api/srs/load', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : {}),
         fetch('/api/guides/saved', { credentials: 'same-origin' }).then(r => r.ok ? r.json() : []),
