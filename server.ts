@@ -285,6 +285,26 @@ async function initDB(): Promise<void> {
     );
   `);
 
+  // ── Pending signups (email verification) ──────────────────────────────────
+  // Holds unverified signup attempts until the user confirms their code.
+  // Rows are cleaned up on successful verification or expiry.
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS pending_signups (
+      id            SERIAL PRIMARY KEY,
+      email         TEXT NOT NULL UNIQUE,
+      password_hash TEXT NOT NULL,
+      verify_code   TEXT NOT NULL,
+      expires_at    TIMESTAMP NOT NULL,
+      created_at    TIMESTAMP DEFAULT NOW()
+    );
+  `);
+
+  // ── Streak / activity tracking ────────────────────────────────────────────
+  // Add streak columns to users if they don't exist yet (safe on re-run).
+  await pool.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS streak_days    INTEGER DEFAULT 0`);
+  await pool.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS longest_streak INTEGER DEFAULT 0`);
+  await pool.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS last_activity  DATE`);
+
   // ── SRS progress ──────────────────────────────────────────────────────────
   // Per-user, per-language-pair SM-2 state (JSON blob).
   // Falls back to localStorage when user is not logged in (client-side).
@@ -421,7 +441,8 @@ app.post(
 // None of these routes touch newsletter_subscribers. Signing up for an
 // account does not subscribe the user to any mailing list.
 
-// POST /api/auth/signup — create account
+// POST /api/auth/signup — step 1: validate + send verification code
+// Does NOT create the user yet. Stores a pending_signups row and emails a code.
 app.post(
   '/api/auth/signup',
   rateLimit({ windowMs: 60 * 60_000, max: 10 }),
@@ -443,22 +464,110 @@ app.post(
     }
 
     try {
-      const hash = await bcrypt.hash(password, BCRYPT_ROUNDS);
-      const { rows } = await pool.query(
-        'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email, created_at',
-        [email.toLowerCase(), hash],
-      );
-      const user  = rows[0] as { id: number; email: string; created_at: string };
-      const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY });
-      setAuthCookie(res, token);
-      res.json({ ok: true, email: user.email });
-    } catch (err: unknown) {
-      // PostgreSQL unique violation code = 23505
-      if ((err as { code?: string })?.code === '23505') {
+      // Reject if a verified account already exists for this email.
+      const existing = await pool.query('SELECT id FROM users WHERE email = $1', [email.toLowerCase()]);
+      if (existing.rows.length) {
         res.status(409).json({ error: 'An account with that email already exists.' });
         return;
       }
+
+      const hash    = await bcrypt.hash(password, BCRYPT_ROUNDS);
+      const code    = String(randomInt(100000, 999999 + 1)).padStart(6, '0');
+      const expires = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+
+      // Replace any existing pending attempt for this email, then insert fresh.
+      await pool.query('DELETE FROM pending_signups WHERE email = $1', [email.toLowerCase()]);
+      await pool.query(
+        `INSERT INTO pending_signups (email, password_hash, verify_code, expires_at)
+         VALUES ($1, $2, $3, $4)`,
+        [email.toLowerCase(), hash, code, expires],
+      );
+
+      if (resend) {
+        await resend.emails.send({
+          from:    CONTACT_FROM,
+          to:      email,
+          subject: 'Verify your account — steven-legg.com',
+          text:    `Your verification code is: ${code}\n\nThis code expires in 15 minutes.\n\nIf you did not try to create an account, ignore this email.`,
+        });
+      } else {
+        console.info(`[DEV] Email verification code for ${email}: ${code}`);
+      }
+
+      res.json({ ok: true, step: 'verify' });
+    } catch (err) {
       console.error('signup error:', err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  },
+);
+
+// POST /api/auth/verify-signup — step 2: confirm code + create account
+app.post(
+  '/api/auth/verify-signup',
+  rateLimit({ windowMs: 15 * 60_000, max: 10 }),
+  async (req: Request, res: Response) => {
+    const email = sanitize((req.body as Record<string, unknown>)?.email, 254);
+    const code  = sanitize((req.body as Record<string, unknown>)?.code,  6);
+
+    if (!email || !code) {
+      res.status(400).json({ error: 'Email and verification code are required.' });
+      return;
+    }
+
+    try {
+      const { rows } = await pool.query(
+        'SELECT id, email, password_hash, verify_code, expires_at FROM pending_signups WHERE email = $1',
+        [email.toLowerCase()],
+      );
+
+      if (!rows.length) {
+        res.status(400).json({ error: 'No pending signup found. Please start again.' });
+        return;
+      }
+
+      const pending = rows[0] as {
+        id: number; email: string; password_hash: string;
+        verify_code: string; expires_at: Date;
+      };
+
+      if (new Date() > new Date(pending.expires_at)) {
+        await pool.query('DELETE FROM pending_signups WHERE id = $1', [pending.id]);
+        res.status(400).json({ error: 'Verification code expired. Please sign up again.' });
+        return;
+      }
+
+      if (pending.verify_code !== code) {
+        res.status(400).json({ error: 'Incorrect verification code.' });
+        return;
+      }
+
+      // Create the verified user account.
+      let userId: number;
+      let userEmail: string;
+      try {
+        const result = await pool.query(
+          'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email',
+          [pending.email, pending.password_hash],
+        );
+        userId    = (result.rows[0] as { id: number; email: string }).id;
+        userEmail = (result.rows[0] as { id: number; email: string }).email;
+      } catch (insertErr: unknown) {
+        if ((insertErr as { code?: string })?.code === '23505') {
+          res.status(409).json({ error: 'An account with that email already exists.' });
+          return;
+        }
+        throw insertErr;
+      }
+
+      // Clean up pending row.
+      await pool.query('DELETE FROM pending_signups WHERE id = $1', [pending.id]);
+
+      const token = jwt.sign({ userId, email: userEmail }, JWT_SECRET, { expiresIn: JWT_EXPIRY });
+      setAuthCookie(res, token);
+      res.json({ ok: true, email: userEmail });
+    } catch (err) {
+      console.error('verify-signup error:', err);
       res.status(500).json({ error: 'Server error' });
     }
   },
@@ -510,11 +619,26 @@ app.post('/api/auth/logout', ((_req: Request, res: Response) => {
   res.json({ ok: true });
 }) as express.RequestHandler);
 
-// GET /api/auth/me — return current user (used by account.html on load)
-app.get('/api/auth/me', requireAuth, ((_req: Request, res: Response) => {
+// GET /api/auth/me — return current user + streak (used by account.html on load)
+app.get('/api/auth/me', requireAuth, async (_req: Request, res: Response) => {
   const auth = res.locals['auth'] as JwtPayload;
-  res.json({ email: auth.email, userId: auth.userId });
-}) as express.RequestHandler);
+  try {
+    const { rows } = await pool.query(
+      'SELECT streak_days, longest_streak, last_activity FROM users WHERE id = $1',
+      [auth.userId],
+    );
+    const row = rows[0] as { streak_days: number; longest_streak: number; last_activity: string | null } | undefined;
+    res.json({
+      email:          auth.email,
+      userId:         auth.userId,
+      streakDays:     row?.streak_days     ?? 0,
+      longestStreak:  row?.longest_streak  ?? 0,
+      lastActivity:   row?.last_activity   ?? null,
+    });
+  } catch {
+    res.json({ email: auth.email, userId: auth.userId, streakDays: 0, longestStreak: 0, lastActivity: null });
+  }
+});
 
 // POST /api/auth/reset-request — send 6-digit reset code via Resend
 app.post(
@@ -751,6 +875,30 @@ app.post(
                updated_at = NOW()`,
         [auth.userId, pair, json],
       );
+
+      // ── Update streak ────────────────────────────────────────────────────
+      // Uses DB-side date in UTC. If today is the same as last_activity, no
+      // change. If today is yesterday + 1, increment streak. Otherwise reset.
+      await pool.query(
+        `UPDATE users SET
+           last_activity  = CURRENT_DATE,
+           streak_days    = CASE
+             WHEN last_activity = CURRENT_DATE                THEN streak_days
+             WHEN last_activity = CURRENT_DATE - INTERVAL '1 day' THEN streak_days + 1
+             ELSE 1
+           END,
+           longest_streak = GREATEST(
+             longest_streak,
+             CASE
+               WHEN last_activity = CURRENT_DATE                THEN streak_days
+               WHEN last_activity = CURRENT_DATE - INTERVAL '1 day' THEN streak_days + 1
+               ELSE 1
+             END
+           )
+         WHERE id = $1`,
+        [auth.userId],
+      );
+
       res.json({ ok: true });
     } catch (err) {
       console.error('srs/save error:', err);
@@ -848,7 +996,7 @@ app.get('/api/contact/messages', requireAuth, async (_req: Request, res: Respons
     if (!userRow.rows.length) return res.status(404).json({ error: 'User not found' });
     const email = userRow.rows[0].email;
     const { rows } = await pool.query(
-      'SELECT name, message, created_at FROM contact_messages WHERE email = $1 ORDER BY created_at DESC',
+      'SELECT name, message, sent_at AS created_at FROM contact_messages WHERE email = $1 ORDER BY sent_at DESC',
       [email],
     );
     res.json(rows);

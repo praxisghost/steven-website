@@ -41,12 +41,14 @@
   <script src="script.js"></script>
   <script src="leaf.js"></script>
   <script>
-    /* Rainbow sweep on "Just following my rainbow" — 5 s cooldown */
+    /* Rainbow sweep on "Just following my rainbow" — 5 s cooldown
+       Works on desktop (mouseenter) and mobile (touchstart). */
     (function () {
       const tagline = document.querySelector('.tagline-text');
       if (!tagline) return;
       let ready = true;
-      tagline.addEventListener('mouseenter', function () {
+
+      function triggerRainbow() {
         if (!ready) return;
         ready = false;
         tagline.classList.add('rainbow-sweep');
@@ -54,7 +56,10 @@
           tagline.classList.remove('rainbow-sweep');
           setTimeout(function () { ready = true; }, 5000);
         }, { once: true });
-      });
+      }
+
+      tagline.addEventListener('mouseenter', triggerRainbow);
+      tagline.addEventListener('touchstart', triggerRainbow, { passive: true });
     })();
   </script>
 </body>
