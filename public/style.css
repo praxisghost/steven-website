@@ -185,6 +185,18 @@ article h2 {
   color: #fff;
 }
 article p  { margin-bottom: 1rem; color: #ccc; }
+article h2:not(:first-child) { margin-top: 2.25rem; }
+
+/* ── Pull-quotes (highlighted book quotes, etc.) ─ */
+article blockquote {
+  margin: 1.1rem 0;
+  padding: 0.4rem 0 0.4rem 1.1rem;
+  border-left: 2px solid #444;
+  color: #e6e6e6;
+  font-style: italic;
+  line-height: 1.5;
+}
+article blockquote p { margin: 0; color: inherit; }
 
 /* ── Back link ───────────────────────────────── */
 .back-link {
