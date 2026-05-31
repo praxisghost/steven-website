@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" role="img" aria-label="Senyera">
+  <rect width="36" height="24" fill="#FCDD09"/>
+  <g fill="#DA121A">
+    <rect y="2.667" width="36" height="2.667"/>
+    <rect y="8.0" width="36" height="2.667"/>
+    <rect y="13.333" width="36" height="2.667"/>
+    <rect y="18.667" width="36" height="2.667"/>
+  </g>
+</svg>

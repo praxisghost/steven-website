@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guaraní (Avañe'ẽ) para hispanohablantes — Steven Legg</title>
+  <meta name="description" content="Aprende guaraní desde el español: la nasalidad, la conjugación por prefijos, el «nosotros» inclusivo/exclusivo, el jopara, pronunciación, recursos y un mazo de ~100 palabras.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guías de idiomas</a>
+
+<header>
+  <h1>Avañe'ẽ <span class="lang-from">para hispanohablantes</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Tarjetas</a></li>
+  <li><a href="#intro">¿Qué es el guaraní?</a></li>
+  <li><a href="#vocab">Vocabulario básico — Top 100</a></li>
+  <li><a href="#grammar">Gramática esencial</a></li>
+  <li><a href="#pronunciation">Pronunciación</a></li>
+  <li><a href="#mistakes">Errores comunes de los hispanohablantes</a></li>
+  <li><a href="#resources">Recursos para aprender</a></li>
+  <li><a href="#culture">Cultura y contexto</a></li>
+  <li><a href="#related">Guías relacionadas</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Tarjetas</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="guarani-srs-es.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. ¿Qué es el guaraní?</h2>
+  <p>El guaraní (<em>avañe'ẽ</em>, «la lengua del pueblo») es una lengua tupí-guaraní cooficial en Paraguay junto con el español. Lo hablan unos 6–7 millones de personas y es el caso más notable de América: una lengua indígena hablada por la mayoría de la población de un país, incluida gran parte de la población no indígena.</p>
+  <p>En la práctica, muchos paraguayos hablan <strong>jopara</strong>, una mezcla fluida de guaraní y español. Para un hispanohablante esto es una ventaja: reconocerás muchos préstamos, pero el corazón gramatical del guaraní es completamente distinto del español.</p>
+  <h3>¿Por qué aprenderlo?</h3>
+  <ul>
+    <li><strong>Préstamos reconocibles</strong> — El jopara incorpora mucho español; partirás con vocabulario ya conocido.</li>
+    <li><strong>Una gramática nueva</strong> — Conjugación por prefijos, nasalidad y tiempo nominal: el guaraní reorganiza cómo piensas una lengua.</li>
+    <li><strong>Acceso humano al Paraguay</strong> — Hablar guaraní cambia por completo el trato en el campo y en la vida cotidiana.</li>
+    <li><strong>Una lengua viva y orgullosa</strong> — Es lengua de Estado, de escuela y de poesía, no una reliquia.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulario básico — Top 100 (1–105)</h2>
+  <p>Las palabras y expresiones guaraníes más útiles, con su traducción al español. Es el mismo mazo que usa el entrenador de tarjetas de arriba. Usa el buscador para filtrar.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>Avañe'ẽ</th><th>Español</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from guarani-srs-es.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Gramática esencial</h2>
+  <p>El guaraní no tiene género gramatical y conjuga el verbo con <strong>prefijos de persona</strong>, no con terminaciones. El verbo se cita normalmente por su raíz.</p>
+
+  <h3>Conjugación por prefijos</h3>
+  <p>Con la raíz <em>guata</em> («caminar»):</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Prefijo</th><th>Ejemplo</th><th>Español</th></tr></thead>
+    <tbody>
+      <tr><td>a-</td><td><strong>a</strong>guata</td><td>yo camino</td></tr>
+      <tr><td>re-</td><td><strong>re</strong>guata</td><td>tú caminas</td></tr>
+      <tr><td>o-</td><td><strong>o</strong>guata</td><td>él/ella camina</td></tr>
+      <tr><td>ja-/ña- (incl.)</td><td><strong>ja</strong>guata</td><td>caminamos (tú y yo)</td></tr>
+      <tr><td>ro- (excl.)</td><td><strong>ro</strong>guata</td><td>caminamos (sin ti)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Dos «nosotros»</h3>
+  <p>El guaraní distingue <strong>ñande</strong> (nosotros incluyéndote) de <strong>ore</strong> (nosotros sin ti). El español no marca esta diferencia, así que hay que pensarla a propósito.</p>
+
+  <h3>Tiempo nominal y posesión</h3>
+  <ul>
+    <li>Hasta los sustantivos llevan marcas de tiempo: <em>che róga</em> (mi casa) → <em>che rógakue</em> (mi antigua casa) → <em>che rógarã</em> (mi futura casa).</li>
+    <li>La posesión se marca con prefijos: <em>che sy</em> (mi madre), <em>nde sy</em> (tu madre).</li>
+  </ul>
+  <p class="lang-note">Muchas palabras cambian su consonante inicial según el poseedor o el contexto (mutación). No te asustes: al principio apréndelas en bloque.</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Pronunciación</h2>
+  <p>Las vocales orales (a e i o u) son como en español, pero el guaraní añade cosas que el español no tiene.</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Letra</th><th>Sonido</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>y</td><td>/ɨ/ — vocal central alta, NO la «i» española</td><td>y (agua)</td></tr>
+      <tr><td>ã ẽ ĩ õ ũ ỹ</td><td>vocales nasales (el aire sale por la nariz)</td><td>akã (cabeza)</td></tr>
+      <tr><td>'</td><td>oclusión glotal (puso) — un corte de voz</td><td>ka'a (yerba mate)</td></tr>
+      <tr><td>g̃ / nasalidad</td><td>la nasalidad se contagia a toda la palabra (armonía nasal)</td><td>ñe'ẽ (lengua/hablar)</td></tr>
+      <tr><td>j</td><td>/dʒ/ — como «y» rioplatense o «j» inglesa</td><td>jagua (perro)</td></tr>
+      <tr><td>h</td><td>aspirada, como «h» inglesa</td><td>hína (estar)</td></tr>
+    </tbody>
+  </table></div>
+  <p>El acento suele caer en la última sílaba. La nasalidad y el puso (') cambian el significado: no los ignores.</p>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Errores comunes de los hispanohablantes</h2>
+  <ul>
+    <li><strong>Pronunciar <em>y</em> como «i»</strong> — es una vocal central /ɨ/. <em>y</em> significa «agua».</li>
+    <li><strong>Ignorar la nasalidad</strong> — las vocales nasales (ã, ẽ, ĩ…) distinguen palabras. Una palabra nasal no se pronuncia como su versión oral.</li>
+    <li><strong>Saltarse el puso (')</strong> — la oclusión glotal es una letra real; <em>ka'a</em> no es <em>kaa</em>.</li>
+    <li><strong>Olvidar el «nosotros» inclusivo/exclusivo</strong> — usar siempre la misma forma. Hay que elegir entre <em>ñande</em> y <em>ore</em>.</li>
+    <li><strong>Conjugar con terminaciones</strong> — el guaraní usa prefijos (a-, re-, o-…). La raíz no cambia al final.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Recursos para aprender</h2>
+  <ul>
+    <li><strong><a href="https://www.spl.gov.py/" target="_blank" rel="noopener">Secretaría de Políticas Lingüísticas (Paraguay)</a></strong> <span class="level-badge all-levels">todos los niveles</span> — Materiales oficiales, normativa y publicaciones en guaraní.</li>
+    <li><strong><a href="https://www.iguarani.com/" target="_blank" rel="noopener">iGuaraní</a></strong> <span class="level-badge beginner">principiante</span> — Diccionario y herramientas en línea muy útiles para empezar.</li>
+    <li><strong>«Ñane Ñe'ẽ Guaraní» y manuales escolares paraguayos</strong> <span class="level-badge beginner">principiante</span> — Los libros de texto usados en Paraguay, claros y graduados.</li>
+    <li><strong><a href="https://gn.wikipedia.org/" target="_blank" rel="noopener">Vikipetã (Wikipedia en guaraní)</a></strong> <span class="level-badge intermed">intermedio</span> — Lectura auténtica para ampliar vocabulario.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a> y radios paraguayas</strong> <span class="level-badge all-levels">todos los niveles</span> — Practica con hablantes; escucha radio en guaraní/jopara.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Cultura y contexto</h2>
+  <h3>Lengua de toda una nación</h3>
+  <p>El guaraní es excepcional: una lengua indígena que es lengua nacional y de identidad para la mayoría del Paraguay, no solo de comunidades originarias. Hablarla es entrar en el alma del país.</p>
+  <h3>Jopara</h3>
+  <p>En la calle se oye sobre todo <em>jopara</em>, la mezcla viva de guaraní y español. Aprender el guaraní «puro» de la escuela te ayudará a entender y a moverte entre ambos registros.</p>
+  <h3>Tereré y vida cotidiana</h3>
+  <p>El <em>tereré</em> (mate frío con yerba, <em>ka'a</em>) es ritual social diario. Mucho vocabulario cotidiano — plantas, comidas, parentesco — vive en guaraní aunque la conversación sea en español.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guías relacionadas</h2>
+  <ul>
+    <li><a href="quechua-from-spanish.html">Quechua para hispanohablantes</a></li>
+    <li><a href="catalan-from-spanish.html">Catalán para hispanohablantes</a></li>
+    <li><a href="language-guides.html">Todas las guías de idiomas</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>
