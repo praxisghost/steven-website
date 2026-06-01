@@ -1,0 +1,338 @@
+# ISMS_DICTIONARY_QUEUE.md
+
+## Purpose
+
+This queue tracks which -ism pages still need dictionary enrichment.
+
+Dictionary enrichment should only occur after:
+
+1. The page exists.
+2. Navigation is working.
+3. The page has passed basic review.
+
+Each page should eventually contain:
+
+* Dictionary Entry #1 (US Dictionary)
+* Dictionary Entry #2 (Independent Dictionary)
+* Dictionary Entry #3 (UK or Australian Dictionary)
+
+Requirements:
+
+* Exactly 3 independent dictionary sources.
+* Preserve source attribution.
+* Include source links.
+* Preserve pronunciation, grammar, spelling, and usage notes when available.
+* Do not remove existing page content.
+* Place dictionary entries above the "More content coming soon" section.
+
+Execution Limits:
+
+* Maximum 5 terms per run.
+* Update ISMS_PROGRESS.md after completion.
+* Mark completed terms with [x].
+
+---
+
+# Queue
+
+* [ ] abolitionism
+* [ ] absenteeism
+* [ ] absolutism
+* [ ] abstractionism
+* [ ] absurdism
+* [ ] academicism
+* [ ] accelerationism
+* [ ] accommodationism
+* [ ] activism
+* [ ] actualism
+* [ ] adventurism
+* [ ] aestheticism
+* [ ] ageism
+* [ ] agnosticism
+* [ ] altruism
+* [ ] amateurism
+* [ ] anarchism
+* [ ] animism
+* [ ] anti-Americanism
+* [ ] anticolonialism
+* [ ] anticommunism
+* [ ] antifascism
+* [ ] antisemitism
+* [ ] aphorism
+* [ ] apoliticism
+* [ ] aristocratism
+* [ ] asceticism
+* [ ] associationism
+* [ ] atheism
+* [ ] atomism
+* [ ] authoritarianism
+* [ ] autism
+* [ ] behaviorism
+* [ ] bilingualism
+* [ ] bipolarism
+* [ ] blackmailism
+* [ ] Bolshevism
+* [ ] Bonapartism
+* [ ] botulism
+* [ ] Brahmanism
+* [ ] brutalism
+* [ ] Buddhism
+* [ ] Calvinism
+* [ ] capitalism
+* [ ] careerism
+* [ ] Cartesianism
+* [ ] Catholicism
+* [ ] centrism
+* [ ] chauvinism
+* [ ] classicism
+* [ ] clericalism
+* [ ] clientelism
+* [ ] colonialism
+* [ ] communism
+* [ ] communalism
+* [ ] consequentialism
+* [ ] conservatism
+* [ ] constructivism
+* [ ] consumerism
+* [ ] contextualism
+* [ ] creationism
+* [ ] criticism
+* [ ] cubism
+* [ ] cynicism
+* [ ] Darwinism
+* [ ] deism
+* [ ] determinism
+* [ ] developmentalism
+* [ ] dialecticism
+* [ ] didacticism
+* [ ] digitalism
+* [ ] dualism
+* [ ] eclecticism
+* [ ] egalitarianism
+* [ ] egoism
+* [ ] empiricism
+* [ ] environmentalism
+* [ ] essentialism
+* [ ] evangelism
+* [ ] existentialism
+* [ ] expansionism
+* [ ] exceptionalism
+* [ ] expressionism
+* [ ] extremism
+* [ ] Fabianism
+* [ ] fascism
+* [ ] fatalism
+* [ ] federalism
+* [ ] feminism
+* [ ] feudalism
+* [ ] fideism
+* [ ] formalism
+* [ ] functionalism
+* [ ] fundamentalism
+* [ ] futurism
+* [ ] Gandhism
+* [ ] gradualism
+* [ ] graphism
+* [ ] Hegelianism
+* [ ] hedonism
+* [ ] heroism
+* [ ] historicism
+* [ ] humanism
+* [ ] hybridism
+* [ ] idealism
+* [ ] illusionism
+* [ ] imperialism
+* [ ] individualism
+* [ ] industrialism
+* [ ] inflationism
+* [ ] informalism
+* [ ] instrumentalism
+* [ ] intellectualism
+* [ ] internationalism
+* [ ] interventionism
+* [ ] intuitionism
+* [ ] irredentism
+* [ ] isolationism
+* [ ] jingoism
+* [ ] journaleseism
+* [ ] Kantianism
+* [ ] Keynesianism
+* [ ] Lamarckism
+* [ ] legalism
+* [ ] Leninism
+* [ ] liberalism
+* [ ] linguisticism
+* [ ] literalism
+* [ ] localism
+* [ ] logicism
+* [ ] Machiavellianism
+* [ ] Maoism
+* [ ] Marxism
+* [ ] materialism
+* [ ] mechanism
+* [ ] medievalism
+* [ ] mercantilism
+* [ ] messianism
+* [ ] minimalism
+* [ ] modernism
+* [ ] monasticism
+* [ ] monism
+* [ ] multiculturalism
+* [ ] mutualism
+* [ ] mysticism
+* [ ] nationalism
+* [ ] naturalism
+* [ ] Nazism
+* [ ] neo-colonialism
+* [ ] neoliberalism
+* [ ] neologism
+* [ ] nihilism
+* [ ] nominalism
+* [ ] nonconformism
+* [ ] objectivism
+* [ ] obscurantism
+* [ ] occultism
+* [ ] one-upmanship
+* [ ] operationalism
+* [ ] opportunism
+* [ ] optimism
+* [ ] organism
+* [ ] orientalism
+* [ ] pacifism
+* [ ] paganism
+* [ ] parallelism
+* [ ] particularism
+* [ ] paternalism
+* [ ] patriotism
+* [ ] perfectionism
+* [ ] perennialism
+* [ ] pessimism
+* [ ] pluralism
+* [ ] populism
+* [ ] positivism
+* [ ] postmodernism
+* [ ] pragmatism
+* [ ] preservationism
+* [ ] primitivism
+* [ ] progressivism
+* [ ] protectionism
+* [ ] Protestantism
+* [ ] provincialism
+* [ ] psychologism
+* [ ] quietism
+* [ ] racism
+* [ ] radicalism
+* [ ] rationalism
+* [ ] realism
+* [ ] reductionism
+* [ ] regionalism
+* [ ] relativism
+* [ ] republicanism
+* [ ] revisionism
+* [ ] romanticism
+* [ ] sadism
+* [ ] scholasticism
+* [ ] scientism
+* [ ] secularism
+* [ ] sensationalism
+* [ ] separatism
+* [ ] skepticism
+* [ ] socialism
+* [ ] solipsism
+* [ ] specialism
+* [ ] spiritualism
+* [ ] Stalinism
+* [ ] stoicism
+* [ ] structuralism
+* [ ] surrealism
+* [ ] symbolism
+* [ ] syndicalism
+* [ ] Taoism
+* [ ] terrorism
+* [ ] Thatcherism
+* [ ] theism
+* [ ] Thomism
+* [ ] totalitarianism
+* [ ] traditionalism
+* [ ] tribalism
+* [ ] triumphalism
+* [ ] Trotskyism
+* [ ] unilateralism
+* [ ] universalism
+* [ ] utilitarianism
+* [ ] utopianism
+* [ ] veganism
+* [ ] vegetarianism
+* [ ] verbalism
+* [ ] vigilantism
+* [ ] vitalism
+* [ ] voluntarism
+* [ ] welfarism
+* [ ] xenocentrism
+* [ ] xenonationalism
+* [ ] yogism
+* [ ] Zionism
+* [ ] zoomorphism
+* [ ] abiogenesisism
+* [ ] adaptationism
+* [ ] anthropocentrism
+* [ ] anthropomorphism
+* [ ] apriorism
+* [ ] biologism
+* [ ] cognitivism
+* [ ] compatibilism
+* [ ] conceptualism
+* [ ] connectionism
+* [ ] conventionalism
+* [ ] cosmopolitanism
+* [ ] decisionism
+* [ ] deconstructionism
+* [ ] descriptivism
+* [ ] distributism
+* [ ] eliminativism
+* [ ] emergentism
+* [ ] externalism
+* [ ] finitism
+* [ ] foundationalism
+* [ ] holism
+* [ ] internalism
+* [ ] libertarianism
+* [ ] meliorism
+* [ ] mentalism
+* [ ] modularism
+* [ ] monotheism
+* [ ] naturalisticism
+* [ ] panpsychism
+* [ ] physicalism
+* [ ] polytheism
+* [ ] presentism
+* [ ] probabilism
+* [ ] representationalism
+* [ ] social constructionism
+* [ ] subjectivism
+* [ ] supernaturalism
+* [ ] transhumanism
+* [ ] verificationism
+* [ ] ableism
+* [ ] lookism
+* [ ] heightism
+* [ ] speciesism
+* [ ] tokenism
+* [ ] elitism
+* [ ] favoritism
+* [ ] nepotism
+* [ ] escapism
+* [ ] mannerism
+* [ ] vandalism
+* [ ] truism
+* [ ] colloquialism
+* [ ] euphemism
+* [ ] malapropism
+* [ ] solecism
+* [ ] barbarism
+* [ ] archaism
+* [ ] anglicism
+* [ ] gallicism
+* [ ] hispanicism
+* [ ] americanism
+

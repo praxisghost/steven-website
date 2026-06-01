@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yorùbá pour francophones — Steven Legg</title>
+  <meta name="description" content="Apprenez le yorùbá depuis le français : les trois tons, les voyelles à point souscrit, la syntaxe SVO et les verbes sériels, la prononciation, des ressources et un paquet de ~60 mots.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guides de langues</a>
+
+<header>
+  <h1>Yorùbá <span class="lang-from">pour francophones</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Cartes</a></li>
+  <li><a href="#intro">Qu'est-ce que le yorùbá ?</a></li>
+  <li><a href="#vocab">Vocabulaire de base</a></li>
+  <li><a href="#grammar">Grammaire essentielle</a></li>
+  <li><a href="#pronunciation">Prononciation</a></li>
+  <li><a href="#mistakes">Erreurs fréquentes des francophones</a></li>
+  <li><a href="#resources">Ressources pour apprendre</a></li>
+  <li><a href="#culture">Culture et contexte</a></li>
+  <li><a href="#related">Related Guides</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Cartes</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="yoruba-srs-fr.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. Qu'est-ce que le yorùbá ?</h2>
+  <p>Le yorùbá est une grande langue d'Afrique de l'Ouest, parlée par environ 45 millions de personnes au sud-ouest du Nigéria, au Bénin et au Togo, ainsi que par une vaste diaspora. Elle appartient à la famille Niger-Congo et compte parmi les trois plus grandes langues du Nigéria.</p>
+  <p>Sa caractéristique majeure est le <strong>ton</strong> : trois tons de niveau (haut, moyen, bas) notés par des accents qui distinguent des syllabes par ailleurs identiques. Pour un francophone, l'orthographe latine est lisible une fois maîtrisés les points souscrits et les accents tonals. Le yorùbá rayonne aussi dans le monde par les traditions religieuses <em>Òrìṣà</em> (Cuba, Brésil, Haïti).</p>
+  <h3>Pourquoi l'apprendre ?</h3>
+  <ul>
+    <li><strong>Un entraînement tonal</strong> — Trois tons notés dans l'orthographe : une belle initiation au ton lexical.</li>
+    <li><strong>Présence francophone</strong> — Largement parlé au Bénin et au Togo, pays francophones voisins du Nigéria.</li>
+    <li><strong>Une riche tradition orale</strong> — Proverbes (òwe), poésie de louange (oríkì) et versets d'Ifá sont des trésors.</li>
+    <li><strong>Une écriture logique</strong> — Une fois les points et les tons appris, l'orthographe reflète fidèlement le son.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulaire de base (1–62)</h2>
+  <p>Les mots et expressions yorùbá les plus utiles, avec leur traduction française. C'est le paquet exact utilisé par l'entraîneur de cartes ci-dessus. Utilisez la recherche pour filtrer.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>Yorùbá</th><th>Français</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from yoruba-srs-fr.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Grammaire essentielle</h2>
+  <p>L'ordre des mots en yorùbá est <strong>Sujet–Verbe–Objet</strong>, comme en français. Le verbe ne se conjugue pas pour la personne ni le temps ; ce sont de petites <strong>particules préverbales</strong> qui marquent le temps et l'aspect.</p>
+
+  <h3>Marqueurs de temps/aspect (avec jẹ, « manger »)</h3>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Marqueur</th><th>Sens</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>(rien)</td><td>simple / passé</td><td>mo jẹ — j'ai mangé</td></tr>
+      <tr><td>ń</td><td>en cours</td><td>mo ń jẹ — je suis en train de manger</td></tr>
+      <tr><td>ti</td><td>accompli (déjà)</td><td>mo ti jẹ — j'ai déjà mangé</td></tr>
+      <tr><td>máa / yóò</td><td>futur</td><td>mo máa jẹ — je mangerai</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Verbes sériels</h3>
+  <p>Le yorùbá enchaîne les verbes là où le français emploie des prépositions : <em>ó mú ìwé wá</em> = « il prit livre vint » = il a apporté le livre. Cette <strong>construction à verbes sériels</strong> est omniprésente.</p>
+  <p class="lang-note">Les pronoms sujets sont obligatoires (mo, o, ó, a, ẹ, wọ́n) et beaucoup changent de ton selon le marqueur qui suit. Écoutez et imitez.</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Prononciation</h2>
+  <p>Le yorùbá possède sept voyelles orales et des voyelles nasales. Deux lettres portent un <strong>point souscrit</strong> qui change le son, et trois <strong>tons</strong> sont notés par des accents.</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Lettre / signe</th><th>Son</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>ẹ</td><td>« è » ouvert (comme « père »)</td><td>ẹsẹ̀ (jambe)</td></tr>
+      <tr><td>ọ</td><td>« o » ouvert (comme « port »)</td><td>ọmọ (enfant)</td></tr>
+      <tr><td>ṣ</td><td>« ch »</td><td>ṣe (faire)</td></tr>
+      <tr><td>p</td><td>kp (un seul son co-articulé)</td><td>pẹ̀lú (avec)</td></tr>
+      <tr><td>á (haut) / a (moyen) / à (bas)</td><td>trois tons de niveau</td><td>igbá / igba / igbà</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le ton n'est pas décoratif : <em>igbá</em> (calebasse), <em>igba</em> (deux cents) et <em>igbà</em> (temps) ne diffèrent que par le ton.</p>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Erreurs fréquentes des francophones</h2>
+  <ul>
+    <li><strong>Ignorer les tons</strong> — haut, moyen et bas distinguent les mots ; lire « à plat » rend incompréhensible.</li>
+    <li><strong>Oublier les points souscrits</strong> — ẹ et ọ sont d'autres voyelles que e et o ; ṣ se lit « ch », pas « s ».</li>
+    <li><strong>Lire « p » à la française</strong> — le p yorùbá est un son /kp/ articulé des deux lèvres et de l'arrière de la langue.</li>
+    <li><strong>Conjuguer le verbe</strong> — le verbe ne change pas ; le temps vient des particules préverbales (ń, ti, máa).</li>
+    <li><strong>Omettre le pronom sujet</strong> — contrairement au français, le yorùbá garde le pronom (mo, ó…).</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Ressources pour apprendre</h2>
+  <ul>
+    <li><strong><a href="https://fr.wikipedia.org/wiki/Yoruba_(langue)" target="_blank" rel="noopener">Aperçu du yorùbá</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Présentation du ton, des voyelles et de la grammaire.</li>
+    <li><strong>Chaînes YouTube et cours de yorùbá (exercices de tons)</strong> <span class="level-badge beginner">débutant</span> — Pour entraîner l'oreille aux trois tons.</li>
+    <li><strong><a href="https://glosbe.com/fr/yo" target="_blank" rel="noopener">Dictionnaire Glosbe français–yorùbá</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Dictionnaire avec exemples et audio.</li>
+    <li><strong>Films Nollywood et musique yorùbá (fuji, afrobeats)</strong> <span class="level-badge intermed">intermédiaire</span> — Écoute authentique pour le ton et les idiomes.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Travaillez les tons en direct avec des tuteurs yorùbá.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Culture et contexte</h2>
+  <h3>L'art des salutations</h3>
+  <p>Le yorùbá possède une salutation pour presque chaque situation — pour le travail, le repas, le retour, et même pour quelqu'un assis. Employer la bonne montre l'<em>ìwà</em> (le bon caractère).</p>
+  <h3>Respect et déférence</h3>
+  <p>L'âge et l'aînesse sont honorés : traditionnellement les plus jeunes se prosternent (hommes) ou s'agenouillent (femmes) devant les aînés, et les pronoms passent au pluriel par respect.</p>
+  <h3>Òrìṣà et rayonnement mondial</h3>
+  <p>Les concepts et divinités yorùbá (Ṣàngó, Ọ̀ṣun, Ifá) ont façonné la Santería, le Candomblé et le Vaudou dans les Amériques, gardant des mots yorùbá vivants partout dans le monde.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guides associés</h2>
+  <ul>
+    <li><a href="swahili-from-french.html">Swahili depuis le français</a></li>
+    <li><a href="lingala-from-french.html">Lingala depuis le français</a></li>
+    <li><a href="yoruba-from-english.html">Yorùbá depuis l'anglais</a></li>
+    <li><a href="language-guides.html">Tous les guides de langues</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>

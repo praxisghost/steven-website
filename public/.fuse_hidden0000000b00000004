@@ -398,7 +398,7 @@ footer a {
 footer a:hover { color: #fff; }
 
 #view-count {
-  color: #666;
+  color: #444;
   font-size: 0.8rem;
 }
 
@@ -1318,7 +1318,7 @@ body.translated-rtl { top: 0 !important; }
   border: 1px solid #252525;
   color: #888;
 }
-.srs-btn-flip:hover { border-color: #666; color: #ccc; }
+.srs-btn-flip:hover { border-color: #444; color: #ccc; }
 
 .srs-btn {
   flex: 1;
@@ -1376,7 +1376,7 @@ body.translated-rtl { top: 0 !important; }
 }
 
 .srs-done-stats {
-  color: #666;
+  color: #444;
   font-size: 0.82rem;
   margin-bottom: 1.5rem;
   line-height: 1.9;
@@ -1621,7 +1621,7 @@ html[dir="rtl"] .srs-bar {
   outline: none;
 }
 
-.guide-search-wrap input::placeholder { color: #666; }
+.guide-search-wrap input::placeholder { color: #444; }
 
 .guide-search-wrap::before {
   content: '⌕';
@@ -1629,7 +1629,7 @@ html[dir="rtl"] .srs-bar {
   left: 0.55rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #666;
+  color: #444;
   font-size: 1rem;
   pointer-events: none;
 }
@@ -1638,7 +1638,7 @@ html[dir="rtl"] .srs-bar {
   appearance: none;
   background: none;
   border: none;
-  color: #666;
+  color: #444;
   cursor: pointer;
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -1651,7 +1651,7 @@ html[dir="rtl"] .srs-bar {
 
 .filter-results-count {
   font-size: 0.8rem;
-  color: #666;
+  color: #444;
   margin-bottom: 0.5rem;
   min-height: 1.2em;
 }

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romanche (Rumantsch) pour francophones — Steven Legg</title>
+  <meta name="description" content="Apprendre le romanche depuis le français : le rumantsch grischun et les cinq idiomes, prononciation, grammaire, emprunts, ressources et un jeu d'une centaine de mots.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guides linguistiques</a>
+
+<header>
+  <h1>Rumantsch <span class="lang-from">pour francophones</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Cartes</a></li>
+  <li><a href="#intro">Qu'est-ce que le romanche ?</a></li>
+  <li><a href="#vocab">Vocabulaire de base — Top 100</a></li>
+  <li><a href="#grammar">Grammaire essentielle</a></li>
+  <li><a href="#pronunciation">Prononciation</a></li>
+  <li><a href="#mistakes">Erreurs fréquentes des francophones</a></li>
+  <li><a href="#resources">Ressources pour apprendre</a></li>
+  <li><a href="#culture">Culture et contexte</a></li>
+  <li><a href="#related">Guides associés</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Cartes</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="romansh-srs-fr.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. Qu'est-ce que le romanche ?</h2>
+  <p>Le romanche (<em>Rumantsch</em>) est la quatrième langue nationale de la Suisse, parlée par environ 60 000 personnes dans le canton des Grisons. C'est une langue rhéto-romane, donc d'origine latine — apparentée au ladin et au frioulan du nord de l'Italie.</p>
+  <p>Il existe cinq idiomes écrits régionaux (sursilvan, sutsilvan, surmiran, puter, vallader) et, depuis 1982, une forme standard supra-régionale, le <strong>rumantsch grischun</strong>. Comme langue romane, il offre au francophone beaucoup de vocabulaire reconnaissable, avec des traits propres aux Alpes.</p>
+  <h3>Pourquoi l'apprendre ?</h3>
+  <ul>
+    <li><strong>Une langue romane proche</strong> — Beaucoup de mots latins vous seront familiers ; la grammaire reste romane.</li>
+    <li><strong>Une langue nationale menacée</strong> — L'apprendre, c'est porter un petit pan vivant de la Suisse plurilingue.</li>
+    <li><strong>Logique latine, cadre alpin</strong> — Une combinaison rare et attachante.</li>
+    <li><strong>Une passerelle vers l'Italie</strong> — Elle ouvre la compréhension du ladin et du frioulan.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulaire de base — Top 100 (1–107)</h2>
+  <p>Les mots romanches les plus utiles (rumantsch grischun) avec leur traduction française. C'est exactement le jeu utilisé par l'entraîneur de cartes ci-dessus. Utilisez la recherche pour filtrer.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>Rumantsch</th><th>Français</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from romansh-srs-fr.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Grammaire essentielle</h2>
+  <p>Le romanche est une langue romane : les noms ont un <strong>genre</strong> (masculin/féminin), les verbes se conjuguent, et il y a des articles — beaucoup vous semblera familier.</p>
+
+  <h3>Articles et genre</h3>
+  <p>L'article indéfini est <strong>in</strong> (m.) / <strong>ina</strong> (f.), le défini <strong>il</strong> (m.) / <strong>la</strong> (f.) :</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Rumantsch</th><th>Français</th></tr></thead>
+    <tbody>
+      <tr><td>in um, l'um</td><td>un homme, l'homme</td></tr>
+      <tr><td>ina dunna, la dunna</td><td>une femme, la femme</td></tr>
+      <tr><td>in chaun, ils chauns</td><td>un chien, les chiens</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Verbes et passé composé</h3>
+  <p>Les verbes se conjuguent selon la personne ; le passé se forme — comme en français — avec « avoir/être » + participe : <em>jau hai mangià</em> (« j'ai mangé »), <em>el è ì</em> (« il est allé »).</p>
+  <p class="lang-note">Le rumantsch grischun est la norme écrite supra-régionale ; au quotidien, beaucoup écrivent et parlent leur idiome local (sursilvan, vallader…).</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Prononciation</h2>
+  <p>L'orthographe est régulière, mais quelques digrammes ne se lisent pas comme un francophone l'attendrait.</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Graphie</th><th>Son</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>tg</td><td>/tɕ/ — un « t mouillé », entre « tch » et « ti »</td><td>tgi (qui)</td></tr>
+      <tr><td>tsch</td><td>/tʃ/ — « tch »</td><td>tschintg (cinq)</td></tr>
+      <tr><td>sch</td><td>/ʃ/ ou /ʒ/ — « ch » ou « j » français</td><td>schender (janvier)</td></tr>
+      <tr><td>ch (+ a,o,u)</td><td>/k/ — « k » dur</td><td>chaun (chien) = « kaoun »</td></tr>
+      <tr><td>gl</td><td>/ʎ/ — « lli » de « fille »</td><td>figl (fils)</td></tr>
+      <tr><td>r</td><td>roulé, jamais le « r » guttural français</td><td>frar (frère)</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Erreurs fréquentes des francophones</h2>
+  <ul>
+    <li><strong>Lire « ch » comme « ch » français</strong> — devant a/o/u, <em>ch</em> est un /k/ dur : <em>chaun</em> se dit « kaoun ».</li>
+    <li><strong>Prononcer un « r » à la française</strong> — le <em>r</em> romanche est roulé.</li>
+    <li><strong>Confondre idiome et standard</strong> — le rumantsch grischun est la norme écrite ; sur place on entend le sursilvan, le vallader, etc. Fixez-en un.</li>
+    <li><strong>Oublier le genre</strong> — apprenez chaque nom avec <em>il</em>/<em>la</em>.</li>
+    <li><strong>Mélanger tg et tsch</strong> — <em>tg</em> est plus mouillé (/tɕ/) que <em>tsch</em> (/tʃ/).</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Ressources pour apprendre</h2>
+  <ul>
+    <li><strong><a href="https://www.liarumantscha.ch/" target="_blank" rel="noopener">Lia Rumantscha</a></strong> <span class="level-badge all-levels">tous niveaux</span> — L'organisation faîtière des Romanches : cours, matériel, conseils.</li>
+    <li><strong><a href="https://www.pledarigrond.ch/" target="_blank" rel="noopener">Pledari Grond</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Le grand dictionnaire en ligne du rumantsch grischun (gratuit).</li>
+    <li><strong><a href="https://www.rtr.ch/" target="_blank" rel="noopener">RTR — Radiotelevisiun Svizra Rumantscha</a></strong> <span class="level-badge intermed">intermédiaire</span> — Radio et télévision en romanche pour l'écoute authentique.</li>
+    <li><strong>Manuels et cours de la Lia Rumantscha</strong> <span class="level-badge beginner">débutant</span> — Cours d'initiation pour chaque idiome.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a> &amp; tandems aux Grisons</strong> <span class="level-badge all-levels">tous niveaux</span> — Pratique orale avec des locuteurs (offre limitée mais précieuse).</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Culture et contexte</h2>
+  <h3>La quatrième langue nationale</h3>
+  <p>Le romanche est langue nationale depuis 1938 et langue officielle (de façon limitée) de la Confédération. C'est le plus petit des quatre piliers linguistiques suisses et un fort symbole identitaire des Grisons.</p>
+  <h3>Cinq idiomes, une langue</h3>
+  <p>Les vallées cultivent fièrement leurs idiomes écrits. Le rumantsch grischun, norme de compromis, est utile, mais le cœur de bien des locuteurs reste l'idiome local.</p>
+  <h3>Vie et traditions</h3>
+  <p>Du <em>Chalandamarz</em> (fête printanière des enfants) à la cuisine grisonne, la culture vit dans la langue. Parler romanche vous vaudra un accueil chaleureux dans les vallées.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guides associés</h2>
+  <ul>
+    <li><a href="romansh-from-german.html">Romanche pour germanophones</a></li>
+    <li><a href="romansh-from-italian.html">Romanche pour italophones</a></li>
+    <li><a href="catalan-from-french.html">Catalan pour francophones</a></li>
+    <li><a href="language-guides.html">Toutes les guides linguistiques</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>
