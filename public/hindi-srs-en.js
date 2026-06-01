@@ -1,0 +1,155 @@
+/* hindi-srs-en.js — हिन्दी for English speakers.
+   Single source of truth: this WORDS array is BOTH the SRS deck AND the
+   data rendered into the page's frequency table (.vocab-freq-table).
+   SM-2 spaced repetition; progress in localStorage. 84 high-frequency words.
+*/
+(function () {
+  'use strict';
+  const PAIR = 'hi-en';
+  const WORDS = [
+    ["नमस्ते (namaste)", "hello"],
+    ["नमस्कार (namaskār)", "hello (formal)"],
+    ["आप कैसे हैं? (āp kaise haĩ?)", "how are you?"],
+    ["मैं ठीक हूँ (maĩ ṭhīk hū̃)", "I'm fine"],
+    ["धन्यवाद (dhanyavād)", "thank you"],
+    ["शुक्रिया (shukriyā)", "thanks"],
+    ["कृपया (kṛpayā)", "please"],
+    ["हाँ (hā̃)", "yes"],
+    ["नहीं (nahī̃)", "no"],
+    ["माफ़ कीजिए (māf kījie)", "excuse me / sorry"],
+    ["अलविदा (alvidā)", "goodbye"],
+    ["आपका नाम क्या है? (āpkā nām kyā hai?)", "what's your name?"],
+    ["मेरा नाम ... है (merā nām ... hai)", "my name is ..."],
+    ["मैं (maĩ)", "I"],
+    ["तुम (tum)", "you (familiar)"],
+    ["आप (āp)", "you (formal)"],
+    ["वह (vah)", "he / she"],
+    ["हम (ham)", "we"],
+    ["वे (ve)", "they"],
+    ["आदमी (ādmī)", "man"],
+    ["औरत (aurat)", "woman"],
+    ["लड़का (laṛkā)", "boy"],
+    ["लड़की (laṛkī)", "girl"],
+    ["माँ (mā̃)", "mother"],
+    ["पिता (pitā)", "father"],
+    ["बेटा (beṭā)", "son"],
+    ["बेटी (beṭī)", "daughter"],
+    ["भाई (bhāī)", "brother"],
+    ["बहन (bahan)", "sister"],
+    ["दोस्त (dost)", "friend"],
+    ["परिवार (parivār)", "family"],
+    ["पानी (pānī)", "water"],
+    ["खाना (khānā)", "food / to eat"],
+    ["रोटी (roṭī)", "bread / roti"],
+    ["चावल (chāval)", "rice"],
+    ["दूध (dūdh)", "milk"],
+    ["चाय (chāy)", "tea"],
+    ["नमक (namak)", "salt"],
+    ["चीनी (chīnī)", "sugar"],
+    ["एक (ek)", "one"],
+    ["दो (do)", "two"],
+    ["तीन (tīn)", "three"],
+    ["चार (chār)", "four"],
+    ["पाँच (pā̃ch)", "five"],
+    ["छह (chah)", "six"],
+    ["सात (sāt)", "seven"],
+    ["आठ (āṭh)", "eight"],
+    ["नौ (nau)", "nine"],
+    ["दस (das)", "ten"],
+    ["सौ (sau)", "hundred"],
+    ["हज़ार (hazār)", "thousand"],
+    ["जाना (jānā)", "to go"],
+    ["आना (ānā)", "to come"],
+    ["होना (honā)", "to be"],
+    ["करना (karnā)", "to do / make"],
+    ["देखना (dekhnā)", "to see"],
+    ["सुनना (sunnā)", "to hear"],
+    ["बोलना (bolnā)", "to speak"],
+    ["पीना (pīnā)", "to drink"],
+    ["सोना (sonā)", "to sleep"],
+    ["पढ़ना (paṛhnā)", "to read / study"],
+    ["लिखना (likhnā)", "to write"],
+    ["समझना (samajhnā)", "to understand"],
+    ["चाहना (chāhnā)", "to want"],
+    ["अच्छा (acchā)", "good"],
+    ["बुरा (burā)", "bad"],
+    ["बड़ा (baṛā)", "big"],
+    ["छोटा (choṭā)", "small"],
+    ["गरम (garam)", "hot"],
+    ["ठंडा (ṭhanḍā)", "cold"],
+    ["नया (nayā)", "new"],
+    ["पुराना (purānā)", "old"],
+    ["क्या? (kyā?)", "what?"],
+    ["कौन? (kaun?)", "who?"],
+    ["कहाँ? (kahā̃?)", "where?"],
+    ["कब? (kab?)", "when?"],
+    ["क्यों? (kyõ?)", "why?"],
+    ["कैसे? (kaise?)", "how?"],
+    ["और (aur)", "and"],
+    ["लेकिन (lekin)", "but"],
+    ["आज (āj)", "today"],
+    ["कल (kal)", "tomorrow / yesterday"],
+    ["अभी (abhī)", "now"],
+    ["घर (ghar)", "house / home"]
+  ];
+
+  /* ---- escape + render the frequency table from WORDS (single source) ---- */
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  (function renderFreqTable(){
+    const tbody = document.querySelector('.vocab-freq-table tbody');
+    if (!tbody) return;
+    tbody.innerHTML = WORDS.map(function(w,i){
+      return '<tr><td>'+(i+1)+'</td><td>'+esc(w[0])+'</td><td>'+esc(w[1])+'</td></tr>';
+    }).join('');
+  })();
+
+  /* ---- SM-2 spaced repetition engine ---- */
+  function loadState(){try{return JSON.parse(localStorage.getItem('srs_'+PAIR)||'{}');}catch(e){return {};}}
+  function saveState(s){try{localStorage.setItem('srs_'+PAIR,JSON.stringify(s));}catch(e){}}
+  function today(){return Math.floor(Date.now()/86400000);}
+  function getDue(state){const t=today();return WORDS.filter(function(_,i){const c=state[i];return !c||c.nextDay<=t;});}
+  function updateCard(state,idx,quality){
+    const c=state[idx]||{ef:2.5,interval:1,reps:0};
+    if(quality<3){c.reps=0;c.interval=1;}
+    else{
+      if(c.reps===0)c.interval=1;
+      else if(c.reps===1)c.interval=6;
+      else c.interval=Math.round(c.interval*c.ef);
+      c.reps+=1;
+      c.ef=Math.max(1.3,c.ef+0.1-(5-quality)*(0.08+(5-quality)*0.02));
+    }
+    c.nextDay=today()+c.interval;state[idx]=c;return state;
+  }
+  const elInfo=document.getElementById('srs-info'),elCard=document.getElementById('srs-card'),
+        elFront=document.getElementById('srs-front'),elBack=document.getElementById('srs-back'),
+        elControls=document.getElementById('srs-controls'),elFlip=document.getElementById('srs-flip'),
+        elAgain=document.getElementById('srs-again'),elGood=document.getElementById('srs-good'),
+        elDone=document.getElementById('srs-done'),elRestart=document.getElementById('srs-restart'),
+        elBar=document.getElementById('srs-bar');
+  if(!elInfo)return;
+  let state=loadState(),queue=[],current=null;
+  function buildQueue(){queue=getDue(state).map(function(w){return WORDS.indexOf(w);}).sort(function(){return Math.random()-0.5;});}
+  function updateBar(){if(elBar)elBar.style.width=(WORDS.length?((WORDS.length-getDue(state).length)/WORDS.length)*100:100)+'%';}
+  function showCard(){
+    if(!queue.length){elCard.style.display=elFlip.style.display=elControls.style.display='none';elDone.style.display='block';elInfo.textContent='Session complete!';updateBar();return;}
+    current=queue.shift();
+    const pair=WORDS[current];
+    elFront.textContent=pair[0];elBack.textContent=pair[1];
+    elBack.style.display='none';elFront.style.display='block';
+    elControls.style.display='none';elFlip.style.display='inline-block';
+    elCard.style.display='block';elDone.style.display='none';
+    elInfo.textContent=(queue.length+1)+' / '+getDue(loadState()).length+' cards due';
+    updateBar();
+  }
+  function flip(){elBack.style.display=elFront.style.display='block';elFlip.style.display='none';elControls.style.display='flex';}
+  elFlip.addEventListener('click',flip);
+  elAgain.addEventListener('click',function(){state=updateCard(state,current,1);saveState(state);queue.push(current);current=null;showCard();});
+  elGood.addEventListener('click',function(){state=updateCard(state,current,5);saveState(state);current=null;showCard();});
+  if(elRestart)elRestart.addEventListener('click',function(){buildQueue();elDone.style.display='none';showCard();});
+  document.addEventListener('keydown',function(e){
+    if((e.key===' '||e.key==='Enter')&&elFlip.style.display!=='none'){e.preventDefault();flip();}
+    if(e.key==='1'&&elControls.style.display!=='none'){state=updateCard(state,current,1);saveState(state);queue.push(current);current=null;showCard();}
+    if(e.key==='3'&&elControls.style.display!=='none'){state=updateCard(state,current,5);saveState(state);current=null;showCard();}
+  });
+  buildQueue();showCard();
+})();

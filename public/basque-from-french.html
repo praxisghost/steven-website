@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basque (Euskara) pour francophones — Steven Legg</title>
+  <meta name="description" content="Apprendre le basque depuis le français : la seule langue isolée d'Europe. Le cas ergatif, le verbe auxiliaire à accord multiple, l'agglutination, la prononciation, des ressources et un jeu de 100 mots.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guides linguistiques</a>
+
+<header>
+  <h1>Euskara <span class="lang-from">pour francophones</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Cartes</a></li>
+  <li><a href="#intro">Qu'est-ce que le basque ?</a></li>
+  <li><a href="#vocab">Vocabulaire de base — Top 100</a></li>
+  <li><a href="#grammar">Grammaire essentielle</a></li>
+  <li><a href="#pronunciation">Prononciation</a></li>
+  <li><a href="#mistakes">Erreurs fréquentes des francophones</a></li>
+  <li><a href="#resources">Ressources pour apprendre</a></li>
+  <li><a href="#culture">Culture et contexte</a></li>
+  <li><a href="#related">Guides associés</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Cartes</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="basque-srs-fr.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. Qu'est-ce que le basque ?</h2>
+  <p>Le basque (<em>Euskara</em>) est la langue du Pays basque, de part et d'autre des Pyrénées occidentales : au sud en Espagne et au nord en France (Iparralde — Labourd, Basse-Navarre, Soule). On compte environ 750 000 à 900 000 locuteurs.</p>
+  <p>Fait unique en Europe, le basque est une <strong>langue isolée</strong> : on ne lui connaît aucun parent. On le parlait déjà avant l'arrivée de Rome, et il a survécu à la vague indo-européenne qui a remplacé presque toutes les autres langues préromaines. L'apprendre, c'est sortir entièrement du cadre indo-européen.</p>
+  <h3>Pourquoi l'apprendre ?</h3>
+  <ul>
+    <li><strong>Une langue de France aussi</strong> — Le basque se parle vivement en Iparralde ; l'apprendre, c'est renouer avec un patrimoine français.</li>
+    <li><strong>Une vraie aventure</strong> — Aucun cognat, aucune grammaire partagée : le basque rebat vos cartes linguistiques.</li>
+    <li><strong>L'ergativité de près</strong> — C'est la voie la plus accessible pour un francophone vers un système ergatif-absolutif.</li>
+    <li><strong>Une culture vivante</strong> — Le bertsularisme (vers chantés improvisés), la pelote et une cuisine unique vivent dans cette langue.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulaire de base — Top 100 (1–102)</h2>
+  <p>Les mots et expressions basques les plus utiles (euskara batua standard) avec leur traduction française. C'est exactement le jeu utilisé par l'entraîneur de cartes ci-dessus. Utilisez la recherche pour filtrer.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>Euskara</th><th>Français</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from basque-srs-fr.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Grammaire essentielle</h2>
+  <p>Le basque est <strong>agglutinant</strong> (on empile les suffixes), <strong>ergatif-absolutif</strong> et généralement <strong>Sujet–Objet–Verbe</strong>. Rien de cela ne coïncide avec le français, mais le système est très régulier.</p>
+
+  <h3>L'ergatif <code>-k</code></h3>
+  <p>Le sujet d'un verbe <em>transitif</em> prend la terminaison ergative <strong>-k</strong>. Le sujet d'un verbe <em>intransitif</em> et l'objet direct n'ont aucune marque (absolutif) :</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Basque</th><th>Littéralement</th><th>Français</th></tr></thead>
+    <tbody>
+      <tr><td>Mutila etorri da</td><td>garçon(–) venu est</td><td>Le garçon est venu (intransitif, sans -k)</td></tr>
+      <tr><td>Mutila<strong>k</strong> ogia jan du</td><td>garçon(-k) pain(–) mangé a</td><td>Le garçon a mangé le pain (transitif, sujet en -k)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>L'auxiliaire à accord multiple</h3>
+  <p>La plupart des verbes emploient un participe + un auxiliaire (<em>izan</em> « être » / <em>ukan</em> « avoir ») qui s'accorde à la fois avec le sujet, l'objet <em>et</em> le complément indirect : <em>Eman dizut</em> = « je te l'ai donné » en un seul mot.</p>
+  <p class="lang-note">Les nombres sont <strong>vigésimaux</strong> (base 20) : <em>hogei</em> = 20, <em>berrogei</em> = 40 (« deux-vingts »), comme le « quatre-vingts » français.</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Prononciation</h2>
+  <p>Bonne nouvelle : cinq voyelles pures (a e i o u) comme en espagnol. La difficulté tient aux sifflantes, que le basque distingue alors que le français les fond.</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Lettre</th><th>Son</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>tx</td><td>/tʃ/ — « tch »</td><td>txakur (chien)</td></tr>
+      <tr><td>tz</td><td>/ts/ — « ts » de « tsar »</td><td>hitz (mot)</td></tr>
+      <tr><td>z</td><td>/s̻/ — « s » sourd, laminal</td><td>zu (tu)</td></tr>
+      <tr><td>s</td><td>/s̺/ — « s » apical (pointe de la langue)</td><td>seme (fils)</td></tr>
+      <tr><td>x</td><td>/ʃ/ — « ch » français</td><td>kaixo (bonjour)</td></tr>
+      <tr><td>j</td><td>/j/ « y » (ou /x/ « j » dans le sud)</td><td>jan (manger)</td></tr>
+      <tr><td>r / rr</td><td>roulé simple / multiple (jamais le « r » français)</td><td>hori (ça), txakurra (le chien)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le <em>r</em> basque est roulé : évitez le « r » guttural du français.</p>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Erreurs fréquentes des francophones</h2>
+  <ul>
+    <li><strong>Oublier l'ergatif <code>-k</code></strong> — l'erreur n°1. Si le verbe est transitif, le sujet prend <em>-k</em>.</li>
+    <li><strong>Chercher des cognats</strong> — il n'y en a pas (hors emprunts récents). Apprenez chaque mot à neuf.</li>
+    <li><strong>Utiliser des prépositions</strong> — le basque n'en a pas : « dans la maison » est un seul mot, <em>etxean</em>, avec un suffixe.</li>
+    <li><strong>Prononcer un « r » à la française</strong> — le <em>r</em> basque est roulé, jamais guttural.</li>
+    <li><strong>Fondre les sifflantes</strong> — <em>z</em>, <em>s</em> et <em>x</em> sont trois sons distincts.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Ressources pour apprendre</h2>
+  <ul>
+    <li><strong><a href="https://www.mintzalasai.eus/" target="_blank" rel="noopener">Offices publics de la langue basque (Iparralde)</a> &amp; euskaltegis</strong> <span class="level-badge all-levels">tous niveaux</span> — Cours et réseaux d'apprentissage côté français.</li>
+    <li><strong><a href="https://hiztegiak.elhuyar.eus/" target="_blank" rel="noopener">Elhuyar Hiztegia</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Le dictionnaire basque de référence en ligne (avec le français).</li>
+    <li><strong>Assimil — Le Basque unifié</strong> <span class="level-badge beginner">débutant</span> — Méthode Assimil pensée pour un public francophone.</li>
+    <li><strong><a href="https://www.eitb.eus/eu/" target="_blank" rel="noopener">EITB (ETB1)</a> &amp; radios en basque</strong> <span class="level-badge intermed">intermédiaire</span> — Écoute authentique pour le système verbal.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Trouvez des professeurs de basque pour la pratique orale.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Culture et contexte</h2>
+  <h3>Le batua et les dialectes</h3>
+  <p>Le basque standard (<em>euskara batua</em>), créé à la fin des années 1960, est ce que l'on apprend et ce qu'emploient les médias. À côté vivent des dialectes — biscaïen, guipuscoan, souletin (en Soule, côté français) — parfois très différents à l'oral.</p>
+  <h3>Le bertsularisme</h3>
+  <p>Une gloire vivante de la langue est le <em>bertsularisme</em> : des vers improvisés, chantés et rimés devant de larges publics, témoignant d'une langue alerte et joueuse.</p>
+  <h3>Une langue qui résiste</h3>
+  <p>Longtemps fragilisé, le basque connaît une forte revitalisation, des ikastola du sud aux écoles d'Iparralde. L'effort des apprenants est reçu comme un geste de solidarité.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guides associés</h2>
+  <ul>
+    <li><a href="catalan-from-french.html">Catalan pour francophones</a></li>
+    <li><a href="basque-from-spanish.html">Basque pour hispanophones</a></li>
+    <li><a href="basque-from-english.html">Basque pour anglophones</a></li>
+    <li><a href="language-guides.html">Toutes les guides linguistiques</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>

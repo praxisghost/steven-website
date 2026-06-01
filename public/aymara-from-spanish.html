@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aymara (Aymar aru) para hispanohablantes — Steven Legg</title>
+  <meta name="description" content="Aprende aymara desde el español: la aglutinación, los sufijos de persona y de fuente de información, las consonantes eyectivas y aspiradas, pronunciación, recursos y un mazo de ~60 palabras.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guías de idiomas</a>
+
+<header>
+  <h1>Aymar aru <span class="lang-from">para hispanohablantes</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Tarjetas</a></li>
+  <li><a href="#intro">¿Qué es el aymara?</a></li>
+  <li><a href="#vocab">Vocabulario básico</a></li>
+  <li><a href="#grammar">Gramática esencial</a></li>
+  <li><a href="#pronunciation">Pronunciación</a></li>
+  <li><a href="#mistakes">Errores comunes de los hispanohablantes</a></li>
+  <li><a href="#resources">Recursos para aprender</a></li>
+  <li><a href="#culture">Cultura y contexto</a></li>
+  <li><a href="#related">Related Guides</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Tarjetas</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="aymara-srs-es.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. ¿Qué es el aymara?</h2>
+  <p>El aymara (<em>aymar aru</em>) es una lengua andina hablada por unos 2–3 millones de personas en el altiplano de Bolivia, el sur de Perú y el norte de Chile, alrededor del lago Titicaca. Es lengua cooficial en Bolivia y Perú.</p>
+  <p>Para un hispanohablante andino, el aymara ha convivido siglos con el español y comparten muchos préstamos. Pero su gramática es muy distinta: es <strong>aglutinante</strong>, de orden <strong>Sujeto–Objeto–Verbo</strong>, y obliga a marcar de dónde sabes lo que dices (la <strong>fuente de información</strong>).</p>
+  <h3>¿Por qué aprenderlo?</h3>
+  <ul>
+    <li><strong>Préstamos mutuos</strong> — El español andino y el aymara comparten mucho léxico cotidiano.</li>
+    <li><strong>Una lógica nueva</strong> — Los sufijos de fuente de información (lo vi / me dijeron) cambian cómo piensas la verdad.</li>
+    <li><strong>Lengua viva y oficial</strong> — Millones la hablan; es lengua de Estado en Bolivia y Perú.</li>
+    <li><strong>Acceso al mundo andino</strong> — Abre la cultura, la música y las comunidades del altiplano.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulario básico (1–63)</h2>
+  <p>Las palabras aymaras más útiles, con su traducción al español. Es el mismo mazo que usa el entrenador de tarjetas de arriba. Usa el buscador para filtrar.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>Aymar aru</th><th>Español</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from aymara-srs-es.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Gramática esencial</h2>
+  <p>El aymara es <strong>aglutinante</strong> y <strong>SOV</strong>: el verbo va al final y se construye encadenando sufijos sobre la raíz.</p>
+
+  <h3>Cuatro personas (no tres)</h3>
+  <p>El aymara distingue cuatro personas según quién participa, incluida una «cuarta persona» inclusiva (tú y yo):</p>
+  <ul>
+    <li><strong>naya</strong> — yo</li>
+    <li><strong>juma</strong> — tú</li>
+    <li><strong>jupa</strong> — él/ella</li>
+    <li><strong>jiwasa</strong> — nosotros (incluyéndote)</li>
+  </ul>
+
+  <h3>Sufijos de fuente de información (evidencialidad)</h3>
+  <p>Hay que marcar cómo lo sabes: si lo viste directamente o te lo contaron. Por ejemplo, el sufijo <em>-wa</em> afirma algo conocido de primera mano, mientras que la forma reportativa (con <em>siwa / -tayna</em>) indica que es información de oídas.</p>
+  <p class="lang-note">El plural se marca con <em>-naka</em>: <em>uta</em> (casa) → <em>utanaka</em> (casas). El posesivo va con sufijos: <em>uta-ja</em> (mi casa), <em>uta-ma</em> (tu casa).</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Pronunciación</h2>
+  <p>El aymara tiene solo <strong>tres vocales</strong> (a, i, u), que pueden alargarse (ä, ï, ü) y cambiar el significado. La dificultad está en las consonantes:</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Tipo</th><th>Cómo</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>p t k q (simples)</td><td>sin aspiración</td><td>kuna (qué)</td></tr>
+      <tr><td>ph th kh qh (aspiradas)</td><td>con soplo de aire</td><td>phaxsi (luna/mes)</td></tr>
+      <tr><td>p' t' k' q' (eyectivas)</td><td>con golpe glotal</td><td>q'illu (amarillo)</td></tr>
+      <tr><td>q / x</td><td>sonidos uvulares (atrás)</td><td>qullu (cerro)</td></tr>
+      <tr><td>ll / ñ</td><td>como en español</td><td>llamp'u (suave)</td></tr>
+    </tbody>
+  </table></div>
+  <p>La oposición simple / aspirada / eyectiva es la clave: <em>tanta</em>, <em>thantha</em> y <em>t'ant'a</em> son palabras distintas.</p>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Errores comunes de los hispanohablantes</h2>
+  <ul>
+    <li><strong>Usar las cinco vocales del español</strong> — el aymara solo tiene a, i, u; la «e» y la «o» son variantes junto a las uvulares.</li>
+    <li><strong>No distinguir simple/aspirada/eyectiva</strong> — p, ph y p' son consonantes diferentes que cambian el significado.</li>
+    <li><strong>Poner el verbo en medio</strong> — el aymara es SOV; el verbo cierra la oración.</li>
+    <li><strong>Olvidar la fuente de información</strong> — hay que marcar si lo viste o te lo contaron.</li>
+    <li><strong>Separar el verbo en palabras</strong> — persona, tiempo y objeto van como sufijos pegados a la raíz.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Recursos para aprender</h2>
+  <ul>
+    <li><strong><a href="https://aulex.org/ay-es/" target="_blank" rel="noopener">Diccionario AULEX aymara–español</a></strong> <span class="level-badge beginner">principiante</span> — Diccionario práctico en línea.</li>
+    <li><strong>«Aymar yatiqañ thakhi» y manuales del Estado boliviano</strong> <span class="level-badge beginner">principiante</span> — Materiales oficiales graduados.</li>
+    <li><strong><a href="https://glosbe.com/es/ay" target="_blank" rel="noopener">Glosbe español–aymara</a></strong> <span class="level-badge all-levels">todos los niveles</span> — Diccionario con ejemplos.</li>
+    <li><strong>Radio San Gabriel y emisoras del altiplano</strong> <span class="level-badge intermed">intermedio</span> — Escucha auténtica del aymara cotidiano.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> <span class="level-badge all-levels">todos los niveles</span> — Encuentra hablantes para practicar.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Cultura y contexto</h2>
+  <h3>El pasado va adelante</h3>
+  <p>El aymara concibe el tiempo de forma notable: lo conocido (el pasado) está «delante» (<em>nayra</em>, que también significa «ojo»), y el futuro desconocido «detrás» (<em>qhipa</em>). Es un caso famoso en la lingüística.</p>
+  <h3>Pachamama y reciprocidad</h3>
+  <p>La <em>Pachamama</em> (madre tierra) y el principio del <em>ayni</em> (reciprocidad) organizan la vida comunitaria del altiplano.</p>
+  <h3>Wiphala e identidad</h3>
+  <p>La bandera multicolor <em>wiphala</em> simboliza los pueblos andinos; el aymara es hoy símbolo de orgullo e identidad política en Bolivia.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guías relacionadas</h2>
+  <ul>
+    <li><a href="quechua-from-spanish.html">Quechua desde el español</a></li>
+    <li><a href="guarani-from-spanish.html">Guaraní desde el español</a></li>
+    <li><a href="nahuatl-from-spanish.html">Náhuatl desde el español</a></li>
+    <li><a href="language-guides.html">Todas las guías de idiomas</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>

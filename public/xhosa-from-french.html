@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>isiXhosa pour francophones — Steven Legg</title>
+  <meta name="description" content="Apprenez l'isiXhosa depuis le français : les trois consonnes à clic, les classes nominales nguni et l'accord, le ton, une orthographe phonémique, la prononciation, des ressources et un paquet de ~60 mots.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guides de langues</a>
+
+<header>
+  <h1>isiXhosa <span class="lang-from">pour francophones</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Cartes</a></li>
+  <li><a href="#intro">Qu'est-ce que l'isiXhosa ?</a></li>
+  <li><a href="#vocab">Vocabulaire de base</a></li>
+  <li><a href="#grammar">Grammaire essentielle</a></li>
+  <li><a href="#pronunciation">Prononciation</a></li>
+  <li><a href="#mistakes">Erreurs fréquentes des francophones</a></li>
+  <li><a href="#resources">Ressources pour apprendre</a></li>
+  <li><a href="#culture">Culture et contexte</a></li>
+  <li><a href="#related">Related Guides</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Cartes</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="xhosa-srs-fr.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. Qu'est-ce que l'isiXhosa ?</h2>
+  <p>L'isiXhosa est une langue bantoue du rameau <strong>nguni</strong> et l'une des plus parlées d'Afrique du Sud, avec environ 8 à 9 millions de locuteurs natifs, concentrés dans le Cap-Oriental et le Cap-Occidental. C'est la langue maternelle de figures comme Nelson Mandela et Desmond Tutu.</p>
+  <p>Sa caractéristique la plus célèbre est l'ensemble des <strong>consonnes à clic</strong> — écrites c, x et q — empruntées il y a longtemps aux langues khoïsanes voisines. Les clics semblent intimidants mais s'apprennent ; le reste du système est partagé avec l'isiZulu, avec lequel le xhosa est largement intercompréhensible.</p>
+  <h3>Pourquoi apprendre l'isiXhosa ?</h3>
+  <ul>
+    <li><strong>Les clics</strong> — Trois positions de clic (dentale, latérale, palatale) font du xhosa l'une des langues les plus distinctives à maîtriser.</li>
+    <li><strong>Deux langues en une</strong> — Xhosa et zulu sont de proches cousins ; apprendre l'un donne une bonne avance sur l'autre.</li>
+    <li><strong>La vie sud-africaine</strong> — Le xhosa ouvre dans le Cap-Oriental et Occidental des portes que l'anglais n'ouvre pas.</li>
+    <li><strong>Écriture claire</strong> — Une orthographe latine régulière : l'écriture prédit la prononciation, une fois les clics appris.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulaire de base (1–62)</h2>
+  <p>Les mots et expressions xhosa les plus utiles, avec leur traduction française. C'est le paquet exact utilisé par l'entraîneur de cartes ci-dessus. Utilisez la recherche pour filtrer.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>isiXhosa</th><th>Français</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from xhosa-srs-fr.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Grammaire essentielle</h2>
+  <p>Comme toutes les langues nguni, l'isiXhosa range les noms en <strong>classes</strong>, chacune avec son préfixe, et chaque mot qui renvoie à un nom porte un préfixe d'accord (le « concord »).</p>
+
+  <h3>Classes nominales</h3>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Classe</th><th>Préfixe</th><th>Exemple</th><th>Français</th></tr></thead>
+    <tbody>
+      <tr><td>1 / 2</td><td>um(u)- / aba-</td><td>umntu / abantu</td><td>personne / personnes</td></tr>
+      <tr><td>3 / 4</td><td>um(u)- / imi-</td><td>umthi / imithi</td><td>arbre / arbres</td></tr>
+      <tr><td>5 / 6</td><td>i(li)- / ama-</td><td>igama / amagama</td><td>nom / noms</td></tr>
+      <tr><td>7 / 8</td><td>isi- / izi-</td><td>isitya / izitya</td><td>plat / plats</td></tr>
+      <tr><td>9 / 10</td><td>in- / izin-</td><td>inja / izinja</td><td>chien / chiens</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Le verbe colle sujet + temps + radical</h3>
+  <p>Avec le radical <em>-funa</em> (« vouloir ») : <strong>ndi</strong>yafuna (je veux), <strong>u</strong>yafuna (tu veux), <strong>u</strong>funa (il/elle veut), <strong>si</strong>funa (nous voulons). Le préfixe sujet s'accorde avec la classe nominale du sujet.</p>
+  <p class="lang-note">Le nom de la langue illustre le schéma : <em>isi-</em> (classe 7, les langues) + Xhosa = isiXhosa ; une personne xhosa est <em>umXhosa</em>, le peuple <em>amaXhosa</em>.</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Prononciation</h2>
+  <p>Cinq voyelles claires (a e i o u). Le clou, ce sont les trois clics, chacun avec des variantes aspirée, voisée et nasale :</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Lettre</th><th>Clic</th><th>Comment</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>c</td><td>dental</td><td>le « tss » de désapprobation, langue sur les dents</td><td>icawa (église/dimanche)</td></tr>
+      <tr><td>x</td><td>latéral</td><td>côté de la langue, comme pour exciter un cheval</td><td>xolo (pardon)</td></tr>
+      <tr><td>q</td><td>palatal</td><td>un « pop » sec, langue sur le palais</td><td>iqanda (œuf)</td></tr>
+      <tr><td>hl</td><td>—</td><td>fricative latérale sourde (le « ll » gallois)</td><td>-hle (beau)</td></tr>
+      <tr><td>ngc, nx…</td><td>clics nasaux</td><td>clics précédés d'une nasale</td><td>ingca (herbe)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le xhosa a un ton (haut/bas), mais il ne s'écrit pas ; l'accent tombe généralement sur l'avant-dernière syllabe.</p>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Erreurs fréquentes des francophones</h2>
+  <ul>
+    <li><strong>Sauter ou adoucir les clics</strong> — c, x et q sont des consonnes à part entière ; les remplacer par k ou un coup de glotte change le mot.</li>
+    <li><strong>Ignorer l'accord de classe</strong> — adjectifs, verbes et possessifs ont besoin du concord qui s'accorde avec la classe du nom.</li>
+    <li><strong>Lire « hl » comme h+l</strong> — c'est un seul son latéral soufflé (le « ll » gallois).</li>
+    <li><strong>Réduire les voyelles</strong> — gardez les cinq voyelles pures et pleines ; pas de schwa à la française.</li>
+    <li><strong>Croire que xhosa et zulu sont identiques</strong> — ils sont proches mais diffèrent par le vocabulaire et certains sons.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Ressources pour apprendre</h2>
+  <ul>
+    <li><strong><a href="https://fr.wikipedia.org/wiki/Xhosa_(langue)" target="_blank" rel="noopener">Aperçu de l'isiXhosa</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Contexte sur les clics, les classes et l'orthographe.</li>
+    <li><strong>« Teach Yourself Xhosa » / grammaires de Beverley Kirsch</strong> <span class="level-badge beginner">débutant</span> — Introductions structurées avec audio pour les clics.</li>
+    <li><strong><a href="https://glosbe.com/fr/xh" target="_blank" rel="noopener">Dictionnaire Glosbe français–xhosa</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Dictionnaire avec phrases d'exemple.</li>
+    <li><strong>Radio xhosa de la SABC et musique xhosa (gospel, amapiano)</strong> <span class="level-badge beginner">débutant</span> — Écoute authentique pour intérioriser clics et ton.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> <span class="level-badge all-levels">tous niveaux</span> — Travaillez les clics en direct avec un tuteur xhosa.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Culture et contexte</h2>
+  <h3>L'identité amaXhosa</h3>
+  <p>La nation xhosa se compose de nombreux clans (iziduko). Demander l'<em>isiduko</em> (nom de clan) de quelqu'un est une façon respectueuse de le situer, et l'on se salue souvent par les noms de louange du clan.</p>
+  <h3>Ubuntu</h3>
+  <p>Le concept nguni d'<em>ubuntu</em> — « une personne est une personne à travers les autres » (<em>umntu ngumntu ngabantu</em>) — façonne la vie sociale xhosa et le discours public sud-africain.</p>
+  <h3>Chant et art oral</h3>
+  <p>De la « click song » de Miriam Makeba (Qongqothwane) à la poésie de louange izibongo, la culture xhosa est profondément musicale et orale.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guides associés</h2>
+  <ul>
+    <li><a href="swahili-from-french.html">Swahili depuis le français</a></li>
+    <li><a href="kinyarwanda-from-french.html">Kinyarwanda depuis le français</a></li>
+    <li><a href="xhosa-from-english.html">isiXhosa depuis l'anglais</a></li>
+    <li><a href="language-guides.html">Tous les guides de langues</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>

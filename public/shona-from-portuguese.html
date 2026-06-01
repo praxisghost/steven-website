@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shona (chiShona) para lusófonos — Steven Legg</title>
+  <meta name="description" content="Aprenda shona a partir do português: classes nominais e concordância, o verbo aglutinante, tons, uma ortografia latina clara, pronúncia, recursos e um baralho de ~60 palavras.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="back-link" href="language-guides.html">← Guias de línguas</a>
+
+<header>
+  <h1>chiShona <span class="lang-from">para lusófonos</span></h1>
+</header>
+
+<article>
+
+<ol class="lang-toc">
+  <li><a href="#srs">Cartões</a></li>
+  <li><a href="#intro">O que é o shona?</a></li>
+  <li><a href="#vocab">Vocabulário básico</a></li>
+  <li><a href="#grammar">Gramática essencial</a></li>
+  <li><a href="#pronunciation">Pronúncia</a></li>
+  <li><a href="#mistakes">Erros comuns dos lusófonos</a></li>
+  <li><a href="#resources">Recursos para aprender</a></li>
+  <li><a href="#culture">Cultura e contexto</a></li>
+  <li><a href="#related">Related Guides</a></li>
+</ol>
+
+<div class="lang-section" id="srs">
+  <h2>1. Cartões</h2>
+  <div class="srs-container" id="srs-root">
+    <div class="srs-meta">
+      <span class="srs-info" id="srs-info">Loading cards…</span>
+      <span class="srs-progress-wrap">
+        <span class="srs-bar-wrap"><span class="srs-bar" id="srs-bar"></span></span>
+      </span>
+    </div>
+    <div class="srs-card" id="srs-card">
+      <div class="srs-front" id="srs-front">—</div>
+      <div class="srs-back" id="srs-back" style="display:none">—</div>
+    </div>
+    <div class="srs-controls" id="srs-controls" style="display:none">
+      <button class="srs-btn srs-btn-again" id="srs-again">Again</button>
+      <button class="srs-btn srs-btn-good"  id="srs-good">Got it</button>
+    </div>
+    <button class="srs-btn srs-btn-flip" id="srs-flip">Show answer</button>
+    <div class="srs-done" id="srs-done" style="display:none">
+      <p>Session complete! Come back tomorrow.</p>
+      <button class="srs-btn" id="srs-restart">Restart</button>
+    </div>
+  </div>
+  <div class="srs-shortcuts">
+    <span><kbd>Space/Enter</kbd> flip</span>
+    <span><kbd>1</kbd> again</span>
+    <span><kbd>3</kbd> got it</span>
+  </div>
+</div>
+<script src="shona-srs-pt.js" defer></script>
+
+<div class="lang-section" id="intro">
+  <h2>2. O que é o shona?</h2>
+  <p>O shona (<em>chiShona</em>) é uma língua banta falada por cerca de 14 milhões de pessoas, sobretudo no Zimbábue, onde é a língua materna mais falada, além de comunidades em <strong>Moçambique</strong> e na Zâmbia. O «shona padrão» é uma norma escrita construída a partir de vários dialetos próximos (zezuru, karanga, manyika, korekore).</p>
+  <p>Para um lusófono, sobretudo de Moçambique, a escrita é uma ajuda: o shona usa um alfabeto latino quase totalmente fonémico, por isso, depois de aprender alguns dígrafos, lê-se quase tudo em voz alta. A gramática, porém, assenta nas <strong>classes nominais</strong> e na concordância, onde está o verdadeiro desafio.</p>
+  <h3>Porquê aprender shona?</h3>
+  <ul>
+    <li><strong>Porta de entrada no banto</strong> — O sistema de classes nominais do shona é um ponto de partida claro para centenas de línguas bantas.</li>
+    <li><strong>Fácil de ler</strong> — A ortografia é regular e fonémica — a escrita indica a pronúncia.</li>
+    <li><strong>Vizinhança lusófona</strong> — Falado junto à fronteira de Moçambique; útil em toda a África Austral.</li>
+    <li><strong>Uma literatura viva</strong> — Rica tradição oral, provérbios (tsumo) e uma forte cena musical.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="vocab">
+  <h2>3. Vocabulário básico (1–63)</h2>
+  <p>As palavras e expressões shona mais úteis, com tradução em português. É o mesmo baralho usado pelo treinador de cartões acima. Use a pesquisa para filtrar.</p>
+  <div class="vocab-search-wrap">
+    <input class="vocab-search" type="search" placeholder="Search vocabulary…" aria-label="Search vocabulary…">
+  </div>
+  <div class="table-scroll">
+    <table class="lang-table vocab-freq-table">
+      <thead><tr><th>#</th><th>chiShona</th><th>Português</th></tr></thead>
+      <tbody>
+        <!-- Rows rendered from shona-srs-pt.js (single source of truth) -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lang-section" id="grammar">
+  <h2>4. Gramática essencial</h2>
+  <p>O shona não tem artigos nem género gramatical. Em vez disso, cada substantivo pertence a uma <strong>classe nominal</strong> marcada por um prefixo, e adjetivos, verbos e pronomes <em>concordam</em> com essa classe.</p>
+
+  <h3>Classes nominais (pares singular/plural)</h3>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Classe</th><th>Prefixo</th><th>Exemplo</th><th>Português</th></tr></thead>
+    <tbody>
+      <tr><td>1 / 2 (pessoas)</td><td>mu- / va-</td><td>munhu / vanhu</td><td>pessoa / pessoas</td></tr>
+      <tr><td>3 / 4 (coisas, árvores)</td><td>mu- / mi-</td><td>muti / miti</td><td>árvore / árvores</td></tr>
+      <tr><td>5 / 6</td><td>(ø)/ri- / ma-</td><td>gomo / makomo</td><td>monte / montes</td></tr>
+      <tr><td>7 / 8</td><td>chi- / zvi-</td><td>chinhu / zvinhu</td><td>coisa / coisas</td></tr>
+      <tr><td>9 / 10</td><td>(N-) / (N-)</td><td>imba / dzimba</td><td>casa / casas</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>O verbo é uma pequena frase</h3>
+  <p>Os verbos shona colam sujeito + tempo + objeto + raiz. Com a raiz <em>-da</em> («querer/amar»):</p>
+  <ul>
+    <li><strong>ndi</strong>noda — eu quero (ndi- = eu, -no- = presente)</li>
+    <li><strong>u</strong>noda — tu queres</li>
+    <li><strong>a</strong>noda — ele/ela quer</li>
+    <li>ndi<strong>cha</strong>da — eu quererei (-cha- = futuro)</li>
+    <li>nda<strong>ka</strong>da — eu quis (-ka-/-aka- = passado)</li>
+  </ul>
+  <p class="lang-note">O prefixo do sujeito muda conforme a classe nominal do sujeito, não apenas a pessoa — é o coração da concordância banta.</p>
+</div>
+
+<div class="lang-section" id="pronunciation">
+  <h2>5. Pronúncia</h2>
+  <p>Cinco vogais (a e i o u) como em português, sempre claras e nunca reduzidas. O acento recai quase sempre na penúltima sílaba.</p>
+  <div class="table-scroll"><table class="lang-table">
+    <thead><tr><th>Letra(s)</th><th>Som</th><th>Exemplo</th></tr></thead>
+    <tbody>
+      <tr><td>sv / zv</td><td>«s»/«z» assobiados (sibilantes assobiadas)</td><td>svika (chegar)</td></tr>
+      <tr><td>mh, nh</td><td>nasais aspiradas/sonoras</td><td>nhamo (aflição)</td></tr>
+      <tr><td>bh / b</td><td>b normal vs. b implosivo ɓ</td><td>bhuku (livro) vs. baba (pai)</td></tr>
+      <tr><td>dz, ts</td><td>africadas /dz/, /ts/</td><td>dzidza (aprender)</td></tr>
+      <tr><td>vh / v</td><td>v forte vs. v bilabial suave</td><td>vhura (abrir)</td></tr>
+    </tbody>
+  </table></div>
+  <p>O shona é tonal (alto vs. baixo), mas o tom <strong>não se escreve</strong>. Aprenda a melodia de cada palavra ouvindo; o contexto costuma desfazer ambiguidades.</p>
+</div>
+
+<div class="lang-section" id="mistakes">
+  <h2>6. Erros comuns dos lusófonos</h2>
+  <ul>
+    <li><strong>Ignorar a concordância de classe</strong> — adjetivos e verbos têm de levar o prefixo que combina com a classe do substantivo.</li>
+    <li><strong>Reduzir as vogais</strong> — todas as vogais ficam plenas e claras; não há o «schwa» reduzido.</li>
+    <li><strong>Falhar as sibilantes assobiadas</strong> — <em>sv</em> e <em>zv</em> são sons distintos, não apenas s+v.</li>
+    <li><strong>Confundir b e o ɓ implosivo</strong> — e também os dois sons de v; distinguem palavras.</li>
+    <li><strong>Separar o verbo</strong> — sujeito, tempo e objeto ligam-se ao verbo numa só palavra, não como pronomes soltos.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="resources">
+  <h2>7. Recursos para aprender</h2>
+  <ul>
+    <li><strong><a href="https://pt.wikipedia.org/wiki/L%C3%ADngua_xona" target="_blank" rel="noopener">Visão geral do shona</a></strong> <span class="level-badge all-levels">todos os níveis</span> — Orientação sobre dialetos, classes e ortografia.</li>
+    <li><strong>«Shona Learner's Reference Grammar» e gramáticas padrão</strong> <span class="level-badge intermed">intermédio</span> — Tratamento claro das classes e dos tempos verbais.</li>
+    <li><strong><a href="https://glosbe.com/pt/sn" target="_blank" rel="noopener">Dicionário Glosbe português–shona</a></strong> <span class="level-badge all-levels">todos os níveis</span> — Dicionário com frases de exemplo.</li>
+    <li><strong>Música e rádio do Zimbábue (Oliver Mtukudzi, ZBC)</strong> <span class="level-badge beginner">iniciante</span> — Treine o ouvido para o tom e o ritmo.</li>
+    <li><strong><a href="https://www.italki.com/" target="_blank" rel="noopener">iTalki</a></strong> <span class="level-badge all-levels">todos os níveis</span> — Encontre tutores de shona para conversar.</li>
+  </ul>
+</div>
+
+<div class="lang-section" id="culture">
+  <h2>8. Cultura e contexto</h2>
+  <h3>Tsumo: provérbios como sabedoria</h3>
+  <p>A conversa shona é entretecida de <em>tsumo</em> (provérbios) e <em>madimikira</em> (idiomatismos). Conhecer alguns conquista respeito imediato e sinaliza fluência cultural.</p>
+  <h3>As saudações importam</h3>
+  <p>Não se vai direto ao assunto. <em>Mangwanani</em> (bom dia), <em>Maswera sei?</em> (como correu o dia?) e trocas de saudação sem pressa são a cola social.</p>
+  <h3>Totens (mitupo)</h3>
+  <p>Muitos shona identificam-se por um totem de clã — um animal como <em>Shumba</em> (leão) ou <em>Soko</em> (macaco) — usado em louvores e para traçar parentesco e respeito.</p>
+</div>
+
+<div class="lang-section" id="related">
+  <h2>9. Guias associados</h2>
+  <ul>
+    <li><a href="swahili-from-portuguese.html">Swahili a partir do português</a></li>
+    <li><a href="umbundu-from-portuguese.html">Umbundu a partir do português</a></li>
+    <li><a href="shona-from-english.html">Shona a partir do inglês</a></li>
+    <li><a href="language-guides.html">Todos os guias de línguas</a></li>
+  </ul>
+</div>
+
+</article>
+
+<footer>
+  <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="vocab-search.js" defer></script>
+</body>
+</html>

@@ -27,6 +27,9 @@
     french:     'Français',   japanese:   '日本語',
     russian:    'Русский',    korean:     '한국어',
     portuguese: 'Português',  italian:    'Italiano',
+    hindi:      'हिन्दी',      bengali:    'বাংলা',
+    urdu:       'اردو',        arabic:     'العربية',
+    dutch:      'Nederlands',
   };
 
   const L2_LABELS = {
@@ -50,6 +53,14 @@
     mapudungun: 'Mapudungun', amis:       'Amis',
     taishanese: 'Taishanese', fuzhounese: 'Fuzhounese',
     shanghainese:'Shanghainese', jejueo:   'Jejueo',
+    hindi:      'Hindi',      bengali:    'Bengali',
+    urdu:       'Urdu',       arabic:     'Arabic',
+    italian:    'Italian',    shona:      'Shona',
+    xhosa:      'isiXhosa',   zulu:       'isiZulu',
+    yoruba:     'Yorùbá',     hausa:      'Hausa',
+    amharic:    'Amharic',    burmese:    'Burmese',
+    nahuatl:    'Náhuatl',    aymara:     'Aymara',
+    hakka:      'Hakka',      hokkien:    'Hokkien',
   };
 
   const allItems = sections.flatMap(s => Array.from(s.querySelectorAll('li')));
