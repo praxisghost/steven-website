@@ -34,6 +34,17 @@
     }
     #so-label.show { opacity: 1; }
 
+    /* Persistent labels-on-zoom layer (positioned by JS each frame) */
+    #so-zoom-labels { position: absolute; inset: 0; pointer-events: none; z-index: 4; }
+    .so-zlabel {
+      position: absolute; top: 0; left: 0; will-change: transform, opacity;
+      pointer-events: none; opacity: 0; transition: opacity .15s ease;
+      color: #c8ccd2; font-family: var(--font-body); font-size: 11px; line-height: 1;
+      white-space: nowrap; text-shadow: 0 1px 3px #000, 0 0 6px #000;
+    }
+    .so-zlabel.show { display: block; }
+    .so-zlabel:not(.show) { opacity: 0; }
+
     /* Overlay chrome */
     .so-overlay { position: fixed; z-index: 5; font-family: var(--font-body); color: #cfd2d6; }
     #so-back {
@@ -90,8 +101,14 @@
 
     @media (max-width: 640px) {
       #so-search input { width: 120px; }
-      #so-legend { max-width: 60vw; }
+      #so-legend { max-width: 60vw; bottom: 10px; left: 10px; padding: 8px 10px; }
+      #so-hud { bottom: 10px; right: 10px; }
+      #so-hud .so-hint { display: none; } /* keyboard hints aren't relevant on touch */
       #so-title { display: none; }
+      .so-zlabel { font-size: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #so-label, .so-zlabel { transition: none; }
     }
   </style>
 </head>

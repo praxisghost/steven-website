@@ -218,3 +218,23 @@ Status: Accepted
 
 ---
 
+## Decision 018
+
+Nodes render in a muted, mostly-grey rest state and saturate to their full
+category colour only when active (hover, neighbour-of-hover, or search match).
+
+This refines (does not replace) Decision 005: the category-colour system is
+preserved — colour is simply revealed on interaction rather than shown at full
+strength on every node at all times. A faint category tint remains at rest so
+clusters stay distinguishable.
+
+Rationale: reconciles GRAPH_METADATA.md (Node Defaults = grey, Hover = category
+colour) with the ObsidianExample reference image (a calm, mostly-grey star map),
+while keeping the map readable and uncluttered (Decisions 003 / 008). Implemented
+in the node vertex shader via a per-vertex `aMix` (0 = rest/grey, 1 = full
+colour) — no extra draw calls, so it scales (Decision 011).
+
+Status: Accepted
+
+---
+

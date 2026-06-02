@@ -71,7 +71,8 @@ async function init() {
 
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1000, 1000);
   camera.position.set(cx, cy, 10);
-  const view = { halfH: Math.max(spanX, spanY) * 0.62 }; // world half-height baseline
+  const baseHalf = Math.max(spanX, spanY) * 0.62; // world half-height when the whole graph is framed
+  const view = { halfH: baseHalf }; // world half-height baseline
 
   function applyFrustum() {
     const aspect = canvas.clientWidth / canvas.clientHeight || 1;
@@ -88,29 +89,37 @@ async function init() {
   const baseSize = new Float32Array(N);
   const aSize = new Float32Array(N);
   const aAlpha = new Float32Array(N);
+  const aMix = new Float32Array(N); // 0 = muted/grey (rest), 1 = full category colour
   const tmp = new THREE.Color();
   for (let i = 0; i < N; i++) {
     positions[i * 3] = nodes[i].x; positions[i * 3 + 1] = nodes[i].y; positions[i * 3 + 2] = 0;
     tmp.set(nodes[i].color);
     colors[i * 3] = tmp.r; colors[i * 3 + 1] = tmp.g; colors[i * 3 + 2] = tmp.b;
     const s = 7 + 9 * Math.sqrt(deg[i] / maxDeg); // px radius-ish, hubs bigger
-    baseSize[i] = s; aSize[i] = s; aAlpha[i] = 1;
+    baseSize[i] = s; aSize[i] = s; aAlpha[i] = 1; aMix[i] = 0;
   }
   const nGeo = new THREE.BufferGeometry();
   nGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   nGeo.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
   nGeo.setAttribute('aSize', new THREE.BufferAttribute(aSize, 1));
   nGeo.setAttribute('aAlpha', new THREE.BufferAttribute(aAlpha, 1));
+  nGeo.setAttribute('aMix', new THREE.BufferAttribute(aMix, 1));
 
   const nMat = new THREE.ShaderMaterial({
     uniforms: { uScale: { value: 1 }, uDpr: { value: DPR } },
     transparent: true, depthTest: false, depthWrite: false,
     vertexShader: `
-      attribute vec3 aColor; attribute float aSize; attribute float aAlpha;
+      attribute vec3 aColor; attribute float aSize; attribute float aAlpha; attribute float aMix;
       uniform float uScale; uniform float uDpr;
       varying vec3 vColor; varying float vAlpha;
       void main(){
-        vColor = aColor; vAlpha = aAlpha;
+        // Obsidian-style: nodes read as a calm, mostly-grey star map at rest,
+        // and saturate to their full category colour when active (hover/neighbour/
+        // search). GREY keeps a faint category tint so clusters stay legible.
+        vec3 GREY = vec3(0.62);
+        vec3 rest = mix(GREY, aColor, 0.22);
+        vColor = mix(rest, aColor, aMix);
+        vAlpha = aAlpha;
         vec4 mv = modelViewMatrix * vec4(position, 1.0);
         gl_Position = projectionMatrix * mv;
         gl_PointSize = aSize * uScale * uDpr;
@@ -170,21 +179,22 @@ async function init() {
   function updateHighlight() {
     const neigh = hover >= 0 ? adj[hover] : null;
     for (let i = 0; i < N; i++) {
-      let alpha = 1, size = baseSize[i];
+      let alpha = 1, size = baseSize[i], mix = 0;
       if (isHidden(i)) { alpha = 0.04; }
       else if (hover >= 0) {
-        if (i === hover) { alpha = 1; size = baseSize[i] * 1.9; }
-        else if (neigh.has(i)) { alpha = 1; size = baseSize[i] * 1.25; }
+        if (i === hover) { alpha = 1; size = baseSize[i] * 1.9; mix = 1; }
+        else if (neigh.has(i)) { alpha = 1; size = baseSize[i] * 1.25; mix = 1; }
         else { alpha = 0.14; }
       }
       if (searchMatch) {
-        if (searchMatch.has(i)) { alpha = 1; size = Math.max(size, baseSize[i] * 1.5); }
+        if (searchMatch.has(i)) { alpha = 1; size = Math.max(size, baseSize[i] * 1.5); mix = 1; }
         else if (!isHidden(i)) { alpha = Math.min(alpha, 0.12); }
       }
-      aAlpha[i] = alpha; aSize[i] = size;
+      aAlpha[i] = alpha; aSize[i] = size; aMix[i] = mix;
     }
     nGeo.attributes.aAlpha.needsUpdate = true;
     nGeo.attributes.aSize.needsUpdate = true;
+    nGeo.attributes.aMix.needsUpdate = true;
 
     for (let i = 0; i < E; i++) {
       const [a, b] = edgePairs[i];
@@ -245,6 +255,51 @@ async function init() {
   });
   canvas.addEventListener('pointercancel', endDrag);
   canvas.addEventListener('pointerleave', () => { if (!dragging) setHover(-1, 0, 0); });
+
+  /* ── Camera tween (used to frame search matches smoothly) ──────────── */
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tween = { active: false, t: 0, dur: 1, fx: 0, fy: 0, fh: 0, tx: 0, ty: 0, th: 0 };
+  function animateTo(x, y, halfH, ms = 420) {
+    halfH = Math.min(Math.max(halfH, 18), Math.max(spanX, spanY) * 2.5);
+    if (reduceMotion || ms <= 0) {
+      camera.position.x = x; camera.position.y = y; view.halfH = halfH; applyFrustum();
+      return;
+    }
+    tween.fx = camera.position.x; tween.fy = camera.position.y; tween.fh = view.halfH;
+    tween.tx = x; tween.ty = y; tween.th = halfH;
+    tween.t = 0; tween.dur = ms; tween.active = true; tween.last = performance.now();
+  }
+  function stepTween() {
+    if (!tween.active) return;
+    const now = performance.now();
+    tween.t += now - (tween.last || now); tween.last = now;
+    let p = Math.min(1, tween.t / tween.dur);
+    const e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; // easeInOutQuad
+    camera.position.x = tween.fx + (tween.tx - tween.fx) * e;
+    camera.position.y = tween.fy + (tween.ty - tween.fy) * e;
+    view.halfH = tween.fh + (tween.th - tween.fh) * e;
+    applyFrustum();
+    if (p >= 1) tween.active = false;
+  }
+  // cancel any running tween as soon as the user takes manual control
+  function cancelTween() { tween.active = false; }
+  canvas.addEventListener('pointerdown', cancelTween);
+  canvas.addEventListener('wheel', cancelTween, { passive: true });
+
+  // Frame a set of node indices (pan + zoom so they're comfortably in view).
+  function frameNodes(idxs) {
+    if (!idxs || idxs.length === 0) return;
+    let nx = Infinity, xx = -Infinity, ny = Infinity, xy = -Infinity;
+    for (const i of idxs) {
+      nx = Math.min(nx, nodes[i].x); xx = Math.max(xx, nodes[i].x);
+      ny = Math.min(ny, nodes[i].y); xy = Math.max(xy, nodes[i].y);
+    }
+    const aspect = canvas.clientWidth / canvas.clientHeight || 1;
+    const midX = (nx + xx) / 2, midY = (ny + xy) / 2;
+    const halfH = Math.max((xy - ny) / 2, (xx - nx) / 2 / aspect, 120) * 1.35;
+    animateTo(midX, midY, halfH);
+  }
 
   /* ── Picking ───────────────────────────────────────────────────────── */
   const raycaster = new THREE.Raycaster();
@@ -308,21 +363,87 @@ async function init() {
   /* ── Search ────────────────────────────────────────────────────────── */
   searchIn.addEventListener('input', () => {
     const q = searchIn.value.trim().toLowerCase();
-    if (!q) { searchMatch = null; updateHighlight(); return; }
+    if (!q) { searchMatch = null; updateHighlight(); animateTo(cx, cy, baseHalf); return; }
     searchMatch = new Set();
     for (let i = 0; i < N; i++) {
       if (nodes[i].title.toLowerCase().includes(q) || nodes[i].id.toLowerCase().includes(q)) searchMatch.add(i);
     }
     updateHighlight();
+    // Pan/zoom to frame the matches once the query has narrowed enough that
+    // framing is useful (avoids lurching on the first character typed).
+    const visible = [...searchMatch].filter((i) => !isHidden(i));
+    if (visible.length > 0 && visible.length <= 24) frameNodes(visible);
   });
   searchIn.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' || !searchMatch || searchMatch.size === 0) return;
-    const first = [...searchMatch][0];
-    window.location.href = nodes[first].url;
+    const visible = [...searchMatch].filter((i) => !isHidden(i));
+    if (visible.length === 1) { window.location.href = nodes[visible[0]].url; return; }
+    if (visible.length > 1) frameNodes(visible); // many matches: frame them, don't guess
+    else if (searchMatch.size) window.location.href = nodes[[...searchMatch][0]].url;
+  });
+
+  /* ── Keyboard shortcuts (a11y / power use) ─────────────────────────── */
+  window.addEventListener('keydown', (e) => {
+    const typing = document.activeElement === searchIn;
+    if (e.key === '/' && !typing) { e.preventDefault(); searchIn.focus(); searchIn.select(); }
+    else if (e.key === 'Escape') {
+      if (searchIn.value) { searchIn.value = ''; searchMatch = null; updateHighlight(); animateTo(cx, cy, baseHalf); }
+      searchIn.blur();
+      setHover(-1, 0, 0);
+    } else if ((e.key === 'f' || e.key === 'F') && !typing) {
+      e.preventDefault(); animateTo(cx, cy, baseHalf); // F = fit whole graph
+    }
   });
 
   /* ── HUD ───────────────────────────────────────────────────────────── */
-  hudEl.innerHTML = `<b>${N}</b> pages · <b>${E}</b> links<br>drag to pan · scroll to zoom · click a node to open`;
+  hudEl.innerHTML = `<b>${N}</b> pages · <b>${E}</b> links<span class="so-hint"><br>drag to pan · scroll to zoom · click to open<br><b>/</b> search · <b>F</b> fit · <b>Esc</b> clear</span>`;
+
+  /* ── Persistent labels-on-zoom (Obsidian shows titles as you zoom in) ──
+   * A small DOM pool is positioned each frame over the most important on-screen
+   * nodes. Hubs (high degree) reveal first; more leaves appear the closer you
+   * zoom. This complements the single hover label and never clutters the
+   * zoomed-out "star map" view. */
+  const labelLayer = document.createElement('div');
+  labelLayer.id = 'so-zoom-labels';
+  stage.appendChild(labelLayer);
+  const LABEL_POOL = 90;
+  const labelPool = [];
+  for (let i = 0; i < LABEL_POOL; i++) {
+    const el = document.createElement('div');
+    el.className = 'so-zlabel';
+    labelLayer.appendChild(el);
+    labelPool.push(el);
+  }
+  // nodes ranked by degree (hubs first) so important pages get labelled earliest
+  const byDegree = [...Array(N).keys()].sort((a, b) => deg[b] - deg[a]);
+
+  function updateZoomLabels() {
+    const zr = baseHalf / view.halfH;           // 1 = whole graph framed; >1 zoomed in
+    // how many labels to attempt: none when zoomed out, ramping up as we zoom in
+    const budget = Math.max(0, Math.min(LABEL_POOL, Math.floor((zr - 1.05) * 60)));
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    const right = camera.right, top = camera.top;
+    let used = 0;
+    for (let r = 0; r < byDegree.length && used < budget; r++) {
+      const i = byDegree[r];
+      if (isHidden(i) || i === hover) continue; // hover has its own label
+      // world -> screen (orthographic, centred on camera)
+      const ndcx = (nodes[i].x - camera.position.x) / right;
+      const ndcy = (nodes[i].y - camera.position.y) / top;
+      if (ndcx < -1 || ndcx > 1 || ndcy < -1 || ndcy > 1) continue; // off-screen
+      const sx = (ndcx * 0.5 + 0.5) * w;
+      const sy = (1 - (ndcy * 0.5 + 0.5)) * h;
+      const el = labelPool[used++];
+      if (el.textContent !== nodes[i].title) el.textContent = nodes[i].title;
+      el.style.transform = `translate(-50%, 0) translate(${sx.toFixed(1)}px, ${(sy + baseSize[i] * 0.5 + 4).toFixed(1)}px)`;
+      el.style.opacity = aMix[i] > 0 ? '0.95' : '0.5';
+      el.classList.add('show');
+    }
+    for (let k = used; k < LABEL_POOL; k++) {
+      const el = labelPool[k];
+      if (el.classList.contains('show')) { el.classList.remove('show'); el.style.opacity = '0'; }
+    }
+  }
 
   /* ── Resize + render loop ──────────────────────────────────────────── */
   function resize() {
@@ -341,9 +462,10 @@ async function init() {
   loading.classList.add('hide');
 
   function frame() {
+    stepTween();
     // point size scales gently with zoom so dots feel anchored in space
-    const baseHalf = Math.max(spanX, spanY) * 0.62;
     nMat.uniforms.uScale.value = Math.min(Math.max(baseHalf / view.halfH, 0.55), 2.6);
+    updateZoomLabels();
     renderer.render(scene, camera);
     requestAnimationFrame(frame);
   }

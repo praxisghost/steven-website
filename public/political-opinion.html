@@ -9,18 +9,54 @@
 <body>
   <a class="back-link" href="writing.html">← Writing</a>
 
+  <audio id="page-audio" autoplay loop>
+    <source src="audio/IdLoveToChangeTheWorld.mp3" type="audio/mpeg">
+  </audio>
+
   <header>
     <h1>Politics</h1>
   </header>
 
   <article>
+    <img class="article-hero" src="img/Politics/Trump1.jpeg" alt="Politics">
     <p>Coming soon</p>
-</article>
+  </article>
 
   <footer>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var audio = document.getElementById('page-audio');
+
+      // Try to play immediately (may be blocked until user interacts)
+      audio.play().catch(function () {
+        // Autoplay blocked — play on first user interaction
+        document.addEventListener('click', function startOnClick() {
+          audio.play();
+          document.removeEventListener('click', startOnClick);
+        }, { once: true });
+      });
+
+      // Stop when tab is hidden or user navigates away
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play().catch(function () {});
+        }
+      });
+
+      window.addEventListener('pagehide', function () {
+        audio.pause();
+      });
+
+      window.addEventListener('beforeunload', function () {
+        audio.pause();
+      });
+    })();
+  </script>
 </body>
 </html>

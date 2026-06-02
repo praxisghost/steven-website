@@ -4,6 +4,73 @@ A running log of work on the Superorganism knowledge graph. Newest first.
 
 ---
 
+## 2026-06-01 (session 2) — Freshness, Obsidian colour, zoom labels, search framing
+
+Incremental polish pass on the live graph. Five improvements across page
+discovery, visuals, and UX.
+
+### What was done
+- **Graph data refreshed (page-discovery accuracy).** Four Isms pages added in a
+  later run — `amateurism`, `animism`, `anti-Americanism`, `anticolonialism` —
+  existed on disk but were missing from the graph (stale JSON). Re-ran the build
+  script: now **322 nodes, 379 edges** (was 318/375). 318/318 prior positions
+  reused, so nothing moved (Decision 004 honoured).
+- **`npm run graph` script added** (`package.json`) so the graph can be
+  regenerated in one command whenever pages change (Phase 7 backlog item).
+- **Muted-by-default node colour (Obsidian look).** Nodes now render as a calm,
+  mostly-grey star map at rest and saturate to full category colour only when
+  active (hover / neighbour / search). This reconciles GRAPH_METADATA ("default
+  grey, category colour on hover") with the reference image, while keeping the
+  category-colour system (new Decision 018). Implemented as a per-vertex `aMix`
+  attribute blended in the node vertex shader — no extra draw calls.
+- **Labels-on-zoom (Obsidian behaviour).** A pooled DOM label layer
+  (`#so-zoom-labels`) shows page titles for the most important on-screen nodes,
+  revealing more as you zoom in (hubs first, by degree). Complements the single
+  hover label; stays invisible on the zoomed-out map so there's no clutter.
+- **Search pans/zooms to matches.** Typing now smoothly frames the matching
+  nodes (eased camera tween) once the query narrows to ≤24 hits, instead of only
+  dimming the rest. Enter opens the page when exactly one match remains, else
+  frames the matches. Tween respects `prefers-reduced-motion`.
+- **Keyboard + mobile a11y.** `/` focuses search, `Esc` clears search / resets
+  view, `F` fits the whole graph. Mobile: legend/HUD repositioned, keyboard
+  hints hidden on touch, smaller zoom labels.
+
+### Files modified
+- `public/isms/superorganism-graph.json` (regenerated — 322 nodes / 379 edges)
+- `public/isms/superorganism.js` (aMix muted colour, zoom-label layer, camera
+  tween + search framing, keyboard shortcuts)
+- `public/isms/superorganism.html` (zoom-label CSS, mobile + reduced-motion CSS)
+- `package.json` (added `"graph"` script)
+- `GRAPH_PROGRESS.md`, `GRAPH_BACKLOG.md`, `GRAPH_DECISIONS.md`,
+  `PROJECT_STATUS.md`, `CHANGELOG.md` (docs)
+
+### Verification
+- `node --check` passes on the renderer and the build script.
+- JSON parses; **0 dangling edges, 0 isolated nodes**; all four new Isms pages
+  present with positions; 318 positions reused on rebuild.
+- Express static harness (mirrors the real server): page, JS, JSON, and vendored
+  Three.js all return **200** with correct MIME types
+  (`application/javascript` for the ES module — required under `script-src 'self'`).
+- Not verifiable headlessly: in-browser WebGL output (no browser in the run
+  environment). Shader/attribute wiring reviewed; a visual pass is the
+  recommended next step.
+
+### Blockers
+- None. (In-browser WebGL rendering still can't be visually confirmed in-session.)
+
+### Recommended next tasks
+1. Visual pass in a real browser on desktop + mobile: tune the rest-state grey
+   level, zoom-label reveal threshold, and tween duration against the
+   ObsidianExample screenshot.
+2. Wire `npm run graph` into the deploy step so the graph never goes stale again
+   (this session's root cause).
+3. Expand curated semantic edges (GRAPH_LINK_QUEUE.md) — still conservative.
+4. Edge-type filtering (show only semantic edges) — Phase 5.
+5. Per-page tags (frontmatter or `<meta name="tags">`) to unlock tag-based
+   relationships and richer node sizing — Phase 3.
+
+---
+
 ## 2026-06-01 — Graph goes live (Phase 1 + most of Phase 2 & 4)
 
 This session took the Superorganism page from an empty placeholder to a working,
