@@ -4,25 +4,35 @@ Current Task:
 None (run complete)
 
 Completed:
-Superorganism knowledge graph — implemented the full interactive Three.js graph.
-Vendored Three.js r160 to public/vendor/ (CSP-compliant, no CDN); added
-tools/graph/build-graph.mjs which auto-discovers all 318 pages, classifies them
-by category, and generates a conservative 375-edge hub-and-spoke graph with
-stable deterministic positions (public/isms/superorganism-graph.json); rewrote
-public/isms/superorganism.html and added public/isms/superorganism.js — an
-OLED-black, Obsidian-style renderer with hover (enlarge/label/highlight), click
-navigation, category colours, a toggleable legend, and live search. Verified:
-JSON valid, 0 dangling edges, 0 isolated nodes, positions preserved across
-rebuilds, all four assets serve 200 with correct MIME types. (2026-06-01)
+Isms Batch 005 first half (2026-06-02). Created placeholder pages for brutalism, Buddhism, Calvinism, careerism. Verified capitalism pre-existing. Nav links inserted alphabetically in isms.html between Brahmanism and Communism. Batch 005 now 5/10 — IN PROGRESS.
+
+Previously completed:
+Isms Batch 004 second half (2026-06-02). Created placeholder pages for blackmailism, Bolshevism, Bonapartism, botulism, Brahmanism. Nav links inserted alphabetically in isms.html between Bipolarism and Capitalism. Batch 004 now 10/10 — COMPLETE.
+
+Previously completed:
+Isms Batch 003 second half (2026-06-01). Created placeholder pages for aristocratism, asceticism, associationism, atheism, atomism. Nav links inserted alphabetically in isms.html between Apoliticism and Capitalism. Batch 003 now 10/10 — COMPLETE.
+
+Previously completed:
+OLED contrast improvement (2026-06-01). In public/style.css, raised the only
+secondary-grey text tier sitting at/below the WCAG AA threshold — #757575
+(~4.56:1 on pure black) — up to #888888 (~5.92:1), an existing palette grey.
+This lifts the affected secondary elements (footer view-count, SRS done-stats,
+guide search icon, filter-clear control, filter-results count, and the guide
+search placeholder; plus one srs-btn-flip hover border) to AA-compliant
+contrast. All 7 occurrences replaced; no other greys touched. Pure-black
+background, white primary text, and the muted grayscale aesthetic preserved;
+no colours introduced (Decision: OLED theme rules). Verified: brace balance
+unchanged (309/309), black background intact, no stray #757575 remaining.
+(In-browser visual confirmation not possible in this environment.)
+
+Previously completed:
+Superorganism graph — session 2 polish (2026-06-01). Refreshed graph data to
+322 nodes / 379 edges, muted-by-default node colouring, labels-on-zoom,
+search-to-match framing, keyboard shortcuts; added `npm run graph`.
 
 Blocked:
 - Image tasks (GameBoy Advance SP, GameCube, Midnight Library, Aquaponics images) — awaiting source image files. See BLOCKERS.md.
 - PS2 retro gaming article & June 1st 2026 journal post — first-person personal entries; blocked pending Steven's source notes/memories. See BLOCKERS.md.
-- In-browser WebGL rendering could not be visually confirmed this run (no browser in the environment); logic and asset wiring are verified.
 
 Next:
-Open the Superorganism page in a real browser to sanity-check rendering on
-desktop and mobile and tune sizing/zoom against the ObsidianExample images.
-Then wire build-graph.mjs into the workflow (add npm script "graph") so the
-graph regenerates whenever pages are added. See GRAPH_PROGRESS.md for the full
-recommended next-task list.
+Recommended: Isms Batch 005 second half — Cartesianism, Catholicism, centrism, chauvinism, classicism.

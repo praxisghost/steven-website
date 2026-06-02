@@ -93,7 +93,7 @@ header h1 {
 }
 header p  {
   font-family: var(--font-body);
-  color: #aaa;
+  color: #b5b5b5;
   font-size: 1rem;
   font-weight: 400;
   font-style: italic;
@@ -157,7 +157,7 @@ nav ul li a {
 .sub-nav ul {
   margin-top: 1.25rem;
   padding-left: 1rem;
-  border-left: 1px solid #333;
+  border-left: 1px solid #3c3c3c;
   gap: 0.15rem;
 }
 
@@ -167,7 +167,7 @@ nav ul li a {
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: #ccc;
+  color: #d4d4d4;
   padding: 0.4rem 0;
   transition: color 0.25s ease;
 }
@@ -184,7 +184,7 @@ article h2 {
   margin-bottom: 0.75rem;
   color: #fff;
 }
-article p  { margin-bottom: 1rem; color: #ccc; }
+article p  { margin-bottom: 1rem; color: #d4d4d4; }
 article h2:not(:first-child) { margin-top: 2.25rem; }
 
 /* ── Pull-quotes (highlighted book quotes, etc.) ─ */
@@ -203,7 +203,7 @@ article blockquote p { margin: 0; color: inherit; }
   display: inline-block;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
-  color: #888;
+  color: #999999;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -228,7 +228,7 @@ form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
 
 form input, form textarea {
   padding: 0.6rem 0.8rem;
-  border: 1px solid #333;
+  border: 1px solid #3c3c3c;
   border-radius: 4px;
   font-family: inherit;
   font-size: 1rem;
@@ -236,10 +236,10 @@ form input, form textarea {
   color: #fff;
 }
 
-form input::placeholder, form textarea::placeholder { color: #777; }
+form input::placeholder, form textarea::placeholder { color: #888888; }
 form input:focus, form textarea:focus {
   outline: none;
-  border-color: #777;
+  border-color: #888888;
 }
 
 form textarea { min-height: 120px; resize: vertical; }
@@ -256,10 +256,10 @@ form button {
   cursor: pointer;
   transition: background 0.2s ease;
 }
-form button:hover { background: #ccc; }
+form button:hover { background: #d4d4d4; }
 
-#form-status       { font-size: 0.9rem; color: #888; }
-#newsletter-status { font-size: 0.9rem; color: #888; }
+#form-status       { font-size: 0.9rem; color: #999999; }
+#newsletter-status { font-size: 0.9rem; color: #999999; }
 
 /* ── Section divider ─────────────────────────── */
 .section-divider {
@@ -269,7 +269,7 @@ form button:hover { background: #ccc; }
 }
 
 /* ── Blog list ───────────────────────────────── */
-.blog-intro { color: #999; margin-bottom: 1.5rem; }
+.blog-intro { color: #a6a6a6; margin-bottom: 1.5rem; }
 
 .blog-list {
   list-style: none;
@@ -323,7 +323,7 @@ form button:hover { background: #ccc; }
 
 .blog-date {
   font-size: 0.85rem;
-  color: #777;
+  color: #888888;
   white-space: nowrap;
   margin-left: 1rem;
   /* Sit above the stretched-link overlay so text remains selectable */
@@ -331,7 +331,7 @@ form button:hover { background: #ccc; }
   z-index: 1;
 }
 
-.blog-empty { color: #777; font-style: italic; }
+.blog-empty { color: #888888; font-style: italic; }
 
 /*
  * Article thumbnail placeholder — a small dark square with a centred SVG icon,
@@ -390,7 +390,7 @@ footer {
 }
 
 footer a {
-  color: #777;
+  color: #888888;
   text-decoration: none;
   transition: color 0.2s ease;
   word-break: break-word;
@@ -398,7 +398,7 @@ footer a {
 footer a:hover { color: #fff; }
 
 #view-count {
-  color: #666;
+  color: #888888;
   font-size: 0.8rem;
 }
 
@@ -427,7 +427,7 @@ footer a:hover { color: #fff; }
 .lang-from {
   font-size: 0.72em;
   font-weight: 400;
-  color: #888;
+  color: #999999;
   letter-spacing: 0.01em;
 }
 
@@ -435,7 +435,7 @@ footer a:hover { color: #fff; }
 .lang-toc {
   margin: 1.5rem 0 2rem;
   padding-left: 1.25rem;
-  border-left: 1px solid #333;
+  border-left: 1px solid #3c3c3c;
 }
 
 .lang-toc li {
@@ -444,7 +444,7 @@ footer a:hover { color: #fff; }
 }
 
 .lang-toc a {
-  color: #999;
+  color: #a6a6a6;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -470,19 +470,19 @@ footer a:hover { color: #fff; }
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 500;
-  color: #ddd;
+  color: #e2e2e2;
   margin: 1.25rem 0 0.5rem;
   letter-spacing: 0.01em;
 }
 
 .lang-section p {
-  color: #ccc;
+  color: #d4d4d4;
   margin-bottom: 0.85rem;
 }
 
 .lang-section ul, .lang-section ol {
   padding-left: 1.25rem;
-  color: #ccc;
+  color: #d4d4d4;
   margin-bottom: 0.85rem;
 }
 
@@ -510,7 +510,7 @@ details.accordion > summary {
   padding: 0.7rem 1rem;
   cursor: pointer;
   font-size: 1.05rem;
-  color: #ddd;
+  color: #e2e2e2;
   list-style: none;
   display: flex;
   align-items: center;
@@ -528,7 +528,7 @@ details.accordion > summary::-webkit-details-marker { display: none; }
 details.accordion > summary::before {
   content: '▶';
   font-size: 0.72rem;
-  color: #888;
+  color: #999999;
   -webkit-text-stroke: 0.4px currentColor;
   transition: transform 0.2s ease;
   flex-shrink: 0;
@@ -544,7 +544,7 @@ details.accordion > summary:hover {
 }
 
 details.accordion > summary:hover::before {
-  color: #aaa;
+  color: #b5b5b5;
 }
 
 .accordion-body {
@@ -563,14 +563,14 @@ details.accordion > summary:hover::before {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
-  color: #ccc;
+  color: #d4d4d4;
   min-width: 320px;
 }
 
 .lang-table th {
   text-align: left;
   padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #3c3c3c;
   color: #fff;
   font-size: 0.8rem;
   font-weight: 500;
@@ -601,7 +601,7 @@ details.accordion > summary:hover::before {
   border-left: 2px solid #444;
   padding: 0.6rem 1rem;
   margin: 1rem 0;
-  color: #888;
+  color: #999999;
   font-size: 0.95rem;
   font-style: italic;
 }
@@ -623,7 +623,7 @@ details.accordion > summary:hover::before {
 
 .anki-fig figcaption {
   font-size: 0.82rem;
-  color: #888;
+  color: #999999;
   padding: 0.5rem 0.75rem;
   border-top: 1px solid #1a1a1a;
   font-style: italic;
@@ -645,7 +645,7 @@ details.accordion > summary:hover::before {
   margin: 0.75rem 0 1rem;
   border-radius: 0 3px 3px 0;
   font-size: 0.93rem;
-  color: #bbb;
+  color: #c4c4c4;
   line-height: 1.55;
 }
 
@@ -656,7 +656,7 @@ details.accordion > summary:hover::before {
   margin: 0.75rem 0 1rem;
   border-radius: 0 3px 3px 0;
   font-size: 0.93rem;
-  color: #bbb;
+  color: #c4c4c4;
   line-height: 1.55;
 }
 
@@ -681,7 +681,7 @@ pre.anki-prompt {
   border-radius: 3px;
   overflow-x: auto;
   font-size: 0.78rem;
-  color: #ccc;
+  color: #d4d4d4;
   line-height: 1.65;
   border: 1px solid #1a1a1a;
   margin: 0.5rem 0 0.75rem;
@@ -702,7 +702,7 @@ pre.anki-prompt {
   margin: 0.5rem 0;
   font-size: 0.95rem;
   line-height: 1.8;
-  color: #999;
+  color: #a6a6a6;
 }
 
 .canto-block .canto-char {
@@ -718,7 +718,7 @@ pre.anki-prompt {
 }
 
 .canto-block .canto-en {
-  color: #ccc;
+  color: #d4d4d4;
   font-style: normal;
 }
 
@@ -737,7 +737,7 @@ pre.anki-prompt {
 .level-badge.beginner   { color: #6ecf8c; border: 1px solid #6ecf8c33; }
 .level-badge.intermed   { color: #7eb8f7; border: 1px solid #7eb8f733; }
 .level-badge.advanced   { color: #f07878; border: 1px solid #f0787833; }
-.level-badge.all-levels { color: #aaa;    border: 1px solid #aaa3; }
+.level-badge.all-levels { color: #b5b5b5;    border: 1px solid #aaa3; }
 
 /* ── Mobile adjustments for language pages ───── */
 @media (max-width: 480px) {
@@ -751,7 +751,7 @@ pre.anki-prompt {
    ══════════════════════════════════════════════ */
 
 .about-intro {
-  color: #ddd;
+  color: #e2e2e2;
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   font-style: italic;
@@ -774,13 +774,13 @@ pre.anki-prompt {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #aaa;
+  color: #b5b5b5;
   margin-bottom: 0.75rem;
 }
 
 .about-section p,
 .about-section li {
-  color: #ccc;
+  color: #d4d4d4;
 }
 
 .about-section ul {
@@ -801,7 +801,7 @@ pre.anki-prompt {
   content: '·';
   position: absolute;
   left: 0.25rem;
-  color: #777;
+  color: #888888;
 }
 
 .about-section em {
@@ -825,7 +825,7 @@ pre.anki-prompt {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #777;
+  color: #888888;
   margin-bottom: 1.25rem;
 }
 
@@ -848,12 +848,12 @@ pre.anki-prompt {
   border-radius: 999px;
   background: #0a0a0a;
   font-size: 0.9rem;
-  color: #ddd;
+  color: #e2e2e2;
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .built-with-grid li:hover {
-  border-color: #333;
+  border-color: #3c3c3c;
   color: #fff;
   transform: translateY(-1px);
 }
@@ -955,13 +955,13 @@ header h1.shavian {
    item the user is currently working on gets a small "CURRENT" pill.
    ══════════════════════════════════════════════ */
 .guitar-intro {
-  color: #ccc;
+  color: #d4d4d4;
   margin-bottom: 1.5rem;
 }
 
 .guitar-meta {
   font-size: 0.85rem;
-  color: #777;
+  color: #888888;
   font-style: italic;
   margin-top: 0.75rem;
 }
@@ -982,7 +982,7 @@ header h1.shavian {
 }
 
 .guitar-roadmap > p {
-  color: #888;
+  color: #999999;
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
 }
@@ -996,7 +996,7 @@ header h1.shavian {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #aaa;
+  color: #b5b5b5;
   margin-bottom: 0.5rem;
 }
 
@@ -1014,12 +1014,12 @@ header h1.shavian {
   align-items: baseline;
   gap: 0.6rem;
   padding: 0.25rem 0;
-  color: #ccc;
+  color: #d4d4d4;
   font-size: 1rem;
 }
 
 .guitar-roadmap ol li .step {
-  color: #777;
+  color: #888888;
   font-size: 0.85rem;
   min-width: 1.25rem;
   flex-shrink: 0;
@@ -1119,7 +1119,7 @@ nav ul li:nth-child(7n+7) a:hover,
 
 .lang-switcher select {
   background: #0a0a0a;
-  color: #ccc;
+  color: #d4d4d4;
   border: 1px solid #2a2a2a;
   border-radius: 3px;
   padding: 0.4rem 1.9rem 0.4rem 0.7rem;
@@ -1137,7 +1137,7 @@ nav ul li:nth-child(7n+7) a:hover,
 
 .lang-switcher select:hover,
 .lang-switcher select:focus {
-  border-color: #777;
+  border-color: #888888;
   color: #fff;
   outline: none;
 }
@@ -1151,7 +1151,7 @@ nav ul li:nth-child(7n+7) a:hover,
   border: 1px solid #2a2a2a;
   border-radius: 4px;
   padding: 0.85rem 1rem;
-  color: #ccc;
+  color: #d4d4d4;
   font-size: 0.85rem;
   line-height: 1.45;
   z-index: 9999;
@@ -1161,7 +1161,7 @@ nav ul li:nth-child(7n+7) a:hover,
 .lang-notice button {
   background: none;
   border: none;
-  color: #888;
+  color: #999999;
   cursor: pointer;
   float: right;
   margin: -0.2rem -0.3rem 0 0.6rem;
@@ -1199,11 +1199,11 @@ body.translated-rtl { top: 0 !important; }
   gap: 1.25rem;
   margin-bottom: 0.85rem;
   font-size: 0.8rem;
-  color: #777;
+  color: #888888;
   min-height: 1.4rem;
 }
 
-.srs-count b { color: #ccc; font-weight: 500; }
+.srs-count b { color: #d4d4d4; font-weight: 500; }
 
 .srs-bar-wrap {
   flex: 1;
@@ -1271,7 +1271,7 @@ body.translated-rtl { top: 0 !important; }
 /* The "answer" side (L1 translation) */
 .srs-english {
   font-size: 1.2rem;
-  color: #bbb;
+  color: #c4c4c4;
   line-height: 1.45;
 }
 
@@ -1288,7 +1288,7 @@ body.translated-rtl { top: 0 !important; }
 
 .srs-back {
   font-size: 1.2rem;
-  color: #bbb;
+  color: #c4c4c4;
   line-height: 1.45;
   text-align: center;
   margin-top: 0.5rem;
@@ -1316,9 +1316,9 @@ body.translated-rtl { top: 0 !important; }
   width: 100%;
   margin-top: 0.75rem;
   border: 1px solid #252525;
-  color: #888;
+  color: #999999;
 }
-.srs-btn-flip:hover { border-color: #666; color: #ccc; }
+.srs-btn-flip:hover { border-color: #888888; color: #d4d4d4; }
 
 .srs-btn {
   flex: 1;
@@ -1369,14 +1369,14 @@ body.translated-rtl { top: 0 !important; }
 }
 
 .srs-done-sub {
-  color: #777;
+  color: #888888;
   font-size: 0.9rem;
   margin-bottom: 0.85rem;
   font-style: italic;
 }
 
 .srs-done-stats {
-  color: #666;
+  color: #888888;
   font-size: 0.82rem;
   margin-bottom: 1.5rem;
   line-height: 1.9;
@@ -1385,7 +1385,7 @@ body.translated-rtl { top: 0 !important; }
 .srs-action-btn {
   background: none;
   border: 1px solid #2a2a2a;
-  color: #888;
+  color: #999999;
   font-family: var(--font-body);
   font-size: 0.85rem;
   padding: 0.45rem 1.1rem;
@@ -1394,7 +1394,7 @@ body.translated-rtl { top: 0 !important; }
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.srs-action-btn:hover { border-color: #777; color: #fff; }
+.srs-action-btn:hover { border-color: #888888; color: #fff; }
 
 .srs-shortcuts {
   font-size: 0.75rem;
@@ -1411,7 +1411,7 @@ body.translated-rtl { top: 0 !important; }
   padding: 0.05rem 0.3rem;
   border: 1px solid #2a2a2a;
   border-radius: 2px;
-  color: #333;
+  color: #3c3c3c;
 }
 
 @media (max-width: 480px) {
@@ -1566,7 +1566,7 @@ html[dir="rtl"] .srs-bar {
 
 .guide-filter-bar .filter-label {
   font-size: 0.78rem;
-  color: #777;
+  color: #888888;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-right: 0.25rem;
@@ -1577,9 +1577,9 @@ html[dir="rtl"] .srs-bar {
 .filter-pill {
   appearance: none;
   background: transparent;
-  border: 1px solid #333;
+  border: 1px solid #3c3c3c;
   border-radius: 20px;
-  color: #888;
+  color: #999999;
   cursor: pointer;
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -1589,13 +1589,13 @@ html[dir="rtl"] .srs-bar {
 }
 
 .filter-pill:hover {
-  border-color: #888;
-  color: #ccc;
+  border-color: #999999;
+  color: #d4d4d4;
 }
 
 .filter-pill.active {
   background: #2a2a2a;
-  border-color: #aaa;
+  border-color: #b5b5b5;
   color: #fff;
 }
 
@@ -1608,7 +1608,7 @@ html[dir="rtl"] .srs-bar {
   background: transparent;
   border: 1px solid #2a2a2a;
   border-radius: 4px;
-  color: #ccc;
+  color: #d4d4d4;
   font-family: var(--font-body);
   font-size: 0.9rem;
   padding: 0.4rem 0.75rem 0.4rem 2rem;
@@ -1617,11 +1617,11 @@ html[dir="rtl"] .srs-bar {
 }
 
 .guide-search-wrap input:focus {
-  border-color: #777;
+  border-color: #888888;
   outline: none;
 }
 
-.guide-search-wrap input::placeholder { color: #666; }
+.guide-search-wrap input::placeholder { color: #888888; }
 
 .guide-search-wrap::before {
   content: '⌕';
@@ -1629,7 +1629,7 @@ html[dir="rtl"] .srs-bar {
   left: 0.55rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #666;
+  color: #888888;
   font-size: 1rem;
   pointer-events: none;
 }
@@ -1638,7 +1638,7 @@ html[dir="rtl"] .srs-bar {
   appearance: none;
   background: none;
   border: none;
-  color: #666;
+  color: #888888;
   cursor: pointer;
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -1647,11 +1647,11 @@ html[dir="rtl"] .srs-bar {
   transition: color 0.15s;
 }
 
-.filter-clear:hover { color: #aaa; }
+.filter-clear:hover { color: #b5b5b5; }
 
 .filter-results-count {
   font-size: 0.8rem;
-  color: #666;
+  color: #888888;
   margin-bottom: 0.5rem;
   min-height: 1.2em;
 }
@@ -1667,7 +1667,7 @@ html[dir="rtl"] .srs-bar {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #ddd;
+  color: #e2e2e2;
   margin-bottom: 0.15rem;
   display: flex;
   align-items: center;
@@ -1688,7 +1688,7 @@ html[dir="rtl"] .srs-bar {
 }
 
 .l1-group .l1-caption {
-  color: #777;
+  color: #888888;
   font-size: 0.82rem;
   font-style: italic;
   margin-left: 2rem;
@@ -1710,7 +1710,7 @@ html[dir="rtl"] .srs-bar {
 .l1-group li:last-child { border-bottom: none; }
 
 .l1-group li a {
-  color: #ccc;
+  color: #d4d4d4;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -1801,7 +1801,7 @@ header h1 a.site-title-link {
   transition: color 0.2s ease;
 }
 header h1 a.site-title-link:hover {
-  color: #ccc;
+  color: #d4d4d4;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1818,14 +1818,14 @@ header h1 a.site-title-link:hover {
 .tagline-text.rainbow-sweep {
   background: linear-gradient(
     90deg,
-    #aaa 0%,
+    #b5b5b5 0%,
     #ff6b6b 10%,
     #ffa94d 20%,
     #ffe066 30%,
     #69db7c 45%,
     #4dabf7 60%,
     #cc5de8 75%,
-    #aaa 90%
+    #b5b5b5 90%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
@@ -1837,4 +1837,56 @@ header h1 a.site-title-link:hover {
 @keyframes rainbow-sweep-move {
   0%   { background-position: 200% center; }
   100% { background-position: -20% center; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ARTICLE IMAGES — reusable hero + captioned figure helpers
+   Used by retro-gaming posts, book reviews, project pages, etc.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Full-width hero image sitting directly under the <header> heading/subheading,
+   spanning the horizontal width of the body content column. */
+.article-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #1e1e1e;
+  margin: 0 0 1.75rem;
+}
+
+/* Captioned figure for in-body images (concept art, diagrams, screenshots). */
+.post-figure {
+  margin: 1.25rem 0 1.5rem;
+  border: 1px solid #222;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post-figure figcaption {
+  font-size: 0.85rem;
+  color: #999999;
+  padding: 0.55rem 0.85rem;
+  border-top: 1px solid #1a1a1a;
+  line-height: 1.55;
+}
+
+/* Lead-in note (e.g. "these are AI-generated concept images"). */
+.figure-note {
+  color: #b5b5b5;
+  font-style: italic;
+}
+
+/* PlayStation face-button glyphs used inline in prose (PS2 post). */
+.ps-btn {
+  font-weight: 700;
+  font-size: 1.05em;
+  padding: 0 0.05em;
 }
