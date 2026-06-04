@@ -4,7 +4,7 @@ Current Task:
 None (run complete)
 
 Completed:
-Isms Batch 005 first half (2026-06-02). Created placeholder pages for brutalism, Buddhism, Calvinism, careerism. Verified capitalism pre-existing. Nav links inserted alphabetically in isms.html between Brahmanism and Communism. Batch 005 now 5/10 — IN PROGRESS.
+Isms Batch 005 second half (2026-06-03). Created placeholder pages for Cartesianism, Catholicism, centrism, chauvinism, classicism. Nav links inserted alphabetically in isms.html between Careerism and Communism. Batch 005 now 10/10 — COMPLETE.
 
 Previously completed:
 Isms Batch 004 second half (2026-06-02). Created placeholder pages for blackmailism, Bolshevism, Bonapartism, botulism, Brahmanism. Nav links inserted alphabetically in isms.html between Bipolarism and Capitalism. Batch 004 now 10/10 — COMPLETE.
@@ -35,4 +35,4 @@ Blocked:
 - PS2 retro gaming article & June 1st 2026 journal post — first-person personal entries; blocked pending Steven's source notes/memories. See BLOCKERS.md.
 
 Next:
-Recommended: Isms Batch 005 second half — Cartesianism, Catholicism, centrism, chauvinism, classicism.
+Recommended: Isms Batch 006 — clericalism, clientelism, colonialism, communalism, consequentialism.

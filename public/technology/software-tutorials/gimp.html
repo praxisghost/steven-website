@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIMP Tutorial — Steven Legg</title>
+  <meta name="description" content="Comprehensive GIMP tutorial for macOS Apple Silicon and Fedora KDE — tools, layers, selections, colour correction, and export.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <a class="back-link" href="../software-tutorials.html">← Software Tutorials</a>
+
+  <header>
+    <h1>GIMP</h1>
+    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+  </header>
+
+  <article>
+
+    <img class="article-hero" src="../../../img/technology/gimp.jpeg" alt="GIMP">
+
+    <p>GIMP (GNU Image Manipulation Program) is a free, open-source raster image editor — a capable alternative to Adobe Photoshop. It handles photo retouching, digital painting, graphic design, and image compositing. It's one of the most mature open-source applications available, with a large plugin ecosystem and scripting support (Python-Fu and Script-Fu).</p>
+
+    <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
+    <h2>Installation</h2>
+
+    <h3>macOS (Apple Silicon)</h3>
+
+    <p>GIMP is distributed as a universal binary for macOS. Download from <a href="https://www.gimp.org/downloads/" target="_blank" rel="noopener noreferrer">gimp.org/downloads</a>. Open the <code>.dmg</code> and drag GIMP to Applications.</p>
+
+    <p>Via Homebrew:</p>
+
+    <pre><code>brew install --cask gimp</code></pre>
+
+    <p><strong>Note:</strong> GIMP on macOS requires XQuartz (an X11 implementation) for older builds, but modern builds (2.10.36+ / 3.x) are native Cocoa apps and no longer need XQuartz. If you're on a recent version, you don't need to install XQuartz.</p>
+
+    <h3>Fedora KDE</h3>
+
+    <p>GIMP is in the Fedora repositories:</p>
+
+    <pre><code>sudo dnf install gimp</code></pre>
+
+    <p>Or via Flatpak for the latest version:</p>
+
+    <pre><code>flatpak install flathub org.gimp.GIMP</code></pre>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP application window on first launch]">
+      <figcaption>Placeholder — GIMP on first launch showing the default single-window layout.</figcaption>
+    </figure>
+
+    <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
+    <h2>Interface Overview</h2>
+
+    <p>By default on modern GIMP versions, the interface is in <strong>single-window mode</strong>, with all panels docked together. If it's in multi-window mode (floating panels), switch to single-window via <strong>Windows → Single-Window Mode</strong>.</p>
+
+    <p>The main areas are: the <strong>Toolbox</strong> (left — all the tools), <strong>Tool Options</strong> (below the toolbox — settings for the active tool), the <strong>Canvas</strong> (centre — your image), the <strong>Layers / Channels / Paths</strong> panel (right), and the <strong>Brushes / Patterns / Gradients</strong> panel (also right, tabbed).</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP single-window interface with toolbox, canvas, and right panels labelled]">
+      <figcaption>Placeholder — annotated GIMP single-window interface.</figcaption>
+    </figure>
+
+    <!-- ─── OPENING & CREATING ────────────────────────────────────────────── -->
+    <h2>Opening and Creating Images</h2>
+
+    <p>Open an existing image: <strong>File → Open</strong> (<kbd>Ctrl O</kbd>). GIMP supports JPEG, PNG, TIFF, WebP, PSD (Photoshop), BMP, GIF, and many others.</p>
+
+    <p>Create a new canvas: <strong>File → New</strong> (<kbd>Ctrl N</kbd>). Set width, height, resolution (72 PPI for screen, 300 PPI for print), and colour mode (RGB for most work, Grayscale for black and white).</p>
+
+    <p>To open as a layer on top of an existing image (useful for compositing): <strong>File → Open as Layers</strong>.</p>
+
+    <!-- ─── TOOLS ────────────────────────────────────────────────────────── -->
+    <h2>The Toolbox</h2>
+
+    <p>GIMP has a large toolbox. Here are the tools you'll use most often:</p>
+
+    <h3>Selection Tools</h3>
+
+    <p><strong>Rectangle Select</strong> (<kbd>R</kbd>) — draw a rectangular selection. <strong>Ellipse Select</strong> (<kbd>E</kbd>) — draw an elliptical/circular selection. <strong>Free Select (Lasso)</strong> (<kbd>F</kbd>) — draw a freehand selection. <strong>Fuzzy Select (Magic Wand)</strong> (<kbd>U</kbd>) — select a contiguous region of similar colour. <strong>Select by Colour</strong> (<kbd>Shift U</kbd>) — select all pixels of a similar colour across the whole image. <strong>Scissors Select</strong> (<kbd>I</kbd>) — intelligent edge-following selection tool.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP toolbox with selection tools highlighted]">
+      <figcaption>Placeholder — the GIMP toolbox with selection tools visible.</figcaption>
+    </figure>
+
+    <h3>Paint Tools</h3>
+
+    <p><strong>Pencil</strong> (<kbd>N</kbd>) — hard-edged painting. <strong>Paintbrush</strong> (<kbd>P</kbd>) — soft-edged painting. <strong>Eraser</strong> (<kbd>Shift E</kbd>) — erase pixels (makes them transparent on a layer with an alpha channel). <strong>Airbrush</strong> — pressure-sensitive painting that builds up colour. <strong>Bucket Fill</strong> (<kbd>Shift B</kbd>) — fill a selection or region with colour or pattern. <strong>Gradient</strong> (<kbd>G</kbd>) — draw a colour gradient.</p>
+
+    <h3>Transform Tools</h3>
+
+    <p><strong>Move</strong> (<kbd>M</kbd>) — move layers, selections, or paths. <strong>Scale</strong> (<kbd>Shift T</kbd>) — resize a layer or selection. <strong>Rotate</strong> (<kbd>Shift R</kbd>) — rotate a layer or selection. <strong>Crop</strong> (<kbd>Shift C</kbd>) — crop the canvas or clip a layer. <strong>Perspective</strong> — distort a layer to adjust its perspective. <strong>Flip</strong> (<kbd>Shift F</kbd>) — mirror horizontally or vertically.</p>
+
+    <h3>Other Essential Tools</h3>
+
+    <p><strong>Clone</strong> (<kbd>C</kbd>) — paint using another area of the image as the source. Used for retouching blemishes and unwanted objects. <strong>Healing</strong> (<kbd>H</kbd>) — like Clone but blends with surrounding texture. Better for skin and organic surfaces. <strong>Dodge/Burn</strong> (<kbd>Shift D</kbd>) — lighten (dodge) or darken (burn) areas by painting over them. <strong>Smudge</strong> — blend/smear pixels. <strong>Text</strong> (<kbd>T</kbd>) — add text as an editable text layer.</p>
+
+    <!-- ─── LAYERS ─────────────────────────────────────────────────────────── -->
+    <h2>Layers</h2>
+
+    <p>Layers are the fundamental building block of non-destructive image editing in GIMP. Each layer is an independent plane of pixels that stacks on top of others. Changes to one layer don't affect others.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP layers panel showing multiple layers with blend modes]">
+      <figcaption>Placeholder — the layers panel with multiple layers and different blend modes.</figcaption>
+    </figure>
+
+    <h3>Layer Operations</h3>
+
+    <p>The <strong>Layers panel</strong> (right side) shows all layers, from top to bottom in stacking order. Operations:</p>
+
+    <p><strong>New layer</strong>: click the + button at the bottom of the Layers panel, or use <strong>Layer → New Layer</strong> (<kbd>Shift Ctrl N</kbd>). <strong>Duplicate layer</strong>: <strong>Layer → Duplicate Layer</strong> (<kbd>Shift Ctrl D</kbd>). <strong>Delete layer</strong>: click the trash icon. <strong>Reorder layers</strong>: drag layers up or down in the panel. <strong>Hide/show</strong>: click the eye icon. <strong>Merge down</strong>: <strong>Layer → Merge Down</strong> — combines a layer with the one below it.</p>
+
+    <h3>Layer Blend Modes</h3>
+
+    <p>Each layer has a <strong>blend mode</strong> that controls how it interacts with layers beneath it. The most useful blend modes are: <strong>Normal</strong> (default), <strong>Multiply</strong> (darkens — like two transparencies stacked), <strong>Screen</strong> (lightens — good for glows), <strong>Overlay</strong> (increases contrast), <strong>Soft Light</strong> (gentle contrast), <strong>Difference</strong> (inverts based on the layer beneath), and <strong>Hue/Saturation/Colour</strong> (affect only that aspect of the layer below).</p>
+
+    <h3>Layer Opacity</h3>
+
+    <p>The <strong>Opacity</strong> slider at the top of the Layers panel controls how transparent the active layer is. 100% is fully opaque; 0% is invisible. This is commonly used to blend adjustment layers at reduced strength.</p>
+
+    <!-- ─── SELECTIONS ────────────────────────────────────────────────────── -->
+    <h2>Selections and Masking</h2>
+
+    <h3>Refining Selections</h3>
+
+    <p>After making a selection, refine it with: <strong>Select → Feather</strong> (soften the edges), <strong>Select → Grow/Shrink</strong> (expand or contract by pixels), and <strong>Select → Invert</strong> (<kbd>Ctrl I</kbd>) (select everything except the current selection).</p>
+
+    <p>To add to a selection, hold <kbd>Shift</kbd> while drawing a new selection. To subtract from a selection, hold <kbd>Ctrl</kbd>.</p>
+
+    <h3>Quick Mask</h3>
+
+    <p>Press <kbd>Shift Q</kbd> to enter Quick Mask mode. The selection is shown as a red overlay. Paint with black to remove from the selection, white to add to it. Press <kbd>Shift Q</kbd> again to convert back to a marching ants selection. This is the most precise way to make complex selections.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP in Quick Mask mode with a red overlay on the unselected area]">
+      <figcaption>Placeholder — Quick Mask mode with the unselected area shown in red.</figcaption>
+    </figure>
+
+    <h3>Layer Masks</h3>
+
+    <p>A layer mask controls the transparency of parts of a layer non-destructively. Right-click a layer in the Layers panel and choose <strong>Add Layer Mask</strong>. Paint with black on the mask to hide parts of the layer, white to reveal. The original layer pixels are never destroyed.</p>
+
+    <!-- ─── COLOUR CORRECTION ─────────────────────────────────────────────── -->
+    <h2>Colour Correction</h2>
+
+    <p>GIMP's colour correction tools are under the <strong>Colours</strong> menu.</p>
+
+    <h3>Levels</h3>
+
+    <p><strong>Colours → Levels</strong> adjusts the black point, white point, and midtone gamma of the image. Drag the black input triangle right to set the darkest point; drag the white input triangle left to set the brightest point. Drag the output sliders to limit the tonal range. Click <strong>Auto</strong> for an automatic correction.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP Levels dialog with input/output sliders and histogram]">
+      <figcaption>Placeholder — the Levels dialog with histogram and input/output triangles.</figcaption>
+    </figure>
+
+    <h3>Curves</h3>
+
+    <p><strong>Colours → Curves</strong> is the most powerful tonal adjustment. The diagonal line maps input values (x-axis) to output values (y-axis). Click to add control points and drag to reshape the curve. An S-curve (pull highlights up, shadows down) adds contrast. Work on the composite RGB channel first, then individual R, G, B channels for colour grading.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP Curves dialog showing an S-curve adjustment]">
+      <figcaption>Placeholder — the Curves dialog with a gentle S-curve for contrast.</figcaption>
+    </figure>
+
+    <h3>Hue-Saturation</h3>
+
+    <p><strong>Colours → Hue-Saturation</strong> adjusts the overall hue shift, saturation, and lightness. Select "All" to affect every colour, or select a specific colour range (R, Y, G, C, B, M) to target just that range.</p>
+
+    <h3>Colour Balance</h3>
+
+    <p><strong>Colours → Colour Balance</strong> adds warm or cool casts independently to shadows, midtones, and highlights. Useful for matching footage colours or creating a stylised grade.</p>
+
+    <!-- ─── RETOUCHING ─────────────────────────────────────────────────────── -->
+    <h2>Retouching</h2>
+
+    <h3>Clone Tool</h3>
+
+    <p>Select the Clone tool (<kbd>C</kbd>). <kbd>Ctrl+click</kbd> to set the source point, then paint over the area you want to fix — GIMP copies pixels from the source to the brush. Use a soft brush and a source point near the area you're fixing so texture and tone match.</p>
+
+    <h3>Heal Tool</h3>
+
+    <p>The Heal tool works similarly to Clone but blends the cloned pixels with the surrounding texture, making it more seamless for skin and complex textures. <kbd>Ctrl+click</kbd> to set the source, then paint to heal.</p>
+
+    <h3>Spot Healing with Script-Fu</h3>
+
+    <p>For a quick automatic heal, try <strong>Filters → Enhance → Heal Selection</strong> (if installed via the Resynthesizer plugin — see below). Select the area to remove, run the filter, and GIMP synthesises a plausible replacement from surrounding pixels.</p>
+
+    <!-- ─── FILTERS & PLUGINS ─────────────────────────────────────────────── -->
+    <h2>Filters and Plugins</h2>
+
+    <p>GIMP's <strong>Filters</strong> menu contains a large library of built-in filters: blur (Gaussian, motion, lens), sharpen (unsharp mask), distort (warp, ripple), render (clouds, plasma, noise), and more.</p>
+
+    <h3>Recommended Plugins</h3>
+
+    <p><strong>Resynthesizer</strong> — adds content-aware fill (Heal Selection). Install on Fedora:</p>
+    <pre><code>sudo dnf install gimp-resynthesizer</code></pre>
+
+    <p>On macOS, download from the Resynthesizer GitHub releases and place the <code>.so</code> or <code>.py</code> files in <code>~/Library/Application Support/GIMP/2.10/plug-ins/</code> (GIMP 2.x) or the equivalent GIMP 3.x plug-ins path.</p>
+
+    <p><strong>G'MIC</strong> — a massive collection of image processing filters (colour grading, denoising, artistic effects, frequency separation). Install on Fedora:</p>
+    <pre><code>sudo dnf install gimp-plugin-gmic</code></pre>
+
+    <p>On macOS, download the G'MIC installer from <a href="https://gmic.eu/download.html" target="_blank" rel="noopener noreferrer">gmic.eu</a>.</p>
+
+    <!-- ─── TEXT ──────────────────────────────────────────────────────────── -->
+    <h2>Working with Text</h2>
+
+    <p>Select the Text tool (<kbd>T</kbd>). Click on the canvas to create a text layer. Type your text; use the Tool Options to set font, size, colour, and alignment. The text remains editable as long as you don't flatten or merge the text layer.</p>
+
+    <p>To apply effects to text (like a drop shadow), right-click the text layer and select <strong>Alpha to Selection</strong>, then apply effects to a new layer below it. Or use <strong>Filters → Light and Shadow → Drop Shadow</strong> directly.</p>
+
+    <!-- ─── EXPORT ────────────────────────────────────────────────────────── -->
+    <h2>Saving and Exporting</h2>
+
+    <p>GIMP's native format is <strong>XCF</strong> — it preserves all layers, masks, and guides. Always save as XCF while working.</p>
+
+    <p>To export to a web-ready format (JPEG, PNG, WebP), use <strong>File → Export As</strong> (<kbd>Shift Ctrl E</kbd>). The export dialog lets you configure quality and format-specific options without affecting your XCF file.</p>
+
+    <p>For PNG (lossless, supports transparency): leave compression at 6 for a balance of file size and speed.</p>
+
+    <p>For JPEG (lossy, no transparency): 80–90 quality is a good default for high quality with reasonable file size. Check <strong>Progressive</strong> for web use.</p>
+
+    <p>For WebP: use 80–90 quality for lossy, or enable lossless compression.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: GIMP Export As dialog with JPEG quality slider]">
+      <figcaption>Placeholder — the Export As dialog with JPEG quality settings.</figcaption>
+    </figure>
+
+    <!-- ─── SHORTCUTS ────────────────────────────────────────────────────── -->
+    <h2>Key Keyboard Shortcuts</h2>
+
+    <table>
+      <thead>
+        <tr><th>Action</th><th>macOS</th><th>Linux</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>New image</td><td><kbd>⌘ N</kbd></td><td><kbd>Ctrl N</kbd></td></tr>
+        <tr><td>Open image</td><td><kbd>⌘ O</kbd></td><td><kbd>Ctrl O</kbd></td></tr>
+        <tr><td>Save (XCF)</td><td><kbd>⌘ S</kbd></td><td><kbd>Ctrl S</kbd></td></tr>
+        <tr><td>Export as</td><td><kbd>⌘ Shift E</kbd></td><td><kbd>Ctrl Shift E</kbd></td></tr>
+        <tr><td>Undo</td><td><kbd>⌘ Z</kbd></td><td><kbd>Ctrl Z</kbd></td></tr>
+        <tr><td>Redo</td><td><kbd>⌘ Y</kbd></td><td><kbd>Ctrl Y</kbd></td></tr>
+        <tr><td>Zoom in</td><td><kbd>+</kbd></td><td><kbd>+</kbd></td></tr>
+        <tr><td>Zoom out</td><td><kbd>-</kbd></td><td><kbd>-</kbd></td></tr>
+        <tr><td>Fit image</td><td><kbd>Shift ⌘ E</kbd></td><td><kbd>Shift Ctrl E</kbd></td></tr>
+        <tr><td>Select all</td><td><kbd>⌘ A</kbd></td><td><kbd>Ctrl A</kbd></td></tr>
+        <tr><td>Deselect all</td><td><kbd>⌘ Shift A</kbd></td><td><kbd>Ctrl Shift A</kbd></td></tr>
+        <tr><td>Invert selection</td><td><kbd>⌘ I</kbd></td><td><kbd>Ctrl I</kbd></td></tr>
+        <tr><td>Flatten image</td><td><kbd>⌘ Shift M</kbd></td><td><kbd>Ctrl Shift M</kbd></td></tr>
+        <tr><td>Quick Mask toggle</td><td><kbd>Shift Q</kbd></td><td><kbd>Shift Q</kbd></td></tr>
+        <tr><td>Foreground colour picker</td><td><kbd>O</kbd></td><td><kbd>O</kbd></td></tr>
+        <tr><td>Swap fg/bg colours</td><td><kbd>X</kbd></td><td><kbd>X</kbd></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Use layers for everything.</strong> Never edit directly on the Background layer. Duplicate it first (<kbd>Shift Ctrl D</kbd>) and work on the copy, keeping the original untouched at the bottom.</p>
+
+    <p><strong>GIMP's undo history is generous</strong> but finite. Set the undo steps in <strong>Edit → Preferences → Environment → Maximum undo history size</strong>. The default (around 64MB) is usually sufficient.</p>
+
+    <p><strong>Script-Fu console</strong> (<strong>Filters → Script-Fu → Console</strong>) lets you run Scheme scripts against the open image. Python-Fu is also available for Python scripts. This is powerful for batch operations.</p>
+
+    <p><strong>On macOS</strong>, GIMP 2.10 uses a single-window mode that can feel slightly different from Photoshop. GIMP 3.x (currently in release candidates) improves macOS integration significantly — if 3.x is stable when you read this, install that version.</p>
+
+    <p><strong>On Fedora KDE</strong>, GIMP is well-integrated. If HiDPI scaling looks wrong, adjust the display scaling in GIMP's preferences: <strong>Edit → Preferences → Interface → Display → Monitors → Dot-for-dot</strong> — uncheck this and set the correct DPI for your monitor.</p>
+
+    <p><strong>Customise your toolbox.</strong> Go to <strong>Edit → Preferences → Interface → Toolbox</strong> to choose which tools appear and in what order. Remove tools you never use to reduce clutter.</p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

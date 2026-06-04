@@ -2,7 +2,7 @@
 
 ## Status
 
-Pages Audited: 20
+Pages Audited: 28
 
 Pages Modified: 0
 
@@ -10,7 +10,7 @@ Footnotes Added: 0
 
 Sources Added: 0
 
-Last Audit Date: June 2, 2026
+Last Audit Date: June 3, 2026
 
 ---
 
@@ -36,6 +36,14 @@ Last Audit Date: June 2, 2026
 - cantonese-from-mandarin.html (reviewed 2026-06-02 — no changes)
 - cantonese-from-spanish.html (reviewed 2026-06-02 — no changes)
 - cantonese-from-turkish.html (reviewed 2026-06-02 — no changes)
+- cantonese-from-ukrainian.html (reviewed 2026-06-03 — no changes)
+- cantonese-from-vietnamese.html (reviewed 2026-06-03 — no changes)
+- cape-verdean-creole-from-english.html (reviewed 2026-06-03 — no changes)
+- cape-verdean-creole-from-portuguese.html (reviewed 2026-06-03 — no changes)
+- cape-verdean-creole-from-spanish.html (reviewed 2026-06-03 — no changes)
+- catalan-from-english.html (reviewed 2026-06-03 — no changes)
+- catalan-from-french.html (reviewed 2026-06-03 — no changes)
+- catalan-from-spanish.html (reviewed 2026-06-03 — no changes)
 
 ---
 
@@ -168,3 +176,55 @@ Remaining content pages still unaudited: ~180 language-guide and topic pages
 (remaining cantonese-from-* variants, cape-verdean/catalan/chichewa guides, the
 isms/ reference pages, technology/ and projects/ topic pages, etc.). Next batch
 should continue alphabetically through the remaining "X-from-Y" guides.
+
+### 2026-06-03 — Batch 4 (8 pages)
+
+Reviewed 8 language-guide content pages, continuing alphabetically from where
+Batch 3 stopped (cantonese-from-turkish). Hub/navigation/index/home/search
+pages excluded per scope.
+
+Pages reviewed: cantonese-from-ukrainian, cantonese-from-vietnamese,
+cape-verdean-creole-from-english, cape-verdean-creole-from-portuguese,
+cape-verdean-creole-from-spanish, catalan-from-english, catalan-from-french,
+catalan-from-spanish.
+
+Method: extracted all prose sections (intro / "What is X" / "Why learn" /
+grammar narration / pronunciation / common mistakes / culture / resources) from
+each page and scanned for copied wording. Ran verbatim web searches on the most
+encyclopedic-sounding passages to test for HIGH-confidence matches:
+
+- Cantonese (ukrainian/vietnamese): same canonical si1–si6 tone set and "6
+  living + 3 entering = 9 tones" framing confirmed as standard pedagogical
+  common knowledge in Batches 1–3; no verbatim source lift. Content written in
+  Ukrainian/Vietnamese in the author's own voice with audience-specific asides
+  (Ukrainian inflection-vs-isolating contrast; Vietnamese Chợ Lớn diaspora,
+  tone-to-Vietnamese-tone mapping).
+- Cape Verdean "oldest living Portuguese-based creole" — widely documented
+  common fact (Wikipedia et al.); no single-source verbatim match, phrasing
+  original. The TMA-particle / invariable-verb description is standard creole
+  linguistics in original wording.
+- Catalan "around 9 million speakers … sole official language in Andorra" and
+  "descends from Vulgar Latin … closer to Occitan and French than Castilian" —
+  common facts; web search returned only generically similar encyclopedic
+  phrasings, no verbatim lift.
+- Catalan periphrastic past (vaig + infinitive = past, "looks like a future") —
+  the concept is described everywhere (Wikipedia "Catalan verbs", binnick.ca,
+  etc.), each source phrased differently; the author's gloss is original, not a
+  single-source copy. Standard linguistic knowledge.
+- Catalan "seny / rauxa" cultural concept and Franco-era ban (1939–1975) —
+  common cultural/historical knowledge; the brief parenthetical glosses are the
+  author's own concise wording, not lifted from any one source.
+
+Conclusion: No HIGH-confidence plagiarism found. All eight pages match the
+consistent, distinctive personal voice of Batches 1–3 (FSI difficulty framing,
+"Why learn X?" structure, contrastive source-language tables, parallel section
+layout, editorial asides), with target-language adaptations. Factual content is
+common linguistic/cultural knowledge expressed in original phrasing. Under the
+conservative policy (false positives unacceptable), no edits, footnotes, or
+citations were warranted. No pages required human review — no genuine source
+uncertainty arose.
+
+Remaining content pages still unaudited: ~172 language-guide and topic pages
+(remaining catalan/chichewa/con-lang guides, the farsi-from-* group, isms/
+reference pages, technology/ and projects/ topic pages, etc.). Next batch should
+continue alphabetically through the remaining "X-from-Y" guides.

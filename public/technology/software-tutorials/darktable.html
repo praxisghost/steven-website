@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darktable Tutorial — Steven Legg</title>
+  <meta name="description" content="Comprehensive Darktable tutorial for macOS Apple Silicon and Fedora KDE — import, lighttable, darkroom, colour grading, and export.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <a class="back-link" href="../software-tutorials.html">← Software Tutorials</a>
+
+  <header>
+    <h1>Darktable</h1>
+    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+  </header>
+
+  <article>
+
+    <p>Darktable is a free, open-source RAW photo processor and digital darkroom — a full alternative to Adobe Lightroom. It works non-destructively: your original files are never modified, and every edit is stored as a set of instructions in a sidecar file or its internal database. It supports a huge range of RAW formats and runs on macOS, Linux, and Windows.</p>
+
+    <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
+    <h2>Installation</h2>
+
+    <h3>macOS (Apple Silicon)</h3>
+
+    <p>Download the <code>.dmg</code> from <a href="https://www.darktable.org/install/" target="_blank" rel="noopener noreferrer">darktable.org/install</a>. Choose the Apple Silicon (arm64) build. Open the <code>.dmg</code> and drag Darktable to Applications.</p>
+
+    <p>Via Homebrew:</p>
+
+    <pre><code>brew install --cask darktable</code></pre>
+
+    <p><strong>Note:</strong> On first launch, macOS may show a security warning because Darktable is not notarised by Apple. Go to <strong>System Settings → Privacy &amp; Security</strong> and click "Open Anyway".</p>
+
+    <h3>Fedora KDE</h3>
+
+    <p>Install via Flatpak (recommended — gets the latest version faster than the DNF repo):</p>
+
+    <pre><code>flatpak install flathub org.darktable.Darktable</code></pre>
+
+    <p>Or via DNF:</p>
+
+    <pre><code>sudo dnf install darktable</code></pre>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darktable splash screen / first launch]">
+      <figcaption>Placeholder — Darktable on first launch.</figcaption>
+    </figure>
+
+    <!-- ─── INTERFACE OVERVIEW ────────────────────────────────────────────── -->
+    <h2>Interface Overview</h2>
+
+    <p>Darktable has three primary views, selected from the top bar: <strong>Lighttable</strong> (photo library and organisation), <strong>Darkroom</strong> (individual photo editing), and <strong>Map</strong> (geotagging). There's also <strong>Slideshow</strong>, <strong>Print</strong>, and <strong>Tethering</strong> for connected cameras.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darktable interface showing the top view switcher tabs]">
+      <figcaption>Placeholder — the Darktable view switcher at the top of the window.</figcaption>
+    </figure>
+
+    <!-- ─── IMPORTING ─────────────────────────────────────────────────────── -->
+    <h2>Importing Photos</h2>
+
+    <p>Darktable doesn't move or copy files by default — it just adds them to its library database. Photos stay in their current location on disk.</p>
+
+    <p>To import: in the Lighttable view, click <strong>Import</strong> in the top-left panel. You can import a single image, a folder, or directly from a memory card. Set a <strong>Project name</strong> and <strong>Destination</strong> if you want Darktable to copy files from a card to a new folder as it imports.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darktable import dialog with folder and card options]">
+      <figcaption>Placeholder — the import dialog showing folder and card import options.</figcaption>
+    </figure>
+
+    <h3>Importing from a Memory Card</h3>
+
+    <p>Connect your camera or card reader. In the Import dialog, click <strong>Camera</strong> or browse to the card's folder. Set the destination folder, name format (e.g., <code>$(YEAR)/$(MONTH)-$(DAY)/$(FILE_NAME)</code>), and click <strong>Import</strong>. Darktable will copy the RAW files and add them to the library.</p>
+
+    <!-- ─── LIGHTTABLE ─────────────────────────────────────────────────────── -->
+    <h2>The Lighttable</h2>
+
+    <p>The Lighttable is your photo library. Photos are displayed in a grid. Use the scroll wheel to zoom the grid, or drag the zoom slider bottom-right. Click a photo to select it; double-click to open it in the Darkroom.</p>
+
+    <h3>Culling and Rating</h3>
+
+    <p>Press <kbd>F1</kbd>–<kbd>F5</kbd> to assign star ratings (1–5 stars). Press <kbd>R</kbd> to mark a photo as rejected. Use the <strong>Filter</strong> bar at the top to show only rated, unrated, or rejected images.</p>
+
+    <p>Press <kbd>Z</kbd> to enter fullscreen zoom view for a single image — useful for checking focus and sharpness before rating.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Lighttable grid view with star ratings visible on thumbnails]">
+      <figcaption>Placeholder — lighttable grid with star ratings on thumbnails.</figcaption>
+    </figure>
+
+    <h3>Collections and Filters</h3>
+
+    <p>In the left panel of the Lighttable, the <strong>Collections</strong> module lets you filter your library by roll/folder, date, camera, lens, tag, colour label, and more. This is how you navigate between shoots without nested folder trees.</p>
+
+    <!-- ─── DARKROOM ───────────────────────────────────────────────────────── -->
+    <h2>The Darkroom</h2>
+
+    <p>Double-click any photo in the Lighttable to open it in the Darkroom. This is where all editing happens. The image fills the centre; the right panel has the module stack; the left panel has history, snapshots, and presets.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darkroom view with photo open and right-panel modules visible]">
+      <figcaption>Placeholder — the Darkroom view with module stack on the right.</figcaption>
+    </figure>
+
+    <h3>The Processing Pipeline</h3>
+
+    <p>Darktable applies modules in a fixed order (the <em>pixel pipeline</em>). Each module does one thing — exposure, colour, noise reduction, sharpening — and they're stacked bottom-to-top. The order matters: a module applied earlier in the pipeline affects all subsequent modules.</p>
+
+    <p>Darktable uses two module workflows: the legacy <strong>display-referred</strong> workflow and the modern <strong>scene-referred</strong> workflow. For new users on current Darktable versions (4.x), scene-referred is the default and is recommended — it's physically accurate and more flexible for HDR content.</p>
+
+    <!-- ─── KEY MODULES ───────────────────────────────────────────────────── -->
+    <h2>Key Modules to Learn First</h2>
+
+    <h3>Exposure</h3>
+
+    <p>The <strong>Exposure</strong> module adjusts the overall brightness of the image in EV (exposure value) steps. It also has a <strong>Black level correction</strong> slider to set the true black point. Start here for global brightness adjustments.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Exposure module sliders in the right panel]">
+      <figcaption>Placeholder — the Exposure module with EV and black-level sliders.</figcaption>
+    </figure>
+
+    <h3>White Balance</h3>
+
+    <p>The <strong>White balance</strong> module corrects colour temperature. Use the <strong>Colour picker</strong> (eyedropper) to click a neutral grey in the image for automatic correction, or manually adjust the <strong>Temperature</strong> and <strong>Tint</strong> sliders. You can also select a preset (Daylight, Cloudy, Shade, etc.) from the dropdown.</p>
+
+    <h3>Filmic RGB</h3>
+
+    <p><strong>Filmic RGB</strong> is the central tone-mapping module in scene-referred workflow. It maps the scene's linear light values to the display's limited range. The key controls are:</p>
+
+    <p><strong>White relative exposure</strong> — how many stops above 18% grey should clip to white. <strong>Black relative exposure</strong> — how many stops below grey should clip to black. <strong>Contrast</strong> — the overall S-curve contrast in the midtones. <strong>Latitude</strong> — how wide the linear (undistorted) region of the curve is.</p>
+
+    <p>Most of the time, adjust White and Black relative exposure until the histogram sits comfortably within the frame, then tweak contrast to taste.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Filmic RGB module showing the tone curve and sliders]">
+      <figcaption>Placeholder — Filmic RGB tone curve and exposure range sliders.</figcaption>
+    </figure>
+
+    <h3>Colour Calibration</h3>
+
+    <p><strong>Colour calibration</strong> handles white balance and colour grading in scene-referred workflow. It replaces the older Hue/Saturation module for primary colour work. Use the <strong>Illuminant</strong> picker to set white balance (works similarly to the White Balance module), and use the channel mixer for precise colour grading.</p>
+
+    <h3>Tone Equalizer</h3>
+
+    <p>The <strong>Tone equalizer</strong> lets you brighten or darken specific tonal zones (shadows, midtones, highlights) independently using a simple graphic EQ-style interface. It's the cleanest way to do dodging and burning globally. Hold <kbd>Ctrl</kbd> and scroll over any zone in the image to adjust that zone's brightness directly on the photo.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Tone Equalizer module graphic interface with zone sliders]">
+      <figcaption>Placeholder — tone equalizer with per-zone brightness controls.</figcaption>
+    </figure>
+
+    <h3>Noise Reduction (profiled)</h3>
+
+    <p>The <strong>Denoise (profiled)</strong> module uses camera-specific noise profiles to reduce luminance and chroma noise. Select your camera model and ISO from the dropdowns (or let Darktable auto-detect from EXIF). Use the <strong>Non-local means</strong> or <strong>Wavelets</strong> mode — Wavelets generally preserves more detail. Increase <strong>Strength</strong> for high-ISO images.</p>
+
+    <h3>Sharpening — Diffuse or Sharpen</h3>
+
+    <p>The <strong>Diffuse or sharpen</strong> module handles sharpening and local contrast enhancement. For basic capture sharpening, use the <strong>Dehaze</strong> or <strong>Sharpen</strong> preset as a starting point. Avoid over-sharpening — view the image at 100% while adjusting.</p>
+
+    <!-- ─── MASKING ────────────────────────────────────────────────────────── -->
+    <h2>Masking</h2>
+
+    <p>Every module in the Darkroom can be applied to the whole image or restricted to a <strong>mask</strong>. Click the mask icon at the bottom of any module to enable masking. Darktable supports parametric masks (by colour, luminosity, or hue), drawn masks (shapes and gradients), and raster masks (from a selection).</p>
+
+    <p><strong>Drawn masks</strong> are most useful for basic adjustments. Click the shape tools (brush, gradient, circle, ellipse, path) to draw the area you want to affect. Feather the edges with the <strong>Feathering</strong> slider.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darkroom with gradient mask applied to exposure module]">
+      <figcaption>Placeholder — gradient mask applied to the exposure module, brightening only the sky.</figcaption>
+    </figure>
+
+    <!-- ─── PRESETS & STYLES ──────────────────────────────────────────────── -->
+    <h2>Presets and Styles</h2>
+
+    <p>A <strong>preset</strong> saves the settings of one module for reuse. Right-click the module header to create a preset from current settings. Presets appear in the module's dropdown for quick application.</p>
+
+    <p>A <strong>style</strong> saves the settings of <em>multiple</em> modules together as a named package — the equivalent of a Lightroom preset. Export styles from <strong>Lighttable → Styles → Export</strong>, import them via <strong>Import</strong>. You can find free community styles online (search "darktable styles").</p>
+
+    <!-- ─── EXPORTING ─────────────────────────────────────────────────────── -->
+    <h2>Exporting</h2>
+
+    <p>In the Lighttable, select the photos you want to export (click, or <kbd>Ctrl+A</kbd> for all). In the right panel, open the <strong>Export</strong> module. Key settings:</p>
+
+    <p><strong>File format</strong> — JPEG for sharing/web, TIFF for high-quality archival. <strong>Quality</strong> — 90–95 for JPEG. <strong>Output colour profile</strong> — sRGB for web, AdobeRGB or Display P3 for print. <strong>Max size</strong> — set pixel width/height limits, or leave at 0 for original size. <strong>Destination</strong> — choose a folder, or send directly to an external application.</p>
+
+    <p>Click <strong>Export</strong> to begin. A progress bar appears in the top bar.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darktable export module settings panel]">
+      <figcaption>Placeholder — the export module with format, quality, and output path settings.</figcaption>
+    </figure>
+
+    <!-- ─── KEYBOARD SHORTCUTS ───────────────────────────────────────────── -->
+    <h2>Key Keyboard Shortcuts</h2>
+
+    <table>
+      <thead>
+        <tr><th>Action</th><th>Shortcut</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Switch to Lighttable</td><td><kbd>L</kbd></td></tr>
+        <tr><td>Switch to Darkroom</td><td><kbd>D</kbd></td></tr>
+        <tr><td>Zoom 100%</td><td><kbd>Z</kbd></td></tr>
+        <tr><td>Fit image to window</td><td><kbd>F</kbd></td></tr>
+        <tr><td>Toggle module on/off</td><td><kbd>Ctrl click</kbd> module header</td></tr>
+        <tr><td>Rate 1–5 stars</td><td><kbd>1</kbd>–<kbd>5</kbd></td></tr>
+        <tr><td>Reject photo</td><td><kbd>R</kbd></td></tr>
+        <tr><td>Remove rating</td><td><kbd>0</kbd></td></tr>
+        <tr><td>Copy history stack</td><td><kbd>Ctrl C</kbd></td></tr>
+        <tr><td>Paste history stack</td><td><kbd>Ctrl V</kbd></td></tr>
+        <tr><td>Undo</td><td><kbd>Ctrl Z</kbd></td></tr>
+        <tr><td>Show/hide panels</td><td><kbd>Tab</kbd></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Use the histogram as your guide.</strong> Aim to keep your histogram within bounds in the Darkroom — blown highlights or crushed blacks lose recoverable detail. Enable the <strong>Overexposure indicator</strong> (<kbd>O</kbd>) and <strong>Rawprepare clipping indicator</strong> to catch clipping early.</p>
+
+    <p><strong>Learn the scene-referred workflow before trying the legacy modules.</strong> The legacy Levels, Curves, and Hue/Saturation modules work in a display-referred context and mix poorly with scene-referred modules like Filmic RGB and Colour Calibration.</p>
+
+    <p><strong>Back up your Darktable database.</strong> All your edits are stored in <code>~/.config/darktable/library.db</code> (Linux) or <code>~/Library/Application Support/darktable/library.db</code> (macOS). Back this up regularly — without it, you lose all your edit history.</p>
+
+    <p><strong>On Apple Silicon</strong>, Darktable uses OpenCL for GPU-accelerated processing. If your Mac has a discrete GPU or the Apple Silicon GPU is recognised, enable OpenCL in <strong>Preferences → Processing → OpenCL</strong> for faster exports and module previews.</p>
+
+    <p><strong>On Fedora KDE</strong>, the Flatpak version is generally the most up-to-date. If colour management looks wrong, ensure your monitor profile is set correctly in KDE's <strong>System Settings → Color Corrections</strong>.</p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

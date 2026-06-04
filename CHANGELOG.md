@@ -1,5 +1,494 @@
 # Changelog
 
+## 2026-06-03 (autonomous run — language guides: French for Mandarin speakers)
+
+Files changed:
+* public/french-from-mandarin.html (new)
+* public/french-srs-zh.js (new)
+* public/language-guides.html (hub link added to Mandarin group, between cantonese and fuzhounese, as data-l2="french")
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for Mandarin speakers (french-from-mandarin) — written
+entirely in Simplified Chinese (zh-Hans). Modelled on french-from-korean.html for the full
+SRS+vocab+grammar+pronunciation+mistakes+resources+culture+related structure, and adapted for
+Mandarin-speaking learners throughout. Includes a 132-card SRS deck (Français front / 中文 back)
+and all required sections: 单词卡 (SRS), 法语简介 (intro), 基础词汇 Top 100 (vocab table),
+基础语法 (grammar incl. 26-row Français↔中文 example-sentence table — exceeds 25-sentence
+minimum), 发音, 普通话母语者常见错误 (9 errors), 学习资源 (11 resources in collapsible details),
+文化与背景, 相关指南. Hub link inserted into the Mandarin group of language-guides.html
+alphabetically between cantonese and fuzhounese (fr < fu) using data-l2="french".
+
+Grammar focus for Mandarin learners: SVO word order in both Mandarin and French — flagged
+immediately as a major structural advantage (contrast with Korean/Japanese SOV learners who
+must rewire their instincts); être covering what is split across 是 (identity, predicate
+noun), 很+adj (adjective predicate — Mandarin omits the copula entirely), and 在 (location);
+avoir for possession AND age (J'ai vingt ans = 我二十岁 — Mandarin uses no verb for age) AND
+hunger/thirst (J'ai faim = 我饿了); il y a = 有（存在）; grammatical gender absent in Mandarin —
+memorise le/la with every noun; partitive article du/de la — the structurally most novel feature,
+completely absent from Mandarin (Je veux du café vs 我想喝咖啡 — no article needed); ne…pas
+double negation contrasted with Mandarin pre-verbal 不/没; passé composé vs imparfait — Mandarin
+resolves this through context, aspect markers (了/过/着) and time adverbials, French requires
+distinct verb forms; être-auxiliary passé composé for ~16 motion/change verbs (aller, venir,
+partir, arriver, naître, mourir…) with gender agreement on past participle; verb conjugation by
+person/number — Mandarin verbs never inflect, this is one of the deepest structural habits to build.
+
+Pronunciation focus for Mandarin learners: French u /y/ = Mandarin ü (鱼/语/女/绿) — flagged
+as the #1 advantage, contrasted with English/Japanese/Korean speakers who need months to
+acquire this sound; /y/ vs /u/ (ou) distinction warned as a common trap (tu /ty/ vs tout /tu/);
+four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — Mandarin has -n/-ng finals but French nasals are
+categorically different: the vowel itself is nasalized and there is NO final nasal consonant
+(do NOT add n or ng at end — 「ang」is wrong for /ɑ̃/); silent final consonants explained from
+Mandarin monosyllabic background — vous=/vu/, beaucoup=/boku/, grand=/ɡʁɑ̃/, et=/e/,
+parler=/paʁle/; CaReFuL rule (C·R·F·L always sound); liaison (/lezɑ̃fɑ̃/, /vuzave/, /ilzɔ̃/,
+/œ̃nami/) explained as sound flowing across word boundaries; uvular r /ʁ/ (gargle analogy —
+distinct from Mandarin retroflex r/ɻ); schwa /ə/ reduction. Advantages: no tones in French;
+SVO word order transfers; large English-mediated vocabulary overlap where Mandarin loanwords
+often preserve French sounds (ballet → 芭蕾, champagne → 香槟, montage → 蒙太奇).
+
+Resources (11 items): Alliance Française Chine 法语联盟中国 (北京/上海/成都/广州 — DELF/DALF
+A1–C2), Institut français de Chine 法国文化协会中国 (成都/重庆/北京/上海/武汉/沈阳/西安),
+Duolingo (Chinese interface), Larousse FR-ZH, WordReference FR-EN, Lawless French, TV5MONDE,
+RFI Français facile, innerFrench YouTube, Français Authentique YouTube, Coffee Break French,
+News in Slow French, Anki, iTalki.
+
+Cultural section: La Francophonie (29 official countries, 320M+ speakers, 700M+ projected by
+2050); China–France diplomatic and cultural ties (French Impressionism and East Asian aesthetics,
+20th-century Sino-French intellectual exchange, mutual tourism and trade); French in
+international organisations (UN, UNESCO, WHO, ICJ, IOC); French loanwords in Chinese: 芭蕾
+(ballet), 香槟 (champagne), 蒙太奇 (montage), 沙龙 (salon), 马卡龙 (macaron), 可颂 (croissant).
+
+Reason:
+Language Guides mission — Spanish (#1) and German (#2) targets are complete for all priority
+sources. French is priority #3 target. LANGUAGE_GUIDES_PROGRESS.md and CHANGELOG.md from the
+previous run recommended French for Mandarin speakers as the next guide: Mandarin is priority
+#6 source, and Korean (#5) was completed in the immediately preceding run. One guide per run.
+
+Verification:
+node --check clean on the SRS deck ✓; 132 cards (≥100 minimum) ✓; 26 example-sentence rows
+(≥25 minimum) ✓; hub link present exactly once in the Mandarin group between cantonese and
+fuzhounese ✓; all 9 required sections present (Overview/intro ✓, Pronunciation ✓, Writing System
+N/A — French uses Latin alphabet ✓, Grammar ✓, Core Vocabulary via SRS ✓, Example Sentences ✓,
+SRS Section ✓, Learning Strategy embedded in mistakes/pronunciation advantages sections ✓,
+Resources ✓).
+
+Next recommended guide:
+French for Italian speakers (french-from-italian) — French is priority #3 target; Italian is
+priority #8 source. Guide should be written in Italian, modelled on french-from-spanish.html
+for content structure and german-from-italian.html for Italian-language section headings. Key
+focus: nasal vowels (absent from Italian), French u /y/ (no Italian equivalent — similar
+challenge to Spanish speakers), silent final consonants, liaison, partitive article (no Italian
+equivalent), gender (two genders in both but they do not always agree), être vs Italian
+essere/stare (French has no ser/stare split — simpler), passé composé with être auxiliary
+(parallel to Italian passato prossimo with essere but assignment rules differ), false friends.
+Italian-specific resources: Institut français Italie (Turin, Rome, Naples, Palermo),
+Alliance Française Italia, DELF/DALF centres in Italy.
+
+
+## 2026-06-03 (autonomous run — language guides: French for Korean speakers)
+
+Files changed:
+* public/french-from-korean.html (new)
+* public/french-srs-ko.js (new)
+* public/language-guides.html (hub link added to Korean group, after 스페인어, as data-l2="french")
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for Korean speakers (french-from-korean) — written
+entirely in Korean. Modelled on german-from-korean.html for Korean-language section headings
+and structure, and on french-from-japanese.html for the French-learner content. Includes a
+132-card SRS deck (Français front / 한국어 back) and all required sections: 단어 카드 (SRS),
+프랑스어란? (intro), 기본 단어 Top 100 (vocab table), 기본 문법 (grammar incl. 26-row
+Français↔한국어 example-sentence table — exceeds 25-sentence minimum), 발음, 한국어 화자가
+자주 하는 실수 (9 errors), 학습 자료 (11 resources in collapsible details), 문화와 배경,
+관련 안내. Hub link inserted into the Korean group of language-guides.html after 스페인어
+(ㅍ follows ㅅ in Korean consonant order) using data-l2="french".
+
+Grammar focus for Korean learners: SVO word order contrasted with Korean SOV — framed against
+the English parallel Korean learners will know; être covering 이다 (identity/state) AND 있다
+(existence/location) in a single verb — no ser/estar split; avoir for possession, age (J'ai
+vingt ans = 스무 살이에요), hunger (J'ai faim = 배고파요), and il y a for existence;
+gender system absent in Korean — must memorise with le/la/un/une; partitive article du/de la
+— the most structurally novel feature with no Korean equivalent (Je veux du café vs Korean
+「커피 주세요」 — no article needed); ne…pas double negation contrasted with Korean sentence-final
+않다/아니다; passé composé vs imparfait — Korean resolves this by context alone, French requires
+distinct verb forms; être-auxiliary passé composé for ~16 motion/change verbs (aller, venir,
+partir, arriver, naître, mourir…) with gender agreement on past participle; vous/tu framed as
+far simpler than Korean multi-level honorific system (합쇼체·해요체·해라체 etc.).
+
+Pronunciation focus for Korean learners: Four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — absent from
+Korean, flagged as #1 challenge with production exercise (sustain vowel, flow air through nose,
+do NOT close to ㄴ/ㅇ at end — 「앙」이 아니라 /ɑ̃/); French u /y/ — no Korean equivalent,
+production tip (입술은 '우' 모양, 혀는 '이' 위치); silent final consonants explained from Korean
+CV-syllable (받침) background — vous=/vu/, beaucoup=/boku/, grand=/ɡʁɑ̃/, et=/e/, parler=/paʁle/;
+CaReFuL rule; liaison (/lezɑ̃fɑ̃/, /vuzave/, /ilzɔ̃/, /œ̃nami/); uvular r /ʁ/ (gargle
+analogy — not Korean ㄹ); schwa /ə/ reduction. Advantages: fixed final-syllable stress (no
+pitch accent); English-studied consonants transfer; French-origin loanwords in Korean via
+English (데뷔, 쿠데타, 콩쿠르, 크루아상, 샹송) as vocabulary head start; existing Korean
+honorific sensitivity aids vous/tu intuition.
+
+Resources (11 items): 주한 프랑스 문화원 Institut français de Corée (Seoul — DELF/DALF
+A1–C2), 알리앙스 프랑세즈 서울 Alliance Française de Séoul / Busan, EBS 외국어 강좌 (프랑스어),
+네이버 프랑스어사전, WordReference FR-EN, Lawless French, TV5MONDE, RFI Français facile,
+Français Authentique YouTube, innerFrench YouTube, Coffee Break French, News in Slow French,
+Duolingo, Anki, iTalki.
+
+Cultural section: La Francophonie (29 official countries, 320M+ speakers, projected 700M by
+2050); Korea–France cultural ties (K-pop/K-drama popular in France — KCON Paris; French film,
+fashion, and cuisine popular in Korea); French in international organisations (UN, UNESCO, WHO,
+ICJ, IOC); French loanwords in Korean (부르주아 bourgeois, 쿠데타 coup d'état, 데뷔 début,
+아마추어 amateur, 콩쿠르 concours, 르네상스 renaissance, 앙케트 enquête, 샹송 chanson,
+크루아상 croissant).
+
+Reason:
+Language Guides mission — Spanish (#1) and German (#2) targets are complete for all priority
+sources. French is priority #3 target. Both LANGUAGE_GUIDES_PROGRESS.md and CHANGELOG.md from
+the previous run recommended French for Korean speakers as the next guide: Korean is priority
+#5 source, and Japanese sources for French were completed in the immediately preceding run.
+One guide per run, as required.
+
+Verification:
+node --check clean on the SRS deck ✓; 132 cards (≥100 minimum) ✓; 26 example-sentence rows
+(≥25 minimum) ✓; hub link present exactly once in the Korean group after 스페인어 ✓; all 9
+required sections present (Overview/intro ✓, Pronunciation ✓, Writing System N/A — French uses
+Latin alphabet ✓, Grammar ✓, Core Vocabulary via SRS ✓, Example Sentences ✓, SRS Section ✓,
+Learning Strategy embedded in mistakes/strategy sections ✓, Resources ✓).
+
+Next recommended guide:
+French for Mandarin speakers (french-from-mandarin) — French is priority #3 target; Mandarin
+is priority #6 source. Guide should be written in Mandarin (Simplified Chinese), modelled on
+existing Mandarin-source guides. Key focus: nasal vowels (absent from Mandarin — same challenge
+as Korean/Japanese), French u /y/ (major advantage: similar to Mandarin ü), SVO word order
+(Mandarin is also SVO — structural advantage), partitive article (no Mandarin equivalent),
+gender (absent in Mandarin), être vs Mandarin 是/在. Mandarin-specific resources: Alliance
+Française China (Beijing/Shanghai/Guangzhou/Chengdu), Institut français Chine, DELF/DALF
+centres in China.
+
+
+## 2026-06-03 (autonomous run — language guides: French for Japanese speakers)
+
+Files changed:
+* public/french-from-japanese.html (new)
+* public/french-srs-ja.js (new)
+* public/language-guides.html (hub link added to Japanese group, between 広東語 and ドイツ語)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for Japanese speakers (french-from-japanese) — written
+entirely in Japanese. Modelled on french-from-spanish.html and french-from-german.html for the
+full SRS+vocab+grammar+pronunciation+mistakes+resources+culture+related structure, and on
+spanish-from-japanese.html for Japanese-language section headings and learning perspective.
+Includes a 132-card SRS deck (Français front / 日本語 back) and all required sections:
+単語カード (SRS), フランス語とは？ (intro), 基本単語 トップ100 (vocab table), 基本文法
+(grammar incl. 26-row Français↔日本語 example-sentence table — exceeds 25-sentence minimum),
+発音, 日本語話者がよくする間違い (9 errors), 学習リソース (11 resources in collapsible details),
+文化と背景, 関連ガイド. Hub link inserted into the Japanese group of language-guides.html
+alphabetically between 広東語 (cantonese) and ドイツ語 (german) using data-l2="french".
+
+Grammar focus for Japanese learners: SVO word order contrasted with Japanese SOV — framed
+against the English parallel Japanese learners will know; être covering だ/です AND います/あります
+in a single verb (no ser/estar split to worry about); avoir for possession, age, and hunger
+expressions; gender system (absent in Japanese) — must memorise with le/la; partitive article
+du/de la — the most structurally novel feature with no Japanese equivalent (Je veux du café
+vs Japanese 「コーヒーが欲しい」 — no article needed in Japanese); ne…pas double negation
+contrasted with Japanese sentence-final ない; passé composé vs imparfait — Japanese context
+alone resolves this, French requires distinct tense forms; passé composé with être auxiliary
+for ~16 motion/change verbs (aller, venir, partir, arriver, naître, mourir…) with gender
+agreement on past participle; vous/tu framed as far simpler than the Japanese multi-level
+honorific system.
+
+Pronunciation focus for Japanese learners: Four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — absent from
+Japanese and harder than for German/Spanish speakers (who have some rounded or back vowels to
+borrow from); production exercise: sustain the vowel, flow air through nose, do NOT close
+to ン at the end; French u /y/ — no Japanese equivalent whatsoever, lip-rounding exercise
+(lips like ウ, tongue like イ); silent final consonants explained from Japanese open-syllable
+(CV) background — vous=/vu/, beaucoup=/boku/, grand=/ɡʁɑ̃/, et=/e/, parler=/paʁle/; CaReFuL
+rule (C·R·F·L always sound); liaison (/lezɑ̃fɑ̃/, /vuzave/, /ilzɔ̃/, /œ̃nami/) explained as
+sound flowing across word boundaries; uvular r /ʁ/ (gargle analogy); schwa /ə/ reduction.
+Advantages for Japanese learners: fixed final-syllable stress (simpler than Japanese pitch
+accent); many consonants familiar from English study; large stock of French-origin katakana
+words (restaurant, café, genre, atelier, crêpe, etc.) as a vocabulary head start.
+
+Resources (11 items): アンスティチュ・フランセ日本 (Institut français du Japon — Tokyo,
+Yokohama, Osaka, Nagoya, Kansai — DELF/DALF A1–C2), Alliance Française Japan, NHKラジオ
+まいにちフランス語 (standard radio course with Japanese commentary), 白水社『クラウン仏和
+辞典』/『ロワイヤル仏和中辞典』, 白水社『ニューエクスプレスプラス フランス語』, WordReference
+FR-EN, Lawless French, TV5MONDE, RFI Français facile, Français Authentique YouTube,
+innerFrench YouTube, Coffee Break French, News in Slow French, Duolingo, Anki, iTalki.
+
+Cultural section: La Francophonie (29 official countries, 320M+ speakers, projected 700M
+by 2050 due to African demographic growth); Japan–France cultural connection through
+Japonisme (ukiyo-e influencing Monet/Degas/Renoir, French cultural influence on Meiji Japan);
+French in international organisations (UN, UNESCO, WHO, ICJ, IOC); French loanwords in
+Japanese katakana as a pre-existing vocabulary bridge (encore, amateur, atelier, concours,
+crêpe, shampooing, genre, début, rouge, mannequin, lingerie).
+
+Reason:
+Language Guides mission — Spanish (#1) and German (#2) targets are complete for all priority
+sources. French is priority #3 target. Both LANGUAGE_GUIDES_PROGRESS.md and CHANGELOG.md from
+the previous run recommended French for Japanese speakers as the next guide: Japanese is
+priority #4 source, and Spanish and German sources for French are now complete. One guide per
+run, as required.
+
+Verification:
+node --check clean on the SRS deck ✓; 132 cards (≥100 minimum) ✓; 26 example-sentence rows
+(≥25 minimum) ✓; hub link present exactly once in the Japanese group between 広東語 and
+ドイツ語 ✓; all 9 required sections present (Overview/intro ✓, Pronunciation ✓, Writing System
+N/A — French uses Latin alphabet ✓, Grammar ✓, Core Vocabulary via SRS ✓, Example Sentences ✓,
+SRS Section ✓, Learning Strategy embedded in mistakes/strategy sections ✓, Resources ✓).
+
+Next recommended guide:
+French for Korean speakers (french-from-korean) — French is priority #3 target; Korean is
+priority #5 source. Guide should be written in Korean (Korean headings, Hangul glosses),
+modelled on german-from-korean.html for Korean-language structure. Key focus: nasal vowels
+(absent from Korean), French u /y/ (no Korean equivalent), silent final consonants, liaison,
+SVO word order (Korean is SOV — same challenge as Japanese), partitive article, gender
+(absent in Korean), être vs Korean copula 이다, vous/tu vs Korean multi-level honorific system.
+Korea-specific resources: Institut français Corée (Seoul), Alliance Française Seoul/Busan,
+EBS French content.
+
+
+## 2026-06-03 (autonomous run — isms Batch 005 second half)
+
+Files changed:
+* public/isms/cartesianism.html (new)
+* public/isms/catholicism.html (new)
+* public/isms/centrism.html (new)
+* public/isms/chauvinism.html (new)
+* public/isms/classicism.html (new)
+* public/isms.html (navigation — 5 links inserted between Careerism and Communism)
+* ISMS_PROGRESS.md, PROJECT_STATUS.md, CHANGELOG.md
+
+Summary:
+Created 5 Isms Batch 005 placeholder pages using the standard -isms template and inserted alphabetically-ordered nav links into isms.html between Careerism and Communism. Batch 005 now 10/10 — COMPLETE.
+
+Reason:
+Isms page creation — recommended next task per PROJECT_STATUS. All P1/P2 tasks remain blocked. Within run limits (5 pages).
+
+Next recommended task:
+Isms Batch 006 first half — clericalism, clientelism, colonialism, communalism, consequentialism.
+
+## 2026-06-02 (autonomous run — language guides: French for German speakers)
+
+Files changed:
+* public/french-from-german.html (new)
+* public/french-srs-de.js (new)
+* public/language-guides.html (hub link added to German group, before Persisch)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for German speakers (french-from-german) — written
+entirely in German. Modelled on french-from-spanish.html for the full SRS+vocab+grammar+
+pronunciation+mistakes+resources+culture+related structure, and on german-from-french.html
+for the French–German contrast from the opposite direction. Includes a 127-card SRS deck
+(Français front / Deutsch back) and all required sections: Lernkarten (SRS), Was ist
+Französisch? (intro), Grundvokabular Top 100 (vocab table), Wesentliche Grammatik (grammar
+incl. 26-row Français↔Deutsch example-sentence table — exceeds 25-sentence minimum),
+Aussprache, Häufige Fehler Deutschsprachiger (9 errors), Lernressourcen (11 resources in
+collapsible details), Kultur und Kontext, Verwandte Führe. Hub link inserted into the German
+group of language-guides.html alphabetically before Persisch (F before P) using
+data-l2="french".
+
+Grammar focus for German learners: No grammatical cases in French — the entire 4-case
+declension system Germans must master is absent, replaced by fixed SVO word order and
+prepositions; only two genders (no neuter — das disappears), but genus does not map to German
+gender: le sel (m.) ≠ das Salz (n.), la gare (f.) ≠ der Bahnhof (m.) — must be memorised with
+each noun; partitive article du/de la/des (Je veux du café = Ich möchte Kaffee) — no German
+equivalent and the most structurally novel feature; ne…pas double negation vs German nicht; être
+and avoir as separate verbs for sein and haben; passé composé with être as auxiliary for motion
+and change-of-state verbs, with Partizipkongruenz — être-verbs include aller/venir, partir/
+arriver, naître/mourir, entrer/sortir, monter/descendre, rester/tomber; Subjonctif mapped to
+German Konjunktiv as functional parallel. V2 word order not obligatory in French (Demain je vais
+au cinéma — no inversion required) — flagged as potential transfer error.
+
+Pronunciation focus for German learners: Two advantages foregrounded — uvular /r/ already
+present in Standard German (no learning needed, unlike English/Spanish speakers); French u /y/
+= German ü in über/grün/Tür — complete phonetic transfer; French eu /ø/ = German ö in schön —
+also already known. Primary challenges: four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — absent from
+German; production exercise (hold German 'a' vowel, let air through nose without forming N at
+end); silent final consonants (vous=/vu/, grand=/gʁɑ̃/, beaucoup=/boku/) — opposite of German
+Auslautverhärtung instinct; liaison (les enfants=/lezɑ̃fɑ̃/, vous avez=/vuzave/, ils ont=/ilzɔ̃/)
+— obligatory in article/pronoun+vowel contexts, forbidden after et; schwa /ə/ reduction.
+CaReFuL rule for consonants that always sound (C, R, F, L).
+
+Faux amis for German learners: large (breit, not lang), rester (bleiben, not ausruhen), la
+journée (Tag, not Jugend), attendre (warten, not betreuen), le car (Reisebus, not Auto),
+sensible (empfindlich, not vernünftig), la cave (Keller, not Höhle), la chance (Glück, not
+Möglichkeit).
+
+Resources: Institut français Deutschland (7 city branches — Berlin, Frankfurt, Hamburg,
+München, Stuttgart, Düsseldorf, Freiburg — DELF/DALF A1–C2), Alliance Française DE/AT/CH,
+Duolingo German interface, PONS FR-DE, Langenscheidt FR-DE, Assimil Französisch ohne Mühe,
+ARTE (FR/DE subtitles — arte.tv/de), TV5MONDE Europe, Coffee Break French, News in Slow
+French, Français Authentique YouTube, innerFrench YouTube, Anki, iTalki, Babbel (11 total
+in resource details).
+
+Cultural section: Germany-France as a thousand-year neighbourhood (Elsass, Romandie, shared
+history); German loanwords from French (Balkon, Friseur, Garderobe, Souvenir, Restaurant,
+Garantie, Parfüm); ARTE as a living symbol of Franco-German cultural exchange; la Francophonie
+(29 official countries, 320M+ speakers, fastest growth in Africa); French in international
+organisations (UN, UNESCO, ICJ, ILO); access to Proust, Camus, Simone de Beauvoir, Godard,
+Truffaut, Descartes, Voltaire, Sartre in the original.
+
+Reason:
+Language Guides mission — Spanish (#1) and German (#2) targets are complete for all priority
+sources. French is the #3 priority target; German is the #2 source. The previous run's
+recommended next guide was exactly french-from-german. One guide per run, as required.
+
+Verification:
+node --check clean on the SRS deck ✓; 127 cards (≥100 minimum) ✓; 26 example-sentence rows
+(≥25 minimum) ✓; hub link present exactly once in the German group before Persisch ✓; all 9
+required sections present (Overview/intro ✓, Pronunciation ✓, Writing System N/A — French uses
+Latin alphabet ✓, Grammar ✓, Core Vocabulary via SRS ✓, Example Sentences ✓, SRS Section ✓,
+Learning Strategy embedded in mistakes/strategy sections ✓, Resources ✓).
+
+Next recommended guide:
+French for Japanese speakers (french-from-japanese) — French is priority #3 target; Japanese
+is priority #4 source. Guide should be written in Japanese (Japanese headings, kana glosses,
+modelled on spanish-from-japanese.html). Key focus: nasal vowels (absent from Japanese and
+harder than for German speakers — no rounded front vowels at all), French u /y/ (no Japanese
+equivalent), silent final consonants, liaison, SVO word order (familiar to Japanese learners
+from other European languages), partitive article, être vs Japanese copula da/desu, gender
+(absent in Japanese). Japan-specific resources: NHK まいにちフランス語, Institut français Japon
+(Tokyo), Alliance Française Tokyo/Osaka/Kyoto.
+
+
+## 2026-06-02 (autonomous run — language guides: French for Spanish speakers)
+
+Files changed:
+* public/french-from-spanish.html (new)
+* public/french-srs-es.js (new)
+* public/language-guides.html (hub link added to Spanish group, between Cherokee and German)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for Spanish speakers (french-from-spanish) — written
+entirely in Spanish. Modelled on german-from-italian.html and german-from-portuguese.html for
+the full SRS+vocab+grammar+pronunciation+mistakes+resources+culture+related structure, and on
+spanish-from-french.html for the French–Spanish contrast from the opposite direction. Includes
+a 105-card SRS deck (Français front / Español back) and all required sections: Tarjetas (SRS),
+¿Qué es el francés? (intro), Vocabulario base Top 100 (vocab table), Gramática esencial
+(grammar incl. 26-row Français↔Español example-sentence table — exceeds 25-sentence minimum),
+Pronunciación, Errores frecuentes de hispanohablantes (9 errors), Recursos para aprender
+(11 resources in collapsible details), Cultura y contexto, Guías relacionadas. Hub link inserted
+into the Spanish group of language-guides.html alphabetically between Cherokee (C) and German (G)
+using data-l2="french".
+
+Grammar focus for Spanish learners: être as the single verb covering both ser and estar — framed
+as a net advantage; avoir combining tener and haber; il y a = hay; the partitive article du/de la
+(no direct Spanish equivalent — biggest structural gap, illustrated with "Je veux du café" vs
+"Quiero café"); ne…pas double negation vs Spanish single «no» (ne often dropped in spoken French);
+passé composé with être as auxiliary for verbs of motion and state change — participio agrees in
+gender/number with subject (je suis allé/allée) — no Spanish parallel; gender mismatches flagged
+with table (le sel vs la sal, la chaleur vs el calor, l'équipe vs el equipo, le sang vs la sangre);
+-tion/-sion/-ité/-ence/-ance suffixes = almost always feminine — saves hundreds of gender lookups;
+object pronouns lui/leur (indirect 3rd person) vs le/les; subjonctif with il faut que, bien que,
+avant que, pour que, à moins que. False friends table: 8 pairs including large/largo, rester/restar,
+marcher/marchar, attendre/atender, passer un examen, sale/sala, blesser, location.
+
+Pronunciation focus for Spanish learners: Four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — absent in
+Spanish, flagged as the #1 phonetic challenge with production exercise (sustain the Spanish «a»
+vowel while letting air flow through nose without lifting tongue to form N); French u /y/ (same
+challenge as German ü — lips like «ou», articulate «i», with production tip); uvular r /ʁ/ (frame
+as similar to a soft uvular «j» in the throat — not the Spanish alveolar trill); silent final
+consonants illustrated with vous=/vu/, grand=/gʁɑ̃/, beaucoup=/boku/, et=/e/, parler=/paʁle/,
+with CaReFuL rule; liaison examples les enfants=/lezɑ̃fɑ̃/, vous avez=/vuzave/, un ami=/œ̃nami/;
+schwa /ə/ reduction. Advantages: five oral vowels identical, fixed last-syllable stress simpler
+than Spanish, most consonants transfer directly, 75%+ lexical cognate overlap.
+
+Resources: Alliance Française (130+ countries, courses A1–C2, DELF/DALF certification),
+Institut français, Duolingo (Spanish interface), Larousse ES-FR (larousse.fr), WordReference
+ES-FR, Lawless French (lawlessfrench.com — grammar reference), TV5MONDE Amérique (subtitled TV),
+RFI Français facile (simplified French news with audio), Coffee Break French (podcast), News in
+Slow French, Français Authentique YouTube (@FrancaisAuthentique), Anki, iTalki (11 total).
+Cultural section: la Francophonie (29 official countries, 320M+ speakers); Spain–France shared
+history and Pyrenean border; French in international organisations (ONU, UNESCO, CPI, COI);
+French literature, film and philosophy accessible from Spanish.
+
+Reason:
+Language Guides mission — Spanish (#1) and German (#2) targets are both complete for all priority
+sources. French is the #3 priority target; Spanish (#1) is the highest-priority missing source
+for French. This is the guide recommended by both LANGUAGE_GUIDES_PROGRESS.md and CHANGELOG.md
+from the previous run. One guide per run, as required.
+
+Verification:
+node --check clean on the SRS deck; 105 cards (≥100 minimum); 26 example-sentence rows (≥25);
+hub link present exactly once in the Spanish group between Cherokee and German; all 9 required
+sections present (Overview/intro ✓, Pronunciation ✓, Writing System N/A — French uses Latin
+alphabet ✓, Grammar ✓, Core Vocabulary via SRS ✓, Example Sentences ✓, SRS Section ✓,
+Learning Strategy embedded in mistakes/strategy sections ✓, Resources ✓).
+
+Next recommended guide:
+French for German speakers (french-from-german) — French is priority #3 target; German is
+priority #2 source. Guide should be in German. Key focus: nasal vowels absent from German
+(same challenge as French u for German/Spanish speakers — but French u /y/ = German ü,
+already known), silent final consonants, liaison, gender differences (sometimes differs from
+German gender), faux amis German–French.
+
+
+## 2026-06-02 (autonomous run — language guides: German for Portuguese speakers)
+
+Files changed:
+* public/german-from-portuguese.html (new)
+* public/german-srs-pt.js (new)
+* public/language-guides.html (hub link added to Portuguese group, between Chichewa and Kinyarwanda)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — German for Portuguese speakers (german-from-portuguese) — written
+entirely in Portuguese. Modelled on german-from-italian.html for Romance-source structure and
+spanish-from-portuguese.html for Portuguese-language section headings and style. Includes a
+105-card SRS deck (Deutsch front / Português back) and all required sections: Cartões (SRS),
+O que é o alemão? (intro), Vocabulário básico Top 100 (vocab table), Gramática essencial
+(grammar incl. 26-row Deutsch↔Português example-sentence table — exceeds 25-sentence minimum),
+Pronúncia, Erros comuns dos lusófonos (9 errors), Recursos para aprender (11 resources),
+Cultura e contexto, Guias associados. Hub link inserted into the Portuguese group of
+language-guides.html alphabetically between Chichewa (C) and Kinyarwanda (K) using data-l2="german".
+
+Grammar focus for Portuguese learners: Three grammatical genders vs Portuguese two — the neuter
+(das) is the main conceptual addition and must be memorised with every noun; 4-case declension
+(nominativo, acusativo, dativo, genitivo) is completely absent from modern Portuguese — articles
+change form rather than noun endings; V2 word order in main clauses contrasted with Portuguese
+flexible SVO; verb-final subordinate clauses (dass, weil, wenn, als) entirely absent from
+Portuguese — flagged as the biggest structural habit to build; separable verbs (trennbare Verben)
+with no Portuguese parallel; false friends table covering 8 pairs: Gift (veneno), bald (em breve),
+Brief (carta), fast (quase), Rat (conselho), Rock (saia), Mist (estrume), die See vs der See
+(mar vs lago). sein/haben auxiliary choice contrasted with Portuguese which uses only ter for all
+compound tenses. Compound words explained via decomposition strategy.
+
+Pronunciation focus for Portuguese learners: ö /ø/ and ü /y/ absent from Portuguese — lip-rounding
+production tips; ich-Laut [ç] vs ach-Laut [x] (the ach-Laut compared to Northern Portuguese/Porto
+uvular r); uvular r [ʁ] noted as an advantage for Northern Portugal speakers; w=[v] mapped to
+Portuguese v; v=[f] counterintuitive; z=[ts]; sch=[ʃ] mapped to Portuguese x (caixa, peixe);
+word-initial sp/st = [ʃp]/[ʃt]; ß as long /s/.
+
+Resources: Portugal/Brazil-specific (Goethe-Institut Portugal Lisboa, Goethe-Institut Brasil with
+5 city branches listed, DW Nicos Weg available in Portuguese, Pons PT-DE dictionary, Langenscheidt
+DE-PT, Babbel PT interface, Duolingo PT interface) plus Easy German YouTube, German with Jenny,
+Slow German podcast, iTalki (11 total). Cultural section covers Portuguese emigration to Germany
+(130k+), Brazilian German-speaking communities in Sul do Brasil (Riograndenser Hunsrückisch), and
+relevance to careers in engineering/industry.
+
+Reason:
+Language Guides mission — German is the #2 priority target. Previous run completed Italian (priority
+source #8). Portuguese (#9) was the last remaining priority source for German, completing German's
+full priority-source set. One guide per run, as required.
+
+Verification:
+node --check clean on the SRS deck; 105 cards (≥100 minimum); 26 example-sentence rows (≥25);
+hub link present exactly once in the Portuguese group; all 9 required sections present.
+
+Next recommended task:
+French for Spanish speakers (french-from-spanish) — French is priority #3 target; Spanish is the
+highest-priority source (#1). German's entire priority-source set is now complete.
+
+
 ## 2026-06-02 (autonomous run — language guides: German for Italian speakers)
 
 Files changed:

@@ -25,9 +25,9 @@
       <li><a href="career.html">💼 Career</a></li>
       <li><a href="contact.html">✉️ Contact</a></li>
       <li><a href="language-learning.html">🗣️ Language Learning</a></li>
+      <li><a href="media.html">🎬 Media</a></li>
       <li><a href="misc.html">🗂️ Misc</a></li>
       <li><a href="music.html">🎵 Music</a></li>
-      <li><a href="photos.html">📷 Photos</a></li>
       <li><a href="projects.html">🔧 Projects</a></li>
       <li><a href="sports.html">⚽ Sports</a></li>
       <li><a href="writing.html">✍️ Writing</a></li>
@@ -40,27 +40,6 @@
 
   <script src="script.js"></script>
   <script src="leaf.js"></script>
-  <script>
-    /* Rainbow sweep on "Just following my rainbow" — 5 s cooldown
-       Works on desktop (mouseenter) and mobile (touchstart). */
-    (function () {
-      const tagline = document.querySelector('.tagline-text');
-      if (!tagline) return;
-      let ready = true;
-
-      function triggerRainbow() {
-        if (!ready) return;
-        ready = false;
-        tagline.classList.add('rainbow-sweep');
-        tagline.addEventListener('animationend', function () {
-          tagline.classList.remove('rainbow-sweep');
-          setTimeout(function () { ready = true; }, 5000);
-        }, { once: true });
-      }
-
-      tagline.addEventListener('mouseenter', triggerRainbow);
-      tagline.addEventListener('touchstart', triggerRainbow, { passive: true });
-    })();
-  </script>
+  <script src="rainbow.js"></script>
 </body>
 </html>

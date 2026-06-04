@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDenLive Tutorial — Steven Legg</title>
+  <meta name="description" content="Comprehensive KDenLive tutorial for macOS Apple Silicon and Fedora KDE — project setup, timeline editing, effects, audio, and export.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <a class="back-link" href="../software-tutorials.html">← Software Tutorials</a>
+
+  <header>
+    <h1>KDenLive</h1>
+    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+  </header>
+
+  <article>
+
+    <img class="article-hero" src="../../../img/technology/kdenlive.jpeg" alt="KDenLive">
+
+    <p>KDenLive (KDE Non-Linear Video Editor) is a free, open-source video editor that supports multi-track editing, a wide range of formats (including ProRes, H.264, HEVC, and more), a GPU-accelerated preview, and a comprehensive effects library. It's a capable alternative to DaVinci Resolve for most editing tasks, and it's particularly well-integrated on KDE Plasma.</p>
+
+    <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
+    <h2>Installation</h2>
+
+    <h3>macOS (Apple Silicon)</h3>
+
+    <p>Download the <code>.dmg</code> from <a href="https://kdenlive.org/en/download/" target="_blank" rel="noopener noreferrer">kdenlive.org/download</a>. KDenLive is distributed as a universal binary and runs natively on Apple Silicon. Open the <code>.dmg</code>, drag KDenLive to Applications, and launch it.</p>
+
+    <p>Via Homebrew:</p>
+
+    <pre><code>brew install --cask kdenlive</code></pre>
+
+    <p><strong>Note:</strong> On first launch, macOS may warn that KDenLive is from an unidentified developer. Go to <strong>System Settings → Privacy &amp; Security</strong> and click "Open Anyway".</p>
+
+    <h3>Fedora KDE</h3>
+
+    <p>Install via Flatpak for the latest version:</p>
+
+    <pre><code>flatpak install flathub org.kde.kdenlive</code></pre>
+
+    <p>Or via DNF (may be an older version):</p>
+
+    <pre><code>sudo dnf install kdenlive</code></pre>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: KDenLive splash screen or welcome dialog]">
+      <figcaption>Placeholder — KDenLive on first launch.</figcaption>
+    </figure>
+
+    <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
+    <h2>Interface Overview</h2>
+
+    <p>KDenLive's default layout has four main areas: the <strong>Project Bin</strong> (top-left, your media), the <strong>Clip Monitor</strong> (top-centre, preview source clips), the <strong>Project Monitor</strong> (top-right, preview the timeline), and the <strong>Timeline</strong> (bottom, where you assemble your edit). The <strong>Effect Stack</strong> panel appears when you apply effects to a clip.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: KDenLive interface overview with all four panels labelled]">
+      <figcaption>Placeholder — annotated KDenLive interface with project bin, monitors, and timeline.</figcaption>
+    </figure>
+
+    <h3>Customising the Layout</h3>
+
+    <p>KDenLive's panels are dockable and movable. Drag any panel header to rearrange. Save your layout via <strong>View → Layout → Save Layout</strong>. There are built-in layouts for different tasks (Editing, Audio, Effects) accessible from <strong>View → Layout</strong>.</p>
+
+    <!-- ─── NEW PROJECT ───────────────────────────────────────────────────── -->
+    <h2>Creating a New Project</h2>
+
+    <p>Go to <strong>File → New</strong> (or <kbd>Ctrl N</kbd>). The project settings dialog asks for:</p>
+
+    <p><strong>Project folder</strong> — where to save the project file and any renders. <strong>Profile</strong> — the resolution, frame rate, and colour space. Common profiles: HD 1080p 25fps, HD 1080p 30fps, UHD 4K 25fps, UHD 4K 30fps. Match the profile to your footage's native format whenever possible.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: KDenLive new project dialog with profile settings]">
+      <figcaption>Placeholder — new project dialog showing profile and folder settings.</figcaption>
+    </figure>
+
+    <p>If your footage has mixed formats, KDenLive will prompt you to adjust the profile when you first add a clip. Generally, match the profile to your primary footage.</p>
+
+    <!-- ─── IMPORTING MEDIA ───────────────────────────────────────────────── -->
+    <h2>Importing Media</h2>
+
+    <p>Drag files directly from your file manager into the <strong>Project Bin</strong>, or right-click the Project Bin and choose <strong>Add Clip or Folder</strong>. KDenLive creates proxy clips and thumbnail previews in the background.</p>
+
+    <p>Supported media types include: video (MP4, MOV, MKV, ProRes, HEVC, WebM, AVI), audio (MP3, WAV, FLAC, AAC, OGG), and images (JPEG, PNG, SVG, TIFF). Sequences of numbered image files can be imported as image sequences.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Project Bin showing imported video and audio clips]">
+      <figcaption>Placeholder — the Project Bin with imported video, audio, and image clips.</figcaption>
+    </figure>
+
+    <h3>Proxy Clips</h3>
+
+    <p>For high-resolution footage (4K, ProRes), enable <strong>proxy clips</strong> so the timeline stays responsive during editing. Go to <strong>Project → Project Settings → Proxy Clips</strong> and enable proxies. KDenLive generates low-resolution proxy files in the background; editing uses these proxies but the final render uses the originals.</p>
+
+    <!-- ─── TIMELINE EDITING ──────────────────────────────────────────────── -->
+    <h2>Timeline Editing</h2>
+
+    <p>Drag clips from the Project Bin to the timeline to add them. The timeline has multiple video tracks (V1, V2, …) and audio tracks (A1, A2, …). Higher-numbered video tracks overlay lower ones — use V2 for titles, overlays, and picture-in-picture.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Timeline with multiple video and audio tracks and clips placed]">
+      <figcaption>Placeholder — the timeline with video clips on V1, a title on V2, and audio on A1.</figcaption>
+    </figure>
+
+    <h3>The Toolbar and Edit Modes</h3>
+
+    <p>The toolbar above the timeline contains the editing tools. The most important are:</p>
+
+    <p><strong>Selection tool</strong> (<kbd>S</kbd>) — click to select, drag to move clips. <strong>Razor / Blade tool</strong> (<kbd>X</kbd>) — click on a clip to cut it at that point. <strong>Slip tool</strong> — slide the content of a clip without changing its duration on the timeline. <strong>Spacer tool</strong> (<kbd>Shift+Space</kbd>) — move all clips to the right of the cursor simultaneously.</p>
+
+    <h3>Trimming Clips</h3>
+
+    <p>Hover over the start or end edge of a clip until the trim cursor appears, then drag to extend or shorten the clip. Trimming reveals or hides frames from the original media — it doesn't delete them.</p>
+
+    <p>For precise trimming, double-click a clip to open it in the Clip Monitor, then set In and Out points with <kbd>I</kbd> and <kbd>O</kbd> before dragging it to the timeline.</p>
+
+    <h3>Cutting and Splitting</h3>
+
+    <p>Press <kbd>Shift+R</kbd> to cut all clips at the playhead position on all tracks. Press <kbd>R</kbd> to cut only the selected clip. Use the Razor tool (<kbd>X</kbd>) to click-cut at specific points.</p>
+
+    <h3>Ripple Delete</h3>
+
+    <p>Select a clip and press <kbd>Delete</kbd> to remove it, leaving a gap. Press <kbd>Shift+Delete</kbd> to ripple delete — this removes the clip and closes the gap by moving all downstream clips left.</p>
+
+    <!-- ─── TRANSITIONS ───────────────────────────────────────────────────── -->
+    <h2>Transitions</h2>
+
+    <p>To add a transition between two adjacent clips, right-click the cut point between them and choose <strong>Add Transition</strong>. Select a transition type (Dissolve, Wipe, Slide, etc.). Drag the transition's edges to adjust its duration.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Timeline showing a dissolve transition between two clips]">
+      <figcaption>Placeholder — a dissolve transition between two clips on the timeline.</figcaption>
+    </figure>
+
+    <p>The most common transition is <strong>Dissolve</strong> (cross-fade). For cut-based editing, simply trimming clips to touch each other with no overlap is usually preferable to heavy use of transitions.</p>
+
+    <!-- ─── EFFECTS ───────────────────────────────────────────────────────── -->
+    <h2>Effects</h2>
+
+    <p>KDenLive has a comprehensive effects library. Open the <strong>Effects</strong> panel (<kbd>Ctrl+6</kbd> or from the View menu). Browse or search for an effect, then drag it onto a clip on the timeline to apply it. The <strong>Effect Stack</strong> shows all effects applied to the selected clip.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Effects panel and Effect Stack with applied colour correction]">
+      <figcaption>Placeholder — effects browser on the left, effect stack on the right showing applied effects.</figcaption>
+    </figure>
+
+    <h3>Useful Effects</h3>
+
+    <p><strong>Colour Correction</strong> (under Video → Colour) — basic level, contrast, saturation adjustments. <strong>Colour Grading</strong> (3-way colour wheel for shadows/mids/highlights) — for cinematic looks. <strong>Crop, Scale, Position</strong> — resize and reposition clips. <strong>Blur</strong> — Gaussian blur for privacy or depth-of-field effect. <strong>Sharpen</strong> — unsharp mask for clarity. <strong>Speed Change</strong> — slow motion or fast motion.</p>
+
+    <h3>Keyframing Effects</h3>
+
+    <p>Most effect parameters can be keyframed over time. Click the keyframe icon next to a parameter in the Effect Stack to enable keyframing. Move the playhead to a point in time, set the parameter value, and a keyframe is added. Add keyframes at different points to animate the effect.</p>
+
+    <!-- ─── TITLES ────────────────────────────────────────────────────────── -->
+    <h2>Titles</h2>
+
+    <p>Go to <strong>Project → Add Title Clip</strong> to open the Title Editor. Type your text, select a font, colour, and size. You can add shapes, images, and gradient backgrounds. Click <strong>Create Title</strong> to add it to the Project Bin, then drag it to the timeline on a track above your video (V2 or higher).</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: KDenLive title editor with text tool active]">
+      <figcaption>Placeholder — the title editor with a title being composed.</figcaption>
+    </figure>
+
+    <!-- ─── AUDIO ─────────────────────────────────────────────────────────── -->
+    <h2>Audio</h2>
+
+    <h3>Audio Levels and Mixing</h3>
+
+    <p>Every track in the timeline has a volume fader and mute/solo buttons on the left of the track header. Right-click a clip to <strong>Set audio level</strong> for that specific clip. Use the <strong>Audio Mixer</strong> panel (View → Audio Mixer) for a more detailed per-track mixing view.</p>
+
+    <h3>Keyframing Volume</h3>
+
+    <p>To fade audio in or out, click the <strong>Keyframe</strong> icon on an audio clip. Add keyframes at the start and end of the fade and set the volume to 0 at the ends. This is more precise than using a transition-based fade.</p>
+
+    <h3>Audio Effects</h3>
+
+    <p>Apply audio effects from the Effects panel → Audio section. Useful ones include: <strong>Normalise</strong> (bring peaks to a target level), <strong>Compressor</strong> (reduce dynamic range), <strong>Equalizer</strong> (adjust frequency response), and <strong>Noise Reduction</strong> (remove background hiss).</p>
+
+    <!-- ─── EXPORT ─────────────────────────────────────────────────────────── -->
+    <h2>Exporting (Rendering)</h2>
+
+    <p>When your edit is complete, go to <strong>Project → Render</strong> (<kbd>Ctrl+Return</kbd>). The Render dialog shows:</p>
+
+    <p><strong>Format/Codec presets</strong> — choose from common presets on the left. For most web and sharing use cases, use <strong>H.264 + AAC (MP4)</strong>. For archival or further editing, use <strong>ProRes</strong> (macOS) or <strong>FFV1</strong> (lossless, Linux-friendly). For YouTube, use the <strong>YouTube</strong> or <strong>H.265 + AAC</strong> presets.</p>
+
+    <p><strong>Output file</strong> — choose where to save the rendered file.</p>
+
+    <p><strong>Render only this zone</strong> — check this if you've set In/Out points on the timeline and only want to render part of the project.</p>
+
+    <p>Click <strong>Render to File</strong> to begin. Progress is shown in the Render dialog. KDenLive renders in the background so you can continue editing.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: KDenLive render dialog with H.264 preset selected and output path set]">
+      <figcaption>Placeholder — the render dialog with H.264 MP4 preset and output file settings.</figcaption>
+    </figure>
+
+    <!-- ─── SHORTCUTS ────────────────────────────────────────────────────── -->
+    <h2>Key Keyboard Shortcuts</h2>
+
+    <table>
+      <thead>
+        <tr><th>Action</th><th>Shortcut</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Play/Pause</td><td><kbd>Space</kbd></td></tr>
+        <tr><td>Play backwards</td><td><kbd>J</kbd></td></tr>
+        <tr><td>Stop</td><td><kbd>K</kbd></td></tr>
+        <tr><td>Play forwards</td><td><kbd>L</kbd></td></tr>
+        <tr><td>Go to beginning</td><td><kbd>Home</kbd></td></tr>
+        <tr><td>Go to end</td><td><kbd>End</kbd></td></tr>
+        <tr><td>Cut all tracks at playhead</td><td><kbd>Shift R</kbd></td></tr>
+        <tr><td>Cut selected clip</td><td><kbd>R</kbd></td></tr>
+        <tr><td>Ripple delete</td><td><kbd>Shift Delete</kbd></td></tr>
+        <tr><td>Select tool</td><td><kbd>S</kbd></td></tr>
+        <tr><td>Razor tool</td><td><kbd>X</kbd></td></tr>
+        <tr><td>Zoom in timeline</td><td><kbd>+</kbd></td></tr>
+        <tr><td>Zoom out timeline</td><td><kbd>-</kbd></td></tr>
+        <tr><td>Fit timeline to window</td><td><kbd>0</kbd></td></tr>
+        <tr><td>Add/remove guide marker</td><td><kbd>G</kbd></td></tr>
+        <tr><td>Render</td><td><kbd>Ctrl Return</kbd></td></tr>
+        <tr><td>Undo</td><td><kbd>Ctrl Z</kbd></td></tr>
+        <tr><td>Redo</td><td><kbd>Ctrl Shift Z</kbd></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Enable proxy clips for 4K footage.</strong> Without proxies, editing 4K on lower-end hardware is painfully slow. KDenLive's proxy system is automatic once enabled in project settings.</p>
+
+    <p><strong>Save frequently.</strong> KDenLive has an autosave feature (<strong>Settings → Configure KDenLive → Environment → Auto Save</strong>) but saving manually with <kbd>Ctrl S</kbd> is good practice. Project files are small XML files.</p>
+
+    <p><strong>Use guide markers.</strong> Press <kbd>G</kbd> to add a guide marker at the playhead. Name your markers (intro, section 1, credits, etc.) to navigate large projects quickly.</p>
+
+    <p><strong>On macOS</strong>, KDenLive may have issues with some video formats that require additional codecs. If a clip won't import or plays without audio, install the extra codecs via Homebrew: <code>brew install ffmpeg</code>.</p>
+
+    <p><strong>On Fedora KDE</strong>, if you installed via Flatpak and GPU acceleration isn't working, check <strong>Settings → Configure KDenLive → Playback</strong> and ensure the GPU rendering option is enabled. You may need to install the <code>mesa-va-drivers</code> or <code>nvidia-vaapi-driver</code> package depending on your GPU.</p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

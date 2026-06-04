@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obsidian Tutorial — Steven Legg</title>
+  <meta name="description" content="Comprehensive Obsidian tutorial for macOS Apple Silicon and Fedora KDE — vaults, Markdown, links, plugins, and workflows.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <a class="back-link" href="../software-tutorials.html">← Software Tutorials</a>
+
+  <header>
+    <h1>Obsidian</h1>
+    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+  </header>
+
+  <article>
+
+    <img class="article-hero" src="../../../img/technology/Obsidian.jpeg" alt="Obsidian">
+
+    <p>Obsidian is a local-first Markdown note-taking app built around the idea of linked notes. Unlike Notion, all your data lives as plain <code>.md</code> files in a folder on your computer — no account required for basic use, no internet dependency, and no vendor lock-in. It's fast, highly extensible through plugins, and particularly well-suited to building a personal knowledge base or "second brain".</p>
+
+    <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
+    <h2>Installation</h2>
+
+    <h3>macOS (Apple Silicon)</h3>
+
+    <p>Download the <code>.dmg</code> from <a href="https://obsidian.md" target="_blank" rel="noopener noreferrer">obsidian.md</a>. The app is a universal binary — it runs natively on Apple Silicon with no Rosetta translation. Open the <code>.dmg</code>, drag Obsidian to Applications, and launch it.</p>
+
+    <p>Via Homebrew:</p>
+
+    <pre><code>brew install --cask obsidian</code></pre>
+
+    <h3>Fedora KDE</h3>
+
+    <p>The recommended method on Fedora is Flatpak:</p>
+
+    <pre><code>flatpak install flathub md.obsidian.Obsidian</code></pre>
+
+    <p>An AppImage is also available from the Obsidian website if you prefer. Download it, make it executable, and run it:</p>
+
+    <pre><code>chmod +x Obsidian-*.AppImage
+./Obsidian-*.AppImage</code></pre>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Obsidian first launch on Fedora KDE showing vault selection screen]">
+      <figcaption>Placeholder — Obsidian first launch vault selection screen.</figcaption>
+    </figure>
+
+    <!-- ─── VAULTS ────────────────────────────────────────────────────────── -->
+    <h2>Vaults</h2>
+
+    <p>When you first open Obsidian you're asked to create or open a <strong>vault</strong>. A vault is simply a folder on your filesystem. Every <code>.md</code> file inside that folder is a note. Obsidian stores its configuration in a hidden <code>.obsidian/</code> sub-folder within the vault.</p>
+
+    <p>You can have multiple vaults for different purposes — for example, one for work notes and one for personal knowledge. Switch between them from the vault switcher in the bottom-left corner.</p>
+
+    <p><strong>Where to put your vault:</strong> Anywhere is fine. For automatic backups, put it inside a synced folder (iCloud Drive on macOS, or a Syncthing/rclone folder on Fedora). Do <em>not</em> put a vault inside Dropbox and sync it simultaneously with Obsidian Sync — this can cause conflicts.</p>
+
+    <!-- ─── MARKDOWN BASICS ───────────────────────────────────────────────── -->
+    <h2>Markdown Basics</h2>
+
+    <p>Notes are plain Markdown files. Here are the most common elements:</p>
+
+    <pre><code># Heading 1
+## Heading 2
+### Heading 3
+
+**bold**   *italic*   ~~strikethrough~~   `inline code`
+
+- Bullet item
+- Another item
+  - Nested item
+
+1. Numbered item
+2. Another item
+
+- [ ] Checkbox (incomplete)
+- [x] Checkbox (complete)
+
+> Blockquote
+
+```python
+# Fenced code block
+print("Hello, world!")
+```
+
+[Link text](https://example.com)
+![[note-name]]   <!-- Obsidian internal embed -->
+[[note-name]]    <!-- Obsidian internal link --></code></pre>
+
+    <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
+    <h2>The Interface</h2>
+
+    <p>Obsidian's interface has three main columns: the <strong>left sidebar</strong> (file explorer, search, bookmarks), the <strong>editor</strong> (one or more tabs/panes), and the <strong>right sidebar</strong> (backlinks, outgoing links, outline, tags).</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Obsidian interface with sidebars, editor pane, and graph view open]">
+      <figcaption>Placeholder — annotated Obsidian interface with sidebars and editor.</figcaption>
+    </figure>
+
+    <h3>Editor Modes</h3>
+
+    <p>Obsidian has two editor modes: <strong>Source mode</strong> (shows raw Markdown) and <strong>Live Preview</strong> (renders Markdown inline as you type, like a WYSIWYG editor). Toggle between them in the top-right of any note, or set a default in <strong>Settings → Editor → Default editing mode</strong>.</p>
+
+    <p>There's also a <strong>Reading view</strong> (fully rendered, non-editable) accessible by clicking the book icon or pressing <kbd>⌘/Ctrl E</kbd>.</p>
+
+    <!-- ─── LINKING NOTES ─────────────────────────────────────────────────── -->
+    <h2>Linking Notes</h2>
+
+    <p>The core feature of Obsidian is bidirectional linking. Type <code>[[</code> to open a link picker — start typing a note name and select from the dropdown. This creates an internal link. When you open the target note, its <strong>Backlinks</strong> panel shows all the notes that link to it.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: [[link picker]] dropdown showing note suggestions]">
+      <figcaption>Placeholder — the [[link picker]] autocomplete dropdown.</figcaption>
+    </figure>
+
+    <h3>The Graph View</h3>
+
+    <p>Open <strong>Graph view</strong> (<kbd>⌘/Ctrl G</kbd>) to see a visual map of all your notes and how they link to each other. Each note is a node; each link is an edge. Highly connected notes appear larger. This is useful for spotting isolated notes and finding unexpected connections between topics.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Obsidian graph view showing interconnected note nodes]">
+      <figcaption>Placeholder — graph view of a vault with many linked notes.</figcaption>
+    </figure>
+
+    <h3>Embeds</h3>
+
+    <p>Prefix a link with <code>!</code> to embed the contents of another note inline: <code>![[note-name]]</code>. You can also embed specific sections by adding a heading: <code>![[note-name#Section Heading]]</code>, or embed images: <code>![[photo.jpg]]</code>.</p>
+
+    <!-- ─── KEY SHORTCUTS ────────────────────────────────────────────────── -->
+    <h2>Key Keyboard Shortcuts</h2>
+
+    <table>
+      <thead>
+        <tr><th>Action</th><th>macOS</th><th>Linux</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Open command palette</td><td><kbd>⌘ P</kbd></td><td><kbd>Ctrl P</kbd></td></tr>
+        <tr><td>Quick switcher (open note)</td><td><kbd>⌘ O</kbd></td><td><kbd>Ctrl O</kbd></td></tr>
+        <tr><td>Search in all notes</td><td><kbd>⌘ Shift F</kbd></td><td><kbd>Ctrl Shift F</kbd></td></tr>
+        <tr><td>Toggle left sidebar</td><td><kbd>⌘ ←</kbd></td><td><kbd>Ctrl ←</kbd></td></tr>
+        <tr><td>Toggle right sidebar</td><td><kbd>⌘ →</kbd></td><td><kbd>Ctrl →</kbd></td></tr>
+        <tr><td>New note</td><td><kbd>⌘ N</kbd></td><td><kbd>Ctrl N</kbd></td></tr>
+        <tr><td>Toggle reading/editing view</td><td><kbd>⌘ E</kbd></td><td><kbd>Ctrl E</kbd></td></tr>
+        <tr><td>Open graph view</td><td><kbd>⌘ G</kbd></td><td><kbd>Ctrl G</kbd></td></tr>
+        <tr><td>Bold</td><td><kbd>⌘ B</kbd></td><td><kbd>Ctrl B</kbd></td></tr>
+        <tr><td>Italic</td><td><kbd>⌘ I</kbd></td><td><kbd>Ctrl I</kbd></td></tr>
+        <tr><td>Insert link</td><td><kbd>⌘ K</kbd></td><td><kbd>Ctrl K</kbd></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ─── PLUGINS ───────────────────────────────────────────────────────── -->
+    <h2>Plugins</h2>
+
+    <p>Obsidian has two categories of plugins: <strong>Core plugins</strong> (built-in, toggle on/off in Settings) and <strong>Community plugins</strong> (third-party, installable from within the app).</p>
+
+    <h3>Essential Core Plugins to Enable</h3>
+
+    <p>Go to <strong>Settings → Core plugins</strong> and enable these: <strong>Backlinks</strong> (see what links to the current note), <strong>Outline</strong> (table of contents from headings), <strong>Daily notes</strong> (create a new note for today with one click), <strong>Templates</strong> (insert pre-written content), <strong>Tags</strong> (tag pane in sidebar), and <strong>Bookmarks</strong> (pin frequently used notes).</p>
+
+    <h3>Recommended Community Plugins</h3>
+
+    <p>Go to <strong>Settings → Community plugins → Browse</strong> to install. These are worth installing early:</p>
+
+    <p><strong>Dataview</strong> — query your notes like a database. Write <code>dataview</code> code blocks that return lists, tables, and tasks matching criteria from your notes' frontmatter and inline fields. This is one of the most powerful plugins in the ecosystem.</p>
+
+    <p><strong>Calendar</strong> — adds a calendar widget in the sidebar, one cell per day, with indicators showing which days have daily notes. Click any day to open or create its daily note.</p>
+
+    <p><strong>Templater</strong> — a more powerful version of the built-in Templates plugin. Supports dynamic content (current date, cursor position, user prompts) and can run JavaScript.</p>
+
+    <p><strong>Excalidraw</strong> — embed hand-drawn-style diagrams and sketches directly inside your notes.</p>
+
+    <p><strong>Advanced Tables</strong> — makes editing Markdown tables much less painful. Tab between cells, auto-formats columns.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Obsidian community plugin browser]">
+      <figcaption>Placeholder — the community plugin browser inside Obsidian settings.</figcaption>
+    </figure>
+
+    <!-- ─── DAILY NOTES ───────────────────────────────────────────────────── -->
+    <h2>Daily Notes Workflow</h2>
+
+    <p>The daily note pattern is the most common Obsidian workflow. Each day gets one note (e.g., <code>2026-06-03.md</code>) that acts as a journal, inbox, and task list for that day.</p>
+
+    <p>Enable the Daily notes core plugin and configure: <strong>Date format</strong> (<code>YYYY-MM-DD</code> is standard), <strong>New file location</strong> (e.g., a <code>Journal/</code> folder), and a <strong>Template</strong>. A simple daily note template looks like this:</p>
+
+    <pre><code># {{date:YYYY-MM-DD}} — {{date:dddd}}
+
+## Tasks
+- [ ]
+
+## Notes
+
+
+## Links
+</code></pre>
+
+    <p>Press <kbd>⌘/Ctrl Shift D</kbd> (or the calendar plugin icon) to open today's daily note instantly.</p>
+
+    <!-- ─── SYNC & BACKUP ─────────────────────────────────────────────────── -->
+    <h2>Sync and Backup</h2>
+
+    <h3>macOS</h3>
+
+    <p>Put your vault folder inside iCloud Drive (<code>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/</code>) for automatic iCloud sync to iPhone/iPad. Alternatively, use Obsidian Sync (paid) for end-to-end encrypted sync with version history. Third-party options like Dropbox or Git also work.</p>
+
+    <h3>Fedora KDE</h3>
+
+    <p>Use <strong>Syncthing</strong> for peer-to-peer sync between devices — it's free, open source, and doesn't route data through a cloud server. Install it:</p>
+
+    <pre><code>sudo dnf install syncthing</code></pre>
+
+    <p>Enable and start the service:</p>
+
+    <pre><code>systemctl --user enable --now syncthing</code></pre>
+
+    <p>Then open <code>http://127.0.0.1:8384</code> in your browser to configure Syncthing and add the vault folder. Add your other devices (Mac, phone) to sync with.</p>
+
+    <p>For Git-based backup, initialise a repo inside your vault and push to a private repository on GitHub or Codeberg. The <strong>Obsidian Git</strong> community plugin automates commits and pushes on a schedule.</p>
+
+    <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Start with fewer plugins.</strong> It's tempting to install everything immediately. Learn the basics first — plain notes and links — before adding plugins. Each plugin has a learning curve.</p>
+
+    <p><strong>Use frontmatter for metadata.</strong> YAML frontmatter at the top of a note (between <code>---</code> lines) stores structured metadata like tags, dates, and status that Dataview and other plugins can query.</p>
+
+    <pre><code>---
+tags: [programming, python]
+created: 2026-06-03
+status: in-progress
+---</code></pre>
+
+    <p><strong>Don't over-organise folders.</strong> Links and tags are more flexible than deep folder hierarchies. Many people use a nearly flat folder structure and rely on links and search to find things.</p>
+
+    <p><strong>On Fedora KDE</strong> with the Flatpak, fonts and some UI elements may look slightly different from the macOS version. If system fonts look off, install a font like Inter and set it in <strong>Settings → Appearance → Font</strong>.</p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

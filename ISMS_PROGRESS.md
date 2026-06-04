@@ -64,8 +64,13 @@ Batch 004: 10 / 10 pages created — COMPLETE.
 - [x] Calvinism (placeholder created 2026-06-02)
 - [x] capitalism (pre-existing, verified 2026-06-02)
 - [x] careerism (placeholder created 2026-06-02)
+- [x] Cartesianism (placeholder created 2026-06-03)
+- [x] Catholicism (placeholder created 2026-06-03)
+- [x] centrism (placeholder created 2026-06-03)
+- [x] chauvinism (placeholder created 2026-06-03)
+- [x] classicism (placeholder created 2026-06-03)
 
-Batch 005: 5 / 10 pages created — IN PROGRESS.
+Batch 005: 10 / 10 pages created — COMPLETE.
 
 ## Dictionary Enrichment
 None yet. Enrichment begins only after pages exist and pass review.

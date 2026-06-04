@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion Tutorial — Steven Legg</title>
+  <meta name="description" content="Comprehensive Notion tutorial for macOS Apple Silicon and Fedora KDE — setup, pages, databases, templates, and workflow tips.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <a class="back-link" href="../software-tutorials.html">← Software Tutorials</a>
+
+  <header>
+    <h1>Notion</h1>
+    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+  </header>
+
+  <article>
+
+    <img class="article-hero" src="../../../img/technology/Notion.jpeg" alt="Notion">
+
+    <p>Notion is an all-in-one workspace that combines notes, databases, kanban boards, wikis, and calendars in a single app. It can replace a collection of separate apps — or become a chaotic mess if you don't have a clear structure from the start. This guide walks through installation, core concepts, and practical workflows.</p>
+
+    <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
+    <h2>Installation</h2>
+
+    <h3>macOS (Apple Silicon)</h3>
+
+    <p>Download the Mac app from <a href="https://www.notion.so/desktop" target="_blank" rel="noopener noreferrer">notion.so/desktop</a>. The download is a universal binary that runs natively on Apple Silicon — no Rosetta required. Drag <strong>Notion.app</strong> to your Applications folder and launch it.</p>
+
+    <p>Alternatively, install via Homebrew:</p>
+
+    <pre><code>brew install --cask notion</code></pre>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Notion download page / Homebrew install]">
+      <figcaption>Placeholder — Notion download page or Homebrew install in Terminal.</figcaption>
+    </figure>
+
+    <h3>Fedora KDE</h3>
+
+    <p>Notion doesn't publish an official Linux package, but a community-maintained Flatpak is available on Flathub and is the recommended way to install it:</p>
+
+    <pre><code>flatpak install flathub notion-app-enhanced</code></pre>
+
+    <p>If you prefer the official web app as a native-feeling wrapper, <strong>Notion Enhanced</strong> is a good Flatpak that adds extra features. After installing, launch from your application menu or with:</p>
+
+    <pre><code>flatpak run notion-app-enhanced</code></pre>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Notion running on Fedora KDE desktop]">
+      <figcaption>Placeholder — Notion open on Fedora KDE.</figcaption>
+    </figure>
+
+    <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
+    <h2>Understanding the Interface</h2>
+
+    <p>Notion's interface has three main areas: the <strong>sidebar</strong> (left), the <strong>editor</strong> (centre), and optionally a <strong>right panel</strong> for comments and page info.</p>
+
+    <p>The sidebar contains your workspace, favourited pages, private pages, and shared pages. Everything in Notion is a <em>page</em> — pages can contain other pages, databases, text, media, and embeds.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Notion interface overview with sidebar, editor, and right panel labelled]">
+      <figcaption>Placeholder — annotated Notion interface overview.</figcaption>
+    </figure>
+
+    <h3>Key Keyboard Shortcuts</h3>
+
+    <p>Learning these shortcuts dramatically speeds up your workflow:</p>
+
+    <table>
+      <thead>
+        <tr><th>Action</th><th>macOS</th><th>Linux</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>New page</td><td><kbd>⌘ N</kbd></td><td><kbd>Ctrl N</kbd></td></tr>
+        <tr><td>Open search</td><td><kbd>⌘ P</kbd></td><td><kbd>Ctrl P</kbd></td></tr>
+        <tr><td>Toggle sidebar</td><td><kbd>⌘ \</kbd></td><td><kbd>Ctrl \</kbd></td></tr>
+        <tr><td>Insert block menu</td><td><kbd>/</kbd></td><td><kbd>/</kbd></td></tr>
+        <tr><td>Turn block into…</td><td><kbd>⌘ /</kbd></td><td><kbd>Ctrl /</kbd></td></tr>
+        <tr><td>Bold</td><td><kbd>⌘ B</kbd></td><td><kbd>Ctrl B</kbd></td></tr>
+        <tr><td>Italic</td><td><kbd>⌘ I</kbd></td><td><kbd>Ctrl I</kbd></td></tr>
+        <tr><td>Inline code</td><td><kbd>⌘ E</kbd></td><td><kbd>Ctrl E</kbd></td></tr>
+        <tr><td>Duplicate block</td><td><kbd>⌘ D</kbd></td><td><kbd>Ctrl D</kbd></td></tr>
+        <tr><td>Move block up/down</td><td><kbd>⌘ Shift ↑/↓</kbd></td><td><kbd>Ctrl Shift ↑/↓</kbd></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ─── PAGES & BLOCKS ────────────────────────────────────────────────── -->
+    <h2>Pages and Blocks</h2>
+
+    <p>Everything in Notion is built from <strong>blocks</strong>. A block is any discrete unit of content: a paragraph, a heading, an image, a to-do, a code snippet, an embed. Blocks can be dragged and reordered freely.</p>
+
+    <p>To insert a block, type <kbd>/</kbd> anywhere in the editor to open the block menu. Start typing to filter — for example, <kbd>/</kbd> then "todo" inserts a checkbox, "/image" inserts an image block, "/code" inserts a code block.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Notion block menu open after typing /]">
+      <figcaption>Placeholder — the slash command block menu.</figcaption>
+    </figure>
+
+    <h3>Common Block Types</h3>
+
+    <p>The most useful block types to know are: <strong>Text</strong> (plain paragraph), <strong>Heading 1/2/3</strong>, <strong>Bulleted list</strong>, <strong>Numbered list</strong>, <strong>To-do list</strong> (checkboxes), <strong>Toggle</strong> (collapsible section), <strong>Quote</strong>, <strong>Code</strong>, <strong>Callout</strong> (highlighted note box), <strong>Divider</strong>, <strong>Image</strong>, <strong>Video</strong>, <strong>Table</strong>, and <strong>Page</strong> (embed a sub-page inline).</p>
+
+    <h3>Nesting Pages</h3>
+
+    <p>Pages can be nested inside other pages indefinitely. This is the foundation of a wiki-style structure. In the sidebar, click the <strong>+</strong> next to any page to add a sub-page, or type <kbd>/</kbd> then "Page" inside the editor to embed a page inline.</p>
+
+    <!-- ─── DATABASES ─────────────────────────────────────────────────────── -->
+    <h2>Databases</h2>
+
+    <p>Databases are where Notion becomes genuinely powerful. A database is a structured collection of pages, each page being a row with custom properties (columns). The same database can be viewed as a table, board, list, calendar, gallery, or timeline.</p>
+
+    <h3>Creating a Database</h3>
+
+    <p>Type <kbd>/</kbd> then select a database view type — for example, "Table" creates a table database. Every row is a full Notion page you can open and edit.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Notion table database with rows and property columns]">
+      <figcaption>Placeholder — a Notion table database showing rows, columns, and property types.</figcaption>
+    </figure>
+
+    <h3>Properties</h3>
+
+    <p>Database properties (columns) define what metadata each entry has. Key property types are: <strong>Text</strong>, <strong>Number</strong>, <strong>Select</strong> (single choice tag), <strong>Multi-select</strong> (multiple tags), <strong>Date</strong>, <strong>Checkbox</strong>, <strong>URL</strong>, <strong>Person</strong>, <strong>Relation</strong> (link to another database), and <strong>Formula</strong> (compute a value from other properties).</p>
+
+    <h3>Views</h3>
+
+    <p>Click <strong>+ Add a view</strong> at the top of any database to add an alternate view. Each view can have its own filter, sort, and grouping — the underlying data is always the same. For example, you might have a Table view for editing, a Board view grouped by status, and a Calendar view grouped by due date, all on the same database.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Notion board (kanban) view of the same database]">
+      <figcaption>Placeholder — board view of a database, cards grouped by status column.</figcaption>
+    </figure>
+
+    <h3>Filters and Sorts</h3>
+
+    <p>Click <strong>Filter</strong> to show only rows matching a condition (e.g., "Status is In Progress", "Due date is before today"). Click <strong>Sort</strong> to order rows by a property. Filters and sorts are per-view and don't affect other views or the data itself.</p>
+
+    <!-- ─── RELATIONS & ROLLUPS ───────────────────────────────────────────── -->
+    <h2>Relations and Rollups</h2>
+
+    <p>A <strong>Relation</strong> property links entries in one database to entries in another. This is how you build a relational system in Notion — for example, linking a Tasks database to a Projects database so each task knows which project it belongs to.</p>
+
+    <p>A <strong>Rollup</strong> property uses a relation to pull aggregated information from the linked database. For example, a rollup on your Projects database could count how many tasks are completed, sum their estimated hours, or show the earliest due date.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Relation and Rollup properties configured in a database]">
+      <figcaption>Placeholder — relation and rollup property configuration.</figcaption>
+    </figure>
+
+    <!-- ─── TEMPLATES ─────────────────────────────────────────────────────── -->
+    <h2>Templates</h2>
+
+    <p>Templates let you create new pages or database entries with pre-filled content and structure. In a database, click the dropdown arrow next to the <strong>New</strong> button to create or select a template. For standalone pages, type <kbd>/</kbd> then "Template button" to add an in-page button that generates a new page from a template.</p>
+
+    <p>Notion also has a gallery of pre-made templates at <a href="https://www.notion.so/templates" target="_blank" rel="noopener noreferrer">notion.so/templates</a>. Duplicating a community template to your workspace is a good starting point.</p>
+
+    <!-- ─── PRACTICAL WORKFLOWS ──────────────────────────────────────────── -->
+    <h2>Practical Workflows</h2>
+
+    <h3>Personal Task Manager</h3>
+
+    <p>Create a Table database called "Tasks". Add properties: <strong>Status</strong> (Select: To Do / In Progress / Done), <strong>Priority</strong> (Select: High / Medium / Low), <strong>Due Date</strong> (Date), <strong>Project</strong> (Relation to a Projects database). Add a Board view grouped by Status for a kanban feel, and a Calendar view for due dates.</p>
+
+    <h3>Reading List</h3>
+
+    <p>Create a Gallery database called "Reading List". Properties: <strong>Status</strong> (Select: To Read / Reading / Finished), <strong>Genre</strong> (Multi-select), <strong>Rating</strong> (Select: ★ through ★★★★★), <strong>Cover</strong> (Files &amp; media). Use the gallery view with "Cover" as the preview image for a visual bookshelf.</p>
+
+    <h3>Personal Wiki / Second Brain</h3>
+
+    <p>Create a root page called "Home" or "Dashboard". Under it, create top-level pages for major areas of your life — Work, Learning, Projects, Reference, Journal. Use sub-pages freely. Use the <strong>Linked database</strong> feature to surface database views on your Home page without duplicating data.</p>
+
+    <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Notion works best with an intentional structure.</strong> Start simple — one page, a few sub-pages — and add complexity only when you feel the need. The most common mistake is building elaborate systems before you know what you actually need.</p>
+
+    <p><strong>The web clipper</strong> (browser extension) lets you save web pages, articles, and highlights directly to a Notion database. Install it from the Chrome Web Store or Firefox Add-ons.</p>
+
+    <p><strong>Offline support is limited.</strong> Notion requires an internet connection to sync. On both macOS and Linux, previously loaded pages are cached, but creating new content offline is unreliable. If offline note-taking is critical, consider Obsidian instead (see the Obsidian guide).</p>
+
+    <p><strong>On Fedora KDE</strong>, the Flatpak version may occasionally lag behind the latest desktop app release. If you need the very latest features, use Notion in a browser (Firefox or Chromium) instead.</p>
+
+    <p><strong>Exporting your data.</strong> You can export all your pages as Markdown + CSV at <strong>Settings → Export all workspace content</strong>. Do this periodically as a backup.</p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
