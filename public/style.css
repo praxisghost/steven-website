@@ -1890,3 +1890,62 @@ header h1 a.site-title-link:hover {
   font-size: 1.05em;
   padding: 0 0.05em;
 }
+
+/* ── Button-style link (external actions, e.g. Letterboxd) ──────────
+   Reusable pill button consistent with the site's dark theme and the
+   slideshow controls (.dogs-btn). */
+.btn-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: #ccc;
+  text-decoration: none;
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.btn-link:hover {
+  color: #fff;
+  border-color: #555;
+  background: #161616;
+}
+
+/* ── Footnotes / citations (Chicago notes) ─────── */
+sup.fn {
+  font-size: 0.7em;
+  line-height: 0;
+  margin-left: 1px;
+}
+sup.fn a {
+  color: #9aa6c4;
+  text-decoration: none;
+}
+sup.fn a:hover { color: #fff; }
+.footnotes {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #a6a6a6;
+  line-height: 1.5;
+}
+.footnotes li { margin-bottom: 0.55rem; }
+.footnotes li a { color: #9aa6c4; text-decoration: none; }
+.footnotes li a:hover { color: #fff; }
+#bibliography + p, #bibliography ~ p { font-size: 0.9rem; color: #a6a6a6; }
+article hr {
+  border: none;
+  border-top: 1px solid #2e2e2e;
+  margin: 2.25rem 0 1.25rem;
+}
+
+/* ── Clickable citation source links ───────────── */
+a.cite-link {
+  color: #4d9fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-word;
+}
+a.cite-link:hover { color: #82bbff; }

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audacity Tutorial — Steven Legg</title>
+  <meta name="description" content="Comprehensive Audacity tutorial for macOS Apple Silicon and Fedora KDE — recording, editing, noise reduction, splitting tracks, and exporting audio.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <a class="back-link" href="../software-tutorials.html">← Software Tutorials</a>
+
+  <header>
+    <h1>Audacity</h1>
+    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+  </header>
+
+  <article>
+
+    <img class="article-hero" src="../../../img/technology/audacity.jpeg" alt="Audacity">
+
+    <p>Audacity is a free, open-source, cross-platform audio editor. It's a multi-track recorder and waveform editor that handles everything from capturing a single voice memo to cleaning up podcast episodes, digitising old recordings, and assembling layered audio. It works on uncompressed audio for editing and exports to MP3, WAV, FLAC, OGG, and more. This guide is written for both macOS (Apple Silicon) and Fedora KDE, and aims to get you comfortably recording, editing, and exporting clean audio.</p>
+
+    <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
+    <h2>Installation</h2>
+
+    <h3>macOS (Apple Silicon)</h3>
+
+    <p>Download the <code>.dmg</code> from <a href="https://www.audacityteam.org/download/" target="_blank" rel="noopener noreferrer">audacityteam.org/download</a>. Recent Audacity builds are universal binaries that run natively on Apple Silicon — no Rosetta required. Open the <code>.dmg</code>, drag Audacity to Applications, and launch it.</p>
+
+    <p>Via Homebrew:</p>
+
+    <pre><code>brew install --cask audacity</code></pre>
+
+    <p><strong>Note:</strong> On first launch, macOS may warn that Audacity is from an unidentified developer. Go to <strong>System Settings → Privacy &amp; Security</strong> and click "Open Anyway". The first time you record, macOS will also prompt for <strong>microphone permission</strong> — grant it under <strong>System Settings → Privacy &amp; Security → Microphone</strong>.</p>
+
+    <h3>Fedora KDE</h3>
+
+    <p>Install via Flatpak for the most up-to-date version:</p>
+
+    <pre><code>flatpak install flathub org.audacityteam.Audacity</code></pre>
+
+    <p>Or via DNF (may be an older release):</p>
+
+    <pre><code>sudo dnf install audacity</code></pre>
+
+    <p><strong>Note:</strong> If you installed via Flatpak and Audacity can't see your microphone or other input devices, grant it audio access with Flatseal, or confirm that PipeWire/PulseAudio is exposing the device. In the Flatpak sandbox you may also need to select the correct host device from Audacity's device toolbar (see below).</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Audacity welcome window on first launch]">
+      <figcaption>Placeholder — Audacity on first launch.</figcaption>
+    </figure>
+
+    <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
+    <h2>Interface Overview</h2>
+
+    <p>Audacity's window is organised around a few key areas. Along the top are the <strong>Transport controls</strong> (play, stop, record, pause, skip) and the <strong>tool toolbars</strong>. Below those sits the <strong>device toolbar</strong>, where you choose your audio host, recording input (microphone), number of input channels, and playback output. The large central area is the <strong>track view</strong>, where each track's waveform is displayed on a horizontal timeline. The <strong>Timeline / ruler</strong> runs across the top of the track area showing time position.</p>
+
+    <p>The most important toolbars to know early on are the <strong>Tools toolbar</strong> (Selection, Envelope, Draw, and Multi-tool), the <strong>recording/playback meters</strong> (which show input and output levels), and the <strong>Selection toolbar</strong> at the bottom showing the exact start, end, and length of your current selection in hours/minutes/seconds.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Audacity interface with toolbars, device toolbar, and a waveform track labelled]">
+      <figcaption>Placeholder — annotated Audacity interface with transport controls, device toolbar, meters, and track view.</figcaption>
+    </figure>
+
+    <h3>Setting Your Input and Output Devices</h3>
+
+    <p>Before recording anything, check the <strong>device toolbar</strong>. Set the <strong>Audio Host</strong> (on macOS this is Core Audio; on Fedora it's typically ALSA, PulseAudio, or JACK/PipeWire), choose your <strong>recording device</strong> (your microphone or audio interface), set <strong>channels</strong> to Mono for a single mic or Stereo for a stereo source, and set your <strong>playback device</strong> (headphones or speakers). Using headphones while recording avoids your microphone picking up the playback and causing echo or feedback.</p>
+
+    <!-- ─── RECORDING ─────────────────────────────────────────────────────── -->
+    <h2>Recording Audio</h2>
+
+    <p>First, set your levels. Speak or play at a normal volume and watch the <strong>recording meter</strong> at the top. Click the meter to enable monitoring without recording. Aim for peaks around <strong>-12 dB to -6 dB</strong> — loud enough to be clear, but with headroom so the loudest moments don't hit 0 dB and clip (distort). Adjust the <strong>input gain slider</strong> next to the microphone icon, or the gain on your audio interface, until levels sit in that range.</p>
+
+    <p>To record, press the red <strong>Record</strong> button (or <kbd>R</kbd>). A new track is created and the waveform draws in real time as you record. Press <strong>Stop</strong> (or <kbd>Space</kbd>) when finished. To add a new recording onto a <em>new</em> track press <kbd>R</kbd> again; to append more audio to the end of the current track, use <strong>Shift+Record</strong> (<kbd>Shift R</kbd>).</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Audacity recording meter and a waveform being captured]">
+      <figcaption>Placeholder — recording in progress with levels peaking around -12 dB.</figcaption>
+    </figure>
+
+    <h3>Punch-and-Roll and Re-recording</h3>
+
+    <p>If you fluff a line while recording narration, you don't have to start over. Stop, place the cursor a few seconds before the mistake, and use <strong>Punch and Roll Record</strong> (<kbd>Shift D</kbd>) — Audacity plays a short lead-in, then drops into recording at the cursor so you can pick up seamlessly. This is the single biggest time-saver for spoken-word recording.</p>
+
+    <!-- ─── BASIC EDITING ─────────────────────────────────────────────────── -->
+    <h2>Basic Editing</h2>
+
+    <p>Make sure the <strong>Selection tool</strong> (the I-beam, <kbd>F1</kbd>) is active. Click in the waveform to place the cursor, or click and drag to select a region. The Selection toolbar at the bottom shows the exact start, end, and length of your selection.</p>
+
+    <h3>Cut, Copy, Paste, and Delete</h3>
+
+    <p>Select a region, then: <strong>Cut</strong> (<kbd>Ctrl X</kbd> / <kbd>Cmd X</kbd>) removes it and closes the gap; <strong>Copy</strong> (<kbd>Ctrl C</kbd>) copies it; <strong>Paste</strong> (<kbd>Ctrl V</kbd>) inserts the clipboard at the cursor; <strong>Delete</strong> (<kbd>Delete</kbd>) removes the selection and closes the gap, exactly like Cut but without touching the clipboard.</p>
+
+    <h3>Trimming</h3>
+
+    <p>To keep only a portion of a recording and discard everything else, select the part you want to <em>keep</em>, then choose <strong>Edit → Remove Special → Trim Audio</strong> (<kbd>Ctrl T</kbd>). Everything outside the selection is removed. This is the inverse of Delete and is the fastest way to top-and-tail a clip — selecting the good take and trimming away the silence and false starts at either end.</p>
+
+    <h3>Silencing a Selection</h3>
+
+    <p>Sometimes you don't want to remove audio (which shifts everything after it) but simply want to mute a section in place — a cough, a click, a breath. Select the region and choose <strong>Edit → Remove Special → Silence Audio</strong> (<kbd>Ctrl L</kbd>). The waveform in that region is flattened to silence while keeping the overall timing intact.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: a selected region of waveform being silenced, shown as a flat line]">
+      <figcaption>Placeholder — a noisy region selected and silenced in place.</figcaption>
+    </figure>
+
+    <h3>Fades</h3>
+
+    <p>To smooth the start or end of a clip, select a short region and apply <strong>Effect → Fading → Fade In</strong> or <strong>Fade Out</strong>. A one-second fade at the very start and end of a recording prevents the abrupt "click" of audio starting or stopping at full volume.</p>
+
+    <h3>Undo</h3>
+
+    <p>Audacity has unlimited undo within a session (<kbd>Ctrl Z</kbd>), and redo with <kbd>Ctrl Y</kbd> (macOS: <kbd>Cmd Shift Z</kbd>). Edit freely — you can always step back.</p>
+
+    <!-- ─── NOISE REDUCTION ───────────────────────────────────────────────── -->
+    <h2>Noise Reduction</h2>
+
+    <p>Noise reduction removes consistent background noise — hum, hiss, fan or air-conditioner drone. It works in two passes: first you show Audacity a sample of <em>just</em> the noise, then you apply the reduction to the whole recording.</p>
+
+    <p><strong>Step 1 — Get a noise profile.</strong> Find a stretch of your recording where no one is speaking but the background noise is present — even half a second works. This is why it helps to record a few seconds of "room tone" (silence) at the start of every session. Select that quiet region, then go to <strong>Effect → Noise Removal and Repair → Noise Reduction</strong> and click <strong>Get Noise Profile</strong>. The dialog closes; Audacity now knows what the noise sounds like.</p>
+
+    <p><strong>Step 2 — Apply the reduction.</strong> Select the whole track (<kbd>Ctrl A</kbd>), open <strong>Noise Reduction</strong> again, and this time adjust the three settings and click <strong>OK</strong>:</p>
+
+    <p><strong>Noise reduction (dB)</strong> — how much to cut. Start around 12 dB. <strong>Sensitivity</strong> — how aggressively Audacity decides what counts as noise; start around 6. <strong>Frequency smoothing (bands)</strong> — start around 3. Use the <strong>Preview</strong> button before committing. Push too hard and you'll get a watery, "underwater" artefact on the voice — back off the reduction amount until it sounds natural. It's better to leave a little noise than to mangle the voice.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Audacity Noise Reduction dialog with Get Noise Profile and reduction sliders]">
+      <figcaption>Placeholder — the Noise Reduction dialog after capturing a noise profile.</figcaption>
+    </figure>
+
+    <!-- ─── SPLITTING TRACKS ──────────────────────────────────────────────── -->
+    <h2>Splitting Tracks</h2>
+
+    <p>"Splitting" can mean a few different things in Audacity, depending on what you're trying to do.</p>
+
+    <h3>Splitting a Clip at a Point</h3>
+
+    <p>To cut one clip into two independent clips on the same track (so you can move them separately), place the cursor where you want the split and choose <strong>Edit → Clip Boundaries → Split</strong> (<kbd>Ctrl I</kbd>). The clip is divided at that point with no audio removed. To split a selection out into its own clip with silence on either side, use <strong>Split New</strong> to move it to a brand-new track.</p>
+
+    <h3>Splitting One Recording into Multiple Files</h3>
+
+    <p>If you've recorded a long session — say, several songs from a vinyl record, or chapters of a reading — and want to export each segment as its own file, use <strong>labels</strong>. Place the cursor at the start of each segment and press <kbd>Ctrl B</kbd> to add a label; name it (this becomes the filename). When you've labelled every split point, choose <strong>File → Export → Export Multiple</strong>, set "Split files based on: Labels", and Audacity writes one file per label region in a single pass.</p>
+
+    <h3>Splitting a Stereo Track into Two Mono Tracks</h3>
+
+    <p>Click the track's name to open the <strong>track dropdown menu</strong> and choose <strong>Split Stereo to Mono</strong>. This gives you independent left and right channels — useful when each channel holds a different microphone, or when one channel is cleaner than the other.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: a long recording with several named labels marking split points]">
+      <figcaption>Placeholder — a session marked with labels, ready for Export Multiple.</figcaption>
+    </figure>
+
+    <!-- ─── EXPORTING ─────────────────────────────────────────────────────── -->
+    <h2>Exporting Audio Files</h2>
+
+    <p>Audacity's own project format is <code>.aup3</code> — that's what <strong>File → Save Project</strong> writes, and it preserves all your tracks, labels, and edit history. But <code>.aup3</code> won't play in a normal media player; to get a shareable audio file you need to <strong>export</strong>.</p>
+
+    <p>Go to <strong>File → Export</strong> and choose a format:</p>
+
+    <p><strong>Export as WAV</strong> — uncompressed, lossless, large files. Best for archiving or handing audio to another editor. <strong>Export as MP3</strong> — compressed, small, universally playable. Best for podcasts, sharing, and web. Set the quality to around 192–256 kbps for speech, higher for music. <strong>Export as FLAC</strong> — lossless but compressed (roughly half the size of WAV). Good for music archives. <strong>Export as OGG</strong> — open, compressed alternative to MP3.</p>
+
+    <p>In the export dialog you can fill in <strong>metadata</strong> (title, artist, track number) which players and podcast apps will display. On modern Audacity, MP3 export is built in — you no longer need to install the separate LAME encoder.</p>
+
+    <p>Remember the distinction: <strong>Save Project</strong> keeps your editable work in <code>.aup3</code>; <strong>Export</strong> produces the finished listenable file. Do both — save the project so you can come back and re-edit, and export the file you actually share.</p>
+
+    <figure class="post-figure">
+      <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Audacity export dialog with MP3 format and quality settings]">
+      <figcaption>Placeholder — exporting to MP3 with metadata fields filled in.</figcaption>
+    </figure>
+
+    <!-- ─── WORKFLOWS ─────────────────────────────────────────────────────── -->
+    <h2>Practical Workflows and Tips</h2>
+
+    <h3>A Clean Voice-Recording Workflow</h3>
+
+    <p>A reliable order of operations for spoken-word recording: (1) set your input device and levels, aiming for -12 dB peaks; (2) record two or three seconds of silent room tone, then your content; (3) use Punch-and-Roll to fix flubs as you go; (4) when done, capture a noise profile from the room tone and apply Noise Reduction to the whole track; (5) trim the dead air off the start and end; (6) silence any remaining clicks, coughs, or long pauses; (7) apply a short fade in and fade out; (8) run <strong>Effect → Volume and Compression → Loudness Normalization</strong> to bring the whole thing to a consistent perceived loudness (around -16 LUFS for podcasts); (9) Save the project, then Export to MP3.</p>
+
+    <h3>Normalise vs. Amplify vs. Loudness Normalization</h3>
+
+    <p><strong>Amplify</strong> raises or lowers the whole selection by a fixed amount. <strong>Normalize</strong> scales the audio so its <em>peak</em> hits a target level (e.g. -1 dB). <strong>Loudness Normalization</strong> targets <em>perceived</em> loudness (LUFS), which is what streaming and podcast platforms actually measure — use this one for final delivery so your audio sits at a comfortable, consistent volume.</p>
+
+    <h3>Useful Habits</h3>
+
+    <p><strong>Always record room tone.</strong> A few seconds of silence at the top of every session gives you a noise profile and material to patch gaps. <strong>Save the project early and often</strong> (<kbd>Ctrl S</kbd>) — <code>.aup3</code> projects keep all your undo history. <strong>Work non-destructively where you can</strong> — duplicate a track (<kbd>Ctrl D</kbd>) before applying heavy effects so you have the original to fall back on. <strong>Use Solo and Mute</strong> on track headers to audition individual tracks in a multi-track project. <strong>Zoom in</strong> (<kbd>Ctrl 1</kbd>) to make sample-accurate edits and out (<kbd>Ctrl 3</kbd>) to see the whole project.</p>
+
+    <!-- ─── SHORTCUTS ────────────────────────────────────────────────────── -->
+    <h2>Key Keyboard Shortcuts</h2>
+
+    <table>
+      <thead>
+        <tr><th>Action</th><th>Shortcut</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Play / Stop</td><td><kbd>Space</kbd></td></tr>
+        <tr><td>Record (new track)</td><td><kbd>R</kbd></td></tr>
+        <tr><td>Append record</td><td><kbd>Shift R</kbd></td></tr>
+        <tr><td>Punch and Roll record</td><td><kbd>Shift D</kbd></td></tr>
+        <tr><td>Selection tool</td><td><kbd>F1</kbd></td></tr>
+        <tr><td>Cut</td><td><kbd>Ctrl X</kbd></td></tr>
+        <tr><td>Copy</td><td><kbd>Ctrl C</kbd></td></tr>
+        <tr><td>Paste</td><td><kbd>Ctrl V</kbd></td></tr>
+        <tr><td>Delete selection</td><td><kbd>Delete</kbd></td></tr>
+        <tr><td>Trim to selection</td><td><kbd>Ctrl T</kbd></td></tr>
+        <tr><td>Silence selection</td><td><kbd>Ctrl L</kbd></td></tr>
+        <tr><td>Split clip at cursor</td><td><kbd>Ctrl I</kbd></td></tr>
+        <tr><td>Add label at cursor</td><td><kbd>Ctrl B</kbd></td></tr>
+        <tr><td>Select all</td><td><kbd>Ctrl A</kbd></td></tr>
+        <tr><td>Duplicate to new track</td><td><kbd>Ctrl D</kbd></td></tr>
+        <tr><td>Zoom in / out</td><td><kbd>Ctrl 1</kbd> / <kbd>Ctrl 3</kbd></td></tr>
+        <tr><td>Fit project in window</td><td><kbd>Ctrl F</kbd></td></tr>
+        <tr><td>Save project</td><td><kbd>Ctrl S</kbd></td></tr>
+        <tr><td>Undo / Redo</td><td><kbd>Ctrl Z</kbd> / <kbd>Ctrl Y</kbd></td></tr>
+      </tbody>
+    </table>
+
+    <p class="figure-note">macOS users: substitute <kbd>Cmd</kbd> for <kbd>Ctrl</kbd> throughout.</p>
+
+    <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Save Project and Export are not the same thing.</strong> The most common beginner surprise is saving a <code>.aup3</code> project and then being unable to play it in a music app. Always Export to get a standard audio file; Save Project to keep editing later.</p>
+
+    <p><strong>Don't over-apply Noise Reduction.</strong> Aggressive reduction produces a tell-tale watery, robotic artefact on voices. Use the lowest amount that gets the job done, and always Preview first.</p>
+
+    <p><strong>Record with headphones.</strong> Monitoring through speakers lets the microphone re-capture the playback, causing echo and, at worst, feedback squeal.</p>
+
+    <p><strong>On macOS</strong>, if Audacity records silence, check <strong>System Settings → Privacy &amp; Security → Microphone</strong> and confirm Audacity is allowed. You may need to quit and relaunch after granting permission.</p>
+
+    <p><strong>On Fedora KDE</strong>, the Flatpak build runs in a sandbox. If your microphone or interface doesn't appear in the device toolbar, use <strong>Flatseal</strong> to confirm audio permissions, make sure PipeWire is running, and try selecting the PulseAudio host in Audacity's device toolbar. For low-latency multitrack work you can route Audacity through JACK/PipeWire.</p>
+
+    <p><strong>Set the project sample rate before recording.</strong> The <strong>Project Rate</strong> (bottom-left) defaults to 44100 Hz, which is fine for most uses; use 48000 Hz if your audio will accompany video. Mixing sample rates between tracks forces resampling and can subtly degrade quality.</p>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

@@ -19,7 +19,20 @@
 
   <article>
     <img class="article-hero" src="img/Politics/Trump1.jpeg" alt="Politics">
-    <p>Coming soon</p>
+
+    <p class="blog-intro">Essays and opinions on politics, society, and where I think we go from here.</p>
+
+    <ul class="blog-list">
+      <li>
+        <div class="article-card-left">
+          <div class="article-thumb" aria-hidden="true">
+            <img src="img/Politics/great-divide.jpeg" alt="The Divide, and the Road Ahead">
+          </div>
+          <a href="blog/divide-and-the-road-ahead.html">The Divide, and the Road Ahead</a>
+        </div>
+        <span class="blog-date">June 2026</span>
+      </li>
+    </ul>
   </article>
 
   <footer>
@@ -27,36 +40,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    (function () {
-      var audio = document.getElementById('page-audio');
-
-      // Try to play immediately (may be blocked until user interacts)
-      audio.play().catch(function () {
-        // Autoplay blocked — play on first user interaction
-        document.addEventListener('click', function startOnClick() {
-          audio.play();
-          document.removeEventListener('click', startOnClick);
-        }, { once: true });
-      });
-
-      // Stop when tab is hidden or user navigates away
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-          audio.pause();
-        } else {
-          audio.play().catch(function () {});
-        }
-      });
-
-      window.addEventListener('pagehide', function () {
-        audio.pause();
-      });
-
-      window.addEventListener('beforeunload', function () {
-        audio.pause();
-      });
-    })();
-  </script>
+  <script src="politics-audio.js"></script>
 </body>
 </html>
