@@ -211,10 +211,35 @@ const CURATED = [
   ['technology/return-to-linux.html', 'technology/artificial-intelligence.html'],
   ['technology/artificial-intelligence.html', 'projects/ai.html'],
   ['retro-gaming/nintendo-gamecube.html', 'retro-gaming/gameboy-advance-sp.html'],
+  ['retro-gaming/nintendo-gamecube.html', 'retro-gaming/playstation-2.html'],
   ['interlingua.html', 'ia/index.html'],
   ['ido.html', 'io/index.html'],
   ['interslavic.html', 'isv/index.html'],
   ['novial.html', 'nov/index.html'],
+  // Added 2026-06-04 (session 3): conservative semantic pairs among newly
+  // discovered pages — ideological opposites / strong thematic links only.
+  // Each respects the max-3-semantic-edges-per-page rule (GRAPH_CONNECTIONS).
+  ['isms/capitalism.html', 'isms/consumerism.html'],
+  ['isms/communism.html', 'isms/anticommunism.html'],
+  ['isms/fascism.html', 'isms/antifascism.html'],
+  ['isms/conservatism.html', 'isms/centrism.html'],
+  ['isms/atheism.html', 'isms/agnosticism.html'],
+  ['isms/buddhism.html', 'isms/stoicism.html'],
+  ['isms/catholicism.html', 'isms/calvinism.html'],
+  ['isms/colonialism.html', 'isms/anticolonialism.html'],
+  ['isms/colonialism.html', 'isms/imperialism.html'],
+  ['isms/behaviorism.html', 'isms/constructivism.html'],
+  ['isms/authoritarianism.html', 'isms/anarchism.html'],
+  ['isms/modernism.html', 'isms/classicism.html'],
+  ['technology/linux.html', 'technology/return-to-linux.html'],
+  // Added 2026-06-04 (session 4): five more conservative semantic pairs —
+  // classic philosophical/ideological opposites or strong thematic links.
+  // Each node stays within the max-3-semantic-edges rule (GRAPH_CONNECTIONS).
+  ['isms/altruism.html', 'isms/egoism.html'],
+  ['isms/hedonism.html', 'isms/asceticism.html'],
+  ['isms/idealism.html', 'isms/realism.html'],
+  ['isms/authoritarianism.html', 'isms/totalitarianism.html'],
+  ['isms/socialism.html', 'isms/anarchism.html'],
 ];
 for (const [a, b] of CURATED) addEdge(a, b);
 
@@ -268,12 +293,49 @@ const out = {
   })),
   edges,
 };
+
+const perCat = {};
+for (const n of nodes) perCat[n.category] = (perCat[n.category] || 0) + 1;
+
+/* ── --check mode ─────────────────────────────────────────────────────────
+ * Staleness guard: compare a fresh in-memory build against the committed JSON
+ * WITHOUT writing. Exits non-zero if the node/edge sets have drifted, so this
+ * can gate a deploy/CI step. Run: node tools/graph/build-graph.mjs --check */
+const CHECK = process.argv.includes('--check');
+if (CHECK) {
+  if (!prev) {
+    console.error('[graph:check] No existing graph JSON found at', relative(ROOT, OUT));
+    process.exit(1);
+  }
+  const freshNodeIds = new Set(nodes.map((n) => n.id));
+  const prevNodeIds = new Set((prev.nodes || []).map((n) => n.id));
+  const addedNodes = [...freshNodeIds].filter((id) => !prevNodeIds.has(id));
+  const removedNodes = [...prevNodeIds].filter((id) => !freshNodeIds.has(id));
+  const keyOf = (e) => (e.source < e.target ? e.source + '|' + e.target : e.target + '|' + e.source);
+  const freshEdges = new Set(edges.map(keyOf));
+  const prevEdges = new Set((prev.edges || []).map(keyOf));
+  const addedEdges = [...freshEdges].filter((k) => !prevEdges.has(k));
+  const removedEdges = [...prevEdges].filter((k) => !freshEdges.has(k));
+  const drift = addedNodes.length || removedNodes.length || addedEdges.length || removedEdges.length;
+  if (drift) {
+    console.error(`[graph:check] STALE — committed graph differs from a fresh build.`);
+    console.error(`  nodes: committed ${prevNodeIds.size}, fresh ${freshNodeIds.size} ` +
+      `(+${addedNodes.length} / -${removedNodes.length})`);
+    console.error(`  edges: committed ${prevEdges.size}, fresh ${freshEdges.size} ` +
+      `(+${addedEdges.length} / -${removedEdges.length})`);
+    if (addedNodes.length) console.error('  added pages:', addedNodes.slice(0, 20).join(', ') + (addedNodes.length > 20 ? ' …' : ''));
+    if (removedNodes.length) console.error('  removed pages:', removedNodes.slice(0, 20).join(', ') + (removedNodes.length > 20 ? ' …' : ''));
+    console.error('  Fix: run `npm run graph` and commit public/isms/superorganism-graph.json');
+    process.exit(2);
+  }
+  console.log(`[graph:check] OK — graph is current (${freshNodeIds.size} nodes, ${freshEdges.size} edges).`);
+  process.exit(0);
+}
+
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, JSON.stringify(out, null, 0));
 
 // summary to stdout
-const perCat = {};
-for (const n of nodes) perCat[n.category] = (perCat[n.category] || 0) + 1;
 console.log(`Superorganism graph built: ${nodes.length} nodes, ${edges.length} edges`);
 console.log('Per category:', JSON.stringify(perCat));
 console.log('Reused positions:', [...prevPos.keys()].filter((id) => byId.has(id)).length);

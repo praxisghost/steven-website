@@ -3,19 +3,413 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microsoft Windows — Steven Legg</title>
-  <meta name="description" content="Steven Legg on Microsoft Windows.">
+  <title>Windows 11 Guide — Steven Legg</title>
+  <meta name="description" content="How to install Windows 11 without a Microsoft account, debloat it, disable Copilot and telemetry, and use the terminal effectively.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <a class="back-link" href="../technology.html">← Technology</a>
 
   <header>
-    <h1>Microsoft Windows</h1>
+    <h1>Microsoft Windows 11</h1>
+    <p>Local-only install, debloating, privacy, and terminal essentials</p>
   </header>
 
   <article>
-    <p>I don't use Microsoft Windows.</p>
+
+    <!-- ─── LOCAL ACCOUNT INSTALL ──────────────────────────────────────────── -->
+    <h2>Installing Windows 11 Without a Microsoft Account</h2>
+
+    <p>Microsoft pushes hard to get you signed into a Microsoft account during setup, but a fully local account is still possible and keeps your data entirely on your machine — no OneDrive, no cloud sync you didn't ask for. There are two reliable methods.</p>
+
+    <h3>Method 1 — Rufus (Recommended, Before Install)</h3>
+
+    <p>This is the cleanest approach and removes the requirement before you even boot the installer. Download <a href="https://rufus.ie" target="_blank" rel="noopener noreferrer">Rufus</a> (a free USB creation tool) and your Windows 11 ISO from <a href="https://www.microsoft.com/software-download/windows11" target="_blank" rel="noopener noreferrer">microsoft.com/software-download/windows11</a>. When writing the ISO to a USB drive, Rufus asks whether you want to customise the installation — enable all three of these options:</p>
+
+    <ul>
+      <li><strong>Remove requirement for an online Microsoft account</strong></li>
+      <li><strong>Remove requirement for Secure Boot and TPM 2.0</strong> (useful for older hardware)</li>
+      <li><strong>Disable data collection</strong> (sets all telemetry answers to No automatically)</li>
+    </ul>
+
+    <p>Install Windows from that USB as normal. During Out-of-Box Experience (OOBE), you'll reach a local account creation screen directly — no fake email tricks needed.</p>
+
+    <h3>Method 2 — No-Internet Bypass (During OOBE)</h3>
+
+    <p>If you're doing a live install without Rufus, disconnect from the internet (unplug ethernet, don't join Wi-Fi) before the "Sign in with Microsoft" screen appears. Windows will then show an <strong>"I don't have internet"</strong> option. Click it, then <strong>"Continue with limited setup"</strong>, and you'll be taken to a local account creation screen.</p>
+
+    <p>If the option doesn't appear (some Windows 11 Home versions hide it), open a command prompt during OOBE by pressing <kbd>Shift + F10</kbd> and run:</p>
+
+    <pre><code>OOBE\BYPASSNRO</code></pre>
+
+    <p>The system will restart and re-enter OOBE with the "I don't have internet" path restored.</p>
+
+    <h3>What to Skip During Setup</h3>
+
+    <p>During initial setup, decline or set to "No" / "Basic" everything. Key screens to watch for: <strong>privacy settings</strong> (turn all toggles off), <strong>location</strong> (off), <strong>diagnostic data</strong> (select "Required only"), <strong>inking and typing improvement</strong> (off), <strong>tailored experiences</strong> (off), <strong>advertising ID</strong> (off), and <strong>OneDrive backup</strong> (click "Not now" or "Only save files to this PC").</p>
+
+    <!-- ─── FIRST THINGS TO DO ──────────────────────────────────────────────── -->
+    <h2>First Things to Do After Install</h2>
+
+    <p>Before doing anything else, open <strong>Windows Update</strong> (Settings → Windows Update) and install all available updates including optional driver updates. Reboot fully. Then work through the sections below.</p>
+
+    <h3>Install Windows Terminal and winget</h3>
+
+    <p>Winget comes pre-installed on Windows 11 but may need an update. Open <strong>Windows Terminal</strong> or <strong>PowerShell</strong> and run:</p>
+
+    <pre><code>winget upgrade --all</code></pre>
+
+    <p>Winget lets you install and update software from the command line without visiting browser download pages — similar to <code>brew</code> on macOS or <code>dnf</code> on Fedora. Install Windows Terminal if it's not already present:</p>
+
+    <pre><code>winget install Microsoft.WindowsTerminal</code></pre>
+
+    <p>Windows Terminal is the modern, tabbed terminal for Windows. It supports PowerShell, Command Prompt, and WSL tabs in the same window. Pin it to your taskbar — you'll use it often.</p>
+
+    <p>Install your preferred apps quickly via winget. For example:</p>
+
+    <pre><code>winget install Mozilla.Firefox
+winget install Obsidian.Obsidian
+winget install Audacity.Audacity
+winget install GIMP.GIMP
+winget install darktable.darktable
+winget install KDE.Kdenlive
+winget install Notion.Notion</code></pre>
+
+    <!-- ─── DEBLOAT ─────────────────────────────────────────────────────────── -->
+    <h2>Debloating Windows 11</h2>
+
+    <p>A stock Windows 11 install ships with a significant amount of bloatware and invasive features. The sections below address each category.</p>
+
+    <h3>Chris Titus Tech WinUtil (Recommended All-in-One Tool)</h3>
+
+    <p>The fastest way to debloat and configure Windows 11 in one pass is <strong>WinUtil</strong> by Chris Titus Tech — an open-source PowerShell-based tool with a simple GUI. Run it in an <strong>Administrator</strong> PowerShell window:</p>
+
+    <pre><code>irm christitus.com/win | iex</code></pre>
+
+    <p>The tool opens a GUI where you can install applications, run debloat presets (removes most Microsoft bloatware in one click), apply tweaks (disable telemetry, enable dark mode, disable Bing search in Start), and fix Windows Update settings. The source code is publicly auditable on <a href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+    <h3>Remove Pre-installed Bloatware Apps Manually</h3>
+
+    <p>Uninstall unwanted stock apps via <strong>Settings → Apps → Installed apps</strong>. Apps you can safely remove include: Candy Crush, Clipchamp, Disney+, Facebook, Instagram, LinkedIn, Microsoft News, Microsoft Solitaire Collection, Microsoft Teams (consumer), Mixed Reality Portal, TikTok, Xbox Game Bar (if you don't game).</p>
+
+    <p>For apps without an Uninstall option in Settings, remove them via PowerShell (run as Administrator):</p>
+
+    <pre><code># Remove Clipchamp
+Get-AppxPackage *clipchamp* | Remove-AppxPackage
+
+# Remove Microsoft News
+Get-AppxPackage *bingNews* | Remove-AppxPackage
+
+# Remove Xbox app (keep if you game on Xbox)
+Get-AppxPackage *Xbox* | Remove-AppxPackage
+
+# List all installed packages to find names
+Get-AppxPackage | Select-Object Name | Sort-Object Name</code></pre>
+
+    <!-- ─── DISABLE COPILOT ───────────────────────────────────────────────── -->
+    <h2>Disable Copilot, Cortana, and AI Features</h2>
+
+    <h3>Disable Windows Copilot</h3>
+
+    <p>Open <strong>Settings → Personalisation → Taskbar</strong> and toggle <strong>Copilot</strong> off to remove it from the taskbar. To disable it fully via the Registry (works on all Windows 11 editions), open PowerShell as Administrator:</p>
+
+    <pre><code>reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f</code></pre>
+
+    <p>On Windows 11 Pro/Enterprise you can also use Group Policy: press <kbd>Win + R</kbd>, type <code>gpedit.msc</code>, navigate to <strong>Computer Configuration → Administrative Templates → Windows Components → Windows Copilot</strong>, and set "Turn off Windows Copilot" to <strong>Enabled</strong>.</p>
+
+    <h3>Disable Cortana</h3>
+
+    <pre><code>Get-AppxPackage *cortana* | Remove-AppxPackage</code></pre>
+
+    <p>On Windows 11 22H2 and later, Cortana is no longer integrated into search and is largely inert — disabling it is mainly cosmetic, but removing it frees a small amount of background resources.</p>
+
+    <h3>Disable Recall (Windows AI Recall / Copilot+ PCs)</h3>
+
+    <p>On Copilot+ PCs, Windows Recall takes periodic screenshots of your screen and indexes them for AI search. Disable it in <strong>Settings → Privacy &amp; Security → Recall &amp; snapshots</strong> — toggle off "Save snapshots". You can also uninstall it entirely via PowerShell:</p>
+
+    <pre><code>Disable-WindowsOptionalFeature -Online -FeatureName "Recall" -NoRestart</code></pre>
+
+    <!-- ─── TELEMETRY & PRIVACY ───────────────────────────────────────────── -->
+    <h2>Disable Telemetry, Tracking, and Ads</h2>
+
+    <h3>Settings to Change Manually</h3>
+
+    <p>Go to <strong>Settings → Privacy &amp; Security</strong> and work through each sub-section:</p>
+
+    <ul>
+      <li><strong>General</strong> — turn all four toggles off (advertising ID, suggested content, app launches tracking, settings suggestions).</li>
+      <li><strong>Speech</strong> — turn off online speech recognition.</li>
+      <li><strong>Inking &amp; typing personalisation</strong> — turn off.</li>
+      <li><strong>Diagnostics &amp; feedback</strong> — set to <strong>Required diagnostic data</strong> only. Turn off "Improve inking and typing", "Tailored experiences", and delete existing diagnostic data.</li>
+      <li><strong>Activity history</strong> — turn off and clear history.</li>
+      <li><strong>Search permissions</strong> — turn off "Cloud content search" for both work and personal accounts.</li>
+      <li><strong>Location</strong> — turn off if unused, or restrict to specific apps only.</li>
+      <li><strong>Camera / Microphone</strong> — review which apps have access and revoke any you don't recognise.</li>
+    </ul>
+
+    <h3>Disable Telemetry Services via PowerShell (run as Administrator)</h3>
+
+    <pre><code># Set telemetry to minimum (Required only on Home/Pro)
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" `
+  -Name "AllowTelemetry" -Value 0 -Type DWord -Force
+
+# Stop and disable the Connected User Experiences and Telemetry service
+Stop-Service -Name DiagTrack -Force
+Set-Service -Name DiagTrack -StartupType Disabled
+
+# Disable WAP push routing service (sends device info to Microsoft)
+Stop-Service -Name dmwappushservice -Force
+Set-Service -Name dmwappushservice -StartupType Disabled</code></pre>
+
+    <h3>Disable Bing Search in Start Menu</h3>
+
+    <p>By default, typing in the Start menu sends your keystrokes to Bing. To disable this:</p>
+
+    <pre><code>reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v CortanaConsent /t REG_DWORD /d 0 /f</code></pre>
+
+    <h3>Disable Ads in Explorer, Start, and Lock Screen</h3>
+
+    <p>In <strong>Settings → System → Notifications → Additional settings</strong>, uncheck "Suggest ways I can finish setting up my device" and "Get tips and suggestions when I use Windows".</p>
+
+    <p>In <strong>Settings → Personalisation → Lock screen</strong>, set the lock screen style to "Picture" or "Slideshow" instead of "Windows spotlight" — Spotlight injects Microsoft-served images and promotional content.</p>
+
+    <p>In <strong>Settings → Personalisation → Start</strong>, turn off "Show recommendations for tips, app promotions, and more".</p>
+
+    <!-- ─── ONEDRIVE ───────────────────────────────────────────────────────── -->
+    <h2>Disable or Remove OneDrive</h2>
+
+    <h3>Unlink and Quit</h3>
+
+    <p>Right-click the OneDrive icon in the system tray → <strong>Settings → Account → Unlink this PC</strong>. Then right-click the icon again → <strong>Quit OneDrive</strong>. This stops syncing but keeps OneDrive installed.</p>
+
+    <h3>Prevent OneDrive from Starting at Boot</h3>
+
+    <p>Open <strong>Task Manager → Startup apps</strong> and disable <strong>Microsoft OneDrive</strong>.</p>
+
+    <h3>Fully Uninstall OneDrive</h3>
+
+    <pre><code>taskkill /f /im OneDrive.exe
+winget uninstall Microsoft.OneDrive</code></pre>
+
+    <p>If winget fails, use <strong>Control Panel → Programs → Uninstall a program → Microsoft OneDrive → Uninstall</strong>. After removing, delete any leftover <code>OneDrive</code> folder from your user directory if it remains.</p>
+
+    <!-- ─── XBOX / GAME BAR ────────────────────────────────────────────────── -->
+    <h2>Disable Xbox Game Bar and Game DVR</h2>
+
+    <p>Xbox Game Bar (<kbd>Win + G</kbd>) runs in the background and captures your screen. If you don't play games, disable it in <strong>Settings → Gaming → Xbox Game Bar</strong> (toggle off), or via the Registry:</p>
+
+    <pre><code>reg add "HKCU\Software\Microsoft\GameBar" /v UseNexusForGameBarEnabled /t REG_DWORD /d 0 /f</code></pre>
+
+    <p>Also disable Game DVR (background recording) and Game Mode if you're not gaming:</p>
+
+    <pre><code># Disable background recording
+reg add "HKCU\System\GameConfigStore" /v GameDVR_Enabled /t REG_DWORD /d 0 /f
+
+# Disable Game Mode
+reg add "HKCU\Software\Microsoft\GameBar" /v AllowAutoGameMode /t REG_DWORD /d 0 /f</code></pre>
+
+    <!-- ─── TERMINAL COMMANDS ──────────────────────────────────────────────── -->
+    <h2>Essential Terminal Commands</h2>
+
+    <p>Windows has two main shells: <strong>Command Prompt</strong> (<code>cmd.exe</code>, legacy) and <strong>PowerShell</strong> (modern, recommended for everything). PowerShell is a superset — it runs almost all cmd commands plus its own more powerful ones. Use PowerShell for everything unless a tool specifically requires cmd.</p>
+
+    <h3>File System Navigation</h3>
+
+    <table>
+      <thead>
+        <tr><th>Command</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>pwd</code></td><td>Print current directory</td></tr>
+        <tr><td><code>cd C:\Users\name\Documents</code></td><td>Change to a directory</td></tr>
+        <tr><td><code>cd ..</code></td><td>Go up one directory level</td></tr>
+        <tr><td><code>ls</code> or <code>dir</code></td><td>List files in current directory</td></tr>
+        <tr><td><code>ls -Force</code></td><td>List including hidden files</td></tr>
+        <tr><td><code>mkdir FolderName</code></td><td>Create a new folder</td></tr>
+        <tr><td><code>rm filename.txt</code></td><td>Delete a file</td></tr>
+        <tr><td><code>rm -Recurse FolderName</code></td><td>Delete a folder and all contents</td></tr>
+        <tr><td><code>cp source.txt dest.txt</code></td><td>Copy a file</td></tr>
+        <tr><td><code>mv old.txt new.txt</code></td><td>Move or rename a file</td></tr>
+        <tr><td><code>cat file.txt</code></td><td>Print file contents to terminal</td></tr>
+        <tr><td><code>explorer .</code></td><td>Open current folder in File Explorer</td></tr>
+      </tbody>
+    </table>
+
+    <h3>System Information</h3>
+
+    <table>
+      <thead>
+        <tr><th>Command</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>winver</code></td><td>Show Windows version dialog</td></tr>
+        <tr><td><code>systeminfo</code></td><td>Detailed system info (OS, RAM, uptime, patches)</td></tr>
+        <tr><td><code>hostname</code></td><td>Show computer name</td></tr>
+        <tr><td><code>whoami</code></td><td>Show current user account</td></tr>
+        <tr><td><code>ipconfig</code></td><td>Show IP addresses and network adapters</td></tr>
+        <tr><td><code>ipconfig /all</code></td><td>Full network info including DNS and MAC addresses</td></tr>
+        <tr><td><code>netstat -an</code></td><td>Show active connections and listening ports</td></tr>
+        <tr><td><code>tasklist</code></td><td>List all running processes</td></tr>
+        <tr><td><code>Get-Process</code></td><td>PowerShell process list (sortable, filterable)</td></tr>
+        <tr><td><code>taskkill /IM notepad.exe /F</code></td><td>Force-kill a process by name</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Disk and Storage</h3>
+
+    <table>
+      <thead>
+        <tr><th>Command</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Get-PSDrive</code></td><td>Show all drives and free space</td></tr>
+        <tr><td><code>chkdsk C: /f /r</code></td><td>Check and repair disk (Admin, requires reboot)</td></tr>
+        <tr><td><code>sfc /scannow</code></td><td>Scan and repair corrupted Windows system files</td></tr>
+        <tr><td><code>DISM /Online /Cleanup-Image /RestoreHealth</code></td><td>Repair Windows image from Microsoft servers</td></tr>
+        <tr><td><code>cleanmgr</code></td><td>Open Disk Cleanup GUI</td></tr>
+      </tbody>
+    </table>
+
+    <h3>winget Package Management</h3>
+
+    <table>
+      <thead>
+        <tr><th>Command</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>winget search firefox</code></td><td>Search for a package</td></tr>
+        <tr><td><code>winget install Mozilla.Firefox</code></td><td>Install a package</td></tr>
+        <tr><td><code>winget upgrade --all</code></td><td>Update all installed apps</td></tr>
+        <tr><td><code>winget uninstall Mozilla.Firefox</code></td><td>Uninstall a package</td></tr>
+        <tr><td><code>winget list</code></td><td>List all packages winget knows about</td></tr>
+        <tr><td><code>winget show Mozilla.Firefox</code></td><td>Show package info</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Networking</h3>
+
+    <table>
+      <thead>
+        <tr><th>Command</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>ping google.com</code></td><td>Test network connectivity</td></tr>
+        <tr><td><code>tracert google.com</code></td><td>Trace route to a host</td></tr>
+        <tr><td><code>nslookup google.com</code></td><td>DNS lookup</td></tr>
+        <tr><td><code>ipconfig /flushdns</code></td><td>Clear DNS cache</td></tr>
+        <tr><td><code>netsh wlan show profiles</code></td><td>List saved Wi-Fi networks</td></tr>
+        <tr><td><code>netsh wlan show profile "NetName" key=clear</code></td><td>Show a saved Wi-Fi password in plain text</td></tr>
+        <tr><td><code>Test-NetConnection google.com -Port 443</code></td><td>Check if a remote port is open</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Useful PowerShell One-liners</h3>
+
+    <pre><code># Get your public IP address
+(Invoke-WebRequest -Uri "https://api.ipify.org").Content
+
+# Find files by name (recursive search)
+Get-ChildItem -Path C:\ -Recurse -Filter "filename.txt" -ErrorAction SilentlyContinue
+
+# Show top 10 largest files in a folder
+Get-ChildItem -Path C:\Users -Recurse -File -ErrorAction SilentlyContinue |
+  Sort-Object Length -Descending | Select-Object -First 10 FullName, Length
+
+# Kill all instances of a process
+Get-Process chrome | Stop-Process -Force
+
+# Check what's listening on a specific port
+Get-NetTCPConnection -LocalPort 8080</code></pre>
+
+    <!-- ─── USEFUL SETTINGS ────────────────────────────────────────────────── -->
+    <h2>Most Useful Things to Configure</h2>
+
+    <h3>Set a Sensible Default Browser</h3>
+
+    <p>After installing Firefox (or your browser of choice): <strong>Settings → Apps → Default apps</strong>, search for "Firefox", and click <strong>Set default</strong>. Also manually set HTTP, HTTPS, and HTML file type defaults if the button doesn't catch everything — Microsoft tends to reset Edge as default after major updates.</p>
+
+    <h3>Enable Dark Mode</h3>
+
+    <p><strong>Settings → Personalisation → Colours → Choose your mode → Dark.</strong></p>
+
+    <h3>Configure File Explorer</h3>
+
+    <p>Open File Explorer → three-dot menu → Options. Set <strong>"Open File Explorer to"</strong> to "This PC". In the <strong>View</strong> tab, enable <strong>"Show hidden files, folders, and drives"</strong> and uncheck <strong>"Hide extensions for known file types"</strong> — seeing file extensions is essential for anyone working with files.</p>
+
+    <h3>Enable Clipboard History</h3>
+
+    <p><kbd>Win + V</kbd> opens clipboard history, storing your last ~25 copied items. Enable it the first time you press <kbd>Win + V</kbd>, or in <strong>Settings → System → Clipboard → Clipboard history</strong>.</p>
+
+    <h3>Install WSL 2 (Linux on Windows)</h3>
+
+    <p>Windows Subsystem for Linux runs a real Linux environment inside Windows with no VM overhead. Install it with one command (Administrator PowerShell):</p>
+
+    <pre><code>wsl --install</code></pre>
+
+    <p>This installs Ubuntu by default. To choose a different distro:</p>
+
+    <pre><code>wsl --list --online        # see available distros
+wsl --install -d Debian    # install a specific one</code></pre>
+
+    <p>WSL 2 integrates with Windows Terminal and gives you the full Linux toolchain (bash, git, Python, apt/dnf, grep, sed, awk, and everything else) natively inside Windows.</p>
+
+    <h3>Windows Sandbox (Safe App Testing)</h3>
+
+    <p>Windows Sandbox (Pro/Enterprise only) runs a lightweight, disposable VM for testing untrusted software. Enable it:</p>
+
+    <pre><code>Enable-WindowsOptionalFeature -FeatureName "Containers-DisposableClientVM" -All -Online</code></pre>
+
+    <p>After reboot, search "Windows Sandbox" in the Start menu. Everything inside it is destroyed when you close it.</p>
+
+    <h3>Move User Folders to a Second Drive</h3>
+
+    <p>If you have a secondary drive for storage, right-click Downloads, Documents, Music, Pictures, or Videos → <strong>Properties → Location → Move</strong> and point them to the second drive. Keeps your system drive lean and makes Windows reinstallation much simpler.</p>
+
+    <!-- ─── KEYBOARD SHORTCUTS ─────────────────────────────────────────────── -->
+    <h2>Essential Keyboard Shortcuts</h2>
+
+    <table>
+      <thead>
+        <tr><th>Shortcut</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><kbd>Win + D</kbd></td><td>Show / hide desktop</td></tr>
+        <tr><td><kbd>Win + E</kbd></td><td>Open File Explorer</td></tr>
+        <tr><td><kbd>Win + I</kbd></td><td>Open Settings</td></tr>
+        <tr><td><kbd>Win + L</kbd></td><td>Lock screen</td></tr>
+        <tr><td><kbd>Win + V</kbd></td><td>Clipboard history</td></tr>
+        <tr><td><kbd>Win + Shift + S</kbd></td><td>Screenshot / snip tool</td></tr>
+        <tr><td><kbd>Win + PrtSc</kbd></td><td>Full screenshot saved to Pictures\Screenshots</td></tr>
+        <tr><td><kbd>Win + Tab</kbd></td><td>Task View / virtual desktops</td></tr>
+        <tr><td><kbd>Win + Ctrl + D</kbd></td><td>New virtual desktop</td></tr>
+        <tr><td><kbd>Win + Ctrl + ← / →</kbd></td><td>Switch virtual desktops</td></tr>
+        <tr><td><kbd>Win + ← / → / ↑ / ↓</kbd></td><td>Snap window to screen edges</td></tr>
+        <tr><td><kbd>Win + Z</kbd></td><td>Snap Layouts (choose window arrangement)</td></tr>
+        <tr><td><kbd>Win + R</kbd></td><td>Run dialog</td></tr>
+        <tr><td><kbd>Win + X</kbd></td><td>Quick Link / Power User menu</td></tr>
+        <tr><td><kbd>Ctrl + Shift + Esc</kbd></td><td>Open Task Manager directly</td></tr>
+        <tr><td><kbd>Alt + F4</kbd></td><td>Close window / shutdown dialog on desktop</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ─── TIPS ─────────────────────────────────────────────────────────── -->
+    <h2>Tips and Gotchas</h2>
+
+    <p><strong>Run PowerShell as Administrator</strong> by right-clicking the Windows Terminal icon and choosing "Run as administrator", or searching "PowerShell", right-clicking, and selecting "Run as administrator". Many system commands require elevated rights and will silently fail otherwise.</p>
+
+    <p><strong>The Quick Link menu</strong> (<kbd>Win + X</kbd>) is faster than the Start menu for accessing Task Manager, Device Manager, Event Viewer, Disk Management, and PowerShell.</p>
+
+    <p><strong>Windows Defender is good enough.</strong> You don't need a third-party antivirus. Many third-party AV products add more background surveillance than they remove. Keep Windows updated, use a good DNS (Quad9 at <code>9.9.9.9</code> or Cloudflare at <code>1.1.1.1</code>), and practice safe browsing.</p>
+
+    <p><strong>The new Task Manager</strong> (<kbd>Ctrl + Shift + Esc</kbd>) is genuinely useful. The <strong>Startup apps</strong> tab is the quickest way to see what's slowing your boot and disable it. The <strong>Efficiency mode</strong> option (right-click a process) throttles background apps to reduce their CPU and power draw.</p>
+
+    <p><strong>Windows 11 Pro is worth it over Home</strong> if you do anything technical. Pro adds Group Policy, BitLocker, Remote Desktop, Hyper-V, and Windows Sandbox. If you're already on Home, you can upgrade in <strong>Settings → System → Activation → Upgrade your edition of Windows</strong> using a Pro product key.</p>
+
+    <p><strong>Power settings matter.</strong> In <strong>Settings → System → Power → Power Mode</strong>, set to "Balanced" on laptops and "Best performance" on desktops plugged in. Avoid "Power saver" unless on battery — it actively throttles CPU performance even for non-battery workloads.</p>
+
+    <p><strong>Microsoft resets defaults after major updates.</strong> After each major Windows update, check that your default browser is still set correctly and review your privacy settings — Microsoft has a habit of re-enabling things you've turned off.</p>
+
   </article>
 
   <footer>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Darktable Tutorial — Steven Legg</title>
-  <meta name="description" content="Comprehensive Darktable tutorial for macOS Apple Silicon and Fedora KDE — import, lighttable, darkroom, colour grading, and export.">
+  <meta name="description" content="Comprehensive Darktable tutorial for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11 — import, lighttable, darkroom, colour grading, and export.">
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
   <header>
     <h1>Darktable</h1>
-    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+    <p>A comprehensive guide for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11</p>
   </header>
 
   <article>
@@ -46,6 +46,14 @@
       <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Darktable splash screen / first launch]">
       <figcaption>Placeholder — Darktable on first launch.</figcaption>
     </figure>
+
+    <h3>Windows 11</h3>
+
+    <p>Darktable has official Windows support. Download the Windows installer (<code>.exe</code>) from <a href="https://www.darktable.org/install/" target="_blank" rel="noopener noreferrer">darktable.org/install</a> and run it as Administrator. Alternatively, install via <strong>winget</strong>:</p>
+
+    <pre><code>winget install darktable.darktable</code></pre>
+
+    <p>Darktable on Windows 11 is fully featured — all modules, masking, colour calibration, and export options are available. The interface is identical to macOS and Linux. Darktable supports <strong>OpenCL GPU acceleration</strong> on Windows via NVIDIA CUDA, AMD ROCm-compatible drivers, and Intel GPU drivers. On first launch, go to <strong>Preferences → Processing → OpenCL</strong> and enable it if your GPU is listed.</p>
 
     <!-- ─── INTERFACE OVERVIEW ────────────────────────────────────────────── -->
     <h2>Interface Overview</h2>
@@ -227,6 +235,8 @@
     <p><strong>On Apple Silicon</strong>, Darktable uses OpenCL for GPU-accelerated processing. If your Mac has a discrete GPU or the Apple Silicon GPU is recognised, enable OpenCL in <strong>Preferences → Processing → OpenCL</strong> for faster exports and module previews.</p>
 
     <p><strong>On Fedora KDE</strong>, the Flatpak version is generally the most up-to-date. If colour management looks wrong, ensure your monitor profile is set correctly in KDE's <strong>System Settings → Color Corrections</strong>.</p>
+
+    <p><strong>On Windows 11</strong>, Darktable's library database is stored at <code>C:\Users\&lt;username&gt;\AppData\Local\darktable\library.db</code>. Back this up regularly — it contains all your edit history. If Darktable launches slowly, check whether Windows Defender is scanning the database folder; adding an exclusion for your Darktable data folder can significantly speed things up. For colour management, assign your monitor ICC profile in <strong>Windows Settings → System → Display → Colour Profile</strong> and point Darktable to it in <strong>Preferences → Processing → Output colour profile</strong>.</p>
 
   </article>
 

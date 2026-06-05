@@ -2,7 +2,7 @@
 
 ## Status
 
-Pages Audited: 28
+Pages Audited: 34
 
 Pages Modified: 0
 
@@ -10,7 +10,7 @@ Footnotes Added: 0
 
 Sources Added: 0
 
-Last Audit Date: June 3, 2026
+Last Audit Date: June 4, 2026
 
 ---
 
@@ -44,6 +44,12 @@ Last Audit Date: June 3, 2026
 - catalan-from-english.html (reviewed 2026-06-03 — no changes)
 - catalan-from-french.html (reviewed 2026-06-03 — no changes)
 - catalan-from-spanish.html (reviewed 2026-06-03 — no changes)
+- cherokee-from-spanish.html (reviewed 2026-06-04 — no changes)
+- chichewa-from-english.html (reviewed 2026-06-04 — no changes)
+- chichewa-from-french.html (reviewed 2026-06-04 — no changes)
+- chichewa-from-portuguese.html (reviewed 2026-06-04 — no changes)
+- comprehensible-input.html (reviewed 2026-06-04 — no changes)
+- esperanto.html (reviewed 2026-06-04 — no changes)
 
 ---
 
@@ -228,3 +234,69 @@ Remaining content pages still unaudited: ~172 language-guide and topic pages
 (remaining catalan/chichewa/con-lang guides, the farsi-from-* group, isms/
 reference pages, technology/ and projects/ topic pages, etc.). Next batch should
 continue alphabetically through the remaining "X-from-Y" guides.
+
+### 2026-06-04 — Batch 5 (6 pages)
+
+Reviewed 6 content pages, continuing alphabetically from where Batch 4 stopped
+(catalan-from-spanish). cherokee-from-english was already audited in Batch 1, so
+the next unaudited language guide was cherokee-from-spanish, followed by the
+three chichewa-from-* guides. con-lang.html was inspected and EXCLUDED as a pure
+navigation/hub page (it contains only a sub-nav list of constructed-language
+links, no prose content), per scope. To keep a full batch, the next two content
+pages after it were audited instead: the comprehensible-input method essay and
+the esperanto reference guide.
+
+Pages reviewed: cherokee-from-spanish, chichewa-from-english, chichewa-from-french,
+chichewa-from-portuguese, comprehensible-input, esperanto.
+
+Method: extracted all prose sections from each page (intro / "What is X" /
+"Why learn" / grammar narration / pronunciation / common mistakes / culture /
+resources, and for the method/reference pages their full body text) and scanned
+for copied wording. Ran verbatim web searches on the most encyclopedic-sounding
+passages to test for HIGH-confidence matches:
+
+- cherokee-from-spanish: the Spanish-audience parallel of the already-audited
+  cherokee-from-english page. Same Sequoyah / 1809–1821 / 85-character syllabary
+  / Cherokee Phoenix 1828 facts established as common knowledge in Batch 1. This
+  page ALREADY carries two real Chicago footnotes (NLM Native Voices for the
+  syllabary date; Library of Congress / Chronicling America for the Cherokee
+  Phoenix) plus a matching bibliography — added by a prior process, citations
+  verified as genuine, left intact. Prose is in the author's distinctive voice
+  (FSI framing, Spanish-speaker–specific asides on /tl/ in Nahuatl-origin words,
+  "Por qué aprender" structure). No verbatim source lift; no changes.
+- chichewa (en/fr/pt): "national language of Malawi … ~70% of the population …
+  12–15 million speakers," "Warm Heart of Africa," name change to Chichewa in
+  1968, and "Gule Wamkulu … UNESCO Intangible Cultural Heritage" are all widely
+  documented common facts; web search returned only generically similar
+  encyclopedic phrasings (Wikipedia, Britannica, Penn Chichewa program), no
+  single-source verbatim match. The noun-class / subject-concord / verb-tense /
+  verb-extension tables are standard Bantu descriptive linguistics presented in
+  the author's own tables, each adapted per target-audience language. Original
+  phrasing throughout.
+- comprehensible-input: Krashen's five hypotheses (Acquisition–Learning, Input
+  i+1, Monitor, Natural Order, Affective Filter), Swain's output hypothesis, and
+  extensive-reading research are standard SLA material. The technical terms are
+  Krashen's own and must be reused; the explanatory prose around them is the
+  author's original wording (editorial asides, 80–98% calibration heuristic,
+  daily-habit framing). No verbatim lift from any single source.
+- esperanto: Zamenhof / Polish ophthalmologist / 1887 / "Doktoro Esperanto" =
+  "one who hopes" is universal common knowledge; the grammar tables (endings,
+  correlatives, affixes, Zamenhof's 16 rules) summarize a public-domain language
+  specification (the Fundamento) in the author's own condensed wording, not the
+  verbatim 1905 text. The "~one-tenth the time" claim is appropriately hedged
+  ("Studies have suggested") and cites no specific source, so no citation is
+  owed. No verbatim source lift.
+
+Conclusion: No HIGH-confidence plagiarism found. All six pages match the
+consistent, distinctive personal voice of Batches 1–4. Factual content is common
+linguistic/historical/pedagogical knowledge expressed in original phrasing.
+Under the conservative policy (false positives unacceptable), no edits,
+footnotes, or citations were warranted. The pre-existing citations on
+cherokee-from-spanish were verified as genuine and left unchanged. No pages
+required human review — no genuine source uncertainty arose.
+
+Remaining content pages still unaudited: ~166 language-guide and topic pages
+(chichewa-from-french/portuguese done; remaining con-lang reference pages —
+ido/interlingua/interslavic/klingon/novial — the farsi-from-* group, isms/
+reference pages, technology/ and projects/ topic pages, etc.). Next batch should
+continue alphabetically through the remaining content pages.

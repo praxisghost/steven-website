@@ -238,3 +238,21 @@ Status: Accepted
 
 ---
 
+## Decision 019
+
+Curated semantic edges are extended over time as new pages are discovered, but
+ONLY for ideological opposites or strong thematic pairs, and never beyond the
+limit of 3 semantic edges per page (GRAPH_CONNECTIONS.md). Added 2026-06-04:
+capitalism↔consumerism, communism↔anticommunism, fascism↔antifascism,
+conservatism↔centrism, atheism↔agnosticism, buddhism↔stoicism,
+catholicism↔calvinism, colonialism↔anticolonialism, colonialism↔imperialism,
+behaviorism↔constructivism, authoritarianism↔anarchism, modernism↔classicism,
+return-to-linux↔linux, gamecube↔playstation-2.
+
+Rationale: keeps the map meaningful and navigable as content grows while holding
+edge density sparse (1.18 edges/node) per Decisions 007/008.
+
+Status: Accepted
+
+---
+

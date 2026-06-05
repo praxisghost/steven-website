@@ -15,7 +15,7 @@ Status legend: [x] done · [~] partial · [ ] todo
 ## Phase 2 — Page discovery  ✅ COMPLETE (2026-06-01)
 
 Done automatically by `tools/graph/build-graph.mjs` (scans public/**/*.html).
-* [x] Discover all pages (322 nodes — refreshed 2026-06-01 session 2)
+* [x] Discover all pages (395 nodes — refreshed 2026-06-04 session 3; was 322)
 * [x] Discover all language guides
 * [x] Discover all -ism pages
 * [x] Discover all blog posts
@@ -60,7 +60,9 @@ Done automatically by `tools/graph/build-graph.mjs` (scans public/**/*.html).
 
 * [x] Automatic page discovery (build script)
 * [~] Automatic graph updates: `npm run graph` script added; still TODO to wire
-      it into the deploy step (graph went stale once because of this)
+      it into the deploy step. **The graph has now gone stale twice for this
+      exact reason** (322→395 catch-up needed on 2026-06-04). Wiring this in is
+      the highest-value remaining automation task.
 * [ ] Automatic relationship suggestions (heuristic or LLM-assisted, still
       respecting the conservative connection philosophy)
 

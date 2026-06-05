@@ -2,15 +2,36 @@
 
 ## Status
 
-Pages Reviewed: 32 (cumulative)
+Pages Reviewed: 38 (cumulative)
 
-Pages Modified: 26 (cumulative)
+Pages Modified: 32 (cumulative)
 
-Citations Added: 30 (cumulative)
+Citations Added: 36 (cumulative)
 
-Sources Added: 17 distinct (cumulative)
+Sources Added: 23 distinct (cumulative)
 
-Last Run: 2026-06-03 (second run of the day — indigenous/minority language guides)
+Last Run: 2026-06-04 (African minority-language guides — Cape Verdean Creole, Chichewa, Lingala, Shona, Kinyarwanda, Hausa)
+
+---
+
+## Batch Strategy / Next Batch (run 2026-06-04)
+
+This run audited the next batch of unaudited content guides flagged by the prior run: six African minority/indigenous English-source guides with strong, externally verifiable headline claims (classification, official/national status, most-spoken status, historical origin). Six new, independently verified sources were used — one citation per page, density held at 1:
+
+- **Smithsonian Folklife Festival, "Cape Verdean Kriolu in the United States"** (festival.si.edu, Smithsonian Institution) states "The Kriolu language in Cape Verde is probably the oldest of the many different Creole languages still spoken today... It arose in the 15th century as a consequence of Portuguese slave trading on the west coast of Africa." Applied to `cape-verdean-creole-from-english.html` (footnote on the "oldest living Portuguese-based creole" clause). High-authority national cultural institution used because no .gov page and no cleanly-stating .org page confirms the "oldest" claim; the UNESCO Atlas does not render via web fetch.
+- **Encyclopædia Britannica, "Chewa"** confirms "From 1968 to 1994, Chewa was the only national language [of Malawi]; it is now... spoken by a majority of the population." Applied to `chichewa-from-english.html` (footnote on "Chichewa was declared the national language of Malawi in 1968"). Britannica used as higher-bar reference because the natural .gov source (CIA World Factbook Malawi) **no longer exists** — see note below.
+- **Salikoko Sangol Mufwene, "Lingala language," Encyclopædia Britannica** (authored by a University of Chicago creolist) confirms Lingala "developed in the late 19th century from the Bobangi used by... colonial administrators... through their auxiliaries such as the armed forces and the police. Lingala continues to be associated with the military and the police throughout the [DRC]." Applied to `lingala-from-english.html` (footnote on the trade-origin / "language of the Congolese army" clause).
+- **UNICEF, *The Impact of Language Policy and Practice on Children's Learning: ... Zimbabwe* (2017)** (unicef.org, .org) states "An estimated 75 per cent of the Zimbabwean population speaks Shona, and another 17 per cent speak Ndebele." Applied to `shona-from-english.html` (footnote on the "most widely spoken first language [in Zimbabwe]" clause). .org source.
+- **René Lemarchand et al., "Rwanda," Encyclopædia Britannica** confirms Kinyarwanda "is spoken by virtually all Rwandans." Applied to `kinyarwanda-from-english.html` (footnote on the "spoken by virtually the entire population of Rwanda" clause). Britannica used because the natural .gov source (CIA World Factbook Rwanda) no longer exists.
+- **H. Ekkehard Wolff, "Hausa language," Encyclopædia Britannica** (authored by a University of Leipzig Africanist) confirms Hausa is "the most important indigenous lingua franca in West and Central Africa... It belongs to the Western branch of the Chadic language superfamily within the Afro-Asiatic language phylum." Applied to `hausa-from-english.html` (footnote on the Chadic/Afro-Asiatic classification + "great lingua francas" clause; the footnote sits on the classification, not on the page's "50–80 million" figure, which Britannica gives as 40–50M).
+
+All six URLs were fetched/confirmed live this run before citing. .org/.si used where available (Smithsonian, UNICEF); Britannica used only where no renderable authoritative .gov/.org source confirms the specific claim.
+
+**IMPORTANT — .gov source availability change:** The **CIA World Factbook has been sunset** (per a CIA.gov story dated 4 Feb 2026, "Spotlighting The World Factbook as We Bid a Fond Farewell"). Its country pages (the natural .gov source for official-language and speaker-percentage claims) and the 2021/2022 archive URLs now redirect to a farewell page and no longer render the data. Future runs should NOT rely on the CIA Factbook and should prefer other .gov/.org sources (e.g., UNICEF, national statistics agencies, UNESCO where it renders) before falling back to Britannica/academic references.
+
+**Next run should continue with remaining unaudited content guides** — e.g. the non-English mirrors of these languages (`cape-verdean-creole-from-portuguese.html`, `chichewa-from-french.html`, `lingala-from-french.html`, `kinyarwanda-from-french.html`, etc.), the remaining African guides not yet audited (Swahili, Wolof, Xhosa, Zulu, Yoruba, Umbundu series), and the non-English Hawaiian/Basque/Jejueo mirrors still outstanding. Re-confirm still-unaudited guides before assuming completion.
+
+**Pages reviewed but intentionally left uncited this run:** none additional (all six reviewed pages were modified).
 
 ---
 
@@ -99,6 +120,14 @@ Avoid: home page, `index.html`, language hubs (`language-guides.html`, `language
 - public/basque-from-english.html — modified (1 citation: Basque is a language isolate, Britannica/Michelena)
 - public/jejueo-from-english.html — modified (1 citation: distinct language + UNESCO critically endangered 2010, UH Press)
 
+### Run 2026-06-04 (African minority-language guides)
+- public/cape-verdean-creole-from-english.html — modified (1 citation: oldest living Portuguese-based creole, Smithsonian Folklife Festival)
+- public/chichewa-from-english.html — modified (1 citation: Chichewa declared national language of Malawi in 1968, Britannica "Chewa")
+- public/lingala-from-english.html — modified (1 citation: trade origin / language of the army & police, Britannica/Mufwene)
+- public/shona-from-english.html — modified (1 citation: ~75% of Zimbabweans speak Shona / most widely spoken, UNICEF)
+- public/kinyarwanda-from-english.html — modified (1 citation: spoken by virtually all Rwandans, Britannica "Rwanda"/Lemarchand)
+- public/hausa-from-english.html — modified (1 citation: Chadic branch of Afro-Asiatic + great lingua franca, Britannica/Wolff)
+
 ---
 
 ## Modified Pages
@@ -129,6 +158,12 @@ Avoid: home page, `index.html`, language hubs (`language-guides.html`, `language
 - public/hawaiian-from-english.html
 - public/basque-from-english.html
 - public/jejueo-from-english.html
+- public/cape-verdean-creole-from-english.html
+- public/chichewa-from-english.html
+- public/lingala-from-english.html
+- public/shona-from-english.html
+- public/kinyarwanda-from-english.html
+- public/hausa-from-english.html
 
 ---
 
@@ -151,8 +186,14 @@ Avoid: home page, `index.html`, language hubs (`language-guides.html`, `language
 15. U.S. Department of the Interior, Office of Native Hawaiian Relations, "E ola ka ʻōlelo Hawaiʻi!" — https://www.doi.gov/hawaiian/%CA%BB%C5%8Dlelo-hawai%CA%BBi (.gov; Hawaiian official language of Hawaiʻi)
 16. Luis Michelena, "Basque language," Encyclopædia Britannica — https://www.britannica.com/topic/Basque-language (academic reference, higher-bar alternative; Basque language isolate)
 17. Changyong Yang, Sejung Yang, and William O'Grady, *Jejueo: The Language of Korea's Jeju Island* (Honolulu: University of Hawai'i Press, 2019) — https://uhpress.hawaii.edu/title/jejueo-the-language-of-koreas-jeju-island/ (university press, higher-bar alternative; distinct language + UNESCO critically endangered 2010)
+18. Smithsonian Folklife Festival, "Cape Verdean Kriolu in the United States" — https://festival.si.edu/articles/1995/cape-verdean-kriolu-in-the-united-states (festival.si.edu, Smithsonian Institution; oldest living creole / 15th-century Portuguese origin)
+19. Encyclopædia Britannica, "Chewa" — https://www.britannica.com/topic/Chewa-language (academic reference, higher-bar alternative; Chichewa national language of Malawi 1968 / spoken by a majority)
+20. Salikoko Sangol Mufwene, "Lingala language," Encyclopædia Britannica — https://www.britannica.com/topic/Lingala-language (academic reference, higher-bar alternative; trade origin + military/police association)
+21. UNICEF, *The Impact of Language Policy and Practice on Children's Learning: Evidence from Eastern and Southern Africa — Zimbabwe* (2017) — https://www.unicef.org/esa/sites/unicef.org.esa/files/2018-09/UNICEF-2017-Language-and-Learning-Zimbabwe.pdf (unicef.org, .org; ~75% of Zimbabweans speak Shona)
+22. René Lemarchand et al., "Rwanda," Encyclopædia Britannica — https://www.britannica.com/place/Rwanda (academic reference, higher-bar alternative; Kinyarwanda spoken by virtually all Rwandans)
+23. H. Ekkehard Wolff, "Hausa language," Encyclopædia Britannica — https://www.britannica.com/topic/Hausa-language (academic reference, higher-bar alternative; Chadic/Afro-Asiatic classification + lingua franca)
 
-Sources 1–5 are .gov; 6–7 are .org (UNESCO); 8 is a national government body (.gov.tw); 9 is a national statistics agency; 12–13 are .org; 15 is .gov. Sources 10–11, 14, 16 (Britannica) and 17 (University of Hawai'i Press) were used only where no authoritative/renderable .gov/.org source confirms the specific claim; all are fact-checked academic references. No blogs, SEO, forums, social media, or low-authority sources used.
+Sources 1–5 are .gov; 6–7 are .org (UNESCO); 8 is a national government body (.gov.tw); 9 is a national statistics agency; 12–13 are .org; 15 is .gov; 18 is a Smithsonian Institution publication (.si); 21 is .org (UNICEF). Sources 10–11, 14, 16 (Britannica), 17 (University of Hawai'i Press), and 19–20, 22–23 (Britannica) were used only where no authoritative/renderable .gov/.org source confirms the specific claim; all are fact-checked academic references. The CIA World Factbook — the natural .gov source for several 2026-06-04 claims — was sunset in February 2026 and no longer renders, which is why Britannica was used for Chichewa, Kinyarwanda, Lingala, and Hausa. No blogs, SEO, forums, social media, or low-authority sources used.
 
 ---
 
@@ -172,10 +213,18 @@ Sources 1–5 are .gov; 6–7 are .org (UNESCO); 8 is a national government body
 - **Basque speaker count ("750,000–900,000"):** Britannica says "approaching one million." Footnote sits on the language-isolate classification, not the range. No action needed unless a precise figure is desired.
 - **UNESCO World Atlas of Languages (en.wal.unesco.org) does not render via web fetch** — interactive/JS page. Where the UNESCO Atlas is the natural .org source (Guaraní vitality, Jejueo endangerment), a higher-bar reference/university-press source was used instead. A future run with a JS-capable fetch could substitute the primary UNESCO Atlas citation.
 
+### Added run 2026-06-04
+- **CIA World Factbook sunset (affects sourcing strategy):** The Factbook was retired in Feb 2026 and its country pages / archive URLs no longer render. It was the natural .gov source for official-language and speaker-percentage claims (Malawi, Rwanda, DRC, Zimbabwe, Cape Verde, Nigeria). Four of this run's citations consequently fell back to Britannica. A future run should look for replacement .gov/.org sources (national statistics offices, UNICEF/UNESCO, embassy/ministry pages) before defaulting to Britannica.
+- **Hausa speaker figure ("50–80 million"):** the page gives 50–80M incl. L2 speakers; the cited Britannica/Wolff source says "about 40–50 million" (first or second language). Footnote sits on the Chadic/Afro-Asiatic classification + lingua-franca claim, NOT on the number. Consider reconciling the figure or sourcing the higher estimate (e.g., Ethnologue) if a precise count is wanted.
+- **Lingala speaker figure ("over 20 million"):** Britannica/Mufwene says "more than 10 million." Footnote sits on the origin/army claim, not the number. Reconcile if a precise count is wanted.
+- **Kinyarwanda / Chichewa "national vs official":** `kinyarwanda-from-english.html` calls Kinyarwanda "national language"; Britannica lists it as one of four *official* languages (also designated "national" per constitution) — both framings are defensible. `chichewa-from-english.html` says Chichewa "is the national language of Malawi"; Britannica notes it was the *sole* national language only 1968–1994 and is now "one of the numerous languages... spoken by a majority." The footnote anchors on the verifiable 1968 designation. Minor wording a human may wish to nuance; not a factual error.
+- **Cape Verdean Creole "oldest":** the Smithsonian source says Kriolu is "probably the oldest of the many different Creole languages still spoken today" — broader and hedged ("probably") relative to the page's flat "oldest living Portuguese-based creole." The claim is well supported but a human may wish to soften "is" to "is generally considered."
+
 ---
 
 ## Notes
 
+- Run 2026-06-04 added 6 new citations across 6 pages (cumulative 36), far under the 15/run cap. Density held at 1 citation per page.
 - Run 2026-06-03b added 5 new citations across 5 pages (cumulative 30), far under the 15/run cap. Density held at 1 citation per page. (Run 2026-06-03a had added the prior 5.)
 - Footnote pattern (unchanged): inline `<sup class="fn">` markers linking to a per-page Notes section, plus a Chicago Notes-and-Bibliography "Bibliography" section. Section headings localized per page language (Notes/Bibliography for English pages; Notas/Bibliografía for `nahuatl-from-spanish`).
 - Verification: footnote anchors (`fnref1` → `fn1`) confirmed matching on all five modified pages; Notes + Bibliography present on each (checked programmatically).

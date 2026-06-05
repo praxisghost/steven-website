@@ -1913,6 +1913,87 @@ header h1 a.site-title-link:hover {
   background: #161616;
 }
 
+/* ── Resource cards ────────────────────────────────
+   Reusable article-style card grid used on the Resources hub and the
+   Language Learning page. Each card is a single anchor containing a hero
+   image (or emoji-tile fallback), a title, and a btn-link styled CTA.
+   Built from the same tokens as .blog-list cards for visual consistency. */
+.resource-grid {
+  list-style: none;
+  margin: 1.25rem 0 2.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+
+.resource-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0c0c0c;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  border-color: #2e2e2e;
+}
+
+.resource-card .card-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #111;
+  border-bottom: 1px solid #1a1a1a;
+}
+/* Emoji-tile fallback for pages without a hero image. */
+.resource-card .card-thumb.emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  line-height: 1;
+  background: radial-gradient(circle at 50% 40%, #1a1a1a, #0d0d0d);
+}
+
+.resource-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.9rem 1rem 1.05rem;
+  flex: 1;
+}
+.resource-card .card-title {
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+.resource-card .card-cta {
+  margin-top: auto;          /* pin the CTA to the bottom of the card */
+}
+/* Mirror .btn-link:hover when hovering anywhere on the card. */
+.resource-card:hover .card-cta {
+  color: #fff;
+  border-color: #555;
+  background: #161616;
+}
+
+.resource-heading {
+  margin: 2.25rem 0 0.25rem;
+}
+.resource-heading:first-of-type {
+  margin-top: 1rem;
+}
+
 /* ── Footnotes / citations (Chicago notes) ─────── */
 sup.fn {
   font-size: 0.7em;

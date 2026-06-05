@@ -1,0 +1,37 @@
+l2_word,l1_translation,ipa_pronunciation,part_of_speech,grammatical_gender,l2_example_sentence,l1_example_translation,cefr_level,tags,source
+bonjour,hello,/bɔ̃.ʒuʁ/,interjection,,Bonjour ! Comment allez-vous ?,Hello! How are you?,A1,greeting;core,guide
+merci,thank you,/mɛʁ.si/,interjection,,Merci beaucoup pour votre aide.,Thank you very much for your help.,A1,courtesy;core,guide
+tu,you (informal),/ty/,pronoun,,Tu parles français ?,Do you speak French?,A1,pronoun;core,guide
+pain,bread,/pɛ̃/,noun,m,Je mange du pain.,I eat bread.,A1,food;core,guide
+français,French,/fʁɑ̃.sɛ/,adjective,,Il parle français.,He speaks French.,A1,language;core,guide
+oui,yes,/wi/,adverb,,Oui, je comprends.,Yes, I understand.,A1,core;response,CEFR-A1
+non,no,/nɔ̃/,adverb,,Non, je ne sais pas.,No, I don't know.,A1,core;response,CEFR-A1
+je,I,/ʒə/,pronoun,,Je suis étudiant.,I am a student.,A1,pronoun;core,CEFR-A1
+s'il vous plaît,please (formal),/sil vu plɛ/,phrase,,Un café, s'il vous plaît.,A coffee, please.,A1,courtesy;core,CEFR-A1
+au revoir,goodbye,/o ʁə.vwaʁ/,interjection,,Au revoir ! À bientôt !,Goodbye! See you soon!,A1,greeting;core,CEFR-A1
+excusez-moi,excuse me,/ɛk.sky.ze mwa/,phrase,,Excusez-moi, où est la gare ?,Excuse me, where is the station?,A1,courtesy;core,CEFR-A1
+maison,house,/mɛ.zɔ̃/,noun,f,Ma maison est grande.,My house is big.,A1,home;core,CEFR-A1
+eau,water,/o/,noun,f,Je voudrais de l'eau.,I would like some water.,A1,food;drink;core,CEFR-A1
+homme,man,/ɔm/,noun,m,L'homme porte un chapeau.,The man is wearing a hat.,A1,person;core,CEFR-A1
+femme,woman,/fam/,noun,f,La femme lit un livre.,The woman is reading a book.,A1,person;core,CEFR-A1
+enfant,child,/ɑ̃.fɑ̃/,noun,m/f,L'enfant joue dans le jardin.,The child plays in the garden.,A1,person;family;core,CEFR-A1
+ami,friend,/a.mi/,noun,m,Mon ami s'appelle Paul.,My friend is called Paul.,A1,person;social;core,CEFR-A1
+mère,mother,/mɛʁ/,noun,f,Ma mère cuisine bien.,My mother cooks well.,A1,family;core,CEFR-A1
+père,father,/pɛʁ/,noun,m,Mon père travaille à Paris.,My father works in Paris.,A1,family;core,CEFR-A1
+famille,family,/fa.mij/,noun,f,J'aime ma famille.,I love my family.,A1,family;core,CEFR-A1
+chat,cat,/ʃa/,noun,m,Le chat dort sur le canapé.,The cat sleeps on the sofa.,A1,animal;core,CEFR-A1
+chien,dog,/ʃjɛ̃/,noun,m,Le chien court dans le parc.,The dog runs in the park.,A1,animal;core,CEFR-A1
+voiture,car,/vwa.tyʁ/,noun,f,Ma voiture est rouge.,My car is red.,A1,transport;core,CEFR-A1
+livre,book,/livʁ/,noun,m,Je lis un livre intéressant.,I am reading an interesting book.,A1,education;core,CEFR-A1
+école,school,/e.kɔl/,noun,f,Les enfants vont à l'école.,The children go to school.,A1,education;core,CEFR-A1
+travail,work,/tʁa.vaj/,noun,m,Le travail commence à neuf heures.,Work starts at nine o'clock.,A1,work;core,CEFR-A1
+jour,day,/ʒuʁ/,noun,m,Quel beau jour !,What a beautiful day!,A1,time;core,CEFR-A1
+nuit,night,/nɥi/,noun,f,La nuit est calme.,The night is calm.,A1,time;core,CEFR-A1
+bien,well,/bjɛ̃/,adverb,,Tu parles très bien français.,You speak French very well.,A1,quality;core,CEFR-A1
+grand,big/tall,/ɡʁɑ̃/,adjective,,C'est un grand arbre.,It is a tall tree.,A1,description;core,CEFR-A1
+petit,small,/pə.ti/,adjective,,J'ai un petit appartement.,I have a small apartment.,A1,description;core,CEFR-A1
+manger,to eat,/mɑ̃.ʒe/,verb,,Je mange une pomme.,I am eating an apple.,A1,food;action;core,CEFR-A1
+boire,to drink,/bwaʁ/,verb,,Il boit du lait.,He drinks milk.,A1,drink;action;core,CEFR-A1
+aller,to go,/a.le/,verb,,Nous allons au marché.,We are going to the market.,A1,movement;action;core,CEFR-A1
+avoir,to have,/a.vwaʁ/,verb,,J'ai deux frères.,I have two brothers.,A1,action;core,CEFR-A1
+être,to be,/ɛtʁ/,verb,,Je suis heureux.,I am happy.,A1,action;core,CEFR-A1

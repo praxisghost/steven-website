@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "updated": "2026-06-05",
+  "exports": [
+    {
+      "language_pair": "english_to_mandarin",
+      "l1": "English",
+      "l2": "Mandarin Chinese",
+      "guide_source": "content/pronunciation-guides/generated/english-to-mandarin.md",
+      "files": {
+        "csv": "public/downloads/vocabulary/csv/english_to_mandarin.csv",
+        "tsv": "public/downloads/vocabulary/tsv/english_to_mandarin.tsv"
+      },
+      "entry_count": 35,
+      "fields": [
+        "l2_word",
+        "l1_translation",
+        "pinyin",
+        "tone_numbers",
+        "ipa_pronunciation",
+        "part_of_speech",
+        "l2_example_sentence",
+        "l1_example_translation",
+        "hsk_level",
+        "tags",
+        "source"
+      ],
+      "encoding": "UTF-8",
+      "formats": [
+        "csv",
+        "tsv"
+      ],
+      "anki_compatible": true,
+      "date_created": "2026-06-05"
+    },
+    {
+      "language_pair": "english_to_french",
+      "l1": "English",
+      "l2": "French",
+      "guide_source": "content/pronunciation-guides/generated/english-to-french.md",
+      "files": {
+        "csv": "public/downloads/vocabulary/csv/english_to_french.csv",
+        "tsv": "public/downloads/vocabulary/tsv/english_to_french.tsv"
+      },
+      "entry_count": 36,
+      "fields": [
+        "l2_word",
+        "l1_translation",
+        "ipa_pronunciation",
+        "part_of_speech",
+        "grammatical_gender",
+        "l2_example_sentence",
+        "l1_example_translation",
+        "cefr_level",
+        "tags",
+        "source"
+      ],
+      "encoding": "UTF-8",
+      "formats": [
+        "csv",
+        "tsv"
+      ],
+      "anki_compatible": true,
+      "date_created": "2026-06-05"
+    },
+    {
+      "language_pair": "english_to_spanish",
+      "l1": "English",
+      "l2": "Spanish",
+      "guide_source": "content/pronunciation-guides/generated/english-to-spanish.md",
+      "files": {
+        "csv": "public/downloads/vocabulary/csv/english_to_spanish.csv",
+        "tsv": "public/downloads/vocabulary/tsv/english_to_spanish.tsv"
+      },
+      "entry_count": 36,
+      "fields": [
+        "l2_word",
+        "l1_translation",
+        "ipa_pronunciation",
+        "part_of_speech",
+        "grammatical_gender",
+        "l2_example_sentence",
+        "l1_example_translation",
+        "cefr_level",
+        "tags",
+        "source"
+      ],
+      "encoding": "UTF-8",
+      "formats": [
+        "csv",
+        "tsv"
+      ],
+      "anki_compatible": true,
+      "date_created": "2026-06-04"
+    }
+  ]
+}
