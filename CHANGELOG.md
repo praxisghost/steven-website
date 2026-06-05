@@ -1,5 +1,201 @@
 # Changelog
 
+## 2026-06-05 (autonomous run — vocabulary export: English→Mandarin)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_mandarin.csv (new)
+* public/downloads/vocabulary/tsv/english_to_mandarin.tsv (new)
+* content/vocabulary/metadata/index.json (updated)
+* LANGUAGE_VOCAB_PROGRESS.md (session log appended)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created UTF-8 vocabulary exports for the English→Mandarin Chinese language pair. 35 entries total: 5 sourced from the guide's Practice Words table (你好, 谢谢, 中国, 是, 女); 30 curated HSK 1 high-frequency core words. Mandarin-specific fields added per vocabulary-schema.md: pinyin (with tone marks), tone_numbers (e.g. 3-3, 4-0), hsk_level. IPA tone contour diacritics (˥˩˧˨˩˦) and all Chinese characters preserved in UTF-8 with Unix line endings. Verified 35/35 unique entries. Anki-compatible.
+
+## 2026-06-05 (autonomous run — vocabulary export: English→French)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_french.csv (new)
+* public/downloads/vocabulary/tsv/english_to_french.tsv (new)
+* content/vocabulary/metadata/index.json (updated)
+* LANGUAGE_VOCAB_PROGRESS.md (session log appended)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created UTF-8 vocabulary exports for the English→French language pair. 36 entries total: 5 sourced directly from the guide's Practice Words table (bonjour, merci, tu, pain, français); 31 curated CEFR A1 high-frequency core words/phrases. Fields match the established schema: l2_word, l1_translation, ipa_pronunciation, part_of_speech, grammatical_gender, l2_example_sentence, l1_example_translation, cefr_level, tags, source. IPA symbols including French-specific nasal vowels (/ɔ̃/, /ɑ̃/, /ɛ̃/), /ʁ/, /y/, /ʃ/, /ʒ/ and accented characters preserved correctly in both formats. Verified 36/36 unique entries (no duplicates). Anki-compatible.
+
+## 2026-06-04 (autonomous run — language guides: French for Portuguese speakers)
+
+Files changed:
+* public/french-from-portuguese.html (new)
+* public/french-srs-pt.js (new)
+* public/language-guides.html (hub link added to Portuguese group, between Espanhol and Kinyarwanda, as data-l2="french" = Francês, F > E and F < K)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for Portuguese speakers (french-from-portuguese) — written
+entirely in Portuguese. Modelled on french-from-italian.html and german-from-portuguese.html.
+Includes a 107-card SRS deck (Français front / Português back) and all required sections.
+
+Key grammar focus: être covering ser/estar (simplification); avoir = ter (direct transfer for
+possession, age, hunger); partitive article du/de la — obligatory in French, often omitted in
+Portuguese colloquial speech — flagged as the main new habit; ne…pas double negation; passé composé
+with être auxiliary (~16 motion/change verbs, unlike Portuguese which uses only ter); passé composé
+≠ pretérito perfeito composto disambiguation (J'ai mangé = Comi, NOT tenho comido); gender
+mismatches; 8-pair PT-FR false friends table.
+
+Key pronunciation focus: nasal vowel MECHANISM is a Portuguese advantage — but TIMBRE mapping is the
+challenge (PT timbres ≠ FR timbres); French u /y/ (no Portuguese equivalent); uvular r /ʁ —
+advantage for Northern Portugal and Rio de Janeiro speakers; silent final consonants; liaison;
+CaReFuL rule; schwa.
+
+Resources (11 items): Institut français Portugal, Alliance Française Portugal, Institut français
+du Brésil (7 cities), Duolingo PT, Larousse PT-FR, WordReference FR-PT, Bescherelle, Lawless
+French, TV5MONDE, ARTE, RFI Français facile, innerFrench YouTube, Français Authentique, Coffee
+Break French, News in Slow French, Anki, iTalki.
+
+Next recommended guide:
+Japanese for Spanish speakers (japanese-from-spanish) — French is now complete for all priority
+sources. Japanese (#4) is the next priority target; Spanish (#1) is the highest-priority source.
+
+
+## 2026-06-04 (autonomous run — Superorganism graph: page-discovery refresh)
+
+Refreshed stale graph data and extended the conservative semantic edge set.
+73 pages existed on disk but were missing from the graph.
+
+* 322 → 395 nodes, 379 → 466 edges (all 322 original positions preserved exactly)
+* 14 new curated semantic edges (ideological opposites / strong thematic pairs)
+* Verified: 0 dangling / 0 isolated / 0 duplicate edges; 1.18 edges/node;
+  assets serve 200 with correct MIME types; node --check passes
+
+Files changed:
+* public/isms/superorganism-graph.json (regenerated — 395 nodes / 466 edges)
+* tools/graph/build-graph.mjs (+14 curated semantic edges)
+* GRAPH_PROGRESS.md, GRAPH_BACKLOG.md, GRAPH_DECISIONS.md (Decision 019),
+  GRAPH_STATUS.md, PROJECT_STATUS.md
+
+## 2026-06-04 (autonomous run — Isms Batch 006 second half)
+
+Files changed:
+* public/isms/conservatism.html (new)
+* public/isms/constructivism.html (new)
+* public/isms/consumerism.html (new)
+* public/isms/contextualism.html (new)
+* public/isms.html (nav updated)
+* ISMS_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created placeholder pages for the Batch 006 second half: conservatism, constructivism,
+consumerism, contextualism. Nav links inserted alphabetically in isms.html — Conservatism
+after Consequentialism; Constructivism, Consumerism, and Contextualism after Constitutionalism.
+Batch 006 is now 10/10 — COMPLETE.
+
+
+
+## 2026-06-04 (autonomous run — vocabulary export: English→Spanish)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_spanish.csv (new)
+* public/downloads/vocabulary/tsv/english_to_spanish.tsv (new)
+* content/vocabulary/metadata/index.json (new)
+* LANGUAGE_VOCAB_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+First vocabulary export for the Language Guides vocab system. Built UTF-8 CSV + TSV for
+English→Spanish: 36 entries (5 extracted from the guide's Practice Words table, 31 curated
+high-frequency CEFR A1 core words/phrases per LANGUAGE_VOCAB_DECISIONS Decision 001). Columns:
+l2_word, l1_translation, ipa_pronunciation, part_of_speech, grammatical_gender,
+l2_example_sentence, l1_example_translation, cefr_level, tags, source. Anki/Excel/LibreOffice/
+Sheets compatible; IPA, diacritics and ñ preserved. Verified CSV==TSV, 36/36 unique l2_word (no
+dupes). Created metadata/index.json. One task per AUTONOMOUS_RULES — stopped after this export.
+
+## 2026-06-04 (autonomous run — language guides: French for Italian speakers)
+
+Files changed:
+* public/french-from-italian.html (new)
+* public/french-srs-it.js (new)
+* public/language-guides.html (hub link added to Italian group, before Romancio, as data-l2="french" = Francese, F < R)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — French for Italian speakers (french-from-italian) — written
+entirely in Italian. Modelled on french-from-spanish.html for the full SRS+vocab+grammar+
+pronunciation+mistakes+resources+culture+related structure, and on german-from-italian.html
+for Italian-language section headings and terminology. Adapted throughout for Italian-speaking
+learners. Includes a 105-card SRS deck (Français front / Italiano back) and all required
+sections: Flashcard (SRS), Che cos'è il francese? (intro), Vocabolario di base Top 100
+(vocab table), Grammatica essenziale (grammar incl. 26-row Français↔Italiano example-sentence
+table — exceeds 25-sentence minimum), Pronuncia, Errori comuni degli italofoni (9 errors in
+collapsible details), Risorse per imparare (11 resources), Cultura e contesto, Guide correlate.
+
+Grammar focus for Italian learners: être as the single verb covering both essere and stare —
+net simplification flagged immediately, with one key exception (health expressed with aller,
+not être: «Je vais bien» ≠ *Je suis bien); avoir structurally identical to avere — J'ai faim
+= Ho fame, J'ai 20 ans = Ho 20 anni — complete transfer; partitive article du/de la is the
+MAJOR Italian advantage over all other learner groups — Italian del/della/dei/delle is an
+identical structure (Je veux du café = Voglio del caffè), unlike Spanish/Korean/Japanese
+speakers who have no equivalent; ne…pas double negation contrasted with Italian single «non»;
+passé composé structure almost identical to Italian passato prossimo — same auxiliary+
+participio logic, same gender/number agreement with être/essere auxiliary, BUT list of verbs
+using être ≠ Italian essere verbs (assignment diverges for some motion verbs); grammatical
+gender (two genders in both languages — same concept, but assignment often differs: il calore
+masc. ≠ la chaleur fem., il mare masc. ≠ la mer fem., l'arte fem. ≠ l'art masc.); 8-pair
+false friends table specific to the IT-FR pair.
+
+Pronunciation focus for Italian learners: French u /y/ — no Italian equivalent; labbra in
+«u», suono di «i»; distinction u /y/ vs ou /u/ flagged as meaning-changing (tu /ty/ vs tout
+/tu/); four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — absent from Italian, #1 challenge; Italian
+instinct to close to N consonant at end is explicitly warned against; eu /ø/ — secondary
+challenge; uvular r /ʁ/ (compared to Italian alveolar trill, gargle analogy); silent final
+consonants opposite of Italian phonotactics (vous=/vu/, grand=/ɡʁɑ̃/, et=/e/, parler=/paʁle/);
+CaReFuL rule; liaison (/lezɑ̃fɑ̃/, /vuzave/, /ilzɔ̃/); schwa /ə/ reduction. Advantages:
+five oral vowels almost identical; fixed final-syllable stress simpler than Italian mobile
+accent; most consonants transfer directly; >85% shared Latin-origin vocabulary; passé composé
+structure already familiar from passato prossimo.
+
+Resources (11 items): Institut français Italia (Torino/Milano/Roma/Napoli/Palermo — DELF/DALF
+A1–C2), Alliance Française Italia (multiple cities), Duolingo (Italian interface), Larousse
+IT-FR, WordReference FR-IT, Bescherelle, Lawless French, TV5MONDE Europe, ARTE, RFI Français
+facile, innerFrench YouTube, Français Authentique YouTube, Coffee Break French, News in Slow
+French, Anki, iTalki.
+
+Next recommended task:
+French for Portuguese speakers (french-from-portuguese) — last remaining priority (#9) source
+for French. Guide in Portuguese, modelled on french-from-spanish.html and german-from-portuguese.html.
+
+
+## 2026-06-04 (autonomous run — isms Batch 006 first half)
+
+Files changed:
+* public/isms/clericalism.html (new)
+* public/isms/clientelism.html (new)
+* public/isms/colonialism.html (new)
+* public/isms/communalism.html (new)
+* public/isms/consequentialism.html (new)
+* public/isms/communism.html (pre-existing, verified)
+* public/isms.html (navigation — 5 links inserted between Classicism and Constitutionalism)
+* ISMS_PROGRESS.md, PROJECT_STATUS.md, CHANGELOG.md
+
+Summary:
+Created 5 Isms Batch 006 placeholder pages using the standard -isms template and verified communism.html as pre-existing and conformant. Inserted nav links alphabetically in isms.html between Classicism and Constitutionalism in correct order: Clericalism → Clientelism → Colonialism → Communalism → Communism (existing) → Consequentialism. Batch 006 now 6/10 — IN PROGRESS.
+
+Reason:
+Isms page creation — next eligible unblocked task per PROJECT_STATUS recommendation. All P1/P2 tasks remain blocked. Within run limits (5 pages).
+
+Next recommended task:
+Isms Batch 006 second half — conservatism, constructivism, consumerism, contextualism (+ creationism from Batch 007 to fill the 5-page quota).
+
+
+
 ## 2026-06-03 (autonomous run — language guides: French for Mandarin speakers)
 
 Files changed:

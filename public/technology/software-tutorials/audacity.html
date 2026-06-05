@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audacity Tutorial — Steven Legg</title>
-  <meta name="description" content="Comprehensive Audacity tutorial for macOS Apple Silicon and Fedora KDE — recording, editing, noise reduction, splitting tracks, and exporting audio.">
+  <meta name="description" content="Comprehensive Audacity tutorial for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11 — recording, editing, noise reduction, splitting tracks, and exporting audio.">
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -12,14 +12,14 @@
 
   <header>
     <h1>Audacity</h1>
-    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+    <p>A comprehensive guide for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11</p>
   </header>
 
   <article>
 
     <img class="article-hero" src="../../../img/technology/audacity.jpeg" alt="Audacity">
 
-    <p>Audacity is a free, open-source, cross-platform audio editor. It's a multi-track recorder and waveform editor that handles everything from capturing a single voice memo to cleaning up podcast episodes, digitising old recordings, and assembling layered audio. It works on uncompressed audio for editing and exports to MP3, WAV, FLAC, OGG, and more. This guide is written for both macOS (Apple Silicon) and Fedora KDE, and aims to get you comfortably recording, editing, and exporting clean audio.</p>
+    <p>Audacity is a free, open-source, cross-platform audio editor. It's a multi-track recorder and waveform editor that handles everything from capturing a single voice memo to cleaning up podcast episodes, digitising old recordings, and assembling layered audio. It works on uncompressed audio for editing and exports to MP3, WAV, FLAC, OGG, and more. This guide covers macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11.</p>
 
     <!-- ─── INSTALLATION ──────────────────────────────────────────────────── -->
     <h2>Installation</h2>
@@ -51,6 +51,14 @@
       <figcaption>Placeholder — Audacity on first launch.</figcaption>
     </figure>
 
+    <h3>Windows 11</h3>
+
+    <p>Download the Windows installer from <a href="https://www.audacityteam.org/download/" target="_blank" rel="noopener noreferrer">audacityteam.org/download</a>. Run the <code>.exe</code> installer — no administrator rights required. Alternatively, install via <strong>winget</strong>:</p>
+
+    <pre><code>winget install Audacity.Audacity</code></pre>
+
+    <p><strong>Note:</strong> Windows Defender SmartScreen may flag Audacity on first run. Click <strong>More info → Run anyway</strong>. The first time you record, Windows will prompt for <strong>microphone permission</strong> — grant it in <strong>Settings → Privacy &amp; Security → Microphone</strong> and ensure the toggle for desktop apps is on. For the best low-latency performance, set the <strong>Audio Host</strong> in the device toolbar to <strong>Windows WASAPI</strong> rather than MME or DirectSound — WASAPI gives significantly better timing accuracy and lower latency, which matters for multitrack recording.</p>
+
     <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
     <h2>Interface Overview</h2>
 
@@ -65,7 +73,7 @@
 
     <h3>Setting Your Input and Output Devices</h3>
 
-    <p>Before recording anything, check the <strong>device toolbar</strong>. Set the <strong>Audio Host</strong> (on macOS this is Core Audio; on Fedora it's typically ALSA, PulseAudio, or JACK/PipeWire), choose your <strong>recording device</strong> (your microphone or audio interface), set <strong>channels</strong> to Mono for a single mic or Stereo for a stereo source, and set your <strong>playback device</strong> (headphones or speakers). Using headphones while recording avoids your microphone picking up the playback and causing echo or feedback.</p>
+    <p>Before recording anything, check the <strong>device toolbar</strong>. Set the <strong>Audio Host</strong> (on macOS this is Core Audio; on Fedora it's typically ALSA, PulseAudio, or JACK/PipeWire; on Windows 11 use <strong>WASAPI</strong> for best results), choose your <strong>recording device</strong> (your microphone or audio interface), set <strong>channels</strong> to Mono for a single mic or Stereo for a stereo source, and set your <strong>playback device</strong> (headphones or speakers). Using headphones while recording avoids your microphone picking up the playback and causing echo or feedback.</p>
 
     <!-- ─── RECORDING ─────────────────────────────────────────────────────── -->
     <h2>Recording Audio</h2>
@@ -228,6 +236,8 @@
     <p><strong>On macOS</strong>, if Audacity records silence, check <strong>System Settings → Privacy &amp; Security → Microphone</strong> and confirm Audacity is allowed. You may need to quit and relaunch after granting permission.</p>
 
     <p><strong>On Fedora KDE</strong>, the Flatpak build runs in a sandbox. If your microphone or interface doesn't appear in the device toolbar, use <strong>Flatseal</strong> to confirm audio permissions, make sure PipeWire is running, and try selecting the PulseAudio host in Audacity's device toolbar. For low-latency multitrack work you can route Audacity through JACK/PipeWire.</p>
+
+    <p><strong>On Windows 11</strong>, if Audacity records silence even though microphone access is granted, check <strong>Sound settings → More sound settings → Recording tab</strong> — right-click your microphone and confirm it's set as Default Device. Also ensure the microphone isn't exclusively claimed by another app. If you're using an external USB audio interface, WASAPI Exclusive mode gives the lowest latency but prevents other apps from using the same device simultaneously — switch to WASAPI Shared if that's a problem.</p>
 
     <p><strong>Set the project sample rate before recording.</strong> The <strong>Project Rate</strong> (bottom-left) defaults to 44100 Hz, which is fine for most uses; use 48000 Hz if your audio will accompany video. Mixing sample rates between tracks forces resampling and can subtly degrade quality.</p>
 

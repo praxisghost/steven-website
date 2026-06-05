@@ -125,7 +125,38 @@
   <div id="so-label"></div>
   <div id="so-loading">Summoning the superorganism…</div>
 
+  <audio id="so-audio" src="../audio/SuperOrganism.mp3" loop></audio>
+
   <script type="module" src="superorganism.js"></script>
+  <script>
+    (function () {
+      const audio = document.getElementById('so-audio');
+
+      // Attempt autoplay; browsers may block it until a user gesture.
+      function tryPlay() {
+        audio.play().catch(() => {
+          // If blocked, play on first user interaction instead.
+          document.addEventListener('pointerdown', () => audio.play(), { once: true });
+        });
+      }
+
+      // Start when the page becomes visible / is first loaded.
+      if (document.visibilityState === 'visible') {
+        tryPlay();
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          audio.pause();
+        } else {
+          audio.play().catch(() => {});
+        }
+      });
+
+      // Stop cleanly when navigating away.
+      window.addEventListener('pagehide', () => { audio.pause(); audio.currentTime = 0; });
+    })();
+  </script>
   <noscript>
     <p style="color:#888; padding:2rem; font-family:sans-serif;">
       The Superorganism graph needs JavaScript. Meanwhile, you can browse the site

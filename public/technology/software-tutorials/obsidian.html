@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obsidian Tutorial — Steven Legg</title>
-  <meta name="description" content="Comprehensive Obsidian tutorial for macOS Apple Silicon and Fedora KDE — vaults, Markdown, links, plugins, and workflows.">
+  <meta name="description" content="Comprehensive Obsidian tutorial for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11 — vaults, Markdown, links, plugins, and workflows.">
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
   <header>
     <h1>Obsidian</h1>
-    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+    <p>A comprehensive guide for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11</p>
   </header>
 
   <article>
@@ -47,6 +47,14 @@
       <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: Obsidian first launch on Fedora KDE showing vault selection screen]">
       <figcaption>Placeholder — Obsidian first launch vault selection screen.</figcaption>
     </figure>
+
+    <h3>Windows 11</h3>
+
+    <p>Download the <code>.exe</code> installer from <a href="https://obsidian.md" target="_blank" rel="noopener noreferrer">obsidian.md</a>. The installer runs per-user by default and requires no administrator rights. Alternatively, install via <strong>winget</strong>:</p>
+
+    <pre><code>winget install Obsidian.Obsidian</code></pre>
+
+    <p>Obsidian on Windows 11 is identical to the macOS and Linux versions — all plugins, themes, and features work the same way. Your vault is a regular Windows folder; place it anywhere you like. If you want it to sync with OneDrive, put the vault folder inside your OneDrive folder, but do not also enable Obsidian Sync simultaneously or you'll risk file conflicts.</p>
 
     <!-- ─── VAULTS ────────────────────────────────────────────────────────── -->
     <h2>Vaults</h2>
@@ -133,7 +141,7 @@ print("Hello, world!")
 
     <table>
       <thead>
-        <tr><th>Action</th><th>macOS</th><th>Linux</th></tr>
+        <tr><th>Action</th><th>macOS</th><th>Linux / Windows</th></tr>
       </thead>
       <tbody>
         <tr><td>Open command palette</td><td><kbd>⌘ P</kbd></td><td><kbd>Ctrl P</kbd></td></tr>
@@ -219,6 +227,14 @@ print("Hello, world!")
 
     <p>For Git-based backup, initialise a repo inside your vault and push to a private repository on GitHub or Codeberg. The <strong>Obsidian Git</strong> community plugin automates commits and pushes on a schedule.</p>
 
+    <h3>Windows 11</h3>
+
+    <p>On Windows, <strong>OneDrive</strong> is the easiest automatic sync option — place your vault inside your OneDrive folder and it syncs to all your Windows devices and the OneDrive web. For cross-platform sync (Windows to macOS or Android), use <strong>Syncthing</strong> (free, peer-to-peer) or <strong>Obsidian Sync</strong> (paid, end-to-end encrypted). Install Syncthing on Windows via:</p>
+
+    <pre><code>winget install SyncthingCommunity.SyncTray</code></pre>
+
+    <p>The <strong>Obsidian Git</strong> community plugin works on Windows provided Git is installed (<code>winget install Git.Git</code>). After installing Git, restart Obsidian, install the plugin, and configure it the same way as on other platforms.</p>
+
     <!-- ─── TIPS ──────────────────────────────────────────────────────────── -->
     <h2>Tips and Gotchas</h2>
 
@@ -235,6 +251,8 @@ status: in-progress
     <p><strong>Don't over-organise folders.</strong> Links and tags are more flexible than deep folder hierarchies. Many people use a nearly flat folder structure and rely on links and search to find things.</p>
 
     <p><strong>On Fedora KDE</strong> with the Flatpak, fonts and some UI elements may look slightly different from the macOS version. If system fonts look off, install a font like Inter and set it in <strong>Settings → Appearance → Font</strong>.</p>
+
+    <p><strong>On Windows 11</strong>, Obsidian handles high-DPI displays well but check <strong>Settings → Appearance → Interface font size</strong> if text looks too small or large on your monitor. If you're using OneDrive to sync, make sure <strong>Files On-Demand</strong> is enabled in OneDrive settings — otherwise it may try to download files in a way that conflicts with Obsidian's file watcher.</p>
 
   </article>
 

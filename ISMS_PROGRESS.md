@@ -72,5 +72,19 @@ Batch 004: 10 / 10 pages created — COMPLETE.
 
 Batch 005: 10 / 10 pages created — COMPLETE.
 
+### Batch 006 (first half)
+- [x] clericalism (placeholder created 2026-06-04)
+- [x] clientelism (placeholder created 2026-06-04)
+- [x] colonialism (placeholder created 2026-06-04)
+- [x] communism (pre-existing, verified 2026-06-04)
+- [x] communalism (placeholder created 2026-06-04)
+- [x] consequentialism (placeholder created 2026-06-04)
+- [x] conservatism (placeholder created 2026-06-04)
+- [x] constructivism (placeholder created 2026-06-04)
+- [x] consumerism (placeholder created 2026-06-04)
+- [x] contextualism (placeholder created 2026-06-04)
+
+Batch 006: 10 / 10 pages created — COMPLETE.
+
 ## Dictionary Enrichment
 None yet. Enrichment begins only after pages exist and pass review.

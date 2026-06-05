@@ -1,11 +1,13 @@
 {
   "name": "steven-website",
-  "version": "2.6.0",
+  "version": "2.8.0",
   "main": "server.ts",
   "scripts": {
     "start": "tsx server.ts",
     "dev": "tsx watch server.ts",
-    "graph": "node tools/graph/build-graph.mjs"
+    "build": "node tools/graph/build-graph.mjs",
+    "graph": "node tools/graph/build-graph.mjs",
+    "graph:check": "node tools/graph/build-graph.mjs --check"
   },
   "dependencies": {
     "dotenv": "^16.0.0",

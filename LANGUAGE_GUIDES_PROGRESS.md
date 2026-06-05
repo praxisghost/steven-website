@@ -9,6 +9,60 @@ Never target English. English guides (`*-learning.html`, `*-from-english.html`) 
 
 ## Completed (this autonomous track)
 
+### 2026-06-04 — French for Portuguese speakers
+- **Pair:** French (target) ← Portuguese (source) — `fr` / `pt`
+- **Files:** `public/french-from-portuguese.html`, `public/french-srs-pt.js`
+- **Hub:** linked in the Portuguese (`data-l1="portuguese"`) group of `language-guides.html` (alphabetically between Espanhol and Kinyarwanda, as `data-l2="french"` = Francês, F comes after E and before K)
+- **Deck:** 107 high-frequency cards (Français front / Português back)
+- **Sections:** Cartões (SRS), O que é o francês? (intro), Vocabulário base Top 100 (vocab table), Gramática essencial (grammar incl. 26-row Français↔Português example-sentence table), Pronúncia, Erros comuns dos lusófonos (9 errors), Recursos para aprender (11 resources in collapsible details), Cultura e contexto, Guias associados
+- **Focus (Portuguese-learner perspective):** être as single verb covering both ser and estar — net simplification, flagged immediately with one exception (health uses aller, not être: «Je vais bien» ≠ *Je suis bien); avoir structurally parallel to ter for possession, age (J'ai vingt ans = Tenho vinte anos) and hunger/thirst (J'ai faim = Tenho fome); partitive article du/de la — MAJOR challenge for lusófonos who habitually omit the article after querer/comer/beber (Portuguese «Quero café» vs French obligatory «Je veux du café»); ne…pas double negation contrasted with Portuguese single «não»; passé composé with être auxiliary — lusófonos must learn the ~16 être-verb list as Portuguese uses only ter for all compound tenses; être/avoir auxiliary split contrasted explicitly with Portuguese ter; passé composé vs pretérito perfeito composto — critical disambiguation (J'ai mangé = Comi, not *Tenho comido with habitual sense); gender mismatches flagged (o calor masc. ≠ la chaleur fem., o mar masc. ≠ la mer fem., a arte fem. ≠ l'art masc.); 8-pair false friends table specific to the PT-FR pair.
+- **Pronunciation focus:** Four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — Portuguese nasal mechanism is the SAME, flagged as #1 advantage over all other learner groups; key challenge is MAPPING not mechanism: Portuguese nasal vowel timbres differ from French (ẽfɐ̃ vs /ɑ̃fɑ̃/) — instruct learner not to transfer PT timbres directly; French u /y/ — no Portuguese equivalent, production tip (lábios em «u», articular «i»); distinction u /y/ vs ou /u/ flagged as meaning-changing (tu /ty/ vs tout /tu/); eu /ø/ — secondary challenge; uvular r /ʁ/ — ADVANTAGE for Northern Portugal and Rio de Janeiro speakers whose uvular r is already close to French /ʁ/; standard Southern PT and central Brazilian alveolar trill warned as too frontal for French; silent final consonants — opposite of Portuguese phonotactics (vous=/vu/, grand=/ɡʁɑ̃/, et=/e/, parler=/paʁle/); CaReFuL rule; liaison (/lezɑ̃fɑ̃/, /vuzave/, /ilzɔ̃/, /œ̃nami/); schwa /ə/ reduction. Advantages: five oral vowels almost identical; fixed final-syllable stress simpler than Portuguese mobile accent; most consonants transfer; >80% shared Latin-origin vocabulary; nasal mechanism already known.
+- **Resources (11 items):** Institut français Portugal (Lisboa — DELF/DALF A1–C2), Alliance Française Portugal (Lisboa/Porto), Institut français du Brésil (São Paulo/Rio/Curitiba/Porto Alegre/Recife/Salvador/Brasília), Duolingo (Portuguese interface), Larousse PT-FR, WordReference FR-PT, Bescherelle, Lawless French, TV5MONDE, ARTE, RFI Français facile, innerFrench YouTube, Français Authentique YouTube, Coffee Break French, News in Slow French, Anki, iTalki.
+- **Cultural section:** La Francofonia (29 official countries, 320M+ speakers, 700M+ projected by 2050); Portugal–France historical ties (French crusading orders at Alcobaça, 18th-century Enlightenment cultural influence, 600k+ Portuguese diaspora in France as largest diaspora outside Brazil); Brazil–France cultural ties (French prestige culture and language in Imperial and Republican-era Brazil, ongoing fashion/gastronomy links); French in international organisations (UN, UNESCO, ICJ, IOC); French loanwords in Portuguese and Portuguese loanwords in French.
+
+---
+
+## Selection state update
+
+**French** (target) existing sources: English (french-learning.html), Spanish (french-from-spanish.html ✓), German (french-from-german.html ✓), Japanese (french-from-japanese.html ✓), Korean (french-from-korean.html ✓), Mandarin (french-from-mandarin.html ✓), Italian (french-from-italian.html ✓), **Portuguese (french-from-portuguese.html ✓ new)**.
+- All priority sources for French are now complete.
+
+---
+
+## Next recommended guide
+
+**Japanese for Spanish speakers** (`japanese-from-spanish`) — Japanese is priority #4 target; Spanish is priority #1 source. French is now complete for all priority sources. Japanese is the next priority target with the most missing priority sources. The guide should be written in Spanish, modelled on `spanish-from-japanese.html` (for the Japanese-learner content from the opposite direction) and existing Spanish-source guides for Spanish-language section headings. Focus on: hiragana/katakana/kanji writing systems (with introduction to all three); SOV word order; no grammatical gender; verb conjugation (polite -masu form vs plain form); particles (wa, ga, wo, ni, de, e, to, no); agglutinative morphology; honorific system (keigo); no articles; counting and classifiers; Japan-specific resources: Instituto Cervantes Tokio, NHK まいにち外国語 スペイン語, Real Academia Española.
+Rationale: French (#3) is now complete for all priority sources. Japanese (#4) is the next target. Spanish (#1) is the highest-priority source for Japanese.
+
+---
+
+### 2026-06-04 — French for Italian speakers
+- **Pair:** French (target) ← Italian (source) — `fr` / `it`
+- **Files:** `public/french-from-italian.html`, `public/french-srs-it.js`
+- **Hub:** linked in the Italian (`data-l1="italian"`) group of `language-guides.html` (alphabetically before Romancio, as `data-l2="french"` = Francese, F comes before R)
+- **Deck:** 105 high-frequency cards (Français front / Italiano back)
+- **Sections:** Flashcard (SRS), Che cos'è il francese? (intro), Vocabolario di base Top 100 (vocab table), Grammatica essenziale (grammar incl. 26-row Français↔Italiano example-sentence table), Pronuncia, Errori comuni degli italofoni (9 errors), Risorse per imparare (11 resources in collapsible details), Cultura e contesto, Guide correlate
+- **Focus (Italian-learner perspective):** être as the single verb covering both essere and stare — net simplification with one exception (aller for health, not être); avoir structurally identical to avere — age (J'ai 20 ans = Ho 20 anni) and hunger/thirst (J'ai faim = Ho fame) transfer directly; partitive article du/de la is a MAJOR advantage — Italian del/della/dei/delle is an identical structure, unlike Spanish speakers who have no equivalent; ne…pas double negation contrasted with Italian single «non»; passé composé with être auxiliary (similar to Italian passato prossimo with essere) — same gender/number agreement rule on past participle, BUT the list of verbs using être ≠ Italian essere verbs; gender (two genders in both languages, same concept, but assignment differs — il calore vs la chaleur, il mare vs la mer, l'arte f vs l'art m); false friends table with 8 pairs specific to the IT-FR pair.
+- **Pronunciation focus:** Four nasal vowels /ɑ̃/ /ɛ̃/ /ɔ̃/ /œ̃/ — absent from Italian, flagged as #1 challenge with production tip (sustain vowel, flow air through nose, do NOT close to N at end — Italian instinct is to add N consonant at end); French u /y/ — no Italian equivalent whatsoever; distinction u /y/ vs ou /u/ critical for meaning (tu /ty/ vs tout /tu/, vu /vy/ vs vous /vu/); eu /ø/ — secondary challenge, secondary to /y/; uvular r /ʁ/ (gargle analogy — distinct from Italian alveolar trill, closer to some southern Italian/dialecal r); silent final consonants — opposite of Italian where consonants almost always sound (vous=/vu/, grand=/ɡʁɑ̃/, et=/e/, parler=/paʁle/); CaReFuL rule; liaison (/lezɑ̃fɑ̃/, /vuzave/, /ilzɔ̃/, /œ̃nami/); schwa /ə/ reduction. Advantages: five oral vowels almost identical; fixed final-syllable stress simpler than Italian mobile accent; most consonants transfer directly; massivo cognate vocabulary (>85% shared Latin origin); passé composé structure already familiar.
+- **Resources (11 items):** Institut français Italia (Torino/Milano/Roma/Napoli/Palermo — DELF/DALF A1–C2), Alliance Française Italia (Roma/Milano/Firenze/Bologna/Palermo and more), Duolingo (Italian interface), Larousse IT-FR, WordReference FR-IT, Bescherelle (conjugation reference), Lawless French, TV5MONDE Europe, ARTE (FR/IT), RFI Français facile, innerFrench YouTube, Français Authentique YouTube, Coffee Break French, News in Slow French, Anki, iTalki.
+- **Cultural section:** La Francofonia (29 official countries, 320M+ speakers); Italy–France historical and cultural ties (Caterina de' Medici, Italian Renaissance influence on French literature, Romantic-era mutual exchange, daily Alpine border traffic); French in international organisations (UN, UNESCO, ICJ, IOC); French loanwords in Italian and Italian loanwords in French (showing the centuries of linguistic exchange).
+
+---
+
+## Selection state update
+
+**French** (target) existing sources: English (french-learning.html), Spanish (french-from-spanish.html ✓), German (french-from-german.html ✓), Japanese (french-from-japanese.html ✓), Korean (french-from-korean.html ✓), Mandarin (french-from-mandarin.html ✓), **Italian (french-from-italian.html ✓ new)**.
+- Remaining priority sources for French: Portuguese (#9).
+
+---
+
+## Next recommended guide
+
+**French for Portuguese speakers** (`french-from-portuguese`) — French is priority #3 target; Portuguese is priority #9 source. The guide should be written in Portuguese (European and/or Brazilian), modelled on `french-from-spanish.html` for the French-learner content and on `german-from-portuguese.html` for Portuguese-language section headings and structure. Focus on: nasal vowels in French (Portuguese also has nasal vowels — /ɑ̃/ /ɛ̃/ /ɔ̃/ — but the mapping is imperfect and Portuguese speakers often add a nasal consonant at the end; flag the key difference); French u /y/ (no Portuguese equivalent — same challenge as Spanish/Italian); silent final consonants; liaison; partitive article (Portuguese has «de» + definite article: «do/da/dos/das» — similar to Italian del/della, though usage differs); être vs Portuguese ser/estar (same binary as Spanish — French être is simpler); false friends between French and Portuguese; gender mismatches. Portugal/Brazil-specific resources: Institut français Portugal (Lisboa), Alliance Française Portugal, Institut français du Brésil (São Paulo/Rio/Curitiba/Porto Alegre/Recife/Salvador/Brasília), DELF/DALF centres in Portugal and Brazil.
+Rationale: Italian (#8) is now complete for French. Portuguese (#9) is the last remaining priority source for French.
+
+---
+
 ### 2026-06-03 — French for Mandarin speakers
 - **Pair:** French (target) ← Mandarin (source) — `fr` / `zh`
 - **Files:** `public/french-from-mandarin.html`, `public/french-srs-zh.js`

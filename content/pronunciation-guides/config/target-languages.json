@@ -1,0 +1,212 @@
+{
+  "l2_languages": [
+    {
+      "name": "Ainu",
+      "slug": "ainu"
+    },
+    {
+      "name": "Amharic",
+      "slug": "amharic"
+    },
+    {
+      "name": "Amis",
+      "slug": "amis"
+    },
+    {
+      "name": "Arabic",
+      "slug": "arabic"
+    },
+    {
+      "name": "Armenian",
+      "slug": "armenian"
+    },
+    {
+      "name": "Aymara",
+      "slug": "aymara"
+    },
+    {
+      "name": "Basque",
+      "slug": "basque"
+    },
+    {
+      "name": "Bengali",
+      "slug": "bengali"
+    },
+    {
+      "name": "Burmese",
+      "slug": "burmese"
+    },
+    {
+      "name": "Cantonese",
+      "slug": "cantonese"
+    },
+    {
+      "name": "Cape Verdean Creole",
+      "slug": "cape-verdean-creole"
+    },
+    {
+      "name": "Catalan",
+      "slug": "catalan"
+    },
+    {
+      "name": "Cherokee",
+      "slug": "cherokee"
+    },
+    {
+      "name": "Chichewa",
+      "slug": "chichewa"
+    },
+    {
+      "name": "French",
+      "slug": "french"
+    },
+    {
+      "name": "Fuzhounese",
+      "slug": "fuzhounese"
+    },
+    {
+      "name": "German",
+      "slug": "german"
+    },
+    {
+      "name": "Guaraní",
+      "slug": "guarani"
+    },
+    {
+      "name": "Haitian Creole",
+      "slug": "haitian-creole"
+    },
+    {
+      "name": "Hakka",
+      "slug": "hakka"
+    },
+    {
+      "name": "Hausa",
+      "slug": "hausa"
+    },
+    {
+      "name": "Hawaiian",
+      "slug": "hawaiian"
+    },
+    {
+      "name": "Hindi",
+      "slug": "hindi"
+    },
+    {
+      "name": "Hokkien",
+      "slug": "hokkien"
+    },
+    {
+      "name": "Italian",
+      "slug": "italian"
+    },
+    {
+      "name": "Jejueo",
+      "slug": "jejueo"
+    },
+    {
+      "name": "Kinyarwanda",
+      "slug": "kinyarwanda"
+    },
+    {
+      "name": "Lingala",
+      "slug": "lingala"
+    },
+    {
+      "name": "Louisiana French",
+      "slug": "louisiana-french"
+    },
+    {
+      "name": "Mandarin",
+      "slug": "mandarin"
+    },
+    {
+      "name": "Mapudungun",
+      "slug": "mapudungun"
+    },
+    {
+      "name": "Náhuatl",
+      "slug": "nahuatl"
+    },
+    {
+      "name": "Navajo",
+      "slug": "navajo"
+    },
+    {
+      "name": "Persian",
+      "slug": "persian"
+    },
+    {
+      "name": "Punjabi",
+      "slug": "punjabi"
+    },
+    {
+      "name": "Québécois",
+      "slug": "quebecois"
+    },
+    {
+      "name": "Quechua",
+      "slug": "quechua"
+    },
+    {
+      "name": "Romansh",
+      "slug": "romansh"
+    },
+    {
+      "name": "Shanghainese",
+      "slug": "shanghainese"
+    },
+    {
+      "name": "Shona",
+      "slug": "shona"
+    },
+    {
+      "name": "Spanish",
+      "slug": "spanish"
+    },
+    {
+      "name": "Swahili",
+      "slug": "swahili"
+    },
+    {
+      "name": "Taishanese",
+      "slug": "taishanese"
+    },
+    {
+      "name": "Turkish",
+      "slug": "turkish"
+    },
+    {
+      "name": "Ukrainian",
+      "slug": "ukrainian"
+    },
+    {
+      "name": "Umbundu",
+      "slug": "umbundu"
+    },
+    {
+      "name": "Urdu",
+      "slug": "urdu"
+    },
+    {
+      "name": "Vietnamese",
+      "slug": "vietnamese"
+    },
+    {
+      "name": "Wolof",
+      "slug": "wolof"
+    },
+    {
+      "name": "isiXhosa",
+      "slug": "isixhosa"
+    },
+    {
+      "name": "Yorùbá",
+      "slug": "yoruba"
+    },
+    {
+      "name": "isiZulu",
+      "slug": "isizulu"
+    }
+  ]
+}

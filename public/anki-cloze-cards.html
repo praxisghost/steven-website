@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anki Cloze Cards — Steven Legg</title>
+  <meta name="description" content="A practical guide to Anki Cloze deletion cards — what they are, how to create them effectively, best practices for retention, and how to use AI to build a better study system.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="back-link" href="language-methods.html">← Methods &amp; Tools</a>
+
+  <header>
+    <h1>Anki Cloze Cards</h1>
+    <p>What cloze deletion is, why it works, how to make great cards, and how to use AI to scale your study system.</p>
+  </header>
+
+  <article>
+
+    <img class="article-hero" src="img/technology/anki.jpeg" alt="Anki — Cloze Cards Guide">
+
+    <!-- TABLE OF CONTENTS -->
+    <ol class="lang-toc">
+      <li><a href="#what-is-cloze">What Is a Cloze Card?</a></li>
+      <li><a href="#why-cloze">Why Cloze Cards Work</a></li>
+      <li><a href="#creating-cloze">Creating Cloze Cards in Anki</a></li>
+      <li><a href="#formatting">Effective Cloze Formatting</a></li>
+      <li><a href="#incremental">Incremental Information Hiding</a></li>
+      <li><a href="#context">Context-Rich Learning</a></li>
+      <li><a href="#language-learning">Cloze Cards for Language Learning</a></li>
+      <li><a href="#mistakes">Common Mistakes to Avoid</a></li>
+      <li><a href="#advanced">Advanced Strategies</a></li>
+      <li><a href="#ai">Using AI to Build Better Cloze Cards</a></li>
+      <li><a href="#workflows">AI Workflows for Language Learners</a></li>
+    </ol>
+
+    <!-- ══════════════════════════════════════════
+         1. WHAT IS A CLOZE CARD?
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="what-is-cloze">
+      <h2>1. What Is a Cloze Card?</h2>
+      <p>A <strong>cloze deletion</strong> card is a fill-in-the-blank flashcard. A portion of a sentence or phrase is hidden — "deleted" — and you must recall it before flipping the card.</p>
+      <p>Example: <em>"The capital of France is {{c1::Paris}}."</em> When reviewing, you see: <em>"The capital of France is ___."</em></p>
+      <p>The notation <code>{{c1::…}}</code> is Anki's cloze syntax. <code>c1</code> is the cloze group — multiple deletions in the same note can share a number (revealed together) or use different numbers (tested separately).</p>
+
+      <details class="accordion" open>
+        <summary>Cloze vs. Basic cards — when to use each</summary>
+        <div class="accordion-body">
+          <p><strong>Basic cards</strong> (front/back) are ideal for isolated facts with a clear question–answer pair: <em>"What does 猫 mean?" → "Cat."</em></p>
+          <p><strong>Cloze cards</strong> shine when the surrounding context is part of what you need to learn — grammar patterns, collocations, idiomatic usage, or any fact that is easier to remember within a sentence than in isolation. For language learning, cloze is usually the better default for vocabulary and grammar.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         2. WHY CLOZE CARDS WORK
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="why-cloze">
+      <h2>2. Why Cloze Cards Work</h2>
+      <p>Cloze cards tap into several overlapping memory principles that make them more effective than simple Q&amp;A pairs for most kinds of knowledge.</p>
+
+      <h3>The testing effect</h3>
+      <p>Retrieving information from memory — even imperfectly — strengthens memory far more than re-reading it. The act of generating the missing word, not just recognising it, is what builds durable recall. This is why fill-in-the-blank consistently outperforms multiple-choice in memory research.</p>
+
+      <h3>Contextual encoding</h3>
+      <p>Memory is associative. When a target word is embedded in a meaningful sentence, your brain has more "hooks" to attach it to: syntax, adjacent words, topic, emotion. Isolated word pairs give you one retrieval path; a cloze sentence gives you many.</p>
+
+      <h3>Sentence-level pattern recognition</h3>
+      <p>For language learning specifically, cloze cards train your intuition for how words are actually used — which prepositions they take, how they inflect, where they fall in a sentence. This is something a basic card simply cannot replicate.</p>
+
+      <h3>Reduced cognitive load</h3>
+      <p>A good cloze card tests one thing at a time within a comprehensible frame. You don't have to construct the entire context from memory — the sentence does that work for you — so all your cognitive effort goes toward the target item.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         3. CREATING CLOZE CARDS IN ANKI
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="creating-cloze">
+      <h2>3. Creating Cloze Cards in Anki</h2>
+      <p>Anki has a built-in <strong>Cloze</strong> note type. Select it when adding a new note, type your sentence in the <em>Text</em> field, highlight the word(s) you want hidden, and press <kbd>Ctrl+Shift+C</kbd> (or <kbd>Cmd+Shift+C</kbd> on Mac). Anki wraps the selection in <code>{{c1::…}}</code> automatically.</p>
+
+      <h3>Multiple clozes in one note</h3>
+      <p>Each <code>c</code> number generates a separate card. A note with <code>{{c1::…}}</code> and <code>{{c2::…}}</code> produces two cards — one hiding the first deletion, one hiding the second — but both share the same sentence as context.</p>
+      <p>Use a <em>single</em> cloze number (<code>c1</code> on both) if you want two words revealed or hidden together. Use <em>different</em> numbers if you want to test them independently.</p>
+
+      <h3>The Extra field</h3>
+      <p>The Cloze note type has an optional <em>Extra</em> field shown on the answer side. Use it for: native-language translations, pronunciation guides, example sentences, grammar notes, or images. It keeps your main card clean while still giving you useful context when you need it.</p>
+
+      <details class="accordion">
+        <summary>Cloze hint text — hiding partial information</summary>
+        <div class="accordion-body">
+          <p>You can include a hint inside the cloze: <code>{{c1::Berlin::capital city}}</code> shows <em>"___ (capital city)"</em> during review. Hints are useful when a card would otherwise be ambiguous — but use them sparingly, since a harder card with no hint builds stronger memory.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         4. EFFECTIVE CLOZE FORMATTING
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="formatting">
+      <h2>4. Effective Cloze Formatting</h2>
+      <p>What makes a cloze card good or bad has almost nothing to do with Anki itself — it comes down to the quality of the sentence you choose and how precisely you define the gap.</p>
+
+      <h3>The minimum information principle</h3>
+      <p>Each card should test exactly one thing. If you find yourself writing a sentence where the blank could be any of three plausible answers, split it into separate cards or rewrite the sentence so the context uniquely determines the answer.</p>
+
+      <h3>Delete the right element</h3>
+      <p>Delete words that carry meaningful load: a verb's conjugated form, an inflection, a preposition that follows a specific verb, a vocabulary word in context. Don't delete filler — articles, conjunctions, or common words the sentence can't function without — unless those function words <em>are</em> the target of study.</p>
+
+      <h3>Keep the gap appropriately challenging</h3>
+      <p>A blank that's too easy (only one word could possibly fit) trains recognition without effort. A blank that's too hard (the answer isn't inferable from the surrounding text) creates frustration and false negatives. The sweet spot is a blank that requires genuine recall but whose answer feels satisfying and unambiguous once revealed.</p>
+
+      <h3>Prefer full, natural sentences</h3>
+      <p>Avoid truncated or artificial sentences. <em>"She [blank] to the store every morning."</em> is less useful than <em>"She walks to the store every morning before work."</em> — the extra detail both sounds natural and adds retrieval hooks.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         5. INCREMENTAL INFORMATION HIDING
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="incremental">
+      <h2>5. Incremental Information Hiding</h2>
+      <p>One powerful cloze technique is to build a sequence of cards that progressively hide more of the same sentence. This is especially effective for grammar patterns, conjugation paradigms, and multi-part factual lists.</p>
+      <p>Example — learning German verb conjugation:</p>
+      <ul>
+        <li>Card 1: <em>"Ich {{c1::gehe}} jeden Tag spazieren."</em> (test the verb)</li>
+        <li>Card 2: <em>"Ich gehe jeden {{c2::Tag}} spazieren."</em> (test the time expression)</li>
+        <li>Card 3: <em>"Ich gehe jeden Tag {{c3::spazieren}}."</em> (test the infinitive)</li>
+      </ul>
+      <p>Each card tests a different element, but all three share the same sentence, so you're also drilling the sentence's overall shape and rhythm. Over time, the whole sentence becomes automatic.</p>
+      <p>Don't overdo it — three cloze deletions per sentence is usually a comfortable ceiling. Beyond that, you risk making the cards feel mechanical rather than meaningful.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         6. CONTEXT-RICH LEARNING
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="context">
+      <h2>6. Context-Rich Learning</h2>
+      <p>The best cloze cards come from real language you've encountered — sentences from books, podcasts, shows, conversations, or articles. This is called <strong>sentence mining</strong>, and it produces cards that feel personally meaningful because you already have a memory attached to the source.</p>
+      <p>A sentence you heard in a show you love, or read in a book that moved you, will stick far better than a textbook example — even if both sentences are grammatically identical. Emotional and episodic context are powerful memory aids.</p>
+
+      <h3>Where to mine sentences</h3>
+      <ul>
+        <li>Subtitles from shows you're watching (tools like <a href="https://asbplayer.com/" target="_blank" rel="noopener noreferrer">ASBPlayer</a> automate this for language learners)</li>
+        <li>Reading material — novels, news articles, graded readers</li>
+        <li>Conversations or text exchanges in the target language</li>
+        <li>Podcast transcripts</li>
+        <li>Your own writing, corrected by a native speaker or AI</li>
+      </ul>
+
+      <h3>The i+1 principle</h3>
+      <p>Mine sentences where you understand everything <em>except</em> the target word or structure. If a sentence has three unknowns, it's too opaque — the context can't help you infer anything, and reviewing it will feel like guessing. One unknown per card is the ideal.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         7. CLOZE CARDS FOR LANGUAGE LEARNING
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="language-learning">
+      <h2>7. Cloze Cards for Language Learning</h2>
+      <p>Cloze cards are arguably more useful for language learning than any other flashcard format. Here's how to apply them across different aspects of acquisition.</p>
+
+      <h3>Vocabulary in context</h3>
+      <p>Rather than testing a word in isolation (<em>"猫 → cat"</em>), test it in a sentence that shows how it's used: <em>"この{{c1::猫}}は毎日魚を食べます。"</em> (This <em>cat</em> eats fish every day.) This builds both recognition and usage intuition simultaneously.</p>
+
+      <h3>Grammar and inflection</h3>
+      <p>Cloze cards are ideal for drilling grammatical patterns — verb endings, case markers, aspect, tense, agreement. The surrounding sentence acts as a grammar scaffold, so you're learning the rule in context rather than as an abstraction.</p>
+      <p>Example for Turkish: <em>"Dün markete {{c1::gittim}}."</em> (Yesterday I went to the market.) Tests the past-tense first-person suffix in a real sentence.</p>
+
+      <h3>Collocations and set phrases</h3>
+      <p>Many vocabulary errors aren't about meaning — they're about which words naturally go together. <em>"Make a decision"</em> not <em>"do a decision."</em> Cloze cards drill these combinations more naturally than any other format: <em>"She finally {{c1::made}} a decision after weeks of deliberation."</em></p>
+
+      <h3>Particles, prepositions, and function words</h3>
+      <p>These are notoriously hard to learn from a dictionary. Cloze cards force you to recall which particle follows a specific verb, which preposition a particular noun takes — exactly the knowledge that's built by exposure but is hard to study explicitly any other way.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         8. COMMON MISTAKES TO AVOID
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="mistakes">
+      <h2>8. Common Mistakes to Avoid</h2>
+
+      <h3>Overly large deletions</h3>
+      <p>Deleting an entire clause or long phrase turns a focused recall exercise into a production test. If you're blanking out five words at once, ask yourself: am I testing one thing or five? Split the card, or reduce the gap to the single most important element.</p>
+
+      <h3>Decontextualised blanks</h3>
+      <p>A sentence like <em>"The {{c1::dog}} barked loudly."</em> where <em>any</em> noun could fit isn't testing anything useful. Your brain needs the surrounding context to uniquely determine the answer — otherwise the card is just a guessing game, not a memory test.</p>
+
+      <h3>Too many cloze cards per note</h3>
+      <p>Cramming six deletions into one sentence bloats your review queue and makes individual cards feel arbitrary. Two or three targeted deletions per note is usually the right ceiling.</p>
+
+      <h3>Neglecting the Extra field</h3>
+      <p>If a card requires any supporting information — a translation, an image, a grammar note — put it in the Extra field. Don't clutter the main sentence with meta-information that belongs on the answer side only.</p>
+
+      <h3>Mining sentences you don't understand</h3>
+      <p>If the surrounding context is opaque, the cloze card loses its main advantage. Stick to sentences where you understand everything except the target item. Cards you can't make sense of will frustrate you and drift toward "leeches" — items you fail repeatedly without getting better.</p>
+
+      <h3>Ignoring leech management</h3>
+      <p>Anki marks cards as "leeches" when you fail them many times. Don't ignore this signal. A leech usually means the card is poorly formatted (ambiguous, too hard, bad context) rather than that the information is genuinely impossible to learn. Rewrite it.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         9. ADVANCED STRATEGIES
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="advanced">
+      <h2>9. Advanced Strategies</h2>
+
+      <h3>Image cloze</h3>
+      <p>Anki supports images in cloze cards. Combining a picture with a cloze deletion is powerful for visual vocabulary — anatomy, geography, labelled diagrams, or any domain where the visual reinforces the word. Add an image to the Extra field or embed it directly in the Text field before the sentence.</p>
+
+      <h3>Audio cloze</h3>
+      <p>For listening comprehension, you can create cloze cards where the content is an audio clip with a word removed. This is advanced to set up but extremely effective for drilling phonetic patterns, listening recall, and pronunciation awareness. Tools like HyperTTS can assist in generating audio.</p>
+
+      <h3>Cloze for formulaic knowledge</h3>
+      <p>Cloze cards work well beyond language learning. They're excellent for memorising code snippets (blank out a function name or syntax), legal or medical definitions, historical sequences, scientific formulas, or any structured knowledge where the surrounding context helps anchor the target fact.</p>
+
+      <h3>Reversed cloze (production)</h3>
+      <p>A normal cloze card tests <em>recognition</em>: you see the sentence with a gap and recall the word. A useful advanced variant is to create a sibling card that shows only the word and asks you to produce a correct sentence using it. Anki doesn't automate this — you'd create it as a separate basic card — but pairing recognition and production cards dramatically accelerates fluency.</p>
+
+      <h3>Tagging and filtered decks</h3>
+      <p>Tag your cloze cards by topic, chapter, difficulty, or grammatical category. Anki's filtered deck feature lets you run a focused session on just the tags you need — useful for pre-exam cramming or revisiting a specific grammar point without disturbing your main deck's scheduling.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         10. USING AI TO BUILD BETTER CLOZE CARDS
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="ai">
+      <h2>10. Using AI to Build Better Cloze Cards</h2>
+      <p>Modern AI tools — ChatGPT, Claude, Gemini — are genuinely useful for Anki card creation. They don't replace the discipline of actually reviewing your cards, but they dramatically reduce the friction of getting good material <em>into</em> your deck.</p>
+
+      <h3>Generating cloze cards from a word list</h3>
+      <p>Give the AI a list of vocabulary words and ask it to produce cloze sentences. A good prompt specifies the target language, your level, whether you want translations, and that each sentence should test exactly one word:</p>
+      <blockquote class="lang-note">
+        "I'm learning Turkish at an intermediate level. For each word in the list below, write one natural Turkish sentence using that word in context. Format each line as: <code>Turkish sentence with {{c1::word}} cloze notation | English translation</code>. Keep the sentences conversational and avoid abstract or formal register."
+      </blockquote>
+      <p>You can then paste the output directly into Anki's card importer.</p>
+
+      <h3>Improving existing cards</h3>
+      <p>Paste a card that keeps coming up as a leech and ask the AI why it might be hard to remember and how to rewrite it. Often it will identify that the context is too thin, the sentence is unnatural, or the wrong word was deleted.</p>
+
+      <h3>Converting notes into cloze format</h3>
+      <p>If you've been taking notes in a class or from a textbook, paste them into Claude or ChatGPT and ask it to convert them into properly-formatted Anki cloze cards. This turns passive notes into active study material in minutes.</p>
+
+      <h3>Grammar drilling</h3>
+      <p>Ask the AI to generate a set of cloze cards targeting one specific grammar point — a particular tense, a preposition rule, a verb conjugation pattern. Focused drilling of a single pattern across many sentences is one of the fastest ways to internalise it.</p>
+
+      <details class="accordion">
+        <summary>Example prompt for grammar-focused cards</summary>
+        <div class="accordion-body">
+          <p>"Generate 10 natural German sentences that each use the Konjunktiv II form of a different common verb. Format each line as: <code>German sentence with {{c1::verb form}} cloze | English translation</code>. Vary the verbs and contexts. Use everyday conversational register."</p>
+          <p>This produces a ready-to-import batch that drills one grammar point from multiple angles, without you having to write or look up a single sentence.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         11. AI WORKFLOWS FOR LANGUAGE LEARNERS
+    ══════════════════════════════════════════ -->
+    <div class="lang-section" id="workflows">
+      <h2>11. AI Workflows for Language Learners</h2>
+      <p>Beyond individual card generation, AI tools can be integrated into broader language learning systems.</p>
+
+      <h3>Sentence mining pipeline</h3>
+      <p>When you encounter an unknown word while reading or listening, copy the source sentence and ask the AI to: (1) explain the word in context, (2) give you two or three related example sentences, and (3) format all of them as cloze cards. This creates a mini-deck around each new word, clustered by context.</p>
+
+      <h3>Error correction → card creation</h3>
+      <p>Write a few paragraphs in your target language, ask the AI to correct them and explain each error. Then ask it to convert those corrections into cloze cards — each card targeting one mistake you made. This is sentence mining from your <em>own</em> production, which tends to create some of the stickiest memories.</p>
+
+      <h3>Spaced reading + card export</h3>
+      <p>Use AI to summarise a long article in your target language with i+1 vocabulary (one unknown per sentence), then convert the summary into a set of cloze cards. This pairs reading comprehension practice with active recall study.</p>
+
+      <h3>Deck audits</h3>
+      <p>Export your most-failed cards and paste them into an AI conversation. Ask it to diagnose each one — is the sentence ambiguous? The cloze too vague? The context too thin? This kind of systematic card review is tedious to do alone but fast with AI assistance.</p>
+
+      <h3>Prompt templates for Claude / ChatGPT</h3>
+      <p>Build and save a few prompt templates that work for your learning style. A good starting set:</p>
+      <ul>
+        <li><strong>Vocabulary batch:</strong> given word list → cloze sentences with translations, ready to import</li>
+        <li><strong>Grammar drill:</strong> given grammar point → 10 varied cloze sentences targeting that rule</li>
+        <li><strong>Error mining:</strong> given my corrected writing → cloze cards from my mistakes</li>
+        <li><strong>Leech fixer:</strong> given a bad card → rewritten version with better context</li>
+      </ul>
+      <p>Once you have working templates, card creation time drops from minutes per card to seconds, which removes the main friction point that stops most learners from maintaining a large, well-curated deck.</p>
+
+      <details class="accordion">
+        <summary>A note on AI accuracy</summary>
+        <div class="accordion-body">
+          <p>AI-generated sentences are generally natural and correct for major languages (Spanish, French, German, Japanese, Mandarin, etc.), but can be subtler for less-common languages or regional dialects. Always do a quick sanity check on generated sentences, especially for grammar-heavy languages where a subtle error in the example sentence would train you on the wrong form. When in doubt, run the sentence by a native speaker or verify with a corpus.</p>
+        </div>
+      </details>
+
+      <p>Used well, AI doesn't replace the hard work of remembering — it just removes the friction of building the material, so more of your time goes toward actual review rather than card authorship.</p>
+    </div>
+
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

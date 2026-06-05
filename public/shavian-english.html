@@ -4,20 +4,156 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shavian English — Steven Legg</title>
+  <meta name="description" content="A tribute to Shavian English, written in American (General American, rhotic) Shavian with an aligned Roman-letter English gloss beneath each word.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific: word-aligned Shavian + English interlinear gloss.
+       Each .w is a centered column — Shavian on top, English beneath —
+       so Shavian keeps even spacing while the English shifts to stay aligned. */
+    .gloss-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      row-gap: 1.3em;
+      margin: 1.6rem 0;
+    }
+    .w {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 .32em;
+    }
+    .w .sh {
+      font-family: 'Noto Sans Shavian', 'Apple Symbols', 'Segoe UI Historic',
+                   'Segoe UI Symbol', 'Andagii', var(--font-body);
+      font-size: 1.9rem;
+      line-height: 1.35;
+      letter-spacing: .02em;
+      color: #fafafa;
+    }
+    .w .en {
+      font-size: .72rem;
+      line-height: 1.2;
+      margin-top: .22em;
+      letter-spacing: .02em;
+      color: #d8b15a;            /* warm gold gloss for contrast on black */
+    }
+    .w.dash .en { color: #6f6a5e; }
+    .title-en {
+      color: #d8b15a;
+      font-size: .95rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: .35rem;
+    }
+    @media (max-width: 480px) {
+      .w .sh { font-size: 1.5rem; }
+      .w .en { font-size: .66rem; }
+      .w { margin: 0 .26em; }
+    }
+  </style>
 </head>
 <body>
   <a class="back-link" href="writing.html">← Writing</a>
 
   <header>
     <h1 class="shavian" lang="en-Shaw">·𐑖𐑱𐑝𐑾𐑯 ·𐑦𐑙𐑜𐑤𐑦𐑖</h1>
+    <p class="title-en">Shavian English</p>
   </header>
 
   <article>
-    <p class="shavian" lang="en-Shaw">
-      𐑞𐑦𐑕 𐑦𐑟 𐑩 𐑐𐑱𐑡 𐑢𐑺 𐑲 𐑢𐑦𐑤 𐑮𐑲𐑑 𐑔𐑦𐑙𐑟 𐑦𐑯 ·𐑖𐑱𐑝𐑾𐑯 ·𐑦𐑙𐑜𐑤𐑦𐑖. 𐑥𐑹 𐑕𐑵𐑯.
-    </p>
-</article>
+    <div class="gloss-line" lang="en-Shaw">
+      <span class="w"><span class="sh">𐑞𐑦𐑕</span><span class="en">This</span></span>
+      <span class="w"><span class="sh">𐑐𐑱𐑡</span><span class="en">page</span></span>
+      <span class="w"><span class="sh">𐑦𐑟</span><span class="en">is</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑑𐑮𐑦𐑚𐑿𐑑</span><span class="en">tribute</span></span>
+      <span class="w"><span class="sh">𐑑𐑵</span><span class="en">to</span></span>
+      <span class="w"><span class="sh">·𐑖𐑱𐑝𐑾𐑯</span><span class="en">Shavian</span></span>
+      <span class="w"><span class="sh">·𐑦𐑙𐑜𐑤𐑦𐑖</span><span class="en">English</span></span>
+      <span class="w dash"><span class="sh">—</span><span class="en">—</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑚𐑿𐑑𐑦𐑓𐑩𐑤</span><span class="en">beautiful</span></span>
+      <span class="w"><span class="sh">𐑦𐑯𐑝𐑧𐑯𐑖𐑩𐑯</span><span class="en">invention</span></span>
+      <span class="w"><span class="sh">𐑞𐑨𐑑</span><span class="en">that</span></span>
+      <span class="w"><span class="sh">𐑓𐑨𐑕𐑦𐑯𐑱𐑑𐑕</span><span class="en">fascinates</span></span>
+      <span class="w"><span class="sh">𐑥𐑰.</span><span class="en">me.</span></span>
+    </div>
+
+    <div class="gloss-line" lang="en-Shaw">
+      <span class="w"><span class="sh">𐑓𐑹</span><span class="en">For</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑤𐑷𐑙</span><span class="en">long</span></span>
+      <span class="w"><span class="sh">𐑑𐑲𐑥,</span><span class="en">time,</span></span>
+      <span class="w"><span class="sh">𐑲</span><span class="en">I</span></span>
+      <span class="w"><span class="sh">𐑢𐑪𐑯𐑑𐑦𐑛</span><span class="en">wanted</span></span>
+      <span class="w"><span class="sh">𐑑𐑵</span><span class="en">to</span></span>
+      <span class="w"><span class="sh">𐑥𐑱𐑒</span><span class="en">make</span></span>
+      <span class="w"><span class="sh">𐑕𐑳𐑥𐑔𐑦𐑙</span><span class="en">something</span></span>
+      <span class="w"><span class="sh">𐑤𐑲𐑒</span><span class="en">like</span></span>
+      <span class="w"><span class="sh">𐑦𐑑</span><span class="en">it</span></span>
+      <span class="w dash"><span class="sh">—</span><span class="en">—</span></span>
+      <span class="w"><span class="sh">𐑚𐑳𐑑</span><span class="en">but</span></span>
+      <span class="w"><span class="sh">𐑓𐑫𐑤𐑦</span><span class="en">fully</span></span>
+      <span class="w"><span class="sh">𐑓𐑩𐑯𐑧𐑑𐑦𐑒,</span><span class="en">phonetic,</span></span>
+      <span class="w"><span class="sh">𐑯𐑪𐑑</span><span class="en">not</span></span>
+      <span class="w"><span class="sh">𐑡𐑳𐑕𐑑</span><span class="en">just</span></span>
+      <span class="w"><span class="sh">𐑓𐑩𐑯𐑰𐑥𐑦𐑒.</span><span class="en">phonemic.</span></span>
+      <span class="w"><span class="sh">𐑞𐑨𐑑</span><span class="en">That</span></span>
+      <span class="w"><span class="sh">𐑦𐑟</span><span class="en">is</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑣𐑸𐑛</span><span class="en">hard</span></span>
+      <span class="w"><span class="sh">𐑔𐑦𐑙</span><span class="en">thing</span></span>
+      <span class="w"><span class="sh">𐑑𐑵</span><span class="en">to</span></span>
+      <span class="w"><span class="sh">𐑛𐑵.</span><span class="en">do.</span></span>
+      <span class="w"><span class="sh">𐑚𐑦𐑤𐑛𐑦𐑙</span><span class="en">Building</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑚𐑮𐑨𐑯𐑗</span><span class="en">branch</span></span>
+      <span class="w"><span class="sh">𐑝</span><span class="en">of</span></span>
+      <span class="w"><span class="sh">·𐑖𐑱𐑝𐑾𐑯</span><span class="en">Shavian</span></span>
+      <span class="w"><span class="sh">𐑞𐑨𐑑</span><span class="en">that</span></span>
+      <span class="w"><span class="sh">𐑮𐑲𐑑𐑕</span><span class="en">writes</span></span>
+      <span class="w"><span class="sh">𐑧𐑝𐑮𐑦</span><span class="en">every</span></span>
+      <span class="w"><span class="sh">𐑕𐑬𐑯𐑛</span><span class="en">sound</span></span>
+      <span class="w"><span class="sh">𐑦𐑟</span><span class="en">is</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑛𐑦𐑓𐑦𐑒𐑩𐑤𐑑</span><span class="en">difficult</span></span>
+      <span class="w"><span class="sh">𐑐𐑮𐑪𐑡𐑧𐑒𐑑.</span><span class="en">project.</span></span>
+    </div>
+
+    <div class="gloss-line" lang="en-Shaw">
+      <span class="w"><span class="sh">𐑲</span><span class="en">I</span></span>
+      <span class="w"><span class="sh">𐑤𐑳𐑝</span><span class="en">love</span></span>
+      <span class="w"><span class="sh">𐑞𐑩</span><span class="en">the</span></span>
+      <span class="w"><span class="sh">𐑲𐑛𐑾,</span><span class="en">idea,</span></span>
+      <span class="w"><span class="sh">𐑰𐑝𐑩𐑯</span><span class="en">even</span></span>
+      <span class="w"><span class="sh">𐑞𐑴</span><span class="en">though</span></span>
+      <span class="w"><span class="sh">𐑲</span><span class="en">I</span></span>
+      <span class="w"><span class="sh">𐑯𐑴</span><span class="en">know</span></span>
+      <span class="w"><span class="sh">𐑦𐑑</span><span class="en">it</span></span>
+      <span class="w"><span class="sh">𐑢𐑦𐑤</span><span class="en">will</span></span>
+      <span class="w"><span class="sh">𐑯𐑪𐑑</span><span class="en">not</span></span>
+      <span class="w"><span class="sh">𐑒𐑨𐑗</span><span class="en">catch</span></span>
+      <span class="w"><span class="sh">𐑪𐑯</span><span class="en">on</span></span>
+      <span class="w"><span class="sh">𐑕𐑵𐑯.</span><span class="en">soon.</span></span>
+      <span class="w"><span class="sh">𐑲</span><span class="en">I</span></span>
+      <span class="w"><span class="sh">𐑢𐑫𐑛</span><span class="en">would</span></span>
+      <span class="w"><span class="sh">𐑷𐑤𐑕𐑴</span><span class="en">also</span></span>
+      <span class="w"><span class="sh">𐑤𐑳𐑝</span><span class="en">love</span></span>
+      <span class="w"><span class="sh">𐑑𐑵</span><span class="en">to</span></span>
+      <span class="w"><span class="sh">𐑥𐑱𐑒</span><span class="en">make</span></span>
+      <span class="w"><span class="sh">𐑩</span><span class="en">a</span></span>
+      <span class="w"><span class="sh">𐑐𐑴𐑕𐑑-𐑐𐑴𐑕𐑑-𐑥𐑪𐑛𐑼𐑯</span><span class="en">post-post-modern</span></span>
+      <span class="w"><span class="sh">𐑟𐑰𐑯</span><span class="en">zine</span></span>
+      <span class="w"><span class="sh">𐑩𐑚𐑬𐑑</span><span class="en">about</span></span>
+      <span class="w"><span class="sh">𐑒𐑩𐑯𐑑𐑧𐑥𐑐𐑩𐑮𐑧𐑮𐑦</span><span class="en">contemporary</span></span>
+      <span class="w"><span class="sh">𐑐𐑪𐑐</span><span class="en">pop</span></span>
+      <span class="w"><span class="sh">𐑒𐑳𐑤𐑗𐑼</span><span class="en">culture</span></span>
+      <span class="w"><span class="sh">𐑨𐑯𐑛</span><span class="en">and</span></span>
+      <span class="w"><span class="sh">𐑞𐑩</span><span class="en">the</span></span>
+      <span class="w"><span class="sh">𐑑𐑵-𐑔𐑬𐑟𐑩𐑯𐑛𐑟.</span><span class="en">two-thousands.</span></span>
+    </div>
+  </article>
 
   <footer>
     <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>

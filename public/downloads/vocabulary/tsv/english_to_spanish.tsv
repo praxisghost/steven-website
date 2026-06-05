@@ -1,0 +1,37 @@
+l2_word	l1_translation	ipa_pronunciation	part_of_speech	grammatical_gender	l2_example_sentence	l1_example_translation	cefr_level	tags	source
+hola	hello	/ˈo.la/	interjection		¡Hola! ¿Cómo estás?	Hello! How are you?	A1	greeting;core	guide
+perro	dog	/ˈpe.ro/	noun	m	El perro corre en el parque.	The dog runs in the park.	A1	animal;core	guide
+gracias	thank you	/ˈɡɾa.sjas/	interjection		Muchas gracias por tu ayuda.	Thank you very much for your help.	A1	courtesy;core	guide
+jamón	ham	/xaˈmon/	noun	m	Me gusta el jamón.	I like ham.	A1	food;core	guide
+español	Spanish	/es.paˈɲol/	noun	m	Estudio español todos los días.	I study Spanish every day.	A1	language;core	guide
+sí	yes	/si/	adverb		Sí, quiero café.	Yes, I want coffee.	A1	function;core	A1
+no	no	/no/	adverb		No, gracias.	No, thank you.	A1	function;core	A1
+adiós	goodbye	/aˈðjos/	interjection		Adiós, hasta mañana.	Goodbye, see you tomorrow.	A1	greeting;core	A1
+por favor	please	/poɾ faˈβoɾ/	phrase		Un café, por favor.	A coffee, please.	A1	courtesy;phrase	A1
+buenos días	good morning	/ˈbwe.nos ˈdi.as/	phrase		Buenos días, señora.	Good morning, ma'am.	A1	greeting;phrase	A1
+buenas noches	good night	/ˈbwe.nas ˈno.tʃes/	phrase		Buenas noches, hasta mañana.	Good night, see you tomorrow.	A1	greeting;phrase	A1
+agua	water	/ˈa.ɣwa/	noun	f	Quiero un vaso de agua.	I want a glass of water.	A1	food;core	A1
+casa	house	/ˈka.sa/	noun	f	Mi casa es pequeña.	My house is small.	A1	home;core	A1
+gato	cat	/ˈɡa.to/	noun	m	El gato duerme en el sofá.	The cat sleeps on the sofa.	A1	animal;core	A1
+comida	food	/koˈmi.ða/	noun	f	La comida está lista.	The food is ready.	A1	food;core	A1
+libro	book	/ˈli.βɾo/	noun	m	Leo un libro interesante.	I read an interesting book.	A1	object;core	A1
+hombre	man	/ˈom.bɾe/	noun	m	El hombre lee un periódico.	The man reads a newspaper.	A1	people;core	A1
+mujer	woman	/muˈxeɾ/	noun	f	La mujer trabaja en el hospital.	The woman works at the hospital.	A1	people;core	A1
+niño	boy; child	/ˈni.ɲo/	noun	m	El niño juega con la pelota.	The boy plays with the ball.	A1	people;core	A1
+amigo	friend	/aˈmi.ɣo/	noun	m	Mi amigo vive en Madrid.	My friend lives in Madrid.	A1	people;core	A1
+día	day	/ˈdi.a/	noun	m	Hoy es un buen día.	Today is a good day.	A1	time;core	A1
+noche	night	/ˈno.tʃe/	noun	f	Trabajo por la noche.	I work at night.	A1	time;core	A1
+tiempo	time; weather	/ˈtjem.po/	noun	m	No tengo tiempo hoy.	I don't have time today.	A1	time;core	A1
+bueno	good	/ˈbwe.no/	adjective	m	El café está bueno.	The coffee is good.	A1	quality;core	A1
+malo	bad	/ˈma.lo/	adjective	m	El tiempo está malo hoy.	The weather is bad today.	A1	quality;core	A1
+grande	big	/ˈɡɾan.de/	adjective		La ciudad es muy grande.	The city is very big.	A1	quality;core	A1
+pequeño	small	/peˈke.ɲo/	adjective	m	Tengo un coche pequeño.	I have a small car.	A1	quality;core	A1
+uno	one	/ˈu.no/	numeral		Solo quiero uno.	I only want one.	A1	number;core	A1
+dos	two	/dos/	numeral		Tengo dos hermanos.	I have two brothers.	A1	number;core	A1
+tres	three	/tɾes/	numeral		Son las tres.	It's three o'clock.	A1	number;core	A1
+ser	to be (essential)	/seɾ/	verb		Soy estudiante.	I am a student.	A1	verb;core	A1
+estar	to be (state/location)	/esˈtaɾ/	verb		Estoy en casa.	I am at home.	A1	verb;core	A1
+tener	to have	/teˈneɾ/	verb		Tengo dos gatos.	I have two cats.	A1	verb;core	A1
+hablar	to speak	/aˈβlaɾ/	verb		Quiero hablar español.	I want to speak Spanish.	A1	verb;core	A1
+comer	to eat	/koˈmeɾ/	verb		Me gusta comer fruta.	I like to eat fruit.	A1	verb;core	A1
+beber	to drink	/beˈβeɾ/	verb		Voy a beber agua.	I am going to drink water.	A1	verb;core	A1

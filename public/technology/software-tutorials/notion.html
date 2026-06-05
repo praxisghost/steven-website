@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notion Tutorial — Steven Legg</title>
-  <meta name="description" content="Comprehensive Notion tutorial for macOS Apple Silicon and Fedora KDE — setup, pages, databases, templates, and workflow tips.">
+  <meta name="description" content="Comprehensive Notion tutorial for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11 — setup, pages, databases, templates, and workflow tips.">
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
   <header>
     <h1>Notion</h1>
-    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+    <p>A comprehensive guide for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11</p>
   </header>
 
   <article>
@@ -52,6 +52,14 @@
       <figcaption>Placeholder — Notion open on Fedora KDE.</figcaption>
     </figure>
 
+    <h3>Windows 11</h3>
+
+    <p>Notion has a first-class Windows desktop app. Download it from <a href="https://www.notion.so/desktop" target="_blank" rel="noopener noreferrer">notion.so/desktop</a> and run the installer — no administrator rights required. Alternatively, install via <strong>winget</strong> in Windows Terminal or PowerShell:</p>
+
+    <pre><code>winget install Notion.Notion</code></pre>
+
+    <p>Notion on Windows 11 is a native Electron app and behaves identically to the macOS version — all the same keyboard shortcuts work (with <kbd>Ctrl</kbd> in place of <kbd>⌘</kbd>), and all features are available. Sign in with your Notion account on first launch.</p>
+
     <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
     <h2>Understanding the Interface</h2>
 
@@ -70,7 +78,7 @@
 
     <table>
       <thead>
-        <tr><th>Action</th><th>macOS</th><th>Linux</th></tr>
+        <tr><th>Action</th><th>macOS</th><th>Linux / Windows</th></tr>
       </thead>
       <tbody>
         <tr><td>New page</td><td><kbd>⌘ N</kbd></td><td><kbd>Ctrl N</kbd></td></tr>
@@ -181,6 +189,8 @@
     <p><strong>Offline support is limited.</strong> Notion requires an internet connection to sync. On both macOS and Linux, previously loaded pages are cached, but creating new content offline is unreliable. If offline note-taking is critical, consider Obsidian instead (see the Obsidian guide).</p>
 
     <p><strong>On Fedora KDE</strong>, the Flatpak version may occasionally lag behind the latest desktop app release. If you need the very latest features, use Notion in a browser (Firefox or Chromium) instead.</p>
+
+    <p><strong>On Windows 11</strong>, Notion runs well with no special configuration. If you want Notion to start with Windows, right-click the system tray icon and enable <strong>Launch on login</strong>. The web clipper browser extension works with Edge, Chrome, and Firefox on Windows exactly as it does on other platforms.</p>
 
     <p><strong>Exporting your data.</strong> You can export all your pages as Markdown + CSV at <strong>Settings → Export all workspace content</strong>. Do this periodically as a backup.</p>
 

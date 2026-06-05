@@ -14,8 +14,9 @@ Create an Obsidian-inspired Three.js visualization representing the entire websi
 
 Current State
 
-Live — interactive graph implemented (2026-06-01). 318 nodes, 375 edges.
-Build script + renderer in place. See GRAPH_PROGRESS.md.
+Live — interactive graph implemented (2026-06-01). 395 nodes, 466 edges
+(page discovery refreshed 2026-06-04; was 322/379). Build script + renderer in
+place. See GRAPH_PROGRESS.md.
 
 Technology
 

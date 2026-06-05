@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KDenLive Tutorial — Steven Legg</title>
-  <meta name="description" content="Comprehensive KDenLive tutorial for macOS Apple Silicon and Fedora KDE — project setup, timeline editing, effects, audio, and export.">
+  <meta name="description" content="Comprehensive KDenLive tutorial for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11 — project setup, timeline editing, effects, audio, and export.">
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
   <header>
     <h1>KDenLive</h1>
-    <p>A comprehensive guide for macOS (Apple Silicon) and Fedora KDE</p>
+    <p>A comprehensive guide for macOS Tahoe (Apple Silicon), Fedora 43 KDE, and Windows 11</p>
   </header>
 
   <article>
@@ -48,6 +48,14 @@
       <img src="../../../img/placeholder-screenshot.png" alt="[Screenshot placeholder: KDenLive splash screen or welcome dialog]">
       <figcaption>Placeholder — KDenLive on first launch.</figcaption>
     </figure>
+
+    <h3>Windows 11</h3>
+
+    <p>KDenLive has an official Windows installer. Download the <code>.exe</code> from <a href="https://kdenlive.org/en/download/" target="_blank" rel="noopener noreferrer">kdenlive.org/download</a> — it bundles MLT, FFmpeg, and all required libraries. Run the installer (administrator rights recommended). Alternatively, install via <strong>winget</strong>:</p>
+
+    <pre><code>winget install KDE.Kdenlive</code></pre>
+
+    <p>KDenLive on Windows 11 supports the same project formats, effects, and export codecs as the Linux version. GPU-accelerated preview works via Direct3D/OpenGL on compatible NVIDIA and AMD cards — enable this in <strong>Settings → Configure KDenLive → Playback → GPU rendering</strong>. If certain audio formats won't decode, install <strong>K-Lite Codec Pack Basic</strong> alongside KDenLive.</p>
 
     <!-- ─── INTERFACE ─────────────────────────────────────────────────────── -->
     <h2>Interface Overview</h2>
@@ -237,6 +245,8 @@
     <p><strong>On macOS</strong>, KDenLive may have issues with some video formats that require additional codecs. If a clip won't import or plays without audio, install the extra codecs via Homebrew: <code>brew install ffmpeg</code>.</p>
 
     <p><strong>On Fedora KDE</strong>, if you installed via Flatpak and GPU acceleration isn't working, check <strong>Settings → Configure KDenLive → Playback</strong> and ensure the GPU rendering option is enabled. You may need to install the <code>mesa-va-drivers</code> or <code>nvidia-vaapi-driver</code> package depending on your GPU.</p>
+
+    <p><strong>On Windows 11</strong>, KDenLive stores its configuration and render cache in <code>%APPDATA%\kdenlive</code>. If you run into render issues, clearing the cache from <strong>Settings → Configure KDenLive → Environment → Clear Cache</strong> often resolves them. For 4K ProRes workflows on Windows, ensure the Apple ProRes codec is installed (it comes bundled with QuickTime or Apple's codec installer for Windows) for the best compatibility. The proxy clip system works identically to Linux — enable it in project settings for smoother 4K editing.</p>
 
   </article>
 
