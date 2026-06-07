@@ -6,9 +6,9 @@ Canonical state / changelog. Single source of truth. Read this first every run.
 Phase 1 — Branch + worktree + scaffold.
 
 ## Status
-- **Completed:** Planning files (run 1). Next.js + Tailwind frontend scaffold (run 2). Dependency install + typecheck verification (run 3): `npm install` succeeds; `tsc --noEmit` passes clean (EXIT 0) — scaffold is type-correct.
-- **Current:** Code statically + type validated. Full `next build` is BLOCKED in this sandbox (SWC native binary bus-errors on load; see below). Commit still gated on worktree approval.
-- **Next task:** Phase 3 content migration — inventory `/website` source content (articles, photos, copy) and log a migration map. (Safe, no env/build dependency.) Worktree + `next build` remain blocked.
+- **Completed:** Planning files (run 1). Next.js + Tailwind frontend scaffold (run 2). Dependency install + typecheck verification (run 3). Content inventory + migration map (run 4): `CONTENT_MIGRATION_MAP.md` written — 415 HTML / ~110 photos / 54 md inventoried and mapped to App Router routes.
+- **Current:** Content fully mapped, no code/asset moved yet. `next build` still BLOCKED in sandbox (SWC bus-error). Commit gated on worktree approval.
+- **Next task:** Phase 3 step 1 — migrate Home + 12 primary nav pages from `public/*.html` to `frontend/app/**` (port copy, no design polish yet). Cap ~150 LOC → likely split (start: home + about + contact). Worktree + `next build` remain blocked.
 
 ## Needs Human Approval
 - **[HIGH] Branch + worktree creation.** Run, from /Users/steven/Desktop/Web-Dev/website:
@@ -24,6 +24,14 @@ Phase 1 — Branch + worktree + scaffold.
 [2026-06-06 23:36] Task: First-run planning files | Changed: 3 files (~120 LOC, docs only) | Principle: n/a | Build: n/a (no code yet) | Status: on track | Confidence: H | Next: scaffold Next.js+Tailwind frontend (after worktree approval)
 [2026-06-06 23:38] Task: Scaffold Next.js+Tailwind frontend | Changed: 11 files (~179 LOC; slightly over 150 cap — cohesive minimal scaffold, not split) | Principle: Hick's Law (single accent), F-pattern (65ch measure) | Build: deferred (needs npm install) | Status: on track | Confidence: H | Next: npm install + npm run build verify
 [2026-06-06 23:42] Task: Install deps + verify build | Changed: 0 repo files (node_modules only, gitignored) | Principle: n/a | Build: tsc PASS; next build BLOCKED (SWC bus-error, env) | Status: blocked (env) → rescope next task to content migration | Confidence: M | Next: Phase 3 content inventory of /website
+[2026-06-07 04:34] Task: Content inventory + migration map | Changed: 1 file (CONTENT_MIGRATION_MAP.md, ~130 LOC docs) | Principle: n/a (planning) | Build: n/a (no code) | Status: on track | Confidence: H | Next: migrate Home + primary nav pages (Phase 3 step 1)
+
+## Notes / decisions this run (run 4)
+- Inventoried `/website` (read-only): Express+TS static site, content in `public/` (415 HTML) + `content/` (54 md). Mapped every group → App Router routes in CONTENT_MIGRATION_MAP.md, citing source paths.
+- Key sizes: 162 language SRS pages across 56 languages; 104 isms; 21 technology; 6 blog; 5 projects; ~110 photos; 2 mp3.
+- Decision: migrate language guides from `content/**` markdown (single source), not the 162 generated HTML, to avoid duplication. io/ia/isv/nov are i18n mirrors → deferred to a later i18n task (logged, not lost).
+- Excluded ops/tooling (GRAPH_*, translation-*, server.ts, budgets) from content scope; backend re-implemented in Django phase.
+- Discrepancy noted: website-xyz is a standalone git repo on branch `stevenlegg-xyz`, not a worktree of /website per the plan. Proper worktree setup remains a HIGH approval item (see below).
 
 ## Notes / decisions this run (run 3)
 - `npm install` succeeded (~40s, cache-warmed). `node_modules` is gitignored — no repo files changed this run, so nothing to commit; worktree approval not needed for this task.
