@@ -37,8 +37,9 @@ Leaning Option A for content-forward goals; final choice + rationale logged in P
 - **Visual hierarchy:** clear H1>H2 ramp, ample whitespace.
 - **Fitts's Law:** large, easily-tapped nav/CTA targets, esp. mobile/foldable.
 
-## Components (to build in Phase 4)
-Nav, hero, article layout, guide card grid, footer, dark-mode toggle. Each documented here as built.
+## Components (building incrementally)
+Built (run 5): `SiteHeader` (flat nav, hover→accent; Fitts/Hick), `SiteFooter` (no-ads statement + linktree), `PageHeader` (← Back + H1 + lead; F-pattern), `HubGrid` (Gestalt proximity card grid; cards become links once sub-pages migrate). `lib/nav.ts` is the single nav source.
+To build (Phase 4): hero variants, article layout, guide card grid, dark-mode toggle, contact/newsletter form (after Django API). Each documented here as built.
 
 ## Responsiveness targets
 Desktop, iOS, Android, both Android foldable formats. WCAG AA contrast, Lighthouse ≥ 90 (perf + a11y).

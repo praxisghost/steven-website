@@ -1,0 +1,348 @@
+{
+  "source": "/website/content/pronunciation-guides",
+  "count": 57,
+  "items": [
+    {
+      "slug": "english-to-ainu",
+      "title": "Ainu Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Ainu"
+    },
+    {
+      "slug": "english-to-amharic",
+      "title": "Amharic Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Amharic"
+    },
+    {
+      "slug": "english-to-amis",
+      "title": "Amis Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Amis"
+    },
+    {
+      "slug": "english-to-arabic",
+      "title": "Arabic Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Arabic"
+    },
+    {
+      "slug": "spanish-to-arabic",
+      "title": "Arabic Pronunciation Guide for Native Spanish Speakers",
+      "l1_name": "Spanish",
+      "l2_name": "Arabic"
+    },
+    {
+      "slug": "english-to-armenian",
+      "title": "Armenian Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Armenian"
+    },
+    {
+      "slug": "english-to-aymara",
+      "title": "Aymara Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Aymara"
+    },
+    {
+      "slug": "english-to-basque",
+      "title": "Basque Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Basque"
+    },
+    {
+      "slug": "english-to-bengali",
+      "title": "Bengali Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Bengali"
+    },
+    {
+      "slug": "spanish-to-bengali",
+      "title": "Bengali Pronunciation Guide for Native Spanish Speakers",
+      "l1_name": "Spanish",
+      "l2_name": "Bengali"
+    },
+    {
+      "slug": "english-to-burmese",
+      "title": "Burmese Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Burmese"
+    },
+    {
+      "slug": "english-to-cantonese",
+      "title": "Cantonese Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Cantonese"
+    },
+    {
+      "slug": "english-to-cape-verdean-creole",
+      "title": "Cape Verdean Creole Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Cape Verdean Creole"
+    },
+    {
+      "slug": "english-to-catalan",
+      "title": "Catalan Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Catalan"
+    },
+    {
+      "slug": "english-to-cherokee",
+      "title": "Cherokee Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Cherokee"
+    },
+    {
+      "slug": "english-to-chichewa",
+      "title": "Chichewa Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Chichewa"
+    },
+    {
+      "slug": "english-to-french",
+      "title": "French Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "French"
+    },
+    {
+      "slug": "spanish-to-french",
+      "title": "French Pronunciation Guide for Native Spanish Speakers",
+      "l1_name": "Spanish",
+      "l2_name": "French"
+    },
+    {
+      "slug": "english-to-fuzhounese",
+      "title": "Fuzhounese Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Fuzhounese"
+    },
+    {
+      "slug": "english-to-german",
+      "title": "German Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "German"
+    },
+    {
+      "slug": "english-to-guarani",
+      "title": "Guaraní Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Guaraní"
+    },
+    {
+      "slug": "english-to-haitian-creole",
+      "title": "Haitian Creole Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Haitian Creole"
+    },
+    {
+      "slug": "english-to-hakka",
+      "title": "Hakka Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Hakka"
+    },
+    {
+      "slug": "english-to-hausa",
+      "title": "Hausa Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Hausa"
+    },
+    {
+      "slug": "english-to-hawaiian",
+      "title": "Hawaiian Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Hawaiian"
+    },
+    {
+      "slug": "english-to-hindi",
+      "title": "Hindi Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Hindi"
+    },
+    {
+      "slug": "spanish-to-hindi",
+      "title": "Hindi Pronunciation Guide for Native Spanish Speakers",
+      "l1_name": "Spanish",
+      "l2_name": "Hindi"
+    },
+    {
+      "slug": "english-to-hokkien",
+      "title": "Hokkien Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Hokkien"
+    },
+    {
+      "slug": "english-to-isixhosa",
+      "title": "isiXhosa Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "isiXhosa"
+    },
+    {
+      "slug": "english-to-isizulu",
+      "title": "isiZulu Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "isiZulu"
+    },
+    {
+      "slug": "english-to-italian",
+      "title": "Italian Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Italian"
+    },
+    {
+      "slug": "english-to-jejueo",
+      "title": "Jejueo Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Jejueo"
+    },
+    {
+      "slug": "english-to-kinyarwanda",
+      "title": "Kinyarwanda Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Kinyarwanda"
+    },
+    {
+      "slug": "english-to-lingala",
+      "title": "Lingala Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Lingala"
+    },
+    {
+      "slug": "english-to-louisiana-french",
+      "title": "Louisiana French Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Louisiana French"
+    },
+    {
+      "slug": "english-to-mandarin",
+      "title": "Mandarin Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Mandarin"
+    },
+    {
+      "slug": "spanish-to-mandarin",
+      "title": "Mandarin Chinese Pronunciation Guide for Native Spanish Speakers",
+      "l1_name": "Spanish",
+      "l2_name": "Mandarin"
+    },
+    {
+      "slug": "english-to-mapudungun",
+      "title": "Mapudungun Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Mapudungun"
+    },
+    {
+      "slug": "english-to-navajo",
+      "title": "Navajo Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Navajo"
+    },
+    {
+      "slug": "english-to-nahuatl",
+      "title": "Náhuatl Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Náhuatl"
+    },
+    {
+      "slug": "english-to-persian",
+      "title": "Persian Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Persian"
+    },
+    {
+      "slug": "english-to-punjabi",
+      "title": "Punjabi Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Punjabi"
+    },
+    {
+      "slug": "english-to-quechua",
+      "title": "Quechua Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Quechua"
+    },
+    {
+      "slug": "english-to-quebecois",
+      "title": "Québécois Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Québécois"
+    },
+    {
+      "slug": "english-to-romansh",
+      "title": "Romansh Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Romansh"
+    },
+    {
+      "slug": "english-to-shanghainese",
+      "title": "Shanghainese Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Shanghainese"
+    },
+    {
+      "slug": "english-to-shona",
+      "title": "Shona Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Shona"
+    },
+    {
+      "slug": "english-to-spanish",
+      "title": "Spanish Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Spanish"
+    },
+    {
+      "slug": "english-to-swahili",
+      "title": "Swahili Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Swahili"
+    },
+    {
+      "slug": "english-to-taishanese",
+      "title": "Taishanese Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Taishanese"
+    },
+    {
+      "slug": "english-to-turkish",
+      "title": "Turkish Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Turkish"
+    },
+    {
+      "slug": "english-to-ukrainian",
+      "title": "Ukrainian Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Ukrainian"
+    },
+    {
+      "slug": "english-to-umbundu",
+      "title": "Umbundu Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Umbundu"
+    },
+    {
+      "slug": "english-to-urdu",
+      "title": "Urdu Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Urdu"
+    },
+    {
+      "slug": "english-to-vietnamese",
+      "title": "Vietnamese Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Vietnamese"
+    },
+    {
+      "slug": "english-to-wolof",
+      "title": "Wolof Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Wolof"
+    },
+    {
+      "slug": "english-to-yoruba",
+      "title": "Yorùbá Pronunciation Guide for Native English Speakers",
+      "l1_name": "English",
+      "l2_name": "Yorùbá"
+    }
+  ]
+}

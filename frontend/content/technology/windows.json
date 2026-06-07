@@ -1,0 +1,408 @@
+{
+  "slug": "windows",
+  "title": "Microsoft Windows 11",
+  "date": "Local-only install, debloating, privacy, and terminal essentials",
+  "source": "/website/public/technology/windows.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Installing Windows 11 Without a Microsoft Account"
+    },
+    {
+      "type": "p",
+      "text": "Microsoft pushes hard to get you signed into a Microsoft account during setup, but a fully local account is still possible and keeps your data entirely on your machine — no OneDrive, no cloud sync you didn't ask for. There are two reliable methods."
+    },
+    {
+      "type": "h3",
+      "text": "Method 1 — Rufus (Recommended, Before Install)"
+    },
+    {
+      "type": "p",
+      "text": "This is the cleanest approach and removes the requirement before you even boot the installer. Download Rufus (a free USB creation tool) and your Windows 11 ISO from microsoft.com/software-download/windows11. When writing the ISO to a USB drive, Rufus asks whether you want to customise the installation — enable all three of these options:"
+    },
+    {
+      "type": "li",
+      "text": "Remove requirement for an online Microsoft account"
+    },
+    {
+      "type": "li",
+      "text": "Remove requirement for Secure Boot and TPM 2.0 (useful for older hardware)"
+    },
+    {
+      "type": "li",
+      "text": "Disable data collection (sets all telemetry answers to No automatically)"
+    },
+    {
+      "type": "p",
+      "text": "Install Windows from that USB as normal. During Out-of-Box Experience (OOBE), you'll reach a local account creation screen directly — no fake email tricks needed."
+    },
+    {
+      "type": "h3",
+      "text": "Method 2 — No-Internet Bypass (During OOBE)"
+    },
+    {
+      "type": "p",
+      "text": "If you're doing a live install without Rufus, disconnect from the internet (unplug ethernet, don't join Wi-Fi) before the \"Sign in with Microsoft\" screen appears. Windows will then show an \"I don't have internet\" option. Click it, then \"Continue with limited setup\", and you'll be taken to a local account creation screen."
+    },
+    {
+      "type": "p",
+      "text": "If the option doesn't appear (some Windows 11 Home versions hide it), open a command prompt during OOBE by pressing Shift + F10 and run:"
+    },
+    {
+      "type": "p",
+      "text": "The system will restart and re-enter OOBE with the \"I don't have internet\" path restored."
+    },
+    {
+      "type": "h3",
+      "text": "What to Skip During Setup"
+    },
+    {
+      "type": "p",
+      "text": "During initial setup, decline or set to \"No\" / \"Basic\" everything. Key screens to watch for: privacy settings (turn all toggles off), location (off), diagnostic data (select \"Required only\"), inking and typing improvement (off), tailored experiences (off), advertising ID (off), and OneDrive backup (click \"Not now\" or \"Only save files to this PC\")."
+    },
+    {
+      "type": "h2",
+      "text": "First Things to Do After Install"
+    },
+    {
+      "type": "p",
+      "text": "Before doing anything else, open Windows Update (Settings → Windows Update) and install all available updates including optional driver updates. Reboot fully. Then work through the sections below."
+    },
+    {
+      "type": "h3",
+      "text": "Install Windows Terminal and winget"
+    },
+    {
+      "type": "p",
+      "text": "Winget comes pre-installed on Windows 11 but may need an update. Open Windows Terminal or PowerShell and run:"
+    },
+    {
+      "type": "p",
+      "text": "Winget lets you install and update software from the command line without visiting browser download pages — similar to brew on macOS or dnf on Fedora. Install Windows Terminal if it's not already present:"
+    },
+    {
+      "type": "p",
+      "text": "Windows Terminal is the modern, tabbed terminal for Windows. It supports PowerShell, Command Prompt, and WSL tabs in the same window. Pin it to your taskbar — you'll use it often."
+    },
+    {
+      "type": "p",
+      "text": "Install your preferred apps quickly via winget. For example:"
+    },
+    {
+      "type": "h2",
+      "text": "Debloating Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "A stock Windows 11 install ships with a significant amount of bloatware and invasive features. The sections below address each category."
+    },
+    {
+      "type": "h3",
+      "text": "Chris Titus Tech WinUtil (Recommended All-in-One Tool)"
+    },
+    {
+      "type": "p",
+      "text": "The fastest way to debloat and configure Windows 11 in one pass is WinUtil by Chris Titus Tech — an open-source PowerShell-based tool with a simple GUI. Run it in an Administrator PowerShell window:"
+    },
+    {
+      "type": "p",
+      "text": "The tool opens a GUI where you can install applications, run debloat presets (removes most Microsoft bloatware in one click), apply tweaks (disable telemetry, enable dark mode, disable Bing search in Start), and fix Windows Update settings. The source code is publicly auditable on GitHub."
+    },
+    {
+      "type": "h3",
+      "text": "Remove Pre-installed Bloatware Apps Manually"
+    },
+    {
+      "type": "p",
+      "text": "Uninstall unwanted stock apps via Settings → Apps → Installed apps. Apps you can safely remove include: Candy Crush, Clipchamp, Disney+, Facebook, Instagram, LinkedIn, Microsoft News, Microsoft Solitaire Collection, Microsoft Teams (consumer), Mixed Reality Portal, TikTok, Xbox Game Bar (if you don't game)."
+    },
+    {
+      "type": "p",
+      "text": "For apps without an Uninstall option in Settings, remove them via PowerShell (run as Administrator):"
+    },
+    {
+      "type": "h2",
+      "text": "Disable Copilot, Cortana, and AI Features"
+    },
+    {
+      "type": "h3",
+      "text": "Disable Windows Copilot"
+    },
+    {
+      "type": "p",
+      "text": "Open Settings → Personalisation → Taskbar and toggle Copilot off to remove it from the taskbar. To disable it fully via the Registry (works on all Windows 11 editions), open PowerShell as Administrator:"
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 Pro/Enterprise you can also use Group Policy: press Win + R, type gpedit.msc, navigate to Computer Configuration → Administrative Templates → Windows Components → Windows Copilot, and set \"Turn off Windows Copilot\" to Enabled."
+    },
+    {
+      "type": "h3",
+      "text": "Disable Cortana"
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 22H2 and later, Cortana is no longer integrated into search and is largely inert — disabling it is mainly cosmetic, but removing it frees a small amount of background resources."
+    },
+    {
+      "type": "h3",
+      "text": "Disable Recall (Windows AI Recall / Copilot+ PCs)"
+    },
+    {
+      "type": "p",
+      "text": "On Copilot+ PCs, Windows Recall takes periodic screenshots of your screen and indexes them for AI search. Disable it in Settings → Privacy & Security → Recall & snapshots — toggle off \"Save snapshots\". You can also uninstall it entirely via PowerShell:"
+    },
+    {
+      "type": "h2",
+      "text": "Disable Telemetry, Tracking, and Ads"
+    },
+    {
+      "type": "h3",
+      "text": "Settings to Change Manually"
+    },
+    {
+      "type": "p",
+      "text": "Go to Settings → Privacy & Security and work through each sub-section:"
+    },
+    {
+      "type": "li",
+      "text": "General — turn all four toggles off (advertising ID, suggested content, app launches tracking, settings suggestions)."
+    },
+    {
+      "type": "li",
+      "text": "Speech — turn off online speech recognition."
+    },
+    {
+      "type": "li",
+      "text": "Inking & typing personalisation — turn off."
+    },
+    {
+      "type": "li",
+      "text": "Diagnostics & feedback — set to Required diagnostic data only. Turn off \"Improve inking and typing\", \"Tailored experiences\", and delete existing diagnostic data."
+    },
+    {
+      "type": "li",
+      "text": "Activity history — turn off and clear history."
+    },
+    {
+      "type": "li",
+      "text": "Search permissions — turn off \"Cloud content search\" for both work and personal accounts."
+    },
+    {
+      "type": "li",
+      "text": "Location — turn off if unused, or restrict to specific apps only."
+    },
+    {
+      "type": "li",
+      "text": "Camera / Microphone — review which apps have access and revoke any you don't recognise."
+    },
+    {
+      "type": "h3",
+      "text": "Disable Telemetry Services via PowerShell (run as Administrator)"
+    },
+    {
+      "type": "h3",
+      "text": "Disable Bing Search in Start Menu"
+    },
+    {
+      "type": "p",
+      "text": "By default, typing in the Start menu sends your keystrokes to Bing. To disable this:"
+    },
+    {
+      "type": "h3",
+      "text": "Disable Ads in Explorer, Start, and Lock Screen"
+    },
+    {
+      "type": "p",
+      "text": "In Settings → System → Notifications → Additional settings, uncheck \"Suggest ways I can finish setting up my device\" and \"Get tips and suggestions when I use Windows\"."
+    },
+    {
+      "type": "p",
+      "text": "In Settings → Personalisation → Lock screen, set the lock screen style to \"Picture\" or \"Slideshow\" instead of \"Windows spotlight\" — Spotlight injects Microsoft-served images and promotional content."
+    },
+    {
+      "type": "p",
+      "text": "In Settings → Personalisation → Start, turn off \"Show recommendations for tips, app promotions, and more\"."
+    },
+    {
+      "type": "h2",
+      "text": "Disable or Remove OneDrive"
+    },
+    {
+      "type": "h3",
+      "text": "Unlink and Quit"
+    },
+    {
+      "type": "p",
+      "text": "Right-click the OneDrive icon in the system tray → Settings → Account → Unlink this PC. Then right-click the icon again → Quit OneDrive. This stops syncing but keeps OneDrive installed."
+    },
+    {
+      "type": "h3",
+      "text": "Prevent OneDrive from Starting at Boot"
+    },
+    {
+      "type": "p",
+      "text": "Open Task Manager → Startup apps and disable Microsoft OneDrive."
+    },
+    {
+      "type": "h3",
+      "text": "Fully Uninstall OneDrive"
+    },
+    {
+      "type": "p",
+      "text": "If winget fails, use Control Panel → Programs → Uninstall a program → Microsoft OneDrive → Uninstall. After removing, delete any leftover OneDrive folder from your user directory if it remains."
+    },
+    {
+      "type": "h2",
+      "text": "Disable Xbox Game Bar and Game DVR"
+    },
+    {
+      "type": "p",
+      "text": "Xbox Game Bar (Win + G) runs in the background and captures your screen. If you don't play games, disable it in Settings → Gaming → Xbox Game Bar (toggle off), or via the Registry:"
+    },
+    {
+      "type": "p",
+      "text": "Also disable Game DVR (background recording) and Game Mode if you're not gaming:"
+    },
+    {
+      "type": "h2",
+      "text": "Essential Terminal Commands"
+    },
+    {
+      "type": "p",
+      "text": "Windows has two main shells: Command Prompt (cmd.exe, legacy) and PowerShell (modern, recommended for everything). PowerShell is a superset — it runs almost all cmd commands plus its own more powerful ones. Use PowerShell for everything unless a tool specifically requires cmd."
+    },
+    {
+      "type": "h3",
+      "text": "File System Navigation"
+    },
+    {
+      "type": "h3",
+      "text": "System Information"
+    },
+    {
+      "type": "h3",
+      "text": "Disk and Storage"
+    },
+    {
+      "type": "h3",
+      "text": "winget Package Management"
+    },
+    {
+      "type": "h3",
+      "text": "Networking"
+    },
+    {
+      "type": "h3",
+      "text": "Useful PowerShell One-liners"
+    },
+    {
+      "type": "h2",
+      "text": "Most Useful Things to Configure"
+    },
+    {
+      "type": "h3",
+      "text": "Set a Sensible Default Browser"
+    },
+    {
+      "type": "p",
+      "text": "After installing Firefox (or your browser of choice): Settings → Apps → Default apps, search for \"Firefox\", and click Set default. Also manually set HTTP, HTTPS, and HTML file type defaults if the button doesn't catch everything — Microsoft tends to reset Edge as default after major updates."
+    },
+    {
+      "type": "h3",
+      "text": "Enable Dark Mode"
+    },
+    {
+      "type": "p",
+      "text": "Settings → Personalisation → Colours → Choose your mode → Dark."
+    },
+    {
+      "type": "h3",
+      "text": "Configure File Explorer"
+    },
+    {
+      "type": "p",
+      "text": "Open File Explorer → three-dot menu → Options. Set \"Open File Explorer to\" to \"This PC\". In the View tab, enable \"Show hidden files, folders, and drives\" and uncheck \"Hide extensions for known file types\" — seeing file extensions is essential for anyone working with files."
+    },
+    {
+      "type": "h3",
+      "text": "Enable Clipboard History"
+    },
+    {
+      "type": "p",
+      "text": "Win + V opens clipboard history, storing your last ~25 copied items. Enable it the first time you press Win + V, or in Settings → System → Clipboard → Clipboard history."
+    },
+    {
+      "type": "h3",
+      "text": "Install WSL 2 (Linux on Windows)"
+    },
+    {
+      "type": "p",
+      "text": "Windows Subsystem for Linux runs a real Linux environment inside Windows with no VM overhead. Install it with one command (Administrator PowerShell):"
+    },
+    {
+      "type": "p",
+      "text": "This installs Ubuntu by default. To choose a different distro:"
+    },
+    {
+      "type": "p",
+      "text": "WSL 2 integrates with Windows Terminal and gives you the full Linux toolchain (bash, git, Python, apt/dnf, grep, sed, awk, and everything else) natively inside Windows."
+    },
+    {
+      "type": "h3",
+      "text": "Windows Sandbox (Safe App Testing)"
+    },
+    {
+      "type": "p",
+      "text": "Windows Sandbox (Pro/Enterprise only) runs a lightweight, disposable VM for testing untrusted software. Enable it:"
+    },
+    {
+      "type": "p",
+      "text": "After reboot, search \"Windows Sandbox\" in the Start menu. Everything inside it is destroyed when you close it."
+    },
+    {
+      "type": "h3",
+      "text": "Move User Folders to a Second Drive"
+    },
+    {
+      "type": "p",
+      "text": "If you have a secondary drive for storage, right-click Downloads, Documents, Music, Pictures, or Videos → Properties → Location → Move and point them to the second drive. Keeps your system drive lean and makes Windows reinstallation much simpler."
+    },
+    {
+      "type": "h2",
+      "text": "Essential Keyboard Shortcuts"
+    },
+    {
+      "type": "h2",
+      "text": "Tips and Gotchas"
+    },
+    {
+      "type": "p",
+      "text": "Run PowerShell as Administrator by right-clicking the Windows Terminal icon and choosing \"Run as administrator\", or searching \"PowerShell\", right-clicking, and selecting \"Run as administrator\". Many system commands require elevated rights and will silently fail otherwise."
+    },
+    {
+      "type": "p",
+      "text": "The Quick Link menu (Win + X) is faster than the Start menu for accessing Task Manager, Device Manager, Event Viewer, Disk Management, and PowerShell."
+    },
+    {
+      "type": "p",
+      "text": "Windows Defender is good enough. You don't need a third-party antivirus. Many third-party AV products add more background surveillance than they remove. Keep Windows updated, use a good DNS (Quad9 at 9.9.9.9 or Cloudflare at 1.1.1.1), and practice safe browsing."
+    },
+    {
+      "type": "p",
+      "text": "The new Task Manager (Ctrl + Shift + Esc) is genuinely useful. The Startup apps tab is the quickest way to see what's slowing your boot and disable it. The Efficiency mode option (right-click a process) throttles background apps to reduce their CPU and power draw."
+    },
+    {
+      "type": "p",
+      "text": "Windows 11 Pro is worth it over Home if you do anything technical. Pro adds Group Policy, BitLocker, Remote Desktop, Hyper-V, and Windows Sandbox. If you're already on Home, you can upgrade in Settings → System → Activation → Upgrade your edition of Windows using a Pro product key."
+    },
+    {
+      "type": "p",
+      "text": "Power settings matter. In Settings → System → Power → Power Mode, set to \"Balanced\" on laptops and \"Best performance\" on desktops plugged in. Avoid \"Power saver\" unless on battery — it actively throttles CPU performance even for non-battery workloads."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft resets defaults after major updates. After each major Windows update, check that your default browser is still set correctly and review your privacy settings — Microsoft has a habit of re-enabling things you've turned off."
+    }
+  ]
+}

@@ -13,3 +13,29 @@
     @apply font-display tracking-tight;
   }
 }
+
+/* Scoped prose for migrated pronunciation guides (first-party markdown -> HTML).
+   Mirrors the design tokens; F-pattern measure inherited from max-w-content. */
+@layer components {
+  .guide { @apply leading-relaxed text-ink-soft; }
+  .guide > :first-child { @apply mt-0; }
+  .guide h1 { @apply mt-10 text-4xl leading-tight text-ink sm:text-5xl; }
+  .guide h2 { @apply mt-8 text-2xl text-ink; }
+  .guide h3 { @apply mt-6 text-xl text-ink; }
+  .guide p { @apply mt-4; }
+  .guide ul { @apply mt-4 ml-5 list-disc space-y-2; }
+  .guide ol { @apply mt-4 ml-5 list-decimal space-y-2; }
+  .guide a { @apply text-accent hover:underline; }
+  .guide strong { @apply font-semibold text-ink; }
+  .guide hr { @apply my-10 border-hairline; }
+  .guide blockquote { @apply mt-4 border-l-2 border-accent pl-4 italic; }
+  .guide code { @apply rounded bg-hairline/60 px-1 py-0.5 text-sm; }
+  .guide table {
+    @apply mt-6 w-full border-collapse overflow-hidden text-left text-sm;
+  }
+  .guide thead th {
+    @apply border-b border-hairline bg-hairline/40 px-3 py-2 font-semibold text-ink;
+  }
+  .guide tbody td { @apply border-b border-hairline px-3 py-2 align-top; }
+  .guide tbody tr:last-child td { @apply border-b-0; }
+}

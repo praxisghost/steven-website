@@ -1,0 +1,312 @@
+{
+  "slug": "darktable",
+  "title": "Darktable",
+  "date": null,
+  "source": "/website/public/technology/software-tutorials/darktable.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Darktable is a free, open-source RAW photo processor and digital darkroom — a full alternative to Adobe Lightroom. It works non-destructively: your original files are never modified, and every edit is stored as a set of instructions in a sidecar file or its internal database. It supports a huge range of RAW formats and runs on macOS, Linux, and Windows."
+    },
+    {
+      "type": "h2",
+      "text": "Installation"
+    },
+    {
+      "type": "h3",
+      "text": "macOS (Apple Silicon)"
+    },
+    {
+      "type": "p",
+      "text": "Download the .dmg from darktable.org/install . Choose the Apple Silicon (arm64) build. Open the .dmg and drag Darktable to Applications."
+    },
+    {
+      "type": "p",
+      "text": "Via Homebrew:"
+    },
+    {
+      "type": "p",
+      "text": "Note: On first launch, macOS may show a security warning because Darktable is not notarised by Apple. Go to System Settings → Privacy & Security and click \"Open Anyway\"."
+    },
+    {
+      "type": "h3",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "p",
+      "text": "Install via Flatpak (recommended — gets the latest version faster than the DNF repo):"
+    },
+    {
+      "type": "p",
+      "text": "Or via DNF:"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — Darktable on first launch."
+    },
+    {
+      "type": "h3",
+      "text": "Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "Darktable has official Windows support. Download the Windows installer ( .exe ) from darktable.org/install and run it as Administrator. Alternatively, install via winget :"
+    },
+    {
+      "type": "p",
+      "text": "Darktable on Windows 11 is fully featured — all modules, masking, colour calibration, and export options are available. The interface is identical to macOS and Linux. Darktable supports OpenCL GPU acceleration on Windows via NVIDIA CUDA, AMD ROCm-compatible drivers, and Intel GPU drivers. On first launch, go to Preferences → Processing → OpenCL and enable it if your GPU is listed."
+    },
+    {
+      "type": "h2",
+      "text": "Interface Overview"
+    },
+    {
+      "type": "p",
+      "text": "Darktable has three primary views, selected from the top bar: Lighttable (photo library and organisation), Darkroom (individual photo editing), and Map (geotagging). There's also Slideshow , Print , and Tethering for connected cameras."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Darktable view switcher at the top of the window."
+    },
+    {
+      "type": "h2",
+      "text": "Importing Photos"
+    },
+    {
+      "type": "p",
+      "text": "Darktable doesn't move or copy files by default — it just adds them to its library database. Photos stay in their current location on disk."
+    },
+    {
+      "type": "p",
+      "text": "To import: in the Lighttable view, click Import in the top-left panel. You can import a single image, a folder, or directly from a memory card. Set a Project name and Destination if you want Darktable to copy files from a card to a new folder as it imports."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the import dialog showing folder and card import options."
+    },
+    {
+      "type": "h3",
+      "text": "Importing from a Memory Card"
+    },
+    {
+      "type": "p",
+      "text": "Connect your camera or card reader. In the Import dialog, click Camera or browse to the card's folder. Set the destination folder, name format (e.g., $(YEAR)/$(MONTH)-$(DAY)/$(FILE_NAME) ), and click Import . Darktable will copy the RAW files and add them to the library."
+    },
+    {
+      "type": "h2",
+      "text": "The Lighttable"
+    },
+    {
+      "type": "p",
+      "text": "The Lighttable is your photo library. Photos are displayed in a grid. Use the scroll wheel to zoom the grid, or drag the zoom slider bottom-right. Click a photo to select it; double-click to open it in the Darkroom."
+    },
+    {
+      "type": "h3",
+      "text": "Culling and Rating"
+    },
+    {
+      "type": "p",
+      "text": "Press F1 – F5 to assign star ratings (1–5 stars). Press R to mark a photo as rejected. Use the Filter bar at the top to show only rated, unrated, or rejected images."
+    },
+    {
+      "type": "p",
+      "text": "Press Z to enter fullscreen zoom view for a single image — useful for checking focus and sharpness before rating."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — lighttable grid with star ratings on thumbnails."
+    },
+    {
+      "type": "h3",
+      "text": "Collections and Filters"
+    },
+    {
+      "type": "p",
+      "text": "In the left panel of the Lighttable, the Collections module lets you filter your library by roll/folder, date, camera, lens, tag, colour label, and more. This is how you navigate between shoots without nested folder trees."
+    },
+    {
+      "type": "h2",
+      "text": "The Darkroom"
+    },
+    {
+      "type": "p",
+      "text": "Double-click any photo in the Lighttable to open it in the Darkroom. This is where all editing happens. The image fills the centre; the right panel has the module stack; the left panel has history, snapshots, and presets."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Darkroom view with module stack on the right."
+    },
+    {
+      "type": "h3",
+      "text": "The Processing Pipeline"
+    },
+    {
+      "type": "p",
+      "text": "Darktable applies modules in a fixed order (the pixel pipeline ). Each module does one thing — exposure, colour, noise reduction, sharpening — and they're stacked bottom-to-top. The order matters: a module applied earlier in the pipeline affects all subsequent modules."
+    },
+    {
+      "type": "p",
+      "text": "Darktable uses two module workflows: the legacy display-referred workflow and the modern scene-referred workflow. For new users on current Darktable versions (4.x), scene-referred is the default and is recommended — it's physically accurate and more flexible for HDR content."
+    },
+    {
+      "type": "h2",
+      "text": "Key Modules to Learn First"
+    },
+    {
+      "type": "h3",
+      "text": "Exposure"
+    },
+    {
+      "type": "p",
+      "text": "The Exposure module adjusts the overall brightness of the image in EV (exposure value) steps. It also has a Black level correction slider to set the true black point. Start here for global brightness adjustments."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Exposure module with EV and black-level sliders."
+    },
+    {
+      "type": "h3",
+      "text": "White Balance"
+    },
+    {
+      "type": "p",
+      "text": "The White balance module corrects colour temperature. Use the Colour picker (eyedropper) to click a neutral grey in the image for automatic correction, or manually adjust the Temperature and Tint sliders. You can also select a preset (Daylight, Cloudy, Shade, etc.) from the dropdown."
+    },
+    {
+      "type": "h3",
+      "text": "Filmic RGB"
+    },
+    {
+      "type": "p",
+      "text": "Filmic RGB is the central tone-mapping module in scene-referred workflow. It maps the scene's linear light values to the display's limited range. The key controls are:"
+    },
+    {
+      "type": "p",
+      "text": "White relative exposure — how many stops above 18% grey should clip to white. Black relative exposure — how many stops below grey should clip to black. Contrast — the overall S-curve contrast in the midtones. Latitude — how wide the linear (undistorted) region of the curve is."
+    },
+    {
+      "type": "p",
+      "text": "Most of the time, adjust White and Black relative exposure until the histogram sits comfortably within the frame, then tweak contrast to taste."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — Filmic RGB tone curve and exposure range sliders."
+    },
+    {
+      "type": "h3",
+      "text": "Colour Calibration"
+    },
+    {
+      "type": "p",
+      "text": "Colour calibration handles white balance and colour grading in scene-referred workflow. It replaces the older Hue/Saturation module for primary colour work. Use the Illuminant picker to set white balance (works similarly to the White Balance module), and use the channel mixer for precise colour grading."
+    },
+    {
+      "type": "h3",
+      "text": "Tone Equalizer"
+    },
+    {
+      "type": "p",
+      "text": "The Tone equalizer lets you brighten or darken specific tonal zones (shadows, midtones, highlights) independently using a simple graphic EQ-style interface. It's the cleanest way to do dodging and burning globally. Hold Ctrl and scroll over any zone in the image to adjust that zone's brightness directly on the photo."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — tone equalizer with per-zone brightness controls."
+    },
+    {
+      "type": "h3",
+      "text": "Noise Reduction (profiled)"
+    },
+    {
+      "type": "p",
+      "text": "The Denoise (profiled) module uses camera-specific noise profiles to reduce luminance and chroma noise. Select your camera model and ISO from the dropdowns (or let Darktable auto-detect from EXIF). Use the Non-local means or Wavelets mode — Wavelets generally preserves more detail. Increase Strength for high-ISO images."
+    },
+    {
+      "type": "h3",
+      "text": "Sharpening — Diffuse or Sharpen"
+    },
+    {
+      "type": "p",
+      "text": "The Diffuse or sharpen module handles sharpening and local contrast enhancement. For basic capture sharpening, use the Dehaze or Sharpen preset as a starting point. Avoid over-sharpening — view the image at 100% while adjusting."
+    },
+    {
+      "type": "h2",
+      "text": "Masking"
+    },
+    {
+      "type": "p",
+      "text": "Every module in the Darkroom can be applied to the whole image or restricted to a mask . Click the mask icon at the bottom of any module to enable masking. Darktable supports parametric masks (by colour, luminosity, or hue), drawn masks (shapes and gradients), and raster masks (from a selection)."
+    },
+    {
+      "type": "p",
+      "text": "Drawn masks are most useful for basic adjustments. Click the shape tools (brush, gradient, circle, ellipse, path) to draw the area you want to affect. Feather the edges with the Feathering slider."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — gradient mask applied to the exposure module, brightening only the sky."
+    },
+    {
+      "type": "h2",
+      "text": "Presets and Styles"
+    },
+    {
+      "type": "p",
+      "text": "A preset saves the settings of one module for reuse. Right-click the module header to create a preset from current settings. Presets appear in the module's dropdown for quick application."
+    },
+    {
+      "type": "p",
+      "text": "A style saves the settings of multiple modules together as a named package — the equivalent of a Lightroom preset. Export styles from Lighttable → Styles → Export , import them via Import . You can find free community styles online (search \"darktable styles\")."
+    },
+    {
+      "type": "h2",
+      "text": "Exporting"
+    },
+    {
+      "type": "p",
+      "text": "In the Lighttable, select the photos you want to export (click, or Ctrl+A for all). In the right panel, open the Export module. Key settings:"
+    },
+    {
+      "type": "p",
+      "text": "File format — JPEG for sharing/web, TIFF for high-quality archival. Quality — 90–95 for JPEG. Output colour profile — sRGB for web, AdobeRGB or Display P3 for print. Max size — set pixel width/height limits, or leave at 0 for original size. Destination — choose a folder, or send directly to an external application."
+    },
+    {
+      "type": "p",
+      "text": "Click Export to begin. A progress bar appears in the top bar."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the export module with format, quality, and output path settings."
+    },
+    {
+      "type": "h2",
+      "text": "Key Keyboard Shortcuts"
+    },
+    {
+      "type": "h2",
+      "text": "Tips and Gotchas"
+    },
+    {
+      "type": "p",
+      "text": "Use the histogram as your guide. Aim to keep your histogram within bounds in the Darkroom — blown highlights or crushed blacks lose recoverable detail. Enable the Overexposure indicator ( O ) and Rawprepare clipping indicator to catch clipping early."
+    },
+    {
+      "type": "p",
+      "text": "Learn the scene-referred workflow before trying the legacy modules. The legacy Levels, Curves, and Hue/Saturation modules work in a display-referred context and mix poorly with scene-referred modules like Filmic RGB and Colour Calibration."
+    },
+    {
+      "type": "p",
+      "text": "Back up your Darktable database. All your edits are stored in ~/.config/darktable/library.db (Linux) or ~/Library/Application Support/darktable/library.db (macOS). Back this up regularly — without it, you lose all your edit history."
+    },
+    {
+      "type": "p",
+      "text": "On Apple Silicon , Darktable uses OpenCL for GPU-accelerated processing. If your Mac has a discrete GPU or the Apple Silicon GPU is recognised, enable OpenCL in Preferences → Processing → OpenCL for faster exports and module previews."
+    },
+    {
+      "type": "p",
+      "text": "On Fedora KDE , the Flatpak version is generally the most up-to-date. If colour management looks wrong, ensure your monitor profile is set correctly in KDE's System Settings → Color Corrections ."
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 , Darktable's library database is stored at C:\\Users\\<username>\\AppData\\Local\\darktable\\library.db . Back this up regularly — it contains all your edit history. If Darktable launches slowly, check whether Windows Defender is scanning the database folder; adding an exclusion for your Darktable data folder can significantly speed things up. For colour management, assign your monitor ICC profile in Windows Settings → System → Display → Colour Profile and point Darktable to it in Preferences → Processing → Output colour profile ."
+    }
+  ]
+}

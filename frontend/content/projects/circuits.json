@@ -1,0 +1,19 @@
+{
+  "slug": "circuits",
+  "title": "Circuits",
+  "source": "/website/public/projects/circuits.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Hardware tinkering, hobby electronics, and the thrill of making something blink."
+    },
+    {
+      "type": "p",
+      "text": "From Raspberry Pi setups to basic breadboard experiments, I enjoy hobby electronics as a way to bridge the gap between software and the physical world. There's something deeply satisfying about building a circuit that actually does what you intended — and equally educational when it doesn't."
+    },
+    {
+      "type": "p",
+      "text": "Projects and notes coming here as things develop. Expect microcontrollers, sensors, maybe some cursing, and eventually something that works."
+    }
+  ]
+}

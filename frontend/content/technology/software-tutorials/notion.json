@@ -1,0 +1,248 @@
+{
+  "slug": "notion",
+  "title": "Notion",
+  "date": null,
+  "source": "/website/public/technology/software-tutorials/notion.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Notion is an all-in-one workspace that combines notes, databases, kanban boards, wikis, and calendars in a single app. It can replace a collection of separate apps — or become a chaotic mess if you don't have a clear structure from the start. This guide walks through installation, core concepts, and practical workflows."
+    },
+    {
+      "type": "h2",
+      "text": "Installation"
+    },
+    {
+      "type": "h3",
+      "text": "macOS (Apple Silicon)"
+    },
+    {
+      "type": "p",
+      "text": "Download the Mac app from notion.so/desktop . The download is a universal binary that runs natively on Apple Silicon — no Rosetta required. Drag Notion.app to your Applications folder and launch it."
+    },
+    {
+      "type": "p",
+      "text": "Alternatively, install via Homebrew:"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — Notion download page or Homebrew install in Terminal."
+    },
+    {
+      "type": "h3",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "p",
+      "text": "Notion doesn't publish an official Linux package, but a community-maintained Flatpak is available on Flathub and is the recommended way to install it:"
+    },
+    {
+      "type": "p",
+      "text": "If you prefer the official web app as a native-feeling wrapper, Notion Enhanced is a good Flatpak that adds extra features. After installing, launch from your application menu or with:"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — Notion open on Fedora KDE."
+    },
+    {
+      "type": "h3",
+      "text": "Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "Notion has a first-class Windows desktop app. Download it from notion.so/desktop and run the installer — no administrator rights required. Alternatively, install via winget in Windows Terminal or PowerShell:"
+    },
+    {
+      "type": "p",
+      "text": "Notion on Windows 11 is a native Electron app and behaves identically to the macOS version — all the same keyboard shortcuts work (with Ctrl in place of ⌘ ), and all features are available. Sign in with your Notion account on first launch."
+    },
+    {
+      "type": "h2",
+      "text": "Understanding the Interface"
+    },
+    {
+      "type": "p",
+      "text": "Notion's interface has three main areas: the sidebar (left), the editor (centre), and optionally a right panel for comments and page info."
+    },
+    {
+      "type": "p",
+      "text": "The sidebar contains your workspace, favourited pages, private pages, and shared pages. Everything in Notion is a page — pages can contain other pages, databases, text, media, and embeds."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — annotated Notion interface overview."
+    },
+    {
+      "type": "h3",
+      "text": "Key Keyboard Shortcuts"
+    },
+    {
+      "type": "p",
+      "text": "Learning these shortcuts dramatically speeds up your workflow:"
+    },
+    {
+      "type": "h2",
+      "text": "Pages and Blocks"
+    },
+    {
+      "type": "p",
+      "text": "Everything in Notion is built from blocks . A block is any discrete unit of content: a paragraph, a heading, an image, a to-do, a code snippet, an embed. Blocks can be dragged and reordered freely."
+    },
+    {
+      "type": "p",
+      "text": "To insert a block, type / anywhere in the editor to open the block menu. Start typing to filter — for example, / then \"todo\" inserts a checkbox, \"/image\" inserts an image block, \"/code\" inserts a code block."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the slash command block menu."
+    },
+    {
+      "type": "h3",
+      "text": "Common Block Types"
+    },
+    {
+      "type": "p",
+      "text": "The most useful block types to know are: Text (plain paragraph), Heading 1/2/3 , Bulleted list , Numbered list , To-do list (checkboxes), Toggle (collapsible section), Quote , Code , Callout (highlighted note box), Divider , Image , Video , Table , and Page (embed a sub-page inline)."
+    },
+    {
+      "type": "h3",
+      "text": "Nesting Pages"
+    },
+    {
+      "type": "p",
+      "text": "Pages can be nested inside other pages indefinitely. This is the foundation of a wiki-style structure. In the sidebar, click the + next to any page to add a sub-page, or type / then \"Page\" inside the editor to embed a page inline."
+    },
+    {
+      "type": "h2",
+      "text": "Databases"
+    },
+    {
+      "type": "p",
+      "text": "Databases are where Notion becomes genuinely powerful. A database is a structured collection of pages, each page being a row with custom properties (columns). The same database can be viewed as a table, board, list, calendar, gallery, or timeline."
+    },
+    {
+      "type": "h3",
+      "text": "Creating a Database"
+    },
+    {
+      "type": "p",
+      "text": "Type / then select a database view type — for example, \"Table\" creates a table database. Every row is a full Notion page you can open and edit."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — a Notion table database showing rows, columns, and property types."
+    },
+    {
+      "type": "h3",
+      "text": "Properties"
+    },
+    {
+      "type": "p",
+      "text": "Database properties (columns) define what metadata each entry has. Key property types are: Text , Number , Select (single choice tag), Multi-select (multiple tags), Date , Checkbox , URL , Person , Relation (link to another database), and Formula (compute a value from other properties)."
+    },
+    {
+      "type": "h3",
+      "text": "Views"
+    },
+    {
+      "type": "p",
+      "text": "Click + Add a view at the top of any database to add an alternate view. Each view can have its own filter, sort, and grouping — the underlying data is always the same. For example, you might have a Table view for editing, a Board view grouped by status, and a Calendar view grouped by due date, all on the same database."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — board view of a database, cards grouped by status column."
+    },
+    {
+      "type": "h3",
+      "text": "Filters and Sorts"
+    },
+    {
+      "type": "p",
+      "text": "Click Filter to show only rows matching a condition (e.g., \"Status is In Progress\", \"Due date is before today\"). Click Sort to order rows by a property. Filters and sorts are per-view and don't affect other views or the data itself."
+    },
+    {
+      "type": "h2",
+      "text": "Relations and Rollups"
+    },
+    {
+      "type": "p",
+      "text": "A Relation property links entries in one database to entries in another. This is how you build a relational system in Notion — for example, linking a Tasks database to a Projects database so each task knows which project it belongs to."
+    },
+    {
+      "type": "p",
+      "text": "A Rollup property uses a relation to pull aggregated information from the linked database. For example, a rollup on your Projects database could count how many tasks are completed, sum their estimated hours, or show the earliest due date."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — relation and rollup property configuration."
+    },
+    {
+      "type": "h2",
+      "text": "Templates"
+    },
+    {
+      "type": "p",
+      "text": "Templates let you create new pages or database entries with pre-filled content and structure. In a database, click the dropdown arrow next to the New button to create or select a template. For standalone pages, type / then \"Template button\" to add an in-page button that generates a new page from a template."
+    },
+    {
+      "type": "p",
+      "text": "Notion also has a gallery of pre-made templates at notion.so/templates . Duplicating a community template to your workspace is a good starting point."
+    },
+    {
+      "type": "h2",
+      "text": "Practical Workflows"
+    },
+    {
+      "type": "h3",
+      "text": "Personal Task Manager"
+    },
+    {
+      "type": "p",
+      "text": "Create a Table database called \"Tasks\". Add properties: Status (Select: To Do / In Progress / Done), Priority (Select: High / Medium / Low), Due Date (Date), Project (Relation to a Projects database). Add a Board view grouped by Status for a kanban feel, and a Calendar view for due dates."
+    },
+    {
+      "type": "h3",
+      "text": "Reading List"
+    },
+    {
+      "type": "p",
+      "text": "Create a Gallery database called \"Reading List\". Properties: Status (Select: To Read / Reading / Finished), Genre (Multi-select), Rating (Select: ★ through ★★★★★), Cover (Files & media). Use the gallery view with \"Cover\" as the preview image for a visual bookshelf."
+    },
+    {
+      "type": "h3",
+      "text": "Personal Wiki / Second Brain"
+    },
+    {
+      "type": "p",
+      "text": "Create a root page called \"Home\" or \"Dashboard\". Under it, create top-level pages for major areas of your life — Work, Learning, Projects, Reference, Journal. Use sub-pages freely. Use the Linked database feature to surface database views on your Home page without duplicating data."
+    },
+    {
+      "type": "h2",
+      "text": "Tips and Gotchas"
+    },
+    {
+      "type": "p",
+      "text": "Notion works best with an intentional structure. Start simple — one page, a few sub-pages — and add complexity only when you feel the need. The most common mistake is building elaborate systems before you know what you actually need."
+    },
+    {
+      "type": "p",
+      "text": "The web clipper (browser extension) lets you save web pages, articles, and highlights directly to a Notion database. Install it from the Chrome Web Store or Firefox Add-ons."
+    },
+    {
+      "type": "p",
+      "text": "Offline support is limited. Notion requires an internet connection to sync. On both macOS and Linux, previously loaded pages are cached, but creating new content offline is unreliable. If offline note-taking is critical, consider Obsidian instead (see the Obsidian guide)."
+    },
+    {
+      "type": "p",
+      "text": "On Fedora KDE , the Flatpak version may occasionally lag behind the latest desktop app release. If you need the very latest features, use Notion in a browser (Firefox or Chromium) instead."
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 , Notion runs well with no special configuration. If you want Notion to start with Windows, right-click the system tray icon and enable Launch on login . The web clipper browser extension works with Edge, Chrome, and Firefox on Windows exactly as it does on other platforms."
+    },
+    {
+      "type": "p",
+      "text": "Exporting your data. You can export all your pages as Markdown + CSV at Settings → Export all workspace content . Do this periodically as a backup."
+    }
+  ]
+}

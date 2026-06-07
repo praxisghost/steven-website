@@ -1,0 +1,19 @@
+{
+  "slug": "ai",
+  "title": "AI",
+  "source": "/website/public/projects/ai.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Experiments, tools, and thoughts at the intersection of language, learning, and machine intelligence."
+    },
+    {
+      "type": "p",
+      "text": "AI interests me primarily through the lens of language learning and education — how it can help people learn faster, understand things more deeply, and access knowledge that was previously locked behind barriers of time, money, or expertise."
+    },
+    {
+      "type": "p",
+      "text": "I'm also building this website with AI assistance, which has been its own education in prompting, context, and working with a very patient co-developer. Projects and write-ups in progress."
+    }
+  ]
+}

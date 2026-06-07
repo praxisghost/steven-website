@@ -1,0 +1,27 @@
+import PageHeader from "@/components/PageHeader";
+import HubGrid from "@/components/HubGrid";
+
+// Source: /website/public/language-learning.html — sections preserved.
+export const metadata = { title: "Language Learning — Steven Legg" };
+
+export default function LanguageLearning() {
+  return (
+    <main className="mx-auto max-w-wide px-6 py-16">
+      <PageHeader
+        title="Language Learning"
+        lead="Curated resources, method guides, & study materials for languages I am actively learning."
+      />
+      <HubGrid
+        items={[
+          { label: "Methods & Tools", emoji: "🛠️", note: "Anki, comprehensible input, shadowing, TPRS & more." },
+          {
+            label: "Pronunciation Guides",
+            emoji: "📘",
+            href: "/language-learning/pronunciation",
+            note: "Writing systems, IPA & common mistakes across dozens of languages.",
+          },
+        ]}
+      />
+    </main>
+  );
+}

@@ -1,0 +1,396 @@
+{
+  "slug": "gimp",
+  "title": "GIMP",
+  "date": null,
+  "source": "/website/public/technology/software-tutorials/gimp.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "GIMP (GNU Image Manipulation Program) is a free, open-source raster image editor — a capable alternative to Adobe Photoshop. It handles photo retouching, digital painting, graphic design, and image compositing. It's one of the most mature open-source applications available, with a large plugin ecosystem and scripting support (Python-Fu and Script-Fu)."
+    },
+    {
+      "type": "h2",
+      "text": "Installation"
+    },
+    {
+      "type": "h3",
+      "text": "macOS (Apple Silicon)"
+    },
+    {
+      "type": "p",
+      "text": "GIMP is distributed as a universal binary for macOS. Download from gimp.org/downloads . Open the .dmg and drag GIMP to Applications."
+    },
+    {
+      "type": "p",
+      "text": "Via Homebrew:"
+    },
+    {
+      "type": "p",
+      "text": "Note: GIMP on macOS requires XQuartz (an X11 implementation) for older builds, but modern builds (2.10.36+ / 3.x) are native Cocoa apps and no longer need XQuartz. If you're on a recent version, you don't need to install XQuartz."
+    },
+    {
+      "type": "h3",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "p",
+      "text": "GIMP is in the Fedora repositories:"
+    },
+    {
+      "type": "p",
+      "text": "Or via Flatpak for the latest version:"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — GIMP on first launch showing the default single-window layout."
+    },
+    {
+      "type": "h3",
+      "text": "Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "GIMP has an official Windows installer. Download the 64-bit .exe from gimp.org/downloads . Run the installer — no XQuartz or compatibility layer is needed; GIMP runs natively on Windows. Alternatively, install via winget :"
+    },
+    {
+      "type": "p",
+      "text": "GIMP on Windows 11 is fully featured and the interface is identical to the Linux version. All tools, layer modes, Script-Fu, Python-Fu, and import/export formats work the same way. GIMP 3.x brings improved HiDPI scaling on Windows — if you're on a high-resolution display, the 3.x release candidate or stable version is worth using."
+    },
+    {
+      "type": "h2",
+      "text": "Interface Overview"
+    },
+    {
+      "type": "p",
+      "text": "By default on modern GIMP versions, the interface is in single-window mode , with all panels docked together. If it's in multi-window mode (floating panels), switch to single-window via Windows → Single-Window Mode ."
+    },
+    {
+      "type": "p",
+      "text": "The main areas are: the Toolbox (left — all the tools), Tool Options (below the toolbox — settings for the active tool), the Canvas (centre — your image), the Layers / Channels / Paths panel (right), and the Brushes / Patterns / Gradients panel (also right, tabbed)."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — annotated GIMP single-window interface."
+    },
+    {
+      "type": "h2",
+      "text": "Opening and Creating Images"
+    },
+    {
+      "type": "p",
+      "text": "Open an existing image: File → Open ( Ctrl O ). GIMP supports JPEG, PNG, TIFF, WebP, PSD (Photoshop), BMP, GIF, and many others."
+    },
+    {
+      "type": "p",
+      "text": "Create a new canvas: File → New ( Ctrl N ). Set width, height, resolution (72 PPI for screen, 300 PPI for print), and colour mode (RGB for most work, Grayscale for black and white)."
+    },
+    {
+      "type": "p",
+      "text": "To open as a layer on top of an existing image (useful for compositing): File → Open as Layers ."
+    },
+    {
+      "type": "h2",
+      "text": "The Toolbox"
+    },
+    {
+      "type": "p",
+      "text": "GIMP has a large toolbox. Here are the tools you'll use most often:"
+    },
+    {
+      "type": "h3",
+      "text": "Selection Tools"
+    },
+    {
+      "type": "p",
+      "text": "Rectangle Select ( R ) — draw a rectangular selection. Ellipse Select ( E ) — draw an elliptical/circular selection. Free Select (Lasso) ( F ) — draw a freehand selection. Fuzzy Select (Magic Wand) ( U ) — select a contiguous region of similar colour. Select by Colour ( Shift U ) — select all pixels of a similar colour across the whole image. Scissors Select ( I ) — intelligent edge-following selection tool."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the GIMP toolbox with selection tools visible."
+    },
+    {
+      "type": "h3",
+      "text": "Paint Tools"
+    },
+    {
+      "type": "p",
+      "text": "Pencil ( N ) — hard-edged painting. Paintbrush ( P ) — soft-edged painting. Eraser ( Shift E ) — erase pixels (makes them transparent on a layer with an alpha channel). Airbrush — pressure-sensitive painting that builds up colour. Bucket Fill ( Shift B ) — fill a selection or region with colour or pattern. Gradient ( G ) — draw a colour gradient."
+    },
+    {
+      "type": "h3",
+      "text": "Transform Tools"
+    },
+    {
+      "type": "p",
+      "text": "Move ( M ) — move layers, selections, or paths. Scale ( Shift T ) — resize a layer or selection. Rotate ( Shift R ) — rotate a layer or selection. Crop ( Shift C ) — crop the canvas or clip a layer. Perspective — distort a layer to adjust its perspective. Flip ( Shift F ) — mirror horizontally or vertically."
+    },
+    {
+      "type": "h3",
+      "text": "Other Essential Tools"
+    },
+    {
+      "type": "p",
+      "text": "Clone ( C ) — paint using another area of the image as the source. Used for retouching blemishes and unwanted objects. Healing ( H ) — like Clone but blends with surrounding texture. Better for skin and organic surfaces. Dodge/Burn ( Shift D ) — lighten (dodge) or darken (burn) areas by painting over them. Smudge — blend/smear pixels. Text ( T ) — add text as an editable text layer."
+    },
+    {
+      "type": "h2",
+      "text": "Layers"
+    },
+    {
+      "type": "p",
+      "text": "Layers are the fundamental building block of non-destructive image editing in GIMP. Each layer is an independent plane of pixels that stacks on top of others. Changes to one layer don't affect others."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the layers panel with multiple layers and different blend modes."
+    },
+    {
+      "type": "h3",
+      "text": "Layer Operations"
+    },
+    {
+      "type": "p",
+      "text": "The Layers panel (right side) shows all layers, from top to bottom in stacking order. Operations:"
+    },
+    {
+      "type": "p",
+      "text": "New layer : click the + button at the bottom of the Layers panel, or use Layer → New Layer ( Shift Ctrl N ). Duplicate layer : Layer → Duplicate Layer ( Shift Ctrl D ). Delete layer : click the trash icon. Reorder layers : drag layers up or down in the panel. Hide/show : click the eye icon. Merge down : Layer → Merge Down — combines a layer with the one below it."
+    },
+    {
+      "type": "h3",
+      "text": "Layer Blend Modes"
+    },
+    {
+      "type": "p",
+      "text": "Each layer has a blend mode that controls how it interacts with layers beneath it. The most useful blend modes are: Normal (default), Multiply (darkens — like two transparencies stacked), Screen (lightens — good for glows), Overlay (increases contrast), Soft Light (gentle contrast), Difference (inverts based on the layer beneath), and Hue/Saturation/Colour (affect only that aspect of the layer below)."
+    },
+    {
+      "type": "h3",
+      "text": "Layer Opacity"
+    },
+    {
+      "type": "p",
+      "text": "The Opacity slider at the top of the Layers panel controls how transparent the active layer is. 100% is fully opaque; 0% is invisible. This is commonly used to blend adjustment layers at reduced strength."
+    },
+    {
+      "type": "h2",
+      "text": "Selections and Masking"
+    },
+    {
+      "type": "h3",
+      "text": "Refining Selections"
+    },
+    {
+      "type": "p",
+      "text": "After making a selection, refine it with: Select → Feather (soften the edges), Select → Grow/Shrink (expand or contract by pixels), and Select → Invert ( Ctrl I ) (select everything except the current selection)."
+    },
+    {
+      "type": "p",
+      "text": "To add to a selection, hold Shift while drawing a new selection. To subtract from a selection, hold Ctrl ."
+    },
+    {
+      "type": "h3",
+      "text": "Quick Mask"
+    },
+    {
+      "type": "p",
+      "text": "Press Shift Q to enter Quick Mask mode. The selection is shown as a red overlay. Paint with black to remove from the selection, white to add to it. Press Shift Q again to convert back to a marching ants selection. This is the most precise way to make complex selections."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — Quick Mask mode with the unselected area shown in red."
+    },
+    {
+      "type": "h3",
+      "text": "Layer Masks"
+    },
+    {
+      "type": "p",
+      "text": "A layer mask controls the transparency of parts of a layer non-destructively. Right-click a layer in the Layers panel and choose Add Layer Mask . Paint with black on the mask to hide parts of the layer, white to reveal. The original layer pixels are never destroyed."
+    },
+    {
+      "type": "h2",
+      "text": "Colour Correction"
+    },
+    {
+      "type": "p",
+      "text": "GIMP's colour correction tools are under the Colours menu."
+    },
+    {
+      "type": "h3",
+      "text": "Levels"
+    },
+    {
+      "type": "p",
+      "text": "Colours → Levels adjusts the black point, white point, and midtone gamma of the image. Drag the black input triangle right to set the darkest point; drag the white input triangle left to set the brightest point. Drag the output sliders to limit the tonal range. Click Auto for an automatic correction."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Levels dialog with histogram and input/output triangles."
+    },
+    {
+      "type": "h3",
+      "text": "Curves"
+    },
+    {
+      "type": "p",
+      "text": "Colours → Curves is the most powerful tonal adjustment. The diagonal line maps input values (x-axis) to output values (y-axis). Click to add control points and drag to reshape the curve. An S-curve (pull highlights up, shadows down) adds contrast. Work on the composite RGB channel first, then individual R, G, B channels for colour grading."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Curves dialog with a gentle S-curve for contrast."
+    },
+    {
+      "type": "h3",
+      "text": "Hue-Saturation"
+    },
+    {
+      "type": "p",
+      "text": "Colours → Hue-Saturation adjusts the overall hue shift, saturation, and lightness. Select \"All\" to affect every colour, or select a specific colour range (R, Y, G, C, B, M) to target just that range."
+    },
+    {
+      "type": "h3",
+      "text": "Colour Balance"
+    },
+    {
+      "type": "p",
+      "text": "Colours → Colour Balance adds warm or cool casts independently to shadows, midtones, and highlights. Useful for matching footage colours or creating a stylised grade."
+    },
+    {
+      "type": "h2",
+      "text": "Retouching"
+    },
+    {
+      "type": "h3",
+      "text": "Clone Tool"
+    },
+    {
+      "type": "p",
+      "text": "Select the Clone tool ( C ). Ctrl+click to set the source point, then paint over the area you want to fix — GIMP copies pixels from the source to the brush. Use a soft brush and a source point near the area you're fixing so texture and tone match."
+    },
+    {
+      "type": "h3",
+      "text": "Heal Tool"
+    },
+    {
+      "type": "p",
+      "text": "The Heal tool works similarly to Clone but blends the cloned pixels with the surrounding texture, making it more seamless for skin and complex textures. Ctrl+click to set the source, then paint to heal."
+    },
+    {
+      "type": "h3",
+      "text": "Spot Healing with Script-Fu"
+    },
+    {
+      "type": "p",
+      "text": "For a quick automatic heal, try Filters → Enhance → Heal Selection (if installed via the Resynthesizer plugin — see below). Select the area to remove, run the filter, and GIMP synthesises a plausible replacement from surrounding pixels."
+    },
+    {
+      "type": "h2",
+      "text": "Filters and Plugins"
+    },
+    {
+      "type": "p",
+      "text": "GIMP's Filters menu contains a large library of built-in filters: blur (Gaussian, motion, lens), sharpen (unsharp mask), distort (warp, ripple), render (clouds, plasma, noise), and more."
+    },
+    {
+      "type": "h3",
+      "text": "Recommended Plugins"
+    },
+    {
+      "type": "p",
+      "text": "Resynthesizer — adds content-aware fill (Heal Selection). Install on Fedora:"
+    },
+    {
+      "type": "p",
+      "text": "On macOS, download from the Resynthesizer GitHub releases and place the .so or .py files in ~/Library/Application Support/GIMP/2.10/plug-ins/ (GIMP 2.x) or the equivalent GIMP 3.x plug-ins path."
+    },
+    {
+      "type": "p",
+      "text": "G'MIC — a massive collection of image processing filters (colour grading, denoising, artistic effects, frequency separation). Install on Fedora:"
+    },
+    {
+      "type": "p",
+      "text": "On macOS, download the G'MIC installer from gmic.eu . On Windows 11, the G'MIC installer is available from the same page — it detects GIMP automatically and places the plugin in the correct folder."
+    },
+    {
+      "type": "p",
+      "text": "To install the Resynthesizer plugin on Windows, download the compiled .exe Windows installer from the Resynthesizer GitHub releases page and run it."
+    },
+    {
+      "type": "h2",
+      "text": "Working with Text"
+    },
+    {
+      "type": "p",
+      "text": "Select the Text tool ( T ). Click on the canvas to create a text layer. Type your text; use the Tool Options to set font, size, colour, and alignment. The text remains editable as long as you don't flatten or merge the text layer."
+    },
+    {
+      "type": "p",
+      "text": "To apply effects to text (like a drop shadow), right-click the text layer and select Alpha to Selection , then apply effects to a new layer below it. Or use Filters → Light and Shadow → Drop Shadow directly."
+    },
+    {
+      "type": "h2",
+      "text": "Saving and Exporting"
+    },
+    {
+      "type": "p",
+      "text": "GIMP's native format is XCF — it preserves all layers, masks, and guides. Always save as XCF while working."
+    },
+    {
+      "type": "p",
+      "text": "To export to a web-ready format (JPEG, PNG, WebP), use File → Export As ( Shift Ctrl E ). The export dialog lets you configure quality and format-specific options without affecting your XCF file."
+    },
+    {
+      "type": "p",
+      "text": "For PNG (lossless, supports transparency): leave compression at 6 for a balance of file size and speed."
+    },
+    {
+      "type": "p",
+      "text": "For JPEG (lossy, no transparency): 80–90 quality is a good default for high quality with reasonable file size. Check Progressive for web use."
+    },
+    {
+      "type": "p",
+      "text": "For WebP: use 80–90 quality for lossy, or enable lossless compression."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Export As dialog with JPEG quality settings."
+    },
+    {
+      "type": "h2",
+      "text": "Key Keyboard Shortcuts"
+    },
+    {
+      "type": "h2",
+      "text": "Tips and Gotchas"
+    },
+    {
+      "type": "p",
+      "text": "Use layers for everything. Never edit directly on the Background layer. Duplicate it first ( Shift Ctrl D ) and work on the copy, keeping the original untouched at the bottom."
+    },
+    {
+      "type": "p",
+      "text": "GIMP's undo history is generous but finite. Set the undo steps in Edit → Preferences → Environment → Maximum undo history size . The default (around 64MB) is usually sufficient."
+    },
+    {
+      "type": "p",
+      "text": "Script-Fu console ( Filters → Script-Fu → Console ) lets you run Scheme scripts against the open image. Python-Fu is also available for Python scripts. This is powerful for batch operations."
+    },
+    {
+      "type": "p",
+      "text": "On macOS , GIMP 2.10 uses a single-window mode that can feel slightly different from Photoshop. GIMP 3.x (currently in release candidates) improves macOS integration significantly — if 3.x is stable when you read this, install that version."
+    },
+    {
+      "type": "p",
+      "text": "On Fedora KDE , GIMP is well-integrated. If HiDPI scaling looks wrong, adjust the display scaling in GIMP's preferences: Edit → Preferences → Interface → Display → Monitors → Dot-for-dot — uncheck this and set the correct DPI for your monitor."
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 , GIMP stores user data (scripts, brushes, plug-ins, fonts) in %APPDATA%\\GIMP\\<version>\\ . Add custom brushes by placing .gbr or .gih files in the Brushes subfolder there, then refreshing brushes in Windows → Dockable Dialogs → Brushes → Refresh . If GIMP is slow to start on Windows, it's usually indexing fonts — go to Edit → Preferences → Folders → Fonts and remove any folders you don't need."
+    },
+    {
+      "type": "p",
+      "text": "Customise your toolbox. Go to Edit → Preferences → Interface → Toolbox to choose which tools appear and in what order. Remove tools you never use to reduce clutter."
+    }
+  ]
+}

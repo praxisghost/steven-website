@@ -1,0 +1,20 @@
+{
+  "slug": "fedora-kde",
+  "title": "Fedora KDE",
+  "date": null,
+  "source": "/website/public/technology/linux/fedora-kde.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Fedora KDE is the Linux setup I've settled on and genuinely enjoyed the most. It feels like an unlocked version of macOS — or just a clean, honest operating system that gets out of your way. This section has two parts:"
+    },
+    {
+      "type": "li",
+      "text": "My Experience"
+    },
+    {
+      "type": "li",
+      "text": "Fedora KDE Guide"
+    }
+  ]
+}

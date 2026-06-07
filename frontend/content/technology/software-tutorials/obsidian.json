@@ -1,0 +1,272 @@
+{
+  "slug": "obsidian",
+  "title": "Obsidian",
+  "date": null,
+  "source": "/website/public/technology/software-tutorials/obsidian.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Obsidian is a local-first Markdown note-taking app built around the idea of linked notes. Unlike Notion, all your data lives as plain .md files in a folder on your computer — no account required for basic use, no internet dependency, and no vendor lock-in. It's fast, highly extensible through plugins, and particularly well-suited to building a personal knowledge base or \"second brain\"."
+    },
+    {
+      "type": "h2",
+      "text": "Installation"
+    },
+    {
+      "type": "h3",
+      "text": "macOS (Apple Silicon)"
+    },
+    {
+      "type": "p",
+      "text": "Download the .dmg from obsidian.md . The app is a universal binary — it runs natively on Apple Silicon with no Rosetta translation. Open the .dmg , drag Obsidian to Applications, and launch it."
+    },
+    {
+      "type": "p",
+      "text": "Via Homebrew:"
+    },
+    {
+      "type": "h3",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "p",
+      "text": "The recommended method on Fedora is Flatpak:"
+    },
+    {
+      "type": "p",
+      "text": "An AppImage is also available from the Obsidian website if you prefer. Download it, make it executable, and run it:"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — Obsidian first launch vault selection screen."
+    },
+    {
+      "type": "h3",
+      "text": "Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "Download the .exe installer from obsidian.md . The installer runs per-user by default and requires no administrator rights. Alternatively, install via winget :"
+    },
+    {
+      "type": "p",
+      "text": "Obsidian on Windows 11 is identical to the macOS and Linux versions — all plugins, themes, and features work the same way. Your vault is a regular Windows folder; place it anywhere you like. If you want it to sync with OneDrive, put the vault folder inside your OneDrive folder, but do not also enable Obsidian Sync simultaneously or you'll risk file conflicts."
+    },
+    {
+      "type": "h2",
+      "text": "Vaults"
+    },
+    {
+      "type": "p",
+      "text": "When you first open Obsidian you're asked to create or open a vault . A vault is simply a folder on your filesystem. Every .md file inside that folder is a note. Obsidian stores its configuration in a hidden .obsidian/ sub-folder within the vault."
+    },
+    {
+      "type": "p",
+      "text": "You can have multiple vaults for different purposes — for example, one for work notes and one for personal knowledge. Switch between them from the vault switcher in the bottom-left corner."
+    },
+    {
+      "type": "p",
+      "text": "Where to put your vault: Anywhere is fine. For automatic backups, put it inside a synced folder (iCloud Drive on macOS, or a Syncthing/rclone folder on Fedora). Do not put a vault inside Dropbox and sync it simultaneously with Obsidian Sync — this can cause conflicts."
+    },
+    {
+      "type": "h2",
+      "text": "Markdown Basics"
+    },
+    {
+      "type": "p",
+      "text": "Notes are plain Markdown files. Here are the most common elements:"
+    },
+    {
+      "type": "h2",
+      "text": "The Interface"
+    },
+    {
+      "type": "p",
+      "text": "Obsidian's interface has three main columns: the left sidebar (file explorer, search, bookmarks), the editor (one or more tabs/panes), and the right sidebar (backlinks, outgoing links, outline, tags)."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — annotated Obsidian interface with sidebars and editor."
+    },
+    {
+      "type": "h3",
+      "text": "Editor Modes"
+    },
+    {
+      "type": "p",
+      "text": "Obsidian has two editor modes: Source mode (shows raw Markdown) and Live Preview (renders Markdown inline as you type, like a WYSIWYG editor). Toggle between them in the top-right of any note, or set a default in Settings → Editor → Default editing mode ."
+    },
+    {
+      "type": "p",
+      "text": "There's also a Reading view (fully rendered, non-editable) accessible by clicking the book icon or pressing ⌘/Ctrl E ."
+    },
+    {
+      "type": "h2",
+      "text": "Linking Notes"
+    },
+    {
+      "type": "p",
+      "text": "The core feature of Obsidian is bidirectional linking. Type [[ to open a link picker — start typing a note name and select from the dropdown. This creates an internal link. When you open the target note, its Backlinks panel shows all the notes that link to it."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the [[link picker]] autocomplete dropdown."
+    },
+    {
+      "type": "h3",
+      "text": "The Graph View"
+    },
+    {
+      "type": "p",
+      "text": "Open Graph view ( ⌘/Ctrl G ) to see a visual map of all your notes and how they link to each other. Each note is a node; each link is an edge. Highly connected notes appear larger. This is useful for spotting isolated notes and finding unexpected connections between topics."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — graph view of a vault with many linked notes."
+    },
+    {
+      "type": "h3",
+      "text": "Embeds"
+    },
+    {
+      "type": "p",
+      "text": "Prefix a link with ! to embed the contents of another note inline: ![[note-name]] . You can also embed specific sections by adding a heading: ![[note-name#Section Heading]] , or embed images: ![[photo.jpg]] ."
+    },
+    {
+      "type": "h2",
+      "text": "Key Keyboard Shortcuts"
+    },
+    {
+      "type": "h2",
+      "text": "Plugins"
+    },
+    {
+      "type": "p",
+      "text": "Obsidian has two categories of plugins: Core plugins (built-in, toggle on/off in Settings) and Community plugins (third-party, installable from within the app)."
+    },
+    {
+      "type": "h3",
+      "text": "Essential Core Plugins to Enable"
+    },
+    {
+      "type": "p",
+      "text": "Go to Settings → Core plugins and enable these: Backlinks (see what links to the current note), Outline (table of contents from headings), Daily notes (create a new note for today with one click), Templates (insert pre-written content), Tags (tag pane in sidebar), and Bookmarks (pin frequently used notes)."
+    },
+    {
+      "type": "h3",
+      "text": "Recommended Community Plugins"
+    },
+    {
+      "type": "p",
+      "text": "Go to Settings → Community plugins → Browse to install. These are worth installing early:"
+    },
+    {
+      "type": "p",
+      "text": "Dataview — query your notes like a database. Write dataview code blocks that return lists, tables, and tasks matching criteria from your notes' frontmatter and inline fields. This is one of the most powerful plugins in the ecosystem."
+    },
+    {
+      "type": "p",
+      "text": "Calendar — adds a calendar widget in the sidebar, one cell per day, with indicators showing which days have daily notes. Click any day to open or create its daily note."
+    },
+    {
+      "type": "p",
+      "text": "Templater — a more powerful version of the built-in Templates plugin. Supports dynamic content (current date, cursor position, user prompts) and can run JavaScript."
+    },
+    {
+      "type": "p",
+      "text": "Excalidraw — embed hand-drawn-style diagrams and sketches directly inside your notes."
+    },
+    {
+      "type": "p",
+      "text": "Advanced Tables — makes editing Markdown tables much less painful. Tab between cells, auto-formats columns."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the community plugin browser inside Obsidian settings."
+    },
+    {
+      "type": "h2",
+      "text": "Daily Notes Workflow"
+    },
+    {
+      "type": "p",
+      "text": "The daily note pattern is the most common Obsidian workflow. Each day gets one note (e.g., 2026-06-03.md ) that acts as a journal, inbox, and task list for that day."
+    },
+    {
+      "type": "p",
+      "text": "Enable the Daily notes core plugin and configure: Date format ( YYYY-MM-DD is standard), New file location (e.g., a Journal/ folder), and a Template . A simple daily note template looks like this:"
+    },
+    {
+      "type": "p",
+      "text": "Press ⌘/Ctrl Shift D (or the calendar plugin icon) to open today's daily note instantly."
+    },
+    {
+      "type": "h2",
+      "text": "Sync and Backup"
+    },
+    {
+      "type": "h3",
+      "text": "macOS"
+    },
+    {
+      "type": "p",
+      "text": "Put your vault folder inside iCloud Drive ( ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ ) for automatic iCloud sync to iPhone/iPad. Alternatively, use Obsidian Sync (paid) for end-to-end encrypted sync with version history. Third-party options like Dropbox or Git also work."
+    },
+    {
+      "type": "h3",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "p",
+      "text": "Use Syncthing for peer-to-peer sync between devices — it's free, open source, and doesn't route data through a cloud server. Install it:"
+    },
+    {
+      "type": "p",
+      "text": "Enable and start the service:"
+    },
+    {
+      "type": "p",
+      "text": "Then open http://127.0.0.1:8384 in your browser to configure Syncthing and add the vault folder. Add your other devices (Mac, phone) to sync with."
+    },
+    {
+      "type": "p",
+      "text": "For Git-based backup, initialise a repo inside your vault and push to a private repository on GitHub or Codeberg. The Obsidian Git community plugin automates commits and pushes on a schedule."
+    },
+    {
+      "type": "h3",
+      "text": "Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "On Windows, OneDrive is the easiest automatic sync option — place your vault inside your OneDrive folder and it syncs to all your Windows devices and the OneDrive web. For cross-platform sync (Windows to macOS or Android), use Syncthing (free, peer-to-peer) or Obsidian Sync (paid, end-to-end encrypted). Install Syncthing on Windows via:"
+    },
+    {
+      "type": "p",
+      "text": "The Obsidian Git community plugin works on Windows provided Git is installed ( winget install Git.Git ). After installing Git, restart Obsidian, install the plugin, and configure it the same way as on other platforms."
+    },
+    {
+      "type": "h2",
+      "text": "Tips and Gotchas"
+    },
+    {
+      "type": "p",
+      "text": "Start with fewer plugins. It's tempting to install everything immediately. Learn the basics first — plain notes and links — before adding plugins. Each plugin has a learning curve."
+    },
+    {
+      "type": "p",
+      "text": "Use frontmatter for metadata. YAML frontmatter at the top of a note (between --- lines) stores structured metadata like tags, dates, and status that Dataview and other plugins can query."
+    },
+    {
+      "type": "p",
+      "text": "Don't over-organise folders. Links and tags are more flexible than deep folder hierarchies. Many people use a nearly flat folder structure and rely on links and search to find things."
+    },
+    {
+      "type": "p",
+      "text": "On Fedora KDE with the Flatpak, fonts and some UI elements may look slightly different from the macOS version. If system fonts look off, install a font like Inter and set it in Settings → Appearance → Font ."
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 , Obsidian handles high-DPI displays well but check Settings → Appearance → Interface font size if text looks too small or large on your monitor. If you're using OneDrive to sync, make sure Files On-Demand is enabled in OneDrive settings — otherwise it may try to download files in a way that conflicts with Obsidian's file watcher."
+    }
+  ]
+}

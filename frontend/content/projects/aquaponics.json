@@ -1,0 +1,39 @@
+{
+  "slug": "aquaponics",
+  "title": "Aquaponics",
+  "source": "/website/public/projects/aquaponics.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Growing food and raising fish together — because why pick just one."
+    },
+    {
+      "type": "p",
+      "text": "A quick heads-up: the three images below are AI-generated concept art — not real blueprints, and not an alpha-stage diagram or plan. They're here to illustrate the general direction I'm exploring, nothing more."
+    },
+    {
+      "type": "quote",
+      "text": "The base design — the simplest version of the idea, showing the core loop of a fish tank feeding into a grow bed."
+    },
+    {
+      "type": "quote",
+      "text": "A more stylized, exaggerated take on the design. Treat this one loosely — the components aren't drawn to scale, a real setup like this takes up far more room than the image suggests, and I'm aiming to grow many more vegetables than what's shown here."
+    },
+    {
+      "type": "quote",
+      "text": "An AI-generated mock-up of how the parts might connect — a rough concept diagram of the circuit and water flow, not an engineered schematic."
+    },
+    {
+      "type": "p",
+      "text": "Again, these are just concept images of something I'm interested in building in the future — not a finished plan."
+    },
+    {
+      "type": "p",
+      "text": "Aquaponics is the combination of aquaculture (raising fish) and hydroponics (growing plants in water) into a single closed-loop ecosystem. Fish waste fertilizes the plants; the plants clean the water for the fish. It's elegant, efficient, and a little bit magical."
+    },
+    {
+      "type": "p",
+      "text": "I'm interested in building small-scale aquaponics systems — both as a food production method and as a way to keep frogs, fish, and other aquatic life in a healthy environment. More details coming as the project develops."
+    }
+  ]
+}

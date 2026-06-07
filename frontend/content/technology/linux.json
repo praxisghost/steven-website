@@ -1,0 +1,28 @@
+{
+  "slug": "linux",
+  "title": "Linux",
+  "date": null,
+  "source": "/website/public/technology/linux.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "I've been running Linux as a daily driver for a while now and I don't plan to go back. These are my notes on the distributions I've used — what works, what doesn't, and what I've settled on."
+    },
+    {
+      "type": "li",
+      "text": "Arch Linux"
+    },
+    {
+      "type": "li",
+      "text": "Debian"
+    },
+    {
+      "type": "li",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "li",
+      "text": "Linux Mint"
+    }
+  ]
+}

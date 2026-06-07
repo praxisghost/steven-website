@@ -1,0 +1,100 @@
+{
+  "slug": "return-to-linux",
+  "title": "My Recent Return to Linux",
+  "date": "May 2026",
+  "source": "/website/public/technology/return-to-linux.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "I've been running Linux as my primary desktop operating system since November, and I keep waiting for the catch. It hasn't come yet. That in itself feels worth writing about."
+    },
+    {
+      "type": "h2",
+      "text": "The Windows 11 Experience (Setting Up My Dad's Machine)"
+    },
+    {
+      "type": "p",
+      "text": "My dad recently got a ThinkPad T480 — a solid machine, great keyboard, the kind of laptop built to last. I was the one who set it up for him, and the experience of installing Windows 11 cleanly, without linking to a Microsoft account, refusing to use cloud services, and then going through the whole debloating process was genuinely exhausting in a way I didn't expect."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft has made it remarkably difficult to complete a Windows 11 setup as a local-only install. Every screen nudges you toward signing in. The steps to bypass it change between versions, so half the guides online are outdated. And then once you're in, the amount of software you didn't ask for and don't want is significant — removing it properly without breaking things is its own separate project. As someone who uses macOS more regularly than Windows, I was genuinely shocked by how much friction there is in just trying to use the operating system on your own terms. It felt like the OS was constantly trying to negotiate with me about who was in charge."
+    },
+    {
+      "type": "p",
+      "text": "I don't think Windows is unusable — plenty of people use it without any of these complaints. But if you're the kind of person who cares about keeping a system clean, unlinked from cloud accounts you didn't ask for, and free of software running in the background for Microsoft's benefit rather than yours, Windows 11 requires a real amount of work to get there. That experience reminded me exactly why I'd moved away from it for my own machine."
+    },
+    {
+      "type": "h2",
+      "text": "Fedora KDE — My Daily Driver"
+    },
+    {
+      "type": "p",
+      "text": "My own desktop is a ThinkPad T495s, and it's been running Fedora with the KDE Plasma desktop since November. I chose Fedora because it tracks upstream packages closely enough that I'm not running outdated software, but it still ships releases rather than rolling updates, which means I'm not nervously waiting for a system update to break something. It's the right balance for a machine I need to actually work on."
+    },
+    {
+      "type": "p",
+      "text": "KDE Plasma is excellent. It's configurable to a degree that could feel overwhelming if you tried to do everything at once, but the sensible approach is to just use it and adjust things as they bother you. I've changed a lot from the defaults over time, but nothing required hours of reading or terminal gymnastics. Things mostly just work the way you'd want them to, and when they don't, fixing it is usually quick and satisfying rather than a deep dive into documentation."
+    },
+    {
+      "type": "p",
+      "text": "Compared to macOS — which I still use regularly and genuinely like — Fedora KDE is snappier and considerably more customisable. macOS has a kind of enforced tidiness that I appreciate on its own terms, but Fedora feels like it's on my side in a way that macOS doesn't always. Less guided, more honest. I still pick up a Mac without friction; the familiarity is real. But the desktop I actually prefer working on is the T495s."
+    },
+    {
+      "type": "p",
+      "text": "What I keep having to explain to people who haven't tried a modern Linux desktop in a while is that the gap between \"it works\" and \"it works well\" has basically closed. Commands I learned on Debian and Arch have started to fade — I've just gotten so used to Fedora's way of doing things that I've stopped thinking about it, which is a pretty good sign."
+    },
+    {
+      "type": "h2",
+      "text": "Linux Mint on the 2009 MacBook"
+    },
+    {
+      "type": "p",
+      "text": "I have a 2009 MacBook that Apple dropped support for years ago. It still runs. I put Linux Mint on it, and it works — not fast, but genuinely usable. The fact that a machine this old can boot to a functional desktop and do real work is one of those things I find quietly remarkable. macOS moved on from this hardware long before the hardware had any reason to stop. Linux Mint didn't, and that matters."
+    },
+    {
+      "type": "p",
+      "text": "Mint has always been my go-to recommendation for people who want something stable and approachable — it earns that reputation. I've been curious lately about Linux Mint Debian Edition, which tracks Debian stable rather than Ubuntu LTS. The appeal is a longer support window and slightly different relationship to upstream. I haven't tried it on the MacBook yet but it's on the list."
+    },
+    {
+      "type": "h2",
+      "text": "Steam and Games"
+    },
+    {
+      "type": "p",
+      "text": "This is nothing to do with my dad's machine — he doesn't game. This is about my own setup on the T495s. And I have to be honest: I was actually a bit surprised by the lack of Linux game support on Steam. I could have sworn the list of compatible games was longer than it currently is — maybe I'm remembering earlier coverage of Proton more generously than the reality warrants, or maybe the library I personally care about just has a higher proportion of titles that don't work. Either way, it was more limited than I expected going in, and that's worth acknowledging rather than glossing over."
+    },
+    {
+      "type": "p",
+      "text": "On the hardware side of Valve's ecosystem: I owned the original Steam Controller back in the day and I have real affection for it. The dual trackpads and haptic feedback gave it a kind of flexibility that standard controllers don't have, particularly for games that weren't built for a controller at all. Valve keeps trying things that nobody else does, and I respect that even when the experiments don't fully land."
+    },
+    {
+      "type": "p",
+      "text": "The newest Steam Machine is something I haven't had a chance to research properly yet, so I won't pretend otherwise. What I can say is that the concept is compelling to me — not because it competes on raw price-per-performance with a self-built PC, but because you're buying a cohesive, living-room-ready Linux gaming machine, and right now PC parts are expensive enough that the value comparison isn't as one-sided as it would have been a few years ago. I'd like to look at it more carefully. The concept of a Steam Machine has always made sense to me even when the execution was rough."
+    },
+    {
+      "type": "h2",
+      "text": "Hardware Preferences"
+    },
+    {
+      "type": "p",
+      "text": "I've become increasingly partial to AMD CPUs — the Linux driver support has been more consistent in my experience, and they're genuinely good value. For any new build or purchase, AMD would be my first look."
+    },
+    {
+      "type": "p",
+      "text": "ThinkPads are the other thing I keep coming back to. The keyboards are excellent by laptop standards, the build quality is serious, and older models in particular are built to be repaired — battery swaps, RAM upgrades, thermal paste replacements — in a way that extends their useful life well beyond what most laptops manage. Both the T480 and the T495s are good examples of that. They're not glamorous but they're solid, and I'd rather have solid."
+    },
+    {
+      "type": "h2",
+      "text": "Where Things Stand"
+    },
+    {
+      "type": "p",
+      "text": "I'm not going back to Windows as a daily driver. Fedora KDE is just better for how I want to use a computer — more responsive, more mine, more honest about what it's doing. The things I expected to miss (certain software, some compatibility) turned out either not to matter or to have straightforward alternatives. I still reach for a Mac regularly and enjoy it. But the machine I actually want to sit down at is running Linux."
+    },
+    {
+      "type": "p",
+      "text": "It's also more fun, which I didn't fully anticipate. There's something about a system that actually responds to configuration — where changing things has a visible effect and the machine feels like it's cooperating rather than tolerating you — that makes the daily experience of using a computer better. I notice the machine more. That's not a complaint."
+    }
+  ]
+}

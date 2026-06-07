@@ -1,0 +1,16 @@
+{
+  "slug": "artificial-intelligence",
+  "title": "Artificial Intelligence",
+  "date": null,
+  "source": "/website/public/technology/artificial-intelligence.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Notes on AI tools, prompting, and how I use them day-to-day. More coming."
+    },
+    {
+      "type": "li",
+      "text": "Some Prompts I Like to Use"
+    }
+  ]
+}

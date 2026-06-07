@@ -1,0 +1,336 @@
+{
+  "slug": "macos",
+  "title": "macOS",
+  "date": "Getting started with macOS Tahoe 26",
+  "source": "/website/public/technology/macos.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "iMac G3 (1998). Image via MacRumors Forums."
+    },
+    {
+      "type": "p",
+      "text": "macOS Tahoe (26) is Apple's current desktop operating system. This is a practical guide covering the things I actually use and care about — useful terminal commands, my favourite apps, input methods, Homebrew, and how to run a Mac without handing everything over to Apple's cloud ecosystem."
+    },
+    {
+      "type": "h2",
+      "text": "Useful Terminal Commands"
+    },
+    {
+      "type": "p",
+      "text": "Open Terminal via Spotlight: ⌘ Space, type Terminal, press Enter."
+    },
+    {
+      "type": "h3",
+      "text": "Filesystem Navigation"
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — add a screenshot of your terminal here."
+    },
+    {
+      "type": "h3",
+      "text": "File and Folder Operations"
+    },
+    {
+      "type": "h3",
+      "text": "Copying Pathnames"
+    },
+    {
+      "type": "p",
+      "text": "To copy a full file path to your clipboard, there are three approaches:"
+    },
+    {
+      "type": "p",
+      "text": "From Finder: right-click a file, hold ⌥ Option and the menu item changes from \"Copy\" to \"Copy [filename] as Pathname\" — click it."
+    },
+    {
+      "type": "p",
+      "text": "Drag into Terminal: drag any file from Finder directly into an open Terminal window. macOS will paste the full path at the cursor position."
+    },
+    {
+      "type": "p",
+      "text": "Via command line: navigate to the file and run pwd to get the directory, then combine:"
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — screenshot of the Finder \"Copy as Pathname\" option."
+    },
+    {
+      "type": "h3",
+      "text": "Other Handy Commands"
+    },
+    {
+      "type": "h2",
+      "text": "Homebrew"
+    },
+    {
+      "type": "p",
+      "text": "Homebrew is the package manager macOS is missing out of the box. It lets you install command-line tools and desktop apps from the terminal without touching the App Store."
+    },
+    {
+      "type": "h3",
+      "text": "Installation"
+    },
+    {
+      "type": "p",
+      "text": "Paste the following into Terminal (this is the official one-liner from brew.sh):"
+    },
+    {
+      "type": "p",
+      "text": "After installation, follow any instructions it prints to add Homebrew to your PATH. On Apple Silicon Macs it typically tells you to add a line to your ~/.zprofile."
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — screenshot of Homebrew installing."
+    },
+    {
+      "type": "h3",
+      "text": "Using Homebrew"
+    },
+    {
+      "type": "p",
+      "text": "The --cask flag is for GUI desktop apps (things you'd normally drag into Applications). Without it, you get CLI tools."
+    },
+    {
+      "type": "h2",
+      "text": "My Favourite Apps"
+    },
+    {
+      "type": "p",
+      "text": "These are the apps I actually use. Install most of them via Homebrew or their official sites:"
+    },
+    {
+      "type": "p",
+      "text": "Firefox — my browser of choice. Not Chrome (ever), not Safari (only if battery life is an absolute top priority). Firefox respects privacy, has excellent extension support, and doesn't feed a surveillance advertising machine."
+    },
+    {
+      "type": "p",
+      "text": "Claude (Cowork) — AI assistant with a desktop client that works across files and tasks."
+    },
+    {
+      "type": "p",
+      "text": "Signal — end-to-end encrypted messaging. What I use for anything that matters."
+    },
+    {
+      "type": "p",
+      "text": "Discord — for communities, servers, and voice chat."
+    },
+    {
+      "type": "p",
+      "text": "Anki — spaced repetition flashcard software. The best tool for learning and retaining vocabulary, facts, anything that requires long-term memory. Client-side, your decks are yours."
+    },
+    {
+      "type": "p",
+      "text": "Obsidian — local-first Markdown note-taking. All your notes are plain .md files on disk. No account required, no cloud lock-in by default."
+    },
+    {
+      "type": "p",
+      "text": "Notion — for project management and collaborative docs when needed."
+    },
+    {
+      "type": "p",
+      "text": "Blender — free, open-source 3D modelling and animation. Remarkably capable."
+    },
+    {
+      "type": "p",
+      "text": "Kdenlive — free, open-source video editor. My go-to for video work on all platforms."
+    },
+    {
+      "type": "p",
+      "text": "Darktable — free, open-source RAW photo editor and library manager. A genuine Lightroom alternative."
+    },
+    {
+      "type": "p",
+      "text": "Voice Memos (Apple, pinned) — the one Apple app I keep in the Dock. Quick audio recording that syncs locally. Pin it to your Dock: open Launchpad, find Voice Memos, and drag it to the Dock."
+    },
+    {
+      "type": "p",
+      "text": "ProtonVPN — trustworthy, open-source audited VPN from the Proton team."
+    },
+    {
+      "type": "h2",
+      "text": "Adding Input Methods"
+    },
+    {
+      "type": "p",
+      "text": "Go to System Settings → Keyboard → Text Input → Edit… (or the \"+\" button in the input sources list). Search for and add:"
+    },
+    {
+      "type": "p",
+      "text": "Cantonese (Jyutping) — search \"Cantonese\", select Cantonese — Jyutping."
+    },
+    {
+      "type": "p",
+      "text": "Mandarin (Pinyin) — search \"Chinese\", select Chinese, Simplified — Pinyin."
+    },
+    {
+      "type": "p",
+      "text": "Turkish (Turkey) — search \"Turkish\", select Turkish."
+    },
+    {
+      "type": "p",
+      "text": "Spanish (Latin America) — search \"Spanish\", select Spanish — Latin America."
+    },
+    {
+      "type": "p",
+      "text": "German (Germany) — search \"German\", select German."
+    },
+    {
+      "type": "p",
+      "text": "Colemak — search \"Colemak\", select Colemak."
+    },
+    {
+      "type": "p",
+      "text": "Switch between input methods with ⌃ Space (Control + Space) or by clicking the input menu in the menu bar."
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — screenshot of input sources list with all methods added."
+    },
+    {
+      "type": "h2",
+      "text": "Running macOS Without iCloud or an Apple ID"
+    },
+    {
+      "type": "p",
+      "text": "You can use macOS entirely without signing in to an Apple ID or iCloud. Here's how to keep it that way."
+    },
+    {
+      "type": "h3",
+      "text": "Skip Sign-In During Setup"
+    },
+    {
+      "type": "p",
+      "text": "When setting up a new Mac, look for \"Set Up Later\" or \"Sign In Later\" at the Apple ID screen. This creates a local account with no cloud association."
+    },
+    {
+      "type": "h3",
+      "text": "Disable iCloud If Already Signed In"
+    },
+    {
+      "type": "p",
+      "text": "Go to System Settings → [Your Name] and sign out. Before signing out, macOS will ask what to keep on the device — choose to keep everything locally. Then confirm sign-out."
+    },
+    {
+      "type": "h3",
+      "text": "Turn Off All iCloud Services"
+    },
+    {
+      "type": "p",
+      "text": "In System Settings → Apple ID → iCloud, disable everything: iCloud Drive, Photos, Contacts, Calendars, Reminders, Safari, Keychain, News, Stocks, Home, Wallet, and iCloud Backup. Toggle each one off. If you're not signed in, none of these run."
+    },
+    {
+      "type": "h3",
+      "text": "Disable Siri and Analytics"
+    },
+    {
+      "type": "p",
+      "text": "Go to System Settings → Siri & Spotlight — turn off \"Ask Siri\". Then go to System Settings → Privacy & Security → Analytics & Improvements — turn off everything listed. Also check Privacy & Security → Apple Advertising and turn off personalised ads."
+    },
+    {
+      "type": "h3",
+      "text": "Disable Spotlight Suggestions"
+    },
+    {
+      "type": "p",
+      "text": "In System Settings → Siri & Spotlight → Spotlight, uncheck \"Spotlight Suggestions\" and \"Allow Spotlight Suggestions in Look Up\". This stops Spotlight from sending search queries to Apple's servers."
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — screenshot of Analytics & Improvements with everything turned off."
+    },
+    {
+      "type": "h2",
+      "text": "Time Machine Backup"
+    },
+    {
+      "type": "p",
+      "text": "Time Machine is Apple's built-in backup system and the only cloud-free backup I use on macOS. It keeps hourly snapshots, daily backups, and weekly backups, automatically culling old ones as the drive fills up. You need an external drive."
+    },
+    {
+      "type": "h3",
+      "text": "Setting It Up"
+    },
+    {
+      "type": "p",
+      "text": "Connect an external drive. Go to System Settings → General → Time Machine. Click \"Add Backup Disk…\" and select your external drive. macOS will ask if you want to erase and reformat the drive — let it format as APFS (see the drive formatting section below for why). Once added, Time Machine begins its first backup within the hour."
+    },
+    {
+      "type": "p",
+      "text": "Enable \"Back Up Automatically\" so backups run without you having to think about them. The first backup will be large and slow; subsequent ones are incremental and fast."
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — screenshot of Time Machine settings with a backup disk configured."
+    },
+    {
+      "type": "h3",
+      "text": "Restoring Files"
+    },
+    {
+      "type": "p",
+      "text": "To restore individual files: open the folder you want in Finder, then open Time Machine from the menu bar. Use the timeline on the right to travel back in time. Click a file and press Restore. For a full system restore, boot into macOS Recovery (⌘ R on Intel / hold the power button on Apple Silicon during startup) and choose Restore from Time Machine."
+    },
+    {
+      "type": "h2",
+      "text": "Drive Formatting and Cross-Platform Compatibility"
+    },
+    {
+      "type": "p",
+      "text": "macOS's Disk Utility (Applications → Utilities → Disk Utility) is where you format drives. Understanding which filesystem to use — and the limitations of each — saves a lot of frustration when working across operating systems."
+    },
+    {
+      "type": "h3",
+      "text": "APFS (Apple File System)"
+    },
+    {
+      "type": "p",
+      "text": "APFS is Apple's native filesystem introduced in 2017, optimised for SSDs but also works on HDDs. It supports snapshots (what Time Machine uses), cloning, strong encryption, and space sharing between volumes. Use APFS for any drive that will only ever be used with macOS. It is the right choice for your Time Machine backup disk, your startup drive, and any Mac-only external storage."
+    },
+    {
+      "type": "p",
+      "text": "Windows and Linux cannot natively read APFS volumes. There are third-party tools (like APFS for Windows by Paragon) but they're paid and not universal. If you need to share a drive with other OSes, APFS is the wrong choice."
+    },
+    {
+      "type": "h3",
+      "text": "exFAT"
+    },
+    {
+      "type": "p",
+      "text": "exFAT is the best choice for a drive you want to share between macOS, Windows, and Linux. All three can read and write it natively without extra software. No file size limit (unlike FAT32). No journaling, so it's less robust — power loss during a write can corrupt the filesystem — but for a USB drive you're using to transfer files, it's fine."
+    },
+    {
+      "type": "h3",
+      "text": "FAT32"
+    },
+    {
+      "type": "p",
+      "text": "FAT32 is the old universal standard. macOS, Windows, and Linux all read and write it, and it's compatible with almost everything (cameras, car stereos, game consoles). The critical limitation: individual files cannot exceed 4 GB. This matters if you're moving video files. It also has a maximum partition size of 2 TB. For modern use, exFAT is almost always better unless you need compatibility with very old or embedded devices."
+    },
+    {
+      "type": "h3",
+      "text": "NTFS (Windows)"
+    },
+    {
+      "type": "p",
+      "text": "NTFS is Windows' native filesystem. macOS can read NTFS drives but cannot write to them without third-party software (e.g. Paragon NTFS for Mac, Tuxera, or the free but less stable ntfs-3g via Homebrew). Linux reads and writes NTFS natively through the ntfs-3g driver. If someone hands you an NTFS drive, you can copy files off it on a Mac but you can't add or change files without extra software. If you're running Windows 11, NTFS is the expected filesystem for internal and external drives — don't reformat it unless you have a reason."
+    },
+    {
+      "type": "h3",
+      "text": "Btrfs (Fedora / Linux)"
+    },
+    {
+      "type": "p",
+      "text": "Btrfs (B-tree filesystem) is the default filesystem on Fedora 43 KDE and several other modern Linux distributions. It is comparable to APFS in capability — it supports copy-on-write snapshots, transparent compression, checksums, and RAID. macOS has no native Btrfs support — you cannot read or write a Btrfs volume on a Mac without installing a third-party driver, which is not widely available or reliable. Windows also has no native Btrfs support. If you have a Linux drive formatted as Btrfs and want to access it on a Mac or Windows machine, you need to either: boot into Linux to copy the files first, or use a Linux live USB and copy to an exFAT intermediate drive. For a shared drive between macOS and Fedora, use exFAT."
+    },
+    {
+      "type": "h3",
+      "text": "Quick Reference"
+    },
+    {
+      "type": "p",
+      "text": "Placeholder — Disk Utility's format dropdown when erasing a drive."
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "slug": "kdenlive",
+  "title": "KDenLive",
+  "date": null,
+  "source": "/website/public/technology/software-tutorials/kdenlive.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "KDenLive (KDE Non-Linear Video Editor) is a free, open-source video editor that supports multi-track editing, a wide range of formats (including ProRes, H.264, HEVC, and more), a GPU-accelerated preview, and a comprehensive effects library. It's a capable alternative to DaVinci Resolve for most editing tasks, and it's particularly well-integrated on KDE Plasma."
+    },
+    {
+      "type": "h2",
+      "text": "Installation"
+    },
+    {
+      "type": "h3",
+      "text": "macOS (Apple Silicon)"
+    },
+    {
+      "type": "p",
+      "text": "Download the .dmg from kdenlive.org/download . KDenLive is distributed as a universal binary and runs natively on Apple Silicon. Open the .dmg , drag KDenLive to Applications, and launch it."
+    },
+    {
+      "type": "p",
+      "text": "Via Homebrew:"
+    },
+    {
+      "type": "p",
+      "text": "Note: On first launch, macOS may warn that KDenLive is from an unidentified developer. Go to System Settings → Privacy & Security and click \"Open Anyway\"."
+    },
+    {
+      "type": "h3",
+      "text": "Fedora KDE"
+    },
+    {
+      "type": "p",
+      "text": "Install via Flatpak for the latest version:"
+    },
+    {
+      "type": "p",
+      "text": "Or via DNF (may be an older version):"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — KDenLive on first launch."
+    },
+    {
+      "type": "h3",
+      "text": "Windows 11"
+    },
+    {
+      "type": "p",
+      "text": "KDenLive has an official Windows installer. Download the .exe from kdenlive.org/download — it bundles MLT, FFmpeg, and all required libraries. Run the installer (administrator rights recommended). Alternatively, install via winget :"
+    },
+    {
+      "type": "p",
+      "text": "KDenLive on Windows 11 supports the same project formats, effects, and export codecs as the Linux version. GPU-accelerated preview works via Direct3D/OpenGL on compatible NVIDIA and AMD cards — enable this in Settings → Configure KDenLive → Playback → GPU rendering . If certain audio formats won't decode, install K-Lite Codec Pack Basic alongside KDenLive."
+    },
+    {
+      "type": "h2",
+      "text": "Interface Overview"
+    },
+    {
+      "type": "p",
+      "text": "KDenLive's default layout has four main areas: the Project Bin (top-left, your media), the Clip Monitor (top-centre, preview source clips), the Project Monitor (top-right, preview the timeline), and the Timeline (bottom, where you assemble your edit). The Effect Stack panel appears when you apply effects to a clip."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — annotated KDenLive interface with project bin, monitors, and timeline."
+    },
+    {
+      "type": "h3",
+      "text": "Customising the Layout"
+    },
+    {
+      "type": "p",
+      "text": "KDenLive's panels are dockable and movable. Drag any panel header to rearrange. Save your layout via View → Layout → Save Layout . There are built-in layouts for different tasks (Editing, Audio, Effects) accessible from View → Layout ."
+    },
+    {
+      "type": "h2",
+      "text": "Creating a New Project"
+    },
+    {
+      "type": "p",
+      "text": "Go to File → New (or Ctrl N ). The project settings dialog asks for:"
+    },
+    {
+      "type": "p",
+      "text": "Project folder — where to save the project file and any renders. Profile — the resolution, frame rate, and colour space. Common profiles: HD 1080p 25fps, HD 1080p 30fps, UHD 4K 25fps, UHD 4K 30fps. Match the profile to your footage's native format whenever possible."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — new project dialog showing profile and folder settings."
+    },
+    {
+      "type": "p",
+      "text": "If your footage has mixed formats, KDenLive will prompt you to adjust the profile when you first add a clip. Generally, match the profile to your primary footage."
+    },
+    {
+      "type": "h2",
+      "text": "Importing Media"
+    },
+    {
+      "type": "p",
+      "text": "Drag files directly from your file manager into the Project Bin , or right-click the Project Bin and choose Add Clip or Folder . KDenLive creates proxy clips and thumbnail previews in the background."
+    },
+    {
+      "type": "p",
+      "text": "Supported media types include: video (MP4, MOV, MKV, ProRes, HEVC, WebM, AVI), audio (MP3, WAV, FLAC, AAC, OGG), and images (JPEG, PNG, SVG, TIFF). Sequences of numbered image files can be imported as image sequences."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the Project Bin with imported video, audio, and image clips."
+    },
+    {
+      "type": "h3",
+      "text": "Proxy Clips"
+    },
+    {
+      "type": "p",
+      "text": "For high-resolution footage (4K, ProRes), enable proxy clips so the timeline stays responsive during editing. Go to Project → Project Settings → Proxy Clips and enable proxies. KDenLive generates low-resolution proxy files in the background; editing uses these proxies but the final render uses the originals."
+    },
+    {
+      "type": "h2",
+      "text": "Timeline Editing"
+    },
+    {
+      "type": "p",
+      "text": "Drag clips from the Project Bin to the timeline to add them. The timeline has multiple video tracks (V1, V2, …) and audio tracks (A1, A2, …). Higher-numbered video tracks overlay lower ones — use V2 for titles, overlays, and picture-in-picture."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the timeline with video clips on V1, a title on V2, and audio on A1."
+    },
+    {
+      "type": "h3",
+      "text": "The Toolbar and Edit Modes"
+    },
+    {
+      "type": "p",
+      "text": "The toolbar above the timeline contains the editing tools. The most important are:"
+    },
+    {
+      "type": "p",
+      "text": "Selection tool ( S ) — click to select, drag to move clips. Razor / Blade tool ( X ) — click on a clip to cut it at that point. Slip tool — slide the content of a clip without changing its duration on the timeline. Spacer tool ( Shift+Space ) — move all clips to the right of the cursor simultaneously."
+    },
+    {
+      "type": "h3",
+      "text": "Trimming Clips"
+    },
+    {
+      "type": "p",
+      "text": "Hover over the start or end edge of a clip until the trim cursor appears, then drag to extend or shorten the clip. Trimming reveals or hides frames from the original media — it doesn't delete them."
+    },
+    {
+      "type": "p",
+      "text": "For precise trimming, double-click a clip to open it in the Clip Monitor, then set In and Out points with I and O before dragging it to the timeline."
+    },
+    {
+      "type": "h3",
+      "text": "Cutting and Splitting"
+    },
+    {
+      "type": "p",
+      "text": "Press Shift+R to cut all clips at the playhead position on all tracks. Press R to cut only the selected clip. Use the Razor tool ( X ) to click-cut at specific points."
+    },
+    {
+      "type": "h3",
+      "text": "Ripple Delete"
+    },
+    {
+      "type": "p",
+      "text": "Select a clip and press Delete to remove it, leaving a gap. Press Shift+Delete to ripple delete — this removes the clip and closes the gap by moving all downstream clips left."
+    },
+    {
+      "type": "h2",
+      "text": "Transitions"
+    },
+    {
+      "type": "p",
+      "text": "To add a transition between two adjacent clips, right-click the cut point between them and choose Add Transition . Select a transition type (Dissolve, Wipe, Slide, etc.). Drag the transition's edges to adjust its duration."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — a dissolve transition between two clips on the timeline."
+    },
+    {
+      "type": "p",
+      "text": "The most common transition is Dissolve (cross-fade). For cut-based editing, simply trimming clips to touch each other with no overlap is usually preferable to heavy use of transitions."
+    },
+    {
+      "type": "h2",
+      "text": "Effects"
+    },
+    {
+      "type": "p",
+      "text": "KDenLive has a comprehensive effects library. Open the Effects panel ( Ctrl+6 or from the View menu). Browse or search for an effect, then drag it onto a clip on the timeline to apply it. The Effect Stack shows all effects applied to the selected clip."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — effects browser on the left, effect stack on the right showing applied effects."
+    },
+    {
+      "type": "h3",
+      "text": "Useful Effects"
+    },
+    {
+      "type": "p",
+      "text": "Colour Correction (under Video → Colour) — basic level, contrast, saturation adjustments. Colour Grading (3-way colour wheel for shadows/mids/highlights) — for cinematic looks. Crop, Scale, Position — resize and reposition clips. Blur — Gaussian blur for privacy or depth-of-field effect. Sharpen — unsharp mask for clarity. Speed Change — slow motion or fast motion."
+    },
+    {
+      "type": "h3",
+      "text": "Keyframing Effects"
+    },
+    {
+      "type": "p",
+      "text": "Most effect parameters can be keyframed over time. Click the keyframe icon next to a parameter in the Effect Stack to enable keyframing. Move the playhead to a point in time, set the parameter value, and a keyframe is added. Add keyframes at different points to animate the effect."
+    },
+    {
+      "type": "h2",
+      "text": "Titles"
+    },
+    {
+      "type": "p",
+      "text": "Go to Project → Add Title Clip to open the Title Editor. Type your text, select a font, colour, and size. You can add shapes, images, and gradient backgrounds. Click Create Title to add it to the Project Bin, then drag it to the timeline on a track above your video (V2 or higher)."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the title editor with a title being composed."
+    },
+    {
+      "type": "h2",
+      "text": "Audio"
+    },
+    {
+      "type": "h3",
+      "text": "Audio Levels and Mixing"
+    },
+    {
+      "type": "p",
+      "text": "Every track in the timeline has a volume fader and mute/solo buttons on the left of the track header. Right-click a clip to Set audio level for that specific clip. Use the Audio Mixer panel (View → Audio Mixer) for a more detailed per-track mixing view."
+    },
+    {
+      "type": "h3",
+      "text": "Keyframing Volume"
+    },
+    {
+      "type": "p",
+      "text": "To fade audio in or out, click the Keyframe icon on an audio clip. Add keyframes at the start and end of the fade and set the volume to 0 at the ends. This is more precise than using a transition-based fade."
+    },
+    {
+      "type": "h3",
+      "text": "Audio Effects"
+    },
+    {
+      "type": "p",
+      "text": "Apply audio effects from the Effects panel → Audio section. Useful ones include: Normalise (bring peaks to a target level), Compressor (reduce dynamic range), Equalizer (adjust frequency response), and Noise Reduction (remove background hiss)."
+    },
+    {
+      "type": "h2",
+      "text": "Exporting (Rendering)"
+    },
+    {
+      "type": "p",
+      "text": "When your edit is complete, go to Project → Render ( Ctrl+Return ). The Render dialog shows:"
+    },
+    {
+      "type": "p",
+      "text": "Format/Codec presets — choose from common presets on the left. For most web and sharing use cases, use H.264 + AAC (MP4) . For archival or further editing, use ProRes (macOS) or FFV1 (lossless, Linux-friendly). For YouTube, use the YouTube or H.265 + AAC presets."
+    },
+    {
+      "type": "p",
+      "text": "Output file — choose where to save the rendered file."
+    },
+    {
+      "type": "p",
+      "text": "Render only this zone — check this if you've set In/Out points on the timeline and only want to render part of the project."
+    },
+    {
+      "type": "p",
+      "text": "Click Render to File to begin. Progress is shown in the Render dialog. KDenLive renders in the background so you can continue editing."
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — the render dialog with H.264 MP4 preset and output file settings."
+    },
+    {
+      "type": "h2",
+      "text": "Key Keyboard Shortcuts"
+    },
+    {
+      "type": "h2",
+      "text": "Tips and Gotchas"
+    },
+    {
+      "type": "p",
+      "text": "Enable proxy clips for 4K footage. Without proxies, editing 4K on lower-end hardware is painfully slow. KDenLive's proxy system is automatic once enabled in project settings."
+    },
+    {
+      "type": "p",
+      "text": "Save frequently. KDenLive has an autosave feature ( Settings → Configure KDenLive → Environment → Auto Save ) but saving manually with Ctrl S is good practice. Project files are small XML files."
+    },
+    {
+      "type": "p",
+      "text": "Use guide markers. Press G to add a guide marker at the playhead. Name your markers (intro, section 1, credits, etc.) to navigate large projects quickly."
+    },
+    {
+      "type": "p",
+      "text": "On macOS , KDenLive may have issues with some video formats that require additional codecs. If a clip won't import or plays without audio, install the extra codecs via Homebrew: brew install ffmpeg ."
+    },
+    {
+      "type": "p",
+      "text": "On Fedora KDE , if you installed via Flatpak and GPU acceleration isn't working, check Settings → Configure KDenLive → Playback and ensure the GPU rendering option is enabled. You may need to install the mesa-va-drivers or nvidia-vaapi-driver package depending on your GPU."
+    },
+    {
+      "type": "p",
+      "text": "On Windows 11 , KDenLive stores its configuration and render cache in %APPDATA%\\kdenlive . If you run into render issues, clearing the cache from Settings → Configure KDenLive → Environment → Clear Cache often resolves them. For 4K ProRes workflows on Windows, ensure the Apple ProRes codec is installed (it comes bundled with QuickTime or Apple's codec installer for Windows) for the best compatibility. The proxy clip system works identically to Linux — enable it in project settings for smoother 4K editing."
+    }
+  ]
+}

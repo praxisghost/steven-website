@@ -1,0 +1,1536 @@
+{
+"source": "/website/public/isms/*.html",
+"count": 306,
+"items": [
+{
+"slug": "abiogenesisism",
+"title": "Abiogenesisism",
+"status": "placeholder"
+},
+{
+"slug": "ableism",
+"title": "Ableism",
+"status": "placeholder"
+},
+{
+"slug": "abolitionism",
+"title": "Abolitionism",
+"status": "placeholder"
+},
+{
+"slug": "absenteeism",
+"title": "Absenteeism",
+"status": "placeholder"
+},
+{
+"slug": "absolutism",
+"title": "Absolutism",
+"status": "placeholder"
+},
+{
+"slug": "abstractionism",
+"title": "Abstractionism",
+"status": "placeholder"
+},
+{
+"slug": "absurdism",
+"title": "Absurdism",
+"status": "placeholder"
+},
+{
+"slug": "academicism",
+"title": "Academicism",
+"status": "placeholder"
+},
+{
+"slug": "accelerationism",
+"title": "Accelerationism",
+"status": "placeholder"
+},
+{
+"slug": "accommodationism",
+"title": "Accommodationism",
+"status": "placeholder"
+},
+{
+"slug": "activism",
+"title": "Activism",
+"status": "placeholder"
+},
+{
+"slug": "actualism",
+"title": "Actualism",
+"status": "placeholder"
+},
+{
+"slug": "adaptationism",
+"title": "Adaptationism",
+"status": "placeholder"
+},
+{
+"slug": "adventurism",
+"title": "Adventurism",
+"status": "placeholder"
+},
+{
+"slug": "aestheticism",
+"title": "Aestheticism",
+"status": "placeholder"
+},
+{
+"slug": "ageism",
+"title": "Ageism",
+"status": "placeholder"
+},
+{
+"slug": "agnosticism",
+"title": "Agnosticism",
+"status": "placeholder"
+},
+{
+"slug": "altruism",
+"title": "Altruism",
+"status": "placeholder"
+},
+{
+"slug": "amateurism",
+"title": "Amateurism",
+"status": "placeholder"
+},
+{
+"slug": "americanism",
+"title": "Americanism",
+"status": "placeholder"
+},
+{
+"slug": "anarchism",
+"title": "Anarchism",
+"status": "placeholder"
+},
+{
+"slug": "anglicism",
+"title": "Anglicism",
+"status": "placeholder"
+},
+{
+"slug": "animism",
+"title": "Animism",
+"status": "placeholder"
+},
+{
+"slug": "anthropocentrism",
+"title": "Anthropocentrism",
+"status": "placeholder"
+},
+{
+"slug": "anthropomorphism",
+"title": "Anthropomorphism",
+"status": "placeholder"
+},
+{
+"slug": "anti-Americanism",
+"title": "Anti-Americanism",
+"status": "placeholder"
+},
+{
+"slug": "anticolonialism",
+"title": "Anticolonialism",
+"status": "placeholder"
+},
+{
+"slug": "anticommunism",
+"title": "Anticommunism",
+"status": "placeholder"
+},
+{
+"slug": "antifascism",
+"title": "Antifascism",
+"status": "placeholder"
+},
+{
+"slug": "antisemitism",
+"title": "Antisemitism",
+"status": "placeholder"
+},
+{
+"slug": "aphorism",
+"title": "Aphorism",
+"status": "placeholder"
+},
+{
+"slug": "apoliticism",
+"title": "Apoliticism",
+"status": "placeholder"
+},
+{
+"slug": "apriorism",
+"title": "Apriorism",
+"status": "placeholder"
+},
+{
+"slug": "archaism",
+"title": "Archaism",
+"status": "placeholder"
+},
+{
+"slug": "aristocratism",
+"title": "Aristocratism",
+"status": "placeholder"
+},
+{
+"slug": "asceticism",
+"title": "Asceticism",
+"status": "placeholder"
+},
+{
+"slug": "associationism",
+"title": "Associationism",
+"status": "placeholder"
+},
+{
+"slug": "atheism",
+"title": "Atheism",
+"status": "placeholder"
+},
+{
+"slug": "atomism",
+"title": "Atomism",
+"status": "placeholder"
+},
+{
+"slug": "authoritarianism",
+"title": "Authoritarianism",
+"status": "placeholder"
+},
+{
+"slug": "autism",
+"title": "Autism",
+"status": "placeholder"
+},
+{
+"slug": "barbarism",
+"title": "Barbarism",
+"status": "placeholder"
+},
+{
+"slug": "behaviorism",
+"title": "Behaviorism",
+"status": "placeholder"
+},
+{
+"slug": "bilingualism",
+"title": "Bilingualism",
+"status": "placeholder"
+},
+{
+"slug": "biologism",
+"title": "Biologism",
+"status": "placeholder"
+},
+{
+"slug": "bipolarism",
+"title": "Bipolarism",
+"status": "placeholder"
+},
+{
+"slug": "blackmailism",
+"title": "Blackmailism",
+"status": "placeholder"
+},
+{
+"slug": "bolshevism",
+"title": "Bolshevism",
+"status": "placeholder"
+},
+{
+"slug": "bonapartism",
+"title": "Bonapartism",
+"status": "placeholder"
+},
+{
+"slug": "botulism",
+"title": "Botulism",
+"status": "placeholder"
+},
+{
+"slug": "brahmanism",
+"title": "Brahmanism",
+"status": "placeholder"
+},
+{
+"slug": "brutalism",
+"title": "Brutalism",
+"status": "placeholder"
+},
+{
+"slug": "buddhism",
+"title": "Buddhism",
+"status": "placeholder"
+},
+{
+"slug": "calvinism",
+"title": "Calvinism",
+"status": "placeholder"
+},
+{
+"slug": "capitalism",
+"title": "Capitalism",
+"status": "placeholder"
+},
+{
+"slug": "careerism",
+"title": "Careerism",
+"status": "placeholder"
+},
+{
+"slug": "cartesianism",
+"title": "Cartesianism",
+"status": "placeholder"
+},
+{
+"slug": "catholicism",
+"title": "Catholicism",
+"status": "placeholder"
+},
+{
+"slug": "centrism",
+"title": "Centrism",
+"status": "placeholder"
+},
+{
+"slug": "chauvinism",
+"title": "Chauvinism",
+"status": "placeholder"
+},
+{
+"slug": "classicism",
+"title": "Classicism",
+"status": "placeholder"
+},
+{
+"slug": "clericalism",
+"title": "Clericalism",
+"status": "placeholder"
+},
+{
+"slug": "clientelism",
+"title": "Clientelism",
+"status": "placeholder"
+},
+{
+"slug": "cognitivism",
+"title": "Cognitivism",
+"status": "placeholder"
+},
+{
+"slug": "colloquialism",
+"title": "Colloquialism",
+"status": "placeholder"
+},
+{
+"slug": "colonialism",
+"title": "Colonialism",
+"status": "placeholder"
+},
+{
+"slug": "communalism",
+"title": "Communalism",
+"status": "placeholder"
+},
+{
+"slug": "communism",
+"title": "Communism",
+"status": "placeholder"
+},
+{
+"slug": "compatibilism",
+"title": "Compatibilism",
+"status": "placeholder"
+},
+{
+"slug": "conceptualism",
+"title": "Conceptualism",
+"status": "placeholder"
+},
+{
+"slug": "connectionism",
+"title": "Connectionism",
+"status": "placeholder"
+},
+{
+"slug": "consequentialism",
+"title": "Consequentialism",
+"status": "placeholder"
+},
+{
+"slug": "conservatism",
+"title": "Conservatism",
+"status": "placeholder"
+},
+{
+"slug": "constitutionalism",
+"title": "Constitutionalism",
+"status": "placeholder"
+},
+{
+"slug": "constructivism",
+"title": "Constructivism",
+"status": "placeholder"
+},
+{
+"slug": "consumerism",
+"title": "Consumerism",
+"status": "placeholder"
+},
+{
+"slug": "contextualism",
+"title": "Contextualism",
+"status": "placeholder"
+},
+{
+"slug": "conventionalism",
+"title": "Conventionalism",
+"status": "placeholder"
+},
+{
+"slug": "cosmopolitanism",
+"title": "Cosmopolitanism",
+"status": "placeholder"
+},
+{
+"slug": "creationism",
+"title": "Creationism",
+"status": "placeholder"
+},
+{
+"slug": "criticism",
+"title": "Criticism",
+"status": "placeholder"
+},
+{
+"slug": "cubism",
+"title": "Cubism",
+"status": "placeholder"
+},
+{
+"slug": "cynicism",
+"title": "Cynicism",
+"status": "placeholder"
+},
+{
+"slug": "darwinism",
+"title": "Darwinism",
+"status": "placeholder"
+},
+{
+"slug": "decisionism",
+"title": "Decisionism",
+"status": "placeholder"
+},
+{
+"slug": "deconstructionism",
+"title": "Deconstructionism",
+"status": "placeholder"
+},
+{
+"slug": "deism",
+"title": "Deism",
+"status": "placeholder"
+},
+{
+"slug": "descriptivism",
+"title": "Descriptivism",
+"status": "placeholder"
+},
+{
+"slug": "determinism",
+"title": "Determinism",
+"status": "placeholder"
+},
+{
+"slug": "developmentalism",
+"title": "Developmentalism",
+"status": "placeholder"
+},
+{
+"slug": "dialecticism",
+"title": "Dialecticism",
+"status": "placeholder"
+},
+{
+"slug": "didacticism",
+"title": "Didacticism",
+"status": "placeholder"
+},
+{
+"slug": "digitalism",
+"title": "Digitalism",
+"status": "placeholder"
+},
+{
+"slug": "distributism",
+"title": "Distributism",
+"status": "placeholder"
+},
+{
+"slug": "dualism",
+"title": "Dualism",
+"status": "placeholder"
+},
+{
+"slug": "eclecticism",
+"title": "Eclecticism",
+"status": "placeholder"
+},
+{
+"slug": "egalitarianism",
+"title": "Egalitarianism",
+"status": "placeholder"
+},
+{
+"slug": "egoism",
+"title": "Egoism",
+"status": "placeholder"
+},
+{
+"slug": "eliminativism",
+"title": "Eliminativism",
+"status": "placeholder"
+},
+{
+"slug": "elitism",
+"title": "Elitism",
+"status": "placeholder"
+},
+{
+"slug": "emergentism",
+"title": "Emergentism",
+"status": "placeholder"
+},
+{
+"slug": "empiricism",
+"title": "Empiricism",
+"status": "placeholder"
+},
+{
+"slug": "environmentalism",
+"title": "Environmentalism",
+"status": "placeholder"
+},
+{
+"slug": "escapism",
+"title": "Escapism",
+"status": "placeholder"
+},
+{
+"slug": "essentialism",
+"title": "Essentialism",
+"status": "placeholder"
+},
+{
+"slug": "euphemism",
+"title": "Euphemism",
+"status": "placeholder"
+},
+{
+"slug": "evangelism",
+"title": "Evangelism",
+"status": "placeholder"
+},
+{
+"slug": "exceptionalism",
+"title": "Exceptionalism",
+"status": "placeholder"
+},
+{
+"slug": "existentialism",
+"title": "Existentialism",
+"status": "placeholder"
+},
+{
+"slug": "expansionism",
+"title": "Expansionism",
+"status": "placeholder"
+},
+{
+"slug": "expressionism",
+"title": "Expressionism",
+"status": "placeholder"
+},
+{
+"slug": "externalism",
+"title": "Externalism",
+"status": "placeholder"
+},
+{
+"slug": "extremism",
+"title": "Extremism",
+"status": "placeholder"
+},
+{
+"slug": "fabianism",
+"title": "Fabianism",
+"status": "placeholder"
+},
+{
+"slug": "fascism",
+"title": "Fascism",
+"status": "placeholder"
+},
+{
+"slug": "fatalism",
+"title": "Fatalism",
+"status": "placeholder"
+},
+{
+"slug": "favoritism",
+"title": "Favoritism",
+"status": "placeholder"
+},
+{
+"slug": "federalism",
+"title": "Federalism",
+"status": "placeholder"
+},
+{
+"slug": "feminism",
+"title": "Feminism",
+"status": "placeholder"
+},
+{
+"slug": "feudalism",
+"title": "Feudalism",
+"status": "placeholder"
+},
+{
+"slug": "fideism",
+"title": "Fideism",
+"status": "placeholder"
+},
+{
+"slug": "finitism",
+"title": "Finitism",
+"status": "placeholder"
+},
+{
+"slug": "formalism",
+"title": "Formalism",
+"status": "placeholder"
+},
+{
+"slug": "foundationalism",
+"title": "Foundationalism",
+"status": "placeholder"
+},
+{
+"slug": "functionalism",
+"title": "Functionalism",
+"status": "placeholder"
+},
+{
+"slug": "fundamentalism",
+"title": "Fundamentalism",
+"status": "placeholder"
+},
+{
+"slug": "futurism",
+"title": "Futurism",
+"status": "placeholder"
+},
+{
+"slug": "gallicism",
+"title": "Gallicism",
+"status": "placeholder"
+},
+{
+"slug": "gandhism",
+"title": "Gandhism",
+"status": "placeholder"
+},
+{
+"slug": "gradualism",
+"title": "Gradualism",
+"status": "placeholder"
+},
+{
+"slug": "graphism",
+"title": "Graphism",
+"status": "placeholder"
+},
+{
+"slug": "hedonism",
+"title": "Hedonism",
+"status": "placeholder"
+},
+{
+"slug": "hegelianism",
+"title": "Hegelianism",
+"status": "placeholder"
+},
+{
+"slug": "heightism",
+"title": "Heightism",
+"status": "placeholder"
+},
+{
+"slug": "heroism",
+"title": "Heroism",
+"status": "placeholder"
+},
+{
+"slug": "hispanicism",
+"title": "Hispanicism",
+"status": "placeholder"
+},
+{
+"slug": "historicism",
+"title": "Historicism",
+"status": "placeholder"
+},
+{
+"slug": "holism",
+"title": "Holism",
+"status": "placeholder"
+},
+{
+"slug": "humanism",
+"title": "Humanism",
+"status": "placeholder"
+},
+{
+"slug": "hybridism",
+"title": "Hybridism",
+"status": "placeholder"
+},
+{
+"slug": "idealism",
+"title": "Idealism",
+"status": "placeholder"
+},
+{
+"slug": "illusionism",
+"title": "Illusionism",
+"status": "placeholder"
+},
+{
+"slug": "imperialism",
+"title": "Imperialism",
+"status": "placeholder"
+},
+{
+"slug": "individualism",
+"title": "Individualism",
+"status": "placeholder"
+},
+{
+"slug": "industrialism",
+"title": "Industrialism",
+"status": "placeholder"
+},
+{
+"slug": "inflationism",
+"title": "Inflationism",
+"status": "placeholder"
+},
+{
+"slug": "informalism",
+"title": "Informalism",
+"status": "placeholder"
+},
+{
+"slug": "instrumentalism",
+"title": "Instrumentalism",
+"status": "placeholder"
+},
+{
+"slug": "intellectualism",
+"title": "Intellectualism",
+"status": "placeholder"
+},
+{
+"slug": "internalism",
+"title": "Internalism",
+"status": "placeholder"
+},
+{
+"slug": "internationalism",
+"title": "Internationalism",
+"status": "placeholder"
+},
+{
+"slug": "interventionism",
+"title": "Interventionism",
+"status": "placeholder"
+},
+{
+"slug": "intuitionism",
+"title": "Intuitionism",
+"status": "placeholder"
+},
+{
+"slug": "irredentism",
+"title": "Irredentism",
+"status": "placeholder"
+},
+{
+"slug": "isolationism",
+"title": "Isolationism",
+"status": "placeholder"
+},
+{
+"slug": "jingoism",
+"title": "Jingoism",
+"status": "placeholder"
+},
+{
+"slug": "journaleseism",
+"title": "Journaleseism",
+"status": "placeholder"
+},
+{
+"slug": "journalism",
+"title": "Journalism",
+"status": "placeholder"
+},
+{
+"slug": "kantianism",
+"title": "Kantianism",
+"status": "placeholder"
+},
+{
+"slug": "keynesianism",
+"title": "Keynesianism",
+"status": "placeholder"
+},
+{
+"slug": "lamarckism",
+"title": "Lamarckism",
+"status": "placeholder"
+},
+{
+"slug": "legalism",
+"title": "Legalism",
+"status": "placeholder"
+},
+{
+"slug": "leninism",
+"title": "Leninism",
+"status": "placeholder"
+},
+{
+"slug": "liberalism",
+"title": "Liberalism",
+"status": "placeholder"
+},
+{
+"slug": "libertarianism",
+"title": "Libertarianism",
+"status": "placeholder"
+},
+{
+"slug": "linguisticism",
+"title": "Linguisticism",
+"status": "placeholder"
+},
+{
+"slug": "literalism",
+"title": "Literalism",
+"status": "placeholder"
+},
+{
+"slug": "localism",
+"title": "Localism",
+"status": "placeholder"
+},
+{
+"slug": "logicism",
+"title": "Logicism",
+"status": "placeholder"
+},
+{
+"slug": "lookism",
+"title": "Lookism",
+"status": "placeholder"
+},
+{
+"slug": "machiavellianism",
+"title": "Machiavellianism",
+"status": "placeholder"
+},
+{
+"slug": "malapropism",
+"title": "Malapropism",
+"status": "placeholder"
+},
+{
+"slug": "mannerism",
+"title": "Mannerism",
+"status": "placeholder"
+},
+{
+"slug": "maoism",
+"title": "Maoism",
+"status": "placeholder"
+},
+{
+"slug": "marxism",
+"title": "Marxism",
+"status": "placeholder"
+},
+{
+"slug": "materialism",
+"title": "Materialism",
+"status": "placeholder"
+},
+{
+"slug": "mechanism",
+"title": "Mechanism",
+"status": "placeholder"
+},
+{
+"slug": "medievalism",
+"title": "Medievalism",
+"status": "placeholder"
+},
+{
+"slug": "meliorism",
+"title": "Meliorism",
+"status": "placeholder"
+},
+{
+"slug": "mentalism",
+"title": "Mentalism",
+"status": "placeholder"
+},
+{
+"slug": "mercantilism",
+"title": "Mercantilism",
+"status": "placeholder"
+},
+{
+"slug": "messianism",
+"title": "Messianism",
+"status": "placeholder"
+},
+{
+"slug": "minimalism",
+"title": "Minimalism",
+"status": "placeholder"
+},
+{
+"slug": "modernism",
+"title": "Modernism",
+"status": "placeholder"
+},
+{
+"slug": "modularism",
+"title": "Modularism",
+"status": "placeholder"
+},
+{
+"slug": "monasticism",
+"title": "Monasticism",
+"status": "placeholder"
+},
+{
+"slug": "monism",
+"title": "Monism",
+"status": "placeholder"
+},
+{
+"slug": "monotheism",
+"title": "Monotheism",
+"status": "placeholder"
+},
+{
+"slug": "multiculturalism",
+"title": "Multiculturalism",
+"status": "placeholder"
+},
+{
+"slug": "mutualism",
+"title": "Mutualism",
+"status": "placeholder"
+},
+{
+"slug": "mysticism",
+"title": "Mysticism",
+"status": "placeholder"
+},
+{
+"slug": "narcissism",
+"title": "Narcissism",
+"status": "placeholder"
+},
+{
+"slug": "nationalism",
+"title": "Nationalism",
+"status": "placeholder"
+},
+{
+"slug": "naturalism",
+"title": "Naturalism",
+"status": "placeholder"
+},
+{
+"slug": "naturalisticism",
+"title": "Naturalisticism",
+"status": "placeholder"
+},
+{
+"slug": "nazism",
+"title": "Nazism",
+"status": "placeholder"
+},
+{
+"slug": "neo-colonialism",
+"title": "Neo-Colonialism",
+"status": "placeholder"
+},
+{
+"slug": "neoliberalism",
+"title": "Neoliberalism",
+"status": "placeholder"
+},
+{
+"slug": "neologism",
+"title": "Neologism",
+"status": "placeholder"
+},
+{
+"slug": "nepotism",
+"title": "Nepotism",
+"status": "placeholder"
+},
+{
+"slug": "nihilism",
+"title": "Nihilism",
+"status": "placeholder"
+},
+{
+"slug": "nominalism",
+"title": "Nominalism",
+"status": "placeholder"
+},
+{
+"slug": "nonconformism",
+"title": "Nonconformism",
+"status": "placeholder"
+},
+{
+"slug": "objectivism",
+"title": "Objectivism",
+"status": "placeholder"
+},
+{
+"slug": "obscurantism",
+"title": "Obscurantism",
+"status": "placeholder"
+},
+{
+"slug": "occultism",
+"title": "Occultism",
+"status": "placeholder"
+},
+{
+"slug": "one-upmanship",
+"title": "One-Upmanship",
+"status": "placeholder"
+},
+{
+"slug": "operationalism",
+"title": "Operationalism",
+"status": "placeholder"
+},
+{
+"slug": "opportunism",
+"title": "Opportunism",
+"status": "placeholder"
+},
+{
+"slug": "optimism",
+"title": "Optimism",
+"status": "placeholder"
+},
+{
+"slug": "organism",
+"title": "Organism",
+"status": "placeholder"
+},
+{
+"slug": "orientalism",
+"title": "Orientalism",
+"status": "placeholder"
+},
+{
+"slug": "pacifism",
+"title": "Pacifism",
+"status": "placeholder"
+},
+{
+"slug": "paganism",
+"title": "Paganism",
+"status": "placeholder"
+},
+{
+"slug": "panpsychism",
+"title": "Panpsychism",
+"status": "placeholder"
+},
+{
+"slug": "parallelism",
+"title": "Parallelism",
+"status": "placeholder"
+},
+{
+"slug": "particularism",
+"title": "Particularism",
+"status": "placeholder"
+},
+{
+"slug": "paternalism",
+"title": "Paternalism",
+"status": "placeholder"
+},
+{
+"slug": "patriotism",
+"title": "Patriotism",
+"status": "placeholder"
+},
+{
+"slug": "perennialism",
+"title": "Perennialism",
+"status": "placeholder"
+},
+{
+"slug": "perfectionism",
+"title": "Perfectionism",
+"status": "placeholder"
+},
+{
+"slug": "pessimism",
+"title": "Pessimism",
+"status": "placeholder"
+},
+{
+"slug": "physicalism",
+"title": "Physicalism",
+"status": "placeholder"
+},
+{
+"slug": "pluralism",
+"title": "Pluralism",
+"status": "placeholder"
+},
+{
+"slug": "polytheism",
+"title": "Polytheism",
+"status": "placeholder"
+},
+{
+"slug": "populism",
+"title": "Populism",
+"status": "placeholder"
+},
+{
+"slug": "positivism",
+"title": "Positivism",
+"status": "placeholder"
+},
+{
+"slug": "post-modernism",
+"title": "Post-Modernism",
+"status": "placeholder"
+},
+{
+"slug": "post-post-modernism",
+"title": "Post-Post-Modernism",
+"status": "placeholder"
+},
+{
+"slug": "postmodernism",
+"title": "Postmodernism",
+"status": "placeholder"
+},
+{
+"slug": "pragmatism",
+"title": "Pragmatism",
+"status": "placeholder"
+},
+{
+"slug": "presentism",
+"title": "Presentism",
+"status": "placeholder"
+},
+{
+"slug": "preservationism",
+"title": "Preservationism",
+"status": "placeholder"
+},
+{
+"slug": "primitivism",
+"title": "Primitivism",
+"status": "placeholder"
+},
+{
+"slug": "probabilism",
+"title": "Probabilism",
+"status": "placeholder"
+},
+{
+"slug": "progressivism",
+"title": "Progressivism",
+"status": "placeholder"
+},
+{
+"slug": "protectionism",
+"title": "Protectionism",
+"status": "placeholder"
+},
+{
+"slug": "protestantism",
+"title": "Protestantism",
+"status": "placeholder"
+},
+{
+"slug": "provincialism",
+"title": "Provincialism",
+"status": "placeholder"
+},
+{
+"slug": "psychologism",
+"title": "Psychologism",
+"status": "placeholder"
+},
+{
+"slug": "quietism",
+"title": "Quietism",
+"status": "placeholder"
+},
+{
+"slug": "racism",
+"title": "Racism",
+"status": "placeholder"
+},
+{
+"slug": "radicalism",
+"title": "Radicalism",
+"status": "placeholder"
+},
+{
+"slug": "rationalism",
+"title": "Rationalism",
+"status": "placeholder"
+},
+{
+"slug": "realism",
+"title": "Realism",
+"status": "placeholder"
+},
+{
+"slug": "reductionism",
+"title": "Reductionism",
+"status": "placeholder"
+},
+{
+"slug": "regionalism",
+"title": "Regionalism",
+"status": "placeholder"
+},
+{
+"slug": "relativism",
+"title": "Relativism",
+"status": "placeholder"
+},
+{
+"slug": "representationalism",
+"title": "Representationalism",
+"status": "placeholder"
+},
+{
+"slug": "republicanism",
+"title": "Republicanism",
+"status": "placeholder"
+},
+{
+"slug": "revisionism",
+"title": "Revisionism",
+"status": "placeholder"
+},
+{
+"slug": "romanticism",
+"title": "Romanticism",
+"status": "placeholder"
+},
+{
+"slug": "sadism",
+"title": "Sadism",
+"status": "placeholder"
+},
+{
+"slug": "scholasticism",
+"title": "Scholasticism",
+"status": "placeholder"
+},
+{
+"slug": "scientism",
+"title": "Scientism",
+"status": "placeholder"
+},
+{
+"slug": "secularism",
+"title": "Secularism",
+"status": "placeholder"
+},
+{
+"slug": "sensationalism",
+"title": "Sensationalism",
+"status": "placeholder"
+},
+{
+"slug": "separatism",
+"title": "Separatism",
+"status": "placeholder"
+},
+{
+"slug": "skepticism",
+"title": "Skepticism",
+"status": "placeholder"
+},
+{
+"slug": "social-constructionism",
+"title": "Social Constructionism",
+"status": "placeholder"
+},
+{
+"slug": "socialism",
+"title": "Socialism",
+"status": "placeholder"
+},
+{
+"slug": "solecism",
+"title": "Solecism",
+"status": "placeholder"
+},
+{
+"slug": "solipsism",
+"title": "Solipsism",
+"status": "placeholder"
+},
+{
+"slug": "specialism",
+"title": "Specialism",
+"status": "placeholder"
+},
+{
+"slug": "speciesism",
+"title": "Speciesism",
+"status": "placeholder"
+},
+{
+"slug": "spiritualism",
+"title": "Spiritualism",
+"status": "placeholder"
+},
+{
+"slug": "stalinism",
+"title": "Stalinism",
+"status": "placeholder"
+},
+{
+"slug": "stoicism",
+"title": "Stoicism",
+"status": "placeholder"
+},
+{
+"slug": "structuralism",
+"title": "Structuralism",
+"status": "placeholder"
+},
+{
+"slug": "subjectivism",
+"title": "Subjectivism",
+"status": "placeholder"
+},
+{
+"slug": "supernaturalism",
+"title": "Supernaturalism",
+"status": "placeholder"
+},
+{
+"slug": "superorganism",
+"title": "superorganism",
+"status": "stub"
+},
+{
+"slug": "surrealism",
+"title": "Surrealism",
+"status": "placeholder"
+},
+{
+"slug": "symbolism",
+"title": "Symbolism",
+"status": "placeholder"
+},
+{
+"slug": "syndicalism",
+"title": "Syndicalism",
+"status": "placeholder"
+},
+{
+"slug": "taoism",
+"title": "Taoism",
+"status": "placeholder"
+},
+{
+"slug": "terrorism",
+"title": "Terrorism",
+"status": "placeholder"
+},
+{
+"slug": "thatcherism",
+"title": "Thatcherism",
+"status": "placeholder"
+},
+{
+"slug": "theism",
+"title": "Theism",
+"status": "placeholder"
+},
+{
+"slug": "thomism",
+"title": "Thomism",
+"status": "placeholder"
+},
+{
+"slug": "tokenism",
+"title": "Tokenism",
+"status": "placeholder"
+},
+{
+"slug": "totalitarianism",
+"title": "Totalitarianism",
+"status": "placeholder"
+},
+{
+"slug": "traditionalism",
+"title": "Traditionalism",
+"status": "placeholder"
+},
+{
+"slug": "transhumanism",
+"title": "Transhumanism",
+"status": "placeholder"
+},
+{
+"slug": "tribalism",
+"title": "Tribalism",
+"status": "placeholder"
+},
+{
+"slug": "triumphalism",
+"title": "Triumphalism",
+"status": "placeholder"
+},
+{
+"slug": "trotskyism",
+"title": "Trotskyism",
+"status": "placeholder"
+},
+{
+"slug": "truism",
+"title": "Truism",
+"status": "placeholder"
+},
+{
+"slug": "unilateralism",
+"title": "Unilateralism",
+"status": "placeholder"
+},
+{
+"slug": "universalism",
+"title": "Universalism",
+"status": "placeholder"
+},
+{
+"slug": "utilitarianism",
+"title": "Utilitarianism",
+"status": "placeholder"
+},
+{
+"slug": "utopianism",
+"title": "Utopianism",
+"status": "placeholder"
+},
+{
+"slug": "vandalism",
+"title": "Vandalism",
+"status": "placeholder"
+},
+{
+"slug": "veganism",
+"title": "Veganism",
+"status": "placeholder"
+},
+{
+"slug": "vegetarianism",
+"title": "Vegetarianism",
+"status": "placeholder"
+},
+{
+"slug": "verbalism",
+"title": "Verbalism",
+"status": "placeholder"
+},
+{
+"slug": "verificationism",
+"title": "Verificationism",
+"status": "placeholder"
+},
+{
+"slug": "vigilantism",
+"title": "Vigilantism",
+"status": "placeholder"
+},
+{
+"slug": "vitalism",
+"title": "Vitalism",
+"status": "placeholder"
+},
+{
+"slug": "voluntarism",
+"title": "Voluntarism",
+"status": "placeholder"
+},
+{
+"slug": "welfarism",
+"title": "Welfarism",
+"status": "placeholder"
+},
+{
+"slug": "xenocentrism",
+"title": "Xenocentrism",
+"status": "placeholder"
+},
+{
+"slug": "xenonationalism",
+"title": "Xenonationalism",
+"status": "placeholder"
+},
+{
+"slug": "yogism",
+"title": "Yogism",
+"status": "placeholder"
+},
+{
+"slug": "zionism",
+"title": "Zionism",
+"status": "placeholder"
+},
+{
+"slug": "zoomorphism",
+"title": "Zoomorphism",
+"status": "placeholder"
+}
+]
+}

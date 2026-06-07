@@ -1,0 +1,132 @@
+{
+  "slug": "fedora-kde-guide",
+  "title": "Fedora KDE Guide",
+  "date": null,
+  "source": "/website/public/technology/linux/fedora-kde-guide.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "This is an abbreviated practical guide for getting the most out of Fedora KDE. It covers the things I actually use — package management, enabling extra repos, Flatpak, useful KDE tweaks, and a few quality-of-life settings worth knowing about."
+    },
+    {
+      "type": "h2",
+      "text": "DNF — Fedora's Package Manager"
+    },
+    {
+      "type": "p",
+      "text": "DNF is the command-line package manager. Most things you'll need are available through it."
+    },
+    {
+      "type": "p",
+      "text": "Make DNF faster by adding this to /etc/dnf/dnf.conf :"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — screenshot of dnf update."
+    },
+    {
+      "type": "h2",
+      "text": "Enable RPM Fusion"
+    },
+    {
+      "type": "p",
+      "text": "RPM Fusion provides packages that Fedora can't ship for licensing or patent reasons — most importantly, multimedia codecs and some proprietary drivers."
+    },
+    {
+      "type": "p",
+      "text": "After enabling RPM Fusion, install multimedia codecs:"
+    },
+    {
+      "type": "h2",
+      "text": "Flatpak and Flathub"
+    },
+    {
+      "type": "p",
+      "text": "Flatpak is enabled by default on Fedora KDE. Add the Flathub repository to get access to the full app library:"
+    },
+    {
+      "type": "p",
+      "text": "Then install apps from Flathub via terminal or the Discover software centre:"
+    },
+    {
+      "type": "p",
+      "text": "Update all Flatpak apps:"
+    },
+    {
+      "type": "h2",
+      "text": "KDE Plasma Tweaks Worth Making"
+    },
+    {
+      "type": "h3",
+      "text": "Single-Click vs Double-Click to Open Files"
+    },
+    {
+      "type": "p",
+      "text": "By default KDE opens files with a single click, which surprises people used to other desktops. To change it: System Settings → Workspace Behaviour → General Behaviour → Clicking files or folders → \"Selects them\" ."
+    },
+    {
+      "type": "h3",
+      "text": "Global Theme"
+    },
+    {
+      "type": "p",
+      "text": "System Settings → Appearance → Global Theme — download and apply new themes from here. Breeze Dark is the default dark theme and is fine; there are many community alternatives."
+    },
+    {
+      "type": "h3",
+      "text": "Virtual Desktops"
+    },
+    {
+      "type": "p",
+      "text": "KDE's virtual desktops are excellent. Set them up at System Settings → Workspace → Virtual Desktops . Switch between them with Ctrl + F1 , Ctrl + F2 , etc., or with keyboard shortcuts you define."
+    },
+    {
+      "type": "h3",
+      "text": "KRunner"
+    },
+    {
+      "type": "p",
+      "text": "Press Alt + Space to open KRunner — a quick launcher that searches apps, files, web, calculations, and more. It's like Spotlight but more configurable. Configure its plugins at System Settings → Search → KRunner ."
+    },
+    {
+      "type": "h3",
+      "text": "Disable Baloo File Indexer (Optional)"
+    },
+    {
+      "type": "p",
+      "text": "Baloo indexes your files for search. If you don't need desktop search and want to reduce background disk activity:"
+    },
+    {
+      "type": "p",
+      "text": "— Placeholder — KDE System Settings."
+    },
+    {
+      "type": "h2",
+      "text": "Useful Packages to Install"
+    },
+    {
+      "type": "h2",
+      "text": "Firmware Updates via fwupd"
+    },
+    {
+      "type": "p",
+      "text": "Fedora includes fwupd for firmware updates on supported hardware (many ThinkPads included):"
+    },
+    {
+      "type": "h2",
+      "text": "System Info and Monitoring"
+    },
+    {
+      "type": "h2",
+      "text": "Terminal Tips"
+    },
+    {
+      "type": "p",
+      "text": "Fedora KDE ships with Konsole as the default terminal. A few useful things:"
+    },
+    {
+      "type": "p",
+      "text": "To make aliases permanent, add them to ~/.bashrc (bash) or ~/.zshrc (zsh) and run source ~/.bashrc ."
+    }
+  ]
+}

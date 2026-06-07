@@ -1,0 +1,19 @@
+{
+  "slug": "visual-literary-arts",
+  "title": "Visual & Literary Arts",
+  "source": "/website/public/projects/visual-literary-arts.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Making things that are (hopefully) worth looking at or reading."
+    },
+    {
+      "type": "p",
+      "text": "This section covers creative projects on the visual and written side — illustration, design, poetry, prose, and anything else that doesn't fit neatly into a circuit board or a fish tank."
+    },
+    {
+      "type": "p",
+      "text": "I believe creative expression and analytical thinking feed each other. More work and documentation coming here soon."
+    }
+  ]
+}
