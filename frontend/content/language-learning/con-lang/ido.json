@@ -1,0 +1,1618 @@
+{
+  "slug": "ido",
+  "title": "Ido",
+  "date": null,
+  "source": "/website/public/ido.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. Introduction & History"
+    },
+    {
+      "type": "p",
+      "text": "Ido is a constructed international auxiliary language created as a deliberate reform of Esperanto. Its name means simply \"offspring\" in Esperanto — an acknowledgment that it grew directly from L. L. Zamenhof's 1887 language, retaining its logical backbone while addressing perceived weaknesses."
+    },
+    {
+      "type": "h3",
+      "text": "The Delegation and the Reform (1900–1907)"
+    },
+    {
+      "type": "p",
+      "text": "The chain of events that produced Ido began in 1900, when a group of scholars — frustrated with the decentralised and somewhat conservative Esperanto movement — formed the Délégation pour l'Adoption d'une Langue Auxiliaire Internationale (Delegation for the Adoption of an International Auxiliary Language). The Delegation's aim was to identify, through a committee of experts, the best possible auxiliary language, or to reform an existing one."
+    },
+    {
+      "type": "p",
+      "text": "The driving intellectual force behind the Delegation was Louis Couturat (1868–1914), a French philosopher and mathematician who had already made his name with major works on Leibniz and the philosophy of logic. Couturat corresponded extensively with linguists and scientists across Europe and became the principal architect of what would become Ido. Working alongside the French linguist Louis Leau , he co-authored Histoire de la langue universelle (1903), the most comprehensive survey of auxiliary language proposals to that point."
+    },
+    {
+      "type": "p",
+      "text": "In 1907, the Delegation's committee convened in Paris. It reviewed Esperanto and several rival schemes — most notably Idiom Neutral and Latino sine Flexione — before ultimately deciding that Esperanto was the best existing foundation, but that it required reforms. A set of proposed modifications was submitted under the pseudonym Ido . The committee accepted the reforms, and on 24 October 1907 the reformed language was formally proclaimed."
+    },
+    {
+      "type": "p",
+      "text": "The announcement caused a serious split in the Esperanto movement. Prominent Esperantists including Émile Boirac and René de Saussure debated the changes vigorously. Zamenhof himself declined to accept the reforms, arguing that the Fundamento — the inviolable core of Esperanto — could not be altered. A substantial fraction of the Esperanto community nevertheless crossed over to Ido, and throughout the 1910s Ido had an active publishing and correspondence network."
+    },
+    {
+      "type": "p",
+      "text": "Couturat died in a road accident in August 1914 — ironically, on the very day France mobilised for the First World War. The war devastated the Ido movement, as it did all internationalist projects. Ido never fully recovered its pre-war momentum, though it retained and still retains a dedicated community of speakers and has produced a significant body of literature and scholarly work."
+    },
+    {
+      "type": "h3",
+      "text": "Design Philosophy"
+    },
+    {
+      "type": "p",
+      "text": "Where Esperanto had been designed as a complete, internally consistent system with absolute grammatical regularity, Ido's designers pursued an additional goal: maximum international recognisability . Roots were chosen or respelled to be closer to their Romance, Germanic, and Slavic sources. Diacritical letters were eliminated entirely, making the language typeable on any standard keyboard. Grammatical quirks considered awkward — such as Esperanto's mandatory accusative on all direct objects — were softened or made optional. The result is a language that reads more naturally to someone already familiar with Latin or the major European languages, at a modest cost in pure regularity."
+    },
+    {
+      "type": "h2",
+      "text": "2. Alphabet & Pronunciation"
+    },
+    {
+      "type": "p",
+      "text": "Ido uses the 26 letters of the standard Latin alphabet — no diacritics of any kind. This was one of the central reforms: Esperanto's ĉ, ĝ, ĥ, ĵ, ŝ, and ŭ caused difficulties in typewriting and telegraphy. Ido solves this by using digraphs (two-letter combinations) where needed and by removing or reassigning some sounds altogether."
+    },
+    {
+      "type": "h3",
+      "text": "The Ido Alphabet"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Letter",
+        "IPA",
+        "English equivalent",
+        "Ido example"
+      ],
+      "rows": [
+        [
+          "A a",
+          "/a/",
+          "father",
+          "amiko (friend)"
+        ],
+        [
+          "B b",
+          "/b/",
+          "bed",
+          "bona (good)"
+        ],
+        [
+          "C c",
+          "/ts/",
+          "cats",
+          "cento (hundred)"
+        ],
+        [
+          "D d",
+          "/d/",
+          "dog",
+          "domo (house)"
+        ],
+        [
+          "E e",
+          "/e/",
+          "bed",
+          "esar (to be)"
+        ],
+        [
+          "F f",
+          "/f/",
+          "fish",
+          "facila (easy)"
+        ],
+        [
+          "G g",
+          "/ɡ/",
+          "go",
+          "granda (big)"
+        ],
+        [
+          "H h",
+          "/h/",
+          "hat",
+          "homo (person)"
+        ],
+        [
+          "I i",
+          "/i/",
+          "machine",
+          "iras (goes)"
+        ],
+        [
+          "J j",
+          "/ʒ/",
+          "measure",
+          "jurnalo (newspaper)"
+        ],
+        [
+          "K k",
+          "/k/",
+          "sky",
+          "kato (cat)"
+        ],
+        [
+          "L l",
+          "/l/",
+          "love",
+          "linguo (language)"
+        ],
+        [
+          "M m",
+          "/m/",
+          "man",
+          "mano (hand)"
+        ],
+        [
+          "N n",
+          "/n/",
+          "now",
+          "nomo (name)"
+        ],
+        [
+          "O o",
+          "/o/",
+          "low",
+          "okulo (eye)"
+        ],
+        [
+          "P p",
+          "/p/",
+          "spin",
+          "paco (peace)"
+        ],
+        [
+          "Q q",
+          "/k/",
+          "—",
+          "used in foreign names only"
+        ],
+        [
+          "R r",
+          "/r/",
+          "rolled r",
+          "rivero (river)"
+        ],
+        [
+          "S s",
+          "/s/",
+          "sun",
+          "suno (sun)"
+        ],
+        [
+          "T t",
+          "/t/",
+          "stop",
+          "tablo (table)"
+        ],
+        [
+          "U u",
+          "/u/",
+          "moon",
+          "urbo (city)"
+        ],
+        [
+          "V v",
+          "/v/",
+          "vine",
+          "vento (wind)"
+        ],
+        [
+          "W w",
+          "/w/",
+          "water",
+          "used in foreign words"
+        ],
+        [
+          "X x",
+          "/ks/",
+          "axe",
+          "used in foreign words"
+        ],
+        [
+          "Y y",
+          "/j/",
+          "yes",
+          "yuna (young)"
+        ],
+        [
+          "Z z",
+          "/z/",
+          "zoo",
+          "zebro (zebra)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Digraphs"
+    },
+    {
+      "type": "p",
+      "text": "Where Esperanto used diacritical letters, Ido uses digraphs:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Digraph",
+        "IPA",
+        "Equivalent to Esperanto",
+        "Example"
+      ],
+      "rows": [
+        [
+          "ch",
+          "/tʃ/",
+          "ĉ",
+          "choko (chocolate)"
+        ],
+        [
+          "sh",
+          "/ʃ/",
+          "ŝ",
+          "shipo (ship)"
+        ],
+        [
+          "qu",
+          "/kw/",
+          "—",
+          "quelke (somewhat)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Note that Ido's j is pronounced /ʒ/ (like the French j or English measure ), while Esperanto's j is /j/ (like English yes ). In Ido, the /j/ sound is written y ."
+    },
+    {
+      "type": "h3",
+      "text": "Stress"
+    },
+    {
+      "type": "p",
+      "text": "As in Esperanto, stress falls on the penultimate (second-to-last) syllable in most words: a-MI-ko , lin-GUO . The main exception is the infinitive ending -ar , where stress falls on the final syllable: par-LAR (to speak). This regular infinitive stress distinguishes the form clearly from noun stems."
+    },
+    {
+      "type": "h3",
+      "text": "Vowels"
+    },
+    {
+      "type": "p",
+      "text": "Ido has five pure vowels — a, e, i, o, u — each with a single invariant pronunciation. There are no diphthongs native to Ido; vowels in adjacent syllables are pronounced separately."
+    },
+    {
+      "type": "h2",
+      "text": "3. Nouns & Articles"
+    },
+    {
+      "type": "h3",
+      "text": "Nouns"
+    },
+    {
+      "type": "p",
+      "text": "All Ido nouns end in -o in the singular. Ido has no grammatical gender — articles, adjectives, and pronouns do not inflect for masculine or feminine."
+    },
+    {
+      "type": "li",
+      "text": "libro — book"
+    },
+    {
+      "type": "li",
+      "text": "hundo — dog"
+    },
+    {
+      "type": "li",
+      "text": "urbo — city"
+    },
+    {
+      "type": "li",
+      "text": "linguo — language"
+    },
+    {
+      "type": "h3",
+      "text": "Plural"
+    },
+    {
+      "type": "p",
+      "text": "The plural is formed by adding -i to the noun stem (replacing the singular -o ):"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Singular",
+        "Plural",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "libro",
+          "libri",
+          "book / books"
+        ],
+        [
+          "hundo",
+          "hundi",
+          "dog / dogs"
+        ],
+        [
+          "urbo",
+          "urbi",
+          "city / cities"
+        ],
+        [
+          "homo",
+          "homi",
+          "person / people"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "This is a key difference from Esperanto, which uses -j for plurals. Ido's -i plural mirrors Italian and is more familiar to learners of Romance languages."
+    },
+    {
+      "type": "h3",
+      "text": "The Accusative"
+    },
+    {
+      "type": "p",
+      "text": "Unlike Esperanto, Ido does not have a mandatory accusative case ending. In standard Ido, the direct object is identified by word order (typically Subject–Verb–Object). An optional accusative ending -n may be used when an unusual word order could create ambiguity, but it is not required in normal speech or writing."
+    },
+    {
+      "type": "p",
+      "text": "This reform was one of the most debated. Proponents argued it reduced the grammatical burden; critics felt it sacrificed the flexibility that the Esperanto accusative provides."
+    },
+    {
+      "type": "h3",
+      "text": "The Definite Article"
+    },
+    {
+      "type": "p",
+      "text": "The definite article in Ido is la , identical to Esperanto's. It is invariant — it does not change for gender, number, or case."
+    },
+    {
+      "type": "li",
+      "text": "la libro — the book"
+    },
+    {
+      "type": "li",
+      "text": "la libri — the books"
+    },
+    {
+      "type": "li",
+      "text": "la granda urbo — the big city"
+    },
+    {
+      "type": "p",
+      "text": "There is no indefinite article. Absence of la implies indefiniteness: libro = \"a book\"."
+    },
+    {
+      "type": "h2",
+      "text": "4. Adjectives"
+    },
+    {
+      "type": "h3",
+      "text": "Form and Agreement"
+    },
+    {
+      "type": "p",
+      "text": "Ido adjectives end in -a . Crucially, unlike Esperanto, Ido adjectives do not agree with the noun in number or case — the adjective form is invariable."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Phrase",
+        "Translation",
+        "Note"
+      ],
+      "rows": [
+        [
+          "granda libro",
+          "a big book",
+          "singular"
+        ],
+        [
+          "granda libri",
+          "big books",
+          "adjective unchanged in plural"
+        ],
+        [
+          "la bela urbo",
+          "the beautiful city",
+          "singular"
+        ],
+        [
+          "la bela urbi",
+          "the beautiful cities",
+          "adjective unchanged"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The elimination of adjective agreement was another deliberate simplification. In Esperanto, you must write grandaj libroj (big books); in Ido, simply granda libri ."
+    },
+    {
+      "type": "h3",
+      "text": "Position"
+    },
+    {
+      "type": "p",
+      "text": "Adjectives typically precede the noun, as in English: bona homo (a good person). They may also follow for stylistic effect or in predicative position: La homo esas bona (The person is good)."
+    },
+    {
+      "type": "h3",
+      "text": "Comparison"
+    },
+    {
+      "type": "p",
+      "text": "Comparison in Ido is analytic, using plu (more), maxim (most), and min (less) / minim (least). The conjunction of comparison is kam (than)."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Degree",
+        "Ido",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Positive",
+          "granda",
+          "big"
+        ],
+        [
+          "Comparative",
+          "plu granda kam",
+          "bigger than"
+        ],
+        [
+          "Superlative",
+          "la maxim granda",
+          "the biggest"
+        ],
+        [
+          "Inferior comparative",
+          "min granda kam",
+          "less big than"
+        ],
+        [
+          "Inferior superlative",
+          "la minim granda",
+          "the least big"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Example: Me esas plu alta kam tu. — I am taller than you."
+    },
+    {
+      "type": "h2",
+      "text": "5. Pronouns"
+    },
+    {
+      "type": "h3",
+      "text": "Personal Pronouns"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "1st",
+          "me (I)",
+          "ni (we)"
+        ],
+        [
+          "2nd",
+          "tu (you, singular)",
+          "vi (you, plural)"
+        ],
+        [
+          "3rd masc.",
+          "il (he)",
+          "li (they)"
+        ],
+        [
+          "3rd fem.",
+          "el (she)",
+          "li (they)"
+        ],
+        [
+          "3rd neuter",
+          "ol (it)",
+          "li (they)"
+        ],
+        [
+          "3rd epicene",
+          "lu (he/she, gender unknown)",
+          "li"
+        ],
+        [
+          "Reflexive",
+          "su (oneself)",
+          "—"
+        ],
+        [
+          "Indefinite",
+          "on (one, people)",
+          "—"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A notable reform is the introduction of tu for singular \"you\" (familiar) versus vi for plural \"you\". In Esperanto, vi serves for both. Ido's distinction mirrors French tu/vous or Spanish tú/vosotros . The epicene pronoun lu is used when the gender of a third person is unknown or irrelevant — a modern convenience that Esperanto's designers did not provide for."
+    },
+    {
+      "type": "p",
+      "text": "Note also that Ido uses me for \"I\" rather than Esperanto's mi ."
+    },
+    {
+      "type": "h3",
+      "text": "Possessive Pronouns"
+    },
+    {
+      "type": "p",
+      "text": "Possessives are formed by adding the adjective ending -a to the personal pronoun stem:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pronoun",
+        "Possessive",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "me",
+          "mea",
+          "my"
+        ],
+        [
+          "tu",
+          "tua",
+          "your (sing.)"
+        ],
+        [
+          "il / el / ol",
+          "ila / ela / ola",
+          "his / her / its"
+        ],
+        [
+          "lu",
+          "lua",
+          "his/her (epicene)"
+        ],
+        [
+          "ni",
+          "nia",
+          "our"
+        ],
+        [
+          "vi",
+          "via",
+          "your (pl.)"
+        ],
+        [
+          "li",
+          "lia",
+          "their"
+        ],
+        [
+          "su",
+          "sua",
+          "one's own (reflexive)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Possessives are invariable — they do not change form to agree with the noun they modify."
+    },
+    {
+      "type": "h3",
+      "text": "Object Forms"
+    },
+    {
+      "type": "p",
+      "text": "When used as direct or indirect objects, pronouns may optionally take -n for clarity, but in practice this is rare. Standard usage relies on word order: Me amas tu (I love you) is unambiguous without any case marking."
+    },
+    {
+      "type": "h2",
+      "text": "6. Verbs"
+    },
+    {
+      "type": "p",
+      "text": "Ido verbs are highly regular. Like Esperanto, they never change for person or number . The same form is used for all subjects. The tense endings are parallel to Esperanto's but the infinitive ends in -ar rather than -i."
+    },
+    {
+      "type": "h3",
+      "text": "Tenses and Moods"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Form",
+        "Ending",
+        "Example (parolar)",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Infinitive",
+          "-ar",
+          "parolar",
+          "to speak"
+        ],
+        [
+          "Present",
+          "-as",
+          "parolas",
+          "speaks / is speaking"
+        ],
+        [
+          "Past",
+          "-is",
+          "parolis",
+          "spoke / was speaking"
+        ],
+        [
+          "Future",
+          "-os",
+          "parolos",
+          "will speak"
+        ],
+        [
+          "Conditional",
+          "-us",
+          "parolus",
+          "would speak"
+        ],
+        [
+          "Imperative / Jussive",
+          "-ez",
+          "parolez",
+          "speak! (to one person)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The tense endings -as, -is, -os, -us are identical to Esperanto's, making conversion between the two languages very straightforward. The key difference is the infinitive in -ar (Esperanto: -i) and the imperative in -ez (Esperanto: -u)."
+    },
+    {
+      "type": "p",
+      "text": "The infinitive endings for the other nominal verb forms are also differentiated: the present participle stem takes -ant- , the past -int- , the future -ont- (active), and -at-, -it-, -ot- (passive), matching Esperanto's system exactly."
+    },
+    {
+      "type": "h3",
+      "text": "Esar (To Be)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tense",
+        "Form",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Infinitive",
+          "esar",
+          "to be"
+        ],
+        [
+          "Present",
+          "esas",
+          "is / am / are"
+        ],
+        [
+          "Past",
+          "esis",
+          "was / were"
+        ],
+        [
+          "Future",
+          "esos",
+          "will be"
+        ],
+        [
+          "Conditional",
+          "esus",
+          "would be"
+        ],
+        [
+          "Imperative",
+          "esez",
+          "be!"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Examples:"
+    },
+    {
+      "type": "li",
+      "text": "Me esas studento. — I am a student."
+    },
+    {
+      "type": "li",
+      "text": "Vi esis tie. — You were there."
+    },
+    {
+      "type": "li",
+      "text": "La urbo esos bela. — The city will be beautiful."
+    },
+    {
+      "type": "h3",
+      "text": "Passive Voice"
+    },
+    {
+      "type": "p",
+      "text": "The passive is formed with esar plus the past passive participle:"
+    },
+    {
+      "type": "li",
+      "text": "La libro esas skribita da me. — The book is written by me."
+    },
+    {
+      "type": "li",
+      "text": "La letro esis sendita. — The letter was sent."
+    },
+    {
+      "type": "p",
+      "text": "The agent in a passive construction is introduced by da (by), which is distinct from de (of, from). This is a cleaner distinction than in Esperanto, where de carries both meanings."
+    },
+    {
+      "type": "h3",
+      "text": "The Conditional"
+    },
+    {
+      "type": "p",
+      "text": "Used for hypothetical statements. Both clauses take -us:"
+    },
+    {
+      "type": "p",
+      "text": "Se me havus mono, me voyajus. — If I had money, I would travel."
+    },
+    {
+      "type": "h2",
+      "text": "7. Adverbs & Prepositions"
+    },
+    {
+      "type": "h3",
+      "text": "Adverbs"
+    },
+    {
+      "type": "p",
+      "text": "Adverbs end in -e and are invariable, exactly as in Esperanto. They can modify verbs, adjectives, other adverbs, or whole sentences."
+    },
+    {
+      "type": "li",
+      "text": "rapide — quickly"
+    },
+    {
+      "type": "li",
+      "text": "bele — beautifully"
+    },
+    {
+      "type": "li",
+      "text": "tre — very"
+    },
+    {
+      "type": "li",
+      "text": "ankore — also, still"
+    },
+    {
+      "type": "li",
+      "text": "ne — not"
+    },
+    {
+      "type": "p",
+      "text": "Adverbs derived from adjectives are fully regular: bona → bone (well), facila → facile (easily)."
+    },
+    {
+      "type": "p",
+      "text": "Comparison of adverbs parallels that of adjectives: plu rapide (more quickly), maxim rapide (most quickly)."
+    },
+    {
+      "type": "h3",
+      "text": "Common Prepositions"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Preposition",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "en",
+          "in, inside",
+          "en la urbo (in the city)"
+        ],
+        [
+          "sur",
+          "on",
+          "sur la tablo (on the table)"
+        ],
+        [
+          "sub",
+          "under",
+          "sub la ponto (under the bridge)"
+        ],
+        [
+          "ad",
+          "to, toward (direction)",
+          "ad la staciono (to the station)"
+        ],
+        [
+          "de",
+          "of, from",
+          "libro de Maria (Maria's book)"
+        ],
+        [
+          "da",
+          "by (agent of passive)",
+          "skribita da me (written by me)"
+        ],
+        [
+          "ek",
+          "out of",
+          "ek la domo (out of the house)"
+        ],
+        [
+          "kun",
+          "with (accompaniment)",
+          "kun mea amiki (with my friends)"
+        ],
+        [
+          "por",
+          "for, in order to",
+          "por tu (for you)"
+        ],
+        [
+          "pri",
+          "about, concerning",
+          "pri amo (about love)"
+        ],
+        [
+          "per",
+          "by means of, with (instrument)",
+          "per auto (by car)"
+        ],
+        [
+          "tra",
+          "through",
+          "tra la parko (through the park)"
+        ],
+        [
+          "ante",
+          "before, in front of",
+          "ante la domo"
+        ],
+        [
+          "pos",
+          "after, behind",
+          "pos la repasto"
+        ],
+        [
+          "dum",
+          "during, while",
+          "dum la milito"
+        ],
+        [
+          "inter",
+          "between, among",
+          "inter ni"
+        ],
+        [
+          "kontre",
+          "against, opposite",
+          "kontre la muro"
+        ],
+        [
+          "sen",
+          "without",
+          "sen tu"
+        ],
+        [
+          "til",
+          "until, up to",
+          "til la fino"
+        ],
+        [
+          "apud",
+          "next to, beside",
+          "apud la fenestro"
+        ],
+        [
+          "ye",
+          "at (time or unspecified relation)",
+          "ye la oka horo (at eight o'clock)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Note the distinction between ad (directionality) and en (location). Where Esperanto uses en for both \"in the house\" (location) and, with accusative, \"into the house\" (direction), Ido resolves this with separate prepositions: en la domo (in the house) vs enirar la domo / irar ad la domo (to go into / to the house)."
+    },
+    {
+      "type": "h2",
+      "text": "8. Word Formation"
+    },
+    {
+      "type": "p",
+      "text": "Ido inherits Esperanto's highly productive system of prefixes and suffixes. A small vocabulary of roots, combined with the standard affixes, generates a very large working lexicon. Most affixes are shared with Esperanto, though some are reshaped for transparency."
+    },
+    {
+      "type": "h3",
+      "text": "Prefixes"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Prefix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "des-",
+          "opposite of, reversal (= Esp. mal-)",
+          "bona → desbona (bad); facila → desfacila (difficult)"
+        ],
+        [
+          "ge-",
+          "both sexes together",
+          "patro → gepatri (parents)"
+        ],
+        [
+          "bo-",
+          "by marriage",
+          "frato → bofrato (brother-in-law)"
+        ],
+        [
+          "eks-",
+          "former, ex-",
+          "prezidanto → eksprezidanto"
+        ],
+        [
+          "pra-",
+          "ancient, great- (kin)",
+          "avo → praavo (great-grandfather)"
+        ],
+        [
+          "re-",
+          "again, back",
+          "facar → refacar (to redo)"
+        ],
+        [
+          "mis-",
+          "wrongly",
+          "uzar → misuzar (to misuse)"
+        ],
+        [
+          "dis-",
+          "apart, in various directions",
+          "sendar → dissendar (to distribute)"
+        ],
+        [
+          "ek-",
+          "beginning of action, sudden",
+          "kriar → ekkriar (to cry out)"
+        ],
+        [
+          "arki-",
+          "chief, arch-",
+          "episkopo → arkiepiskopo (archbishop)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Note that Ido replaces Esperanto's mal- (opposite) with des- , as mal- has negative connotations in Romance languages (French mal = badly, evil)."
+    },
+    {
+      "type": "h3",
+      "text": "Suffixes"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-eg-",
+          "augmentative (intensification)",
+          "domo → domego (mansion)"
+        ],
+        [
+          "-et-",
+          "diminutive",
+          "domo → dometo (cottage)"
+        ],
+        [
+          "-in-",
+          "feminine",
+          "kato → katino (female cat)"
+        ],
+        [
+          "-ul-",
+          "person characterised by",
+          "ric(h)a → richulo (rich person)"
+        ],
+        [
+          "-ist-",
+          "professional, specialist",
+          "muziko → muzikisto"
+        ],
+        [
+          "-an-",
+          "member, inhabitant",
+          "Europa → Europano"
+        ],
+        [
+          "-ar-",
+          "collection of",
+          "arboro → arboraro (forest)"
+        ],
+        [
+          "-ey-",
+          "place for (= Esp. -ej-)",
+          "lernar → lerneyo (school)"
+        ],
+        [
+          "-il-",
+          "instrument or tool for",
+          "tranchar → tranchilo (knife)"
+        ],
+        [
+          "-aj-",
+          "thing characterised by",
+          "bona → bonajo (something good)"
+        ],
+        [
+          "-es-",
+          "abstract quality (= Esp. -ec-)",
+          "bona → boneso (goodness)"
+        ],
+        [
+          "-ebl-",
+          "capable of being",
+          "legar → legabla (readable)"
+        ],
+        [
+          "-ind-",
+          "worthy of",
+          "amar → aminda (lovable)"
+        ],
+        [
+          "-em-",
+          "tendency or inclination",
+          "parolar → parolema (talkative)"
+        ],
+        [
+          "-ig-",
+          "to cause to become, to make",
+          "pura → purigar (to clean)"
+        ],
+        [
+          "-es-ar",
+          "to become (= Esp. -iĝ-)",
+          "pura → puresar (to become clean)"
+        ],
+        [
+          "-end-",
+          "which must be done",
+          "facar → facenda (that must be done)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Compound Words"
+    },
+    {
+      "type": "p",
+      "text": "Ido freely compounds roots to form new words. The governing element comes last: aquo (water) + -fal- (fall) + -o = aquofalo (waterfall). Affixes can be combined: des- + bon- + -es- + -o = desboneso (badness, wickedness)."
+    },
+    {
+      "type": "h2",
+      "text": "9. Differences from Esperanto"
+    },
+    {
+      "type": "p",
+      "text": "Ido and Esperanto share the same conceptual foundation and are mutually intelligible to a significant degree. A reader of one can often parse the other with some effort. However, the 1907 reforms introduced systematic differences. The comparison below covers the major ones."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Feature",
+        "Esperanto",
+        "Ido"
+      ],
+      "rows": [
+        [
+          "Diacritical letters",
+          "ĉ, ĝ, ĥ, ĵ, ŝ, ŭ",
+          "None — ch, sh, j, y used instead"
+        ],
+        [
+          "Infinitive ending",
+          "-i (paroli)",
+          "-ar (parolar)"
+        ],
+        [
+          "Imperative ending",
+          "-u (parolu)",
+          "-ez (parolez)"
+        ],
+        [
+          "Noun plural",
+          "-j (libroj)",
+          "-i (libri)"
+        ],
+        [
+          "Adjective agreement",
+          "Agrees in number & case (grandaj libroj)",
+          "Invariable (granda libri)"
+        ],
+        [
+          "Accusative case",
+          "Mandatory on direct objects (-n)",
+          "Optional, word order preferred"
+        ],
+        [
+          "Pronoun \"I\"",
+          "mi",
+          "me"
+        ],
+        [
+          "Pronoun \"you\" (singular)",
+          "vi",
+          "tu (singular); vi (plural)"
+        ],
+        [
+          "Pronoun \"he/she\"",
+          "li / ŝi",
+          "il / el"
+        ],
+        [
+          "Epicene pronoun",
+          "(none standard)",
+          "lu (he or she, gender unknown)"
+        ],
+        [
+          "Prefix \"opposite\"",
+          "mal- (malbona)",
+          "des- (desbona)"
+        ],
+        [
+          "Suffix \"quality\"",
+          "-ec- (boneco)",
+          "-es- (boneso)"
+        ],
+        [
+          "Suffix \"place for\"",
+          "-ej- (lernejo)",
+          "-ey- (lerneyo)"
+        ],
+        [
+          "Passive agent",
+          "de (amata de li)",
+          "da (amata da il) — separate from de (of)"
+        ],
+        [
+          "\"By means of\" vs \"by (agent)\"",
+          "both per / de",
+          "per (instrument) / da (agent) — distinct"
+        ],
+        [
+          "Preposition \"to\" (direction)",
+          "al",
+          "ad"
+        ],
+        [
+          "Preposition \"out of\"",
+          "el",
+          "ek"
+        ],
+        [
+          "Correlative table",
+          "ki-, ti-, i-, ĉi-, neni- × 9 endings",
+          "similar system with some form differences"
+        ],
+        [
+          "Comparator \"than\"",
+          "ol (pli granda ol)",
+          "kam (plu granda kam)"
+        ],
+        [
+          "\"More\" (comparative)",
+          "pli",
+          "plu"
+        ],
+        [
+          "Vocabulary",
+          "Primarily Slavic/Latin/Greek roots",
+          "Roots chosen for maximum international recognisability, often closer to Romance forms"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Sample Parallel Sentences"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "English",
+        "Esperanto",
+        "Ido"
+      ],
+      "rows": [
+        [
+          "I speak a language.",
+          "Mi parolas lingvon.",
+          "Me parolas un linguo."
+        ],
+        [
+          "The big books are on the table.",
+          "La grandaj libroj estas sur la tablo.",
+          "La granda libri esas sur la tablo."
+        ],
+        [
+          "She loves him.",
+          "Ŝi amas lin.",
+          "El amas il."
+        ],
+        [
+          "We will go to the city.",
+          "Ni iros al la urbo.",
+          "Ni iros ad la urbo."
+        ],
+        [
+          "The letter was written by Mary.",
+          "La letero estis skribita de Mario.",
+          "La letro esis skribita da Mario."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "10. Example Sentences & Useful Phrases"
+    },
+    {
+      "type": "h3",
+      "text": "Worked Sentences"
+    },
+    {
+      "type": "li",
+      "text": "La granda hundo kuras rapide tra la parko. — The big dog runs quickly through the park."
+    },
+    {
+      "type": "li",
+      "text": "Me volas, ke tu venos morge. — I want you to come tomorrow."
+    },
+    {
+      "type": "li",
+      "text": "Se me havus mono, me voyajus ad omna landi. — If I had money, I would travel to all countries."
+    },
+    {
+      "type": "li",
+      "text": "La libri sur la tablo apartenas ad mea frato. — The books on the table belong to my brother."
+    },
+    {
+      "type": "li",
+      "text": "Nulu savis, quo evenis. — Nobody knew what had happened."
+    },
+    {
+      "type": "li",
+      "text": "On parolas Ido en multa landi. — People speak Ido in many countries."
+    },
+    {
+      "type": "li",
+      "text": "La internaciona linguo esas facila lernar. — The international language is easy to learn."
+    },
+    {
+      "type": "h3",
+      "text": "Useful Phrases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Ido",
+        "English"
+      ],
+      "rows": [
+        [
+          "Saluto!",
+          "Hello!"
+        ],
+        [
+          "Bona matino.",
+          "Good morning."
+        ],
+        [
+          "Bona vespero.",
+          "Good evening."
+        ],
+        [
+          "Danko.",
+          "Thank you."
+        ],
+        [
+          "Bonvolu.",
+          "Please. / You're welcome."
+        ],
+        [
+          "Pardonez me.",
+          "Excuse me. / I'm sorry."
+        ],
+        [
+          "Til rivido.",
+          "Goodbye. (Until we meet again.)"
+        ],
+        [
+          "Quale vi standas?",
+          "How are you?"
+        ],
+        [
+          "Me standas bone.",
+          "I am well."
+        ],
+        [
+          "Me ne komprenas.",
+          "I don't understand."
+        ],
+        [
+          "Kad vu parolas Ido?",
+          "Do you speak Ido?"
+        ],
+        [
+          "Quale vu nomesas?",
+          "What is your name?"
+        ],
+        [
+          "Me nomesas…",
+          "My name is…"
+        ],
+        [
+          "Ube esas…?",
+          "Where is…?"
+        ],
+        [
+          "Quante kosas?",
+          "How much does it cost?"
+        ],
+        [
+          "Me amas tu.",
+          "I love you."
+        ],
+        [
+          "Felica naskodio!",
+          "Happy birthday!"
+        ],
+        [
+          "Yes. / No.",
+          "Yes. / No."
+        ],
+        [
+          "Me ne savas.",
+          "I don't know."
+        ],
+        [
+          "Helpezu me!",
+          "Help me!"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Numbers"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Number",
+        "Ido",
+        "Number",
+        "Ido"
+      ],
+      "rows": [
+        [
+          "0",
+          "nulo",
+          "10",
+          "dek"
+        ],
+        [
+          "1",
+          "un",
+          "11",
+          "dek-un"
+        ],
+        [
+          "2",
+          "du",
+          "12",
+          "dek-du"
+        ],
+        [
+          "3",
+          "tri",
+          "20",
+          "duadek"
+        ],
+        [
+          "4",
+          "quar",
+          "30",
+          "triadek"
+        ],
+        [
+          "5",
+          "kin",
+          "100",
+          "cent"
+        ],
+        [
+          "6",
+          "sis",
+          "1,000",
+          "mil"
+        ],
+        [
+          "7",
+          "sep",
+          "1,000,000",
+          "miliono"
+        ],
+        [
+          "8",
+          "ok",
+          "1st",
+          "unesma"
+        ],
+        [
+          "9",
+          "non",
+          "2nd",
+          "duesma"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "11. Learning Resources"
+    },
+    {
+      "type": "h3",
+      "text": "Primary Online Resources"
+    },
+    {
+      "type": "li",
+      "text": "idolinguo.com — The most comprehensive English-language resource for Ido learners. Contains a complete grammar reference, dictionary, lessons, and reading texts. The essential first stop for any new learner."
+    },
+    {
+      "type": "li",
+      "text": "Ido Wikipedia ( io.wikipedia.org ) — A sizeable Wikipedia in Ido with thousands of articles. An excellent source of authentic reading material at varying levels of difficulty. Reading real encyclopedic text accelerates vocabulary acquisition rapidly."
+    },
+    {
+      "type": "li",
+      "text": "Uniono por la Linguo Internaciona Ido (ULI) — The international Ido organisation, maintaining official publications and the quarterly journal Progreso . The ULI website hosts official grammar documents and keeps a record of the language's official decisions."
+    },
+    {
+      "type": "li",
+      "text": "Wiktionary — Ido edition ( io.wiktionary.org ) — A dictionary in Ido covering Ido words and many other languages, useful both for vocabulary lookup and for reading practice."
+    },
+    {
+      "type": "h3",
+      "text": "Community"
+    },
+    {
+      "type": "li",
+      "text": "Ido Discord server — An active community of Ido speakers and learners. Search for \"Ido language\" on Discord or via the idolinguo.com links page to find the current invite. Discussion ranges from beginner questions to advanced grammar debates and creative writing."
+    },
+    {
+      "type": "li",
+      "text": "Reddit: r/Ido — A small but friendly subreddit for discussion, questions, and sharing resources. Good for asynchronous conversation if Discord is not your preference."
+    },
+    {
+      "type": "li",
+      "text": "Facebook groups — Several Ido groups exist on Facebook with a mix of active members posting in Ido and discussing the language's history and development."
+    },
+    {
+      "type": "h3",
+      "text": "Texts and Literature"
+    },
+    {
+      "type": "li",
+      "text": "Progreso — The long-running official Ido journal, published since the early years of the language. Back issues provide authentic text from different periods of the language's development."
+    },
+    {
+      "type": "li",
+      "text": "Project Gutenberg — A small collection of Ido texts is available via Project Gutenberg, including translations of literary works."
+    },
+    {
+      "type": "li",
+      "text": "idolinguo.com texts section — Curated reading materials including translated stories, original prose, and linguistic analyses, all in Ido."
+    },
+    {
+      "type": "h3",
+      "text": "Reference"
+    },
+    {
+      "type": "li",
+      "text": "Beaufront, L. & Couturat, L. — Resumo di la Gramatiko di Ido — The original concise grammar produced by the language's creators. Still readable and authoritative."
+    },
+    {
+      "type": "li",
+      "text": "Bleier, Don — A Complete Grammar of Ido — A thorough modern English-language grammar covering all aspects of the language in detail."
+    },
+    {
+      "type": "h2",
+      "text": "12. Learning Tips"
+    },
+    {
+      "type": "li",
+      "text": "Know Esperanto? You're halfway there. If you have any prior Esperanto knowledge, Ido will come very quickly. The tense endings (-as/-is/-os/-us) are identical. Focus on the differences: the infinitive -ar, the plural -i, no mandatory accusative, and the revised pronouns."
+    },
+    {
+      "type": "li",
+      "text": "Start with the verb endings. -ar, -as, -is, -os, -us, -ez is a short list. Internalise it first and you can parse virtually any sentence even with minimal vocabulary."
+    },
+    {
+      "type": "li",
+      "text": "Read the Ido Wikipedia early. io.wikipedia.org provides thousands of authentic texts graded by topic complexity. Start with articles about things you know well — your context knowledge compensates for unknown vocabulary."
+    },
+    {
+      "type": "li",
+      "text": "Use the affixes systematically. As with Esperanto, the affix system is a multiplier. Learning des-, -es-, -ig-, -ebl-, and -ind- gives you immediate access to hundreds of derivations. Don't memorise words individually when a derivation rule exists."
+    },
+    {
+      "type": "li",
+      "text": "Leverage your existing language knowledge. Ido roots were specifically chosen for international recognisability. A speaker of French, Spanish, Italian, Portuguese, or English will find many roots immediately familiar. Trust your instincts about root meanings — they are often correct."
+    },
+    {
+      "type": "li",
+      "text": "Join the Discord. The Ido community is small but knowledgeable and welcoming. Attempting to write even simple sentences in the community is the fastest route to fluency, and questions are answered promptly."
+    },
+    {
+      "type": "li",
+      "text": "Don't be put off by the small community size. The total number of Ido speakers is smaller than Esperanto's, but the language has a continuous century-long written tradition, a living community, and — as an auxiliary language — an inherently low threshold for meaningful participation. Your first written Ido message will be understood."
+    },
+    {
+      "type": "p",
+      "text": "\"La celo esas internaciona komunikado por omni.\" — The goal is international communication for everyone."
+    },
+    {
+      "type": "h2",
+      "text": "Notes"
+    },
+    {
+      "type": "li",
+      "text": "\"Ido,\" Encyclopædia Britannica, accessed June 3, 2026, https://www.britannica.com/topic/Ido ."
+    },
+    {
+      "type": "h2",
+      "text": "Bibliography"
+    },
+    {
+      "type": "p",
+      "text": "Encyclopædia Britannica. \"Ido.\" Accessed June 3, 2026. https://www.britannica.com/topic/Ido ."
+    }
+  ]
+}

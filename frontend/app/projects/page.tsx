@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { getCollection } from "@/lib/content";
+import { getCollection, leadText } from "@/lib/content";
 
 // Source: /website/public/projects.html + projects/*.html — links to migrated pages.
 export const metadata = { title: "Projects — Steven Legg" };
@@ -33,7 +33,7 @@ export default function Projects() {
               <span className="text-lg group-hover:text-accent">{p.title}</span>
             </div>
             <p className="mt-2 line-clamp-2 text-sm text-muted">
-              {p.blocks.find((b) => b.type === "p")?.text}
+              {leadText(p.blocks)}
             </p>
           </Link>
         ))}

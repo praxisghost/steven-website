@@ -1,0 +1,1453 @@
+{
+  "slug": "klingon",
+  "title": "Klingon (tlhIngan Hol)",
+  "date": null,
+  "source": "/website/public/klingon.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. Introduction & History"
+    },
+    {
+      "type": "p",
+      "text": "Klingon — known in the language itself as tlhIngan Hol (\"the Klingon language\") — is a constructed language created by American linguist Marc Okrand for the Klingon alien species of the Star Trek franchise. It is one of the most fully developed and widely studied constructed languages ever created for a fictional setting."
+    },
+    {
+      "type": "p",
+      "text": "The first recognisable Klingon dialogue appeared in Star Trek: The Motion Picture (1979), but the language was only a handful of phrases written by actor James Doohan. Okrand was hired for Star Trek III: The Search for Spock (1984) to create a coherent, speakable language. Working deliberately to avoid resemblance to any natural human language, he produced a phonology full of sounds rare in the world's languages and a grammar built around typologically uncommon features."
+    },
+    {
+      "type": "p",
+      "text": "Okrand published The Klingon Dictionary in 1985 (expanded edition 1992), giving the language its canonical grammatical description and an initial lexicon of around 2,000 roots. This book remains the primary authoritative reference for the language. Additional vocabulary and clarifications have been published in subsequent books — Klingon for the Galactic Traveler (1997) and The Klingon Way (1996) — and through the newsletter and resources of the Klingon Language Institute (KLI) , founded in 1992."
+    },
+    {
+      "type": "p",
+      "text": "The KLI has overseen major cultural projects including a complete Klingon translation of the works of Shakespeare (beginning with Hamlet ), a Klingon translation of the Epic of Gilgamesh , and the first novel written entirely in Klingon. Klingon also appeared as a complete language course on Duolingo. It is the only constructed language whose speakers have held academic conferences, published peer-reviewed linguistics analyses, and recorded complete musical albums entirely in the language."
+    },
+    {
+      "type": "h2",
+      "text": "2. The pIqaD Script"
+    },
+    {
+      "type": "p",
+      "text": "Klingon has its own native writing system called pIqaD , which appears on screen in Star Trek productions. pIqaD consists of 26 characters, each corresponding to a single sound in the language. The script is written left-to-right and has no separate capital letters."
+    },
+    {
+      "type": "p",
+      "text": "However, the canonical phonemic values of pIqaD characters were never officially published by Okrand alongside the grammar. The mapping between pIqaD glyphs and Latin transliteration letters was established primarily by the KLI and fan community, and is widely accepted today. pIqaD is encoded in the Unicode Private Use Area (starting at U+F8D0) and can be displayed with specialised fonts such as pIqaD qolqoS ."
+    },
+    {
+      "type": "p",
+      "text": "In practice, the Latin transliteration system devised by Okrand is the standard used for learning and communication . This system is case-sensitive: upper-case and lower-case letters represent distinct sounds, and the capitalisation must be respected exactly. For example, D and d represent different consonants, as do H and h , I and i , and Q and q . Treating the transliteration as ordinary English capitalisation is a serious error."
+    },
+    {
+      "type": "p",
+      "text": "All examples in this guide use the Latin transliteration, which is universally understood in the Klingon-speaking community."
+    },
+    {
+      "type": "h2",
+      "text": "3. Pronunciation"
+    },
+    {
+      "type": "p",
+      "text": "Klingon phonology is deliberately unusual. Okrand designed the sound system to feel alien to English speakers by drawing on sounds that are rare or marginal in the world's more familiar languages. There are two vowels that are distinct based on capitalisation ( I vs i ), and several consonants produced in the back of the throat or with features not present in English."
+    },
+    {
+      "type": "h3",
+      "text": "Vowels"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Letter",
+        "IPA",
+        "Description",
+        "Example"
+      ],
+      "rows": [
+        [
+          "a",
+          "/ɑ/",
+          "Open back vowel — like the \"a\" in \"father\"",
+          "taj (knife)"
+        ],
+        [
+          "e",
+          "/ɛ/",
+          "Mid front vowel — like the \"e\" in \"bed\"",
+          "bej (watch)"
+        ],
+        [
+          "I",
+          "/ɪ/",
+          "Near-close front vowel — like the \"i\" in \"bit\"; note capital I",
+          "HIq (alcohol)"
+        ],
+        [
+          "o",
+          "/o/",
+          "Mid back vowel — like the \"o\" in \"go\"",
+          "loD (man)"
+        ],
+        [
+          "u",
+          "/u/",
+          "Close back vowel — like the \"u\" in \"flute\"",
+          "nuq (what)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Consonants"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Letter",
+        "IPA",
+        "Description",
+        "Example"
+      ],
+      "rows": [
+        [
+          "b",
+          "/b/",
+          "Like English \"b\"",
+          "baH (fire torpedoes)"
+        ],
+        [
+          "ch",
+          "/tʃ/",
+          "Like English \"ch\" in \"church\"",
+          "chab (pie)"
+        ],
+        [
+          "D",
+          "/ɖ/",
+          "Retroflex \"d\" — tongue curled back, further back than English \"d\"",
+          "Duj (ship)"
+        ],
+        [
+          "gh",
+          "/ɣ/",
+          "Voiced velar fricative — like gargling softly; the voiced counterpart of H",
+          "ghIt (manuscript)"
+        ],
+        [
+          "H",
+          "/x/",
+          "Voiceless velar fricative — like Scottish \"loch\" or German \"Bach\"; much stronger than English \"h\"",
+          "Hol (language)"
+        ],
+        [
+          "j",
+          "/dʒ/",
+          "Like English \"j\" in \"judge\"",
+          "jatlh (speak)"
+        ],
+        [
+          "l",
+          "/l/",
+          "Like English \"l\"",
+          "loD (man)"
+        ],
+        [
+          "m",
+          "/m/",
+          "Like English \"m\"",
+          "mI' (number)"
+        ],
+        [
+          "n",
+          "/n/",
+          "Like English \"n\"",
+          "nIH (steal)"
+        ],
+        [
+          "ng",
+          "/ŋ/",
+          "Like \"ng\" in \"sing\" — but can occur at the start of a syllable, unlike in English",
+          "ngat (gravel)"
+        ],
+        [
+          "p",
+          "/pʰ/",
+          "Strongly aspirated \"p\" — more forceful than English \"p\"",
+          "pIq (in the future)"
+        ],
+        [
+          "q",
+          "/q/",
+          "Voiceless uvular stop — like \"k\" but produced at the very back of the throat, at the uvula",
+          "qagh (serpent worm, error)"
+        ],
+        [
+          "Q",
+          "/qχ/",
+          "Uvular stop with strong fricative release — like q but with a harsh scraping quality; distinct from q",
+          "QaQ (good)"
+        ],
+        [
+          "r",
+          "/r/",
+          "Trilled or flapped \"r\" — like a Spanish or Scottish \"r\"",
+          "raQ (camp)"
+        ],
+        [
+          "S",
+          "/ʂ/",
+          "Retroflex \"s\" — tongue curled back; sounds similar to English \"sh\" but not identical",
+          "Soj (food)"
+        ],
+        [
+          "t",
+          "/tʰ/",
+          "Aspirated \"t\" — stronger than English \"t\"",
+          "tIq (heart)"
+        ],
+        [
+          "tlh",
+          "/t͡ɬ/",
+          "Voiceless lateral affricate — unique to Klingon among major constructed languages; begin a \"t\" then release air around the sides of the tongue; similar to the Welsh \"ll\" but affricated",
+          "tlhIngan (Klingon)"
+        ],
+        [
+          "v",
+          "/v/",
+          "Like English \"v\"",
+          "vav (father)"
+        ],
+        [
+          "w",
+          "/w/",
+          "Like English \"w\"",
+          "wej (three)"
+        ],
+        [
+          "y",
+          "/j/",
+          "Like English \"y\" in \"yes\"",
+          "yIt (walk)"
+        ],
+        [
+          "'",
+          "/ʔ/",
+          "Glottal stop — the catch in the throat between \"uh-oh\"; a full consonant in Klingon, not punctuation",
+          "'ej (and)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Stress"
+    },
+    {
+      "type": "p",
+      "text": "Klingon stress is not entirely predictable, but a useful working rule is that stress falls on the last syllable of the verb stem (before suffixes) and the penultimate syllable of nouns . In practice, most syllables in Klingon words receive roughly equal stress compared to English, and the unusual consonants draw more attention than stress placement."
+    },
+    {
+      "type": "h3",
+      "text": "The Glottal Stop as a Consonant"
+    },
+    {
+      "type": "p",
+      "text": "The apostrophe ( ' ) represents a genuine consonant — the glottal stop — and must not be omitted. bI' and bI are different words. Words can begin with a glottal stop: 'Iw (blood), 'ej (and)."
+    },
+    {
+      "type": "h2",
+      "text": "4. Grammar Overview"
+    },
+    {
+      "type": "p",
+      "text": "Klingon grammar is agglutinative and highly regular. Okrand deliberately chose typologically uncommon features so that the language would feel alien to speakers of the world's major languages."
+    },
+    {
+      "type": "h3",
+      "text": "OVS Word Order"
+    },
+    {
+      "type": "p",
+      "text": "The single most striking feature of Klingon grammar is its basic word order: Object–Verb–Subject (OVS) . English is SVO (Subject–Verb–Object), and most of the world's languages favour SOV or SVO. Only a small number of natural languages (such as Hixkaryana of Brazil) use OVS as their default order."
+    },
+    {
+      "type": "p",
+      "text": "In Klingon: yaS vIlegh — literally \"officer I-see\" — means I see the officer . The object ( yaS , officer) comes first, then the verb ( vIlegh , I-see), and the subject is encoded in the verb prefix. An explicit subject pronoun would follow the verb: yaS vIlegh jIH (I myself see the officer)."
+    },
+    {
+      "type": "p",
+      "text": "This OVS order is mandatory in basic transitive sentences. Questions and some special constructions may vary, but the canonical Klingon sentence puts the object before the verb."
+    },
+    {
+      "type": "h3",
+      "text": "Agglutination"
+    },
+    {
+      "type": "p",
+      "text": "Both nouns and verbs are built up by chaining suffixes (and, for verbs, prefixes) onto a root. The order of suffixes is fixed and grammatically meaningful. Learning the suffix types and their positions is central to reading and producing Klingon."
+    },
+    {
+      "type": "h3",
+      "text": "No Articles, No Copula"
+    },
+    {
+      "type": "p",
+      "text": "Klingon has no articles (no \"a\" or \"the\"). Context determines definiteness. For \"to be\" statements with nouns or adjectives, Klingon uses a pronoun construction rather than a verb — see the Pronouns section for details."
+    },
+    {
+      "type": "h2",
+      "text": "5. Nouns & Noun Suffixes"
+    },
+    {
+      "type": "p",
+      "text": "Klingon nouns do not inflect for case or gender. Grammatical relationships are shown by word order and verb prefixes rather than noun endings. What nouns do have is a rich system of five types of suffix , added in a fixed order after the noun root."
+    },
+    {
+      "type": "h3",
+      "text": "Common Noun Vocabulary"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Klingon",
+        "English",
+        "Klingon",
+        "English"
+      ],
+      "rows": [
+        [
+          "tlhIngan",
+          "Klingon (person)",
+          "Hol",
+          "language"
+        ],
+        [
+          "loD",
+          "man",
+          "be'",
+          "woman"
+        ],
+        [
+          "puq",
+          "child",
+          "yaS",
+          "officer"
+        ],
+        [
+          "Duj",
+          "ship / instinct",
+          "taj",
+          "knife"
+        ],
+        [
+          "betleH",
+          "bat'leth (sword)",
+          "wo'",
+          "empire"
+        ],
+        [
+          "Qo'noS",
+          "Kronos (homeworld)",
+          "qagh",
+          "serpent worm / error"
+        ],
+        [
+          "Soj",
+          "food",
+          "HIq",
+          "alcohol / liquor"
+        ],
+        [
+          "'Iw",
+          "blood",
+          "batlh",
+          "honour"
+        ],
+        [
+          "tIq",
+          "heart",
+          "vav",
+          "father"
+        ],
+        [
+          "SoS",
+          "mother",
+          "bang",
+          "love / beloved"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Noun Suffix Type 1 — Size and Augmentation"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-'a'",
+          "augmentative — large, important, great",
+          "puq'a' (great child / important child)"
+        ],
+        [
+          "-Hom",
+          "diminutive — small, minor, unimportant",
+          "DujHom (small ship / shuttlecraft)"
+        ],
+        [
+          "-oy",
+          "endearment — used affectionately",
+          "puqoy (dear child)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Noun Suffix Type 2 — Number"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-pu'",
+          "plural (beings capable of using language)",
+          "tlhInganpu' (Klingons)"
+        ],
+        [
+          "-Du'",
+          "plural (body parts)",
+          "tIqDu' (hearts)"
+        ],
+        [
+          "-mey",
+          "plural (general; also used for scattered distribution)",
+          "Dujmey (ships)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Note: nouns are not required to take a plural suffix even when referring to multiple items. Context often makes plurality clear. Using -mey on beings capable of language implies they are scattered or unorganised — it can be slightly insulting."
+    },
+    {
+      "type": "h3",
+      "text": "Noun Suffix Type 3 — Qualification"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-qoq",
+          "so-called (dismissive / sarcastic)",
+          "batlhqoq (\"so-called honour\")"
+        ],
+        [
+          "-Hey",
+          "apparent / seeming",
+          "DujHey (apparent ship)"
+        ],
+        [
+          "-na'",
+          "definite / real (emphasis)",
+          "batlhna' (real honour)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Noun Suffix Type 4 — Possession / Specification"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-wIj",
+          "my (inanimate)",
+          "DujwIj (my ship)"
+        ],
+        [
+          "-wI'",
+          "my (animate / sentient)",
+          "jup­wI' (my friend)"
+        ],
+        [
+          "-lIj",
+          "your (inanimate)",
+          "DujlIj (your ship)"
+        ],
+        [
+          "-lI'",
+          "your (animate / sentient)",
+          "jupʼlI' (your friend)"
+        ],
+        [
+          "-Daj",
+          "his/her/its (inanimate)",
+          "DujDaj (his/her ship)"
+        ],
+        [
+          "-chaj",
+          "their (inanimate)",
+          "Dujchaj (their ship)"
+        ],
+        [
+          "-maj",
+          "our (inanimate)",
+          "DujmaJ (our ship)"
+        ],
+        [
+          "-ra'",
+          "your (plural, inanimate)",
+          "Dujra' (your [pl.] ship)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Noun Suffix Type 5 — Syntactic Markers"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning / Function",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-Daq",
+          "locative — at, in, on, to (location or destination)",
+          "pa'Daq (in the room / to the room)"
+        ],
+        [
+          "-vo'",
+          "from (source of movement)",
+          "pa'vo' (from the room)"
+        ],
+        [
+          "-vaD",
+          "for, to (benefactive — for the benefit of)",
+          "tlhInganvaD (for the Klingon)"
+        ],
+        [
+          "-'e'",
+          "topic marker — emphasises this noun as the topic; required in \"to be\" sentences",
+          "yaS'e' (as for the officer…)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Suffix Order"
+    },
+    {
+      "type": "p",
+      "text": "When multiple suffixes are used, they stack in the order Type 1, 2, 3, 4, 5. For example: DujHompu'na'wIjDaq — \"on my real small ships\" (Duj + -Hom [T1] + -pu' [T2] + -na' [T3] + -wIj [T4] + -Daq [T5])."
+    },
+    {
+      "type": "h2",
+      "text": "6. Pronouns & \"To Be\""
+    },
+    {
+      "type": "h3",
+      "text": "Personal Pronouns"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Klingon",
+        "English"
+      ],
+      "rows": [
+        [
+          "jIH",
+          "I, me"
+        ],
+        [
+          "SoH",
+          "you (singular)"
+        ],
+        [
+          "ghaH",
+          "he, she (a being capable of language)"
+        ],
+        [
+          "'oH",
+          "it (not capable of language)"
+        ],
+        [
+          "maH",
+          "we, us"
+        ],
+        [
+          "tlhIH",
+          "you (plural)"
+        ],
+        [
+          "chaH",
+          "they, them (beings capable of language)"
+        ],
+        [
+          "bIH",
+          "they, them (things not capable of language)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Klingon makes a grammatical distinction between beings capable of language (such as Klingons, Humans, Vulcans) and things that are not. This distinction affects pronouns and plural suffixes throughout the grammar."
+    },
+    {
+      "type": "h3",
+      "text": "\"To Be\" — Pronoun as Copula"
+    },
+    {
+      "type": "p",
+      "text": "Klingon has no verb meaning \"to be\" in the linking sense (connecting a subject to a noun or adjective). Instead, the pronoun itself functions as the copula. The pattern is:"
+    },
+    {
+      "type": "p",
+      "text": "[subject]-'e' [predicate] [pronoun]"
+    },
+    {
+      "type": "li",
+      "text": "tlhIngan jIH — I am a Klingon (lit. \"Klingon I\")"
+    },
+    {
+      "type": "li",
+      "text": "yaS ghaH Qang'e' — The Chancellor is an officer (lit. \"officer he/she Chancellor-[topic]\")"
+    },
+    {
+      "type": "li",
+      "text": "QaQ Duj — The ship is good (adjective used predicatively, no copula needed)"
+    },
+    {
+      "type": "p",
+      "text": "The topic suffix -'e' marks the subject in these constructions. When the predicate is an adjective, the adjective simply follows the noun without any pronoun: Duj QaQ (the ship is good)."
+    },
+    {
+      "type": "h2",
+      "text": "7. Verbs & Verb Affixes"
+    },
+    {
+      "type": "p",
+      "text": "The Klingon verb is the most complex element of the grammar. A single verb form can encode the subject, the object, tense, aspect, mood, negation, and several modifying concepts — all through a system of prefixes and nine types of suffix ."
+    },
+    {
+      "type": "p",
+      "text": "The structure of a full verb form is:"
+    },
+    {
+      "type": "p",
+      "text": "[prefix] + [verb root] + [Type 1–9 suffixes] + [-be' negation, interspersed]"
+    },
+    {
+      "type": "h3",
+      "text": "Verb Prefixes — Subject and Object Agreement"
+    },
+    {
+      "type": "p",
+      "text": "Unlike most languages, Klingon verb prefixes simultaneously encode both the subject (who performs the action) and the object (who receives it). There are 29 prefixes in the standard paradigm. A selection of the most important:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Prefix",
+        "Subject",
+        "Object",
+        "Example"
+      ],
+      "rows": [
+        [
+          "jI-",
+          "I",
+          "none",
+          "jIQong (I sleep)"
+        ],
+        [
+          "bI-",
+          "you",
+          "none",
+          "bIQong (you sleep)"
+        ],
+        [
+          "- (null)",
+          "he/she/it/they",
+          "none",
+          "Qong (he/she sleeps)"
+        ],
+        [
+          "ma-",
+          "we",
+          "none",
+          "maQong (we sleep)"
+        ],
+        [
+          "Su-",
+          "you (pl.)",
+          "none",
+          "SuQong (you [pl.] sleep)"
+        ],
+        [
+          "vI-",
+          "I",
+          "him/her/it/them",
+          "vIlegh (I see him/her/it)"
+        ],
+        [
+          "Da-",
+          "you",
+          "him/her/it/them",
+          "Dalegh (you see him/her/it)"
+        ],
+        [
+          "wI-",
+          "we",
+          "him/her/it/them",
+          "wIlegh (we see him/her/it)"
+        ],
+        [
+          "mu-",
+          "he/she/they",
+          "me",
+          "mulegh (he/she sees me)"
+        ],
+        [
+          "Du-",
+          "he/she/it",
+          "you",
+          "Dulegh (he/she sees you)"
+        ],
+        [
+          "qa-",
+          "I",
+          "you",
+          "qalegh (I see you)"
+        ],
+        [
+          "Sa-",
+          "I",
+          "you (pl.)",
+          "Salegh (I see you [pl.])"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Common Verb Roots"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Klingon",
+        "English",
+        "Klingon",
+        "English"
+      ],
+      "rows": [
+        [
+          "legh",
+          "see",
+          "jatlh",
+          "speak, say"
+        ],
+        [
+          "Qong",
+          "sleep",
+          "yIt",
+          "walk"
+        ],
+        [
+          "Sop",
+          "eat",
+          "tlhutlh",
+          "drink"
+        ],
+        [
+          "HoH",
+          "kill",
+          "Hegh",
+          "die"
+        ],
+        [
+          "qIp",
+          "hit, strike",
+          "maq",
+          "proclaim, announce"
+        ],
+        [
+          "tu'",
+          "discover, find",
+          "Qub",
+          "think"
+        ],
+        [
+          "Dab",
+          "inhabit, reside at",
+          "boQ",
+          "aid, assist"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 1 — Oneself / One Another"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-'egh",
+          "oneself (reflexive)",
+          "Dalegh'egh (you see yourself)"
+        ],
+        [
+          "-chuq",
+          "one another, each other (reciprocal)",
+          "wIleghdHchuq (we see each other)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 2 — Volition / Predisposition"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-nIS",
+          "need to",
+          "bISopnIS (you need to eat)"
+        ],
+        [
+          "-qang",
+          "willing to",
+          "jIjatlhqang (I am willing to speak)"
+        ],
+        [
+          "-rup",
+          "ready to, prepared to",
+          "maHoHrup (we are ready to kill)"
+        ],
+        [
+          "-beH",
+          "ready / set up (of devices)",
+          "baHbeH (ready to fire)"
+        ],
+        [
+          "-vIp",
+          "afraid to",
+          "DaHoHvIp (you are afraid to kill him)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 3 — Change"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-choH",
+          "change of state — begin to, start to (inchoative)",
+          "jIQongchoH (I fall asleep)"
+        ],
+        [
+          "-qa'",
+          "resume doing (resumptive)",
+          "maSopqa' (we eat again / resume eating)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 4 — Cause"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-moH",
+          "cause to, make (causative)",
+          "jIQongmoH (I cause him to sleep / I put him to sleep)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 5 — Indefinite Subject / Ability"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-lu'",
+          "indefinite subject (\"one\", passive-like)",
+          "vIleghlI' → leghlu' (one sees / it is seen)"
+        ],
+        [
+          "-laH",
+          "can, be able to",
+          "jIjatlhlaH (I can speak)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 6 — Qualification"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-chu'",
+          "clearly, perfectly (ideal completion)",
+          "vIlegchu' (I see it clearly / perfectly)"
+        ],
+        [
+          "-bej",
+          "certainly, undoubtedly",
+          "qalegbej (I certainly see you)"
+        ],
+        [
+          "-law'",
+          "seemingly, apparently (uncertainty)",
+          "QaQlaw' (it seems good)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 7 — Aspect"
+    },
+    {
+      "type": "p",
+      "text": "Klingon does not have grammatical tense in the same way as English. Instead, it marks aspect — whether an action is ongoing, completed, or not specified."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Aspect",
+        "Example"
+      ],
+      "rows": [
+        [
+          "(none)",
+          "Simple / unspecified",
+          "jISop (I eat / I ate / I will eat)"
+        ],
+        [
+          "-pu'",
+          "Perfective — action completed",
+          "jISoppu' (I have eaten / I ate [and it is done])"
+        ],
+        [
+          "-ta'",
+          "Perfective — intentional completion",
+          "jISopta' (I have eaten [deliberately])"
+        ],
+        [
+          "-taH",
+          "Continuous — action ongoing",
+          "jISoptaH (I am eating / I keep eating)"
+        ],
+        [
+          "-lI'",
+          "Continuous — ongoing with definite endpoint",
+          "jISoplI' (I am eating [and will stop when full])"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Time words such as DaHjaj (today), wa'leS (tomorrow), wa'Hu' (yesterday) are used to establish temporal context rather than verb tense."
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 8 — Honorific"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "-neS",
+          "Honorific — used when addressing a superior; rare in modern usage"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verb Suffix Type 9 — Syntactic Markers"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-DI'",
+          "when, as soon as (temporal clause)",
+          "bIQongDI' (when you sleep)"
+        ],
+        [
+          "-chugh",
+          "if (conditional clause)",
+          "bISopchugh (if you eat)"
+        ],
+        [
+          "-pa'",
+          "before (temporal clause)",
+          "bISoppa' (before you eat)"
+        ],
+        [
+          "-vIS",
+          "while (simultaneous temporal clause; used with -taH )",
+          "bISoptaHvIS (while you are eating)"
+        ],
+        [
+          "-mo'",
+          "due to, because of",
+          "bIQongmo' (because you sleep)"
+        ],
+        [
+          "-bogh",
+          "which, that (relative clause marker)",
+          "leghbogh yaS (the officer who sees)"
+        ],
+        [
+          "-wI'",
+          "one who (nominaliser — person/thing that does the action)",
+          "jatlhwI' (speaker, one who speaks)"
+        ],
+        [
+          "-ghach",
+          "nominaliser — converts verb to abstract noun",
+          "naDHa'ghach (discommendation)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Negation with -be'"
+    },
+    {
+      "type": "p",
+      "text": "Negation is expressed with the suffix -be' , which is unusual in that it is a rovers — it attaches after the suffix it negates. Placed after the verb root, it negates the whole action: jISopbe' (I do not eat). Placed after another suffix, it negates that suffix: jISopnISbe' (I do not need to eat)."
+    },
+    {
+      "type": "p",
+      "text": "The related suffix -Qo' means \"don't!\" (refusal or command not to): yISopQo' (don't eat!)."
+    },
+    {
+      "type": "h2",
+      "text": "8. Question Words"
+    },
+    {
+      "type": "p",
+      "text": "Klingon question words are placed at the end of the sentence, unlike English where they go at the beginning. Yes/no questions are marked with the question particle -'a' attached to the verb."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Klingon",
+        "English",
+        "Example sentence",
+        "Translation"
+      ],
+      "rows": [
+        [
+          "nuq",
+          "what",
+          "nuq bIneH",
+          "What do you want?"
+        ],
+        [
+          "nuqneH",
+          "what do you want? (greeting)",
+          "nuqneH",
+          "What do you want? (standard greeting)"
+        ],
+        [
+          "'Iv",
+          "who",
+          "SoH 'Iv",
+          "Who are you?"
+        ],
+        [
+          "ghorgh",
+          "when",
+          "bIpaw ghorgh",
+          "When do you arrive?"
+        ],
+        [
+          "qatlh",
+          "why",
+          "bIjatlh qatlh",
+          "Why do you speak?"
+        ],
+        [
+          "chay'",
+          "how",
+          "chay' bIQong",
+          "How do you sleep?"
+        ],
+        [
+          "nuqDaq",
+          "where",
+          "nuqDaq yaH",
+          "Where is the duty station?"
+        ],
+        [
+          "-'a'",
+          "(yes/no question suffix on verb)",
+          "bISop'a'",
+          "Do you eat?"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Note that nuqneH is the idiomatic Klingon greeting — literally \"What do you want?\" — and carries no rudeness. Klingon culture does not value pleasantries, so this direct question is the conventional way to open a conversation."
+    },
+    {
+      "type": "h2",
+      "text": "9. Numbers"
+    },
+    {
+      "type": "p",
+      "text": "Klingon uses a base-10 number system. Numbers precede the nouns they modify and are not marked for agreement."
+    },
+    {
+      "type": "h3",
+      "text": "Cardinal Numbers"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Number",
+        "Klingon",
+        "Number",
+        "Klingon"
+      ],
+      "rows": [
+        [
+          "0",
+          "pagh",
+          "10",
+          "wa'maH"
+        ],
+        [
+          "1",
+          "wa'",
+          "11",
+          "wa'maH wa'"
+        ],
+        [
+          "2",
+          "cha'",
+          "20",
+          "cha'maH"
+        ],
+        [
+          "3",
+          "wej",
+          "30",
+          "wejmaH"
+        ],
+        [
+          "4",
+          "loS",
+          "100",
+          "wa'vatlh"
+        ],
+        [
+          "5",
+          "vagh",
+          "200",
+          "cha'vatlh"
+        ],
+        [
+          "6",
+          "jav",
+          "1,000",
+          "wa'SaD"
+        ],
+        [
+          "7",
+          "Soch",
+          "1,000,000",
+          "wa'netlh"
+        ],
+        [
+          "8",
+          "chorgh",
+          "1,000,000,000",
+          "wa'bIp"
+        ],
+        [
+          "9",
+          "Hut",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Forming Larger Numbers"
+    },
+    {
+      "type": "p",
+      "text": "Tens are formed by combining the digit with maH (ten): wejmaH (30), vaghmaH (50). For compound numbers, the higher unit comes first: wejmaH loS (34), wa'vatlh cha'maH vagh (125)."
+    },
+    {
+      "type": "h3",
+      "text": "Ordinals"
+    },
+    {
+      "type": "p",
+      "text": "Ordinal numbers are formed by adding -DIch to the cardinal: wa'DIch (first), cha'DIch (second), wejDIch (third), loSDIch (fourth)."
+    },
+    {
+      "type": "h2",
+      "text": "10. Useful Phrases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Klingon",
+        "English"
+      ],
+      "rows": [
+        [
+          "nuqneH",
+          "What do you want? (standard greeting)"
+        ],
+        [
+          "Qapla'",
+          "Success! (farewell / toast)"
+        ],
+        [
+          "batlh bIHeghjaj",
+          "May you die with honour"
+        ],
+        [
+          "HIja' / HISlaH",
+          "Yes"
+        ],
+        [
+          "ghobe'",
+          "No"
+        ],
+        [
+          "tlhIngan jIH",
+          "I am a Klingon"
+        ],
+        [
+          "jIyajbe'",
+          "I don't understand"
+        ],
+        [
+          "yIjatlh",
+          "Speak! (command)"
+        ],
+        [
+          "pe'vIl mu'qaDmey tIbach",
+          "Curse well (forcefully fire your curses)"
+        ],
+        [
+          "qamuSHa'",
+          "I love you (lit. \"I un-hate you\")"
+        ],
+        [
+          "jIlaDqang",
+          "I am willing to read"
+        ],
+        [
+          "tlhIngan Hol vIjatlh",
+          "I speak Klingon"
+        ],
+        [
+          "bIjatlh 'e' yImev",
+          "Shut up! (lit. \"Stop that speaking\")"
+        ],
+        [
+          "Heghlu'meH QaQ jajvam",
+          "Today is a good day to die"
+        ],
+        [
+          "SoH'e' vImuSHa'",
+          "I love you (emphatic)"
+        ],
+        [
+          "wo' batlhvaD",
+          "For the honour of the Empire"
+        ],
+        [
+          "jagh yIHoH",
+          "Kill the enemy! (command)"
+        ],
+        [
+          "nuq 'oH ponglIj'e'",
+          "What is your name?"
+        ],
+        [
+          "… 'oH pongwIj'e'",
+          "My name is …"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The phrase Qapla' (success!) is by far the most widely recognised Klingon expression and is used both as a farewell and as a toast or exclamation of celebration. It is the Klingon equivalent of \"goodbye\" and \"congratulations\" combined."
+    },
+    {
+      "type": "h2",
+      "text": "11. Learning Resources"
+    },
+    {
+      "type": "li",
+      "text": "The Klingon Dictionary by Marc Okrand (Pocket Books, 1985; expanded ed. 1992) — the canonical grammar and dictionary of the language. The authoritative primary source, written by the language's creator. Every serious learner needs this book."
+    },
+    {
+      "type": "li",
+      "text": "Klingon for the Galactic Traveler by Marc Okrand (Pocket Books, 1997) — an expansion of the dictionary focusing on colloquial usage, dialects, and cultural context. Essential for intermediate learners."
+    },
+    {
+      "type": "li",
+      "text": "The Klingon Language Institute (KLI) — kli.org — the premier organisation for Klingon language study. Publishes the journal HolQeD , organises annual conferences (qep'a'), hosts a comprehensive online dictionary (boQwI'), and coordinates translation projects. The central hub for the Klingon-speaking community worldwide."
+    },
+    {
+      "type": "li",
+      "text": "Duolingo Klingon course — available at duolingo.com — a free interactive course covering basic vocabulary, pronunciation, and grammar in structured lessons. Good for beginners seeking gamified introduction to the language."
+    },
+    {
+      "type": "li",
+      "text": "boQwI' (Assistant) — a mobile application (Android) developed by KLI member De'vID that provides an offline Klingon dictionary, grammar reference, and prefix/suffix breakdown. Widely considered the best Klingon reference tool available on mobile. Also accessible as a web resource through the KLI."
+    },
+    {
+      "type": "li",
+      "text": "Hol 'ampaS — a Klingon language learning app designed for mobile devices, offering lessons and vocabulary training in tlhIngan Hol. Provides structured learning content beyond what a dictionary alone offers."
+    },
+    {
+      "type": "li",
+      "text": "Memory Alpha — memory-alpha.fandom.com — the Star Trek wiki, which includes detailed articles on the Klingon language, culture, and in-universe linguistic history. Useful for cultural context alongside language study."
+    },
+    {
+      "type": "li",
+      "text": "qep'a' — the annual gathering of Klingon speakers organised by the KLI, where Marc Okrand has historically appeared to release new vocabulary and answer grammar questions. Announcements are tracked through the KLI mailing list and the Klingon language community on social media."
+    },
+    {
+      "type": "h2",
+      "text": "12. Learning Tips"
+    },
+    {
+      "type": "li",
+      "text": "Get comfortable with OVS order immediately. The Object–Verb–Subject construction feels deeply unnatural to English speakers. The sooner you stop mentally translating to SVO and start reading Klingon on its own terms, the faster progress will come. Drill simple sentences: Soj vISop (I eat food), yaS vIlegh (I see the officer)."
+    },
+    {
+      "type": "li",
+      "text": "Learn the verb prefix table. The 29 prefixes that encode subject and object simultaneously are the single most important table in the grammar. Memorising at least the most common combinations — null prefix (he/she/it), jI- , bI- , ma- , vI- , Da- , mu- , Du- , qa- — unlocks the majority of Klingon sentences."
+    },
+    {
+      "type": "li",
+      "text": "Respect the capitalisation. The Latin transliteration is case-sensitive. D ≠ d , H ≠ h , I ≠ i , Q ≠ q , S ≠ s . Writing Klingon in all lower-case or standard English capitalisation produces errors that obscure meaning completely."
+    },
+    {
+      "type": "li",
+      "text": "Practise the difficult sounds early. The consonants tlh , q , Q , H , gh , and the retroflex D and S have no English equivalents. Audio from Star Trek films and from KLI recordings is invaluable. Poor pronunciation is an ongoing issue in Klingon communities and practising from the beginning saves considerable remediation later."
+    },
+    {
+      "type": "li",
+      "text": "Use the KLI and boQwI'. The KLI mailing list (tlhIngan-Hol) has been active since 1992 and is staffed by fluent speakers who answer grammar questions. The boQwI' app parses Klingon words into their component roots and suffixes, making it an excellent analytical tool."
+    },
+    {
+      "type": "li",
+      "text": "Learn the suffix types in order. The nine verb suffix types and five noun suffix types must stack in a fixed sequence. Rather than memorising individual suffixes in isolation, learn them in their type groups so the ordering feels natural."
+    },
+    {
+      "type": "li",
+      "text": "Embrace aspect over tense. Klingon does not have obligatory grammatical tense. Aspect (whether an action is complete, ongoing, or unspecified) is what the grammar tracks. Combine aspect suffixes with time words to express when things happen."
+    },
+    {
+      "type": "p",
+      "text": "Heghlu'meH QaQ jajvam. — Today is a good day to die."
+    },
+    {
+      "type": "h2",
+      "text": "Notes"
+    },
+    {
+      "type": "li",
+      "text": "Klingon Language Institute, \"Development and Use of the Klingon Language,\" accessed June 3, 2026, https://www.kli.org/about-klingon/klingon-history/ ."
+    },
+    {
+      "type": "h2",
+      "text": "Bibliography"
+    },
+    {
+      "type": "p",
+      "text": "Klingon Language Institute. \"Development and Use of the Klingon Language.\" Accessed June 3, 2026. https://www.kli.org/about-klingon/klingon-history/ ."
+    }
+  ]
+}

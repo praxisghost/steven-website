@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import type { Article } from "@/lib/content";
+import { leadText, type Article } from "@/lib/content";
 
 // Hub for a technology sub-section: section intro + card grid of child pages.
 // Gestalt proximity (uniform grid), Fitts's Law (large card targets).
@@ -15,7 +15,7 @@ export default function SubHub({
 }) {
   return (
     <main className="mx-auto max-w-wide px-6 py-16">
-      <PageHeader title={hub.title} lead={hub.blocks.find((b) => b.type === "p")?.text} />
+      <PageHeader title={hub.title} lead={leadText(hub.blocks)} />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {items.map((p) => (
           <Link
@@ -25,7 +25,7 @@ export default function SubHub({
           >
             <span className="text-lg group-hover:text-accent">{p.title}</span>
             <p className="mt-2 line-clamp-2 text-sm text-muted">
-              {p.blocks.find((b) => b.type === "p")?.text}
+              {leadText(p.blocks)}
             </p>
           </Link>
         ))}

@@ -1,0 +1,432 @@
+{
+  "slug": "gold-list",
+  "title": "Gold List Method",
+  "date": null,
+  "source": "/website/public/gold-list.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. What the Gold List Method Is"
+    },
+    {
+      "type": "h3",
+      "text": "Origin"
+    },
+    {
+      "type": "p",
+      "text": "The Gold List Method was developed in the late 20th century by the British polyglot David James (a.k.a. Uncle Davey) , who used and refined it across more than 20 languages. He published the system in detail on his YouTube channel and personal blog beginning in 2006, where it gradually built a devoted community of language learners drawn to its calm, analogue feel."
+    },
+    {
+      "type": "h3",
+      "text": "Philosophy"
+    },
+    {
+      "type": "p",
+      "text": "The Gold List Method rests on a simple claim: vocabulary moves into long-term memory most efficiently when it is recorded carefully, in writing, and then revisited only after enough time has passed for the conscious memory of it to fade. The method explicitly avoids active recall drills — no flashcards, no quizzes, no rapid-fire practice. Instead, you copy out vocabulary into a notebook, leave it alone for at least two weeks, and on the return visit notice (without effort) that a portion of it has settled into long-term memory on its own."
+    },
+    {
+      "type": "p",
+      "text": "James's framing is that conscious effort engages short-term memory and creates anxiety, while the act of unhurried, attentive writing — followed by a long pause — quietly transfers a stable fraction of words into long-term memory. The Gold List Method therefore treats the long pause itself as the active ingredient."
+    },
+    {
+      "type": "h3",
+      "text": "How It Differs from Spaced Repetition Systems (SRS)"
+    },
+    {
+      "type": "p",
+      "text": "The Gold List is not better or worse than SRS — they target different cognitive systems. Many learners use both in parallel: SRS for high-frequency core vocabulary that needs to be fast, and the Gold List for the long tail of less-common words where speed of recall is less important than long-term stability."
+    },
+    {
+      "type": "h2",
+      "text": "2. Step-by-Step Instructions"
+    },
+    {
+      "type": "h3",
+      "text": "What You Need"
+    },
+    {
+      "type": "li",
+      "text": "A hardcover, lined notebook (A5 or A4) — large enough to host hundreds of words over several months."
+    },
+    {
+      "type": "li",
+      "text": "A pen you enjoy writing with."
+    },
+    {
+      "type": "li",
+      "text": "A vocabulary source: a frequency list, a graded reader, a textbook glossary, or your own reading notes."
+    },
+    {
+      "type": "li",
+      "text": "A calm space and 20–30 unhurried minutes."
+    },
+    {
+      "type": "h3",
+      "text": "The Head List"
+    },
+    {
+      "type": "p",
+      "text": "The Head List is your first encounter with a batch of new vocabulary. Each Head List contains exactly 25 items . Open a fresh two-page spread in your notebook and reserve the upper-left section of the left-hand page for it. Then:"
+    },
+    {
+      "type": "li",
+      "text": "Number each line 1 through 25."
+    },
+    {
+      "type": "li",
+      "text": "For each line, write the target-language word, then a dash or arrow, then its translation. Add any gender, plural form, or short example sentence you wish."
+    },
+    {
+      "type": "li",
+      "text": "Write slowly and attentively. Say each word aloud once as you write it."
+    },
+    {
+      "type": "li",
+      "text": "Date the page in the top corner."
+    },
+    {
+      "type": "li",
+      "text": "Do not test yourself afterwards. Close the notebook."
+    },
+    {
+      "type": "p",
+      "text": "That is the entire first session. Do one Head List per study session — never two in a row in the same notebook."
+    },
+    {
+      "type": "h3",
+      "text": "The Mandatory Pause"
+    },
+    {
+      "type": "p",
+      "text": "Wait at least two weeks before returning to that Head List. Two weeks is the minimum threshold David James identified for the conscious memory of an item to dissipate enough that a quiet recognition can take its place. There is no maximum — three weeks, a month, or longer are all fine."
+    },
+    {
+      "type": "p",
+      "text": "During the pause you can work on other Head Lists. A reasonable rhythm is one Head List per day across different notebook spreads, so that by week three you have 14+ Head Lists waiting to be distilled."
+    },
+    {
+      "type": "h3",
+      "text": "The First Distillation (Head → D1)"
+    },
+    {
+      "type": "p",
+      "text": "When the two weeks have elapsed, return to a Head List and read it through calmly. Do not test, do not strain. Simply ask of each item: \"Do I still recognise this word's meaning without effort?\" If yes, the word has moved into long-term memory and you can drop it. If no, copy it onto a new list — the D1 distillation — in the upper-right section of the left-hand page."
+    },
+    {
+      "type": "p",
+      "text": "Expect roughly 30% of items to be dropped (i.e. retained) on each distillation. Out of 25, you typically copy 17–18 forward to D1. The dropped items have been quietly acquired — without any drilling at all."
+    },
+    {
+      "type": "h3",
+      "text": "Subsequent Distillations"
+    },
+    {
+      "type": "p",
+      "text": "Each distillation follows the same rules:"
+    },
+    {
+      "type": "li",
+      "text": "Wait at least two weeks between distillations of the same list."
+    },
+    {
+      "type": "li",
+      "text": "Read calmly, with no testing or recall pressure."
+    },
+    {
+      "type": "li",
+      "text": "Copy forward only the items you don't yet recognise effortlessly."
+    },
+    {
+      "type": "li",
+      "text": "Each new distillation goes in the next quadrant of the two-page spread."
+    },
+    {
+      "type": "h3",
+      "text": "Notebook Layout"
+    },
+    {
+      "type": "p",
+      "text": "The classic Gold List notebook layout uses a two-page spread divided into quadrants:"
+    },
+    {
+      "type": "h3",
+      "text": "Timing at a Glance"
+    },
+    {
+      "type": "h3",
+      "text": "Vocabulary Selection"
+    },
+    {
+      "type": "li",
+      "text": "Frequency lists are ideal early on: work through the top 1,000–3,000 most common words first."
+    },
+    {
+      "type": "li",
+      "text": "Reading harvests — words you encounter naturally in books or articles — produce particularly sticky Gold Lists, because each item already has personal context."
+    },
+    {
+      "type": "li",
+      "text": "Avoid mixing too many random unrelated words in a single Head List; thematic batches (food, weather, travel) tend to retain slightly better."
+    },
+    {
+      "type": "li",
+      "text": "Don't pick words you already half-know: the method is for genuinely new vocabulary."
+    },
+    {
+      "type": "h3",
+      "text": "Notebook Organisation"
+    },
+    {
+      "type": "li",
+      "text": "Use one notebook per language."
+    },
+    {
+      "type": "li",
+      "text": "Date every list — Head and every distillation."
+    },
+    {
+      "type": "li",
+      "text": "Number your Head Lists sequentially (HL-001, HL-002…) for easy tracking."
+    },
+    {
+      "type": "li",
+      "text": "Keep a one-page index at the front showing which Head List numbers are on which page."
+    },
+    {
+      "type": "li",
+      "text": "Reserve the last few pages of the notebook for a personal \"graduated\" list — words you've fully dropped — if you want a visible measure of progress."
+    },
+    {
+      "type": "h2",
+      "text": "3. Benefits & Limitations"
+    },
+    {
+      "type": "h3",
+      "text": "Claimed Advantages"
+    },
+    {
+      "type": "li",
+      "text": "Low cognitive load. No drilling, no testing, no streaks. Sessions are calming rather than draining."
+    },
+    {
+      "type": "li",
+      "text": "Genuinely long-term retention. Items that drop out of the lists have been observed to remain stable for years, not weeks."
+    },
+    {
+      "type": "li",
+      "text": "Analogue and screen-free. A welcome contrast to digital tools for learners experiencing screen fatigue."
+    },
+    {
+      "type": "li",
+      "text": "The act of handwriting appears to deepen encoding for many learners, particularly for orthography (spelling, accents, scripts)."
+    },
+    {
+      "type": "li",
+      "text": "Forgiving of irregular schedules. Missing two days — or two months — does not break the system the way an Anki backlog can."
+    },
+    {
+      "type": "li",
+      "text": "Self-pacing built in. The mandatory 2-week pause prevents over-study, a common cause of burnout."
+    },
+    {
+      "type": "h3",
+      "text": "Potential Drawbacks"
+    },
+    {
+      "type": "li",
+      "text": "Slower than SRS in raw words-per-week. 25 new items per day caps acquisition at ~9,000 per year, vs. far higher peak rates with disciplined SRS use."
+    },
+    {
+      "type": "li",
+      "text": "No active recall practice. Recognition is built far more strongly than spontaneous production. Output practice must come from elsewhere."
+    },
+    {
+      "type": "li",
+      "text": "Hard to verify retention. The 30% claim is anecdotal; individual results vary widely and the method offers no built-in test of what was actually retained."
+    },
+    {
+      "type": "li",
+      "text": "Requires sustained discipline over months to show its benefits — there is no quick payoff."
+    },
+    {
+      "type": "li",
+      "text": "Calendar overhead. Managing distillation dates for dozens of Head Lists can become its own administrative chore."
+    },
+    {
+      "type": "h3",
+      "text": "Ideal Learner Types"
+    },
+    {
+      "type": "li",
+      "text": "Learners who dislike or have burned out on flashcard apps."
+    },
+    {
+      "type": "li",
+      "text": "Learners who enjoy handwriting, journaling, or analogue tools."
+    },
+    {
+      "type": "li",
+      "text": "Polyglots maintaining several languages simultaneously, where one Anki deck per language becomes unmanageable."
+    },
+    {
+      "type": "li",
+      "text": "Learners playing the long game — building vocabulary across years, not weeks."
+    },
+    {
+      "type": "li",
+      "text": "Anyone whose schedule is unpredictable and who needs a method that survives gaps."
+    },
+    {
+      "type": "h3",
+      "text": "Best Use Cases"
+    },
+    {
+      "type": "li",
+      "text": "Building the second 5,000 words of a language (the long tail) once core vocabulary is in place."
+    },
+    {
+      "type": "li",
+      "text": "Maintaining vocabulary in languages you are no longer actively studying."
+    },
+    {
+      "type": "li",
+      "text": "Pairing with extensive reading or TPRS — harvesting words from authentic input."
+    },
+    {
+      "type": "li",
+      "text": "Cementing vocabulary in writing systems that require visual familiarity (e.g. CJK characters)."
+    },
+    {
+      "type": "h2",
+      "text": "4. Practical Examples"
+    },
+    {
+      "type": "h3",
+      "text": "Sample Head List — Spanish (HL-001)"
+    },
+    {
+      "type": "p",
+      "text": "Date: 2026-04-01. Format: target word — translation, with brief grammar note."
+    },
+    {
+      "type": "p",
+      "text": "Notice the words are tightly themed (a workshop scene). Thematic batching gives each item context, making the retained 30% slightly stickier."
+    },
+    {
+      "type": "h3",
+      "text": "Sample First Distillation (D1) — same Head List, 14 days later"
+    },
+    {
+      "type": "p",
+      "text": "Date: 2026-04-15. You re-read HL-001 calmly. The following items were already recognised without effort and are dropped; the remaining 17 are copied forward into D1."
+    },
+    {
+      "type": "li",
+      "text": "Dropped (retained without effort): la madera, el suelo, el techo, el martillo, el clavo, la herramienta, colgar, el ladrillo (8 items)."
+    },
+    {
+      "type": "li",
+      "text": "Copied forward to D1: the remaining 17."
+    },
+    {
+      "type": "h3",
+      "text": "Sample Second Distillation (D2) — 14 days after D1"
+    },
+    {
+      "type": "p",
+      "text": "Date: 2026-04-29. You read D1 calmly. ~5 more items have settled into long-term memory and can be dropped; the remaining ~12 move forward into D2. The same pattern repeats every two weeks until the list empties."
+    },
+    {
+      "type": "h3",
+      "text": "Suggested Workflow for a New Language"
+    },
+    {
+      "type": "li",
+      "text": "Buy a hardcover notebook dedicated to the language."
+    },
+    {
+      "type": "li",
+      "text": "Build your first Head List from the top 25 words of a frequency list."
+    },
+    {
+      "type": "li",
+      "text": "Do one Head List per day for the next 14 days, working sequentially down the frequency list (Head Lists HL-001 through HL-014, on consecutive notebook spreads)."
+    },
+    {
+      "type": "li",
+      "text": "From day 15 onward, alternate: each study session is either a fresh Head List or a distillation of the oldest list that has waited at least 14 days."
+    },
+    {
+      "type": "li",
+      "text": "After a few months you will have a stable rolling routine of one list per day, mostly distillations, with new vocabulary continuously entering at the top."
+    },
+    {
+      "type": "li",
+      "text": "Pair with light reading or listening so the words appear in context outside the notebook."
+    },
+    {
+      "type": "h3",
+      "text": "Suggested Workflow for an Existing Language"
+    },
+    {
+      "type": "li",
+      "text": "Open a graded reader, a podcast transcript, or any authentic text at your current level."
+    },
+    {
+      "type": "li",
+      "text": "As you read or listen, jot down unknown words on a scratch sheet."
+    },
+    {
+      "type": "li",
+      "text": "At the end of the day, transfer 25 of those words into a fresh Head List."
+    },
+    {
+      "type": "li",
+      "text": "Continue as above — the harvested words come with built-in context, which dramatically improves retention."
+    },
+    {
+      "type": "h2",
+      "text": "5. Comparison with Other Methods"
+    },
+    {
+      "type": "p",
+      "text": "None of these methods needs to be exclusive. A balanced learner's toolkit might combine TPRS for grammar and listening, Anki for rapid recognition of the most common 1,000–2,000 words, the Gold List for the long tail of low-frequency vocabulary, and immersion to tie everything to real-world meaning."
+    },
+    {
+      "type": "h2",
+      "text": "6. Tips for Success"
+    },
+    {
+      "type": "li",
+      "text": "Write the date on every list. Without dates the 2-week minimum is impossible to enforce."
+    },
+    {
+      "type": "li",
+      "text": "Resist the urge to test. If you find yourself quizzing on a word during distillation, you are doing SRS, not the Gold List."
+    },
+    {
+      "type": "li",
+      "text": "Trust the 30%. If you drop fewer items than expected, the items themselves may be too abstract, too similar, or not yet supported by any context outside the notebook. Add some reading."
+    },
+    {
+      "type": "li",
+      "text": "Keep batches thematic where you can. Twenty-five random words retain worse than twenty-five words from a single topic."
+    },
+    {
+      "type": "li",
+      "text": "Don't switch notebooks mid-language. The notebook is your archive — losing it loses years of progress."
+    },
+    {
+      "type": "li",
+      "text": "Pair it with one input source. A graded reader, a TPRS routine, a podcast — anything that brings the words back to you in context between distillations."
+    },
+    {
+      "type": "li",
+      "text": "Be patient. The method does not feel like it is working in the first month. By the third month, the cumulative passive vocabulary becomes obvious."
+    },
+    {
+      "type": "p",
+      "text": "The Gold List is a long, slow path. If you finish a session feeling tired, you have done it wrong; the entire point is that 20 unhurried minutes a day, repeated for years, quietly delivers a vocabulary that drills could never match."
+    }
+  ]
+}

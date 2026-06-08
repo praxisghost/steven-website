@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import { getCollection, type Collection } from "@/lib/content";
+import { getCollection, leadText, type Collection } from "@/lib/content";
 
 // Reusable hub: lists every article in a collection as a card linking to its page.
 // Gestalt proximity (uniform card grid), Fitts's Law (large targets), F-pattern leads.
@@ -31,7 +31,7 @@ export default function CollectionIndex({
               <span className="text-lg group-hover:text-accent">{p.title}</span>
             </div>
             <p className="mt-2 line-clamp-2 text-sm text-muted">
-              {p.blocks.find((b) => b.type === "p")?.text}
+              {leadText(p.blocks)}
             </p>
           </Link>
         ))}

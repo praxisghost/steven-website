@@ -13,12 +13,23 @@ export default function LanguageLearning() {
       />
       <HubGrid
         items={[
-          { label: "Methods & Tools", emoji: "🛠️", note: "Anki, comprehensible input, shadowing, TPRS & more." },
+          {
+            label: "Methods & Tools",
+            emoji: "🛠️",
+            href: "/language-learning/methods",
+            note: "Anki, comprehensible input, shadowing, TPRS & more.",
+          },
           {
             label: "Pronunciation Guides",
             emoji: "📘",
             href: "/language-learning/pronunciation",
             note: "Writing systems, IPA & common mistakes across dozens of languages.",
+          },
+          {
+            label: "Con-Lang",
+            emoji: "🌐",
+            href: "/language-learning/con-lang",
+            note: "Esperanto, Novial, Ido, Interslavic, Klingon & Interlingua.",
           },
         ]}
       />

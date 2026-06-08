@@ -1,0 +1,1586 @@
+{
+  "slug": "interslavic",
+  "title": "Interslavic",
+  "date": null,
+  "source": "/website/public/interslavic.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. Introduction & History"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic ( Medžuslovjansky in its own Latin script, Меджусловјанскы in Cyrillic) is a naturalistic zonal auxiliary language designed to be comprehensible to speakers of any Slavic language without prior study. Unlike purely artistic constructed languages, Interslavic is grounded entirely in the common Slavic heritage: its vocabulary, grammar, and phonology are derived statistically and historically from the real Slavic languages rather than invented from scratch."
+    },
+    {
+      "type": "p",
+      "text": "The project traces its origins to two converging efforts. Jan van Steenbergen , a Dutch Slavicist, developed a project called Slovianski starting in 2006, focusing on a naturalistic grammar built from the most common features shared across the Slavic family. Simultaneously, Czech linguist Vojtěch Merunka was working on Novoslovienski (later Novoslověnsky ), a more Church Slavonic-influenced reconstruction. In 2011 , these two major projects — along with several smaller ones — merged to form a single unified standard called Interslavic ( Medžuslovjansky )."
+    },
+    {
+      "type": "p",
+      "text": "Unlike Esperanto or Ido, Interslavic has no single inventor who designed it from first principles. Instead, it emerged from collaborative research into the shared structures of the approximately 20 living Slavic languages , which are spoken by roughly 400 million people across Eastern and Central Europe. The result is a language that reads as simultaneously archaic and familiar to any Slavic speaker — as if an ancestor language had been reconstructed and lightly modernised."
+    },
+    {
+      "type": "p",
+      "text": "Interslavic attracted significant international attention when it was used as a fictional Slavic language in the 2021 Czech-Slovak historical film Medievel (Czech: Jan Žižka ). This mainstream exposure introduced millions of viewers to the language and sparked renewed interest in the project. The language has since grown a substantial online community and continues to be developed at interslavic-language.org ."
+    },
+    {
+      "type": "h3",
+      "text": "Philosophical Approach"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic is deliberately naturalistic : it aims to look and feel like a real Slavic language that could plausibly have evolved. This contrasts with a schematic approach (like Esperanto) that prioritises regularity and learnability over naturalness. The trade-off is that Interslavic has more irregular forms and a fuller case system than an artificial language would, but it gains the enormous advantage of immediate partial comprehensibility to hundreds of millions of native Slavic speakers."
+    },
+    {
+      "type": "h2",
+      "text": "2. Scripts: Latin and Cyrillic"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic can be written in either the Latin alphabet or the Cyrillic alphabet , and both are considered fully official. The choice of script often reflects the writer's background: West Slavic speakers (Polish, Czech, Slovak) tend to use Latin, while East Slavic and South Slavic speakers (Russian, Ukrainian, Serbian, Bulgarian) tend to use Cyrillic."
+    },
+    {
+      "type": "h3",
+      "text": "The Interslavic Latin Alphabet"
+    },
+    {
+      "type": "p",
+      "text": "The standard Latin orthography uses diacritics to cover sounds absent from the basic 26-letter Latin set. A simpler \"ASCII-friendly\" variant exists that uses digraphs instead of diacritics, for use in plain-text environments."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Latin",
+        "Cyrillic",
+        "IPA",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "A a",
+          "А а",
+          "/a/",
+          "As in father"
+        ],
+        [
+          "B b",
+          "Б б",
+          "/b/",
+          ""
+        ],
+        [
+          "C c",
+          "Ц ц",
+          "/ts/",
+          "Like ts in cats"
+        ],
+        [
+          "Č č",
+          "Ч ч",
+          "/tʃ/",
+          "Like ch in church"
+        ],
+        [
+          "D d",
+          "Д д",
+          "/d/",
+          ""
+        ],
+        [
+          "DŽ dž",
+          "ДЖ дж",
+          "/dʒ/",
+          "Like j in judge"
+        ],
+        [
+          "E e",
+          "Е е",
+          "/ɛ/",
+          "As in bed"
+        ],
+        [
+          "Ě ě",
+          "Є є",
+          "/jɛ/ or /ɛ/",
+          "Historically distinct; often /je/ after consonants"
+        ],
+        [
+          "F f",
+          "Ф ф",
+          "/f/",
+          "Mostly in loanwords"
+        ],
+        [
+          "G g",
+          "Г г",
+          "/ɡ/",
+          ""
+        ],
+        [
+          "H h",
+          "Х х",
+          "/x/",
+          "Velar fricative, like Scottish loch"
+        ],
+        [
+          "I i",
+          "И и",
+          "/i/",
+          ""
+        ],
+        [
+          "J j",
+          "Ј ј",
+          "/j/",
+          "Like y in yes"
+        ],
+        [
+          "K k",
+          "К к",
+          "/k/",
+          ""
+        ],
+        [
+          "L l",
+          "Л л",
+          "/l/",
+          ""
+        ],
+        [
+          "LJ lj",
+          "Љ љ",
+          "/lʲ/",
+          "Palatalised l, as in Serbian/Macedonian"
+        ],
+        [
+          "M m",
+          "М м",
+          "/m/",
+          ""
+        ],
+        [
+          "N n",
+          "Н н",
+          "/n/",
+          ""
+        ],
+        [
+          "NJ nj",
+          "Њ њ",
+          "/nʲ/",
+          "Palatalised n, like Spanish ñ"
+        ],
+        [
+          "O o",
+          "О о",
+          "/ɔ/",
+          "As in more"
+        ],
+        [
+          "P p",
+          "П п",
+          "/p/",
+          ""
+        ],
+        [
+          "R r",
+          "Р р",
+          "/r/",
+          "Rolled/tapped r"
+        ],
+        [
+          "S s",
+          "С с",
+          "/s/",
+          ""
+        ],
+        [
+          "Š š",
+          "Ш ш",
+          "/ʃ/",
+          "Like sh in shoe"
+        ],
+        [
+          "T t",
+          "Т т",
+          "/t/",
+          ""
+        ],
+        [
+          "U u",
+          "У у",
+          "/u/",
+          ""
+        ],
+        [
+          "V v",
+          "В в",
+          "/v/",
+          ""
+        ],
+        [
+          "Y y",
+          "Ы ы",
+          "/ɨ/",
+          "Back vowel; like Russian ы"
+        ],
+        [
+          "Z z",
+          "З з",
+          "/z/",
+          ""
+        ],
+        [
+          "Ž ž",
+          "Ж ж",
+          "/ʒ/",
+          "Like s in measure"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "The Flavour System"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic allows writers to add a \"flavour\" — optional features that make the text lean more toward the vocabulary or phonology of a specific Slavic subgroup (e.g. South Slavic, East Slavic, West Slavic). This is not required; standard neutral Interslavic is fully intelligible without flavouring. The flavour system exists to help writers communicate more naturally with a specific target audience."
+    },
+    {
+      "type": "h2",
+      "text": "3. Pronunciation Guide"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic pronunciation is broadly phonemic — each letter represents one sound — though some variation is tolerated, reflecting the diversity of Slavic phonological systems. Speakers are encouraged to pronounce the language as close to their native Slavic phonology as is comfortable; mutual intelligibility is maintained across a wide range of accents."
+    },
+    {
+      "type": "h3",
+      "text": "Vowels"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Letter",
+        "IPA",
+        "English approximation",
+        "Example"
+      ],
+      "rows": [
+        [
+          "a",
+          "/a/",
+          "f a ther",
+          "voda (water)"
+        ],
+        [
+          "e",
+          "/ɛ/",
+          "b e d",
+          "nebo (sky)"
+        ],
+        [
+          "ě",
+          "/jɛ/ or /ɛ/",
+          "y e s",
+          "věk (age, century)"
+        ],
+        [
+          "i",
+          "/i/",
+          "mach i ne",
+          "mir (world, peace)"
+        ],
+        [
+          "o",
+          "/ɔ/",
+          "m o re",
+          "dom (house)"
+        ],
+        [
+          "u",
+          "/u/",
+          "m oo n",
+          "ruka (hand)"
+        ],
+        [
+          "y",
+          "/ɨ/",
+          "No English equivalent; like Russian ты",
+          "ryba (fish)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Key Consonant Notes"
+    },
+    {
+      "type": "li",
+      "text": "c is always /ts/ as in cats — never /k/ or /s/."
+    },
+    {
+      "type": "li",
+      "text": "č is /tʃ/ as in church ; š is /ʃ/ as in shoe ; ž is /ʒ/ as in measure ."
+    },
+    {
+      "type": "li",
+      "text": "h is a velar fricative /x/ (like German Bach or Scottish loch ), not the English /h/."
+    },
+    {
+      "type": "li",
+      "text": "j is always a glide /j/ as in yes ."
+    },
+    {
+      "type": "li",
+      "text": "r is a tapped or rolled /r/, as in Spanish or Polish."
+    },
+    {
+      "type": "li",
+      "text": "Consonant clusters can be long — e.g. zdravje (health). Native Slavic speakers handle these naturally; English speakers may need practice."
+    },
+    {
+      "type": "h3",
+      "text": "Stress"
+    },
+    {
+      "type": "p",
+      "text": "Stress in Interslavic is not rigidly fixed by rule, reflecting the variation across Slavic languages. As a practical guide, stress the same syllable you would in the nearest Slavic language you know . For new learners, stressing the first or penultimate syllable will generally be intelligible."
+    },
+    {
+      "type": "h2",
+      "text": "4. Nouns & Cases"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic nouns decline for seven cases and three genders (masculine, feminine, neuter), as well as two numbers (singular and plural). This mirrors the classical Slavic case system, which survives in varying degrees in Russian (6 cases), Polish (7), Czech (7), and others."
+    },
+    {
+      "type": "h3",
+      "text": "The Seven Cases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Name ( Medžuslovjansky )",
+        "Primary function"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "Imennik",
+          "Subject of the sentence"
+        ],
+        [
+          "Accusative",
+          "Vinnik",
+          "Direct object; direction of motion"
+        ],
+        [
+          "Genitive",
+          "Rodnik",
+          "Possession, absence, quantity"
+        ],
+        [
+          "Dative",
+          "Datelnik",
+          "Indirect object (to/for whom)"
+        ],
+        [
+          "Instrumental",
+          "Tvornik",
+          "Means, manner, accompaniment (with/by)"
+        ],
+        [
+          "Locative",
+          "Městnik",
+          "Location; always used with a preposition"
+        ],
+        [
+          "Vocative",
+          "Zovnik",
+          "Direct address"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Masculine Noun Declension: brat (brother)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "brat",
+          "brati"
+        ],
+        [
+          "Accusative",
+          "brata",
+          "bratov"
+        ],
+        [
+          "Genitive",
+          "brata",
+          "bratov"
+        ],
+        [
+          "Dative",
+          "bratu",
+          "bratam"
+        ],
+        [
+          "Instrumental",
+          "bratom",
+          "bratami"
+        ],
+        [
+          "Locative",
+          "bratu",
+          "bratah"
+        ],
+        [
+          "Vocative",
+          "brate",
+          "brati"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Feminine Noun Declension: žena (woman)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "žena",
+          "ženy"
+        ],
+        [
+          "Accusative",
+          "ženu",
+          "ženy"
+        ],
+        [
+          "Genitive",
+          "ženy",
+          "žen"
+        ],
+        [
+          "Dative",
+          "žene",
+          "ženam"
+        ],
+        [
+          "Instrumental",
+          "ženoju",
+          "ženami"
+        ],
+        [
+          "Locative",
+          "žene",
+          "ženah"
+        ],
+        [
+          "Vocative",
+          "ženo",
+          "ženy"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Neuter Noun Declension: slovo (word)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "slovo",
+          "slova"
+        ],
+        [
+          "Accusative",
+          "slovo",
+          "slova"
+        ],
+        [
+          "Genitive",
+          "slova",
+          "slov"
+        ],
+        [
+          "Dative",
+          "slovu",
+          "slovam"
+        ],
+        [
+          "Instrumental",
+          "slovom",
+          "slovami"
+        ],
+        [
+          "Locative",
+          "slovu",
+          "slovah"
+        ],
+        [
+          "Vocative",
+          "slovo",
+          "slova"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "These paradigms represent the standard declension patterns. Like all Slavic languages, Interslavic has subclasses (e.g. masculine animates, soft-stem nouns), but the above patterns cover the majority of nouns a beginner will encounter."
+    },
+    {
+      "type": "h2",
+      "text": "5. Pronouns"
+    },
+    {
+      "type": "h3",
+      "text": "Personal Pronouns"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Nom.",
+        "Acc.",
+        "Gen.",
+        "Dat.",
+        "Instr.",
+        "Loc."
+      ],
+      "rows": [
+        [
+          "I",
+          "ja",
+          "mene / me",
+          "mene",
+          "mně / mi",
+          "mnoju",
+          "mně"
+        ],
+        [
+          "you (sg.)",
+          "ty",
+          "tebe / te",
+          "tebe",
+          "tobě / ti",
+          "toboju",
+          "tobě"
+        ],
+        [
+          "he",
+          "on",
+          "jego / go",
+          "jego",
+          "jemu / mu",
+          "nim",
+          "njem"
+        ],
+        [
+          "she",
+          "ona",
+          "jeju / ju",
+          "jej",
+          "jej",
+          "neju",
+          "nej"
+        ],
+        [
+          "it",
+          "ono",
+          "jego / go",
+          "jego",
+          "jemu / mu",
+          "nim",
+          "njem"
+        ],
+        [
+          "we",
+          "my",
+          "nas",
+          "nas",
+          "nam",
+          "nami",
+          "nas"
+        ],
+        [
+          "you (pl.)",
+          "vy",
+          "vas",
+          "vas",
+          "vam",
+          "vami",
+          "vas"
+        ],
+        [
+          "they",
+          "oni",
+          "jih",
+          "jih",
+          "jim",
+          "nimi",
+          "nih"
+        ],
+        [
+          "oneself (refl.)",
+          "—",
+          "sebe / se",
+          "sebe",
+          "sobě / si",
+          "soboju",
+          "sobě"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Possessive Pronouns"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "English",
+        "Interslavic"
+      ],
+      "rows": [
+        [
+          "my",
+          "moj / moja / moje (m/f/n)"
+        ],
+        [
+          "your (sg.)",
+          "tvoj / tvoja / tvoje"
+        ],
+        [
+          "his / its",
+          "jego"
+        ],
+        [
+          "her",
+          "jej"
+        ],
+        [
+          "our",
+          "naš / naša / naše"
+        ],
+        [
+          "your (pl.)",
+          "vaš / vaša / vaše"
+        ],
+        [
+          "their",
+          "jih"
+        ],
+        [
+          "own (reflexive)",
+          "svoj / svoja / svoje"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Possessive adjectives agree in gender, number, and case with the noun they modify, just like regular adjectives."
+    },
+    {
+      "type": "h3",
+      "text": "Demonstrative Pronouns"
+    },
+    {
+      "type": "li",
+      "text": "toj / ta / to — that (m/f/n)"
+    },
+    {
+      "type": "li",
+      "text": "tutoj / tuta / tuto — this (m/f/n)"
+    },
+    {
+      "type": "li",
+      "text": "takoj / taka / tako — such, of that kind"
+    },
+    {
+      "type": "h2",
+      "text": "6. Adjectives"
+    },
+    {
+      "type": "p",
+      "text": "Adjectives in Interslavic agree with their noun in gender, number, and case. Each adjective has masculine, feminine, and neuter forms, and each form declines through all seven cases in both singular and plural."
+    },
+    {
+      "type": "h3",
+      "text": "Adjective Declension: dobry (good)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Masc. sg.",
+        "Fem. sg.",
+        "Neut. sg.",
+        "Plural (all)"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "dobry",
+          "dobra",
+          "dobre",
+          "dobri / dobre"
+        ],
+        [
+          "Accusative (anim.)",
+          "dobrogo",
+          "dobru",
+          "dobre",
+          "dobrih"
+        ],
+        [
+          "Genitive",
+          "dobrogo",
+          "dobroj",
+          "dobrogo",
+          "dobrih"
+        ],
+        [
+          "Dative",
+          "dobromu",
+          "dobroj",
+          "dobromu",
+          "dobrim"
+        ],
+        [
+          "Instrumental",
+          "dobrim",
+          "dobroju",
+          "dobrim",
+          "dobrimi"
+        ],
+        [
+          "Locative",
+          "dobrom",
+          "dobroj",
+          "dobrom",
+          "dobrih"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Comparison"
+    },
+    {
+      "type": "p",
+      "text": "The comparative is formed by adding the suffix -jejši / -ějši (or analytically with više ). The superlative adds the prefix naj- to the comparative."
+    },
+    {
+      "type": "li",
+      "text": "dobry — good"
+    },
+    {
+      "type": "li",
+      "text": "dobrějši — better"
+    },
+    {
+      "type": "li",
+      "text": "najdobrějši — best"
+    },
+    {
+      "type": "li",
+      "text": "stary — old → starějši — older → najstarějši — oldest"
+    },
+    {
+      "type": "h2",
+      "text": "7. Verbs"
+    },
+    {
+      "type": "p",
+      "text": "Interslavic verbs are conjugated for person (1st, 2nd, 3rd) and number (singular, plural), and have distinct tenses and moods. Most verbs belong to one of several conjugation classes, but the patterns are highly consistent with the other Slavic languages a learner may already know."
+    },
+    {
+      "type": "h3",
+      "text": "Present Tense: dělati (to do, to make)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "1st",
+          "ja dělaju",
+          "my dělajemo"
+        ],
+        [
+          "2nd",
+          "ty dělаješ",
+          "vy dělajete"
+        ],
+        [
+          "3rd",
+          "on/ona/ono dělajet",
+          "oni dělajut"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Past Tense"
+    },
+    {
+      "type": "p",
+      "text": "The past tense is formed using the l-participle (ending in -l ) combined with the present tense of the verb byti (to be) as an auxiliary. The l-participle agrees in gender and number with the subject."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Subject",
+        "Form",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Masculine singular",
+          "-l",
+          "on děl — he did / was doing"
+        ],
+        [
+          "Feminine singular",
+          "-la",
+          "ona děla — she did"
+        ],
+        [
+          "Neuter singular",
+          "-lo",
+          "ono dělo — it did"
+        ],
+        [
+          "Plural (all genders)",
+          "-li",
+          "oni děli — they did"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "With the auxiliary: ja jesm děl (I did/have done, masc.) · ona je děla (she did/has done). In colloquial speech and many contexts, the auxiliary is often omitted in third-person forms."
+    },
+    {
+      "type": "h3",
+      "text": "Future Tense"
+    },
+    {
+      "type": "p",
+      "text": "The future tense is formed with the future forms of byti as an auxiliary plus the infinitive:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "1st",
+          "ja budu dělati",
+          "my budemo dělati"
+        ],
+        [
+          "2nd",
+          "ty budeš dělati",
+          "vy budete dělati"
+        ],
+        [
+          "3rd",
+          "on budet dělati",
+          "oni budut dělati"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Perfective verbs (which express completion of an action) use their own present-tense forms to express the future, just as in Russian, Polish, and Czech."
+    },
+    {
+      "type": "h3",
+      "text": "Conditional"
+    },
+    {
+      "type": "p",
+      "text": "The conditional is formed with the particle by and the l-participle. It is equivalent to English \"would\":"
+    },
+    {
+      "type": "li",
+      "text": "ja by děl — I would do (masc.)"
+    },
+    {
+      "type": "li",
+      "text": "ona by děla — she would do"
+    },
+    {
+      "type": "li",
+      "text": "my by děli — we would do"
+    },
+    {
+      "type": "p",
+      "text": "Kdyby ja iměl dengy, ja by kupil dom. — If I had money, I would buy a house."
+    },
+    {
+      "type": "h3",
+      "text": "Imperative"
+    },
+    {
+      "type": "p",
+      "text": "The imperative is formed from the present stem:"
+    },
+    {
+      "type": "li",
+      "text": "2nd person singular: drop the present ending and add -j (for -aj stems) or -i : dělaj! (do!), govori! (speak!)"
+    },
+    {
+      "type": "li",
+      "text": "1st person plural (\"let's\"): dělajmo!"
+    },
+    {
+      "type": "li",
+      "text": "2nd person plural: dělajte!"
+    },
+    {
+      "type": "h3",
+      "text": "The Verb byti (to be)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Present sg.",
+        "Present pl.",
+        "Future sg."
+      ],
+      "rows": [
+        [
+          "1st",
+          "jesm",
+          "jesmo",
+          "budu"
+        ],
+        [
+          "2nd",
+          "jesi",
+          "jeste",
+          "budeš"
+        ],
+        [
+          "3rd",
+          "jest / je",
+          "sut",
+          "budet"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Verbal Aspect"
+    },
+    {
+      "type": "p",
+      "text": "Like all Slavic languages, Interslavic has a system of verbal aspect : each verb is either imperfective (ongoing, habitual, or incomplete actions) or perfective (completed, one-time actions). Most verbs come in aspect pairs:"
+    },
+    {
+      "type": "li",
+      "text": "pisati (to write, impf.) / napisati (to write [and finish], pf.)"
+    },
+    {
+      "type": "li",
+      "text": "dělati (to do, impf.) / sdělati (to do [and complete], pf.)"
+    },
+    {
+      "type": "li",
+      "text": "govoriti (to speak, impf.) / skazati (to say, pf.)"
+    },
+    {
+      "type": "p",
+      "text": "Aspect is one of the most challenging features for English speakers but is intuitive for anyone who already knows a Slavic language."
+    },
+    {
+      "type": "h2",
+      "text": "8. Adverbs & Prepositions"
+    },
+    {
+      "type": "h3",
+      "text": "Adverbs"
+    },
+    {
+      "type": "p",
+      "text": "Most adverbs are derived from adjectives by replacing the adjectival ending with -o or -e :"
+    },
+    {
+      "type": "li",
+      "text": "dobry (good) → dobro (well)"
+    },
+    {
+      "type": "li",
+      "text": "bystrý (fast) → bystro (quickly)"
+    },
+    {
+      "type": "li",
+      "text": "tihy (quiet) → tiho (quietly)"
+    },
+    {
+      "type": "h3",
+      "text": "Common Adverbs"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interslavic",
+        "English"
+      ],
+      "rows": [
+        [
+          "tady / tutaj",
+          "here"
+        ],
+        [
+          "tam",
+          "there"
+        ],
+        [
+          "gdě",
+          "where"
+        ],
+        [
+          "kogda / kada",
+          "when"
+        ],
+        [
+          "kako",
+          "how"
+        ],
+        [
+          "počemu / začto",
+          "why"
+        ],
+        [
+          "vždy / vsegda",
+          "always"
+        ],
+        [
+          "nikogda",
+          "never"
+        ],
+        [
+          "někogda",
+          "sometimes"
+        ],
+        [
+          "već / uže",
+          "already"
+        ],
+        [
+          "ješče",
+          "still, yet"
+        ],
+        [
+          "takože / takojže",
+          "also, too"
+        ],
+        [
+          "ne",
+          "not"
+        ],
+        [
+          "da",
+          "yes"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Common Prepositions"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Preposition",
+        "Case governed",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "v / vo",
+          "Locative (location); Accusative (direction)",
+          "in; into"
+        ],
+        [
+          "na",
+          "Locative (location); Accusative (direction)",
+          "on; onto"
+        ],
+        [
+          "s / so",
+          "Instrumental",
+          "with"
+        ],
+        [
+          "bez",
+          "Genitive",
+          "without"
+        ],
+        [
+          "do",
+          "Genitive",
+          "to, until, up to"
+        ],
+        [
+          "ot / od",
+          "Genitive",
+          "from, away from"
+        ],
+        [
+          "iz / iz-za",
+          "Genitive",
+          "out of; because of"
+        ],
+        [
+          "za",
+          "Accusative / Instrumental",
+          "for; behind"
+        ],
+        [
+          "po",
+          "Locative / Accusative",
+          "after; along; according to"
+        ],
+        [
+          "pod",
+          "Instrumental / Accusative",
+          "under; below"
+        ],
+        [
+          "nad",
+          "Instrumental / Accusative",
+          "above; over"
+        ],
+        [
+          "pred",
+          "Instrumental / Accusative",
+          "in front of; before"
+        ],
+        [
+          "pri",
+          "Locative",
+          "near; at; during"
+        ],
+        [
+          "o / ob",
+          "Locative",
+          "about, concerning"
+        ],
+        [
+          "meže / između",
+          "Instrumental",
+          "between, among"
+        ],
+        [
+          "prěz / kroz",
+          "Accusative",
+          "through, across"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "9. Mutual Intelligibility"
+    },
+    {
+      "type": "p",
+      "text": "Mutual intelligibility is the defining purpose of Interslavic. Because the language is built from statistically common features across all Slavic languages, a speaker of any Slavic language should be able to read or hear it and understand a substantial portion without having studied it. The degree of comprehension varies significantly by language family."
+    },
+    {
+      "type": "h3",
+      "text": "Comprehension by Language Group"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Language / Group",
+        "Approximate comprehension*",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Czech, Slovak",
+          "Very high (80–95%)",
+          "West Slavic; vocabulary and grammar extremely close; Interslavic was partly co-developed by a Czech speaker"
+        ],
+        [
+          "Polish",
+          "High (70–85%)",
+          "West Slavic; some phonological differences but very strong lexical overlap"
+        ],
+        [
+          "Russian",
+          "High (65–80%)",
+          "East Slavic; strong vocabulary overlap; some case endings differ"
+        ],
+        [
+          "Ukrainian, Belarusian",
+          "High (65–80%)",
+          "East Slavic; similar to Russian relationship"
+        ],
+        [
+          "Croatian, Serbian, Bosnian",
+          "High (70–85%)",
+          "South Slavic; closely related to Old Church Slavonic roots; Jan van Steenbergen's work drew heavily on South Slavic"
+        ],
+        [
+          "Slovenian",
+          "High (65–75%)",
+          "South Slavic but with some distinctive features"
+        ],
+        [
+          "Bulgarian, Macedonian",
+          "Moderate–High (55–70%)",
+          "South Slavic but have lost case declensions; grammar feels more foreign even when vocabulary is familiar"
+        ],
+        [
+          "Sorbian (Upper/Lower)",
+          "Very high",
+          "Small West Slavic languages closely related to Czech/Polish"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "* Comprehension figures are approximate and vary by individual, education, and exposure to other Slavic languages. Written comprehension is generally higher than spoken."
+    },
+    {
+      "type": "p",
+      "text": "One remarkable property of Interslavic is that it often acts as a common ground even between speakers of mutually unintelligible Slavic languages. A Czech speaker and a Russian speaker who struggle to understand each other directly can often communicate through Interslavic text, each recognising enough of their own language's patterns to follow the meaning."
+    },
+    {
+      "type": "h3",
+      "text": "Non-Slavic Speakers"
+    },
+    {
+      "type": "p",
+      "text": "For English speakers or other non-Slavic learners, Interslavic is not especially easy — the case system, verbal aspect, and consonant clusters require genuine study. However, anyone who already knows one Slavic language (or Latin, which shares the Indo-European case system) will find Interslavic considerably more accessible than learning a second, unrelated Slavic language from scratch."
+    },
+    {
+      "type": "h2",
+      "text": "10. Example Sentences & Useful Phrases"
+    },
+    {
+      "type": "h3",
+      "text": "Basic Phrases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interslavic",
+        "English"
+      ],
+      "rows": [
+        [
+          "Zdravstvujte! / Dobry den!",
+          "Hello! / Good day!"
+        ],
+        [
+          "Dobro jutro.",
+          "Good morning."
+        ],
+        [
+          "Dobry večer.",
+          "Good evening."
+        ],
+        [
+          "Dobranoc.",
+          "Good night."
+        ],
+        [
+          "Do viděnja!",
+          "Goodbye!"
+        ],
+        [
+          "Blagodarim / Hvala.",
+          "Thank you."
+        ],
+        [
+          "Prosim.",
+          "Please. / You're welcome."
+        ],
+        [
+          "Izvinite / Pardon.",
+          "Excuse me. / I'm sorry."
+        ],
+        [
+          "Da.",
+          "Yes."
+        ],
+        [
+          "Ne.",
+          "No."
+        ],
+        [
+          "Kako se zoveš?",
+          "What is your name?"
+        ],
+        [
+          "Zovem se…",
+          "My name is…"
+        ],
+        [
+          "Kako si? / Kako ste?",
+          "How are you? (inf./form.)"
+        ],
+        [
+          "Dobro, hvala.",
+          "Fine, thank you."
+        ],
+        [
+          "Ne razumem.",
+          "I don't understand."
+        ],
+        [
+          "Govorite li medžuslovjansky?",
+          "Do you speak Interslavic?"
+        ],
+        [
+          "Gdě jest…?",
+          "Where is…?"
+        ],
+        [
+          "Koliko stoji?",
+          "How much does it cost?"
+        ],
+        [
+          "Ljublju tebe.",
+          "I love you."
+        ],
+        [
+          "Sretno!",
+          "Good luck!"
+        ],
+        [
+          "Veselo praznovanje!",
+          "Happy celebration!"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Worked Example Sentences"
+    },
+    {
+      "type": "li",
+      "text": "Medžuslovjansky jezyk jest zrozumlivy dla vsih Slovjanov. — The Interslavic language is understandable to all Slavs."
+    },
+    {
+      "type": "li",
+      "text": "Moj brat žije v velikom měste. — My brother lives in a big city."
+    },
+    {
+      "type": "li",
+      "text": "Ja budu učiti se medžuslovjansky každy den. — I will study Interslavic every day."
+    },
+    {
+      "type": "li",
+      "text": "Ona govorit s nim po-rusky, ale on ne razumět. — She speaks to him in Russian, but he doesn't understand."
+    },
+    {
+      "type": "li",
+      "text": "Kdyby my iměli više časa, my by šli do muzeja. — If we had more time, we would go to the museum."
+    },
+    {
+      "type": "li",
+      "text": "Děti igraju na ulici pred domom. — The children are playing on the street in front of the house."
+    },
+    {
+      "type": "li",
+      "text": "Kniga, ktoru ty čitaješ, jest velmi interesna. — The book you are reading is very interesting."
+    },
+    {
+      "type": "h3",
+      "text": "Numbers 1–10"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Number",
+        "Interslavic",
+        "Number",
+        "Interslavic"
+      ],
+      "rows": [
+        [
+          "1",
+          "jedin / jedna / jedno",
+          "6",
+          "šest"
+        ],
+        [
+          "2",
+          "dva / dvě",
+          "7",
+          "sedm"
+        ],
+        [
+          "3",
+          "tri",
+          "8",
+          "osm"
+        ],
+        [
+          "4",
+          "četyri",
+          "9",
+          "devet"
+        ],
+        [
+          "5",
+          "pet",
+          "10",
+          "deset"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "11. Learning Resources"
+    },
+    {
+      "type": "h3",
+      "text": "Official & Core Resources"
+    },
+    {
+      "type": "li",
+      "text": "interslavic-language.org — The official home of the Interslavic project. Includes the full grammar reference, dictionary, and news about the language community."
+    },
+    {
+      "type": "li",
+      "text": "interslavic.fun — A learner-friendly companion site with exercises, lessons, and an online dictionary specifically designed for beginners."
+    },
+    {
+      "type": "li",
+      "text": "Jan van Steenbergen's Interslavic pages (steen.free.fr) — The original author's site, containing comprehensive grammar documentation, historical background, and the flavour system explained in detail."
+    },
+    {
+      "type": "li",
+      "text": "Vojtěch Merunka's work — Merunka has published academic papers and a grammar textbook on Novoslověnsky/Interslavic; these are available via the official site and academia.edu."
+    },
+    {
+      "type": "h3",
+      "text": "Dictionary Tools"
+    },
+    {
+      "type": "li",
+      "text": "interslavic-dictionary.com — A comprehensive online dictionary with translations between Interslavic and multiple Slavic languages plus English and German. Includes conjugation and declension tables for looked-up words."
+    },
+    {
+      "type": "h3",
+      "text": "Community"
+    },
+    {
+      "type": "li",
+      "text": "Interslavic Discord — The most active real-time community for Interslavic speakers and learners. Accessible via a link on interslavic-language.org. Contains channels for grammar questions, conversation practice, and creative writing in Interslavic."
+    },
+    {
+      "type": "li",
+      "text": "Reddit: r/interslavic — A smaller but consistent community for questions, texts, and discussion at reddit.com/r/interslavic ."
+    },
+    {
+      "type": "li",
+      "text": "Facebook: Medžuslovjansky — A long-running Facebook group with several thousand members, particularly active among Central and Eastern European Slavic speakers."
+    },
+    {
+      "type": "h3",
+      "text": "The Slavic Languages Portal"
+    },
+    {
+      "type": "li",
+      "text": "slavic-languages-portal.eu — A broader resource covering all Slavic languages, with comparative materials useful for understanding how Interslavic relates to the full language family."
+    },
+    {
+      "type": "h3",
+      "text": "Video & Audio"
+    },
+    {
+      "type": "li",
+      "text": "The 2021 film Medieval (Czech: Jan Žižka ) uses Interslavic as the spoken language of medieval Bohemians and features it extensively. It is available on Netflix in various regions and is an excellent way to hear the language in natural-sounding speech."
+    },
+    {
+      "type": "li",
+      "text": "YouTube channels in Interslavic and about Interslavic exist, including tutorials and conversational content; searching \"medžuslovjansky\" on YouTube yields current results."
+    },
+    {
+      "type": "h2",
+      "text": "12. Learning Tips"
+    },
+    {
+      "type": "li",
+      "text": "Start with the case system. The seven cases are the backbone of the grammar. Even a rough understanding — knowing that -a endings often signal genitive, -u dative, -om instrumental — lets you read and parse sentences quickly. Don't try to memorise every paradigm at once; let them emerge through reading."
+    },
+    {
+      "type": "li",
+      "text": "Use the dictionary actively. The interslavic-dictionary.com site includes full conjugation and declension tables for every entry. When you look up a word, spend 30 seconds glancing at its full table — this builds pattern recognition faster than studying grammar charts in isolation."
+    },
+    {
+      "type": "li",
+      "text": "Leverage your existing Slavic knowledge. If you already speak Russian, Polish, Czech, or any Slavic language, you will recognise a large portion of Interslavic immediately. Treat it as a comparative exercise: notice which Interslavic forms match your language, which match others you've seen, and where the median form sits."
+    },
+    {
+      "type": "li",
+      "text": "Don't panic about aspect. Verbal aspect (perfective vs. imperfective) is unfamiliar to English speakers but deeply intuitive to all Slavic speakers. If you're new to Slavic languages, focus on imperfective verbs first and treat perfective forms as a refinement you'll add over time."
+    },
+    {
+      "type": "li",
+      "text": "Read original texts. Interslavic has a growing body of original writing — articles, short stories, Wikipedia articles — as well as translations. Reading these exposes you to the language in authentic use, rather than textbook sentences, and helps you develop an intuition for natural phrasing."
+    },
+    {
+      "type": "li",
+      "text": "Watch Medieval with subtitles. The film provides hours of Interslavic speech in a dramatic context. Even if you only understand fragments, hearing the rhythm and phonology of the language spoken by native Slavic actors is invaluable for building an ear for it."
+    },
+    {
+      "type": "li",
+      "text": "Join the Discord early. The Interslavic community is small, welcoming, and unusually multilingual. Native speakers of Russian, Czech, Polish, Croatian, and other Slavic languages regularly help learners and answer grammar questions. Real conversation — even broken — cements learning faster than passive study."
+    },
+    {
+      "type": "li",
+      "text": "Remember the goal is communication, not perfection. Interslavic is designed to be forgiving. Slavic speakers will understand you even if your case endings are imperfect or your vocabulary occasionally drifts toward one national language. The point is mutual comprehension across the Slavic world, and a little Interslavic goes a long way toward that goal."
+    },
+    {
+      "type": "p",
+      "text": "\"Medžuslovjansky jest most medžu vsimi narody slovjanskymi.\" — Interslavic is a bridge between all Slavic peoples."
+    }
+  ]
+}

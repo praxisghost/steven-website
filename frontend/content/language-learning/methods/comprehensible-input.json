@@ -1,0 +1,208 @@
+{
+  "slug": "comprehensible-input",
+  "title": "Comprehensible Input",
+  "date": null,
+  "source": "/website/public/comprehensible-input.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. What is Comprehensible Input?"
+    },
+    {
+      "type": "p",
+      "text": "Comprehensible Input (CI) refers to language you can understand — not necessarily perfectly, but well enough to grasp the meaning of what is being communicated. When you expose yourself to a stream of such language, your brain is in the optimal state to acquire the underlying patterns: vocabulary, grammar, pronunciation, and idiom."
+    },
+    {
+      "type": "p",
+      "text": "The central claim of Comprehensible Input theory is simple and backed by extensive research: language is acquired, not learned . Acquisition happens subconsciously through meaningful exposure to understandable language. It is what happened when you became fluent in your native language — not through grammar drills, but through years of immersion in language that was, for the most part, understandable."
+    },
+    {
+      "type": "p",
+      "text": "CI is both a theoretical framework (developed primarily by Stephen Krashen) and a practical descriptor for a whole family of methods — TPRS, extensive reading, listening immersion, and graded readers all deliver comprehensible input, and their effectiveness is largely explained by this framework."
+    },
+    {
+      "type": "h2",
+      "text": "2. Krashen's Hypotheses"
+    },
+    {
+      "type": "p",
+      "text": "Linguist Stephen Krashen developed the theoretical underpinnings of CI in the late 1970s and 1980s. His framework consists of five interrelated hypotheses, of which the Input Hypothesis is the most influential."
+    },
+    {
+      "type": "p",
+      "text": "Krashen distinguishes two separate processes:"
+    },
+    {
+      "type": "li",
+      "text": "Acquisition — subconscious internalization through exposure to meaningful language. This is the process that produces spontaneous fluency."
+    },
+    {
+      "type": "li",
+      "text": "Learning — conscious study of grammar rules and vocabulary lists. This produces the ability to monitor and edit your own output, but it does not directly produce fluency."
+    },
+    {
+      "type": "p",
+      "text": "The hypothesis is that only acquired knowledge drives spontaneous production. Learned knowledge can only function as a \"monitor\" — a post-hoc checker — when there is time and attention to apply it."
+    },
+    {
+      "type": "p",
+      "text": "This is the core of the framework. Krashen argues that acquisition happens when a learner is exposed to language that is one step beyond their current competence level — what he calls i + 1 : current level ( i ) plus one increment of challenge."
+    },
+    {
+      "type": "p",
+      "text": "If input is below your level (i − 0), it's too easy to drive growth. If it's far above your level (i + 5), it's incomprehensible and acquisition stalls. The sweet spot — barely stretching, mostly understandable — is where the language brain is doing its best work."
+    },
+    {
+      "type": "p",
+      "text": "The practical implication: choose input where you understand the vast majority of what is said, and the unknown parts can be inferred from context."
+    },
+    {
+      "type": "p",
+      "text": "Consciously learned grammar rules function as a monitor — they can edit output when you have time to think, but they do not run in real time. A learner who relies heavily on their monitor produces slow, halting, over-edited speech. The goal is for acquired knowledge to run automatically, with the monitor available only as a background checker."
+    },
+    {
+      "type": "p",
+      "text": "Language structures are acquired in a roughly predictable order, regardless of which order they are taught. This suggests that the brain's acquisition mechanisms have a pre-set developmental trajectory, and that teaching grammar \"out of order\" can produce conscious knowledge that the learner is not yet ready to acquire."
+    },
+    {
+      "type": "p",
+      "text": "Acquisition only occurs when the learner is in a relaxed, open, and motivated state. Anxiety, boredom, self-consciousness, or a perceived hostile environment raises the \"affective filter\" — a metaphor for the psychological barrier that blocks input from reaching the acquisition mechanism. This is why enjoyable, low-stress input (a gripping novel, a funny podcast) often outperforms forced, anxiety-producing study."
+    },
+    {
+      "type": "h2",
+      "text": "3. Research & Evidence"
+    },
+    {
+      "type": "p",
+      "text": "Krashen's framework remains influential and, on its core empirical claims, well-supported:"
+    },
+    {
+      "type": "li",
+      "text": "Input is necessary. No serious researcher disputes that comprehensible input is a necessary condition for acquisition. The debate is about whether it is sufficient — but there is strong evidence that for many learners in rich input environments, it largely is."
+    },
+    {
+      "type": "li",
+      "text": "Output studies. Merrill Swain's output hypothesis (from studies of French immersion programmes in Canada) suggests that being pushed to produce output — especially when communication breaks down and must be repaired — also drives acquisition. Most CI practitioners today see input and output as complementary, not competing."
+    },
+    {
+      "type": "li",
+      "text": "DLIFLC and immersion programmes. Data from intensive language programmes at the U.S. Defense Language Institute and other immersive settings consistently show that high-volume comprehensible input produces faster progress than traditional grammar-first instruction, even on formal grammar tests."
+    },
+    {
+      "type": "li",
+      "text": "Reading research. The positive effects of extensive reading on vocabulary, grammar intuition, and writing quality are among the most replicated findings in applied linguistics (Nation, Mason, Elley)."
+    },
+    {
+      "type": "p",
+      "text": "The CI framework should not be read as \"grammar study is useless.\" Grammar instruction can accelerate explicit monitoring and help learners notice patterns they might otherwise miss. The claim is more modest: grammar instruction alone does not produce spontaneous fluency. Comprehensible input does."
+    },
+    {
+      "type": "h2",
+      "text": "4. Applying CI in Practice"
+    },
+    {
+      "type": "h3",
+      "text": "The \"i + 1\" Calibration"
+    },
+    {
+      "type": "p",
+      "text": "In practice, the i + 1 principle means seeking input where you understand roughly 80–98% of the content without stopping. Below 80%, the cognitive load is too high for smooth acquisition — you're spending so much energy on decoding that meaning gets lost. Above 98%, you're not being stretched and growth slows."
+    },
+    {
+      "type": "p",
+      "text": "For listening: if you understand a podcast episode well enough to follow the main argument but have a handful of moments where you lose the thread, that's likely close to your i + 1. If you're lost more than once every few minutes, it's too hard."
+    },
+    {
+      "type": "h3",
+      "text": "Daily CI Habits"
+    },
+    {
+      "type": "li",
+      "text": "Passive immersion. Background listening to target-language audio during activities that don't require full cognitive attention (commuting, household tasks). This provides volume even when you can't actively study."
+    },
+    {
+      "type": "li",
+      "text": "Active immersion. Focused listening or reading with full attention — audiobooks, podcasts, films with subtitles in the target language. This is where most acquisition happens."
+    },
+    {
+      "type": "li",
+      "text": "Reading aloud. Reading a transcript aloud while listening to the audio combines comprehension, pronunciation, and prosodic modelling in one activity."
+    },
+    {
+      "type": "li",
+      "text": "Story listening. Beniko Mason's \"story listening\" approach: a teacher or audio source tells a simple story, mostly in the target language with occasional native-language support for meaning, with no pressure on the learner to produce output. This is pure CI at its most concentrated."
+    },
+    {
+      "type": "h3",
+      "text": "What to Do with Unknown Words"
+    },
+    {
+      "type": "p",
+      "text": "In CI mode, the default is to let unknown words wash over you. Many will become clear from context on first or second encounter; most will be resolved by the time you've heard or read them a dozen times. When a word appears to be important and you genuinely cannot infer it, look it up quickly and continue. Don't turn a CI session into a study session."
+    },
+    {
+      "type": "h3",
+      "text": "Levelling Up"
+    },
+    {
+      "type": "p",
+      "text": "The appropriate challenge level shifts as you improve. At A1, a slow language podcast for beginners is i + 1. At B2, a native news podcast might be. The signal to level up is when your current material starts feeling easy — when comprehension requires little effort. That effortlessness is not a sign to rest; it's a sign to reach higher."
+    },
+    {
+      "type": "h2",
+      "text": "5. CI Resources by Language"
+    },
+    {
+      "type": "h2",
+      "text": "6. Common Misconceptions"
+    },
+    {
+      "type": "li",
+      "text": "\"CI means no grammar study ever.\" Not quite. Grammar study is not harmful and can accelerate awareness of patterns you're beginning to acquire anyway. The argument is that grammar-first approaches are insufficient, not that grammar awareness is worthless."
+    },
+    {
+      "type": "li",
+      "text": "\"You need to understand everything.\" No — the threshold is meaningful comprehension, not perfect comprehension. Near-total opacity (less than ~60% understanding) is different from occasional gaps."
+    },
+    {
+      "type": "li",
+      "text": "\"Passive immersion is enough.\" Passive background listening accumulates volume but has a lower acquisition yield than active, focused engagement with the material. Both have a role; neither alone is optimal."
+    },
+    {
+      "type": "li",
+      "text": "\"Output doesn't matter.\" Speaking and writing push you to notice gaps in your knowledge and force the production of forms you've only passively encountered. Output is not a substitute for input, but it is a productive complement."
+    },
+    {
+      "type": "li",
+      "text": "\"CI only works for children.\" Adults are slower than children at some aspects of acquisition, but the mechanism — comprehensible input — functions at all ages. Adult learners compensate with better metacognitive strategies, more efficient use of their study time, and a larger existing world knowledge base that assists comprehension."
+    },
+    {
+      "type": "h2",
+      "text": "7. Further Reading"
+    },
+    {
+      "type": "li",
+      "text": "Stephen Krashen — Principles and Practice in Second Language Acquisition (freely available on his website). The foundational text."
+    },
+    {
+      "type": "li",
+      "text": "Stephen Krashen — The Power of Reading . Applies CI theory specifically to extensive reading."
+    },
+    {
+      "type": "li",
+      "text": "Merrill Swain — papers on the Output Hypothesis. A productive counterpoint to pure-CI frameworks."
+    },
+    {
+      "type": "li",
+      "text": "Beniko Mason — papers on \"story listening\" and low-anxiety CI delivery. Practically oriented."
+    },
+    {
+      "type": "li",
+      "text": "Acquisition Classroom Memo — Krashen's newsletter, freely available online, for current applied discussions."
+    },
+    {
+      "type": "p",
+      "text": "CI is the framework that most of the other methods on this site — TPRS, Extensive Reading, Shadowing, the Gold List — are operating within, whether or not they explicitly use the language. Understanding CI theory makes all other methods make more sense."
+    }
+  ]
+}

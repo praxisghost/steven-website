@@ -1,4 +1,4 @@
 [deploy]
-startCommand = "next start -p $PORT"
+startCommand = "gunicorn config.wsgi --bind 0.0.0.0:$PORT"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10

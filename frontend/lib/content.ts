@@ -3,7 +3,9 @@ import path from "node:path";
 
 // Loads article content extracted from /website source into JSON
 // (frontend/content/{blog,projects}/*.json). Read at build time via fs.
-export type Block = { type: "h2" | "h3" | "p" | "li" | "quote"; text: string };
+export type Block =
+  | { type: "h2" | "h3" | "p" | "li" | "quote"; text: string }
+  | { type: "table"; headers: string[]; rows: string[][] };
 // Curated cross-reference into another section (e.g. Writing→Blog topical hubs).
 export type CuratedLink = { title: string; href: string; date?: string };
 export type Article = {
@@ -14,6 +16,12 @@ export type Article = {
   blocks: Block[];
   links?: CuratedLink[];
 };
+
+// First paragraph's text, used as a card/preview lead. Skips non-text blocks (e.g. tables).
+export function leadText(blocks: Block[]): string | undefined {
+  for (const b of blocks) if (b.type === "p") return b.text;
+  return undefined;
+}
 
 const ROOT = path.join(process.cwd(), "content");
 const MONTHS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
@@ -67,6 +75,24 @@ export function getSubCollection(parent: SubParent): Article[] {
 
 export function getSubArticle(parent: SubParent, slug: string): Article | null {
   const file = path.join(ROOT, "technology", parent, `${slug}.json`);
+  if (!fs.existsSync(file)) return null;
+  return JSON.parse(fs.readFileSync(file, "utf-8")) as Article;
+}
+
+// Generic nested-dir loader (relative to content/), e.g. "language-learning/methods".
+// Reusable for any one-level-nested article collection. Alphabetical by title.
+export function getDirCollection(rel: string): Article[] {
+  const dir = path.join(ROOT, rel);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8")) as Article)
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+export function getDirArticle(rel: string, slug: string): Article | null {
+  const file = path.join(ROOT, rel, `${slug}.json`);
   if (!fs.existsSync(file)) return null;
   return JSON.parse(fs.readFileSync(file, "utf-8")) as Article;
 }

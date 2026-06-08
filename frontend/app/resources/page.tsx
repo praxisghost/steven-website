@@ -4,8 +4,8 @@ import HubGrid, { HubItem } from "@/components/HubGrid";
 // Source: /website/public/resources.html — grouped guide lists preserved.
 // Dead-card sweep (run 20): wired every card to its already-migrated destination
 // (software-tutorials, language-learning/methods, language-learning). Guitar guide
-// is not yet migrated (source: /website/public/guitar.html) → left as a noted
-// non-link to avoid a 404; queued for migration.
+// migrated (run 21): source /website/public/guitar.html + guitar-scale.js →
+// /resources/guitar (interactive scale player). Card now links.
 export const metadata = { title: "Resources — Steven Legg" };
 
 const software: HubItem[] = [
@@ -34,7 +34,7 @@ const language: HubItem[] = [
 ];
 
 const guitar: HubItem[] = [
-  { label: "Guitar Learning Guide", note: "Coming soon — migrating from the original site." },
+  { label: "Guitar Learning Guide", href: "/resources/guitar", note: "Scale roadmap + an interactive E Major Pentatonic player." },
 ];
 
 export default function Resources() {

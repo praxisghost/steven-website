@@ -1,0 +1,508 @@
+{
+  "slug": "hypertts",
+  "title": "HyperTTS",
+  "date": null,
+  "source": "/website/public/hypertts.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. Why HyperTTS Is Worth It"
+    },
+    {
+      "type": "p",
+      "text": "Five dollars a month sounds like a line item you could skip — but if you're serious about language learning, HyperTTS pays for itself almost immediately. Here's why."
+    },
+    {
+      "type": "p",
+      "text": "When you learn vocabulary without audio, you're building a silent mental representation of the word. That's useful for reading, but it leaves a gap between what you see on a card and what you actually hear in conversation. Bridging that gap manually — recording yourself, hunting down native audio files one by one — is tedious enough that most learners simply don't do it."
+    },
+    {
+      "type": "p",
+      "text": "HyperTTS fills every card in your deck with high-quality text-to-speech audio in the time it takes to make a coffee. You get voices that sound like real speakers, not robots — across dozens of languages, dozens of accents, and with fine-grained control over speed. One batch run can fill hundreds of Audio fields. At $5/month, that works out to roughly the price of a single coffee for unlimited pronunciation practice across every language you're studying."
+    },
+    {
+      "type": "p",
+      "text": "If you're using the three-card-type setup described in this guide (recall, recognition, and listening), audio isn't optional — it's the entire foundation of your listening card. Without HyperTTS, that card type simply doesn't work. With it, every new word you add automatically becomes three cards, one of which trains you to recognise the sound of the language without any visual cues. That's the kind of practice that used to require immersion. Now it's a $5 add-on."
+    },
+    {
+      "type": "p",
+      "text": "Bottom line: HyperTTS saves hours of manual work, enables a richer card system, and trains your ear as well as your eyes. If you're adding more than a handful of cards per week, it earns back its cost immediately in time saved."
+    },
+    {
+      "type": "h2",
+      "text": "2. Installing HyperTTS"
+    },
+    {
+      "type": "p",
+      "text": "HyperTTS is installed as an Anki add-on directly inside the app."
+    },
+    {
+      "type": "li",
+      "text": "Open Anki on your computer"
+    },
+    {
+      "type": "li",
+      "text": "Go to Tools → Add-ons → Get Add-ons"
+    },
+    {
+      "type": "li",
+      "text": "Enter the code 1508862472 and click OK"
+    },
+    {
+      "type": "li",
+      "text": "Wait for the download to complete, then restart Anki"
+    },
+    {
+      "type": "li",
+      "text": "After restarting you should see a new HyperTTS menu in the top menu bar"
+    },
+    {
+      "type": "p",
+      "text": "If you don't see the HyperTTS menu after restarting, go to Tools → Add-ons , make sure HyperTTS is listed and enabled, and restart once more."
+    },
+    {
+      "type": "h2",
+      "text": "3. Creating Your Account & Getting Your API Key"
+    },
+    {
+      "type": "p",
+      "text": "HyperTTS uses the AwesomeTTS Cloud service for its voices. You need an account there to unlock the full voice library."
+    },
+    {
+      "type": "li",
+      "text": "Go to app.hypertts.io in your browser"
+    },
+    {
+      "type": "li",
+      "text": "Click Sign Up and create an account with your email address"
+    },
+    {
+      "type": "li",
+      "text": "Verify your email when the confirmation link arrives"
+    },
+    {
+      "type": "li",
+      "text": "Log in to the dashboard — you'll see your current plan and character balance"
+    },
+    {
+      "type": "li",
+      "text": "Navigate to API Key (usually in Account Settings or the sidebar)"
+    },
+    {
+      "type": "li",
+      "text": "Click Generate API Key or copy the key that's already displayed"
+    },
+    {
+      "type": "li",
+      "text": "Keep this key somewhere safe — you'll paste it into Anki in the next step"
+    },
+    {
+      "type": "p",
+      "text": "The paid plan at $5/month unlocks the full voice library including premium neural voices and higher-quality accents. The difference between the free tier and paid tier is immediately noticeable — paid voices are significantly more natural-sounding, which matters when you're training your ear. For language learners who add cards regularly, the paid plan is the right choice."
+    },
+    {
+      "type": "p",
+      "text": "You can start on the free tier to test the workflow, then upgrade once you're satisfied it works for your setup."
+    },
+    {
+      "type": "h2",
+      "text": "4. Connecting HyperTTS to Anki"
+    },
+    {
+      "type": "li",
+      "text": "In Anki, click HyperTTS in the top menu bar"
+    },
+    {
+      "type": "li",
+      "text": "Select Settings"
+    },
+    {
+      "type": "li",
+      "text": "In the AwesomeTTS API Key field, paste the key you copied from the dashboard"
+    },
+    {
+      "type": "li",
+      "text": "Click Verify — Anki will contact the server and confirm your account status"
+    },
+    {
+      "type": "li",
+      "text": "If successful, you'll see your username and character balance displayed"
+    },
+    {
+      "type": "li",
+      "text": "Click Save"
+    },
+    {
+      "type": "p",
+      "text": "If verification fails, double-check that you copied the full key with no trailing spaces, and that your internet connection is active. Try regenerating your key from the dashboard if the problem persists."
+    },
+    {
+      "type": "h2",
+      "text": "5. Setting Up Your Sound Field"
+    },
+    {
+      "type": "p",
+      "text": "Before you can generate audio, your note type needs a dedicated field to store it. HyperTTS writes audio files into this field — if it doesn't exist, there's nowhere to put the audio."
+    },
+    {
+      "type": "li",
+      "text": "Go to Tools → Manage Note Types"
+    },
+    {
+      "type": "li",
+      "text": "Select the note type you use for your language deck and click Fields"
+    },
+    {
+      "type": "li",
+      "text": "Look for a field named Audio , Sound , or similar"
+    },
+    {
+      "type": "li",
+      "text": "If it exists, you're ready — skip to the next section"
+    },
+    {
+      "type": "li",
+      "text": "In the Fields dialog, click Add"
+    },
+    {
+      "type": "li",
+      "text": "Name the field Audio (this name is conventional and easy to recognise)"
+    },
+    {
+      "type": "li",
+      "text": "Click Save"
+    },
+    {
+      "type": "li",
+      "text": "The field is now part of every note that uses this note type — existing notes will have it too, just empty for now"
+    },
+    {
+      "type": "p",
+      "text": "Don't worry about field order for now — you can reposition it later. What matters is that the field exists before you run HyperTTS."
+    },
+    {
+      "type": "p",
+      "text": "A field existing in a note type is not the same as it being displayed on a card. For your Listening card type (see the next section), the Audio field needs to appear on the front. For Recall and Recognition cards, it typically appears on the back."
+    },
+    {
+      "type": "p",
+      "text": "To add it to a template:"
+    },
+    {
+      "type": "li",
+      "text": "In Manage Note Types → [your type] → Cards , select the card template you want to edit"
+    },
+    {
+      "type": "li",
+      "text": "Click in the Front Template or Back Template area"
+    },
+    {
+      "type": "li",
+      "text": "Type {{Audio}} where you want the audio to play"
+    },
+    {
+      "type": "li",
+      "text": "Anki automatically plays fields containing [sound:...] tags — the {{Audio}} placeholder handles this for you"
+    },
+    {
+      "type": "h2",
+      "text": "6. Three Card Types — Recall, Recognition & Listening"
+    },
+    {
+      "type": "p",
+      "text": "The most effective Anki setup for vocabulary uses three separate card templates on the same note. Every time you add a new word, Anki automatically creates all three cards. This covers three distinct memory pathways: seeing the word, hearing it, and being asked to produce it."
+    },
+    {
+      "type": "p",
+      "text": "Front Template:"
+    },
+    {
+      "type": "p",
+      "text": "Back Template:"
+    },
+    {
+      "type": "p",
+      "text": "Front Template:"
+    },
+    {
+      "type": "p",
+      "text": "Back Template:"
+    },
+    {
+      "type": "p",
+      "text": "The Listening card deliberately hides the written word on the front so you're forced to identify it by sound alone. This is the most challenging of the three card types and the most dependent on HyperTTS audio being in place."
+    },
+    {
+      "type": "p",
+      "text": "Front Template:"
+    },
+    {
+      "type": "p",
+      "text": "Back Template:"
+    },
+    {
+      "type": "p",
+      "text": "The Listening card only works once audio has been generated for your deck. It's fine to add the template now and populate audio later with HyperTTS."
+    },
+    {
+      "type": "li",
+      "text": "Go to Tools → Manage Note Types"
+    },
+    {
+      "type": "li",
+      "text": "Select your note type and click Cards"
+    },
+    {
+      "type": "li",
+      "text": "In the card template editor, click the + button (or Options → Add Card Type ) to add a new template"
+    },
+    {
+      "type": "li",
+      "text": "Name it clearly: Recognition , Recall , Listening"
+    },
+    {
+      "type": "li",
+      "text": "Paste in the appropriate Front and Back templates from above"
+    },
+    {
+      "type": "li",
+      "text": "Repeat for each card type"
+    },
+    {
+      "type": "li",
+      "text": "Click Save — Anki will immediately generate the new cards for all existing notes"
+    },
+    {
+      "type": "p",
+      "text": "If you already have a Basic note type with one or two templates, you can add the missing ones without affecting existing cards."
+    },
+    {
+      "type": "h2",
+      "text": "7. Generating Batch Audio"
+    },
+    {
+      "type": "p",
+      "text": "This is where HyperTTS earns its keep. You're going to fill the Audio field for every note in your deck in a single run."
+    },
+    {
+      "type": "li",
+      "text": "From the Anki main screen, open the Browse window ( Browse button or B )"
+    },
+    {
+      "type": "li",
+      "text": "Select the deck or group of cards you want to add audio to — use Ctrl+A (or Cmd+A on Mac) to select all, or filter first if you only want a subset"
+    },
+    {
+      "type": "li",
+      "text": "In the top menu, click HyperTTS → Add Audio to Cards (Batch)"
+    },
+    {
+      "type": "li",
+      "text": "In the dialog that opens: Source Field: set this to the field that contains the text you want spoken (e.g. Word ) Target Field: set this to your audio field (e.g. Audio ) Voice: choose a voice for your target language (see the next section for guidance) Overwrite existing audio: leave unchecked to skip cards that already have audio; check it to regenerate all"
+    },
+    {
+      "type": "li",
+      "text": "Source Field: set this to the field that contains the text you want spoken (e.g. Word )"
+    },
+    {
+      "type": "li",
+      "text": "Target Field: set this to your audio field (e.g. Audio )"
+    },
+    {
+      "type": "li",
+      "text": "Voice: choose a voice for your target language (see the next section for guidance)"
+    },
+    {
+      "type": "li",
+      "text": "Overwrite existing audio: leave unchecked to skip cards that already have audio; check it to regenerate all"
+    },
+    {
+      "type": "li",
+      "text": "Click Preview on one or two sample cards to verify the voice sounds right before committing"
+    },
+    {
+      "type": "li",
+      "text": "Click Add Audio — HyperTTS processes every selected card and fills the Audio field"
+    },
+    {
+      "type": "p",
+      "text": "Large decks (500+ cards) may take a minute or two to process. HyperTTS shows a progress bar. Don't close Anki while it runs."
+    },
+    {
+      "type": "p",
+      "text": "If you add new notes regularly (e.g. from AI-generated imports), you'll want to run HyperTTS only on cards that don't yet have audio rather than regenerating the whole deck each time."
+    },
+    {
+      "type": "li",
+      "text": "In the Browse window, search for: deck:YourDeckName Audio: — this filters for notes where the Audio field is empty"
+    },
+    {
+      "type": "li",
+      "text": "Select all results with Ctrl+A"
+    },
+    {
+      "type": "li",
+      "text": "Run HyperTTS → Add Audio to Cards (Batch) as normal"
+    },
+    {
+      "type": "h2",
+      "text": "8. Voices, Languages & Accents"
+    },
+    {
+      "type": "p",
+      "text": "HyperTTS connects to multiple TTS providers — including Google Cloud, Azure, and Amazon Polly — giving you access to a large library of voices across many languages. Here's how to navigate the options."
+    },
+    {
+      "type": "li",
+      "text": "Open the HyperTTS batch dialog ( HyperTTS → Add Audio to Cards (Batch) )"
+    },
+    {
+      "type": "li",
+      "text": "Click on the Voice selector"
+    },
+    {
+      "type": "li",
+      "text": "Use the language filter to narrow down to your target language"
+    },
+    {
+      "type": "li",
+      "text": "Browse the list — voices are typically named by language code, region, and gender (e.g. zh-CN-XiaoxiaoNeural )"
+    },
+    {
+      "type": "li",
+      "text": "Click Preview with any voice selected to hear it on a sample word before committing"
+    },
+    {
+      "type": "p",
+      "text": "Always preview at least 3–4 sample words before committing to a voice for a full deck run. Accents and naturalness vary even within the same language."
+    },
+    {
+      "type": "p",
+      "text": "Neural voices use deep-learning models to produce natural-sounding speech with realistic rhythm, intonation, and emphasis. They cost more characters per word from your monthly quota but are significantly more natural-sounding."
+    },
+    {
+      "type": "p",
+      "text": "Standard voices use older concatenative or parametric synthesis. They're faster and cheaper to generate but can sound robotic, especially on tonal languages or words with unusual stress patterns."
+    },
+    {
+      "type": "p",
+      "text": "For language learning, neural voices are almost always worth the character cost. The difference in naturalness is large enough to affect whether your listening cards actually train your ear correctly."
+    },
+    {
+      "type": "h2",
+      "text": "9. Adjusting Speed & Using Multiple Voices"
+    },
+    {
+      "type": "p",
+      "text": "In the HyperTTS batch dialog, look for a Speed or Rate slider. Most providers support a range from around 0.5× (half speed) to 2× (double speed)."
+    },
+    {
+      "type": "li",
+      "text": "0.75× — good for beginners learning pronunciation or tonal languages where you want to hear each tone clearly"
+    },
+    {
+      "type": "li",
+      "text": "1.0× — natural native speed; ideal once you're past the beginner stage"
+    },
+    {
+      "type": "li",
+      "text": "1.25× or faster — useful for advanced learners who want to train listening comprehension at or above natural speed"
+    },
+    {
+      "type": "p",
+      "text": "A practical workflow: generate your deck at 0.75× initially, then run a second pass at 1.0× once you're comfortable with the vocabulary. You can have separate Audio and AudioFast fields if you want both speeds available on one card."
+    },
+    {
+      "type": "p",
+      "text": "Using a single voice for an entire deck means your ear adapts to one speaker. Introducing variety — different voices, genders, or accents — is more realistic and trains you to understand real speakers rather than one particular voice."
+    },
+    {
+      "type": "p",
+      "text": "To do this with HyperTTS:"
+    },
+    {
+      "type": "li",
+      "text": "Add a second audio field to your note type, e.g. Audio2"
+    },
+    {
+      "type": "li",
+      "text": "Run HyperTTS once targeting Audio with Voice A"
+    },
+    {
+      "type": "li",
+      "text": "Run HyperTTS again targeting Audio2 with Voice B (different gender or accent)"
+    },
+    {
+      "type": "li",
+      "text": "On your card template, include both: {{Audio}} {{Audio2}} — Anki will play them sequentially"
+    },
+    {
+      "type": "p",
+      "text": "You can also use HyperTTS's built-in Random Voice option if available in your version, which picks a different voice for each card automatically."
+    },
+    {
+      "type": "p",
+      "text": "If your note type has an Example Sentence field, you can run a separate HyperTTS batch pass targeting that field and store the result in a second audio field (e.g. ExampleAudio ). This gives you spoken context in addition to the isolated word — extremely useful for listening comprehension and natural sentence rhythm."
+    },
+    {
+      "type": "li",
+      "text": "Add a field ExampleAudio to your note type"
+    },
+    {
+      "type": "li",
+      "text": "Add {{ExampleAudio}} to the back of your Recognition card and the back of your Listening card"
+    },
+    {
+      "type": "li",
+      "text": "Run HyperTTS with Source Field: Example Sentence , Target Field: ExampleAudio"
+    },
+    {
+      "type": "h2",
+      "text": "10. Final Checklist"
+    },
+    {
+      "type": "li",
+      "text": "HyperTTS installed from add-on code 1508862472 and Anki restarted"
+    },
+    {
+      "type": "li",
+      "text": "AwesomeTTS Cloud account created at app.hypertts.io"
+    },
+    {
+      "type": "li",
+      "text": "API key copied and pasted into HyperTTS Settings in Anki — verified successfully"
+    },
+    {
+      "type": "li",
+      "text": "Note type has an Audio field (and optionally Audio2 / ExampleAudio )"
+    },
+    {
+      "type": "li",
+      "text": "Three card templates set up: Recognition , Recall , and Listening"
+    },
+    {
+      "type": "li",
+      "text": "Audio field appears on the correct side of each card template"
+    },
+    {
+      "type": "li",
+      "text": "Batch audio generated for your deck — previewed at least one card before confirming"
+    },
+    {
+      "type": "li",
+      "text": "Voice chosen matches your target language and regional accent"
+    },
+    {
+      "type": "li",
+      "text": "Speed tested and adjusted to your current level"
+    },
+    {
+      "type": "li",
+      "text": "Listening card reviewed in a study session to confirm audio plays correctly"
+    },
+    {
+      "type": "p",
+      "text": "Once this is set up, adding new cards is the only ongoing task. Run a quick HyperTTS batch on any new notes and your full three-card system stays current automatically."
+    }
+  ]
+}

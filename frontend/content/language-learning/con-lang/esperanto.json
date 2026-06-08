@@ -1,0 +1,1571 @@
+{
+  "slug": "esperanto",
+  "title": "Esperanto",
+  "date": null,
+  "source": "/website/public/esperanto.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. Introduction & History"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto is the world's most widely spoken constructed international auxiliary language. It was created by L. L. Zamenhof , a Polish ophthalmologist, and first published in 1887 under the pseudonym Doktoro Esperanto — \"one who hopes\". The language was designed to be politically neutral, easy to learn, and capable of serving as a common second language for international communication."
+    },
+    {
+      "type": "p",
+      "text": "The defining feature of Esperanto's grammar is its radical regularity: every rule applies universally, with no exceptions . Combined with a phonetically consistent alphabet and a productive system of affixes, this makes Esperanto dramatically faster to acquire than natural languages. Studies have suggested that learners reach functional fluency in roughly one-tenth the time required for languages like French or German."
+    },
+    {
+      "type": "h2",
+      "text": "2. Alphabet & Pronunciation"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto uses the Latin alphabet plus six diacritical letters: ĉ, ĝ, ĥ, ĵ, ŝ, ŭ . Each letter corresponds to exactly one sound — the phonemic principle is absolute. There are 28 letters in total."
+    },
+    {
+      "type": "h3",
+      "text": "The 28 Letters"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Letter",
+        "IPA",
+        "English equivalent",
+        "Example"
+      ],
+      "rows": [
+        [
+          "A a",
+          "/a/",
+          "father",
+          "amiko (friend)"
+        ],
+        [
+          "B b",
+          "/b/",
+          "bed",
+          "bela (beautiful)"
+        ],
+        [
+          "C c",
+          "/ts/",
+          "cats",
+          "celo (goal)"
+        ],
+        [
+          "Ĉ ĉ",
+          "/tʃ/",
+          "church",
+          "ĉielo (sky)"
+        ],
+        [
+          "D d",
+          "/d/",
+          "dog",
+          "domo (house)"
+        ],
+        [
+          "E e",
+          "/e/",
+          "bed",
+          "esto (being)"
+        ],
+        [
+          "F f",
+          "/f/",
+          "fish",
+          "filo (son)"
+        ],
+        [
+          "G g",
+          "/ɡ/",
+          "go",
+          "granda (big)"
+        ],
+        [
+          "Ĝ ĝ",
+          "/dʒ/",
+          "judge",
+          "ĝardeno (garden)"
+        ],
+        [
+          "H h",
+          "/h/",
+          "hat",
+          "hundo (dog)"
+        ],
+        [
+          "Ĥ ĥ",
+          "/x/",
+          "Scottish loch",
+          "ĥoro (choir)"
+        ],
+        [
+          "I i",
+          "/i/",
+          "machine",
+          "iri (to go)"
+        ],
+        [
+          "J j",
+          "/j/",
+          "yes",
+          "jam (already)"
+        ],
+        [
+          "Ĵ ĵ",
+          "/ʒ/",
+          "measure",
+          "ĵurnalo (newspaper)"
+        ],
+        [
+          "K k",
+          "/k/",
+          "sky",
+          "kato (cat)"
+        ],
+        [
+          "L l",
+          "/l/",
+          "love",
+          "luno (moon)"
+        ],
+        [
+          "M m",
+          "/m/",
+          "man",
+          "mano (hand)"
+        ],
+        [
+          "N n",
+          "/n/",
+          "now",
+          "nomo (name)"
+        ],
+        [
+          "O o",
+          "/o/",
+          "low",
+          "ovo (egg)"
+        ],
+        [
+          "P p",
+          "/p/",
+          "spin",
+          "paco (peace)"
+        ],
+        [
+          "R r",
+          "/r/",
+          "rolled r",
+          "rivero (river)"
+        ],
+        [
+          "S s",
+          "/s/",
+          "sun",
+          "suno (sun)"
+        ],
+        [
+          "Ŝ ŝ",
+          "/ʃ/",
+          "shoe",
+          "ŝipo (ship)"
+        ],
+        [
+          "T t",
+          "/t/",
+          "stop",
+          "tago (day)"
+        ],
+        [
+          "U u",
+          "/u/",
+          "moon",
+          "urso (bear)"
+        ],
+        [
+          "Ŭ ŭ",
+          "/w/",
+          "water (as glide)",
+          "aŭto (car)"
+        ],
+        [
+          "V v",
+          "/v/",
+          "vine",
+          "vento (wind)"
+        ],
+        [
+          "Z z",
+          "/z/",
+          "zoo",
+          "zebro (zebra)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Stress"
+    },
+    {
+      "type": "p",
+      "text": "Stress always falls on the penultimate (second-to-last) syllable . There are no exceptions: a-MI-ko , ES-per-AN-to . Monosyllabic words carry no stress rule."
+    },
+    {
+      "type": "h2",
+      "text": "3. Word Classes & Endings"
+    },
+    {
+      "type": "p",
+      "text": "Every major word class carries a fixed, invariable ending that immediately identifies its grammatical category. The ending alone tells you what role the word plays in the sentence."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Class",
+        "Ending",
+        "Example",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Noun",
+          "-o",
+          "libro",
+          "book"
+        ],
+        [
+          "Adjective",
+          "-a",
+          "granda",
+          "big"
+        ],
+        [
+          "Adverb",
+          "-e",
+          "rapide",
+          "quickly"
+        ],
+        [
+          "Verb (infinitive)",
+          "-i",
+          "paroli",
+          "to speak"
+        ],
+        [
+          "Verb (present)",
+          "-as",
+          "parolas",
+          "speaks / is speaking"
+        ],
+        [
+          "Verb (past)",
+          "-is",
+          "parolis",
+          "spoke"
+        ],
+        [
+          "Verb (future)",
+          "-os",
+          "parolos",
+          "will speak"
+        ],
+        [
+          "Verb (conditional)",
+          "-us",
+          "parolus",
+          "would speak"
+        ],
+        [
+          "Verb (jussive)",
+          "-u",
+          "parolu",
+          "speak! / let them speak"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "These endings are productive : any root can in principle take any ending. From the root san- (healthy): sano (health, noun), sana (healthy, adjective), sane (healthily, adverb), sani (to be healthy, infinitive)."
+    },
+    {
+      "type": "h2",
+      "text": "4. Nouns"
+    },
+    {
+      "type": "h3",
+      "text": "Basic Form"
+    },
+    {
+      "type": "p",
+      "text": "All nouns end in -o in the singular. Esperanto has no grammatical gender — no masculine/feminine distinction in articles or adjective agreement."
+    },
+    {
+      "type": "li",
+      "text": "libro — book"
+    },
+    {
+      "type": "li",
+      "text": "hundo — dog"
+    },
+    {
+      "type": "li",
+      "text": "virino — woman"
+    },
+    {
+      "type": "li",
+      "text": "urbo — city"
+    },
+    {
+      "type": "h3",
+      "text": "Plural"
+    },
+    {
+      "type": "p",
+      "text": "The plural is formed by adding -j to the noun ending: libro → libroj (books). Pronounced approximately \"oy\"."
+    },
+    {
+      "type": "h3",
+      "text": "The Accusative Case"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto has two cases: nominative (unmarked) and accusative (marked with -n ). The accusative marks the direct object of a verb. It is added after the plural -j as well."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Form",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative (subject)",
+          "libro",
+          "libroj"
+        ],
+        [
+          "Accusative (direct object)",
+          "libron",
+          "librojn"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Because the accusative unambiguously marks the object, word order is flexible : Mi legas libron and Libron mi legas are both grammatical."
+    },
+    {
+      "type": "h2",
+      "text": "5. Articles"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto has one definite article: la (\"the\"). It is invariant — it does not change for gender, number, or case. There is no indefinite article; absence of la implies indefiniteness."
+    },
+    {
+      "type": "li",
+      "text": "la libro — the book"
+    },
+    {
+      "type": "li",
+      "text": "la libroj — the books"
+    },
+    {
+      "type": "li",
+      "text": "la libron — the book (accusative)"
+    },
+    {
+      "type": "li",
+      "text": "libro — a book"
+    },
+    {
+      "type": "h2",
+      "text": "6. Adjectives"
+    },
+    {
+      "type": "h3",
+      "text": "Agreement"
+    },
+    {
+      "type": "p",
+      "text": "Adjectives end in -a and agree with their noun in number and case — taking -j in the plural and -n in the accusative."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Form",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "granda libro",
+          "grandaj libroj"
+        ],
+        [
+          "Accusative",
+          "grandan libron",
+          "grandajn librojn"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Predicate Adjectives"
+    },
+    {
+      "type": "p",
+      "text": "After a linking verb (like esti , to be), the adjective still takes -a but no -n : La libro estas granda (The book is big)."
+    },
+    {
+      "type": "h3",
+      "text": "Comparison"
+    },
+    {
+      "type": "p",
+      "text": "Comparison is analytic, using pli (more) and plej (most), with ol (than) after comparatives."
+    },
+    {
+      "type": "li",
+      "text": "granda — big"
+    },
+    {
+      "type": "li",
+      "text": "pli granda — bigger"
+    },
+    {
+      "type": "li",
+      "text": "plej granda — biggest"
+    },
+    {
+      "type": "li",
+      "text": "malpli granda — less big"
+    },
+    {
+      "type": "li",
+      "text": "malplej granda — least big"
+    },
+    {
+      "type": "p",
+      "text": "Mi estas pli alta ol vi. — I am taller than you."
+    },
+    {
+      "type": "h2",
+      "text": "7. Pronouns"
+    },
+    {
+      "type": "h3",
+      "text": "Personal Pronouns"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Singular",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "1st",
+          "mi (I)",
+          "ni (we)"
+        ],
+        [
+          "2nd",
+          "vi (you)",
+          "vi (you, pl.)"
+        ],
+        [
+          "3rd masc.",
+          "li (he)",
+          "ili (they)"
+        ],
+        [
+          "3rd fem.",
+          "ŝi (she)",
+          "ili"
+        ],
+        [
+          "3rd neuter",
+          "ĝi (it)",
+          "ili"
+        ],
+        [
+          "Reflexive",
+          "si (oneself)",
+          "—"
+        ],
+        [
+          "Indefinite",
+          "oni (one, they)",
+          "—"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The pronoun ri is also used in modern Esperanto as a gender-neutral third-person singular (\"they/them\"), though it is not part of Zamenhof's original specification."
+    },
+    {
+      "type": "p",
+      "text": "All pronouns take -n when used as direct objects: min, vin, lin, ŝin, ĝin, nin, ilin ."
+    },
+    {
+      "type": "h3",
+      "text": "Possessive Pronouns"
+    },
+    {
+      "type": "p",
+      "text": "Formed by adding the adjective ending -a to the personal pronoun:"
+    },
+    {
+      "type": "li",
+      "text": "mia — my · via — your · lia / ŝia / ĝia — his / her / its"
+    },
+    {
+      "type": "li",
+      "text": "nia — our · via — your (pl.) · ilia — their"
+    },
+    {
+      "type": "li",
+      "text": "sia — his/her/its own (reflexive possessive)"
+    },
+    {
+      "type": "p",
+      "text": "Possessives agree with their noun in number and case, like any adjective."
+    },
+    {
+      "type": "h3",
+      "text": "The Reflexive Pronoun Si"
+    },
+    {
+      "type": "p",
+      "text": "Si refers back to the subject of the same clause, removing ambiguity:"
+    },
+    {
+      "type": "li",
+      "text": "Li lavas sin. — He washes himself."
+    },
+    {
+      "type": "li",
+      "text": "Li lavas lin. — He washes him (a different person)."
+    },
+    {
+      "type": "h2",
+      "text": "8. Verbs"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto verbs are arguably the simplest part of the grammar. They do not conjugate for person or number — the ending alone expresses tense or mood. The same form serves for every subject: mi parolas, vi parolas, li parolas, ni parolas, ili parolas (I/you/he/we/they speak)."
+    },
+    {
+      "type": "h3",
+      "text": "Tenses & Moods"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Form",
+        "Ending",
+        "Example",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Infinitive",
+          "-i",
+          "paroli",
+          "to speak"
+        ],
+        [
+          "Present",
+          "-as",
+          "parolas",
+          "speaks / is speaking"
+        ],
+        [
+          "Past",
+          "-is",
+          "parolis",
+          "spoke"
+        ],
+        [
+          "Future",
+          "-os",
+          "parolos",
+          "will speak"
+        ],
+        [
+          "Conditional",
+          "-us",
+          "parolus",
+          "would speak"
+        ],
+        [
+          "Jussive (volitive)",
+          "-u",
+          "parolu",
+          "speak! / let them speak"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Esti (To Be)"
+    },
+    {
+      "type": "p",
+      "text": "The verb esti follows the same rules as all other verbs."
+    },
+    {
+      "type": "li",
+      "text": "Mi estas studento. — I am a student."
+    },
+    {
+      "type": "li",
+      "text": "Vi estis tie. — You were there."
+    },
+    {
+      "type": "li",
+      "text": "Ĝi estos bela. — It will be beautiful."
+    },
+    {
+      "type": "h3",
+      "text": "Participles & Compound Tenses"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto has active and passive participles for all three times. Combined with esti , they form compound tenses expressing precise temporal relationships:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Participle",
+        "Active",
+        "Passive",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Present",
+          "-ant-",
+          "-at-",
+          "doing / being done"
+        ],
+        [
+          "Past",
+          "-int-",
+          "-it-",
+          "having done / having been done"
+        ],
+        [
+          "Future",
+          "-ont-",
+          "-ot-",
+          "about to do / about to be done"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Participles take the noun ending -o , the adjective ending -a , or the adverb ending -e , depending on grammatical role."
+    },
+    {
+      "type": "li",
+      "text": "parolanta — speaking (present active adjective)"
+    },
+    {
+      "type": "li",
+      "text": "parolinto — one who has spoken (past active noun)"
+    },
+    {
+      "type": "li",
+      "text": "Mi estas amata. — I am being loved (passive present)."
+    },
+    {
+      "type": "li",
+      "text": "Mi estis amita. — I was loved / had been loved."
+    },
+    {
+      "type": "h3",
+      "text": "The Jussive (-u)"
+    },
+    {
+      "type": "p",
+      "text": "The -u ending expresses commands, wishes, and volition:"
+    },
+    {
+      "type": "li",
+      "text": "Parolu! — Speak!"
+    },
+    {
+      "type": "li",
+      "text": "Ni iru. — Let's go."
+    },
+    {
+      "type": "li",
+      "text": "Mi volas, ke vi venu. — I want you to come."
+    },
+    {
+      "type": "h3",
+      "text": "The Conditional (-us)"
+    },
+    {
+      "type": "p",
+      "text": "Used for hypothetical or counterfactual statements. Both clauses take -us :"
+    },
+    {
+      "type": "p",
+      "text": "Se mi havus monon, mi vojaĝus. — If I had money, I would travel."
+    },
+    {
+      "type": "h2",
+      "text": "9. Adverbs"
+    },
+    {
+      "type": "p",
+      "text": "Adverbs end in -e and are invariable. They can modify verbs, adjectives, other adverbs, or whole sentences."
+    },
+    {
+      "type": "li",
+      "text": "rapide — quickly · bele — beautifully"
+    },
+    {
+      "type": "li",
+      "text": "tre — very · ankaŭ — also · ne — not"
+    },
+    {
+      "type": "p",
+      "text": "Adverbs derived from adjectives are completely regular: bona → bone (well), granda → grande (greatly). Some adverbs of place take the accusative -n to indicate motion toward: hejme (at home) → hejmen (homeward)."
+    },
+    {
+      "type": "h2",
+      "text": "10. Prepositions"
+    },
+    {
+      "type": "p",
+      "text": "Each preposition has a fixed meaning and governs the nominative by default. The accusative is added after a preposition only to indicate motion toward a destination:"
+    },
+    {
+      "type": "li",
+      "text": "Li estas en la domo. — He is in the house. (location)"
+    },
+    {
+      "type": "li",
+      "text": "Li iras en la domon. — He goes into the house. (direction)"
+    },
+    {
+      "type": "h3",
+      "text": "Common Prepositions"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Preposition",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "en",
+          "in, inside",
+          "en la urbo (in the city)"
+        ],
+        [
+          "sur",
+          "on",
+          "sur la tablo (on the table)"
+        ],
+        [
+          "sub",
+          "under",
+          "sub la ponto (under the bridge)"
+        ],
+        [
+          "al",
+          "to, toward",
+          "al la stacio (to the station)"
+        ],
+        [
+          "de",
+          "of, from, by",
+          "libro de Maria (Maria's book)"
+        ],
+        [
+          "el",
+          "out of",
+          "el la domo (out of the house)"
+        ],
+        [
+          "kun",
+          "with (accompaniment)",
+          "kun miaj amikoj (with my friends)"
+        ],
+        [
+          "por",
+          "for, in order to",
+          "por vi (for you)"
+        ],
+        [
+          "pri",
+          "about, concerning",
+          "pri amo (about love)"
+        ],
+        [
+          "per",
+          "by means of",
+          "per aŭto (by car)"
+        ],
+        [
+          "tra",
+          "through",
+          "tra la parko (through the park)"
+        ],
+        [
+          "antaŭ",
+          "before, in front of",
+          "antaŭ la domo"
+        ],
+        [
+          "post",
+          "after, behind",
+          "post la manĝo"
+        ],
+        [
+          "dum",
+          "during, while",
+          "dum la milito"
+        ],
+        [
+          "inter",
+          "between, among",
+          "inter ni"
+        ],
+        [
+          "kontraŭ",
+          "against, opposite",
+          "kontraŭ la muro"
+        ],
+        [
+          "laŭ",
+          "according to, along",
+          "laŭ la rivero"
+        ],
+        [
+          "sen",
+          "without",
+          "sen vi"
+        ],
+        [
+          "ĝis",
+          "until, up to",
+          "ĝis revido"
+        ],
+        [
+          "apud",
+          "next to, beside",
+          "apud la fenestro"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "The Catch-All Preposition Je"
+    },
+    {
+      "type": "p",
+      "text": "Je has no fixed meaning. It is used when no other preposition fits precisely, especially with times and feelings: je la oka horo (at eight o'clock), je mia surprizo (to my surprise)."
+    },
+    {
+      "type": "h2",
+      "text": "11. Word Formation & Affixes"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto's productive prefixes and suffixes let a small core vocabulary generate an enormous lexicon. All affixes are regular and predictable."
+    },
+    {
+      "type": "h3",
+      "text": "Prefixes"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Prefix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "mal-",
+          "opposite of",
+          "bona → malbona (bad); amiko → malamiko (enemy)"
+        ],
+        [
+          "ge-",
+          "both sexes together",
+          "patro → gepatroj (parents)"
+        ],
+        [
+          "bo-",
+          "by marriage",
+          "frato → bofrato (brother-in-law)"
+        ],
+        [
+          "eks-",
+          "former, ex-",
+          "prezidanto → eksprezidanto"
+        ],
+        [
+          "pra-",
+          "ancient, great- (kin)",
+          "avo → praavo (great-grandfather)"
+        ],
+        [
+          "re-",
+          "again, back",
+          "fari → refari (to redo)"
+        ],
+        [
+          "mis-",
+          "wrongly",
+          "uzi → misuzi (to misuse)"
+        ],
+        [
+          "dis-",
+          "apart, in different directions",
+          "sendi → dissendi (to distribute)"
+        ],
+        [
+          "fi-",
+          "shameful",
+          "homo → fihomo (scoundrel)"
+        ],
+        [
+          "ek-",
+          "beginning of action, sudden",
+          "krii → ekkrii (to shout out)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Suffixes"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Suffix",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "-eg-",
+          "augmentative",
+          "domo → domego (mansion)"
+        ],
+        [
+          "-et-",
+          "diminutive",
+          "domo → dometo (cottage)"
+        ],
+        [
+          "-in-",
+          "feminine",
+          "kato → katino (female cat)"
+        ],
+        [
+          "-ul-",
+          "person characterised by",
+          "riĉa → riĉulo (rich person)"
+        ],
+        [
+          "-ist-",
+          "professional, devotee",
+          "muziko → muzikisto"
+        ],
+        [
+          "-an-",
+          "member, inhabitant",
+          "Eŭropo → Eŭropano"
+        ],
+        [
+          "-ar-",
+          "collection of",
+          "arbo → arbaro (forest)"
+        ],
+        [
+          "-ej-",
+          "place for",
+          "lerni → lernejo (school)"
+        ],
+        [
+          "-il-",
+          "tool for",
+          "tranĉi → tranĉilo (knife)"
+        ],
+        [
+          "-aĵ-",
+          "thing characterised by",
+          "bela → belaĵo"
+        ],
+        [
+          "-ec-",
+          "abstract quality",
+          "bona → boneco (goodness)"
+        ],
+        [
+          "-ebl-",
+          "capable of being",
+          "legi → legebla (readable)"
+        ],
+        [
+          "-ind-",
+          "worthy of",
+          "ami → aminda (lovable)"
+        ],
+        [
+          "-em-",
+          "tendency",
+          "paroli → parolema (talkative)"
+        ],
+        [
+          "-ig-",
+          "to make, cause to become",
+          "pura → purigi (to clean)"
+        ],
+        [
+          "-iĝ-",
+          "to become",
+          "pura → puriĝi (to become clean)"
+        ],
+        [
+          "-um-",
+          "no fixed meaning",
+          "plena → plenumi (to fulfil)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Affixes can be freely combined: mal- + bon- + -ec- + -o = malboneco (the quality of being bad → wickedness)."
+    },
+    {
+      "type": "h2",
+      "text": "12. The Correlative Table"
+    },
+    {
+      "type": "p",
+      "text": "Esperanto's 45 correlatives (the tabelvortoj ) are formed by combining 5 prefixes with 9 endings. Once memorised, every combination is instantly understandable."
+    },
+    {
+      "type": "h3",
+      "text": "Prefixes"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Prefix",
+        "Category",
+        "English equivalent"
+      ],
+      "rows": [
+        [
+          "ki-",
+          "question / relative",
+          "what / which"
+        ],
+        [
+          "ti-",
+          "demonstrative",
+          "that"
+        ],
+        [
+          "i-",
+          "indefinite",
+          "some"
+        ],
+        [
+          "ĉi-",
+          "universal",
+          "every / each"
+        ],
+        [
+          "neni-",
+          "negative",
+          "no / none"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Endings"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Ending",
+        "Role",
+        "ki- example",
+        "ti- example"
+      ],
+      "rows": [
+        [
+          "-o",
+          "thing",
+          "kio (what?)",
+          "tio (that)"
+        ],
+        [
+          "-a",
+          "kind / quality",
+          "kia (what kind?)",
+          "tia (that kind)"
+        ],
+        [
+          "-e",
+          "place",
+          "kie (where?)",
+          "tie (there)"
+        ],
+        [
+          "-el",
+          "manner",
+          "kiel (how?)",
+          "tiel (thus)"
+        ],
+        [
+          "-am",
+          "time",
+          "kiam (when?)",
+          "tiam (then)"
+        ],
+        [
+          "-al",
+          "reason",
+          "kial (why?)",
+          "tial (therefore)"
+        ],
+        [
+          "-om",
+          "quantity",
+          "kiom (how much?)",
+          "tiom (that much)"
+        ],
+        [
+          "-es",
+          "possession",
+          "kies (whose?)",
+          "ties (that one's)"
+        ],
+        [
+          "-u",
+          "specific person/thing",
+          "kiu (who?)",
+          "tiu (that one)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Examples: iu (someone), ĉiu (everyone), neniu (no one); ie (somewhere), ĉie (everywhere), nenie (nowhere); iam (sometime), ĉiam (always), neniam (never)."
+    },
+    {
+      "type": "p",
+      "text": "The particle ĉi (separate word, not a prefix here) adds nearness to ti- correlatives: tiu (that one) → tiu ĉi / ĉi tiu (this one); tie (there) → ĉi tie (here)."
+    },
+    {
+      "type": "h2",
+      "text": "13. Sentence Structure"
+    },
+    {
+      "type": "h3",
+      "text": "Basic Word Order"
+    },
+    {
+      "type": "p",
+      "text": "Default order is Subject–Verb–Object (SVO) , like English. Because the accusative -n unambiguously marks the object, alternative orders are grammatical and used for emphasis:"
+    },
+    {
+      "type": "li",
+      "text": "Mi legas libron. — I read a book. (neutral)"
+    },
+    {
+      "type": "li",
+      "text": "Libron mi legas. — A book is what I read. (object fronted)"
+    },
+    {
+      "type": "h3",
+      "text": "Questions"
+    },
+    {
+      "type": "p",
+      "text": "Yes/no questions are formed with the particle ĉu at the start: Ĉu vi parolas Esperanton? Content questions use the ki- correlatives: Kio estas tio? (What is that?), Kie vi loĝas? (Where do you live?)."
+    },
+    {
+      "type": "h3",
+      "text": "Negation"
+    },
+    {
+      "type": "p",
+      "text": "Negation is expressed with ne before the verb: Mi ne parolas Germanan . If a negative correlative is already in the sentence, ne is dropped: Neniu venis (Nobody came)."
+    },
+    {
+      "type": "h3",
+      "text": "Subordinate Clauses"
+    },
+    {
+      "type": "p",
+      "text": "Introduced by conjunctions such as ke (that), ĉar (because), sed (but), kvankam (although), se (if), kiam (when), dum (while)."
+    },
+    {
+      "type": "li",
+      "text": "Mi scias, ke li venos. — I know that he will come."
+    },
+    {
+      "type": "li",
+      "text": "Mi restas, ĉar mi estas laca. — I stay because I am tired."
+    },
+    {
+      "type": "h2",
+      "text": "14. Numbers"
+    },
+    {
+      "type": "h3",
+      "text": "Cardinal Numbers"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Number",
+        "Esperanto",
+        "Number",
+        "Esperanto"
+      ],
+      "rows": [
+        [
+          "0",
+          "nulo",
+          "10",
+          "dek"
+        ],
+        [
+          "1",
+          "unu",
+          "11",
+          "dek unu"
+        ],
+        [
+          "2",
+          "du",
+          "12",
+          "dek du"
+        ],
+        [
+          "3",
+          "tri",
+          "20",
+          "dudek"
+        ],
+        [
+          "4",
+          "kvar",
+          "30",
+          "tridek"
+        ],
+        [
+          "5",
+          "kvin",
+          "100",
+          "cent"
+        ],
+        [
+          "6",
+          "ses",
+          "1,000",
+          "mil"
+        ],
+        [
+          "7",
+          "sep",
+          "1,000,000",
+          "miliono"
+        ],
+        [
+          "8",
+          "ok",
+          "1,000,000,000",
+          "miliardo"
+        ],
+        [
+          "9",
+          "naŭ",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Numbers combine simply: 21 = dudek unu , 345 = tricent kvardek kvin , 1987 = mil naŭcent okdek sep ."
+    },
+    {
+      "type": "h3",
+      "text": "Ordinals & Derived Forms"
+    },
+    {
+      "type": "li",
+      "text": "Ordinals add -a : unua (first), dua (second), tria (third)."
+    },
+    {
+      "type": "li",
+      "text": "Adverbial: unue (firstly), unufoje (once), dufoje (twice)."
+    },
+    {
+      "type": "li",
+      "text": "Fractional: duono (a half), triono (a third)."
+    },
+    {
+      "type": "li",
+      "text": "Multiplicative: duobla (double), triobla (triple)."
+    },
+    {
+      "type": "li",
+      "text": "Collective: duopo (a pair), triopo (a trio)."
+    },
+    {
+      "type": "h2",
+      "text": "15. Zamenhof's Sixteen Rules"
+    },
+    {
+      "type": "p",
+      "text": "In the original Fundamento de Esperanto (1905), Zamenhof codified the complete grammar in sixteen rules — the inviolable core of the language."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "#",
+        "Rule"
+      ],
+      "rows": [
+        [
+          "1",
+          "No indefinite article. The definite article is la , uniform for all genders, cases, and numbers."
+        ],
+        [
+          "2",
+          "Nouns end in -o . Plural: -j . Two cases: nominative and accusative ( -n )."
+        ],
+        [
+          "3",
+          "Adjectives end in -a and agree in case and number."
+        ],
+        [
+          "4",
+          "Cardinal numbers: unu, du, tri… Ordinals add -a ; adverbials add -e ."
+        ],
+        [
+          "5",
+          "Personal pronouns: mi, vi, li, ŝi, ĝi, si, ni, vi, ili, oni . Possessives by adding -a ."
+        ],
+        [
+          "6",
+          "The verb never changes for person or number. Tenses: -as, -is, -os . Moods: -us, -u, -i . Active/passive participles in three times."
+        ],
+        [
+          "7",
+          "Adverbs end in -e . Comparative: pli… ol . Superlative: plej ."
+        ],
+        [
+          "8",
+          "All prepositions govern the nominative."
+        ],
+        [
+          "9",
+          "Every word is pronounced as spelled."
+        ],
+        [
+          "10",
+          "Stress falls on the penultimate syllable."
+        ],
+        [
+          "11",
+          "Compound words are formed by combining roots. Grammatical ending always last."
+        ],
+        [
+          "12",
+          "If a sentence already contains a negative word, ne is not used separately."
+        ],
+        [
+          "13",
+          "Motion toward is shown by adding the accusative -n after prepositions of place."
+        ],
+        [
+          "14",
+          "Every preposition has a fixed meaning. When no specific one fits, use je ."
+        ],
+        [
+          "15",
+          "Foreign words retain their original spelling; they receive Esperanto grammatical endings."
+        ],
+        [
+          "16",
+          "The article and prepositions can be elided with an apostrophe before a vowel (poetic)."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "16. Example Sentences & Sample Text"
+    },
+    {
+      "type": "h3",
+      "text": "Patro Nia (The Lord's Prayer)"
+    },
+    {
+      "type": "p",
+      "text": "Patro nia, kiu estas en la ĉielo, sankta estu via nomo. Venu via regno. Estu via volo, kiel en la ĉielo, tiel ankaŭ sur la tero. Nian panon ĉiutagan donu al ni hodiaŭ. Kaj pardonu al ni niajn ŝuldojn, kiel ankaŭ ni pardonas al niaj ŝuldantoj. Kaj ne konduku nin en tenton, sed liberigu nin de la malbono."
+    },
+    {
+      "type": "h3",
+      "text": "Worked Sentences"
+    },
+    {
+      "type": "li",
+      "text": "La granda hundo kuras rapide tra la parko. — The big dog runs quickly through the park."
+    },
+    {
+      "type": "li",
+      "text": "Mi volas, ke vi venu morgaŭ. — I want you to come tomorrow."
+    },
+    {
+      "type": "li",
+      "text": "Se mi estus riĉa, mi vojaĝus al ĉiuj landoj. — If I were rich, I would travel to every country."
+    },
+    {
+      "type": "li",
+      "text": "La libroj sur la tablo apartenas al mia frato. — The books on the table belong to my brother."
+    },
+    {
+      "type": "li",
+      "text": "Neniu sciis, kio okazis. — Nobody knew what had happened."
+    },
+    {
+      "type": "h2",
+      "text": "17. Useful Phrases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Esperanto",
+        "English"
+      ],
+      "rows": [
+        [
+          "Saluton!",
+          "Hello!"
+        ],
+        [
+          "Bonan matenon.",
+          "Good morning."
+        ],
+        [
+          "Bonan vesperon.",
+          "Good evening."
+        ],
+        [
+          "Dankon.",
+          "Thank you."
+        ],
+        [
+          "Bonvolu.",
+          "Please. / You're welcome."
+        ],
+        [
+          "Pardonu min.",
+          "Excuse me. / I'm sorry."
+        ],
+        [
+          "Ĝis revido.",
+          "Goodbye."
+        ],
+        [
+          "Kiel vi fartas?",
+          "How are you?"
+        ],
+        [
+          "Mi fartas bone.",
+          "I am well."
+        ],
+        [
+          "Mi ne komprenas.",
+          "I don't understand."
+        ],
+        [
+          "Ĉu vi parolas Esperanton?",
+          "Do you speak Esperanto?"
+        ],
+        [
+          "Kiel vi nomiĝas?",
+          "What is your name?"
+        ],
+        [
+          "Mi nomiĝas…",
+          "My name is…"
+        ],
+        [
+          "Kie estas…?",
+          "Where is…?"
+        ],
+        [
+          "Kiom kostas?",
+          "How much does it cost?"
+        ],
+        [
+          "Mi amas vin.",
+          "I love you."
+        ],
+        [
+          "Feliĉan naskiĝtagon!",
+          "Happy birthday!"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "18. Learning Tips"
+    },
+    {
+      "type": "li",
+      "text": "Learn the endings first. The -o/-a/-e/-i/-as/-is/-os system is the single biggest unlock — once internalised, you can parse almost any sentence."
+    },
+    {
+      "type": "li",
+      "text": "Memorise the correlatives as a single table. All 45 fall out of the 5×9 grid; spend an afternoon on it and you have one of the most useful word families in the language."
+    },
+    {
+      "type": "li",
+      "text": "Use affixes generatively. Don't memorise malbona as a separate word — learn bona and mal- , and you have hundreds of opposites for free."
+    },
+    {
+      "type": "li",
+      "text": "Listen daily. The pronunciation is so regular that comprehensible-input podcasts (e.g. Esperanto Variety Show ) feel intuitive within days."
+    },
+    {
+      "type": "li",
+      "text": "Join the community. Pasporta Servo , local groups, and online forums offer real conversation almost immediately; very few languages are so quick to use."
+    },
+    {
+      "type": "p",
+      "text": "\"Eĉ nun la espero ankoraŭ vivas.\" — Even now, hope still lives."
+    }
+  ]
+}

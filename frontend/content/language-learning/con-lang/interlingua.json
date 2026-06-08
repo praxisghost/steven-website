@@ -1,0 +1,814 @@
+{
+  "slug": "interlingua",
+  "title": "Interlingua",
+  "date": null,
+  "source": "/website/public/interlingua.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. What Is Interlingua?"
+    },
+    {
+      "type": "p",
+      "text": "Interlingua is a naturalistic international auxiliary language developed between 1937 and 1951 by the International Auxiliary Language Association (IALA) , chiefly under the direction of the linguist Alexander Gode . Unlike invented languages built from scratch, Interlingua was extracted from natural languages: its vocabulary comes from the common international stock shared by English, French, Italian, Spanish, and Portuguese, and its grammar is the simplest system that governs that vocabulary without distorting it."
+    },
+    {
+      "type": "p",
+      "text": "The result feels like a streamlined Romance language — closer to Latin-influenced English or simplified Italian than to anything artificial. Speakers of Romance languages can often read Interlingua without prior study; speakers of English recognise the overwhelming majority of words immediately. The grammar strips away almost every complication found in the source languages: no grammatical gender, no case endings on nouns, no subjunctive, no continuous tenses, and no personal verb conjugation."
+    },
+    {
+      "type": "h2",
+      "text": "2. Pronunciation & Spelling"
+    },
+    {
+      "type": "p",
+      "text": "Interlingua uses the Latin alphabet with near-phonetic spelling. Stress falls on the vowel before the last consonant in the root (before -tion , -ate , etc.). Vowels are pure (as in Spanish or Italian):"
+    },
+    {
+      "type": "li",
+      "text": "a as in \"father\""
+    },
+    {
+      "type": "li",
+      "text": "e as in \"bed\""
+    },
+    {
+      "type": "li",
+      "text": "i as in \"machine\""
+    },
+    {
+      "type": "li",
+      "text": "o as in \"more\""
+    },
+    {
+      "type": "li",
+      "text": "u as in \"rule\""
+    },
+    {
+      "type": "p",
+      "text": "Consonants follow Latin-style conventions:"
+    },
+    {
+      "type": "li",
+      "text": "c = /k/ before a, o, u ; /ts/ (or /s/) before e, i"
+    },
+    {
+      "type": "li",
+      "text": "ch = /k/ · ph = /f/ · qu = /kw/ · th = /t/"
+    },
+    {
+      "type": "li",
+      "text": "All other letters are pronounced as in Latin or Italian."
+    },
+    {
+      "type": "h2",
+      "text": "3. Nouns & Articles"
+    },
+    {
+      "type": "h3",
+      "text": "Plurals"
+    },
+    {
+      "type": "p",
+      "text": "Nouns inflect for number only — that is the only grammatical change they ever undergo. There is no case, no gender, and no agreement with adjectives."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Singular ending",
+        "Plural rule",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Vowel (a, e, o)",
+          "add -s",
+          "catto → cattos · rege → reges · libro → libros"
+        ],
+        [
+          "Most consonants",
+          "add -es",
+          "can → canes · flor → flores · nation → nationes"
+        ],
+        [
+          "-c",
+          "add -hes (to preserve hard /k/)",
+          "roc → roches"
+        ],
+        [
+          "Foreign loans",
+          "as in source language",
+          "film → films · chef → chefs"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Gender"
+    },
+    {
+      "type": "p",
+      "text": "Interlingua has no grammatical gender . Nouns referring to people or animals are sex-neutral by default ( jornalista , scientista ). Sex can be specified lexically, with the suffix -essa for feminine ( duce → duchessa ; tigre → tigressa ), or by vowel substitution ( puero \"boy\" → puera \"girl\"). These markings also colour the unmarked form as implicitly masculine in context, as in the source Romance languages."
+    },
+    {
+      "type": "h3",
+      "text": "Articles"
+    },
+    {
+      "type": "p",
+      "text": "The definite article is le (invariable — no gender, no number). The indefinite article is un . Two contractions exist: a + le = al ; de + le = del ."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interlingua",
+        "English"
+      ],
+      "rows": [
+        [
+          "le can",
+          "the dog"
+        ],
+        [
+          "un can",
+          "a dog"
+        ],
+        [
+          "le canes",
+          "the dogs"
+        ],
+        [
+          "le libro del scientista",
+          "the book of the scientist"
+        ],
+        [
+          "al mercato",
+          "to the market"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Unlike English, the definite article is used before abstract nouns representing a whole class ( le amor es belle — love is beautiful) and before titles preceding proper names ( le Senior Smith )."
+    },
+    {
+      "type": "h2",
+      "text": "4. Adjectives & Adverbs"
+    },
+    {
+      "type": "h3",
+      "text": "Adjectives"
+    },
+    {
+      "type": "p",
+      "text": "Adjectives never agree with nouns — the same form is used regardless of number or gender. They may precede or follow the noun; by convention, short adjectives tend to precede, longer or more descriptive ones tend to follow. Numerals always precede."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interlingua",
+        "English"
+      ],
+      "rows": [
+        [
+          "belle oculos / oculos belle",
+          "beautiful eyes (either order fine)"
+        ],
+        [
+          "un bon idea",
+          "a good idea"
+        ],
+        [
+          "un idea ingeniose",
+          "an ingenious idea"
+        ],
+        [
+          "tres libros",
+          "three books"
+        ],
+        [
+          "le parves",
+          "the little ones (adj. used as pronoun)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Adverbs"
+    },
+    {
+      "type": "p",
+      "text": "Secondary adverbs are formed from adjectives by adding -mente (or -amente after -c ): felice → felicemente (happily); rapide → rapidemente (rapidly). A few common ones have short -o forms: solo / solmente (only), ben (well), mal (badly)."
+    },
+    {
+      "type": "h3",
+      "text": "Comparison"
+    },
+    {
+      "type": "p",
+      "text": "Comparison uses plus and minus before the adjective or adverb; the superlative adds le ."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Degree",
+        "Pattern",
+        "Example"
+      ],
+      "rows": [
+        [
+          "More",
+          "plus + adj.",
+          "plus rapide — faster"
+        ],
+        [
+          "Less",
+          "minus + adj.",
+          "minus costose — less costly"
+        ],
+        [
+          "Most",
+          "le plus + adj.",
+          "le plus alte arbore — the tallest tree"
+        ],
+        [
+          "Least",
+          "le minus + adj.",
+          "le minus difficile — the least difficult"
+        ],
+        [
+          "Absolute superlative",
+          "-issime suffix",
+          "excellentissime — most excellent"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A handful of adjectives have optional Latin-inherited irregular forms: bon → melior → optime ; mal → pejor → pessime ; magne → major → maxime ; parve → minor → minime ."
+    },
+    {
+      "type": "h2",
+      "text": "5. Pronouns"
+    },
+    {
+      "type": "h3",
+      "text": "Personal Pronouns"
+    },
+    {
+      "type": "p",
+      "text": "Pronouns inflect for number, case (subject vs. object), and — in the third person — gender. Subject and object forms differ only in the third person."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Subject",
+        "Object / After preposition"
+      ],
+      "rows": [
+        [
+          "1st singular",
+          "io",
+          "me"
+        ],
+        [
+          "2nd singular",
+          "tu",
+          "te"
+        ],
+        [
+          "3rd singular masc.",
+          "ille",
+          "le / ille (after prep.)"
+        ],
+        [
+          "3rd singular fem.",
+          "illa",
+          "la / illa"
+        ],
+        [
+          "3rd singular neuter",
+          "illo",
+          "lo / illo"
+        ],
+        [
+          "1st plural",
+          "nos",
+          "nos"
+        ],
+        [
+          "2nd plural",
+          "vos",
+          "vos"
+        ],
+        [
+          "3rd plural masc.",
+          "illes",
+          "les / illes"
+        ],
+        [
+          "3rd plural fem./neut.",
+          "illas / illos",
+          "las / los"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Possessives"
+    },
+    {
+      "type": "p",
+      "text": "mi(e), tu(e), su(e), nostre, vostre, lor(e) . The short form ( mi, tu… ) goes directly before a noun without an article; the long form is used elsewhere:"
+    },
+    {
+      "type": "li",
+      "text": "le mie libro — my book (with article and long form)"
+    },
+    {
+      "type": "li",
+      "text": "mi libro — my book (without article, short form)"
+    },
+    {
+      "type": "li",
+      "text": "le libro es le mie — the book is mine"
+    },
+    {
+      "type": "h3",
+      "text": "Impersonal & Reflexive"
+    },
+    {
+      "type": "p",
+      "text": "The impersonal pronoun il appears in constructions like il pluve (it is raining) and il es ver que… (it is true that…). The indefinite on (one, you, they, people in general) uses uno as its object form: On non sape nunquam lo que evenira — \"You never know what will happen.\""
+    },
+    {
+      "type": "p",
+      "text": "The reflexive pronoun se refers back to the subject regardless of person. Reflexive constructions cover many uses that English handles with intransitives or the passive:"
+    },
+    {
+      "type": "li",
+      "text": "Tu te rasava? — Have you shaved?"
+    },
+    {
+      "type": "li",
+      "text": "Francese se parla in Francia. — French is spoken in France."
+    },
+    {
+      "type": "h2",
+      "text": "6. Verbs"
+    },
+    {
+      "type": "h3",
+      "text": "Infinitives"
+    },
+    {
+      "type": "p",
+      "text": "Every Interlingua verb has an infinitive ending in -ar , -er , or -ir . The infinitive functions as both the English infinitive and gerund:"
+    },
+    {
+      "type": "p",
+      "text": "Cognoscer nos es amar nos. — To know us is to love us."
+    },
+    {
+      "type": "h3",
+      "text": "Simple Tenses"
+    },
+    {
+      "type": "p",
+      "text": "Interlingua verbs have no personal inflection — the same form is used for all persons and both numbers. There are four simple tenses, built from the infinitive stem (infinitive minus -r ) plus a single ending. Examples use parlar (to speak):"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tense",
+        "Ending",
+        "Example (all persons)"
+      ],
+      "rows": [
+        [
+          "Present",
+          "stem as-is",
+          "parla — speaks / is speaking"
+        ],
+        [
+          "Past (imperfect)",
+          "-va",
+          "parlava — spoke, was speaking"
+        ],
+        [
+          "Future",
+          "-a (+ -r- for -er/-ir)",
+          "parlara — will speak"
+        ],
+        [
+          "Conditional",
+          "-ea (+ -r- for -er/-ir)",
+          "parlarea — would speak"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For -er and -ir verbs the future and conditional insert an extra -r- : vider → videra (will see), viderea (would see); audir → audira (will hear), audirea (would hear)."
+    },
+    {
+      "type": "p",
+      "text": "The imperative is identical to the present tense, typically used without a pronoun: Parla! (Speak!), Aperi le porta. (Open the door.)"
+    },
+    {
+      "type": "h3",
+      "text": "Compound Tenses & Auxiliaries"
+    },
+    {
+      "type": "p",
+      "text": "Complex tenses are formed with the auxiliaries haber (to have), vader (to go), and esser (to be) plus participles or infinitives."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Construction",
+        "Example & Meaning"
+      ],
+      "rows": [
+        [
+          "haber + past participle",
+          "Io ha parlate. — I have spoken (perfect)"
+        ],
+        [
+          "habeva + past participle",
+          "Io habeva parlate. — I had spoken (pluperfect)"
+        ],
+        [
+          "va + infinitive",
+          "Io va parlar. — I am going to speak (near future)"
+        ],
+        [
+          "es + past participle",
+          "Iste es facite. — This is done (passive)"
+        ],
+        [
+          "esseva + past participle",
+          "Iste esseva facite. — This was done (passive past)"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Participles"
+    },
+    {
+      "type": "li",
+      "text": "Present participle: -nte → parlante (speaking)"
+    },
+    {
+      "type": "li",
+      "text": "Past participle: -te for -ar verbs; -ite for -er/-ir → parlate, vidite, audite"
+    },
+    {
+      "type": "p",
+      "text": "Irregular past participles exist for some verbs but are limited in number."
+    },
+    {
+      "type": "h2",
+      "text": "7. Questions & Negation"
+    },
+    {
+      "type": "h3",
+      "text": "Questions"
+    },
+    {
+      "type": "p",
+      "text": "Yes/no questions are formed by placing esque at the beginning of the sentence, or by intonation in speech. There is no subject-verb inversion."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interlingua",
+        "English"
+      ],
+      "rows": [
+        [
+          "Esque tu parla interlingua?",
+          "Do you speak Interlingua?"
+        ],
+        [
+          "Qui es ibi?",
+          "Who is there?"
+        ],
+        [
+          "Que es iste?",
+          "What is this?"
+        ],
+        [
+          "Ubi habita tu?",
+          "Where do you live?"
+        ],
+        [
+          "Quando illa arriva?",
+          "When does she arrive?"
+        ],
+        [
+          "Como va tu?",
+          "How are you?"
+        ],
+        [
+          "Porque ille non veni?",
+          "Why didn't he come?"
+        ],
+        [
+          "Qual libro legeva tu?",
+          "Which book did you read?"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Negation"
+    },
+    {
+      "type": "p",
+      "text": "Negation is formed by placing non immediately before the verb. Non is the only negator; double negation is not used. Non may also negate other elements for emphasis when placed directly before them."
+    },
+    {
+      "type": "li",
+      "text": "Io non comprende. — I don't understand."
+    },
+    {
+      "type": "li",
+      "text": "Illa non parlava hispano. — She didn't speak Spanish."
+    },
+    {
+      "type": "li",
+      "text": "Non io, ma tu. — Not me, but you."
+    },
+    {
+      "type": "h2",
+      "text": "8. Word Order & Syntax"
+    },
+    {
+      "type": "p",
+      "text": "The standard word order is Subject → Verb → Object , as in English. Because nouns do not carry case endings, this order is crucial for clarity. Modifiers generally follow their head word, though short adjectives and all numerals precede nouns. Adverbs typically precede the verb they modify."
+    },
+    {
+      "type": "p",
+      "text": "Relative clauses are introduced by qui (for persons) or que (for things), which never change form:"
+    },
+    {
+      "type": "li",
+      "text": "le homine qui parla — the man who speaks"
+    },
+    {
+      "type": "li",
+      "text": "le libro que io lege — the book that I read"
+    },
+    {
+      "type": "h2",
+      "text": "9. Word Formation"
+    },
+    {
+      "type": "p",
+      "text": "Interlingua has a rich and regular system of suffixes and prefixes drawn from the same Greco-Latin stock as the vocabulary. Learning a small set of these unlocks thousands of words:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Affix",
+        "Meaning & Example"
+      ],
+      "rows": [
+        [
+          "-tion / -sion",
+          "action / result: communicar → communication"
+        ],
+        [
+          "-ista",
+          "agent / adherent: social → socialista"
+        ],
+        [
+          "-ismo",
+          "ideology / system: social → socialismo"
+        ],
+        [
+          "-itate / -tate",
+          "quality (from adj.): felice → felicitate ; bon → bonitate"
+        ],
+        [
+          "-mente",
+          "adverb from adjective: rapide → rapidemente"
+        ],
+        [
+          "-abile / -ibile",
+          "capable of: leger → legibile (readable)"
+        ],
+        [
+          "-ante / -ente",
+          "present participle / agent: studiar → studiante (student)"
+        ],
+        [
+          "re-",
+          "again: facer → refacer (to redo)"
+        ],
+        [
+          "in- / im-",
+          "negative: possibile → impossibile"
+        ],
+        [
+          "non-",
+          "negation prefix: official → non-official"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "10. Example Sentences"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interlingua",
+        "Word-by-word",
+        "English"
+      ],
+      "rows": [
+        [
+          "Le can vide le gatto.",
+          "The dog sees the cat.",
+          "The dog sees the cat."
+        ],
+        [
+          "Nos habeva un discussion longe.",
+          "We had a discussion long.",
+          "We had a long discussion."
+        ],
+        [
+          "Ille rapidemente resolveva le problema.",
+          "He quickly solved the problem.",
+          "He quickly solved the problem."
+        ],
+        [
+          "Il es necessari que nos parte ora.",
+          "It is necessary that we leave now.",
+          "It's necessary that we leave now."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "11. Useful Phrases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Interlingua",
+        "English"
+      ],
+      "rows": [
+        [
+          "Salute!",
+          "Hello!"
+        ],
+        [
+          "Bon matino.",
+          "Good morning."
+        ],
+        [
+          "Bon vespere.",
+          "Good evening."
+        ],
+        [
+          "Gratias.",
+          "Thank you."
+        ],
+        [
+          "Per favor.",
+          "Please."
+        ],
+        [
+          "Pardona me.",
+          "Excuse me."
+        ],
+        [
+          "A revider.",
+          "Goodbye."
+        ],
+        [
+          "Como va tu?",
+          "How are you?"
+        ],
+        [
+          "Io es ben.",
+          "I am well."
+        ],
+        [
+          "Io non comprende.",
+          "I don't understand."
+        ],
+        [
+          "Como te appella?",
+          "What is your name?"
+        ],
+        [
+          "Io me appella…",
+          "My name is…"
+        ],
+        [
+          "Quanto costa?",
+          "How much does it cost?"
+        ],
+        [
+          "Io te ama.",
+          "I love you."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "12. Learning Tips"
+    },
+    {
+      "type": "li",
+      "text": "Lean on what you already know. If you speak any Romance language — or English with a Latinate vocabulary — most words are visible at a glance."
+    },
+    {
+      "type": "li",
+      "text": "Drill the four tense endings first. -a, -va, -ra, -rea . Once these are reflexive, Interlingua verbs are essentially solved."
+    },
+    {
+      "type": "li",
+      "text": "Read before you produce. Read Interlingua Wikipedia, Panorama in interlingua (magazine), or short stories. Vocabulary is recognised so quickly that input becomes the engine of learning."
+    },
+    {
+      "type": "li",
+      "text": "Don't agonise over style. Naturalistic spelling means there are sometimes two acceptable forms; both are fine."
+    },
+    {
+      "type": "li",
+      "text": "Use it as a Romance gateway. Many learners use Interlingua as a stepping stone — its vocabulary opens the door to Italian, Spanish, Portuguese, French, and even Latin."
+    },
+    {
+      "type": "h3",
+      "text": "Quick-Reference Summary"
+    },
+    {
+      "type": "li",
+      "text": "Words are recognisable from English, French, Spanish, Italian, or Portuguese without prior study."
+    },
+    {
+      "type": "li",
+      "text": "Nouns take only a plural -s / -es ending — no case, no gender agreement."
+    },
+    {
+      "type": "li",
+      "text": "Adjectives never change form; they may precede or follow the noun."
+    },
+    {
+      "type": "li",
+      "text": "Verbs have one form per tense — no personal conjugation whatsoever."
+    },
+    {
+      "type": "li",
+      "text": "The four simple tenses: present (stem), past ( -va ), future ( -ra ), conditional ( -rea )."
+    },
+    {
+      "type": "li",
+      "text": "Compound tenses use haber , vader , or esser plus a participle or infinitive."
+    },
+    {
+      "type": "li",
+      "text": "No subjunctive; no continuous tenses; no grammatical gender; no irregular plurals except foreign loans."
+    },
+    {
+      "type": "li",
+      "text": "SVO word order carries the grammatical weight that case endings carry in Latin or German."
+    },
+    {
+      "type": "li",
+      "text": "Questions use esque or question words ( qui, que, ubi, quando, como, porque, qual )."
+    },
+    {
+      "type": "li",
+      "text": "Negation is simply non before the verb."
+    },
+    {
+      "type": "p",
+      "text": "Interlingua es le lingua natural del mundo occidental. — Interlingua is the natural language of the western world."
+    },
+    {
+      "type": "h2",
+      "text": "Notes"
+    },
+    {
+      "type": "li",
+      "text": "Alexander Gode and Hugh E. Blair, Interlingua: A Grammar of the International Language (New York: International Auxiliary Language Association, 1951), accessed June 3, 2026, https://archive.org/details/interlingua-grammar ."
+    },
+    {
+      "type": "h2",
+      "text": "Bibliography"
+    },
+    {
+      "type": "p",
+      "text": "Gode, Alexander, and Hugh E. Blair. Interlingua: A Grammar of the International Language . New York: International Auxiliary Language Association, 1951. Accessed June 3, 2026. https://archive.org/details/interlingua-grammar ."
+    }
+  ]
+}
