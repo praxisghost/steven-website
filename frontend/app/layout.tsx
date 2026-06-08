@@ -3,6 +3,7 @@ import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import HealthBanner from "@/components/HealthBanner";
 
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const display = Newsreader({ subsets: ["latin"], variable: "--font-display" });
@@ -26,6 +27,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <HealthBanner />
         <SiteHeader />
         {/* Skip-link target. A focusable wrapper (not <main>) so it doesn't
             duplicate each page's own <main> landmark. */}
