@@ -20,8 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${body.variable} ${display.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:text-bg"
+        >
+          Skip to content
+        </a>
         <SiteHeader />
-        <div className="flex-1">{children}</div>
+        {/* Skip-link target. A focusable wrapper (not <main>) so it doesn't
+            duplicate each page's own <main> landmark. */}
+        <div id="main" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </div>
         <SiteFooter />
       </body>
     </html>
