@@ -19,7 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${body.variable} ${display.variable}`}>
+    <html lang="en" className={`${body.variable} ${display.variable}`} suppressHydrationWarning>
+      <head>
+        {/* No-FOUC theme init: set .dark before first paint from the user's saved
+            choice, falling back to the OS prefers-color-scheme. Must run inline in
+            <head> ahead of the body so the correct palette paints immediately. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d);}catch(e){}})();",
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"

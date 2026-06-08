@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // Persistent top nav. Fitts's Law: large tap targets; Hick's Law: flat, scannable set.
 // Wayfinding (active state) lives in the NavLinks client component.
@@ -14,6 +15,7 @@ export default function SiteHeader() {
           Steven Legg
         </Link>
         <NavLinks />
+        <ThemeToggle />
       </div>
     </header>
   );

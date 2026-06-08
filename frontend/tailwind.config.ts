@@ -19,15 +19,19 @@ const config: Config = {
         wide: "72rem",
       },
       colors: {
-        bg: "#FAFAF8",
+        // Semantic tokens resolve through CSS variables (channel triplets) so the
+        // whole site flips light<->dark via the `.dark` class with no per-component
+        // `dark:` churn. The `/ <alpha-value>` shim keeps Tailwind opacity modifiers
+        // (e.g. bg-hairline/60) working. Values are defined in app/globals.css.
+        bg: "rgb(var(--color-bg) / <alpha-value>)",
         "bg-dark": "#0E0E10",
-        ink: "#16161A",
-        "ink-soft": "#3A3A40",
-        muted: "#6B6B72",
-        hairline: "#E6E6E1",
+        ink: "rgb(var(--color-ink) / <alpha-value>)",
+        "ink-soft": "rgb(var(--color-ink-soft) / <alpha-value>)",
+        muted: "rgb(var(--color-muted) / <alpha-value>)",
+        hairline: "rgb(var(--color-hairline) / <alpha-value>)",
         // Single accent (Hick's Law: limit choices / visual noise).
-        accent: "#0F766E",
-        "accent-soft": "#14B8A6",
+        accent: "rgb(var(--color-accent) / <alpha-value>)",
+        "accent-soft": "rgb(var(--color-accent-soft) / <alpha-value>)",
       },
       fontFamily: {
         display: ["var(--font-display)", "Newsreader", "Georgia", "serif"],

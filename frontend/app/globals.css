@@ -3,8 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  /* Semantic color tokens as space-separated RGB channel triplets (consumed by
+     Tailwind via rgb(var(--color-*) / <alpha-value>) in tailwind.config.ts).
+     Light is the default; .dark on <html> swaps the whole palette. */
   :root {
     color-scheme: light;
+    --color-bg: 250 250 248; /* #FAFAF8 */
+    --color-ink: 22 22 26; /* #16161A */
+    --color-ink-soft: 58 58 64; /* #3A3A40 */
+    --color-muted: 107 107 114; /* #6B6B72 */
+    --color-hairline: 230 230 225; /* #E6E6E1 */
+    --color-accent: 15 118 110; /* #0F766E */
+    --color-accent-soft: 20 184 166; /* #14B8A6 */
+  }
+  .dark {
+    color-scheme: dark;
+    --color-bg: 14 14 16; /* #0E0E10 */
+    --color-ink: 236 236 234; /* #ECECEA */
+    --color-ink-soft: 184 184 181; /* #B8B8B5 */
+    --color-muted: 138 138 144; /* #8A8A90 */
+    --color-hairline: 42 42 46; /* #2A2A2E */
+    --color-accent: 45 212 191; /* #2DD4BF — lifted for AA contrast on dark bg */
+    --color-accent-soft: 94 234 212; /* #5EEAD4 */
   }
   body {
     @apply bg-bg text-ink font-body antialiased;
