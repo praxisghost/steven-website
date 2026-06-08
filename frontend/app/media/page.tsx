@@ -59,7 +59,9 @@ export default function Media() {
           Edits, clips, and a running log of films I&apos;ve watched. More coming over time.
         </p>
         <a
-          href="https://letterboxd.com/"
+          href="https://letterboxd.com/stovenboui/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-accent underline-offset-4 hover:underline"
         >
           Follow my film diary on Letterboxd ↗
