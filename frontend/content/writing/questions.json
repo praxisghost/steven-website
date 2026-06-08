@@ -1,0 +1,11 @@
+{
+ "slug": "questions",
+ "title": "Questions",
+ "source": "/website/public/questions.html",
+ "blocks": [
+  {
+   "type": "p",
+   "text": "Things I genuinely wonder about — philosophy, science, language, people, & life. Not answers. Just the questions themselves, which I think matter more. More soon."
+  }
+ ]
+}

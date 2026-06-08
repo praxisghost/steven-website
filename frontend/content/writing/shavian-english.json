@@ -1,0 +1,28 @@
+{
+ "slug": "shavian-english",
+ "title": "Shavian English",
+ "source": "/website/public/shavian-english.html",
+ "blocks": [
+  {
+   "type": "p",
+   "text": "Note: the original of this tribute is written in the Shavian alphabet, displayed word-by-word against its English reading. The English text is preserved below; the Shavian original is retained in the source data."
+  },
+  {
+   "type": "p",
+   "text": "This page is a tribute to Shavian English — a beautiful invention that fascinates me."
+  },
+  {
+   "type": "p",
+   "text": "For a long time, I wanted to make something like it — but fully phonetic, not just phonemic. That is a hard thing to do. Building a branch of Shavian that writes every sound is a difficult project."
+  },
+  {
+   "type": "p",
+   "text": "I love the idea, even though I know it will not catch on soon. I would also love to make a post-post-modern zine about contemporary pop culture and the two-thousands."
+  }
+ ],
+ "shavian": [
+  "𐑞𐑦𐑕 𐑐𐑱𐑡 𐑦𐑟 𐑩 𐑑𐑮𐑦𐑚𐑿𐑑 𐑑𐑵 ·𐑖𐑱𐑝𐑾𐑯 ·𐑦𐑙𐑜𐑤𐑦𐑖 — 𐑩 𐑚𐑿𐑑𐑦𐑓𐑩𐑤 𐑦𐑯𐑝𐑧𐑯𐑖𐑩𐑯 𐑞𐑨𐑑 𐑓𐑨𐑕𐑦𐑯𐑱𐑑𐑕 𐑥𐑰.",
+  "𐑓𐑹 𐑩 𐑤𐑷𐑙 𐑑𐑲𐑥, 𐑲 𐑢𐑪𐑯𐑑𐑦𐑛 𐑑𐑵 𐑥𐑱𐑒 𐑕𐑳𐑥𐑔𐑦𐑙 𐑤𐑲𐑒 𐑦𐑑 — 𐑚𐑳𐑑 𐑓𐑫𐑤𐑦 𐑓𐑩𐑯𐑧𐑑𐑦𐑒, 𐑯𐑪𐑑 𐑡𐑳𐑕𐑑 𐑓𐑩𐑯𐑰𐑥𐑦𐑒. 𐑞𐑨𐑑 𐑦𐑟 𐑩 𐑣𐑸𐑛 𐑔𐑦𐑙 𐑑𐑵 𐑛𐑵. 𐑚𐑦𐑤𐑛𐑦𐑙 𐑩 𐑚𐑮𐑨𐑯𐑗 𐑝 ·𐑖𐑱𐑝𐑾𐑯 𐑞𐑨𐑑 𐑮𐑲𐑑𐑕 𐑧𐑝𐑮𐑦 𐑕𐑬𐑯𐑛 𐑦𐑟 𐑩 𐑛𐑦𐑓𐑦𐑒𐑩𐑤𐑑 𐑐𐑮𐑪𐑡𐑧𐑒𐑑.",
+  "𐑲 𐑤𐑳𐑝 𐑞𐑩 𐑲𐑛𐑾, 𐑰𐑝𐑩𐑯 𐑞𐑴 𐑲 𐑯𐑴 𐑦𐑑 𐑢𐑦𐑤 𐑯𐑪𐑑 𐑒𐑨𐑗 𐑪𐑯 𐑕𐑵𐑯. 𐑲 𐑢𐑫𐑛 𐑷𐑤𐑕𐑴 𐑤𐑳𐑝 𐑑𐑵 𐑥𐑱𐑒 𐑩 𐑐𐑴𐑕𐑑-𐑐𐑴𐑕𐑑-𐑥𐑪𐑛𐑼𐑯 𐑟𐑰𐑯 𐑩𐑚𐑬𐑑 𐑒𐑩𐑯𐑑𐑧𐑥𐑐𐑩𐑮𐑧𐑮𐑦 𐑐𐑪𐑐 𐑒𐑳𐑤𐑗𐑼 𐑨𐑯𐑛 𐑞𐑩 𐑑𐑵-𐑔𐑬𐑟𐑩𐑯𐑛𐑟."
+ ]
+}

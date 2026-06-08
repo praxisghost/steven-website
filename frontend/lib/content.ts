@@ -4,12 +4,15 @@ import path from "node:path";
 // Loads article content extracted from /website source into JSON
 // (frontend/content/{blog,projects}/*.json). Read at build time via fs.
 export type Block = { type: "h2" | "h3" | "p" | "li" | "quote"; text: string };
+// Curated cross-reference into another section (e.g. Writing→Blog topical hubs).
+export type CuratedLink = { title: string; href: string; date?: string };
 export type Article = {
   slug: string;
   title: string;
   date?: string;
   source: string;
   blocks: Block[];
+  links?: CuratedLink[];
 };
 
 const ROOT = path.join(process.cwd(), "content");
@@ -29,7 +32,8 @@ export type Collection =
   | "technology"
   | "book-reviews"
   | "self-improvement"
-  | "retro-gaming";
+  | "retro-gaming"
+  | "writing";
 
 export function getCollection(name: Collection): Article[] {
   const dir = path.join(ROOT, name);

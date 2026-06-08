@@ -1,0 +1,18 @@
+{
+ "slug": "criticisms",
+ "title": "Criticisms",
+ "source": "/website/public/criticisms.html",
+ "blocks": [
+  {
+   "type": "p",
+   "text": "Considered critiques of books, films, music, ideas, & things that bother me. Honest, hopefully fair, never mean for the sake of it. More coming soon."
+  }
+ ],
+ "links": [
+  {
+   "title": "American Education: What We Are Owed",
+   "href": "/blog/american-education-what-we-owe",
+   "date": "June 4, 2026"
+  }
+ ]
+}

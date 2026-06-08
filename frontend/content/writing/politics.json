@@ -1,0 +1,23 @@
+{
+ "slug": "politics",
+ "title": "Politics",
+ "source": "/website/public/political-opinion.html",
+ "blocks": [
+  {
+   "type": "p",
+   "text": "Essays and opinions on politics, society, and where I think we go from here."
+  }
+ ],
+ "links": [
+  {
+   "title": "Pictures of Donald Trump and Jeffrey Epstein Together",
+   "href": "/blog/trump-epstein-photos",
+   "date": "June 2026"
+  },
+  {
+   "title": "The Divide, and the Road Ahead",
+   "href": "/blog/divide-and-the-road-ahead",
+   "date": "June 4, 2026"
+  }
+ ]
+}
