@@ -64,7 +64,7 @@ export default function GuitarGuide() {
                     <span className="text-muted tabular-nums">{i + 1}.</span>
                     <span className={isCurrent ? "text-ink" : ""}>{s}</span>
                     {isCurrent ? (
-                      <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-medium text-white" aria-label="currently studying">
+                      <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-medium text-bg" aria-label="currently studying">
                         Current
                       </span>
                     ) : null}

@@ -46,7 +46,7 @@ export default function NewsletterForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="rounded-lg bg-accent px-5 py-3 text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="rounded-lg bg-accent px-5 py-3 text-bg transition-opacity hover:opacity-90 disabled:opacity-50"
       >
         {state === "submitting" ? "Subscribing…" : "Subscribe"}
       </button>
