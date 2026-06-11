@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
 import { getArticle, getCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 // Source: /website/public/technology/<slug>.html
 // linux & software-tutorials have dedicated hub routes (static segments) — exclude
@@ -17,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getArticle("technology", slug);
-  return { title: a ? `${a.title} — Steven Legg` : "Technology — Steven Legg" };
+  return articleMeta(a, { fallback: "Technology", path: `/technology/${slug}` });
 }
 
 export default async function TechPage({ params }: { params: Promise<{ slug: string }> }) {

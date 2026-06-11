@@ -10,7 +10,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const ism = getIsm(slug);
-  return { title: ism ? `${ism.title} — Steven Legg` : "-isms — Steven Legg" };
+  return {
+    title: ism ? ism.title : "-isms",
+    description: ism ? `${ism.title}: an entry in the -isms glossary — definition in progress.` : undefined,
+    alternates: { canonical: `/isms/${slug}` },
+    robots: { index: false, follow: true },
+  };
 }
 
 // Source: /website/public/isms/<slug>.html — placeholder pages preserved faithfully.

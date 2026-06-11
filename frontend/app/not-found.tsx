@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ErrorState from "@/components/ErrorState";
 
-export const metadata: Metadata = { title: "Page not found — Steven Legg" };
+export const metadata: Metadata = { title: "Page not found" };
 
 // Branded 404 (§8). Missing content gets the same calm, actionable surface as
 // other error states rather than the framework default.

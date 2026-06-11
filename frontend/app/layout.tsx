@@ -1,16 +1,53 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HealthBanner from "@/components/HealthBanner";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, OG_DEFAULT } from "@/lib/seo";
 
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const display = Newsreader({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
-  title: "Steven Legg",
-  description: "Personal portfolio, writing, and language guides.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Steven Legg — Writing, projects & language learning",
+    template: "%s · Steven Legg",
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  // No layout-level canonical: each page sets its own self-canonical (via
+  // pageMeta/articleMeta) so hubs/articles don't all canonicalise to "/".
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    locale: "en_GB",
+    title: "Steven Legg — Writing, projects & language learning",
+    description: SITE_DESCRIPTION,
+    images: [{ url: OG_DEFAULT, width: 1200, height: 630, alt: "Steven Legg" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Steven Legg",
+    description: SITE_DESCRIPTION,
+    images: [OG_DEFAULT],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E0E10" },
+  ],
 };
 
 export default function RootLayout({

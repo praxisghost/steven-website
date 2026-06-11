@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 import { getCollection, leadText } from "@/lib/content";
 
 // Source: /website/public/projects.html + projects/*.html — links to migrated pages.
-export const metadata = { title: "Projects — Steven Legg" };
+export const metadata = pageMeta({ title: "Projects", description: "Things Steven Legg is building and tinkering with — software, side projects and experiments.", path: "/projects" });
 
 const EMOJI: Record<string, string> = {
   aquaponics: "🐟",

@@ -1,8 +1,9 @@
 import SubHub from "@/components/SubHub";
+import { pageMeta } from "@/lib/seo";
 import { getDirCollection, type Article } from "@/lib/content";
 
 // Source: /website/public/language-methods.html + the 9 method guide pages.
-export const metadata = { title: "Methods & Tools — Steven Legg" };
+export const metadata = pageMeta({ title: "Methods & Tools", description: "Practical language-learning methods and tools — Anki, comprehensible input, shadowing, TPRS and more.", path: "/language-learning/methods" });
 
 const HUB: Article = {
   slug: "methods",

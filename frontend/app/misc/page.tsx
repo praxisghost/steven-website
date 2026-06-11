@@ -1,11 +1,12 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import Gallery from "@/components/Gallery";
 import { listImages } from "@/lib/gallery";
 
 // Source: /website/public/misc.html — Frogs gallery + Personal Finance Templates.
 // Frog images migrated to frontend/public/img/frogs; spreadsheets to
 // frontend/public/downloads/{spending-log,monthly-budget}.xlsx (Phase 3 step 3).
-export const metadata = { title: "Misc — Steven Legg" };
+export const metadata = pageMeta({ title: "Misc", description: "Odds and ends — the things that don't fit anywhere else.", path: "/misc" });
 
 export default function Misc() {
   const frogs = listImages("frogs");

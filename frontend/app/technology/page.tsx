@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 import { getCollection, leadText } from "@/lib/content";
 
 // Source: /website/public/technology.html + technology/*.html — links to migrated pages.
-export const metadata = { title: "Technology — Steven Legg" };
+export const metadata = pageMeta({ title: "Technology", description: "Technology writing — Linux, macOS, Windows, smartphones, AI and software tutorials.", path: "/technology" });
 
 const EMOJI: Record<string, string> = {
   "ai-prompts": "💬",

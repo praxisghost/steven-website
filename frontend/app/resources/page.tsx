@@ -1,4 +1,5 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import HubGrid, { HubItem } from "@/components/HubGrid";
 
 // Source: /website/public/resources.html — grouped guide lists preserved.
@@ -6,7 +7,7 @@ import HubGrid, { HubItem } from "@/components/HubGrid";
 // (software-tutorials, language-learning/methods, language-learning). Guitar guide
 // migrated (run 21): source /website/public/guitar.html + guitar-scale.js →
 // /resources/guitar (interactive scale player). Card now links.
-export const metadata = { title: "Resources — Steven Legg" };
+export const metadata = pageMeta({ title: "Resources", description: "Guides and reference material — software tutorials, language methods and learning resources.", path: "/resources" });
 
 const software: HubItem[] = [
   { label: "Audacity", href: "/technology/software-tutorials/audacity" },

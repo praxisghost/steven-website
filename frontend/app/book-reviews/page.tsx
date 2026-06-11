@@ -1,7 +1,8 @@
 import CollectionIndex from "@/components/CollectionIndex";
+import { pageMeta } from "@/lib/seo";
 
 // Source: /website/public/book-reviews.html + book-reviews/*.html
-export const metadata = { title: "Book Reviews — Steven Legg" };
+export const metadata = pageMeta({ title: "Book Reviews", description: "Book reviews by Steven Legg — what I've read and what it meant.", path: "/book-reviews" });
 
 export default function BookReviews() {
   return (

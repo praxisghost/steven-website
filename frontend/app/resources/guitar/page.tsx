@@ -1,12 +1,9 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import GuitarGuide from "@/components/GuitarGuide";
 
 // Source: /website/public/guitar.html + guitar-scale.js
-export const metadata = {
-  title: "Guitar Learning Guide — Steven Legg",
-  description:
-    "Steven Legg's guitar learning roadmap — scales by key, progress notes, and an interactive E Major Pentatonic scale player with staff notation.",
-};
+export const metadata = pageMeta({ title: "Guitar Learning Guide", description: "An interactive guitar learning guide — scales by key, progress notes and an E major pentatonic player with staff notation.", path: "/resources/guitar" });
 
 export default function GuitarPage() {
   return (

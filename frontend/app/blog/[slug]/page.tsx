@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
 import { getArticle, getCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 // Source: /website/public/blog/<slug>.html
 export function generateStaticParams() {
@@ -11,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getArticle("blog", slug);
-  return { title: a ? `${a.title} — Steven Legg` : "Blog — Steven Legg" };
+  return articleMeta(a, { fallback: "Blog", path: `/blog/${slug}` });
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {

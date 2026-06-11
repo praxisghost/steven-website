@@ -1,7 +1,8 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 
 // Source: /website/public/sports.html — full prose preserved.
-export const metadata = { title: "Sports — Steven Legg" };
+export const metadata = pageMeta({ title: "Sports", description: "The sports Steven Legg plays and wants to play more of.", path: "/sports" });
 
 const SPORTS: { name: string; paras: string[] }[] = [
   {

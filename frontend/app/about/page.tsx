@@ -1,10 +1,11 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import Gallery from "@/components/Gallery";
 import { listImages } from "@/lib/gallery";
 
 // Source: /website/public/about.html — full prose preserved + salamander slideshow
 // (img/salamanders) migrated to a gallery in Phase 3 step 3.
-export const metadata = { title: "About — Steven Legg" };
+export const metadata = pageMeta({ title: "About", description: "About Steven Legg — who I am, what I do, and how I ended up here.", path: "/about" });
 
 export default function About() {
   const salamanders = listImages("salamanders");

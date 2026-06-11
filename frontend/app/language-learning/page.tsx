@@ -1,8 +1,9 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import HubGrid from "@/components/HubGrid";
 
 // Source: /website/public/language-learning.html — sections preserved.
-export const metadata = { title: "Language Learning — Steven Legg" };
+export const metadata = pageMeta({ title: "Language Learning", description: "Language-learning methods, tools, pronunciation guides and study resources from Steven Legg.", path: "/language-learning" });
 
 export default function LanguageLearning() {
   return (

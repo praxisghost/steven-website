@@ -1,5 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { NAV } from "@/lib/nav";
+import { SITE_DESCRIPTION, OG_DEFAULT, SITE_NAME } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  // Absolute title so the homepage isn't suffixed by the layout template.
+  title: { absolute: "Steven Legg — Writing, projects & language learning" },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: SITE_NAME,
+    title: "Steven Legg — Writing, projects & language learning",
+    description: SITE_DESCRIPTION,
+    images: [OG_DEFAULT],
+  },
+};
 
 // Home. Source: /website/public/index.html ("Just following my rainbow").
 // Redesign: editorial hero + Gestalt card grid (proximity grouping) instead of

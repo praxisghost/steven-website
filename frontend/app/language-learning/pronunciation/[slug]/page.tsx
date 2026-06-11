@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getGuide, getGuides } from "@/lib/pronunciation";
 
@@ -10,7 +11,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const g = getGuide(slug);
-  return { title: g ? `${g.title} — Steven Legg` : "Pronunciation Guides — Steven Legg" };
+  return g
+    ? pageMeta({ title: g.title, description: `Pronunciation guide — how to pronounce ${g.l2_name} for ${g.l1_name} speakers, with IPA and examples.`, path: `/language-learning/pronunciation/${slug}` })
+    : { title: "Pronunciation Guides" };
 }
 
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,7 +1,8 @@
 import CollectionIndex from "@/components/CollectionIndex";
+import { pageMeta } from "@/lib/seo";
 
 // Source: /website/public/self-improvement.html + self-improvement/*.html
-export const metadata = { title: "Self Improvement — Steven Legg" };
+export const metadata = pageMeta({ title: "Self Improvement", description: "Notes on self-improvement and building better habits.", path: "/self-improvement" });
 
 export default function SelfImprovement() {
   return (

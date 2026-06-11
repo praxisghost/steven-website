@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
 import { getDirArticle, getDirCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 const REL = "career";
 
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getDirArticle(REL, slug);
-  return { title: a ? `${a.title} — Career — Steven Legg` : "Career — Steven Legg" };
+  return articleMeta(a, { fallback: "Career", path: `/career/${slug}` });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

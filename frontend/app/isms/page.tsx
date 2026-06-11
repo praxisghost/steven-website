@@ -1,9 +1,10 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import IsmsIndex from "@/components/IsmsIndex";
 import { getIsms } from "@/lib/isms";
 
 // Source: /website/public/isms.html + /website/public/isms/*.html (306 pages).
-export const metadata = { title: "-isms — Steven Legg" };
+export const metadata = pageMeta({ title: "-isms", description: "An evolving glossary of -isms — philosophies, movements and concepts.", path: "/isms" });
 
 export default function Isms() {
   const items = getIsms();

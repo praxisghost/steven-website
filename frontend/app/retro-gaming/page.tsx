@@ -1,7 +1,8 @@
 import CollectionIndex from "@/components/CollectionIndex";
+import { pageMeta } from "@/lib/seo";
 
 // Source: /website/public/retro-gaming.html + retro-gaming/*.html
-export const metadata = { title: "Retro Gaming — Steven Legg" };
+export const metadata = pageMeta({ title: "Retro Gaming", description: "Retro gaming write-ups — Game Boy Advance SP, GameCube, PlayStation 2 and more.", path: "/retro-gaming" });
 
 export default function RetroGaming() {
   return (

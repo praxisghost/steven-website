@@ -1,5 +1,6 @@
 import CollectionArticle from "@/components/CollectionArticle";
 import { getArticle, getCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 // Source: /website/public/self-improvement/<slug>.html
 export function generateStaticParams() {
@@ -9,7 +10,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getArticle("self-improvement", slug);
-  return { title: a ? `${a.title} — Steven Legg` : "Self Improvement — Steven Legg" };
+  return articleMeta(a, { fallback: "Self Improvement", path: `/self-improvement/${slug}` });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

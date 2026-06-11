@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 import { getCollection } from "@/lib/content";
 
 // Source: /website/public/blog/*.html — index of posts, newest first.
-export const metadata = { title: "Blog — Steven Legg" };
+export const metadata = pageMeta({ title: "Blog", description: "The blog of Steven Legg — posts on culture, education, technology, politics and whatever else is on my mind.", path: "/blog" });
 
 export default function BlogIndex() {
   const posts = getCollection("blog");

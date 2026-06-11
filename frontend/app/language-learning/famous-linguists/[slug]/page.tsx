@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
 import { getDirArticle, getDirCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 const REL = "language-learning/famous-linguists";
 
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getDirArticle(REL, slug);
-  return { title: a ? `${a.title} — Steven Legg` : "Famous Linguists — Steven Legg" };
+  return articleMeta(a, { fallback: "Famous Linguists", path: `/language-learning/famous-linguists/${slug}` });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,5 +1,6 @@
 import SubArticle from "@/components/SubArticle";
 import { getSubArticle, getSubCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 // Source: /website/public/technology/software-tutorials/<slug>.html
 export function generateStaticParams() {
@@ -9,7 +10,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getSubArticle("software-tutorials", slug);
-  return { title: a ? `${a.title} — Steven Legg` : "Software Tutorials — Steven Legg" };
+  return articleMeta(a, { fallback: "Software Tutorials", path: `/technology/software-tutorials/${slug}` });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

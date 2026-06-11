@@ -1,10 +1,11 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import Gallery from "@/components/Gallery";
 import { listImages } from "@/lib/gallery";
 
 // Source: /website/public/{media,photos,audio,music,video}.html — sections preserved.
 // Assets migrated to frontend/public/{img,audio} in Phase 3 step 3.
-export const metadata = { title: "Media — Steven Legg" };
+export const metadata = pageMeta({ title: "Media", description: "Photos, audio and video from Steven Legg.", path: "/media" });
 
 export default function Media() {
   const dogs = listImages("dogs");

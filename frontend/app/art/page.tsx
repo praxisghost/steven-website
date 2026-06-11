@@ -1,7 +1,8 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 
 // Source: /website/public/art.html — "Art coming soon."
-export const metadata = { title: "Art — Steven Legg" };
+export const metadata = pageMeta({ title: "Art", description: "Visual work and art by Steven Legg.", path: "/art" });
 
 export default function Art() {
   return (

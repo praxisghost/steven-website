@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import PageHeader from "@/components/PageHeader";
 import PronIndex from "@/components/PronIndex";
 import { getGuides } from "@/lib/pronunciation";
 
 // Source: /website/content/pronunciation-guides/generated/*.md
-export const metadata = { title: "Pronunciation Guides — Steven Legg" };
+export const metadata = pageMeta({ title: "Pronunciation Guides", description: "Pronunciation guides with IPA and worked examples across dozens of language pairs.", path: "/language-learning/pronunciation" });
 
 export default function PronunciationGuides() {
   const items = getGuides();

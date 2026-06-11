@@ -1,8 +1,9 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import HubGrid from "@/components/HubGrid";
 
 // Source: /website/public/writing.html — section list preserved (sub-pages migrate in later phases).
-export const metadata = { title: "Writing — Steven Legg" };
+export const metadata = pageMeta({ title: "Writing", description: "Essays, criticism, politics, tributes and more — the full range of Steven Legg's written work.", path: "/writing" });
 
 export default function Writing() {
   return (

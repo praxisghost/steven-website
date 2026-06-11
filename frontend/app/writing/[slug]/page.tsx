@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
 import { getArticle, getCollection } from "@/lib/content";
+import { articleMeta } from "@/lib/seo";
 
 // Source: /website/public/{animals,questions,rhythm-and-meter,tributes,
 // shavian-english,criticisms,political-opinion}.html — the Writing sub-sections.
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getArticle("writing", slug);
-  return { title: a ? `${a.title} — Steven Legg` : "Writing — Steven Legg" };
+  return articleMeta(a, { fallback: "Writing", path: `/writing/${slug}` });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

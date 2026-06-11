@@ -5,3 +5,6 @@ node_modules/
 *.tsbuildinfo
 .env
 .env.local
+
+# FUSE mount orphans from in-place edits (mount denies unlink)
+.fuse_hidden*

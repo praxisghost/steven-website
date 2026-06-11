@@ -1,11 +1,12 @@
 import PageHeader from "@/components/PageHeader";
+import { pageMeta } from "@/lib/seo";
 import ContactForm from "@/components/ContactForm";
 import NewsletterForm from "@/components/NewsletterForm";
 import { LINKTREE } from "@/lib/nav";
 
 // Source: /website/public/contact.html — "Send a message" + "Newsletter".
 // Forms POST to the Django API (backend/api/views.py: /api/contact, /api/newsletter).
-export const metadata = { title: "Contact — Steven Legg" };
+export const metadata = pageMeta({ title: "Contact", description: "Get in touch with Steven Legg — send a message or subscribe to the newsletter.", path: "/contact" });
 
 export default function Contact() {
   return (
