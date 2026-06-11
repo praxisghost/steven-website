@@ -1,0 +1,55 @@
+{
+  "locale": "ia",
+  "name": "Interlingua",
+  "htmlLang": "ia",
+  "siteTitle": "Steven Legg",
+  "tagline": "Justo sequente mi arco-iris",
+  "back": "← Retro",
+  "nav": [
+    {
+      "slug": "about",
+      "label": "Re Me"
+    },
+    {
+      "slug": "art",
+      "label": "Arte"
+    },
+    {
+      "slug": "book-reviews",
+      "label": "Recensiones de Libros"
+    },
+    {
+      "slug": "career",
+      "label": "Carriera"
+    },
+    {
+      "slug": "contact",
+      "label": "Contacto"
+    },
+    {
+      "slug": "language-learning",
+      "label": "Apprender Linguas"
+    },
+    {
+      "slug": "misc",
+      "label": "Diverse"
+    },
+    {
+      "slug": "music",
+      "label": "Musica"
+    },
+    {
+      "slug": "photos",
+      "label": "Photos"
+    },
+    {
+      "slug": "sports",
+      "label": "Sportos"
+    },
+    {
+      "slug": "writing",
+      "label": "Scriptos"
+    }
+  ],
+  "source": "/website/public/ia/index.html"
+}

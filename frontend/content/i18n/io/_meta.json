@@ -1,0 +1,55 @@
+{
+  "locale": "io",
+  "name": "Ido",
+  "htmlLang": "io",
+  "siteTitle": "Steven Legg",
+  "tagline": "Nur sequante mea ciel-arko",
+  "back": "← Retroe",
+  "nav": [
+    {
+      "slug": "about",
+      "label": "Pri Me"
+    },
+    {
+      "slug": "art",
+      "label": "Arto"
+    },
+    {
+      "slug": "book-reviews",
+      "label": "Libro-Recensi"
+    },
+    {
+      "slug": "career",
+      "label": "Kariero"
+    },
+    {
+      "slug": "contact",
+      "label": "Kontakto"
+    },
+    {
+      "slug": "language-learning",
+      "label": "Linguo-Lernado"
+    },
+    {
+      "slug": "misc",
+      "label": "Diversa"
+    },
+    {
+      "slug": "music",
+      "label": "Muziko"
+    },
+    {
+      "slug": "photos",
+      "label": "Foti"
+    },
+    {
+      "slug": "sports",
+      "label": "Sporti"
+    },
+    {
+      "slug": "writing",
+      "label": "Skribado"
+    }
+  ],
+  "source": "/website/public/io/index.html"
+}

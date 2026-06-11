@@ -34,7 +34,7 @@ export default function PronIndex({ items }: { items: GuideMeta[] }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={`Filter ${items.length} languages…`}
-          className="w-full rounded-lg border border-hairline bg-transparent px-4 py-3 text-base outline-none focus:border-accent"
+          className="w-full rounded-lg border border-field bg-transparent px-4 py-3 text-base outline-none focus:border-accent"
           autoComplete="off"
         />
       </label>

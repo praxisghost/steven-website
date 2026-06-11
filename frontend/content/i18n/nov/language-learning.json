@@ -1,0 +1,16 @@
+{
+  "slug": "language-learning",
+  "title": "Lingue-Lerne",
+  "sub": "Selektati resurses, metode-gides, & studie-materies pro li lingues ke me aktivim lerno.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Metodes & Instrumentes"
+    },
+    {
+      "type": "li",
+      "text": "Lingue-Gides"
+    }
+  ],
+  "source": "/website/public/nov/language-learning.html"
+}

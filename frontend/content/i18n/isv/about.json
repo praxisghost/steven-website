@@ -1,0 +1,148 @@
+{
+  "slug": "about",
+  "title": "O Mně",
+  "sub": "Něčto o tom, kto jesm & kako jesm prišel sjuda.",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Tutoj sajt jest osobnym portfeljem, blogom, centrom resursov dlja učenja, & prosto zabavnym projektom dlja mene samogo — město, gdě dokumentuju to, na čem rabotam, dělam se rěčami, ktore jesm našel polezne, & budovuju nešto, čto otražaje, kako zaisto myšlim i učim se."
+    },
+    {
+      "type": "p",
+      "text": "Lubim učiti se, naučati, nasładživati se životom, & znakomiti se s novymi ljudmi. Tuto jest časť sajta, gdě probuju zvučati interesno bez togo, čtoby zvučati kak profil na LinkedInu."
+    },
+    {
+      "type": "h2",
+      "text": "Obrazovanje"
+    },
+    {
+      "type": "p",
+      "text": "Zakončil jesm v 2022 godu z Bachelor of Arts v Německih Studijah na Wheaton College Massachusetts ."
+    },
+    {
+      "type": "h2",
+      "text": "Rabota"
+    },
+    {
+      "type": "p",
+      "text": "Sěgo časa naučaju v EF International Language Center v Bostonu, Massachusettsu. Lubim pomahati studentom učiti se nasładživati učenjem i znakomiti jih s orudjami, o ktorih byhom hotěl znati ranše."
+    },
+    {
+      "type": "h2",
+      "text": "Programy & Stipendije"
+    },
+    {
+      "type": "p",
+      "text": "Jesm oba:"
+    },
+    {
+      "type": "li",
+      "text": "byvšim učastnikom Congress-Bundestag Youth Exchange 2016"
+    },
+    {
+      "type": "li",
+      "text": "& recipijentom stipendiji Fulbright Germany English Teaching Assistant (2024–2025)"
+    },
+    {
+      "type": "h2",
+      "text": "Města, gdě jesm žil"
+    },
+    {
+      "type": "li",
+      "text": "Gessen, Německaja"
+    },
+    {
+      "type": "li",
+      "text": "Saksonija-Anhalt, Německaja"
+    },
+    {
+      "type": "p",
+      "text": "Moj lubimy grad v Německoj jest Marburg an der Lahn — častično iz-za zamka na hřbětu, takože iz-za togo, kako stary grad čustvuje se vo večerě ili kogda jest mglisto."
+    },
+    {
+      "type": "h2",
+      "text": "Zabavy"
+    },
+    {
+      "type": "p",
+      "text": "Nasładživam se gorskym biciklovanjem & igranjem na gitarě — hot ne jesm horoš v ničom z togo (osoblivo gitarě)."
+    },
+    {
+      "type": "h2",
+      "text": "Jezyki, ktore učim"
+    },
+    {
+      "type": "p",
+      "text": "Moji ninje fokusne jezyki sut:"
+    },
+    {
+      "type": "li",
+      "text": "Kitajski"
+    },
+    {
+      "type": "li",
+      "text": "Německi"
+    },
+    {
+      "type": "li",
+      "text": "Špaňski"
+    },
+    {
+      "type": "li",
+      "text": "Turski"
+    },
+    {
+      "type": "p",
+      "text": "Takože učim razvitju web-aplikacij, dokoli budujem tutoj sajt."
+    },
+    {
+      "type": "h2",
+      "text": "Semja & Životinje"
+    },
+    {
+      "type": "p",
+      "text": "Jesm synom publičnoj bibliotekarki & vsegda jesm lubil učiti se — hot nikogda ne jesm čital knigi, ktore ona probyvala mi dati. Lubim životinje, & vsegda jesm imal jakoeš domašnje životnoe: hamstrov, psov, kotov, jaščerov, & žab. Osoblivo lubim žaby."
+    },
+    {
+      "type": "p",
+      "text": "Vse ješče vyrabotuju moji Plany A do C v životu. Hču zaslužiti pristoju platu, kupiti vlastnost u rěky, založiti semju — ale jestli vse to ne se udast, možeby Plan D budet stati Cesarem Žab & udrživati ogromne ozero polno Afrikanskih Bykožab."
+    },
+    {
+      "type": "h2",
+      "text": "Druge interesy"
+    },
+    {
+      "type": "p",
+      "text": "Takože ljubim učiti se o:"
+    },
+    {
+      "type": "li",
+      "text": "Linukse"
+    },
+    {
+      "type": "li",
+      "text": "Akvaponicě"
+    },
+    {
+      "type": "li",
+      "text": "Hobbi-inženerstvě & projektah"
+    },
+    {
+      "type": "li",
+      "text": "Tehnologičnyh eksperimentah"
+    },
+    {
+      "type": "h2",
+      "text": "Začto tutoj sajt eksistuje"
+    },
+    {
+      "type": "p",
+      "text": "Tutoj sajt jest oba portfeljem/blogom & městom dlja dělanja se polezne rěči, ktore jesm odkryl po puti. Jestli nešto, čto piše zděs, sohrani někomu drugomu několko godin zamišanja ili zbudi interes k něčemu — togda jesm srdečen."
+    },
+    {
+      "type": "p",
+      "text": "Posvjašteno mojej matkě & mojemu otcu."
+    }
+  ],
+  "source": "/website/public/isv/about.html"
+}

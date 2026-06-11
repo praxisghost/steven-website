@@ -1,0 +1,42 @@
+{
+  "theme": "dark",
+  "viewport": "mobile",
+  "results": [
+    {
+      "path": "/",
+      "label": "home",
+      "darkApplied": true,
+      "violations": []
+    },
+    {
+      "path": "/contact",
+      "label": "contact-form",
+      "darkApplied": true,
+      "violations": []
+    },
+    {
+      "path": "/technology/linux/arch",
+      "label": "tables",
+      "darkApplied": true,
+      "violations": []
+    },
+    {
+      "path": "/resources/guitar",
+      "label": "interactive",
+      "darkApplied": true,
+      "violations": []
+    },
+    {
+      "path": "/blog",
+      "label": "blog-index",
+      "darkApplied": true,
+      "violations": []
+    },
+    {
+      "path": "/language-learning/pronunciation",
+      "label": "pron-index",
+      "darkApplied": true,
+      "violations": []
+    }
+  ]
+}

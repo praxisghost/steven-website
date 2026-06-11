@@ -1,0 +1,28 @@
+{
+  "slug": "music",
+  "title": "Musica",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Instrumentos que io sona & le musica al qual io semper retorna."
+    },
+    {
+      "type": "li",
+      "text": "Guitarra"
+    },
+    {
+      "type": "li",
+      "text": "Mandolina"
+    },
+    {
+      "type": "li",
+      "text": "Ocarina"
+    },
+    {
+      "type": "li",
+      "text": "Listas de reproduction"
+    }
+  ],
+  "source": "/website/public/ia/music.html"
+}

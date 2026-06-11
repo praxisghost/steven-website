@@ -1,0 +1,16 @@
+{
+  "slug": "photos",
+  "title": "Foti",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Plu foti venu durant li tempe."
+    },
+    {
+      "type": "p",
+      "text": "Note: li hunde-rase-galerie es disponabli in li Anglesi versione."
+    }
+  ],
+  "source": "/website/public/nov/photos.html"
+}

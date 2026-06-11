@@ -41,7 +41,7 @@ export default function NewsletterForm() {
         maxLength={254}
         placeholder="you@example.com"
         autoComplete="email"
-        className="w-full rounded-lg border border-hairline bg-transparent px-4 py-3 text-base outline-none focus:border-accent sm:max-w-xs"
+        className="w-full rounded-lg border border-field bg-transparent px-4 py-3 text-base outline-none focus:border-accent sm:max-w-xs"
       />
       <button
         type="submit"

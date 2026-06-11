@@ -1,0 +1,16 @@
+{
+  "slug": "language-learning",
+  "title": "Linguo-Lernado",
+  "sub": "Selektita rimedi, metod-gidili, & studi-materii por li lingui quin me aktive lernas.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Metodi & Utensili"
+    },
+    {
+      "type": "li",
+      "text": "Linguo-Gidili"
+    }
+  ],
+  "source": "/website/public/io/language-learning.html"
+}

@@ -158,11 +158,11 @@ export default function GuitarGuide() {
 const playerCss = `
 .guitar-widget .video-embed { position: relative; aspect-ratio: 16/9; border-radius: 6px; overflow: hidden; border: 1px solid #E6E6E1; }
 .guitar-widget .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.guitar-widget .scale-player { padding: 1.1rem 1rem 1rem; border: 1px solid #E6E6E1; border-radius: 6px; }
+.guitar-widget .scale-player { padding: 1.1rem 1rem 1rem; border: 1px solid #E6E6E1; border-radius: 6px; background: #FAFAF8; }
 .guitar-widget .scale-row { display: flex; justify-content: center; gap: 0.25rem; margin-bottom: 0.9rem; }
 .guitar-widget .scale-note { display: flex; flex-direction: column; align-items: center; min-width: 2.6rem; padding: 0.4rem 0.5rem; border: 1px solid transparent; border-radius: 4px; transition: background .08s, border-color .08s; }
 .guitar-widget .note-name { font-family: var(--font-display), Georgia, serif; font-size: 1.25rem; font-weight: 500; color: #6B6B72; line-height: 1.15; }
-.guitar-widget .note-interval { font-size: .7rem; color: #A8A8A2; letter-spacing: .04em; margin-top: .25rem; }
+.guitar-widget .note-interval { font-size: .7rem; color: #6B6B72; letter-spacing: .04em; margin-top: .25rem; }
 .guitar-widget .scale-note.active { background: #E7F2F0; border-color: #99C7C1; }
 .guitar-widget .scale-note.active .note-name { color: #0F766E; }
 .guitar-widget .scale-note.active .note-interval { color: #0F766E; }
@@ -172,8 +172,8 @@ const playerCss = `
 .guitar-widget .scale-btn:disabled { opacity: .4; cursor: default; }
 .guitar-widget .scale-btn-stop:hover:not(:disabled) { border-color: #B4453C; color: #B4453C; }
 .guitar-widget .scale-btn.melody-active { border-color: #0F766E; color: #0F766E; }
-.guitar-widget .notation-wrap { margin-top: .5rem; padding: .9rem 1rem .75rem; border: 1px solid #E6E6E1; border-top: none; border-radius: 0 0 6px 6px; }
-.guitar-widget .notation-label { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: #A8A8A2; margin-bottom: .65rem; user-select: none; }
+.guitar-widget .notation-wrap { margin-top: .5rem; padding: .9rem 1rem .75rem; border: 1px solid #E6E6E1; border-top: none; border-radius: 0 0 6px 6px; background: #FAFAF8; }
+.guitar-widget .notation-label { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: #6B6B72; margin-bottom: .65rem; user-select: none; }
 .guitar-widget .notation-svg { display: block; width: 100%; }
 .guitar-widget .sn-staff-line { stroke: #D8D8D2; stroke-width: 1; }
 .guitar-widget .sn-barline { stroke: #C8C8C2; stroke-width: 1.5; }

@@ -1,0 +1,47 @@
+{
+  "slug": "bill-vanpatten",
+  "title": "Bill VanPatten",
+  "source": "/website/public/famous-linguists/bill-vanpatten.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "How learners actually process input"
+    },
+    {
+      "type": "p",
+      "text": "Bill VanPatten is a linguist, longtime professor, and — through his podcast and talks — one of the field's best-known public voices. If Krashen made the case that input matters, VanPatten asked the next question: when learners hear or read a sentence, what do they actually do with it inside their heads? His answer became one of the more practical theories in second-language research."
+    },
+    {
+      "type": "h2",
+      "text": "Input processing"
+    },
+    {
+      "type": "p",
+      "text": "VanPatten's core work is on input processing — the mental shortcuts learners use to connect words to meaning. Early on, learners lean heavily on content words and tend to skip over grammatical markers that carry the same information. If a sentence says \"Yesterday I talk to him,\" the learner already gets \"yesterday,\" so the past-tense ending feels redundant and slides right past them. We're wired to hunt for meaning efficiently, and that efficiency can quietly cause us to miss grammar."
+    },
+    {
+      "type": "h2",
+      "text": "Processing instruction"
+    },
+    {
+      "type": "p",
+      "text": "His response was a teaching method called processing instruction . Instead of having students produce a form over and over, you design activities that force them to rely on the grammar to understand the meaning — so they can't get the answer by guessing from context. It nudges the learner's attention onto the feature they'd otherwise ignore, at the exact moment it matters. Studies showed this often outperformed traditional output drills, which made people rethink what practice should look like."
+    },
+    {
+      "type": "h2",
+      "text": "A communicative view of teaching"
+    },
+    {
+      "type": "p",
+      "text": "VanPatten is a forceful advocate for communicative language teaching : the idea that a classroom should be full of real, meaning-bearing communication rather than mechanical exercises. He's well known for the position that grammar instruction has limited power, and that what truly drives acquisition is exposure to comprehensible, communicative input. His phrase — that acquisition happens \"incidentally\" while you're busy understanding and expressing meaning — captures the whole stance."
+    },
+    {
+      "type": "h2",
+      "text": "Why he still matters"
+    },
+    {
+      "type": "p",
+      "text": "For a learner, VanPatten's work explains a frustrating experience everyone has: hearing a grammar point a hundred times and still not noticing it. His answer isn't to drill harder but to engage with input in a way that makes the form carry meaning. It's a subtle shift, and it's reshaped how a lot of modern, communication-first courses are built."
+    }
+  ]
+}

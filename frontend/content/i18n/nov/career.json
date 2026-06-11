@@ -1,0 +1,16 @@
+{
+  "slug": "career",
+  "title": "Karyere",
+  "sub": "Interesses, aspirationes, & koses ke me volu lerno plu.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Interesses"
+    },
+    {
+      "type": "li",
+      "text": "Koses ke me volu lerno plu"
+    }
+  ],
+  "source": "/website/public/nov/career.html"
+}

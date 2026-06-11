@@ -1,0 +1,12 @@
+{
+  "slug": "art",
+  "title": "Umětnost",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Umětnost prijde skoro."
+    }
+  ],
+  "source": "/website/public/isv/art.html"
+}

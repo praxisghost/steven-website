@@ -1,0 +1,24 @@
+{
+  "slug": "misc",
+  "title": "Diverse",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Cosas variate que non se colloca in altere locos. Plus veni."
+    },
+    {
+      "type": "h2",
+      "text": "Modelos de financias personal"
+    },
+    {
+      "type": "p",
+      "text": "Duo spreadsheets libere pro adjutarte a comenciar a tracear tu moneta. Sin registration, sin condiciones — solmente discarga e usa."
+    },
+    {
+      "type": "p",
+      "text": "Nota: le galleria de ranas es disponibile in le version anglese."
+    }
+  ],
+  "source": "/website/public/ia/misc.html"
+}

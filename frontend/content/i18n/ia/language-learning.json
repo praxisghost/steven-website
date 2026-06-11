@@ -1,0 +1,16 @@
+{
+  "slug": "language-learning",
+  "title": "Apprender Linguas",
+  "sub": "Ressources curate, guidas de methodos, & materiales de studio pro le linguas que io apprende activemente.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Methodos & Instrumentos"
+    },
+    {
+      "type": "li",
+      "text": "Guidas de Linguas"
+    }
+  ],
+  "source": "/website/public/ia/language-learning.html"
+}

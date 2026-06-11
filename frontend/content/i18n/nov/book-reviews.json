@@ -1,0 +1,16 @@
+{
+  "slug": "book-reviews",
+  "title": "Libre-Revues",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Libres ke me lektad e ko li signifika por me. Min analyse, plu honesti reakte — li sirkumstantes in kel me esed kand me lektad les, e ke restas."
+    },
+    {
+      "type": "li",
+      "text": "The Midnight Library — Matt Haig Revue"
+    }
+  ],
+  "source": "/website/public/nov/book-reviews.html"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "book-reviews",
+  "title": "Libro-Recensi",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Libri quin me lektis e quon li signifikis a me. Min analizo, plu honesta reakto — la cirkonstanci en qui me esis kande me lektis li, e to quo restas."
+    },
+    {
+      "type": "li",
+      "text": "The Midnight Library — Matt Haig Recenso"
+    }
+  ],
+  "source": "/website/public/io/book-reviews.html"
+}

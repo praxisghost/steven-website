@@ -20,7 +20,7 @@ export default function Contact() {
         <ContactForm />
         <p className="text-sm text-muted">
           Prefer something else? Find me on{" "}
-          <a href={LINKTREE} className="text-accent hover:underline">
+          <a href={LINKTREE} className="text-accent underline underline-offset-2">
             linktr.ee/stevenlegg
           </a>
           .

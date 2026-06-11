@@ -1,0 +1,16 @@
+{
+  "slug": "photos",
+  "title": "Photos",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Plus photos venira con le tempore."
+    },
+    {
+      "type": "p",
+      "text": "Nota: le galleria de races de canes es disponibile in le version anglese."
+    }
+  ],
+  "source": "/website/public/ia/photos.html"
+}

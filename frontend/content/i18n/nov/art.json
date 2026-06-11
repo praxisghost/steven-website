@@ -1,0 +1,12 @@
+{
+  "slug": "art",
+  "title": "Arte",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Arte venio bald."
+    }
+  ],
+  "source": "/website/public/nov/art.html"
+}

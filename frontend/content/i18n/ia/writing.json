@@ -1,0 +1,52 @@
+{
+  "slug": "writing",
+  "title": "Scriptos",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Obras scribite in alcun areas differente."
+    },
+    {
+      "type": "li",
+      "text": "Animales"
+    },
+    {
+      "type": "li",
+      "text": "Blog"
+    },
+    {
+      "type": "li",
+      "text": "Criticas"
+    },
+    {
+      "type": "li",
+      "text": "Politica"
+    },
+    {
+      "type": "li",
+      "text": "Questiones"
+    },
+    {
+      "type": "li",
+      "text": "Jocos Retro"
+    },
+    {
+      "type": "li",
+      "text": "Rhythmo & Metro"
+    },
+    {
+      "type": "li",
+      "text": "Auto-amelioration"
+    },
+    {
+      "type": "li",
+      "text": "Anglese Shavian"
+    },
+    {
+      "type": "li",
+      "text": "Technologia"
+    }
+  ],
+  "source": "/website/public/ia/writing.html"
+}

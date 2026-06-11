@@ -1,0 +1,16 @@
+{
+  "slug": "book-reviews",
+  "title": "Knižne Recenzije",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Knigi ktore jesm čital i čto oni značili dlja mene. Menje analizy, vyše iskrennoj reakcije — okolnosti v ktorih jesm byl, kogda jesm jih čital, i čto ostalo."
+    },
+    {
+      "type": "li",
+      "text": "The Midnight Library — Matt Haig Recenzija"
+    }
+  ],
+  "source": "/website/public/isv/book-reviews.html"
+}

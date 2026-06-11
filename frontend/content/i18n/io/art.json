@@ -1,0 +1,12 @@
+{
+  "slug": "art",
+  "title": "Arto",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Arto venos balde."
+    }
+  ],
+  "source": "/website/public/io/art.html"
+}

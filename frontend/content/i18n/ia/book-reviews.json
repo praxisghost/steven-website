@@ -1,0 +1,16 @@
+{
+  "slug": "book-reviews",
+  "title": "Recensiones de Libros",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Libros que io ha legite e lo que illos significava pro me. Minus analyse, plus reaction honeste — le circumstantias in le quales io me trovava quando io los legeva, e lo que ha remanite."
+    },
+    {
+      "type": "li",
+      "text": "The Midnight Library — Matt Haig Recension"
+    }
+  ],
+  "source": "/website/public/ia/book-reviews.html"
+}

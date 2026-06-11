@@ -1,0 +1,148 @@
+{
+  "slug": "about",
+  "title": "Pri Me",
+  "sub": "Kelki koses pri ke me es & kuali me ha ariv hir.",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Disi site es personal portfolio, blog, lerno-resurse-sentre, & nur amusi projekte pro me ipsi — loke pro dokumenti ke me labora, partito de koses ke me ad trove utili, & konstrukti alko ke reflekte kuali me realm pensa e lerno."
+    },
+    {
+      "type": "p",
+      "text": "Me ama lerno, instrukti, gausen li vive, & rekontri novi persones. Disi es li parte del site ku me prova soni interesant sin soni kel LinkedIn-profile."
+    },
+    {
+      "type": "h2",
+      "text": "Edukasion"
+    },
+    {
+      "type": "p",
+      "text": "Me gradued in 2022 kun Bachelor of Arts in Germani Studes de Wheaton College Massachusetts ."
+    },
+    {
+      "type": "h2",
+      "text": "Labore"
+    },
+    {
+      "type": "p",
+      "text": "Me nun instrukta in EF International Language Center in Boston, Massachusetts. Me ama helpi studentes lerno gausen lernad e introdukti les a instrumentes ke me volut esed konositi plu frue."
+    },
+    {
+      "type": "h2",
+      "text": "Programes & Stipendies"
+    },
+    {
+      "type": "p",
+      "text": "Me es ambim:"
+    },
+    {
+      "type": "li",
+      "text": "ex-membre del Congress-Bundestag Youth Exchange 2016"
+    },
+    {
+      "type": "li",
+      "text": "& reseptor del Fulbright Germany English Teaching Assistant stipendie (2024–2025)"
+    },
+    {
+      "type": "h2",
+      "text": "Lokes ku me ad vive"
+    },
+    {
+      "type": "li",
+      "text": "Hessen, Germania"
+    },
+    {
+      "type": "li",
+      "text": "Sachsen-Anhalt, Germania"
+    },
+    {
+      "type": "p",
+      "text": "Mi favoriti urbe in Germania es Marburg an der Lahn — partm pro li kastle sur li monte, e anke pro kuali li vetuli urbe senti durant krepuskule o kand lo es nebli."
+    },
+    {
+      "type": "h2",
+      "text": "Pasi-temes"
+    },
+    {
+      "type": "p",
+      "text": "Me amusa monte-biskleti & soni gitare — kvankam me ne es bon in ambim (espesialm gitare)."
+    },
+    {
+      "type": "h2",
+      "text": "Lingues ke me lerno"
+    },
+    {
+      "type": "p",
+      "text": "Mi nun fokusi-lingues es:"
+    },
+    {
+      "type": "li",
+      "text": "Chines"
+    },
+    {
+      "type": "li",
+      "text": "Germani"
+    },
+    {
+      "type": "li",
+      "text": "Espaniol"
+    },
+    {
+      "type": "li",
+      "text": "Turki"
+    },
+    {
+      "type": "p",
+      "text": "Me anke lerno reti-aplika-developmente durant konstrukti disi site."
+    },
+    {
+      "type": "h2",
+      "text": "Familie & Animales"
+    },
+    {
+      "type": "p",
+      "text": "Me es filie de publik bibliotekiste & sempre ama lerno — kvankam me nulhem lekted li libres ke la prova doni a me. Me ama animales, & sempre ad ave bestes: hamstres, hundes, gates, lasertes, & ranes. Me espesialm ama ranes."
+    },
+    {
+      "type": "p",
+      "text": "Me ankor figura mi Planes A til C in li vive. Me volu gane desi salarie, akeri propriet sur rivere, fondi familie — ma si nulko de tio funkta, forsem Plane D es deveni Rege del Ranes & ma mantenu grand lake plen de Afrikan Bul-Ranes."
+    },
+    {
+      "type": "h2",
+      "text": "Ali interesses"
+    },
+    {
+      "type": "p",
+      "text": "Me anke gausa lerno pri:"
+    },
+    {
+      "type": "li",
+      "text": "Linux"
+    },
+    {
+      "type": "li",
+      "text": "Akvi-ponike"
+    },
+    {
+      "type": "li",
+      "text": "Hobi-injenieria & projektes"
+    },
+    {
+      "type": "li",
+      "text": "Teknologie-experimentade"
+    },
+    {
+      "type": "h2",
+      "text": "Pro ko disi site existe"
+    },
+    {
+      "type": "p",
+      "text": "Disi site es e portfolio/blog & loke pro partito de utili koses ke me ad desovre durant li ruto. Si alko ke me skribe hir spara plu altri persone kelki hores de konfusion o eksiti interesse pro alko — alors me es felis. Me adjuntu plu a disi pagine e a li site generalm bald. Mersi a omni!"
+    },
+    {
+      "type": "p",
+      "text": "Dedikati a mi matre & mi patre."
+    }
+  ],
+  "source": "/website/public/nov/about.html"
+}

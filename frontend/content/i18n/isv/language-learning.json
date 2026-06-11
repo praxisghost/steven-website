@@ -1,0 +1,16 @@
+{
+  "slug": "language-learning",
+  "title": "Učenje Jezykov",
+  "sub": "Vybrane resursy, metodičeske rukovodstva, & učebne materijaly dlja jezykov, ktore aktivno učim.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Metody & Orudja"
+    },
+    {
+      "type": "li",
+      "text": "Rukovodstva po Jezykah"
+    }
+  ],
+  "source": "/website/public/isv/language-learning.html"
+}

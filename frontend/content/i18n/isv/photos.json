@@ -1,0 +1,16 @@
+{
+  "slug": "photos",
+  "title": "Fotografije",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Vyše fotografij prijde s časom."
+    },
+    {
+      "type": "p",
+      "text": "Zamětka: galerija porod psov dostupna jest v Anglijskoj versiji."
+    }
+  ],
+  "source": "/website/public/isv/photos.html"
+}

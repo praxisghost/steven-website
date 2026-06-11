@@ -1,0 +1,24 @@
+{
+  "slug": "misc",
+  "title": "Razno",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Različne rěči, ktore ne vmestjajut se nigdě inde. Vyše prijde."
+    },
+    {
+      "type": "h2",
+      "text": "Šablony Osobnyh Finansov"
+    },
+    {
+      "type": "p",
+      "text": "Dva besplatne tablicove dokumenty, ktore pomogut tobě začati slediti svoje pěnezi. Bez registracije, bez uslovij."
+    },
+    {
+      "type": "p",
+      "text": "Zamětka: galerija žab dostupna jest v Anglijskoj versiji."
+    }
+  ],
+  "source": "/website/public/isv/misc.html"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "career",
+  "title": "Carriera",
+  "sub": "Interesses, aspirationes, & cosas que io vole apprender plus.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Interesses"
+    },
+    {
+      "type": "li",
+      "text": "Cosas que io vole apprender plus"
+    }
+  ],
+  "source": "/website/public/ia/career.html"
+}

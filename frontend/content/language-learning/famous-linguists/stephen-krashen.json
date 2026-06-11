@@ -1,0 +1,51 @@
+{
+  "slug": "stephen-krashen",
+  "title": "Stephen Krashen",
+  "source": "/website/public/famous-linguists/stephen-krashen.html",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "The case for comprehensible input"
+    },
+    {
+      "type": "p",
+      "text": "Stephen Krashen is probably the most quoted — and most argued-about — name in language learning. A linguist and educational researcher at the University of Southern California, he spent the late 1970s and 1980s building a set of ideas about how people pick up a second language. His writing is unusually readable for an academic, which is part of why his ideas spread far beyond the research world and into ordinary classrooms and self-study routines."
+    },
+    {
+      "type": "p",
+      "text": "His central claim is simple to state and surprisingly radical in its consequences: we acquire a language by understanding messages. Not by memorizing rules, not by drilling conjugations, but by receiving input we can mostly follow."
+    },
+    {
+      "type": "h2",
+      "text": "Comprehensible input"
+    },
+    {
+      "type": "p",
+      "text": "The heart of Krashen's work is the input hypothesis . He argued that language is acquired when we understand input that's just a little beyond our current level — what he shorthanded as \"i+1,\" meaning your current ability plus one small step. When you read or listen to something you can largely understand, the unfamiliar bits get absorbed almost as a side effect of paying attention to the meaning. The takeaway for a learner is direct: spend most of your time understanding interesting things in the language, and let the structure come along for the ride."
+    },
+    {
+      "type": "h2",
+      "text": "Acquisition vs. learning"
+    },
+    {
+      "type": "p",
+      "text": "Krashen drew a sharp line between acquisition — the unconscious process that gives you a feel for what sounds right — and learning , the conscious study of rules. In his view, conscious knowledge mostly acts as a \"monitor,\" a kind of internal editor you can use to tidy up your output when you have time to think. Fluency, he claimed, comes from acquisition, not from rule study. This is the part of his theory other researchers push back on hardest, but it reframed how a lot of people think about grammar's role."
+    },
+    {
+      "type": "h2",
+      "text": "The affective filter"
+    },
+    {
+      "type": "p",
+      "text": "He also pointed out that emotion gets in the way. When a learner is anxious, bored, or self-conscious, an \"affective filter\" goes up and blocks input from sinking in. Lower the stress, raise the interest, and more of what you encounter actually sticks. It's a tidy explanation for why people often learn faster when they're relaxed and engaged than when they're being tested."
+    },
+    {
+      "type": "h2",
+      "text": "Why he still matters"
+    },
+    {
+      "type": "p",
+      "text": "You can see Krashen's fingerprints all over modern self-study: the popularity of graded readers, \"comprehensible input\" video channels, and the advice to read and listen far more than you drill. Not every researcher accepts his framework as stated — many think output and explicit instruction do more than he allowed — but he reset the conversation around meaning and understanding, and almost everyone who came after had to respond to him."
+    }
+  ]
+}

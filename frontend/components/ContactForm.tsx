@@ -6,7 +6,7 @@ import { sendContact } from "@/lib/api";
 type State = "idle" | "submitting" | "success" | "error";
 
 const INPUT =
-  "w-full rounded-lg border border-hairline bg-transparent px-4 py-3 text-base outline-none focus:border-accent";
+  "w-full rounded-lg border border-field bg-transparent px-4 py-3 text-base outline-none focus:border-accent";
 
 // Contact form -> POST /api/contact/. Backend validates + stores (api/views.py).
 export default function ContactForm() {

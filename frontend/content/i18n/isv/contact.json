@@ -1,0 +1,20 @@
+{
+  "slug": "contact",
+  "title": "Kontakt",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Poslati pismo"
+    },
+    {
+      "type": "h2",
+      "text": "Novinarski list"
+    },
+    {
+      "type": "p",
+      "text": "Občasne aktualizacije kogda napisujem nešto vrědnoe dlja sdělenja. Bez spamu."
+    }
+  ],
+  "source": "/website/public/isv/contact.html"
+}

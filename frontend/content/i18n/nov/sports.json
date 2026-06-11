@@ -1,0 +1,104 @@
+{
+  "slug": "sports",
+  "title": "Sportes",
+  "sub": "Aktivitates ke me prakta, eseb prakta, o volu prakta plu.",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bowling"
+    },
+    {
+      "type": "p",
+      "text": "Bowling es uno de tali sportes ke rekompensa konsistanteso plu kam pur atletisme, ke me trova atraktivi. Existe ver teknike in lo — li lansere, li turne, li lektura del leze — e li sosyal sirkumstantes face fasil kontinui sone lo sin ke lo senti kel labore."
+    },
+    {
+      "type": "h2",
+      "text": "Ultimate Frisbee"
+    },
+    {
+      "type": "p",
+      "text": "Ultimate es uno de mi favoriti teme-sportes. Li kombination de atletisme, strategie, e li self-arbitra spirite del jueke face lo desim a plus ali sportes ke me ad luded. Li tagle, li lansere, e li kampe-visione ke nesesa face lo teknikim interesant."
+    },
+    {
+      "type": "h2",
+      "text": "Futbol"
+    },
+    {
+      "type": "p",
+      "text": "Futbol es li maxim universal sporte del mund, e es difisil non ami lo. Me amusa luden lo rekreativem — li fluo del jueke, li spasiare, li konstant movemente. Me anke es admirator de regardi lo a klub-nivel e internasional."
+    },
+    {
+      "type": "h2",
+      "text": "Kajak"
+    },
+    {
+      "type": "p",
+      "text": "Kajak ad-trahe me pro li loke a kel lo porta vu — riveres, kostes, lakes ke vu alterm ne pova atinge. Es sporte ke rekompensa pasienteso e teknike plu kam fortie, e lo konekti directem a mi interesse pro akwatic ambientes."
+    },
+    {
+      "type": "h2",
+      "text": "Badminton"
+    },
+    {
+      "type": "p",
+      "text": "Badminton es plu rapid kam li majoritet de persones expekta e plu teknik kam lo aparte. Li forti lansere, li falsane, li net-jueke — singli besona diferent typ de presizion."
+    },
+    {
+      "type": "h2",
+      "text": "Bazo-bole"
+    },
+    {
+      "type": "p",
+      "text": "Bazo-bole es sporte ke me regardad e luded durant mi juventee. Existe ritme in lo ke me trova verm plesant — li rapideso, li strategie, li individui konfrontes intern teme-kontextue."
+    },
+    {
+      "type": "h2",
+      "text": "Rakete-bole"
+    },
+    {
+      "type": "p",
+      "text": "Rakete-bole es intensi in manere ke poki sportes es — li klusi kampe, li rapideso del bole, li konstant nesesite leke angles. Es uno del max bon kardio-exersis ke me kona."
+    },
+    {
+      "type": "h2",
+      "text": "Stone-Klimade"
+    },
+    {
+      "type": "p",
+      "text": "Stone-klimade es tan puzlue kam fisikal sporte. Leke rute, plani vun movemente, trova li balanse inter mane-prene e pede-labore — lo demanda speke de fokusti probleme-solvere ke me trova multi satisfaktiv."
+    },
+    {
+      "type": "h2",
+      "text": "Mane-bole"
+    },
+    {
+      "type": "p",
+      "text": "Mane-bole (li kampe-sporte — non li mure-jueke) es vastim luded in Europa e resta sub-apresad in Nord-Amerika. Lo kombina li atletisme del basket-bole kun li fisikalita del akwa-polo."
+    },
+    {
+      "type": "h2",
+      "text": "Ski"
+    },
+    {
+      "type": "p",
+      "text": "Ski es uno de tali aktivitates ku progresie es verm satisfaktiv — pasi del fasil leze a blu lezes a nigri lezes implika ver kapasiteo-developmente. Me amusa lo pro li fisikal defie e pro to a kel lo porta vu: montes, aperti terene, kald aere."
+    },
+    {
+      "type": "h2",
+      "text": "Nive-Bord"
+    },
+    {
+      "type": "p",
+      "text": "Nive-bord ha diferant sentimente kompard a ski — plu fluidi, plu de surf-bord o skate-bord sentime transferid a nive. Me ad face ambim e trova le sat diferanti pro segui sat separim."
+    },
+    {
+      "type": "h2",
+      "text": "Skate-Bord"
+    },
+    {
+      "type": "p",
+      "text": "Skate-bord es sporte ku kel me ad ave intermittent relatione. Es non-pardonant pro lerno — li fales es real e li kapasite-kurv es inklinid — ma li kreativitate ke lo permitte es desim a alkun ali sporte."
+    }
+  ],
+  "source": "/website/public/nov/sports.html"
+}

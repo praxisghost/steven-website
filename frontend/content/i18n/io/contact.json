@@ -1,0 +1,20 @@
+{
+  "slug": "contact",
+  "title": "Kontakto",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sendar mesajo"
+    },
+    {
+      "type": "h2",
+      "text": "Novajo-letro"
+    },
+    {
+      "type": "p",
+      "text": "Okazional informi kande me skribas ulo digna por divisar. Sen spamo."
+    }
+  ],
+  "source": "/website/public/io/contact.html"
+}

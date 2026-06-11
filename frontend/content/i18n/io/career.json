@@ -1,0 +1,16 @@
+{
+  "slug": "career",
+  "title": "Kariero",
+  "sub": "Intereso, aspiri, & kozi pri qui me deziras lernar plu.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Intereso"
+    },
+    {
+      "type": "li",
+      "text": "Kozi pri qui me deziras lernar plu"
+    }
+  ],
+  "source": "/website/public/io/career.html"
+}

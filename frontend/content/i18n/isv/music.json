@@ -1,0 +1,28 @@
+{
+  "slug": "music",
+  "title": "Muzyka",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Instrumenty na ktorih igraju & muzyka, k ktoroj se vsegda vračam."
+    },
+    {
+      "type": "li",
+      "text": "Gitara"
+    },
+    {
+      "type": "li",
+      "text": "Mandolina"
+    },
+    {
+      "type": "li",
+      "text": "Okarina"
+    },
+    {
+      "type": "li",
+      "text": "Spisky pěsen"
+    }
+  ],
+  "source": "/website/public/isv/music.html"
+}

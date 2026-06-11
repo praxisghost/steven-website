@@ -1,0 +1,16 @@
+{
+  "slug": "career",
+  "title": "Karjera",
+  "sub": "Interesy, ambicije, & rěči o ktorih hču znati vyše.",
+  "blocks": [
+    {
+      "type": "li",
+      "text": "Interesy"
+    },
+    {
+      "type": "li",
+      "text": "Rěči o ktorih hču znati vyše"
+    }
+  ],
+  "source": "/website/public/isv/career.html"
+}

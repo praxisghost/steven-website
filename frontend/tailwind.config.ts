@@ -29,6 +29,9 @@ const config: Config = {
         "ink-soft": "rgb(var(--color-ink-soft) / <alpha-value>)",
         muted: "rgb(var(--color-muted) / <alpha-value>)",
         hairline: "rgb(var(--color-hairline) / <alpha-value>)",
+        // Interactive form-control boundary. Stronger than `hairline` so inputs
+        // clear WCAG 1.4.11 (>=3:1) in both themes; decorative borders keep hairline.
+        field: "rgb(var(--color-field) / <alpha-value>)",
         // Single accent (Hick's Law: limit choices / visual noise).
         accent: "rgb(var(--color-accent) / <alpha-value>)",
         "accent-soft": "rgb(var(--color-accent-soft) / <alpha-value>)",

@@ -1,0 +1,20 @@
+{
+  "slug": "contact",
+  "title": "Contacto",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Inviar un message"
+    },
+    {
+      "type": "h2",
+      "text": "Bulletino informative"
+    },
+    {
+      "type": "p",
+      "text": "Actualisationes occasional quando io scribe alque digne de partir. Sin spam."
+    }
+  ],
+  "source": "/website/public/ia/contact.html"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "misc",
+  "title": "Diversa",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Diversa kozi qui ne lokeskas en altra loki. Plu venos."
+    },
+    {
+      "type": "h2",
+      "text": "Persona financ-modeli"
+    },
+    {
+      "type": "p",
+      "text": "Du libera tabel-dokumenti por helpar vu komencar trasar vua pekunio. Sen registrado, sen kondicioni — nur deskargez e uzez."
+    },
+    {
+      "type": "p",
+      "text": "Noto: la rano-galerio esas disponebla en la Angla versiono."
+    }
+  ],
+  "source": "/website/public/io/misc.html"
+}

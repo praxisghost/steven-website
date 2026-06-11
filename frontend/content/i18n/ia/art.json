@@ -1,0 +1,12 @@
+{
+  "slug": "art",
+  "title": "Arte",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Arte veni tosto."
+    }
+  ],
+  "source": "/website/public/ia/art.html"
+}

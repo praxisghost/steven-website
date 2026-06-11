@@ -1,0 +1,104 @@
+{
+  "slug": "sports",
+  "title": "Sporti",
+  "sub": "Aktivesi quin me praktikas, esis praktikinta, o deziras praktikar plu.",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bowling"
+    },
+    {
+      "type": "p",
+      "text": "Bowling esas un de ta sporti qui rekompensas konsistanteso plu kam pura atletismo, quon me trovas atraktiva. Existas vera tekniko en olu — la jeto, la rotaco, la lektado di la trako — e la sociala ambiento facas facile durar ludar sen ke olu sentas kom laboro."
+    },
+    {
+      "type": "h2",
+      "text": "Ultimate Frisbee"
+    },
+    {
+      "type": "p",
+      "text": "Ultimate esas un de mea favorata teamo-sporti. La kombinajo di atletismo, strategio, e la auto-arbitra spirito di la ludo facas olu desimila a plu altra sporti quin me ludis. La sucesivaji, la jetado, e la vida-vidad necesa facas olu teknike interesiva."
+    },
+    {
+      "type": "h2",
+      "text": "Futbal (Soccer)"
+    },
+    {
+      "type": "p",
+      "text": "Futbal esas la maxim universala sporto en la mondo, e esas difikulta no amar ol. Me amusas ludar olun rekrease — la fluo di la ludo, la spaco-uzo, la konstanta movado. Me anke esas amatoro di rigardar ol klub-nivele e internacione."
+    },
+    {
+      "type": "h2",
+      "text": "Kajako"
+    },
+    {
+      "type": "p",
+      "text": "Kajako atraktas me pro la loki ad qua ol portas vu — riveri, mar-bordo, lagi quin vu altre ne povus atingar. Esas sporto qui rekompensas pacienteso e tekniko plu kam forto, e ol konektas direkte a mea intereso pri akva-ambient."
+    },
+    {
+      "type": "h2",
+      "text": "Badmintono"
+    },
+    {
+      "type": "p",
+      "text": "Badmintono esas plu rapida kam la plu multa personi expektas e plu teknika kam ol aspektas. La forta jeto, la falo-jeto, la reto-ludo — singla bezonas diferanta speco di precizeso. Me amusas ol e quale rapida hazardal ludo e quale serioza sporto."
+    },
+    {
+      "type": "h2",
+      "text": "Bazo-balo"
+    },
+    {
+      "type": "p",
+      "text": "Bazo-balo esas sporto quin me rigardis e ludis dum mea yuneso. Existas ritmo en olu quin me trovas vere plezera — la rapideso, la strategio, la individua konfronti dum teamo-kuntexto."
+    },
+    {
+      "type": "h2",
+      "text": "Raketo-balo"
+    },
+    {
+      "type": "p",
+      "text": "Raketo-balo esas intensa en maniero quin poka sporti esas — la klozigita kortajo, la rapideso di la balo, la konstanta bezono lektar angli. Esas un de la maxim bona kardio-ekzerco quin me konocas."
+    },
+    {
+      "type": "h2",
+      "text": "Petro-Klimo"
+    },
+    {
+      "type": "p",
+      "text": "Petro-klimo esas tanto puzlo quanto fizikal sporto. Lektar voyo, planar vua movi, trovar la balanco inter manuo-preno e pedo-laboro — ol postulas speco di fokuzita problemo-solvado quin me trovas tre satisfaca."
+    },
+    {
+      "type": "h2",
+      "text": "Manuo-balo"
+    },
+    {
+      "type": "p",
+      "text": "Manuo-balo (la kortaja sporto, ne la muro-ludo) esas vaste ludata en Europa e restas neaprecata en Nord-Ameriko. Olu kombinas la atletismo di basko-balo kun la fizikaleso di akvo-polo, ludata ye ritmo qua rare halteskas."
+    },
+    {
+      "type": "h2",
+      "text": "Skio"
+    },
+    {
+      "type": "p",
+      "text": "Skio esas un de ta aktivesi ube progreso esas vere satisfaca — moveskar de la fakila pisto a blua pisti a nigra pisti implikas vera kapableso-developmento, ne nur ripeteso. Me amusas ol kun la fizika defio e por la loko ad qua ol portas vu: monti, aperta tereno, kolda aero."
+    },
+    {
+      "type": "h2",
+      "text": "Nivo-Tabulo"
+    },
+    {
+      "type": "p",
+      "text": "Nivo-tabulo havas diferanta sento kompare a skio — plu fluide, plu de surfo o skato-tabulo sentado transferita a nivo. Me facis ambo e trovas li sat diferanta por durar sat separe."
+    },
+    {
+      "type": "h2",
+      "text": "Skato-Tabulo"
+    },
+    {
+      "type": "p",
+      "text": "Skato-tabulo esas sporto kun qua me havis intermitenta relato. Esas neforgivema lernar — la faleski esas reala e la kapableso-kurvo esas inklina — ma la kreativeso quin ol permisas esas desimila a ula altra sporto."
+    }
+  ],
+  "source": "/website/public/io/sports.html"
+}

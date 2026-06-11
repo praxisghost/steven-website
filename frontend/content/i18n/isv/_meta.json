@@ -1,0 +1,55 @@
+{
+  "locale": "isv",
+  "name": "Interslavic",
+  "htmlLang": "isv",
+  "siteTitle": "Steven Legg",
+  "tagline": "Prosto sledujem svoju dugu",
+  "back": "← Nazad",
+  "nav": [
+    {
+      "slug": "about",
+      "label": "O Mně"
+    },
+    {
+      "slug": "art",
+      "label": "Umětnost"
+    },
+    {
+      "slug": "book-reviews",
+      "label": "Knižne Recenzije"
+    },
+    {
+      "slug": "career",
+      "label": "Karjera"
+    },
+    {
+      "slug": "contact",
+      "label": "Kontakt"
+    },
+    {
+      "slug": "language-learning",
+      "label": "Učenje Jezykov"
+    },
+    {
+      "slug": "misc",
+      "label": "Razno"
+    },
+    {
+      "slug": "music",
+      "label": "Muzyka"
+    },
+    {
+      "slug": "photos",
+      "label": "Fotografije"
+    },
+    {
+      "slug": "sports",
+      "label": "Sport"
+    },
+    {
+      "slug": "writing",
+      "label": "Pisanje"
+    }
+  ],
+  "source": "/website/public/isv/index.html"
+}

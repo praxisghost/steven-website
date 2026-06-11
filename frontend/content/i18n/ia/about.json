@@ -1,0 +1,148 @@
+{
+  "slug": "about",
+  "title": "Re Me",
+  "sub": "Un poco re qui io es & como io ha arrivate ci.",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Iste sito es un portfolio personal, un blog, un centro de ressources de apprendimento & un projecto amusante pro me mesme — un loco pro documentar lo que io face, partir cosas que io ha trovate utile, & construer alque que reflecte como io vermente pensa e apprende."
+    },
+    {
+      "type": "p",
+      "text": "Io ama apprender, inseniar, gauder le vita, & cognoscer nove personas. Iste es le parte del sito ubi io tenta sonar interessante sin sonar como un profilo de LinkedIn."
+    },
+    {
+      "type": "h2",
+      "text": "Education"
+    },
+    {
+      "type": "p",
+      "text": "Io ha terminate mi studios in 2022 con un Bachelor de Artes in Studios German de Wheaton College Massachusetts ."
+    },
+    {
+      "type": "h2",
+      "text": "Travalio"
+    },
+    {
+      "type": "p",
+      "text": "Io actualmente insenia in le EF International Language Center in Boston, Massachusetts. Io ama adjutar le studentes a apprender a gauder le apprendimento e introducer les a instrumentos que io desirarea haber cognoscite plus tosto."
+    },
+    {
+      "type": "h2",
+      "text": "Programmas & Subventiones"
+    },
+    {
+      "type": "p",
+      "text": "Io es ambes:"
+    },
+    {
+      "type": "li",
+      "text": "un alumno del Congress-Bundestag Youth Exchange 2016"
+    },
+    {
+      "type": "li",
+      "text": "& un beneficiario del subvention Fulbright Germany English Teaching Assistant (2024–2025)"
+    },
+    {
+      "type": "h2",
+      "text": "Locos ubi io ha vivite"
+    },
+    {
+      "type": "li",
+      "text": "Hessen, Germania"
+    },
+    {
+      "type": "li",
+      "text": "Sachsen-Anhalt, Germania"
+    },
+    {
+      "type": "p",
+      "text": "Mi citate preferite in Germania es Marburg an der Lahn — partim pro le castello sur le collina, e tamben pro como le citate vetule se senti al crepusculo o quando il es brumosse. Io vermente ama le alleas e le casas de trabes de ligno. Se senti medieval, charmate, & alcunes de mi personas favorite del mundo vive ibi o vicin."
+    },
+    {
+      "type": "h2",
+      "text": "Passatempos"
+    },
+    {
+      "type": "p",
+      "text": "Io me amusa con le bicycletta de montania & sonar le guitarra — ben que io non es bon in ni le un ni le altere (specialmente le guitarra)."
+    },
+    {
+      "type": "h2",
+      "text": "Linguas que io apprende"
+    },
+    {
+      "type": "p",
+      "text": "Io ama apprender linguas. Mi linguas focal actual es:"
+    },
+    {
+      "type": "li",
+      "text": "Chinese"
+    },
+    {
+      "type": "li",
+      "text": "German"
+    },
+    {
+      "type": "li",
+      "text": "Espaniol"
+    },
+    {
+      "type": "li",
+      "text": "Turco"
+    },
+    {
+      "type": "p",
+      "text": "Io tamben apprende le disveloppamento de applicationes web durante que io construe iste sito."
+    },
+    {
+      "type": "h2",
+      "text": "Familia & Animales"
+    },
+    {
+      "type": "p",
+      "text": "Io es le filio de un bibliothecaria public & semper ha amate apprender — quanquam io nunquam legeva le libros que illa tentava darme. Io ama le animales, & io semper ha habite animales de companion: hamsteres, canes, gattos, lacertas, & ranas. Io specialmente ama le ranas."
+    },
+    {
+      "type": "p",
+      "text": "Io es ancora figurante mi Planos A al C in le vita. Io desira ganiar un salario decente, obtener un proprietate sur un riviera, fundar un familia — ma si toto isto non functiona, forsan le Plano D es devenir Rege del Ranas & mantener un grande lago plen de Ranas-Bullas African. Io non es totalmente secur si io joca."
+    },
+    {
+      "type": "h2",
+      "text": "Altere interesses"
+    },
+    {
+      "type": "p",
+      "text": "Io tamben gauda apprender re:"
+    },
+    {
+      "type": "li",
+      "text": "Linux"
+    },
+    {
+      "type": "li",
+      "text": "Aquaponica"
+    },
+    {
+      "type": "li",
+      "text": "Ingenieria de passatempo & projectos"
+    },
+    {
+      "type": "li",
+      "text": "Experimentation tecnologic"
+    },
+    {
+      "type": "h2",
+      "text": "Proque existe iste sito"
+    },
+    {
+      "type": "p",
+      "text": "Iste sito es e un portfolio/blog & un loco pro partir cosas utile que io ha discoperte durante le camino. Si alque que io scribe ci salva alcuno alcun horas de confusion o suscita interesse pro alque — alora io es felice. Io addera plus a iste pagina e al sito in general tosto. Gratias a totes!"
+    },
+    {
+      "type": "p",
+      "text": "Dedicate a mi matre & mi patre."
+    }
+  ],
+  "source": "/website/public/ia/about.html"
+}

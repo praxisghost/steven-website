@@ -1,0 +1,28 @@
+{
+  "slug": "music",
+  "title": "Muziko",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Instrumenti quin me ludas & la muziko ad qua me sempre retroiras."
+    },
+    {
+      "type": "li",
+      "text": "Gitaro"
+    },
+    {
+      "type": "li",
+      "text": "Mandolino"
+    },
+    {
+      "type": "li",
+      "text": "Okarino"
+    },
+    {
+      "type": "li",
+      "text": "Ludo-listi"
+    }
+  ],
+  "source": "/website/public/io/music.html"
+}

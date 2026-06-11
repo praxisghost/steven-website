@@ -1,0 +1,55 @@
+{
+  "locale": "nov",
+  "name": "Novial",
+  "htmlLang": "nov",
+  "siteTitle": "Steven Legg",
+  "tagline": "Tan sekvanti men regenboge",
+  "back": "← Retro",
+  "nav": [
+    {
+      "slug": "about",
+      "label": "Pri Me"
+    },
+    {
+      "slug": "art",
+      "label": "Arte"
+    },
+    {
+      "slug": "book-reviews",
+      "label": "Libre-Revues"
+    },
+    {
+      "slug": "career",
+      "label": "Karyere"
+    },
+    {
+      "slug": "contact",
+      "label": "Kontakte"
+    },
+    {
+      "slug": "language-learning",
+      "label": "Lingue-Lerne"
+    },
+    {
+      "slug": "misc",
+      "label": "Diverse"
+    },
+    {
+      "slug": "music",
+      "label": "Musike"
+    },
+    {
+      "slug": "photos",
+      "label": "Foti"
+    },
+    {
+      "slug": "sports",
+      "label": "Sportes"
+    },
+    {
+      "slug": "writing",
+      "label": "Skribade"
+    }
+  ],
+  "source": "/website/public/nov/index.html"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "music",
+  "title": "Musike",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Instrumentes ke me sona & li musike a kel me sempre retroma."
+    },
+    {
+      "type": "li",
+      "text": "Gitare"
+    },
+    {
+      "type": "li",
+      "text": "Mandoline"
+    },
+    {
+      "type": "li",
+      "text": "Okarine"
+    },
+    {
+      "type": "li",
+      "text": "Sone-listes"
+    }
+  ],
+  "source": "/website/public/nov/music.html"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "photos",
+  "title": "Foti",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Plu foti venos tra tempo."
+    },
+    {
+      "type": "p",
+      "text": "Noto: la hund-raso-galerio esas disponebla en la Angla versiono."
+    }
+  ],
+  "source": "/website/public/io/photos.html"
+}

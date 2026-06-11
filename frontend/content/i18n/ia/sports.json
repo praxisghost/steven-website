@@ -1,0 +1,104 @@
+{
+  "slug": "sports",
+  "title": "Sportos",
+  "sub": "Activitates que io practica, ha practicate, o vole practicar plus.",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bowling"
+    },
+    {
+      "type": "p",
+      "text": "Le bowling es un de iste sportos que premia le consistentia plus que le pura athleticitate, lo que io trova attractive. Il ha vere technica in illo — le lanceamento, le rotation, le lectura del pista — e le contexto social face facile continuar a jocar sin que illo se senti como un labor pesante. Io me amusa con jocos casual e competitive."
+    },
+    {
+      "type": "h2",
+      "text": "Frisbee Ultimate"
+    },
+    {
+      "type": "p",
+      "text": "Ultimate es un de mi sportos in equipa preferite. Le combination de athleticitate, strategia, e le spirito de auto-arbitrage del joco lo face differente de quasi omne le altere sportos. Le tagliar, le lanceamento, e le vision de campo necessari lo rende technicamente interessante, e le cultura attrae personas que jocan duro ma resta de bon humor."
+    },
+    {
+      "type": "h2",
+      "text": "Football (Soccer)"
+    },
+    {
+      "type": "p",
+      "text": "Le football es le sport plus universal del mundo e es difficile non amar lo. Io me amusa jocante recreativemente — le fluxo del joco, le spaciamento, le movimento constante. Io tamben es un fan de regardar lo a nivello de club e international; il ha un profunditate tactic in le football que deveni plus visibile quanto plus on joca."
+    },
+    {
+      "type": "h2",
+      "text": "Kayak"
+    },
+    {
+      "type": "p",
+      "text": "Le kayak me attrae proque le loco al qual illo te porta — rivieras, costas, lacos que tu non poterea altere modo attinger. Es un sport que premia le patientia e le technica plus que le fortia, e illo se connecte directemente a mi interesse pro le ambientes aquatic. Le kayak in aqua tranquille es meditative; le aqua in movimento es alque toto altere."
+    },
+    {
+      "type": "h2",
+      "text": "Badminton"
+    },
+    {
+      "type": "p",
+      "text": "Le badminton es plus rapide que le gente expecta e plus technic que appare. Le smash, le drop shot, le joco al rete — cata uno require un differente forma de precision. Io me amusa con illo como un joco casual rapide e como un sport digne de jocar seriosemente. Es tamben un del sportos de racchetta plus accessibile pro comenciar."
+    },
+    {
+      "type": "h2",
+      "text": "Baseball"
+    },
+    {
+      "type": "p",
+      "text": "Le baseball es un sport que io ha viste e jocate desde mi infantia. Il ha un rhythmo in illo que io trova vermente placente — le ritmo, le strategia, le confrontationes individual intra un contexto de equipa. Selection de lanceamento, position del defensa, decisiones de currer le bases: le joco ha un strato tactic que premia le attention."
+    },
+    {
+      "type": "h2",
+      "text": "Racquetball"
+    },
+    {
+      "type": "p",
+      "text": "Le racquetball es intense in un modo que pauc sportos lo es — le campo claustrate, le velocitate del balla, le besonio constante de leger le angulos e anticipar. Es un del melior exercicios cardiovascular que io cognosce, e le altor del habilitate es surprehendentemente alte quando on supera le stato de comenciante."
+    },
+    {
+      "type": "h2",
+      "text": "Escalada in Rocca"
+    },
+    {
+      "type": "p",
+      "text": "Le escalada in rocca es tanto un puzzle como un sport physic. Leger un ruta, planificar tu movimentos, trovar le balancia inter le presa e le travalio del pedes — illo demanda un sorta de resolution focalisate de problemas que io trova multo satisfaciente. Io ha facite principalmente bouldering interior e top-rope, ma le escalada exterior es alque que io vole exequer plus seriosemente."
+    },
+    {
+      "type": "h2",
+      "text": "Handball"
+    },
+    {
+      "type": "p",
+      "text": "Le handball (le sport de campo — non le joco contra le muro) es largemente jocate in Europa e remane subapprecate in America del Nord. Combina le athleticitate del basket-ball con le physicitate del polo aquatic, jocate a un ritmo que rare vices se interrompe. Io lo cognosceva durante mi tempore in Germania e lo trovava immediatemente convincente."
+    },
+    {
+      "type": "h2",
+      "text": "Ski"
+    },
+    {
+      "type": "p",
+      "text": "Le ski es un de iste activitates ubi le progresso es vermente satisfaciente — passar del pista facile al pistas blau al pistas nigre implica vere disveloppamento de habilitates, non solmente repetition. Io me amusa con illo per le defia physic e per ubi illo te porta: montanias, terreno aperte, aere frigide. Pauca cosa se compara con un die clar in un bon pista."
+    },
+    {
+      "type": "h2",
+      "text": "Snowboard"
+    },
+    {
+      "type": "p",
+      "text": "Le snowboard ha un sensation differente del ski — plus fluide, plus un sensibilitate de surf o skate transferite al nive. Io ha facite ambes e los trova bastante differente pro persequer separatemente. Le snowboard in particular premia le commitment; hesitar tende a finir mal."
+    },
+    {
+      "type": "h2",
+      "text": "Skateboard"
+    },
+    {
+      "type": "p",
+      "text": "Le skateboard es un sport con le qual io ha habite un relation intermittente. Es implacabile pro apprender — le caditas es real e le curva de habilitate es inclinate — ma le creativitate que illo permitte es differente de qualcunque altere sport. Tu non solmente exeque intra un structura establite; tu decide lo que mesmo merita le tentativa. Iste libertate es alque que io trova difficile a replicar in altere locos."
+    }
+  ],
+  "source": "/website/public/ia/sports.html"
+}

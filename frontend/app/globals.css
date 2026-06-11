@@ -13,6 +13,7 @@
     --color-ink-soft: 58 58 64; /* #3A3A40 */
     --color-muted: 107 107 114; /* #6B6B72 */
     --color-hairline: 230 230 225; /* #E6E6E1 */
+    --color-field: 134 134 140; /* #86868C — input border, ~3.5:1 on bg (WCAG 1.4.11) */
     --color-accent: 15 118 110; /* #0F766E */
     --color-accent-soft: 20 184 166; /* #14B8A6 */
   }
@@ -23,6 +24,7 @@
     --color-ink-soft: 184 184 181; /* #B8B8B5 */
     --color-muted: 138 138 144; /* #8A8A90 */
     --color-hairline: 42 42 46; /* #2A2A2E */
+    --color-field: 110 110 116; /* #6E6E74 — input border, ~3.8:1 on dark bg (WCAG 1.4.11) */
     --color-accent: 45 212 191; /* #2DD4BF — lifted for AA contrast on dark bg */
     --color-accent-soft: 94 234 212; /* #5EEAD4 */
   }

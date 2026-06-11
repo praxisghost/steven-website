@@ -1,0 +1,20 @@
+{
+  "slug": "contact",
+  "title": "Kontakte",
+  "sub": "",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sende messaje"
+    },
+    {
+      "type": "h2",
+      "text": "Notiziosi-letre"
+    },
+    {
+      "type": "p",
+      "text": "Okasioni informationes kand me skribe alko digni de partito. Sin spam."
+    }
+  ],
+  "source": "/website/public/nov/contact.html"
+}

@@ -31,6 +31,12 @@ export default function LanguageLearning() {
             href: "/language-learning/con-lang",
             note: "Esperanto, Novial, Ido, Interslavic, Klingon & Interlingua.",
           },
+          {
+            label: "Famous Linguists",
+            emoji: "📚",
+            href: "/language-learning/famous-linguists",
+            note: "Plain-English profiles of Krashen, VanPatten, Swain, Long & Ellis.",
+          },
         ]}
       />
     </main>
