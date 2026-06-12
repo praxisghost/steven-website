@@ -4,10 +4,16 @@
 # .next/standalone/server.js. `next start` does NOT work with standalone (Next warns and
 # serves incorrectly), so we run the standalone server directly. The standalone bundle does
 # not include static assets or /public, so the build copies them in afterwards.
+#
+# NOTE: use `npm install`, NOT `npm ci`. Railway mounts a persistent build-cache volume at
+# node_modules/.cache; `npm ci` does `rm -rf node_modules` first and fails with
+# `EBUSY: rmdir '/app/node_modules/.cache'` because that path is a live mount. `npm install`
+# reconciles node_modules in place (reproducible via the committed package-lock.json) and
+# leaves the cache mount untouched.
 
 [build]
 builder = "nixpacks"
-buildCommand = "npm ci && npm run build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/public"
+buildCommand = "npm install --no-audit --no-fund && npm run build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/public"
 
 [deploy]
 # Standalone server reads PORT from the env (Railway injects it). Bind 0.0.0.0 so the

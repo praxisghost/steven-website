@@ -16,4 +16,5 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-package-lock.json
+# NOTE: package-lock.json MUST be committed — Railway needs it for reproducible
+# installs (and `npm ci` requires it). Do not re-add it to this ignore list.
