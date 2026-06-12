@@ -1,0 +1,1415 @@
+{
+  "slug": "intergermanic",
+  "title": "Intergermanic",
+  "date": null,
+  "source": "/website/public/intergermanic.html",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "1. Introduction"
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic ( Intergermanisk ) is a constructed auxiliary language designed to be maximally intelligible to native speakers of every living Germanic language — Norwegian, Swedish, Danish, Dutch, German, Frisian, Afrikaans, Faroese, and Icelandic — while maintaining a single, consistent, learnable grammatical structure."
+    },
+    {
+      "type": "p",
+      "text": "The vocabulary is drawn from common Germanic roots shared across the family. The grammar synthesises the patterns most widely shared between the source languages, keeping morphology transparent and avoiding irregularities wherever possible. Where alternative forms exist in the source languages (e.g. Scandinavian vs. continental), Intergermanic frequently keeps both as valid variants, so every speaker of a Germanic language can find at least one familiar form."
+    },
+    {
+      "type": "h2",
+      "text": "2. Linguistic Influences"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Feature",
+        "Intergermanic",
+        "Source pattern"
+      ],
+      "rows": [
+        [
+          "Definite article",
+          "suffix -en/-et OR free word den/die/det/de",
+          "Scandinavian + continental"
+        ],
+        [
+          "Past participle",
+          "ge- prefix",
+          "German, Dutch, Afrikaans"
+        ],
+        [
+          "V2 word order",
+          "Yes (verb second)",
+          "All continental Germanic + Scandinavian"
+        ],
+        [
+          "Verb-final in subordinates",
+          "Yes",
+          "German, Dutch"
+        ],
+        [
+          "Mediopassive -st",
+          "Yes",
+          "Scandinavian s-passives"
+        ],
+        [
+          "Reflexive particle sik / seg",
+          "Yes",
+          "German sich , Scandinavian seg"
+        ],
+        [
+          "Conditional wulde",
+          "Yes",
+          "Eng. would , Ger. würde , Du. zou"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "3. Pronunciation"
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic uses a straightforward Latin alphabet. Pronunciation broadly follows Norwegian/Scandinavian conventions, which are familiar to the widest range of Germanic speakers."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Letter / Digraph",
+        "IPA",
+        "Similar to…"
+      ],
+      "rows": [
+        [
+          "a",
+          "/a/",
+          "Ger. Mann , Norw. dag"
+        ],
+        [
+          "e",
+          "/ɛ/ or /eː/",
+          "Ger. Brett , Norw. se"
+        ],
+        [
+          "i",
+          "/ɪ/ or /iː/",
+          "Eng. fit / feet"
+        ],
+        [
+          "o",
+          "/ɔ/ or /oː/",
+          "Norw. som , Du. ook"
+        ],
+        [
+          "u",
+          "/ʊ/ or /uː/",
+          "Ger. und / gut"
+        ],
+        [
+          "y",
+          "/yː/",
+          "Ger. über , Norw. ny"
+        ],
+        [
+          "æ",
+          "/æ/",
+          "Norw./Dan. æ , Ger. Bär"
+        ],
+        [
+          "ø",
+          "/ø/",
+          "Norw./Dan. grønn , Ger. schön"
+        ],
+        [
+          "å",
+          "/ɔː/",
+          "Norw. gå , Sw. år"
+        ],
+        [
+          "ei",
+          "/eɪ/",
+          "Ger. Stein , Norw. nei"
+        ],
+        [
+          "au",
+          "/aʊ/",
+          "Ger. Haus , Norw. grau"
+        ],
+        [
+          "øy",
+          "/øy/",
+          "Norw. øy (island)"
+        ],
+        [
+          "kj / tj",
+          "/ç/",
+          "Norw. kjøre , Ger. nicht"
+        ],
+        [
+          "sk (before e/i/y/æ/ø)",
+          "/ʃ/",
+          "Norw. ski , Sw. sked"
+        ],
+        [
+          "g (initial)",
+          "/ɡ/",
+          "hard g always"
+        ],
+        [
+          "r",
+          "/r/",
+          "rolled or tapped"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "4. Nouns, Articles & Gender"
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic has three grammatical genders: masculine ( maskulin ), feminine ( feminin ), and neuter ( nøytral ). Gender is largely predictable from natural gender or word endings."
+    },
+    {
+      "type": "h3",
+      "text": "Definite & Indefinite Articles"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "",
+        "Masculine",
+        "Feminine",
+        "Neuter",
+        "Plural (all)"
+      ],
+      "rows": [
+        [
+          "Indefinite (a / an)",
+          "ein",
+          "ein / eine",
+          "eit / et",
+          "—"
+        ],
+        [
+          "Definite (the)",
+          "-en / den",
+          "-en / die",
+          "-et / det",
+          "-ene / de"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The definite article can be attached as a suffix ( -en , -et , -ene ) Scandinavian-style OR used as a separate word ( den , die , det , de ) German/Dutch-style. Both are valid in Intergermanic."
+    },
+    {
+      "type": "p",
+      "text": "Examples:"
+    },
+    {
+      "type": "li",
+      "text": "ein mann / mannen — a man / the man"
+    },
+    {
+      "type": "li",
+      "text": "eine frau / frauen — a woman / the woman"
+    },
+    {
+      "type": "li",
+      "text": "eit hus / huset — a house / the house"
+    },
+    {
+      "type": "li",
+      "text": "de barn / barnen — the children"
+    },
+    {
+      "type": "h3",
+      "text": "Noun Gender Guide"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Gender",
+        "Typical endings / categories",
+        "Examples"
+      ],
+      "rows": [
+        [
+          "Masculine",
+          "-er, -mann, -en; male persons, days, months",
+          "mann, dag, venn, vader"
+        ],
+        [
+          "Feminine",
+          "-e, -ing, -heit, -keit; female persons, many abstracts",
+          "frau, kvinde, arbeiding, friheit"
+        ],
+        [
+          "Neuter",
+          "-um, -ment, -sel; many monosyllabic basic nouns",
+          "hus, land, system, barn"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "5. Noun Cases"
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic uses three cases: Nominative (subject), Accusative (direct object), and Genitive (possession). Case is primarily marked on the article/determiner rather than the noun itself, minimising irregularity."
+    },
+    {
+      "type": "h3",
+      "text": "Case Declension of Articles"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Masculine",
+        "Feminine",
+        "Neuter",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative (subj.)",
+          "ein / den",
+          "eine / die",
+          "eit / det",
+          "— / de"
+        ],
+        [
+          "Accusative (dir. obj.)",
+          "einen / den",
+          "eine / die",
+          "eit / det",
+          "— / de"
+        ],
+        [
+          "Genitive (poss.)",
+          "eins / dens",
+          "einer / dier",
+          "eits / dets",
+          "— / der"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Accusative is identical to Nominative for feminine, neuter, and plural — only masculine changes ( ein → einen ). This mirrors the widespread pattern across Dutch, German, and Scandinavian."
+    },
+    {
+      "type": "h3",
+      "text": "Case Usage with Examples"
+    },
+    {
+      "type": "p",
+      "text": "Nominative — subject of the sentence:"
+    },
+    {
+      "type": "li",
+      "text": "Den mann seer die frau. — The man sees the woman."
+    },
+    {
+      "type": "li",
+      "text": "Eit barn leiker i huset. — A child plays in the house."
+    },
+    {
+      "type": "p",
+      "text": "Accusative — direct object:"
+    },
+    {
+      "type": "li",
+      "text": "Ik seer einen mann. — I see a man."
+    },
+    {
+      "type": "li",
+      "text": "Wi hæver det buch. — We have the book."
+    },
+    {
+      "type": "li",
+      "text": "Han gifft die frau einen blomst. — He gives the woman a flower."
+    },
+    {
+      "type": "p",
+      "text": "Genitive — possession:"
+    },
+    {
+      "type": "li",
+      "text": "Huset dens manns er stort. — The man's house is big."
+    },
+    {
+      "type": "li",
+      "text": "Die farbe dets himmelts er blå. — The colour of the sky is blue."
+    },
+    {
+      "type": "li",
+      "text": "Den namm eins vennts — A friend's name"
+    },
+    {
+      "type": "p",
+      "text": "Genitive can also be expressed with the preposition van / av + Nominative — a pattern natural to Dutch and Scandinavian speakers: huset av den mann = \"the house of the man\"."
+    },
+    {
+      "type": "h2",
+      "text": "6. Pronouns"
+    },
+    {
+      "type": "p",
+      "text": "Personal pronouns inflect for person, number, and case. Where two forms appear (e.g. mik / meg ), the first is closer to Dutch/German, the second to Scandinavian — both are fully acceptable."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Nominative",
+        "Accusative",
+        "Genitive (poss.)"
+      ],
+      "rows": [
+        [
+          "1st sg. (I)",
+          "ik",
+          "mik / meg",
+          "min / mein"
+        ],
+        [
+          "2nd sg. (you)",
+          "du",
+          "dik / deg",
+          "din / dein"
+        ],
+        [
+          "3rd sg. m. (he)",
+          "han",
+          "him / ham",
+          "hans / sein"
+        ],
+        [
+          "3rd sg. f. (she)",
+          "hun",
+          "hir / henne",
+          "hir / ihr"
+        ],
+        [
+          "3rd sg. n. (it)",
+          "det",
+          "det",
+          "dets / sein"
+        ],
+        [
+          "1st pl. (we)",
+          "wi",
+          "uns / oss",
+          "uns / unser"
+        ],
+        [
+          "2nd pl. (you all)",
+          "i / ji / ir",
+          "iuk / dik",
+          "eur / iuer"
+        ],
+        [
+          "3rd pl. (they)",
+          "de",
+          "dem / them",
+          "dær / ihr"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "7. Verb System"
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic verbs are conjugated for person, number, tense, aspect, and voice. The infinitive ends in -e (e.g. seje, gåe, wærre, hæbbre ). Conjugation is regular for the vast majority of verbs."
+    },
+    {
+      "type": "h3",
+      "text": "Personal Endings (Present Tense)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Person",
+        "Ending",
+        "Example: seje (to see)"
+      ],
+      "rows": [
+        [
+          "ik (I)",
+          "-∅ / -er",
+          "ik sej / sejer"
+        ],
+        [
+          "du (you)",
+          "-er / -st",
+          "du sejer / sejst"
+        ],
+        [
+          "han / hun / det (he/she/it)",
+          "-er",
+          "han sejer"
+        ],
+        [
+          "wi (we)",
+          "-e",
+          "wi seje"
+        ],
+        [
+          "i / ji (you pl.)",
+          "-e",
+          "i seje"
+        ],
+        [
+          "de (they)",
+          "-e",
+          "de seje"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Personal endings are optional when the subject pronoun is stated (Scandinavian style); they are used for clarity when the pronoun is omitted (German/Dutch style)."
+    },
+    {
+      "type": "h2",
+      "text": "8. Tenses & Aspects"
+    },
+    {
+      "type": "h2",
+      "text": "9. Voice"
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic distinguishes three voices: Active, Passive, and Middle / Neutral (reflexive-reciprocal)."
+    },
+    {
+      "type": "h3",
+      "text": "9.1 Active Voice ( Aktiv )"
+    },
+    {
+      "type": "p",
+      "text": "The default voice. The subject performs the action."
+    },
+    {
+      "type": "li",
+      "text": "Den mann baut eit hus. — The man builds a house."
+    },
+    {
+      "type": "li",
+      "text": "Wi seje die stjerne. — We see the stars."
+    },
+    {
+      "type": "h3",
+      "text": "9.2 Passive Voice ( Passiv )"
+    },
+    {
+      "type": "p",
+      "text": "Formed with wærre or wirde + past participle. The agent (if expressed) uses van / av ."
+    },
+    {
+      "type": "li",
+      "text": "Eit hus wirde gebaut. — A house is being built."
+    },
+    {
+      "type": "li",
+      "text": "Den mann wirde gesejet van die frau. — The man is seen by the woman."
+    },
+    {
+      "type": "li",
+      "text": "Die buch wærde geschreiben van einem student. — The book was written by a student."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tense",
+        "Passive formation",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Present Passive",
+          "wirde + p.p.",
+          "wirde gesejet"
+        ],
+        [
+          "Imperfect Passive",
+          "wærde + p.p.",
+          "wærde gesejet"
+        ],
+        [
+          "Perfect Passive",
+          "wærre geworren + p.p.",
+          "wærre geworren gesejet"
+        ],
+        [
+          "Future Passive",
+          "skal/will wærre + p.p.",
+          "skal wærre gesejet"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "9.3 Middle / Neutral Voice ( Medial / Nøytral )"
+    },
+    {
+      "type": "p",
+      "text": "Covers reflexive, reciprocal, and inherent-process meanings. Formed either with the reflexive particle sik (or seg , Scandinavian style) or with the suffix -st on the verb (Scandinavian mediopassive)."
+    },
+    {
+      "type": "li",
+      "text": "Ik wæsje sik. — I wash myself. (reflexive)"
+    },
+    {
+      "type": "li",
+      "text": "Wi seje sik evri dag. — We see each other every day. (reciprocal)"
+    },
+    {
+      "type": "li",
+      "text": "Die dør opnest. — The door opens (by itself). (mediopassive)"
+    },
+    {
+      "type": "li",
+      "text": "Het hus bautst raskt. — The house builds quickly / is built quickly."
+    },
+    {
+      "type": "p",
+      "text": "The -st mediopassive is closest to Scandinavian s-passives (Norw. læres , Sw. lärs ) and feels natural to Nordic speakers. The sik particle feels natural to German and Dutch speakers."
+    },
+    {
+      "type": "h2",
+      "text": "10. Mood"
+    },
+    {
+      "type": "p",
+      "text": "Three moods: Indicative (reality), Conditional (hypothetical), and Imperative (commands)."
+    },
+    {
+      "type": "h3",
+      "text": "10.1 Indicative"
+    },
+    {
+      "type": "p",
+      "text": "The default mood for statements of fact. All tenses in §8 are indicative by default."
+    },
+    {
+      "type": "h3",
+      "text": "10.2 Conditional"
+    },
+    {
+      "type": "p",
+      "text": "Used for hypothetical, counterfactual, and polite statements. Modal wulde / wølde (\"would\") + infinitive for Conditional I; wulde hæbbe + past participle for Conditional II."
+    },
+    {
+      "type": "p",
+      "text": "Conditional I — Present/Future Hypothetical"
+    },
+    {
+      "type": "li",
+      "text": "Ik wulde gåe, wenn ik hædde tid. — I would go if I had time."
+    },
+    {
+      "type": "li",
+      "text": "Du wuldest wærre glad, wenn du kæmde. — You would be happy if you came."
+    },
+    {
+      "type": "li",
+      "text": "Wi wulde kauppe eit hus, wenn wi hædde penger. — We would buy a house if we had money."
+    },
+    {
+      "type": "p",
+      "text": "Conditional II — Past Hypothetical (Unrealised)"
+    },
+    {
+      "type": "li",
+      "text": "Ik wulde hæbbe gesejet ihm. — I would have seen him."
+    },
+    {
+      "type": "li",
+      "text": "De wulde hæbbe gekommend, wenn de hædde gewust. — They would have come if they had known."
+    },
+    {
+      "type": "p",
+      "text": "Conditional in subordinate clauses (Konjunktiv II equivalent)"
+    },
+    {
+      "type": "p",
+      "text": "In if-clauses ( wenn / om ), the past subjunctive is used. For most verbs this is identical to the imperfect. For wærre and hæbbe , special subjunctive forms exist:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Verb",
+        "Present Indicative",
+        "Past Subj. / Conditional Protasis"
+      ],
+      "rows": [
+        [
+          "wærre (to be)",
+          "ik wærre",
+          "ik wære / wærre"
+        ],
+        [
+          "hæbbe (to have)",
+          "ik hæbbe",
+          "ik hædde"
+        ],
+        [
+          "moge (may)",
+          "ik mog",
+          "ik møgte / möchte"
+        ],
+        [
+          "kunne (can)",
+          "ik kann",
+          "ik kønde / könnte"
+        ],
+        [
+          "skulle (shall)",
+          "ik skal",
+          "ik skulde / sollte"
+        ],
+        [
+          "wille (to want)",
+          "ik will",
+          "ik wulde / wollte"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "10.3 Imperative"
+    },
+    {
+      "type": "p",
+      "text": "Commands use the bare verb stem (identical to 2nd sg. without pronoun). Plural commands add -e ."
+    },
+    {
+      "type": "li",
+      "text": "Sej! / Seje wi! — See! / Let's see!"
+    },
+    {
+      "type": "li",
+      "text": "Komm! / Komme! — Come! (sg.) / Come! (pl.)"
+    },
+    {
+      "type": "li",
+      "text": "Gåe nicht so raskt! — Don't go so fast!"
+    },
+    {
+      "type": "h2",
+      "text": "11. Modal Auxiliaries"
+    },
+    {
+      "type": "p",
+      "text": "Modal verbs take the infinitive without any additional particle. Negation uses nicht directly before the modal or the infinitive: Ik kann nicht seje det or Ik nicht kann seje det ."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Modal",
+        "Meaning",
+        "Example"
+      ],
+      "rows": [
+        [
+          "kann",
+          "can, to be able",
+          "Ik kann seje det."
+        ],
+        [
+          "skal",
+          "shall, will (definite future)",
+          "Wi skal gåe morgend."
+        ],
+        [
+          "will",
+          "want to, will (volitional)",
+          "Ik will seje dit."
+        ],
+        [
+          "mog / moge",
+          "may, might, be allowed",
+          "Du mog gåe nu."
+        ],
+        [
+          "muste / musse",
+          "must, have to",
+          "De muste wærkke."
+        ],
+        [
+          "durfte",
+          "may (cautious permission)",
+          "Ik durfte nicht gåe."
+        ],
+        [
+          "skulde",
+          "should, ought to",
+          "Wi skulde hjelpe."
+        ],
+        [
+          "wulde",
+          "would (conditional)",
+          "Ik wulde gjerne komme."
+        ],
+        [
+          "tørre",
+          "dare to",
+          "Han tørre nicht seje det."
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Complete Verb Paradigm — seje (to see)"
+    },
+    {
+      "type": "p",
+      "text": "All tenses for seje , 1st person singular, across all voices."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tense / Mood",
+        "Active",
+        "Passive",
+        "Middle / Neutral"
+      ],
+      "rows": [
+        [
+          "Present Simple",
+          "ik sej",
+          "ik wirde gesejet",
+          "ik seje sik"
+        ],
+        [
+          "Present Progressive",
+          "ik wærre sejande",
+          "ik wærre sejande geworden",
+          "ik wærre sik sejande"
+        ],
+        [
+          "Imperfect",
+          "ik såg",
+          "ik wærde gesejet",
+          "ik såg sik"
+        ],
+        [
+          "Plusquamperfect",
+          "ik hædde gesejet",
+          "ik hædde gesejet geworden",
+          "ik hædde sik gesejet"
+        ],
+        [
+          "Plusquamimperfect",
+          "ik wærde sejande",
+          "ik wærde sejande geworden",
+          "ik wærde sik sejande"
+        ],
+        [
+          "Future I",
+          "ik skal seje",
+          "ik skal wærre gesejet",
+          "ik skal seje sik"
+        ],
+        [
+          "Future II",
+          "ik skal hæbbe gesejet",
+          "ik skal hæbbe gesejet geworden",
+          "ik skal hæbbe sik gesejet"
+        ],
+        [
+          "Conditional I",
+          "ik wulde seje",
+          "ik wulde gesejet wærre",
+          "ik wulde seje sik"
+        ],
+        [
+          "Conditional II",
+          "ik wulde hæbbe gesejet",
+          "ik wulde hæbbe gesejet geworden",
+          "ik wulde hæbbe sik gesejet"
+        ],
+        [
+          "Imperative",
+          "sej! / seje!",
+          "wirde gesejet!",
+          "seje sik!"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "12. Adjectives"
+    },
+    {
+      "type": "p",
+      "text": "Adjectives agree with the noun in gender, number, and case when used attributively (before a noun). Used predicatively (after a copula), they are uninflected."
+    },
+    {
+      "type": "h3",
+      "text": "12.1 Strong Declension (no article)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Masculine",
+        "Feminine",
+        "Neuter",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "goder mann",
+          "gode frau",
+          "godt hus",
+          "gode menner"
+        ],
+        [
+          "Accusative",
+          "goden mann",
+          "gode frau",
+          "godt hus",
+          "gode menner"
+        ],
+        [
+          "Genitive",
+          "godes manns",
+          "goder frau",
+          "godes huses",
+          "goder menner"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "12.2 Weak Declension (with definite article)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Case",
+        "Masculine",
+        "Feminine",
+        "Neuter",
+        "Plural"
+      ],
+      "rows": [
+        [
+          "Nominative",
+          "den gode mann",
+          "die gode frau",
+          "det gode hus",
+          "de gode menner"
+        ],
+        [
+          "Accusative",
+          "den goden mann",
+          "die gode frau",
+          "det gode hus",
+          "de gode menner"
+        ],
+        [
+          "Genitive",
+          "dens goden manns",
+          "dier goden frau",
+          "dets goden huses",
+          "der goden menner"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "12.3 Comparison of Adjectives"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Degree",
+        "Formation",
+        "Example: stor (big)"
+      ],
+      "rows": [
+        [
+          "Positive",
+          "base form",
+          "stor"
+        ],
+        [
+          "Comparative",
+          "stem + -er / -re",
+          "størr / større"
+        ],
+        [
+          "Superlative",
+          "stem + -est / -st",
+          "størst"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Example: eit stort hus — eit større hus — det største hus (a big house — a bigger house — the biggest house)."
+    },
+    {
+      "type": "h2",
+      "text": "13. Word Order & Syntax"
+    },
+    {
+      "type": "p",
+      "text": "Basic order: SVO (Subject-Verb-Object), identical to Scandinavian and similar to Dutch. Subordinate clauses move the verb to the end (V-final), mirroring German and Dutch syntax."
+    },
+    {
+      "type": "h3",
+      "text": "13.1 Main Clause (SVO)"
+    },
+    {
+      "type": "li",
+      "text": "Ik sej den mann. — I see the man."
+    },
+    {
+      "type": "li",
+      "text": "Die frau kauppt eit buch. — The woman buys a book."
+    },
+    {
+      "type": "li",
+      "text": "Wi gåe til den by morgend. — We go to the city tomorrow."
+    },
+    {
+      "type": "h3",
+      "text": "13.2 V2 Rule (Verb-Second)"
+    },
+    {
+      "type": "p",
+      "text": "When a non-subject starts the sentence, the verb still comes second (inverted). V2 is shared by all continental Germanic and Scandinavian languages."
+    },
+    {
+      "type": "li",
+      "text": "Morgend gåe wi til den by. — Tomorrow (we) go to the city."
+    },
+    {
+      "type": "li",
+      "text": "Dit hæbbe ik nicht gesejet. — That I have not seen."
+    },
+    {
+      "type": "h3",
+      "text": "13.3 Subordinate Clause (SOV with dass/at )"
+    },
+    {
+      "type": "p",
+      "text": "In clauses introduced by complementisers ( dass / at / dat ) or relative pronouns, the verb moves to the end:"
+    },
+    {
+      "type": "li",
+      "text": "Ik weit, dass han kommt. — I know that he comes."
+    },
+    {
+      "type": "li",
+      "text": "Hun sagte, at de nicht kæmde. — She said that they did not come."
+    },
+    {
+      "type": "li",
+      "text": "Ik gåe, wen du kommst. — I go when you come."
+    },
+    {
+      "type": "h3",
+      "text": "13.4 Negation"
+    },
+    {
+      "type": "p",
+      "text": "Negation uses nicht / ikke placed after the finite verb in main clauses, and before the main verb in subordinate clauses."
+    },
+    {
+      "type": "li",
+      "text": "Ik sej nicht den mann. — I do not see the man."
+    },
+    {
+      "type": "li",
+      "text": "Ik weit, dass han nicht kommt. — I know that he does not come."
+    },
+    {
+      "type": "li",
+      "text": "Wi hæbbe nicht gegåen. — We have not gone."
+    },
+    {
+      "type": "h2",
+      "text": "14. Core Vocabulary"
+    },
+    {
+      "type": "p",
+      "text": "A working starter lexicon drawn from the Intergermanic master vocabulary. Slashes show accepted variants."
+    },
+    {
+      "type": "h2",
+      "text": "15. Common Phrases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Intergermanic",
+        "English",
+        "Norwegian / Swedish",
+        "German",
+        "Dutch"
+      ],
+      "rows": [
+        [
+          "Godt dag / Heil",
+          "Good day / Hello",
+          "God dag / Hei",
+          "Guten Tag / Hallo",
+          "Goedendag / Hoi"
+        ],
+        [
+          "Godt morgend",
+          "Good morning",
+          "God morgen",
+          "Guten Morgen",
+          "Goedemorgen"
+        ],
+        [
+          "Godt nacht",
+          "Good night",
+          "God natt",
+          "Gute Nacht",
+          "Goedenacht"
+        ],
+        [
+          "Hav det gott",
+          "Goodbye (lit. \"have it well\")",
+          "Ha det bra",
+          "Auf Wiedersehen",
+          "Tot ziens"
+        ],
+        [
+          "Takk / Dankk",
+          "Thank you",
+          "Takk",
+          "Danke",
+          "Dank je"
+        ],
+        [
+          "Je takk / Bitte",
+          "Please / You're welcome",
+          "Vær så snill",
+          "Bitte",
+          "Alsjeblieft"
+        ],
+        [
+          "Ja / Nei",
+          "Yes / No",
+          "Ja / Nei",
+          "Ja / Nein",
+          "Ja / Nee"
+        ],
+        [
+          "Ik forståe nicht",
+          "I don't understand",
+          "Jeg forstår ikke",
+          "Ich verstehe nicht",
+          "Ik begrijp het niet"
+        ],
+        [
+          "Kan du hjelpe mik?",
+          "Can you help me?",
+          "Kan du hjelpe meg?",
+          "Kannst du mir helfen?",
+          "Kun je me helpen?"
+        ],
+        [
+          "Wie hejst du?",
+          "What is your name?",
+          "Hva heter du?",
+          "Wie heißt du?",
+          "Hoe heet je?"
+        ],
+        [
+          "Ik hejst…",
+          "My name is…",
+          "Jeg heter…",
+          "Ich heiße…",
+          "Ik heet…"
+        ],
+        [
+          "Wie gaet det?",
+          "How are you?",
+          "Hvordan går det?",
+          "Wie geht es dir?",
+          "Hoe gaat het?"
+        ],
+        [
+          "Det gaet gott, takk.",
+          "It's going well, thanks.",
+          "Det går bra, takk.",
+          "Es geht gut, danke.",
+          "Het gaat goed, dank je."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "16. Numbers"
+    },
+    {
+      "type": "p",
+      "text": "Both continental (Ger./Du.) and Scandinavian numeral forms are listed. The first is closer to German/Dutch, the second to Norwegian/Swedish/Danish. Either may be used freely."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Number",
+        "Intergermanic",
+        "Example"
+      ],
+      "rows": [
+        [
+          "0",
+          "null",
+          "null poeng — zero points"
+        ],
+        [
+          "1",
+          "éin / éen",
+          "éin mann — one man"
+        ],
+        [
+          "2",
+          "twei / to",
+          "twei huser — two houses"
+        ],
+        [
+          "3",
+          "drei / tre",
+          "drei dager — three days"
+        ],
+        [
+          "4",
+          "vier / fire",
+          "vier barn — four children"
+        ],
+        [
+          "5",
+          "fimf / fem",
+          "fimf folk — five people"
+        ],
+        [
+          "6",
+          "seks / sechs",
+          "seks weker — six weeks"
+        ],
+        [
+          "7",
+          "seben / sju",
+          "seben tider — seven times"
+        ],
+        [
+          "8",
+          "acht / åtte",
+          "acht år — eight years"
+        ],
+        [
+          "9",
+          "negen / ni",
+          "negen måneder — nine months"
+        ],
+        [
+          "10",
+          "tien / ti",
+          "tien gange — ten times"
+        ],
+        [
+          "11",
+          "elf / elleve",
+          "—"
+        ],
+        [
+          "12",
+          "twalv / tolv",
+          "—"
+        ],
+        [
+          "20",
+          "tweinti / tjue",
+          "—"
+        ],
+        [
+          "100",
+          "honderd / hundre",
+          "—"
+        ],
+        [
+          "1000",
+          "dusend / tusen",
+          "—"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "17. Mutual Intelligibility Notes"
+    },
+    {
+      "type": "p",
+      "text": "The following table shows how Intergermanic forms map onto specific living Germanic languages."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Feature",
+        "Intergermanic",
+        "Norwegian",
+        "Swedish",
+        "German",
+        "Dutch",
+        "Afrikaans"
+      ],
+      "rows": [
+        [
+          "I am",
+          "ik wærre",
+          "jeg er",
+          "jag är",
+          "ich bin",
+          "ik ben",
+          "ek is"
+        ],
+        [
+          "to have",
+          "hæbbe",
+          "ha",
+          "ha",
+          "haben",
+          "hebben",
+          "hê"
+        ],
+        [
+          "past part. prefix",
+          "ge-",
+          "(none)",
+          "(none)",
+          "ge-",
+          "ge-",
+          "ge-"
+        ],
+        [
+          "definite suffix",
+          "-en / -et",
+          "-en / -et",
+          "-en / -et",
+          "—",
+          "—",
+          "—"
+        ],
+        [
+          "s-passive / medial",
+          "wærre + -st",
+          "bli / -s",
+          "-s",
+          "(none)",
+          "worden",
+          "word"
+        ],
+        [
+          "negation",
+          "nicht / ikke",
+          "ikke",
+          "inte",
+          "nicht",
+          "niet",
+          "nie"
+        ],
+        [
+          "conditional aux.",
+          "wulde",
+          "ville",
+          "skulle",
+          "würde",
+          "zou",
+          "sou"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Intergermanic deliberately keeps both Scandinavian and continental Germanic forms as valid variants. Every speaker of a living Germanic language will find at least one of each pair familiar."
+    },
+    {
+      "type": "h2",
+      "text": "18. Beginner Lessons"
+    },
+    {
+      "type": "h2",
+      "text": "19. At-a-Glance Summary"
+    },
+    {
+      "type": "li",
+      "text": "Genders: Masculine · Feminine · Neuter"
+    },
+    {
+      "type": "li",
+      "text": "Cases: Nominative · Accusative · Genitive (marked on articles/determiners)"
+    },
+    {
+      "type": "li",
+      "text": "Tenses: Present · Present Progressive · Imperfect · Plusquamperfect · Plusquamimperfect · Future I · Future II"
+    },
+    {
+      "type": "li",
+      "text": "Voices: Active · Passive ( wærre/wirde + pp) · Middle/Neutral ( sik particle or -st suffix)"
+    },
+    {
+      "type": "li",
+      "text": "Moods: Indicative · Conditional I & II ( wulde ) · Imperative"
+    },
+    {
+      "type": "li",
+      "text": "Word order: SVO main clause · V2 inversion · SOV subordinate clause · Negation nicht / ikke after the finite verb"
+    },
+    {
+      "type": "li",
+      "text": "Infinitive: -e suffix · Past participle: ge- prefix + stem + -t/-d (weak) or -en (strong)"
+    },
+    {
+      "type": "h3",
+      "text": "Learning Progression"
+    },
+    {
+      "type": "li",
+      "text": "Pronunciation drills (week 1) — get comfortable with the vowel system, especially æ, ø, å, ü ."
+    },
+    {
+      "type": "li",
+      "text": "Pronouns + present tense + SVO statements (weeks 1–2)."
+    },
+    {
+      "type": "li",
+      "text": "Questions, negation, and simple past (weeks 2–3)."
+    },
+    {
+      "type": "li",
+      "text": "Articles, cases, and noun gender (weeks 3–4)."
+    },
+    {
+      "type": "li",
+      "text": "Compound tenses (perfect, pluperfect, futures) (weeks 4–6)."
+    },
+    {
+      "type": "li",
+      "text": "Voice (passive, mediopassive) and conditional (weeks 6–8)."
+    },
+    {
+      "type": "li",
+      "text": "Free reading: translate short Norwegian or German news headlines using only Intergermanic forms — a fast way to test mutual intelligibility in both directions."
+    }
+  ]
+}

@@ -2,8 +2,8 @@ import SubHub from "@/components/SubHub";
 import { pageMeta } from "@/lib/seo";
 import { getDirCollection, type Article } from "@/lib/content";
 
-// Source: /website/public/con-lang.html + the 6 constructed-language guide pages.
-export const metadata = pageMeta({ title: "Con-Lang", description: "Guides to constructed languages — Esperanto, Ido, Novial, Interlingua, Interslavic and Klingon.", path: "/language-learning/con-lang" });
+// Source: /website/public/con-lang.html + the 7 constructed-language guide pages.
+export const metadata = pageMeta({ title: "Con-Lang", description: "Guides to constructed languages — Esperanto, Ido, Novial, Interlingua, Interslavic, Intergermanic and Klingon.", path: "/language-learning/con-lang" });
 
 const HUB: Article = {
   slug: "con-lang",
