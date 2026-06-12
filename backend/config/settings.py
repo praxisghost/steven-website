@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # Local
     "api",
+    "payments",
 ]
 
 MIDDLEWARE = [
@@ -183,3 +184,37 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = env_bool("DJANGO_SECURE_SSL_REDIRECT", True)
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+
+# --- Payments (Stripe) — SKELETON, test-mode only ---
+# Master kill switch. While False (default), payments URLs are NOT included in
+# config/urls.py, so the webhook + access endpoints do not exist on the deployed
+# app. Flip to True only once Stripe is wired and tested. See PAYMENTS_DESIGN.md.
+PAYMENTS_ENABLED = env_bool("PAYMENTS_ENABLED", False)
+
+# All read from env; NEVER commit real values. Use Stripe TEST keys (sk_test_…,
+# whsec_… from `stripe listen`) until launch.
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
+STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
+STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
+
+# Minecraft RCON — must reach the game server over the private network only.
+RCON_HOST = os.environ.get("RCON_HOST", "")
+RCON_PORT = int(os.environ.get("RCON_PORT", "25575"))
+RCON_PASSWORD = os.environ.get("RCON_PASSWORD", "")
+
+# Where Checkout redirects back to (Next.js pages). The success page should poll
+# the access endpoint rather than assume access — entitlement follows webhooks.
+_FRONTEND = os.environ.get("FRONTEND_BASE_URL", "http://localhost:3000")
+PAYMENTS_SUCCESS_URL = os.environ.get(
+    "PAYMENTS_SUCCESS_URL", f"{_FRONTEND}/account/purchase-complete"
+)
+PAYMENTS_CANCEL_URL = os.environ.get(
+    "PAYMENTS_CANCEL_URL", f"{_FRONTEND}/account/purchase-cancelled"
+)
+
+# Protected one-time downloads. Either point PAYMENTS_DOWNLOAD_DIR at a PRIVATE
+# directory (NOT under STATIC/public) to stream files, or set
+# PAYMENTS_STORAGE_SIGNED=True when using object storage that mints signed URLs.
+PAYMENTS_DOWNLOAD_DIR = os.environ.get("PAYMENTS_DOWNLOAD_DIR", "")
+PAYMENTS_STORAGE_SIGNED = env_bool("PAYMENTS_STORAGE_SIGNED", False)
+PAYMENTS_DOWNLOAD_TTL = int(os.environ.get("PAYMENTS_DOWNLOAD_TTL", "300"))
