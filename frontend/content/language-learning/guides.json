@@ -1,0 +1,793 @@
+{
+  "title": "Language Guides",
+  "source": "/website/public/language-guides.html",
+  "intro": "Pick your native language to see what you can study, or choose a target language to see the options. Each guide pairs a target language with a source language and (when available) an interactive vocabulary trainer.",
+  "note": "Interactive flashcard trainers for these language pairs are being migrated from the original site. The full catalogue is shown below; individual trainers will become clickable as each is ported.",
+  "groups": [
+    {
+      "label": "🇬🇧 From English — English speakers",
+      "langs": [
+        {
+          "name": "Ainu",
+          "slug": "ainu-from-english"
+        },
+        {
+          "name": "🇪🇹 Amharic",
+          "slug": "amharic-from-english"
+        },
+        {
+          "name": "🇹🇼 Amis",
+          "slug": "amis-from-english"
+        },
+        {
+          "name": "🇸🇦 Arabic",
+          "slug": "arabic-from-english"
+        },
+        {
+          "name": "🇦🇲 Armenian",
+          "slug": "armenian-from-english"
+        },
+        {
+          "name": "Basque",
+          "slug": "basque-from-english"
+        },
+        {
+          "name": "🇧🇩 Bengali",
+          "slug": "bengali-from-english"
+        },
+        {
+          "name": "🇲🇲 Burmese",
+          "slug": "burmese-from-english"
+        },
+        {
+          "name": "🇭🇰 Cantonese",
+          "slug": "cantonese-learning"
+        },
+        {
+          "name": "🇨🇻 Cape Verdean Creole",
+          "slug": "cape-verdean-creole-from-english"
+        },
+        {
+          "name": "Catalan",
+          "slug": "catalan-from-english"
+        },
+        {
+          "name": "Cherokee ᏣᎳᎩ",
+          "slug": "cherokee-from-english"
+        },
+        {
+          "name": "🇲🇼 Chichewa",
+          "slug": "chichewa-from-english"
+        },
+        {
+          "name": "🇩🇪 German",
+          "slug": "german-learning"
+        },
+        {
+          "name": "🇵🇾 Guaraní",
+          "slug": "guarani-from-english"
+        },
+        {
+          "name": "🇳🇬 Hausa",
+          "slug": "hausa-from-english"
+        },
+        {
+          "name": "🌺 Hawaiian",
+          "slug": "hawaiian-from-english"
+        },
+        {
+          "name": "🇮🇳 Hindi",
+          "slug": "hindi-from-english"
+        },
+        {
+          "name": "🇮🇹 Italian",
+          "slug": "italian-from-english"
+        },
+        {
+          "name": "🇰🇷 Jejueo",
+          "slug": "jejueo-from-english"
+        },
+        {
+          "name": "🇷🇼 Kinyarwanda",
+          "slug": "kinyarwanda-from-english"
+        },
+        {
+          "name": "🇨🇩 Lingala",
+          "slug": "lingala-from-english"
+        },
+        {
+          "name": "🇺🇸 Louisiana French",
+          "slug": "louisiana-french-from-english"
+        },
+        {
+          "name": "🇨🇳 Mandarin",
+          "slug": "mandarin-learning"
+        },
+        {
+          "name": "🇨🇱 Mapudungun",
+          "slug": "mapudungun-from-english"
+        },
+        {
+          "name": "Navajo Diné bizaad",
+          "slug": "navajo-from-english"
+        },
+        {
+          "name": "🇵🇰 Punjabi",
+          "slug": "punjabi-from-english"
+        },
+        {
+          "name": "🇨🇦 Québécois",
+          "slug": "quebecois-from-english"
+        },
+        {
+          "name": "🇵🇪 Quechua",
+          "slug": "quechua-from-english"
+        },
+        {
+          "name": "🇿🇼 Shona",
+          "slug": "shona-from-english"
+        },
+        {
+          "name": "🇪🇸 Spanish",
+          "slug": "spanish-learning"
+        },
+        {
+          "name": "🇹🇿 Swahili",
+          "slug": "swahili-from-english"
+        },
+        {
+          "name": "🇹🇷 Turkish",
+          "slug": "turkish-learning"
+        },
+        {
+          "name": "🇺🇦 Ukrainian",
+          "slug": "ukrainian-from-english"
+        },
+        {
+          "name": "🇦🇴 Umbundu",
+          "slug": "umbundu-from-english"
+        },
+        {
+          "name": "🇵🇰 Urdu",
+          "slug": "urdu-from-english"
+        },
+        {
+          "name": "🇻🇳 Vietnamese",
+          "slug": "vietnamese-from-english"
+        },
+        {
+          "name": "🇸🇳 Wolof",
+          "slug": "wolof-from-english"
+        },
+        {
+          "name": "🇿🇦 isiXhosa",
+          "slug": "xhosa-from-english"
+        },
+        {
+          "name": "🇳🇬 Yorùbá",
+          "slug": "yoruba-from-english"
+        },
+        {
+          "name": "🇿🇦 isiZulu",
+          "slug": "zulu-from-english"
+        }
+      ]
+    },
+    {
+      "label": "🇨🇳 普通话母语者",
+      "langs": [
+        {
+          "name": "阿伊努语",
+          "slug": "ainu-from-mandarin"
+        },
+        {
+          "name": "🇹🇼 阿美語",
+          "slug": "amis-from-mandarin"
+        },
+        {
+          "name": "🇭🇰 粤语",
+          "slug": "cantonese-from-mandarin"
+        },
+        {
+          "name": "🇫🇷 法语",
+          "slug": "french-from-mandarin"
+        },
+        {
+          "name": "🇨🇳 福州话",
+          "slug": "fuzhounese-from-mandarin"
+        },
+        {
+          "name": "🇩🇪 德语",
+          "slug": "german-from-mandarin"
+        },
+        {
+          "name": "🇨🇳 客家话",
+          "slug": "hakka-from-mandarin"
+        },
+        {
+          "name": "🇹🇼 闽南语",
+          "slug": "hokkien-from-mandarin"
+        },
+        {
+          "name": "🇵🇰 旁遮普语",
+          "slug": "punjabi-from-mandarin"
+        },
+        {
+          "name": "🇨🇳 上海话",
+          "slug": "shanghainese-from-mandarin"
+        },
+        {
+          "name": "🇪🇸 西班牙语",
+          "slug": "spanish-from-mandarin"
+        },
+        {
+          "name": "🇹🇷 土耳其语",
+          "slug": "turkish-from-mandarin"
+        }
+      ]
+    },
+    {
+      "label": "🇭🇰 廣東話母語者",
+      "langs": [
+        {
+          "name": "愛努語",
+          "slug": "ainu-from-cantonese"
+        },
+        {
+          "name": "🇩🇪 德文",
+          "slug": "german-from-cantonese"
+        },
+        {
+          "name": "🇨🇳 普通話",
+          "slug": "mandarin-from-cantonese"
+        },
+        {
+          "name": "🇮🇷 波斯語",
+          "slug": "farsi-from-cantonese"
+        },
+        {
+          "name": "🇪🇸 西班牙文",
+          "slug": "spanish-from-cantonese"
+        },
+        {
+          "name": "🇨🇳 台山話",
+          "slug": "taishanese-from-cantonese"
+        },
+        {
+          "name": "🇹🇷 土耳其文",
+          "slug": "turkish-from-cantonese"
+        },
+        {
+          "name": "🇻🇳 越南文",
+          "slug": "vietnamese-from-cantonese"
+        }
+      ]
+    },
+    {
+      "label": "🇩🇪 Deutschsprachige",
+      "langs": [
+        {
+          "name": "🇫🇷 Französisch",
+          "slug": "french-from-german"
+        },
+        {
+          "name": "🇯🇵 Japanisch",
+          "slug": "japanese-from-german"
+        },
+        {
+          "name": "🇮🇷 Persisch",
+          "slug": "farsi-from-german"
+        },
+        {
+          "name": "🇨🇭 Rätoromanisch",
+          "slug": "romansh-from-german"
+        },
+        {
+          "name": "🇪🇸 Spanisch",
+          "slug": "spanish-from-german"
+        },
+        {
+          "name": "🇹🇷 Türkisch",
+          "slug": "turkish-learning-de"
+        },
+        {
+          "name": "🇺🇦 Ukrainisch",
+          "slug": "ukrainian-from-german"
+        },
+        {
+          "name": "🇻🇳 Vietnamesisch",
+          "slug": "vietnamese-from-german"
+        }
+      ]
+    },
+    {
+      "label": "🇹🇷 Türkçe konuşanlar",
+      "langs": [
+        {
+          "name": "🇭🇰 Kantonca",
+          "slug": "cantonese-from-turkish"
+        },
+        {
+          "name": "🇮🇷 Farsça",
+          "slug": "farsi-from-turkish"
+        },
+        {
+          "name": "🇩🇪 Almanca",
+          "slug": "german-learning-tr"
+        },
+        {
+          "name": "🇨🇳 Mandarin Çincesi",
+          "slug": "mandarin-from-turkish"
+        },
+        {
+          "name": "🇪🇸 İspanyolca",
+          "slug": "spanish-from-turkish"
+        },
+        {
+          "name": "🇻🇳 Vietnamca",
+          "slug": "vietnamese-from-turkish"
+        }
+      ]
+    },
+    {
+      "label": "🇪🇸 Hispanohablantes",
+      "langs": [
+        {
+          "name": "🇧🇴 Aymara",
+          "slug": "aymara-from-spanish"
+        },
+        {
+          "name": "Euskera",
+          "slug": "basque-from-spanish"
+        },
+        {
+          "name": "🇭🇰 Cantonés",
+          "slug": "cantonese-from-spanish"
+        },
+        {
+          "name": "🇨🇻 Criollo caboverdiano",
+          "slug": "cape-verdean-creole-from-spanish"
+        },
+        {
+          "name": "Catalán",
+          "slug": "catalan-from-spanish"
+        },
+        {
+          "name": "Cherokee ᏣᎳᎩ",
+          "slug": "cherokee-from-spanish"
+        },
+        {
+          "name": "🇫🇷 Francés",
+          "slug": "french-from-spanish"
+        },
+        {
+          "name": "🇩🇪 Alemán",
+          "slug": "german-from-spanish"
+        },
+        {
+          "name": "🇵🇾 Guaraní",
+          "slug": "guarani-from-spanish"
+        },
+        {
+          "name": "🇮🇹 Italiano",
+          "slug": "italian-from-spanish"
+        },
+        {
+          "name": "🇯🇵 Japonés",
+          "slug": "japanese-from-spanish"
+        },
+        {
+          "name": "🇨🇳 Mandarín",
+          "slug": "mandarin-from-spanish"
+        },
+        {
+          "name": "🇨🇱 Mapudungun",
+          "slug": "mapudungun-from-spanish"
+        },
+        {
+          "name": "🇲🇽 Náhuatl",
+          "slug": "nahuatl-from-spanish"
+        },
+        {
+          "name": "Navajo Diné bizaad",
+          "slug": "navajo-from-spanish"
+        },
+        {
+          "name": "🇮🇷 Persa",
+          "slug": "farsi-from-spanish"
+        },
+        {
+          "name": "🇵🇪 Quechua",
+          "slug": "quechua-from-spanish"
+        },
+        {
+          "name": "🇹🇷 Turco",
+          "slug": "turkish-from-spanish"
+        },
+        {
+          "name": "🇺🇦 Ucraniano",
+          "slug": "ukrainian-from-spanish"
+        },
+        {
+          "name": "🇻🇳 Vietnamita",
+          "slug": "vietnamese-from-spanish"
+        }
+      ]
+    },
+    {
+      "label": "🇮🇷 فارسی‌زبانان",
+      "langs": [
+        {
+          "name": "🇭🇰 کانتونی",
+          "slug": "cantonese-from-farsi"
+        },
+        {
+          "name": "🇩🇪 آلمانی",
+          "slug": "german-from-persian"
+        },
+        {
+          "name": "🇹🇷 ترکی",
+          "slug": "turkish-from-farsi"
+        },
+        {
+          "name": "🇻🇳 ویتنامی",
+          "slug": "vietnamese-from-farsi"
+        }
+      ]
+    },
+    {
+      "label": "🇵🇰 ਪੰਜਾਬੀ ਬੋਲਣ ਵਾਲੇ",
+      "langs": [
+        {
+          "name": "🇮🇷 ਫ਼ਾਰਸੀ",
+          "slug": "farsi-from-punjabi"
+        },
+        {
+          "name": "🇩🇪 ਜਰਮਨ",
+          "slug": "german-from-punjabi"
+        }
+      ]
+    },
+    {
+      "label": "🇺🇦 Україномовні",
+      "langs": [
+        {
+          "name": "🇭🇰 Кантонська",
+          "slug": "cantonese-from-ukrainian"
+        },
+        {
+          "name": "🇩🇪 Німецька",
+          "slug": "german-from-ukrainian"
+        }
+      ]
+    },
+    {
+      "label": "🇻🇳 Người Việt",
+      "langs": [
+        {
+          "name": "🇭🇰 Tiếng Quảng Đông",
+          "slug": "cantonese-from-vietnamese"
+        },
+        {
+          "name": "🇩🇪 Tiếng Đức",
+          "slug": "german-from-vietnamese"
+        },
+        {
+          "name": "🇹🇷 Tiếng Thổ Nhĩ Kỳ",
+          "slug": "turkish-from-vietnamese"
+        },
+        {
+          "name": "🇺🇦 Tiếng Ukraina",
+          "slug": "ukrainian-from-vietnamese"
+        }
+      ]
+    },
+    {
+      "label": "🇫🇷 Francophones",
+      "langs": [
+        {
+          "name": "Basque",
+          "slug": "basque-from-french"
+        },
+        {
+          "name": "🇭🇰 Cantonais",
+          "slug": "cantonese-from-french"
+        },
+        {
+          "name": "Catalan",
+          "slug": "catalan-from-french"
+        },
+        {
+          "name": "🇲🇼 Chichewa",
+          "slug": "chichewa-from-french"
+        },
+        {
+          "name": "🇩🇪 Allemand",
+          "slug": "german-from-french"
+        },
+        {
+          "name": "🇭🇹 Créole haïtien",
+          "slug": "haitian-creole-from-french"
+        },
+        {
+          "name": "🇷🇼 Kinyarwanda",
+          "slug": "kinyarwanda-from-french"
+        },
+        {
+          "name": "🇨🇩 Lingala",
+          "slug": "lingala-from-french"
+        },
+        {
+          "name": "🇺🇸 Français louisianais",
+          "slug": "louisiana-french-from-french"
+        },
+        {
+          "name": "🇨🇦 Québécois",
+          "slug": "quebecois-from-french"
+        },
+        {
+          "name": "🇵🇪 Quechua",
+          "slug": "quechua-from-french"
+        },
+        {
+          "name": "🇨🇭 Romanche",
+          "slug": "romansh-from-french"
+        },
+        {
+          "name": "🇪🇸 Espagnol",
+          "slug": "spanish-from-french"
+        },
+        {
+          "name": "🇹🇿 Swahili",
+          "slug": "swahili-from-french"
+        },
+        {
+          "name": "🇹🇷 Turc",
+          "slug": "turkish-from-french"
+        },
+        {
+          "name": "🇺🇦 Ukrainien",
+          "slug": "ukrainian-from-french"
+        },
+        {
+          "name": "🇦🇴 Umbundu",
+          "slug": "umbundu-from-french"
+        },
+        {
+          "name": "🇿🇦 isiXhosa",
+          "slug": "xhosa-from-french"
+        },
+        {
+          "name": "🇧🇯 Yorùbá",
+          "slug": "yoruba-from-french"
+        },
+        {
+          "name": "🇿🇦 isiZulu",
+          "slug": "zulu-from-french"
+        }
+      ]
+    },
+    {
+      "label": "🇵🇹 Lusófonos",
+      "langs": [
+        {
+          "name": "🇨🇻 Crioulo cabo-verdiano",
+          "slug": "cape-verdean-creole-from-portuguese"
+        },
+        {
+          "name": "🇲🇼 Chichewa",
+          "slug": "chichewa-from-portuguese"
+        },
+        {
+          "name": "🇩🇪 Alemão",
+          "slug": "german-from-portuguese"
+        },
+        {
+          "name": "🇫🇷 Francês",
+          "slug": "french-from-portuguese"
+        },
+        {
+          "name": "🇷🇼 Kinyarwanda",
+          "slug": "kinyarwanda-from-portuguese"
+        },
+        {
+          "name": "🇨🇩 Lingala",
+          "slug": "lingala-from-portuguese"
+        },
+        {
+          "name": "🇵🇪 Quechua",
+          "slug": "quechua-from-portuguese"
+        },
+        {
+          "name": "🇿🇼 Shona",
+          "slug": "shona-from-portuguese"
+        },
+        {
+          "name": "🇪🇸 Espanhol",
+          "slug": "spanish-from-portuguese"
+        },
+        {
+          "name": "🇹🇿 Suaíli",
+          "slug": "swahili-from-portuguese"
+        },
+        {
+          "name": "🇦🇴 Umbundu",
+          "slug": "umbundu-from-portuguese"
+        },
+        {
+          "name": "🇿🇦 isiXhosa",
+          "slug": "xhosa-from-portuguese"
+        },
+        {
+          "name": "🇿🇦 isiZulu",
+          "slug": "zulu-from-portuguese"
+        }
+      ]
+    },
+    {
+      "label": "🇯🇵 日本語話者",
+      "langs": [
+        {
+          "name": "アイヌ語",
+          "slug": "ainu-from-japanese"
+        },
+        {
+          "name": "🇭🇰 広東語",
+          "slug": "cantonese-from-japanese"
+        },
+        {
+          "name": "🇫🇷 フランス語",
+          "slug": "french-from-japanese"
+        },
+        {
+          "name": "🇩🇪 ドイツ語",
+          "slug": "german-from-japanese"
+        },
+        {
+          "name": "🌺 ハワイ語",
+          "slug": "hawaiian-from-japanese"
+        },
+        {
+          "name": "🇰🇷 済州語",
+          "slug": "jejueo-from-japanese"
+        },
+        {
+          "name": "🇪🇸 スペイン語",
+          "slug": "spanish-from-japanese"
+        },
+        {
+          "name": "🇹🇷 トルコ語",
+          "slug": "turkish-from-japanese"
+        },
+        {
+          "name": "🇺🇦 ウクライナ語",
+          "slug": "ukrainian-from-japanese"
+        }
+      ]
+    },
+    {
+      "label": "🇰🇷 한국어 모국어 화자",
+      "langs": [
+        {
+          "name": "아이누어",
+          "slug": "ainu-from-korean"
+        },
+        {
+          "name": "🌺 하와이어",
+          "slug": "hawaiian-from-korean"
+        },
+        {
+          "name": "🇰🇷 제주어",
+          "slug": "jejueo-from-korean"
+        },
+        {
+          "name": "🇩🇪 독일어",
+          "slug": "german-from-korean"
+        },
+        {
+          "name": "🇪🇸 스페인어",
+          "slug": "spanish-from-korean"
+        },
+        {
+          "name": "🇫🇷 프랑스어",
+          "slug": "french-from-korean"
+        }
+      ]
+    },
+    {
+      "label": "🇷🇺 Русскоязычные",
+      "langs": [
+        {
+          "name": "🇦🇲 Армянский",
+          "slug": "armenian-from-russian"
+        },
+        {
+          "name": "🇩🇪 Немецкий",
+          "slug": "german-from-russian"
+        },
+        {
+          "name": "🇪🇸 Испанский",
+          "slug": "spanish-from-russian"
+        }
+      ]
+    },
+    {
+      "label": "🇮🇹 Italofoni",
+      "langs": [
+        {
+          "name": "🇫🇷 Francese",
+          "slug": "french-from-italian"
+        },
+        {
+          "name": "🇨🇭 Romancio",
+          "slug": "romansh-from-italian"
+        },
+        {
+          "name": "🇪🇸 Spagnolo",
+          "slug": "spanish-from-italian"
+        },
+        {
+          "name": "🇩🇪 Tedesco",
+          "slug": "german-from-italian"
+        }
+      ]
+    },
+    {
+      "label": "🇮🇳 हिन्दी भाषी",
+      "langs": [
+        {
+          "name": "🇧🇩 বাংলা (बांग्ला)",
+          "slug": "bengali-from-hindi"
+        },
+        {
+          "name": "🇵🇰 उर्दू",
+          "slug": "urdu-from-hindi"
+        }
+      ]
+    },
+    {
+      "label": "🇧🇩 বাংলা ভাষাভাষী",
+      "langs": [
+        {
+          "name": "🇸🇦 আরবি",
+          "slug": "arabic-from-bengali"
+        }
+      ]
+    },
+    {
+      "label": "🇵🇰 اردو بولنے والے",
+      "langs": [
+        {
+          "name": "🇮🇳 ہندی",
+          "slug": "hindi-from-urdu"
+        }
+      ]
+    },
+    {
+      "label": "🇸🇦 الناطقون بالعربية",
+      "langs": [
+        {
+          "name": "🇳🇬 الهوسا",
+          "slug": "hausa-from-arabic"
+        },
+        {
+          "name": "🇵🇰 الأردية",
+          "slug": "urdu-from-arabic"
+        }
+      ]
+    },
+    {
+      "label": "🇳🇱 Nederlandstaligen",
+      "langs": [
+        {
+          "name": "🇿🇦 isiXhosa",
+          "slug": "xhosa-from-dutch"
+        },
+        {
+          "name": "🇿🇦 isiZulu",
+          "slug": "zulu-from-dutch"
+        }
+      ]
+    }
+  ]
+}

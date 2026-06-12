@@ -7,13 +7,19 @@ import { NextResponse } from "next/server";
 // the backend's own /api/health/ reports ok.
 export const dynamic = "force-dynamic";
 
-const API_URL = (
-  process.env.API_URL ??
-  process.env.NEXT_PUBLIC_API_URL ??
-  "http://localhost:8000"
-).replace(/\/+$/, "");
+// The backend is optional: only report "degraded" when a backend URL is
+// actually configured for this deployment. When it isn't (e.g. running the
+// frontend on its own, or local dev without Django), treat the site as healthy
+// so the degraded banner never nags during normal content browsing.
+const CONFIGURED_API_URL = (process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "")
+  .trim()
+  .replace(/\/+$/, "");
 
 export async function GET() {
+  if (!CONFIGURED_API_URL) {
+    return NextResponse.json({ status: "ok", requestId: null, backend: "not-configured" });
+  }
+  const API_URL = CONFIGURED_API_URL;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 3000);
   try {

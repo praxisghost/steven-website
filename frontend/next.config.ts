@@ -6,10 +6,19 @@ const nextConfig: NextConfig = {
   // so the runtime image stays small and self-contained.
   output: "standalone",
   images: {
-    // Prefer modern formats; the optimizer falls back to the original type
-    // for browsers that lack support. Local /public images only — no
-    // remotePatterns needed (we never hotlink external hosts).
+    // Serve local /public images directly rather than through the on-demand
+    // optimizer. These photos are already web-sized, and unoptimized delivery
+    // is reliable across every runtime (next dev, next start, and the
+    // standalone Railway image) with no sharp/optimizer dependency — fixing
+    // images that failed to load when the optimizer endpoint wasn't available.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
+  },
+  // Preserve old source URLs so existing links/bookmarks keep working.
+  async redirects() {
+    return [
+      { source: "/language-guides", destination: "/language-learning/guides", permanent: true },
+    ];
   },
   // Django API base URL is read from NEXT_PUBLIC_API_URL at runtime (Phase 2).
 };

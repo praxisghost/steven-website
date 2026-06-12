@@ -15,6 +15,12 @@ export default function LanguageLearning() {
       <HubGrid
         items={[
           {
+            label: "Language Guides",
+            emoji: "🗺️",
+            href: "/language-learning/guides",
+            note: "Browse study guides by your native language across 50+ target languages.",
+          },
+          {
             label: "Methods & Tools",
             emoji: "🛠️",
             href: "/language-learning/methods",
