@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getLocaleMeta, listLocales, allLocaleMeta } from "@/lib/i18n";
+import { getLocaleMeta, listLocales, allLocaleMeta, localeAlternates } from "@/lib/i18n";
 
 export const dynamicParams = false;
 
@@ -11,7 +11,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const m = getLocaleMeta(locale);
-  return { title: m ? `${m.siteTitle} (${m.name})` : "Steven Legg" };
+  if (!m) return { title: "Steven Legg" };
+  const title = `${m.siteTitle} (${m.name})`;
+  const alternates = localeAlternates(locale);
+  return {
+    title,
+    alternates,
+    openGraph: { title, type: "website", locale: m.htmlLang, url: alternates.canonical, siteName: m.siteTitle },
+  };
 }
 
 export default async function LocaleHome({ params }: { params: Promise<{ locale: string }> }) {

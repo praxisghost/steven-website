@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "@/components/ArticleBody";
-import { getLocaleMeta, getLocalePage, listLocales, listLocalePages } from "@/lib/i18n";
+import { getLocaleMeta, getLocalePage, listLocales, listLocalePages, localeAlternates } from "@/lib/i18n";
 
 export const dynamicParams = false;
 
@@ -20,7 +20,13 @@ export async function generateMetadata({
   const m = getLocaleMeta(locale);
   const p = getLocalePage(locale, page);
   if (!p || !m) return { title: "Steven Legg" };
-  return { title: `${p.title} — ${m.siteTitle} (${m.name})` };
+  const title = `${p.title} — ${m.siteTitle} (${m.name})`;
+  const alternates = localeAlternates(locale, page);
+  return {
+    title,
+    alternates,
+    openGraph: { title, type: "article", locale: m.htmlLang, url: alternates.canonical, siteName: m.siteTitle },
+  };
 }
 
 export default async function LocalePageView({

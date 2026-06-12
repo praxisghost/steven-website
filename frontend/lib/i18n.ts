@@ -60,3 +60,18 @@ export function allLocaleMeta(): LocaleMeta[] {
     .map((l) => getLocaleMeta(l))
     .filter((m): m is LocaleMeta => m !== null);
 }
+
+// hreflang/canonical map for a mirror-site URL. The 4 constructed-language
+// mirrors are translations of one another → reciprocal hreflang alternates;
+// the English site is x-default. `page` undefined ⇒ a locale home URL.
+export function localeAlternates(
+  locale: string,
+  page?: string
+): { canonical: string; languages: Record<string, string> } {
+  const languages: Record<string, string> = { "x-default": "/" };
+  for (const m of allLocaleMeta()) {
+    if (page && !listLocalePages(m.locale).includes(page)) continue;
+    languages[m.htmlLang] = page ? `/${m.locale}/${page}` : `/${m.locale}`;
+  }
+  return { canonical: page ? `/${locale}/${page}` : `/${locale}`, languages };
+}
