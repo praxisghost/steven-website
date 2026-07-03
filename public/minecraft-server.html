@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Minecraft Server — Steven Legg</title>
+  <meta name="description" content="Stove's Meinkraft Factions — a hard-mode survival PvP Minecraft server with Red, Blue &amp; Green teams, duels, jobs, quests, and blood moons. Join on vanilla Minecraft 26.1 / 26.1.2.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Minecraft server page ─────────────────── */
+    .mc-hero {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .mc-hero img {
+      width: 64px;
+      height: 64px;
+      image-rendering: pixelated;
+      border-radius: 8px;
+      border: 1px solid #1e1e1e;
+      background: #0c0c0c;
+      padding: 6px;
+    }
+
+    .mc-motd {
+      color: #a6a6a6;
+      font-style: italic;
+      margin-top: 0.35rem;
+    }
+
+    /* ── IP copy box — the main event ──────────── */
+    .mc-ip-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #0c0c0c;
+      border: 1px solid #2b4a2f;
+      border-radius: 9px;
+      box-shadow: 0 0 24px rgba(90, 170, 110, 0.08);
+    }
+
+    .mc-ip-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #5aaa6e;
+      margin-bottom: 0.6rem;
+    }
+
+    .mc-ip-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .mc-ip-input {
+      flex: 1;
+      min-width: 240px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 1.05rem;
+      color: #eaeaea;
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 6px;
+      padding: 0.7rem 0.9rem;
+      cursor: text;
+    }
+
+    .mc-ip-input:focus { outline: 1px solid #5aaa6e; }
+
+    .mc-copy-btn {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0c0c0c;
+      background: #5aaa6e;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7rem 1.3rem;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .mc-copy-btn:hover { background: #6fc283; transform: translateY(-1px); }
+    .mc-copy-btn.copied { background: #d4d4d4; }
+
+    .mc-version-note {
+      margin-top: 0.85rem;
+      font-size: 0.92rem;
+      color: #a6a6a6;
+    }
+
+    .mc-version-note strong { color: #eaeaea; }
+
+    /* ── Discord ───────────────────────────────── */
+    .mc-discord {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.4rem;
+      background: #0c0c0c;
+      border: 1px solid #2e2a4a;
+      border-radius: 9px;
+    }
+
+    .mc-discord h2 { margin-top: 0; }
+
+    .mc-discord-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      color: #fff;
+      background: #5865F2;
+      border-radius: 6px;
+      padding: 0.65rem 1.2rem;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .mc-discord-btn:hover { background: #6d78f4; transform: translateY(-1px); }
+
+    .mc-discord-id {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: #a6a6a6;
+    }
+
+    .mc-discord-id code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 4px;
+      padding: 0.15rem 0.45rem;
+      color: #d4d4d4;
+    }
+
+    /* ── Feature + plugin lists ────────────────── */
+    .mc-features {
+      list-style: none;
+      margin: 1rem 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .mc-features li {
+      background: #0c0c0c;
+      border: 1px solid #1e1e1e;
+      border-radius: 7px;
+      padding: 0.8rem 1rem;
+      color: #d4d4d4;
+      font-size: 0.95rem;
+    }
+
+    .mc-features li strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+
+    .mc-plugin-group { margin-top: 1.5rem; }
+
+    .mc-plugin-group h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #5aaa6e;
+      margin-bottom: 0.5rem;
+    }
+
+    .mc-plugin-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .mc-plugin-list li {
+      font-size: 0.88rem;
+      color: #d4d4d4;
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .mc-hero img { width: 48px; height: 48px; }
+      .mc-ip-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="index.html">← Back</a>
+
+  <header>
+    <div class="mc-hero">
+      <img src="minecraft-logo.png" alt="Minecraft logo">
+      <div>
+        <h1>My Minecraft Server</h1>
+        <p class="mc-motd">MEINKRAFT | Survival PvP | Red Blue Green Teams</p>
+      </div>
+    </div>
+  </header>
+
+  <article>
+    <p>Welcome to <strong>Stove's Meinkraft Factions</strong> — a hard-mode survival PvP server
+    running Paper 26.1.2. Pick your team (Red, Blue, or Green), stake a claim, build up your
+    base, and fight for your color. Vanilla at heart, spiced up with light server-side plugins:
+    duels, jobs, quests, custom enchantments, blood moons, and proximity voice chat.</p>
+
+    <!-- ── THE MAIN EVENT: server IP ── -->
+    <section class="mc-ip-box">
+      <div class="mc-ip-label">Server Address — click to copy</div>
+      <div class="mc-ip-row">
+        <input class="mc-ip-input" id="mc-ip" type="text" value="sv6a2af09be2770.apexmc.co:1469" readonly>
+        <button class="mc-copy-btn" id="mc-copy-btn" type="button">Copy IP</button>
+      </div>
+      <p class="mc-version-note">You must be running <strong>Vanilla Minecraft 26.1 / 26.1.2</strong> (Java Edition).
+      No mods or client setup needed — just add the address under <em>Multiplayer → Add Server</em> and join.</p>
+    </section>
+
+    <!-- ── Discord ── -->
+    <section class="mc-discord">
+      <h2>Join the Discord</h2>
+      <p>Team chat, trade deals, event announcements, and server news all happen in the
+      <strong>Stobens MeinKraft Server</strong> Discord.</p>
+      <a class="mc-discord-btn" href="https://discord.gg/JkYYdfHfQ" target="_blank" rel="noopener noreferrer">Join the Discord Server →</a>
+      <p class="mc-discord-id">Link not working? Search by Server ID: <code>887491766289326131</code></p>
+    </section>
+
+    <!-- ── How the server plays ── -->
+    <h2>How It Plays</h2>
+    <ul class="mc-features">
+      <li><strong>⚔️ Three-Team PvP</strong>Choose Red, Blue, or Green when you join. Friendly fire is off within your team — everyone else is fair game.</li>
+      <li><strong>🌍 Hard-Mode Survival</strong>Hard difficulty, survival gamemode, monsters on. Blood moons and infernal mobs make nights genuinely dangerous.</li>
+      <li><strong>🥊 Duels</strong>Settle scores one-on-one with /duel — even against your own teammates.</li>
+      <li><strong>🏠 Land Claims</strong>Protect your base with the golden shovel. Grief protection and block logging keep your builds safe.</li>
+      <li><strong>💰 Jobs &amp; Economy</strong>Earn money through jobs, trade with player shops and sign shops, and complete quests for rewards.</li>
+      <li><strong>✨ Custom Gear</strong>Custom enchantments, special items, guns via QualityArmory, and grappling around the map.</li>
+      <li><strong>🎙️ Proximity Voice Chat</strong>Simple Voice Chat is installed — optional, but talking to whoever's standing next to you is half the fun.</li>
+      <li><strong>🚄 Speedy Minecarts</strong>Rail networks run up to 8× vanilla speed. Build the transcontinental railway of your dreams.</li>
+    </ul>
+
+    <!-- ── Plugins ── -->
+    <h2>Plugins on the Server</h2>
+    <p>Everything is server-side — you connect with a completely vanilla client.</p>
+
+    <div class="mc-plugin-group">
+      <h3>Teams, PvP &amp; Combat</h3>
+      <ul class="mc-plugin-list">
+        <li>BetterTeams</li>
+        <li>Versus (duels)</li>
+        <li>QualityArmory</li>
+        <li>InfernalMobs</li>
+        <li>BloodNight</li>
+      </ul>
+    </div>
+
+    <div class="mc-plugin-group">
+      <h3>World, Claims &amp; Protection</h3>
+      <ul class="mc-plugin-list">
+        <li>GriefPrevention</li>
+        <li>WorldGuard</li>
+        <li>CoreProtect</li>
+        <li>BetterStructures</li>
+        <li>Advanced Portals</li>
+        <li>Chunky</li>
+      </ul>
+    </div>
+
+    <div class="mc-plugin-group">
+      <h3>Economy, Jobs &amp; Trading</h3>
+      <ul class="mc-plugin-list">
+        <li>Jobs Reborn</li>
+        <li>Quests</li>
+        <li>SignShop</li>
+        <li>SmileyPlayerTrader</li>
+        <li>Vault</li>
+      </ul>
+    </div>
+
+    <div class="mc-plugin-group">
+      <h3>Items, Enchants &amp; Crafting</h3>
+      <ul class="mc-plugin-list">
+        <li>CrazyEnchantments</li>
+        <li>UberEnchant</li>
+        <li>SpecialItems</li>
+        <li>Stickman's Items Rebuilt</li>
+        <li>EnhancedCrafting</li>
+        <li>BookShelf</li>
+      </ul>
+    </div>
+
+    <div class="mc-plugin-group">
+      <h3>Quality of Life</h3>
+      <ul class="mc-plugin-list">
+        <li>EssentialsX (+ Chat, Spawn, Protect, AntiBuild, GeoIP, Discord)</li>
+        <li>SetHome</li>
+        <li>DeadChest</li>
+        <li>AxVaults</li>
+        <li>BackpackPlus</li>
+        <li>Speedy Minecarts</li>
+        <li>FastSurvival</li>
+        <li>FarmingUpgrade</li>
+        <li>MineSpawners</li>
+        <li>MobsToEggs</li>
+        <li>MoreMobHeads</li>
+        <li>Simple Voice Chat</li>
+      </ul>
+    </div>
+
+    <div class="mc-plugin-group">
+      <h3>Under the Hood</h3>
+      <ul class="mc-plugin-list">
+        <li>LuckPerms</li>
+        <li>Skript</li>
+        <li>Geyser</li>
+        <li>spark</li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>
+    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      var btn = document.getElementById('mc-copy-btn');
+      var input = document.getElementById('mc-ip');
+
+      function flash(label) {
+        var original = 'Copy IP';
+        btn.textContent = label;
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1600);
+      }
+
+      function copyIp() {
+        var ip = input.value;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(ip).then(function () {
+            flash('Copied! ✔');
+          }, fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+      }
+
+      function fallbackCopy() {
+        input.focus();
+        input.select();
+        input.setSelectionRange(0, input.value.length);
+        try {
+          document.execCommand('copy');
+          flash('Copied! ✔');
+        } catch (e) {
+          flash('Select & copy manually');
+        }
+      }
+
+      btn.addEventListener('click', copyIp);
+      input.addEventListener('click', function () {
+        input.select();
+        input.setSelectionRange(0, input.value.length);
+      });
+    })();
+  </script>
+</body>
+</html>

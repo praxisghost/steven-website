@@ -4,6 +4,9 @@ Current Task:
 None (run complete)
 
 Completed:
+Isms Batch 007 first half (2026-06-05). Created placeholder pages for creationism, criticism, cubism, cynicism, Darwinism using the standard -isms template. Nav links inserted alphabetically in isms.html between Contextualism and Egoism (Creationism → Criticism → Cubism → Cynicism → Darwinism). Batch 007 now 5/10 — IN PROGRESS. Updated ISMS_PROGRESS.md and CHANGELOG.md.
+
+Previously completed:
 Vocabulary export — English→Mandarin (2026-06-05). Created public/downloads/vocabulary/csv/english_to_mandarin.csv and .../tsv/english_to_mandarin.tsv (35 entries — 5 from guide's Practice Words table + 30 curated HSK 1 core words). UTF-8 Unix line endings, Anki-compatible. Mandarin-specific fields: pinyin, tone_numbers, hsk_level. IPA tone diacritics and Chinese characters preserved. Updated content/vocabulary/metadata/index.json. Next: expand english_to_spanish toward 100-entry Priority-1 target.
 
 Previously completed:
@@ -60,4 +63,4 @@ Blocked:
 - PS2 retro gaming article & June 1st 2026 journal post — first-person personal entries; blocked pending Steven's source notes/memories. See BLOCKERS.md.
 
 Next:
-Recommended: Isms Batch 007 first half — creationism, criticism, cubism, cynicism, Darwinism.
+Recommended: Isms Batch 007 second half — deism, determinism, developmentalism, dialecticism, didacticism.
