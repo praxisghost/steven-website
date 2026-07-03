@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-06-05 (autonomous run — Isms Batch 007 first half)
+
+Files changed:
+* public/isms/creationism.html (new)
+* public/isms/criticism.html (new)
+* public/isms/cubism.html (new)
+* public/isms/cynicism.html (new)
+* public/isms/darwinism.html (new)
+* public/isms.html (nav updated)
+* ISMS_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created placeholder pages for the Batch 007 first half: creationism, criticism, cubism,
+cynicism, Darwinism, using the standard -isms placeholder template. Nav links inserted
+alphabetically in isms.html between Contextualism and Egoism in order
+Creationism → Criticism → Cubism → Cynicism → Darwinism. Batch 007 is now 5/10 — IN PROGRESS.
+
+Reason:
+Isms page creation — next eligible unblocked task per PROJECT_STATUS recommendation and the
+skill's priority order. All P1/P2 image and personal-writing tasks remain blocked (see BLOCKERS.md).
+Within run limits (5 pages, 1 primary task).
+
+Next recommended task:
+Isms Batch 007 second half — deism, determinism, developmentalism, dialecticism, didacticism.
+
 ## 2026-06-05 (autonomous run — vocabulary export: English→Mandarin)
 
 Files changed:

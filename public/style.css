@@ -147,6 +147,14 @@ nav ul li a {
   transition: color 0.25s ease;
 }
 
+/* Image icon in nav items (e.g. Minecraft logo) — sized to sit like an emoji */
+.nav-icon-img {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.18em;
+  image-rendering: pixelated;
+}
+
 /*
  * Rainbow hover — see "RAINBOW HOVER" block lower in this file for the
  * full set of rules. Kept in one place so the cycle stays consistent
@@ -1854,6 +1862,25 @@ header h1 a.site-title-link:hover {
   border: 1px solid #1e1e1e;
   margin: 0 0 1.75rem;
 }
+
+/* Hero image PLACEHOLDER — a dark box matching .article-hero's footprint, shown
+   on subpages until a real hero image is dropped in. Swap for <img class="article-hero">
+   when artwork is ready. The centred glyph keeps the empty state from feeling broken. */
+.article-hero-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  border: 1px solid #1e1e1e;
+  background: #0c0c0c;
+  color: #555;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 1.75rem;
+}
+.article-hero-placeholder span { opacity: 0.7; }
 
 /* Captioned figure for in-body images (concept art, diagrams, screenshots). */
 .post-figure {

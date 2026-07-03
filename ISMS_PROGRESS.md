@@ -86,5 +86,19 @@ Batch 005: 10 / 10 pages created — COMPLETE.
 
 Batch 006: 10 / 10 pages created — COMPLETE.
 
+### Batch 007 (first half)
+- [x] creationism (placeholder created 2026-06-05)
+- [x] criticism (placeholder created 2026-06-05)
+- [x] cubism (placeholder created 2026-06-05)
+- [x] cynicism (placeholder created 2026-06-05)
+- [x] Darwinism (placeholder created 2026-06-05)
+- [ ] deism
+- [ ] determinism
+- [ ] developmentalism
+- [ ] dialecticism
+- [ ] didacticism
+
+Batch 007: 5 / 10 pages created — IN PROGRESS.
+
 ## Dictionary Enrichment
 None yet. Enrichment begins only after pages exist and pass review.
