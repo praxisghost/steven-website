@@ -184,6 +184,51 @@
       padding: 0.3rem 0.8rem;
     }
 
+    /* ── Server status badge ───────────────────── */
+    .mc-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #5aaa6e;
+      background: #0c0c0c;
+      border: 1px solid #2b4a2f;
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .mc-status .mc-status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #5aaa6e;
+      box-shadow: 0 0 8px rgba(90, 170, 110, 0.9);
+      animation: mc-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes mc-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── Notices ───────────────────────────────── */
+    .mc-notice {
+      margin-top: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: #0c0c0c;
+      border: 1px solid #4a4325;
+      border-left: 3px solid #d4b24a;
+      border-radius: 7px;
+      font-size: 0.92rem;
+      color: #d4d4d4;
+    }
+
+    .mc-notice strong { color: #eaeaea; }
+
     @media (max-width: 600px) {
       .mc-hero img { width: 48px; height: 48px; }
       .mc-ip-row { flex-direction: column; }
@@ -199,6 +244,7 @@
       <div>
         <h1>My Minecraft Server</h1>
         <p class="mc-motd">MEINKRAFT | Survival PvP | Red Blue Green Teams</p>
+        <span class="mc-status" id="mc-status"><span class="mc-status-dot"></span>Online</span>
       </div>
     </div>
   </header>
@@ -219,6 +265,14 @@
       <p class="mc-version-note">You must be running <strong>Vanilla Minecraft 26.1 / 26.1.2</strong> (Java Edition).
       No mods or client setup needed — just add the address under <em>Multiplayer → Add Server</em> and join.</p>
     </section>
+
+    <p class="mc-notice"><strong>⚠️ The port recently changed.</strong> If you can't connect, don't reuse an old
+    saved address — re-copy the full IP <em>and</em> port from the box above and paste it into Minecraft
+    (<em>Multiplayer → Edit / Add Server</em>). Always grab the latest address from this page.</p>
+
+    <p class="mc-notice"><strong>🛠️ Server down?</strong> Check the status badge at the top of this page for live
+    Online / Offline status. If it's down, it's almost certainly maintenance — expect it back within
+    <strong>24 hours</strong>. That's the longest it will ever be offline.</p>
 
     <!-- ── Discord ── -->
     <section class="mc-discord">
