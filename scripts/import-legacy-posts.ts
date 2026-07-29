@@ -17,7 +17,7 @@
 
 import {execFileSync} from 'child_process';
 import {createClient} from '@sanity/client';
-import {htmlToBlocks} from '@portabletext/block-tools';
+import {htmlToBlocks, randomKey} from '@portabletext/block-tools';
 import {JSDOM} from 'jsdom';
 import {Schema} from '@sanity/schema';
 
@@ -288,7 +288,10 @@ async function main() {
                 if (!/^(https?:\/\/|mailto:|\/)/i.test(href)) return next(el.childNodes);
                 return {
                   _type: '__annotation',
-                  markDef: {_type: 'link', href},
+                  // Annotation keys connect child spans to their block-level
+                  // mark definition. Without one, Sanity serializes the mark
+                  // as null and the reader cannot recover the original link.
+                  markDef: {_key: randomKey(), _type: 'link', href},
                   children: next(el.childNodes),
                 };
               }

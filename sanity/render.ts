@@ -73,6 +73,10 @@ export function readingTime(body: PostDetail['body']): number {
 
 const components: Partial<PortableTextHtmlComponents> = {
   types: {
+    // A historic import emitted a handful of link spans without annotation
+    // keys. Preserve their visible text while the original URLs are repaired
+    // in Sanity; this avoids hiding prose or logging a warning per request.
+    span: ({value}) => esc(value?.text ?? ''),
     contentImage: ({value}) => {
       const src = imageUrl(value, 1200);
       if (!src) return '';
@@ -263,7 +267,7 @@ export function shell(o: ShellOptions): string {
   <meta property="og:type" content="${esc(o.ogType ?? 'website')}">${ogDesc}${og}
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" type="application/rss+xml" title="${SITE_NAME}" href="/feed.xml">
-  <link rel="stylesheet" href="/style.css?v=3.2.0">${o.extraHead ?? ''}
+  <link rel="stylesheet" href="/style.css?v=3.2.1">${o.extraHead ?? ''}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
