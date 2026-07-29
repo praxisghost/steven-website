@@ -60,6 +60,24 @@ export const POSTS_QUERY = groq`
   *[${PUBLISHED}] | order(publishedAt desc) { ${SUMMARY_FIELDS} }
 `;
 
+/**
+ * Full bodies, for the RSS feed. Substack (and most readers) import whatever the
+ * feed gives them — excerpt-only feeds produce truncated imports, so the feed
+ * carries the whole post.
+ */
+export const FEED_QUERY = groq`
+  *[${PUBLISHED}] | order(publishedAt desc)[0...30] {
+    ${SUMMARY_FIELDS},
+    body,
+    "authorName": author->name
+  }
+`;
+
+export interface FeedPost extends PostSummary {
+  body: PortableTextBlock[] | null;
+  authorName: string | null;
+}
+
 /** Most recent N, used by the sidebar. */
 export const RECENT_POSTS_QUERY = groq`
   *[${PUBLISHED}] | order(publishedAt desc)[0...$limit] { ${SUMMARY_FIELDS} }

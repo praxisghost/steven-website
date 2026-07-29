@@ -19,9 +19,11 @@ import path from 'path';
 import fs from 'fs';
 import {timingSafeEqual} from 'crypto';
 
-import {client, SITE_URL} from './client';
+import {client, SITE_URL, imageUrl} from './client';
 import {
   POSTS_QUERY,
+  FEED_QUERY,
+  type FeedPost,
   POST_QUERY,
   RECENT_POSTS_QUERY,
   CATEGORIES_QUERY,
@@ -41,6 +43,7 @@ import {
   renderPost,
   renderArchive,
   renderNotFound,
+  renderBody,
   esc,
   readingTime,
   type SidebarData,
@@ -233,21 +236,42 @@ blogRouter.get('/feed.xml', async (_req: Request, res: Response) => {
   if (cached) { res.type('application/xml').send(cached); return; }
 
   try {
-    const posts = (await client.fetch<PostSummary[]>(POSTS_QUERY)) ?? [];
-    const items = posts.slice(0, 30).map((p) => `    <item>
+    const posts = (await client.fetch<FeedPost[]>(FEED_QUERY)) ?? [];
+
+    const items = posts.map((p) => {
+      const url = `${SITE_URL}/blog/${esc(p.slug)}`;
+
+      // Full HTML body, with a hero image on top and relative URLs made
+      // absolute — feed readers and Substack have no page to resolve against.
+      const hero = imageUrl(p.mainImage, 1200);
+      const bodyHtml = (hero ? `<p><img src="${esc(hero)}" alt="${esc(p.mainImageAlt ?? p.title)}"></p>` : '')
+        + renderBody(p.body).replace(/(href|src)="\//g, `$1="${SITE_URL}/`);
+
+      const cats = (p.categories ?? [])
+        .map((c) => `      <category>${esc(c.title)}</category>`)
+        .join('\n');
+
+      return `    <item>
       <title>${esc(p.title)}</title>
-      <link>${SITE_URL}/blog/${esc(p.slug)}</link>
-      <guid isPermaLink="true">${SITE_URL}/blog/${esc(p.slug)}</guid>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
       <pubDate>${new Date(p.publishedAt).toUTCString()}</pubDate>
-${p.excerpt ? `      <description>${esc(p.excerpt)}</description>\n` : ''}    </item>`).join('\n');
+      <dc:creator>${esc(p.authorName ?? 'Steven Legg')}</dc:creator>
+${cats}${cats ? '\n' : ''}${p.excerpt ? `      <description>${esc(p.excerpt)}</description>\n` : ''}      <content:encoded><![CDATA[${bodyHtml.replace(/]]>/g, ']]]]><![CDATA[>')}]]></content:encoded>
+    </item>`;
+    }).join('\n');
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Steven Legg</title>
     <link>${SITE_URL}</link>
     <description>Notes on learning, work, and getting better at things.</description>
     <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
 ${items}
   </channel>
