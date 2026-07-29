@@ -13,7 +13,7 @@ export const SANITY_PROJECT_ID = process.env.SANITY_PROJECT_ID ?? 'mo87nuz0';
 export const SANITY_DATASET    = process.env.SANITY_DATASET    ?? 'production';
 
 /** Absolute origin, used for RSS/sitemap/canonical URLs. No trailing slash. */
-export const SITE_URL = (process.env.SITE_URL ?? 'https://steven-legg.com').replace(/\/$/, '');
+export const SITE_URL = (process.env.SITE_URL ?? 'https://www.steven-legg.com').replace(/\/$/, '');
 
 // Pin the API version. Bump deliberately, never to "now".
 const API_VERSION = '2026-05-15';
