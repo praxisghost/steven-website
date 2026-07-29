@@ -40,7 +40,7 @@ const resend = process.env.RESEND_API_KEY
   : null;
 
 const CONTACT_FROM = process.env.CONTACT_FROM_EMAIL ?? 'onboarding@resend.dev';
-const CONTACT_TO   = process.env.CONTACT_TO_EMAIL   ?? 'stevelegg2000@gmail.com';
+const CONTACT_TO   = process.env.CONTACT_TO_EMAIL   ?? '';
 
 // Minecraft access is intentionally configured only through deployment
 // environment variables. Do not put the server address, FTP login, Turnstile
@@ -538,7 +538,7 @@ app.post(
         [name, email, message],
       );
 
-      if (resend) {
+      if (resend && CONTACT_TO) {
         const { error } = await resend.emails.send({
           from:    CONTACT_FROM,
           to:      CONTACT_TO,
@@ -548,7 +548,7 @@ app.post(
         });
         if (error) console.error('Resend error:', error);
       } else {
-        console.warn('RESEND_API_KEY not set — email notification skipped.');
+        console.warn('Contact notification skipped: RESEND_API_KEY or CONTACT_TO_EMAIL is not configured.');
       }
 
       res.json({ ok: true });

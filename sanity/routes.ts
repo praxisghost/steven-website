@@ -326,13 +326,19 @@ ${urls.join('\n')}
 blogRouter.post('/api/blog/revalidate', (req: Request, res: Response) => {
   const expected = process.env.SANITY_REVALIDATE_SECRET;
 
-  if (expected) {
-    const header = req.get('x-revalidate-secret');
-    const query = typeof req.query.secret === 'string' ? req.query.secret : undefined;
-    if (!secretMatches(header ?? query ?? '', expected)) {
-      res.status(401).json({error: 'Unauthorized'});
-      return;
-    }
+  // This is a write-like endpoint: never leave a cache-purge trigger open on
+  // a public deployment. The normal 60-second cache expiry remains available
+  // until the hosting environment is configured with a shared webhook secret.
+  if (!expected) {
+    res.status(503).json({error: 'Webhook is not configured.'});
+    return;
+  }
+
+  const header = req.get('x-revalidate-secret');
+  const query = typeof req.query.secret === 'string' ? req.query.secret : undefined;
+  if (!secretMatches(header ?? query ?? '', expected)) {
+    res.status(401).json({error: 'Unauthorized'});
+    return;
   }
 
   clearBlogCache();

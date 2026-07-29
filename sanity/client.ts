@@ -37,7 +37,9 @@ export function imageUrl(
   width: number,
   height?: number,
 ): string | null {
-  if (!source) return null;
+  // An image field without an uploaded asset is valid while an editor is
+  // drafting. Treat it as absent instead of producing a broken CDN URL.
+  if (!source || typeof source !== 'object' || !('asset' in source) || !source.asset) return null;
   let url = builder.image(source).width(width).auto('format').fit('crop');
   if (height) url = url.height(height);
   return url.url();

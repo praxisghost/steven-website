@@ -22,7 +22,6 @@ const SITE_TAGLINE = 'Notes on learning, work, and getting better at things';
 const LINKTREE = 'https://linktr.ee/stevenlegg';
 const SUBSTACK = 'https://substack.com/@stevelegg';
 const BLUESKY  = 'https://bsky.app/profile/stevenlegg.bsky.social';
-const AVATAR = '/img/frogs/avatar.jpeg';
 
 /** Escape a string for safe interpolation into HTML text or attributes. */
 export function esc(value: unknown): string {
@@ -166,8 +165,7 @@ export function newsletterCard(): string {
 function bioCard(): string {
   return `      <section class="card bio" aria-labelledby="bio-title">
         <h2 class="visually-hidden" id="bio-title">About the author</h2>
-        <img class="bio__avatar" src="${AVATAR}" alt="Steven Legg" width="96" height="96"
-             onerror="this.style.display='none'">
+        <div class="bio__monogram" aria-hidden="true">SL</div>
         <p class="bio__name">Steven Legg</p>
         <p class="bio__text">Boston. Languages, politics, and the slow work of building better habits. I write here to think out loud.</p>
         <ul class="chips" style="justify-content:center">
@@ -265,7 +263,7 @@ export function shell(o: ShellOptions): string {
   <meta property="og:type" content="${esc(o.ogType ?? 'website')}">${ogDesc}${og}
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" type="application/rss+xml" title="${SITE_NAME}" href="/feed.xml">
-  <link rel="stylesheet" href="/style.css">${o.extraHead ?? ''}
+  <link rel="stylesheet" href="/style.css?v=3.2.0">${o.extraHead ?? ''}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -357,8 +355,15 @@ ${rest.map(postCard).join('\n')}
 ${list}`;
   }
 
+  const intro = `      <header class="home-intro">
+        <p class="home-intro__eyebrow">Personal blog</p>
+        <h1>Notes on learning, work, and becoming a little more useful.</h1>
+        <p>I'm Steven Legg. This is a quiet place for practical reflections, projects, and things I am still figuring out.</p>
+      </header>`;
+
   const body = `  <div class="shell shell--with-sidebar">
     <main id="main">
+${intro}
 ${main}
     </main>
 ${sidebar(side)}
@@ -423,10 +428,10 @@ export function renderPost(
       </figure>\n`
     : '';
 
-  const avatar = imageUrl(post.authorImage, 80, 80) ?? AVATAR;
+  const avatar = imageUrl(post.authorImage, 80, 80);
   const byline = `      <div class="post-byline">
-        <img src="${esc(avatar)}" alt="" width="40" height="40" onerror="this.style.display='none'">
-        <div>
+${avatar ? `        <img src="${esc(avatar)}" alt="" width="40" height="40">
+` : ''}        <div>
           <p class="post-byline__name">${esc(post.authorName ?? SITE_NAME)}</p>
           <p class="post-byline__meta">${esc(longDate(post.publishedAt))} · ${minutes} min read</p>
         </div>
