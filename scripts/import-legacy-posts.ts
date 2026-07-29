@@ -25,13 +25,25 @@ const SOURCE_COMMIT = 'd590445';
 const DRY_RUN = process.argv.includes('--dry-run');
 
 const token = process.env.SANITY_WRITE_TOKEN;
-if (!token && !DRY_RUN) {
-  console.error(
-    'SANITY_WRITE_TOKEN is not set.\n' +
-    'Create one at https://sanity.io/manage → API → Tokens (Editor permission),\n' +
-    'then re-run:  SANITY_WRITE_TOKEN=sk... npx tsx scripts/import-legacy-posts.ts',
-  );
-  process.exit(1);
+if (!DRY_RUN) {
+  if (!token) {
+    console.error(
+      '\nSANITY_WRITE_TOKEN is not set.\n' +
+      'Create one at https://sanity.io/manage → API → Tokens (Editor permission),\n' +
+      'then re-run with the real value:\n' +
+      '  SANITY_WRITE_TOKEN=<your-token> npm run import:legacy\n',
+    );
+    process.exit(1);
+  }
+  // Catch the very easy mistake of pasting the placeholder from the docs.
+  if (token.length < 40 || token === 'sk...') {
+    console.error(
+      `\nSANITY_WRITE_TOKEN looks like a placeholder, not a real token (got "${token}").\n` +
+      'Sanity tokens are long strings beginning with "sk". Copy the real one from\n' +
+      'https://sanity.io/manage → API → Tokens.\n',
+    );
+    process.exit(1);
+  }
 }
 
 const client = createClient({
@@ -214,11 +226,13 @@ async function uploadImage(repoPath: string): Promise<string | null> {
 
 async function ensureCategory(title: string): Promise<string> {
   const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  // A dry run must not touch the network at all — it exists to prove the HTML
+  // parses, and should work with no token and no connection.
+  if (DRY_RUN) return `dry-run-category-${slug}`;
   const existing = await client.fetch<{_id: string} | null>(
     `*[_type == "category" && slug.current == $slug][0]{_id}`, {slug},
   );
   if (existing?._id) return existing._id;
-  if (DRY_RUN) return `dry-run-category-${slug}`;
   const created = await client.create({
     _type: 'category',
     title,

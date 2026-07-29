@@ -20,6 +20,8 @@ import type {
 const SITE_NAME = 'Steven Legg';
 const SITE_TAGLINE = 'Notes on learning, work, and getting better at things';
 const LINKTREE = 'https://linktr.ee/stevenlegg';
+const SUBSTACK = 'https://substack.com/@stevelegg';
+const BLUESKY  = 'https://bsky.app/profile/stevenlegg.bsky.social';
 const AVATAR = '/img/frogs/avatar.jpeg';
 
 /** Escape a string for safe interpolation into HTML text or attributes. */
@@ -137,6 +139,8 @@ function footer(): string {
           <li><a href="/about">About</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><a href="${BLUESKY}" rel="me noopener noreferrer" target="_blank">Bluesky</a></li>
+          <li><a href="${SUBSTACK}" rel="me noopener noreferrer" target="_blank">Substack</a></li>
           <li><a href="/feed.xml">RSS</a></li>
           <li><a href="${LINKTREE}" target="_blank" rel="noopener noreferrer">Elsewhere</a></li>
         </ul>
@@ -149,7 +153,7 @@ function footer(): string {
 export function newsletterCard(): string {
   return `      <section class="card newsletter" aria-labelledby="nl-title">
         <h2 class="card__title" id="nl-title">Newsletter</h2>
-        <p class="newsletter__pitch">New posts in your inbox. No spam, no schedule — just when something's worth sending.</p>
+        <p class="newsletter__pitch">New posts in your inbox. No spam, no schedule — just when something's worth sending. Also on <a href="${SUBSTACK}" rel="noopener noreferrer" target="_blank">Substack</a>.</p>
         <form class="field" id="newsletter-form" novalidate>
           <label class="visually-hidden" for="nl-email">Email address</label>
           <input type="email" id="nl-email" name="email" placeholder="you@example.com" autocomplete="email" required>
@@ -166,7 +170,11 @@ function bioCard(): string {
              onerror="this.style.display='none'">
         <p class="bio__name">Steven Legg</p>
         <p class="bio__text">Boston. Languages, politics, and the slow work of building better habits. I write here to think out loud.</p>
-        <a class="chip" href="/about">Read more</a>
+        <ul class="chips" style="justify-content:center">
+          <li><a class="chip" href="/about">About</a></li>
+          <li><a class="chip" href="${BLUESKY}" rel="me noopener noreferrer" target="_blank">Bluesky</a></li>
+          <li><a class="chip" href="${SUBSTACK}" rel="me noopener noreferrer" target="_blank">Substack</a></li>
+        </ul>
       </section>`;
 }
 
