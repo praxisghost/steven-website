@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Minecraft Server — Steven Legg</title>
   <meta name="description" content="Stove's Meinkraft Factions — a hard-mode survival PvP Minecraft server with Red, Blue &amp; Green teams, duels, jobs, quests, and blood moons. Join on vanilla Minecraft 26.1 / 26.1.2.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <style>
     /* ── Minecraft server page ─────────────────── */
     .mc-hero {
@@ -310,9 +310,7 @@
   </style>
 </head>
 <body>
-  <a class="back-link" href="index.html">← Back</a>
-
-  <header>
+<header>
     <div class="mc-hero">
       <img src="minecraft-logo.png" alt="Minecraft logo">
       <div>
@@ -323,7 +321,7 @@
     </div>
   </header>
 
-  <article>
+  <div class="prose">
     <p>Welcome to <strong>Stove's Meinkraft Factions</strong> — a hard-mode survival PvP server
     running Paper 26.1.2. Pick your team (Red, Blue, or Green), stake a claim, build up your
     base, and fight for your color. Vanilla at heart, spiced up with light server-side plugins:
@@ -485,13 +483,28 @@
         <li>spark</li>
       </ul>
     </div>
-  </article>
+  </div>
+    </main>
+  </div>
 
-  <footer>
-    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© 2026 Steven Legg</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+          <li><a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">Elsewhere</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+
+  <script src="/script.js"></script>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
   <script>
     (function () {

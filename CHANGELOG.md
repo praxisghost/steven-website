@@ -1,5 +1,39 @@
 # Changelog
 
+## v3.0.0 — Blog redesign
+
+A deliberate narrowing: this is now a personal blog and nothing else.
+
+### Removed
+- **-isms** — 308 pages and the `isms.html` index
+- **Superorganism** — page, knowledge graph, `three.js` vendor bundle, and the
+  boot-time graph build in `server.ts`
+- **Language guides** — 163 cross-language guides, 126 SRS scripts, the
+  conlang mirrors (`ia/ io/ isv/ nov/`), pronunciation guides, audio, and
+  downloads. This work now lives at lingua-commons.com, linked once from About.
+- **Dead-end pages** — 28 hub and topic pages that existed only to hold links
+- **Sensitive files** — `monthly-budget.xlsx`, `spending-log.xlsx` and a
+  personal PDF removed from the tree and purged from history
+
+Result: 230 HTML pages to 4, 48 MB to 13 MB.
+
+### Added
+- Warm, sidebar-led design: serif reading column, self-hosted Open Sans for UI,
+  moss-green accent, full dark mode, print styles
+- Featured post, post cards, category chips, reading time, prev/next navigation
+- Sidebar: bio, newsletter signup, latest posts, category counts
+- `/category/:slug` and `/tag/:tag` archives
+- `/feed.xml` (RSS) and `/sitemap.xml`, generated from Sanity
+- Styled 404 page
+- Sanity schema gains `tags` and a `featured` flag
+
+### Changed
+- `/` is now the blog, served from Sanity
+- Nav cut from 13 items to 4: Blog, About, Projects, Contact
+- Minecraft server moved off the front page into Projects
+- Static pages get clean URLs via explicit routes
+- Postgres is now optional at boot — the blog serves without it
+
 ## 2026-06-14 (autonomous run — vocabulary export expansion: english_to_mandarin → 100 entries)
 
 Files changed:

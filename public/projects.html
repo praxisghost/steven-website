@@ -4,33 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Steven Legg</title>
-  <meta name="description" content="Personal projects by Steven Legg — aquaponics, circuits, AI, arts, and cooperative ventures.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Things Steven Legg is building — aquaponics, electronics, a Minecraft server, and a language-learning site.">
+  <meta property="og:site_name" content="Steven Legg">
+  <meta property="og:title" content="Projects">
+  <link rel="alternate" type="application/rss+xml" title="Steven Legg" href="/feed.xml">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <a class="back-link" href="index.html">← Back</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <h1>Projects</h1>
-    <p>Things I'm building, growing, tinkering with, or dreaming about.</p>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-title">
+        <a href="/">Steven Legg</a>
+        <span class="site-title__tag">Personal blog</span>
+      </p>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects" aria-current="page">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <article>
-    <nav class="sub-nav">
-      <ul>
-        <li><a href="projects/aquaponics.html">🐟 Aquaponics</a></li>
-        <li><a href="projects/circuits.html">⚡ Circuits</a></li>
-        <li><a href="technology/artificial-intelligence.html">🤖 AI</a></li>
-        <li><a href="projects/visual-literary-arts.html">🎭 Visual &amp; Literary Arts</a></li>
-        <li><a href="projects/501c-coop.html">🤝 501(c)(4) &amp; Co-Op</a></li>
-      </ul>
-    </nav>
-  </article>
+  <div class="shell shell--narrow">
+    <main id="main">
+      <div class="page-head">
+        <h1>Projects</h1>
+        <p class="lede">Things I'm building, tinkering with, or slowly failing to finish.</p>
+      </div>
 
-  <footer>
-    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+      <ul class="tiles">
+        <li><a class="tile" href="https://www.lingua-commons.com" target="_blank" rel="noopener noreferrer">
+          <h3>Lingua Commons ↗</h3>
+          <p>A separate site for language learning — guides, vocabulary sets, and spaced-repetition
+             material. This is where all of that work lives now.</p>
+        </a></li>
+
+        <li><a class="tile" href="/minecraft-server.html">
+          <h3>Minecraft server</h3>
+          <p>A small survival server I run for friends. Whitelist, plugin list, and how to join.</p>
+        </a></li>
+
+        <li><a class="tile" href="/projects/aquaponics.html">
+          <h3>Aquaponics</h3>
+          <p>A long-running experiment in growing food with fish, pumps, and more patience than
+             I usually have.</p>
+        </a></li>
+
+        <li><a class="tile" href="/projects/circuits.html">
+          <h3>Electronics</h3>
+          <p>Soldering, small circuits, and the occasional 3D-printed enclosure.</p>
+        </a></li>
+
+        <li><a class="tile" href="/projects/501c-coop.html">
+          <h3>Co-op &amp; mutual aid</h3>
+          <p>Notes from trying to get a co-operative structure off the ground.</p>
+        </a></li>
+
+        <li><a class="tile" href="/projects/visual-literary-arts.html">
+          <h3>Visual &amp; literary arts</h3>
+          <p>Writing and image work that doesn't fit anywhere else.</p>
+        </a></li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>This site.</strong> Built with Express and TypeScript, with
+          <a href="https://www.sanity.io" target="_blank" rel="noopener noreferrer">Sanity</a>
+          as the CMS so posts can be written from anywhere. Deployed on Railway.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© 2026 Steven Legg</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+          <li><a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">Elsewhere</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>

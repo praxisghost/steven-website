@@ -4,46 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Steven Legg</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Send Steven Legg a message, or subscribe to the newsletter.">
+  <meta property="og:site_name" content="Steven Legg">
+  <meta property="og:title" content="Contact">
+  <link rel="alternate" type="application/rss+xml" title="Steven Legg" href="/feed.xml">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <a class="back-link" href="index.html">← Back</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <h1>Contact</h1>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-title">
+        <a href="/">Steven Legg</a>
+        <span class="site-title__tag">Personal blog</span>
+      </p>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <article>
-    <h2>Send a message</h2>
-    <form id="contact-form" novalidate>
-      <input type="text"  name="name"    placeholder="Your name"    required
-             aria-label="Your name"    autocomplete="name"     maxlength="100">
-      <input type="email" name="email"   placeholder="Your email"   required
-             aria-label="Your email"   autocomplete="email"    maxlength="254"
-             inputmode="email">
-      <textarea           name="message" placeholder="Your message" required
-             aria-label="Your message" maxlength="5000"></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="form-status" role="status" aria-live="polite"></p>
+  <div class="shell shell--with-sidebar">
+    <main id="main">
+      <div class="page-head">
+        <h1>Say hello</h1>
+        <p class="lede">Questions, corrections, or just to get in touch — this reaches me directly.</p>
+      </div>
 
-    <hr class="section-divider">
+      <form id="contact-form" class="field stack" novalidate>
+        <div class="field">
+          <label for="c-name">Your name</label>
+          <input type="text" id="c-name" name="name" autocomplete="name" maxlength="100" required>
+        </div>
+        <div class="field">
+          <label for="c-email">Your email</label>
+          <input type="email" id="c-email" name="email" autocomplete="email" inputmode="email" maxlength="254" required>
+        </div>
+        <div class="field">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" maxlength="5000" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn--auto">Send message</button>
+        </div>
+      </form>
+      <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
 
-    <h2>Newsletter</h2>
-    <p>Occasional updates when I write something worth sharing. No spam.</p>
-    <form id="newsletter-form" novalidate>
-      <input type="email" name="email" placeholder="Your email address" required
-             aria-label="Your email address" autocomplete="email" maxlength="254"
-             inputmode="email">
-      <button type="submit">Subscribe</button>
-    </form>
-    <p id="newsletter-status" role="status" aria-live="polite"></p>
-</article>
+      <div class="callout">
+        <p><strong>Prefer something else?</strong> Other ways to reach me are collected on
+          <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">my links page</a>.</p>
+      </div>
+    </main>
 
-  <footer>
-    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+    <aside class="sidebar">
+      <section class="card newsletter" aria-labelledby="nl-title">
+        <h2 class="card__title" id="nl-title">Newsletter</h2>
+        <p class="newsletter__pitch">New posts in your inbox. No spam, no schedule — just when something's worth sending.</p>
+        <form class="field" id="newsletter-form" novalidate>
+          <label class="visually-hidden" for="nl-email">Email address</label>
+          <input type="email" id="nl-email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <p class="form-note" id="newsletter-note" role="status" aria-live="polite"></p>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© 2026 Steven Legg</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+          <li><a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">Elsewhere</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>

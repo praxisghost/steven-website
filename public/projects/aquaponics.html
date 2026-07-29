@@ -4,31 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aquaponics — Projects — Steven Legg</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-  <a class="back-link" href="../projects.html">← Projects</a>
+<body>  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <h1>Aquaponics</h1>
-    <p>Growing food and raising fish together — because why pick just one.</p>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-title">
+        <a href="/">Steven Legg</a>
+        <span class="site-title__tag">Personal blog</span>
+      </p>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <article>
+  <div class="shell shell--narrow">
+    <main id="main">
+      <a class="back-link" href="/">← All posts</a>
+      <div class="page-head">
+        <h1>Aquaponics</h1>
+        <p>Growing food and raising fish together — because why pick just one.</p>
+      </div>
+
+  <div class="prose">
     <p><span class="figure-note">A quick heads-up: the three images below are AI-generated concept art — not real blueprints, and not an alpha-stage diagram or plan. They're here to illustrate the general direction I'm exploring, nothing more.</span></p>
 
     <figure class="post-figure">
-      <img src="../img/aquaponic/Aquaponic2.jpeg" alt="AI-generated concept image of a basic aquaponics setup with a fish tank feeding a grow bed.">
+      <img src="/img/aquaponic/Aquaponic2.jpeg" alt="AI-generated concept image of a basic aquaponics setup with a fish tank feeding a grow bed.">
       <figcaption>The base design — the simplest version of the idea, showing the core loop of a fish tank feeding into a grow bed.</figcaption>
     </figure>
 
     <figure class="post-figure">
-      <img src="../img/aquaponic/Aquaponic1.jpeg" alt="AI-generated stylized, exaggerated concept image of an aquaponics system.">
+      <img src="/img/aquaponic/Aquaponic1.jpeg" alt="AI-generated stylized, exaggerated concept image of an aquaponics system.">
       <figcaption>A more stylized, exaggerated take on the design. Treat this one loosely — the components aren't drawn to scale, a real setup like this takes up <em>far</em> more room than the image suggests, and I'm aiming to grow many more vegetables than what's shown here.</figcaption>
     </figure>
 
     <figure class="post-figure">
-      <img src="../img/aquaponic/Aquaponic3.jpeg" alt="AI-generated mock concept diagram of the aquaponics system's circuit and water flow.">
+      <img src="/img/aquaponic/Aquaponic3.jpeg" alt="AI-generated mock concept diagram of the aquaponics system's circuit and water flow.">
       <figcaption>An AI-generated mock-up of how the parts might connect — a rough concept diagram of the circuit and water flow, not an engineered schematic.</figcaption>
     </figure>
 
@@ -36,12 +55,27 @@
 
     <p>Aquaponics is the combination of aquaculture (raising fish) and hydroponics (growing plants in water) into a single closed-loop ecosystem. Fish waste fertilizes the plants; the plants clean the water for the fish. It's elegant, efficient, and a little bit magical.</p>
     <p>I'm interested in building small-scale aquaponics systems — both as a food production method and as a way to keep frogs, fish, and other aquatic life in a healthy environment. More details coming as the project develops.</p>
-  </article>
+  </div>
+    </main>
+  </div>
 
-  <footer>
-    <a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">https://linktr.ee/stevenlegg</a>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© 2026 Steven Legg</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+          <li><a href="https://linktr.ee/stevenlegg" target="_blank" rel="noopener noreferrer">Elsewhere</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 
-  <script src="../script.js"></script>
+
+  <script src="/script.js"></script>
 </body>
 </html>

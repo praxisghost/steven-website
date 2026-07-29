@@ -1,2059 +1,387 @@
-/* ─────────────────────────────────────────────────────────────────────────────
- *  style.css — site-wide styles
- *
- *  Typography:
- *    Open Sans (self-hosted via fontsource WOFF2 files — no external requests,
- *    GDPR-friendly, no FOUT flash). Subsets: latin, latin-ext, cyrillic,
- *    greek, vietnamese. Weights: 400 / 600 / 700, each with italic.
- *    Script-specific overrides (Japanese, Arabic/Persian, Gurmukhi) remain
- *    below so each script renders in an appropriate system font.
- *  ────────────────────────────────────────────────────────────────────────── */
+/* ============================================================================
+   Steven Legg — personal blog
+   v3.0 · warm, readable, sidebar-led
 
-/* ── Open Sans — self-hosted (subsets: latin, latin-ext, cyrillic, greek, vietnamese)
-   Fontsource v5 WOFF2 files, no external requests, GDPR-friendly.
-   Each @font-face block covers one script subset so the browser only
-   downloads what the displayed text actually needs. ──────────────────────── */
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-vietnamese-400-normal.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-greek-400-normal.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-cyrillic-400-normal.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-ext-400-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+   Design notes
+   ------------
+   Typography carries the design: a serif for anything you *read*, Open Sans for
+   anything you *scan* (nav, meta, labels, buttons). One accent colour, used
+   sparingly, so links and category chips genuinely stand out.
+
+   Layout is a single reading column with a sticky sidebar beside it. The column
+   caps near 68ch — past that, long-form prose gets tiring to track.
+
+   Open Sans is self-hosted (latin + latin-ext only) so there are no external
+   font requests: faster, and nothing leaks to a third party.
+   ========================================================================== */
+
+/* ── Open Sans, self-hosted ──────────────────────────────────────────────── */
 @font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-400-normal.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-vietnamese-400-italic.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-greek-400-italic.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-cyrillic-400-italic.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-ext-400-italic.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-ext-400-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 @font-face { font-family:'Open Sans'; font-style:italic; font-weight:400; font-display:swap; src:url('/fonts/open-sans-latin-400-italic.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-vietnamese-600-normal.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-greek-600-normal.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-cyrillic-600-normal.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-ext-600-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 @font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-600-normal.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-vietnamese-600-italic.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-greek-600-italic.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-cyrillic-600-italic.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-ext-600-italic.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-600-italic.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-vietnamese-700-normal.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-greek-700-normal.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-cyrillic-700-normal.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
-@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-ext-700-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:600; font-display:swap; src:url('/fonts/open-sans-latin-ext-600-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 @font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-700-normal.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-vietnamese-700-italic.woff2') format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-greek-700-italic.woff2') format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-cyrillic-700-italic.woff2') format('woff2'); unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-ext-700-italic.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-@font-face { font-family:'Open Sans'; font-style:italic; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-700-italic.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Open Sans'; font-style:normal; font-weight:700; font-display:swap; src:url('/fonts/open-sans-latin-ext-700-normal.woff2') format('woff2'); unicode-range:U+0100-02FF,U+0304,U+0308,U+0329,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
-/* ── Reset & base ─────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* ── Design tokens ───────────────────────────────────────────────────────── */
 :root {
-  /* Single serif stack used everywhere body text appears. */
-  --font-body:    'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  /* Display / nav uses the same family — kept as a separate token so the
-     "display" role can diverge again later without hunting through the file. */
-  --font-display: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Warm paper, not clinical white */
+  --bg:            #fbf9f5;
+  --bg-raised:     #ffffff;
+  --bg-sunken:     #f3efe7;
+
+  --ink:           #1c1a17;
+  --ink-soft:      #4a453d;
+  --ink-faint:     #837c70;
+
+  --rule:          #e5ded1;
+  --rule-strong:   #d3c9b6;
+
+  /* Moss green — picks up the leaf/frog thread already in the site */
+  --accent:        #2f6b4f;
+  --accent-hover:  #235240;
+  --accent-wash:   #e8f1ea;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans:  'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --measure:   68ch;
+  --sidebar-w: 310px;
+  --gap:       clamp(2rem, 5vw, 4.5rem);
+  --radius:    10px;
+
+  --shadow-sm: 0 1px 2px rgba(28, 26, 23, .05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #16150f;
+    --bg-raised:   #1e1d16;
+    --bg-sunken:   #24221a;
+    --ink:         #eeeae0;
+    --ink-soft:    #c2bbaa;
+    --ink-faint:   #8f8878;
+    --rule:        #333026;
+    --rule-strong: #46422f;
+    --accent:      #7fc09b;
+    --accent-hover:#9ed4b4;
+    --accent-wash: #1f3329;
+    --shadow-sm:   0 1px 2px rgba(0, 0, 0, .4);
+  }
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
 body {
-  font-family: var(--font-body);
-  background: #000;
-  color: #fff;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-  /* Open Sans is a humanist sans-serif — 1.6 gives comfortable reading density. */
-  line-height: 1.6;
-  font-weight: 400;
-  /* Improve readability on retina + most modern browsers. */
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* ── Header ───────────────────────────────────── */
-/*
- * The previous build had a horizontal subpage-indicator line here
- * (border-bottom). That line has been removed per a prior design pass;
- * spacing is tuned so the header still feels self-contained without the
- * divider.
- */
-header {
-  padding-bottom: 0.25rem;
-  margin-bottom: 2rem;
+img, picture, video { max-width: 100%; height: auto; display: block; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.skip-link {
+  position: absolute; left: -9999px;
+  background: var(--accent); color: #fff;
+  padding: .7rem 1.1rem; border-radius: 0 0 var(--radius) 0; z-index: 200;
+  font-family: var(--sans); font-size: .9rem;
 }
+.skip-link:focus { left: 0; top: 0; }
 
-/* Open Sans at display size — slightly tighter letter-spacing for headings. */
-header h1 {
-  font-family: var(--font-display);
-  font-size: 2.3rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1.15;
+/* ── Site header ─────────────────────────────────────────────────────────── */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--rule);
 }
-header p  {
-  font-family: var(--font-body);
-  color: #b5b5b5;
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  margin-top: 0.35rem;
+.site-header__inner {
+  max-width: 1180px; margin: 0 auto;
+  padding: .9rem clamp(1.1rem, 4vw, 2.5rem);
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
-
-/*
- * Tagline — text on the left, leaf emoji visually opposite on the right,
- * sharing the same baseline so the pair reads as one balanced line. The
- * flex container fills the header width so the emoji mirrors the text
- * symmetrically on both desktop and mobile without ever floating into a
- * corner.
- */
-header p.tagline {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
+.site-title { font-size: 1.3rem; margin: 0; line-height: 1.2; letter-spacing: -.01em; }
+.site-title a { color: var(--ink); text-decoration: none; }
+.site-title a:hover { color: var(--accent); }
+.site-title__tag {
+  display: block; font-family: var(--sans); font-size: .68rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-top: .2rem;
 }
-
-header p.tagline .tagline-text {
-  flex: 0 1 auto;
+.site-nav ul { list-style: none; display: flex; gap: clamp(.9rem, 2.5vw, 2rem); margin: 0; padding: 0; }
+.site-nav a {
+  font-family: var(--sans); font-size: .78rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  padding-bottom: 3px; border-bottom: 2px solid transparent;
 }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
 
-header p.tagline .tagline-emoji {
-  flex: 0 0 auto;
-  font-style: normal;
-  font-size: 1.05rem;
-  line-height: 1;
+/* ── Page shell ──────────────────────────────────────────────────────────── */
+.shell {
+  max-width: 1180px; margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.1rem, 4vw, 2.5rem) 4rem;
 }
-
-/* ── Nav — text-only, no boxes ───────────────── */
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  margin-top: 1.5rem;
+.shell--with-sidebar {
+  display: grid; grid-template-columns: minmax(0, 1fr) var(--sidebar-w);
+  gap: var(--gap); align-items: start;
 }
+.shell--narrow { max-width: 760px; }
+@media (max-width: 900px) { .shell--with-sidebar { grid-template-columns: 1fr; } }
 
-nav ul li a {
-  display: block;
-  padding: 0.45rem 0;
-  text-decoration: none;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 1.25rem;            /* Cormorant Garamond reads best slightly larger */
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  transition: color 0.25s ease;
-}
+.page-head { margin-bottom: 2.5rem; }
+.page-head h1 { font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 .5rem; }
+.page-head p { color: var(--ink-soft); font-size: 1.1rem; margin: 0; max-width: 55ch; }
 
-/* Image icon in nav items (e.g. Minecraft logo) — sized to sit like an emoji */
-.nav-icon-img {
-  width: 1.15em;
-  height: 1.15em;
-  vertical-align: -0.18em;
-  image-rendering: pixelated;
-}
-
-/*
- * Rainbow hover — see "RAINBOW HOVER" block lower in this file for the
- * full set of rules. Kept in one place so the cycle stays consistent
- * across main nav, sub-nav, the blog list, and the playlists list.
- */
-
-/* ── Sub-nav (Writing hub, Language Learning hub) ─ */
-.sub-nav ul {
-  margin-top: 1.25rem;
-  padding-left: 1rem;
-  border-left: 1px solid #3c3c3c;
-  gap: 0.15rem;
-}
-
-/* Submenu items: Cormorant Garamond for consistent display treatment. */
-.sub-nav ul li a {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #d4d4d4;
-  padding: 0.4rem 0;
-  transition: color 0.25s ease;
-}
-
-/* Rainbow hover for sub-nav is defined in the "RAINBOW HOVER" block. */
-
-/* ── Sub-page content ────────────────────────── */
-article { margin-top: 1.5rem; }
-article h2 {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.75rem;
-  color: #fff;
-}
-article p  { margin-bottom: 1rem; color: #d4d4d4; }
-article h2:not(:first-child) { margin-top: 2.25rem; }
-
-/* ── Pull-quotes (highlighted book quotes, etc.) ─ */
-article blockquote {
-  margin: 1.1rem 0;
-  padding: 0.4rem 0 0.4rem 1.1rem;
-  border-left: 2px solid #444;
-  color: #e6e6e6;
-  font-style: italic;
-  line-height: 1.5;
-}
-article blockquote p { margin: 0; color: inherit; }
-
-/* ── Back link ───────────────────────────────── */
 .back-link {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  color: #999999;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  display: inline-block; margin-bottom: 1.75rem;
+  font-family: var(--sans); font-size: .82rem; font-weight: 600;
+  letter-spacing: .04em; text-decoration: none; color: var(--ink-faint);
+}
+.back-link:hover { color: var(--accent); }
+
+/* ── Category chips ──────────────────────────────────────────────────────── */
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; margin: 0; padding: 0; }
+.chip {
+  display: inline-block; font-family: var(--sans); font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-wash);
+  padding: .3rem .6rem; border-radius: 100px; text-decoration: none;
+}
+a.chip:hover { background: var(--accent); color: #fff; }
+
+/* ── Featured post ───────────────────────────────────────────────────────── */
+.featured { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 2px solid var(--rule-strong); }
+.featured__media {
+  display: block; margin-bottom: 1.4rem; border-radius: var(--radius);
+  overflow: hidden; background: var(--bg-sunken); aspect-ratio: 16 / 9;
+}
+.featured__media img { width: 100%; height: 100%; object-fit: cover; }
+.featured h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.15; letter-spacing: -.02em; margin: .7rem 0 .6rem; }
+.featured h2 a { color: var(--ink); text-decoration: none; }
+.featured h2 a:hover { color: var(--accent); }
+.featured__excerpt { color: var(--ink-soft); font-size: 1.08rem; margin: 0 0 1rem; }
+
+/* ── Post list ───────────────────────────────────────────────────────────── */
+.post-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2.25rem; }
+.post-card { display: grid; grid-template-columns: 148px 1fr; gap: 1.4rem; align-items: start; }
+.post-card--nomedia { grid-template-columns: 1fr; }
+@media (max-width: 560px) { .post-card { grid-template-columns: 1fr; gap: .9rem; } }
+.post-card__media { border-radius: 8px; overflow: hidden; background: var(--bg-sunken); aspect-ratio: 4 / 3; display: block; }
+.post-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.post-card h3 { font-size: 1.3rem; line-height: 1.25; letter-spacing: -.01em; margin: .45rem 0 .4rem; }
+.post-card h3 a { color: var(--ink); text-decoration: none; }
+.post-card h3 a:hover { color: var(--accent); }
+.post-card__excerpt {
+  color: var(--ink-soft); font-size: .98rem; margin: 0 0 .5rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.post-meta {
+  font-family: var(--sans); font-size: .76rem; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint);
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0;
+}
+.post-meta__sep { opacity: .45; }
+
+/* ── Article ─────────────────────────────────────────────────────────────── */
+.post-header { margin-bottom: 2rem; }
+.post-header h1 { font-size: clamp(2rem, 5.5vw, 3.1rem); line-height: 1.08; letter-spacing: -.025em; margin: .8rem 0 .9rem; max-width: 22ch; }
+.post-byline { display: flex; align-items: center; gap: .7rem; margin-top: 1.1rem; }
+.post-byline img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.post-byline__name { font-family: var(--sans); font-size: .9rem; font-weight: 600; margin: 0; }
+.post-byline__meta { font-family: var(--sans); font-size: .78rem; color: var(--ink-faint); margin: 0; }
+
+.post-hero { margin: 0 0 2.5rem; border-radius: var(--radius); overflow: hidden; background: var(--bg-sunken); }
+.post-hero img { width: 100%; }
+.post-hero figcaption, .prose figcaption {
+  font-family: var(--sans); font-size: .8rem; color: var(--ink-faint);
+  text-align: center; padding: .7rem .5rem 0;
+}
+
+/* Long-form prose — everything Portable Text emits lands here */
+.prose { max-width: var(--measure); }
+.prose > * + * { margin-top: 1.4em; }
+.prose p { margin: 0; }
+.prose h2 { font-size: 1.65rem; line-height: 1.25; letter-spacing: -.015em; margin-top: 2.6em; margin-bottom: -.35em; }
+.prose h3 { font-size: 1.28rem; line-height: 1.3; margin-top: 2em; margin-bottom: -.45em; }
+.prose ul, .prose ol { padding-left: 1.35em; margin-top: 1.1em; }
+.prose li + li { margin-top: .45em; }
+.prose blockquote {
+  margin: 2em 0; padding: .3em 0 .3em 1.4em; border-left: 3px solid var(--accent);
+  color: var(--ink-soft); font-style: italic; font-size: 1.1rem;
+}
+.prose blockquote p { margin: 0; }
+.prose blockquote p + p { margin-top: .8em; }
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .88em; background: var(--bg-sunken); padding: .15em .4em; border-radius: 4px;
+}
+.prose figure { margin: 2.2em 0; }
+.prose figure img { border-radius: var(--radius); }
+.prose a { font-weight: 500; }
+
+.post-footer {
+  margin-top: 3.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: space-between; align-items: center;
+}
+
+.post-nav {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule);
+}
+@media (max-width: 560px) { .post-nav { grid-template-columns: 1fr; } }
+.post-nav a {
+  text-decoration: none; color: var(--ink); padding: 1rem 1.15rem;
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  background: var(--bg-raised); transition: border-color .15s ease;
+}
+.post-nav a:hover { border-color: var(--accent); }
+.post-nav span {
+  display: block; font-family: var(--sans); font-size: .7rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: .35rem;
+}
+.post-nav strong { font-weight: 600; font-size: 1.02rem; line-height: 1.3; }
+.post-nav--next { text-align: right; }
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+.sidebar { position: sticky; top: 84px; display: grid; gap: 1.75rem; }
+@media (max-width: 900px) { .sidebar { position: static; margin-top: 3.5rem; } }
+
+.card {
+  background: var(--bg-raised); border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm);
+}
+.card__title {
+  font-family: var(--sans); font-size: .74rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint);
+  margin: 0 0 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--rule);
+}
+
+.bio { text-align: center; }
+.bio__avatar {
+  width: 96px; height: 96px; border-radius: 50%; object-fit: cover;
+  margin: 0 auto .9rem; border: 3px solid var(--bg-sunken);
+}
+.bio__name { font-size: 1.15rem; margin: 0 0 .4rem; }
+.bio__text { font-size: .94rem; color: var(--ink-soft); margin: 0 0 1rem; line-height: 1.6; }
+
+.newsletter__pitch { font-size: .94rem; color: var(--ink-soft); margin: 0 0 1rem; }
+.field { display: grid; gap: .6rem; }
+.field label {
+  font-family: var(--sans); font-size: .78rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint);
+}
+.field input[type="email"], .field input[type="text"], .field textarea {
+  width: 100%; padding: .7rem .85rem;
+  font-family: var(--sans); font-size: .94rem;
+  color: var(--ink); background: var(--bg);
+  border: 1px solid var(--rule-strong); border-radius: 7px;
+}
+.field textarea { resize: vertical; min-height: 160px; line-height: 1.6; }
+.field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+
+.btn {
+  display: inline-block; width: 100%;
+  padding: .75rem 1.1rem; border: 0; border-radius: 7px; cursor: pointer;
+  font-family: var(--sans); font-size: .82rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  background: var(--ink); color: var(--bg); transition: background .15s ease;
+}
+.btn:hover { background: var(--accent); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn--auto { width: auto; }
+
+.form-note { font-family: var(--sans); font-size: .82rem; margin: .8rem 0 0; min-height: 1.2em; }
+.form-note--ok    { color: var(--accent); }
+.form-note--error { color: #c0392b; }
+@media (prefers-color-scheme: dark) { .form-note--error { color: #ef8b7f; } }
+
+.mini-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.mini-post { display: grid; grid-template-columns: 62px 1fr; gap: .8rem; align-items: start; }
+.mini-post--nomedia { grid-template-columns: 1fr; }
+.mini-post__media { border-radius: 6px; overflow: hidden; background: var(--bg-sunken); aspect-ratio: 1; }
+.mini-post__media img { width: 100%; height: 100%; object-fit: cover; }
+.mini-post h4 { font-size: .95rem; line-height: 1.3; margin: 0 0 .25rem; font-weight: 600; }
+.mini-post h4 a { color: var(--ink); text-decoration: none; }
+.mini-post h4 a:hover { color: var(--accent); }
+.mini-post time { font-family: var(--sans); font-size: .72rem; color: var(--ink-faint); letter-spacing: .05em; }
+
+/* ── Empty state ─────────────────────────────────────────────────────────── */
+.empty {
+  text-align: center; padding: 4rem 1.5rem;
+  border: 1px dashed var(--rule-strong); border-radius: var(--radius); color: var(--ink-soft);
+}
+.empty h2 { margin: 0 0 .6rem; font-size: 1.4rem; }
+.empty p { margin: 0; }
+
+/* ── Content page helpers (about / projects / contact) ───────────────────── */
+.lede { font-size: 1.2rem; line-height: 1.6; color: var(--ink-soft); max-width: 60ch; }
+
+.tiles {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem; list-style: none; padding: 0; margin: 2rem 0 0;
+}
+.tile {
+  display: block; padding: 1.4rem; background: var(--bg-raised);
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease;
+}
+.tile:hover { border-color: var(--accent); transform: translateY(-2px); }
+.tile h3 { margin: 0 0 .4rem; font-size: 1.1rem; }
+.tile p { margin: 0; font-size: .93rem; color: var(--ink-soft); }
+
+.callout {
+  background: var(--accent-wash); border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.4rem; margin: 2rem 0;
+}
+.callout p { margin: 0; }
+.callout p + p { margin-top: .7rem; }
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--rule); background: var(--bg-sunken);
+  margin-top: 4rem; padding: 3rem clamp(1.1rem, 4vw, 2.5rem);
+}
+.site-footer__inner {
+  max-width: 1180px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; justify-content: space-between; align-items: center;
+}
+.site-footer p { margin: 0; font-size: .92rem; color: var(--ink-faint); }
+.site-footer nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1.4rem; margin: 0; padding: 0; }
+.site-footer nav a { font-family: var(--sans); font-size: .82rem; color: var(--ink-soft); text-decoration: none; }
+.site-footer nav a:hover { color: var(--accent); }
+
+/* ── Utilities ───────────────────────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.stack > * + * { margin-top: 1.25rem; }
+.text-center { text-align: center; }
+
+@media print {
+  .site-header, .sidebar, .site-footer, .post-nav, .back-link { display: none; }
+  body { background: #fff; color: #000; }
+  .shell--with-sidebar { display: block; }
 }
-.back-link:hover { color: #fff; }
-
-/*
- * Arrow weight bump: the leading "←" is wrapped by script.js in
- * <span class="arrow">, so the arrow can be styled independently of the
- * label. We thicken it with -webkit-text-stroke and a tiny scale, keeping
- * the rest of the link in elegant serif weight.
- */
-.back-link .arrow {
-  display: inline-block;
-  margin-right: 0.35rem;
-  font-weight: 600;
-  -webkit-text-stroke: 0.6px currentColor;
-  transform: translateY(-0.5px);
-}
-
-/* ── Forms ───────────────────────────────────── */
-form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
-
-form input, form textarea {
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #3c3c3c;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-  background: #111;
-  color: #fff;
-}
-
-form input::placeholder, form textarea::placeholder { color: #888888; }
-form input:focus, form textarea:focus {
-  outline: none;
-  border-color: #888888;
-}
-
-form textarea { min-height: 120px; resize: vertical; }
-
-form button {
-  align-self: flex-start;
-  padding: 0.6rem 1.4rem;
-  background: #fff;
-  color: #000;
-  border: none;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-form button:hover { background: #d4d4d4; }
-
-#form-status       { font-size: 0.9rem; color: #999999; }
-#newsletter-status { font-size: 0.9rem; color: #999999; }
-
-/* ── Section divider ─────────────────────────── */
-.section-divider {
-  border: none;
-  border-top: 1px solid #222;
-  margin: 2rem 0;
-}
-
-/* ── Blog list ───────────────────────────────── */
-.blog-intro { color: #a6a6a6; margin-bottom: 1.5rem; }
-
-.blog-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-/*
- * Card treatment — each entry is a rounded rectangle that lifts on hover.
- * The stretched-link technique (a::after covering the li) makes the entire
- * card clickable while keeping the rainbow hover colour on the text.
- * Note: do NOT add position:relative to the <a> — the ::after must use the
- * li as its offset parent so inset:0 covers the whole card, not just the link.
- */
-.blog-list li:not(.blog-empty) {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.85rem 1.1rem;
-  background: #0c0c0c;
-  border: 1px solid #1e1e1e;
-  border-radius: 7px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-}
-
-.blog-list li:not(.blog-empty):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
-  border-color: #2e2e2e;
-}
-
-.blog-list li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
-}
-/* Hover colours for .blog-list come from the "RAINBOW HOVER" block below.
-   Hovering anywhere on the card triggers a:hover because a::after is part
-   of the <a> element, so the rainbow transition fires correctly. */
-
-/* Stretched link — expands the click target to the full card area */
-.blog-list li:not(.blog-empty) a::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 7px;
-}
-
-.blog-date {
-  font-size: 0.85rem;
-  color: #888888;
-  white-space: nowrap;
-  margin-left: 1rem;
-  /* Sit above the stretched-link overlay so text remains selectable */
-  position: relative;
-  z-index: 1;
-}
-
-.blog-empty { color: #888888; font-style: italic; }
-
-/*
- * Article thumbnail placeholder — a small dark square with a centred SVG icon,
- * shown to the left of each blog-list article title. When a real thumbnail
- * image exists it can replace the SVG via a background-image on the element.
- * position:relative + z-index:1 keeps it above the stretched-link overlay so
- * it doesn't block pointer events on the card.
- */
-.article-card-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-width: 0;        /* allow the link text to shrink/wrap */
-}
-
-.article-thumb {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;          /* sit above the stretched-link ::after overlay */
-}
-
-.article-thumb svg {
-  width: 18px;
-  height: 18px;
-  color: #fff;
-  opacity: 0.38;
-}
-
-.article-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-/* ── Footer ──────────────────────────────────── */
-footer {
-  margin-top: 4rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid #1a1a1a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-footer a {
-  color: #888888;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  word-break: break-word;
-}
-footer a:hover { color: #fff; }
-
-#view-count {
-  color: #888888;
-  font-size: 0.8rem;
-}
-
-/* ── Mobile ──────────────────────────────────── */
-@media (max-width: 480px) {
-  body { padding: 1.5rem 1.25rem 3rem; }
-  header h1 { font-size: 1.9rem; }
-  nav ul li a { font-size: 1.15rem; padding: 0.5rem 0; }
-  .sub-nav ul li a { font-size: 1.1rem; }
-  footer { flex-direction: column; align-items: flex-start; }
-}
-
-/* ══════════════════════════════════════════════
-   LANGUAGE LEARNING PAGES
-   ══════════════════════════════════════════════ */
-
-/*
- * .lang-from — the "(from English)" / "(Türkçe)" parenthetical that
- * follows the target language name in headings and nav links.
- *
- * Using em units keeps the proportion consistent regardless of whether
- * the span appears inside an h1 (2.3 rem) or a sub-nav link (1.2 rem).
- * font-weight and color are explicitly reset so the parenthetical reads
- * as secondary without requiring separate overrides per context.
- */
-.lang-from {
-  font-size: 0.72em;
-  font-weight: 400;
-  color: #999999;
-  letter-spacing: 0.01em;
-}
-
-/* ── Page TOC ─────────────────────────────────── */
-.lang-toc {
-  margin: 1.5rem 0 2rem;
-  padding-left: 1.25rem;
-  border-left: 1px solid #3c3c3c;
-}
-
-.lang-toc li {
-  padding: 0.2rem 0;
-  font-size: 0.95rem;
-}
-
-.lang-toc a {
-  color: #a6a6a6;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.lang-toc a:hover { color: #fff; }
-
-/* ── Section headings ────────────────────────── */
-.lang-section {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #222;
-}
-
-.lang-section h2 {
-  font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.01em;
-}
-
-.lang-section h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: #e2e2e2;
-  margin: 1.25rem 0 0.5rem;
-  letter-spacing: 0.01em;
-}
-
-.lang-section p {
-  color: #d4d4d4;
-  margin-bottom: 0.85rem;
-}
-
-.lang-section ul, .lang-section ol {
-  padding-left: 1.25rem;
-  color: #d4d4d4;
-  margin-bottom: 0.85rem;
-}
-
-.lang-section ul li, .lang-section ol li {
-  margin-bottom: 0.35rem;
-  line-height: 1.6;
-}
-
-.lang-section a {
-  color: #7eb8f7;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.lang-section a:hover { color: #fff; }
-
-/* ── Collapsible accordion blocks ────────────── */
-details.accordion {
-  border: 1px solid #222;
-  border-radius: 3px;
-  margin-bottom: 0.75rem;
-  overflow: hidden;
-}
-
-details.accordion > summary {
-  padding: 0.7rem 1rem;
-  cursor: pointer;
-  font-size: 1.05rem;
-  color: #e2e2e2;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  user-select: none;
-  transition: background 0.2s ease;
-}
-
-details.accordion > summary::-webkit-details-marker { display: none; }
-
-/*
- * Accordion arrow — bumped up slightly in weight (text-stroke) and size to
- * match the back-link arrow treatment site-wide.
- */
-details.accordion > summary::before {
-  content: '▶';
-  font-size: 0.72rem;
-  color: #999999;
-  -webkit-text-stroke: 0.4px currentColor;
-  transition: transform 0.2s ease;
-  flex-shrink: 0;
-}
-
-details.accordion[open] > summary::before {
-  transform: rotate(90deg);
-}
-
-details.accordion > summary:hover {
-  background: #0d0d0d;
-  color: #fff;
-}
-
-details.accordion > summary:hover::before {
-  color: #b5b5b5;
-}
-
-.accordion-body {
-  padding: 1rem 1.25rem 1.25rem;
-  border-top: 1px solid #1a1a1a;
-}
-
-/* ── Tables ──────────────────────────────────── */
-.table-wrap {
-  overflow-x: auto;
-  margin: 0.75rem 0 1rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-.lang-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.92rem;
-  color: #d4d4d4;
-  min-width: 320px;
-}
-
-.lang-table th {
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #3c3c3c;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-
-.lang-table td {
-  padding: 0.45rem 0.75rem;
-  border-bottom: 1px solid #1a1a1a;
-  vertical-align: top;
-}
-
-.lang-table tr:last-child td { border-bottom: none; }
-
-.lang-table code {
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  color: #6ecf8c;
-  background: #0d0d0d;
-  padding: 0.1rem 0.3rem;
-  border-radius: 2px;
-}
-
-/* ── Callout / note block ────────────────────── */
-.lang-note {
-  border-left: 2px solid #444;
-  padding: 0.6rem 1rem;
-  margin: 1rem 0;
-  color: #999999;
-  font-size: 0.95rem;
-  font-style: italic;
-}
-
-/* ── Anki guide: screenshot figures ─────────── */
-.anki-fig {
-  margin: 1.25rem 0 1.5rem;
-  border: 1px solid #222;
-  border-radius: 4px;
-  overflow: hidden;
-  background: #0d0d0d;
-}
-
-.anki-fig img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.anki-fig figcaption {
-  font-size: 0.82rem;
-  color: #999999;
-  padding: 0.5rem 0.75rem;
-  border-top: 1px solid #1a1a1a;
-  font-style: italic;
-  line-height: 1.5;
-}
-
-/* Narrow-dialog variant: centres small screenshots */
-.anki-fig--narrow {
-  max-width: 440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Anki guide: tip & warning callouts ─────── */
-.anki-tip {
-  border-left: 2px solid #6ecf8c;
-  background: rgba(110,207,140,0.05);
-  padding: 0.65rem 1rem;
-  margin: 0.75rem 0 1rem;
-  border-radius: 0 3px 3px 0;
-  font-size: 0.93rem;
-  color: #c4c4c4;
-  line-height: 1.55;
-}
-
-.anki-warning {
-  border-left: 2px solid #f7c77e;
-  background: rgba(247,199,126,0.05);
-  padding: 0.65rem 1rem;
-  margin: 0.75rem 0 1rem;
-  border-radius: 0 3px 3px 0;
-  font-size: 0.93rem;
-  color: #c4c4c4;
-  line-height: 1.55;
-}
-
-/* ── Anki guide: code & prompt blocks ────────── */
-pre.anki-code {
-  background: #0d0d0d;
-  padding: 0.75rem 1rem;
-  border-radius: 3px;
-  overflow-x: auto;
-  font-size: 0.78rem;
-  color: #6ecf8c;
-  line-height: 1.65;
-  border: 1px solid #1a1a1a;
-  margin: 0.5rem 0 0.75rem;
-  white-space: pre;
-  font-family: 'Courier New', monospace;
-}
-
-pre.anki-prompt {
-  background: #0d0d0d;
-  padding: 0.75rem 1rem;
-  border-radius: 3px;
-  overflow-x: auto;
-  font-size: 0.78rem;
-  color: #d4d4d4;
-  line-height: 1.65;
-  border: 1px solid #1a1a1a;
-  margin: 0.5rem 0 0.75rem;
-  white-space: pre;
-  font-family: 'Courier New', monospace;
-}
-
-/* ── Anki guide: key-term colour ─────────────── */
-.anki-term {
-  color: #7eb8f7;
-}
-
-/* ── Chinese / Cantonese pronunciation block ─── */
-.canto-block {
-  border: 1px solid #1e1e1e;
-  border-radius: 3px;
-  padding: 0.75rem 1rem;
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: #a6a6a6;
-}
-
-.canto-block .canto-char {
-  font-size: 1.25rem;
-  color: #fff;
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.canto-block .canto-jyutping {
-  color: #7eb8f7;
-  font-style: italic;
-}
-
-.canto-block .canto-en {
-  color: #d4d4d4;
-  font-style: normal;
-}
-
-/* ── Level badge ─────────────────────────────── */
-.level-badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-family: 'Courier New', monospace;
-  padding: 0.1rem 0.45rem;
-  border-radius: 2px;
-  vertical-align: middle;
-  margin-left: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.level-badge.beginner   { color: #6ecf8c; border: 1px solid #6ecf8c33; }
-.level-badge.intermed   { color: #7eb8f7; border: 1px solid #7eb8f733; }
-.level-badge.advanced   { color: #f07878; border: 1px solid #f0787833; }
-.level-badge.all-levels { color: #b5b5b5;    border: 1px solid #aaa3; }
-
-/* ── Mobile adjustments for language pages ───── */
-@media (max-width: 480px) {
-  .lang-table th, .lang-table td { padding: 0.4rem 0.5rem; font-size: 0.82rem; }
-  details.accordion > summary { font-size: 1rem; padding: 0.65rem 0.75rem; }
-  .accordion-body { padding: 0.75rem 0.75rem 1rem; }
-}
-
-/* ══════════════════════════════════════════════
-   ABOUT PAGE
-   ══════════════════════════════════════════════ */
-
-.about-intro {
-  color: #e2e2e2;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.about-section {
-  margin-top: 2rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid #1a1a1a;
-}
-
-.about-section:first-of-type {
-  border-top: none;
-  padding-top: 0.5rem;
-}
-
-.about-section h2 {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #b5b5b5;
-  margin-bottom: 0.75rem;
-}
-
-.about-section p,
-.about-section li {
-  color: #d4d4d4;
-}
-
-.about-section ul {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin: 0.5rem 0 0.5rem;
-}
-
-.about-section ul li {
-  position: relative;
-  padding-left: 1.1rem;
-}
-
-.about-section ul li::before {
-  content: '·';
-  position: absolute;
-  left: 0.25rem;
-  color: #888888;
-}
-
-.about-section em {
-  color: #7eb8f7;
-  font-style: italic;
-}
-
-/* ══════════════════════════════════════════════
-   BUILT WITH
-   ══════════════════════════════════════════════ */
-
-.built-with {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #1a1a1a;
-  text-align: center;
-}
-
-.built-with h2 {
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #888888;
-  margin-bottom: 1.25rem;
-}
-
-.built-with-grid {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.85rem 1.25rem;
-  padding: 0;
-  margin: 0;
-}
-
-.built-with-grid li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid #1f1f1f;
-  border-radius: 999px;
-  background: #0a0a0a;
-  font-size: 0.9rem;
-  color: #e2e2e2;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.built-with-grid li:hover {
-  border-color: #3c3c3c;
-  color: #fff;
-  transform: translateY(-1px);
-}
-
-.built-with-grid li svg,
-.built-with-grid li img {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: block;
-}
-
-@media (max-width: 480px) {
-  .built-with-grid { gap: 0.6rem 0.75rem; }
-  .built-with-grid li { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
-}
-
-/* ══════════════════════════════════════════════
-   SHAVIAN
-   ══════════════════════════════════════════════
-   The Shavian English page renders text written in the Shavian alphabet
-   (Unicode block U+10450–U+1047F). We self-host the Noto Sans Shavian
-   WOFF2 — covering the entire Shavian block — under /fonts/ so it
-   complies with the existing `font-src 'self'` CSP and works regardless
-   of which fonts the visitor has installed. System-installed Shavian
-   fonts and the serif body stack remain as fallbacks.
-
-   Source: Google Noto / Fontsource — SIL Open Font License v1.1
-   (see /fonts/LICENSE.txt for the full license text).
-   ══════════════════════════════════════════════ */
-@font-face {
-  font-family: 'Noto Sans Shavian';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/NotoSansShavian-Regular.woff2') format('woff2');
-  /* Limit downloads to pages that actually render Shavian glyphs. */
-  unicode-range: U+10450-1047F;
-}
-
-/* `.shavian` is a utility — it only swaps in the Shavian font family
-   and a hair of letter-spacing for readability. Context-specific sizing
-   (h1 vs paragraph) is handled by the more specific selectors below. */
-.shavian {
-  font-family: 'Noto Sans Shavian', 'Apple Symbols', 'Segoe UI Historic',
-               'Segoe UI Symbol', 'Andagii', var(--font-body);
-  letter-spacing: 0.02em;
-}
-
-p.shavian {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: #fff;
-  margin: 1.5rem 0 1rem;
-}
-
-/* Header transliteration — keep the h1's default size/weight, just swap
-   the family so the page title itself renders in Shavian. */
-header h1.shavian {
-  font-family: 'Noto Sans Shavian', 'Apple Symbols', 'Segoe UI Historic',
-               'Segoe UI Symbol', 'Andagii', var(--font-display);
-}
-
-@media (max-width: 480px) {
-  p.shavian { font-size: 1.3rem; }
-}
-
-/* ══════════════════════════════════════════════
-   RESPONSIVE VIDEO EMBED
-   ══════════════════════════════════════════════
-   Drop an iframe inside `.video-embed` and it'll maintain a 16:9 aspect
-   ratio across every viewport without inline width/height attributes.
-   The CSP frame-src directive in server.ts allows youtube-nocookie.com.
-   ══════════════════════════════════════════════ */
-.video-embed {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin: 1.5rem 0;
-  background: #0d0d0d;
-  border: 1px solid #1e1e1e;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.video-embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-/* ══════════════════════════════════════════════
-   GUITAR ROADMAP
-   ══════════════════════════════════════════════
-   Repeating "Key of X" blocks with a four-step scale progression. The
-   item the user is currently working on gets a small "CURRENT" pill.
-   ══════════════════════════════════════════════ */
-.guitar-intro {
-  color: #d4d4d4;
-  margin-bottom: 1.5rem;
-}
-
-.guitar-meta {
-  font-size: 0.85rem;
-  color: #888888;
-  font-style: italic;
-  margin-top: 0.75rem;
-}
-
-.guitar-roadmap {
-  margin: 1.5rem 0 2rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid #1a1a1a;
-}
-
-.guitar-roadmap h2 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #fff;
-  margin-bottom: 0.75rem;
-}
-
-.guitar-roadmap > p {
-  color: #999999;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-}
-
-.guitar-roadmap .key-block {
-  margin-top: 1.5rem;
-}
-
-.guitar-roadmap .key-name {
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #b5b5b5;
-  margin-bottom: 0.5rem;
-}
-
-.guitar-roadmap ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.guitar-roadmap ol li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  padding: 0.25rem 0;
-  color: #d4d4d4;
-  font-size: 1rem;
-}
-
-.guitar-roadmap ol li .step {
-  color: #888888;
-  font-size: 0.85rem;
-  min-width: 1.25rem;
-  flex-shrink: 0;
-}
-
-.guitar-roadmap ol li.current {
-  color: #fff;
-}
-
-.guitar-roadmap ol li.current .step {
-  color: #7ed895;
-}
-
-.current-pill {
-  display: inline-block;
-  margin-left: 0.5rem;
-  padding: 0.05rem 0.5rem;
-  font-size: 0.68rem;
-  font-family: 'Courier New', monospace;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #7ed895;
-  border: 1px solid #7ed89555;
-  border-radius: 2px;
-  vertical-align: 0.12em;
-}
-
-@media (max-width: 480px) {
-  .guitar-roadmap ol li { font-size: 0.95rem; }
-  .current-pill { font-size: 0.62rem; padding: 0.05rem 0.4rem; }
-}
-
-/* ══════════════════════════════════════════════
-   RAINBOW HOVER
-   ══════════════════════════════════════════════
-   Menu items cycle through red → orange → yellow → green → blue → indigo →
-   violet on hover, repeating after every seventh item. The :nth-child(7n+k)
-   selectors do the work: item 1 lights up red, item 2 orange, … item 8
-   loops back to red, etc.
-
-   The same rule set is applied to every navigational list on the site
-   (main nav, sub-nav, blog list, playlists list) so the visual language
-   is identical everywhere. Colours are tuned to stay readable against the
-   black background while keeping the rainbow recognisable.
-
-   The existing `transition: color 0.25s ease;` declarations on the link
-   selectors above still drive the hover animation — these rules only
-   change the destination colour.
-   ══════════════════════════════════════════════ */
-
-nav ul li:nth-child(7n+1) a:hover,
-.sub-nav ul li:nth-child(7n+1) a:hover,
-.blog-list li:nth-child(7n+1) a:hover { color: #f07878; } /* red    */
-
-nav ul li:nth-child(7n+2) a:hover,
-.sub-nav ul li:nth-child(7n+2) a:hover,
-.blog-list li:nth-child(7n+2) a:hover { color: #f0a878; } /* orange */
-
-nav ul li:nth-child(7n+3) a:hover,
-.sub-nav ul li:nth-child(7n+3) a:hover,
-.blog-list li:nth-child(7n+3) a:hover { color: #e8d878; } /* yellow */
-
-nav ul li:nth-child(7n+4) a:hover,
-.sub-nav ul li:nth-child(7n+4) a:hover,
-.blog-list li:nth-child(7n+4) a:hover { color: #7ed895; } /* green  */
-
-nav ul li:nth-child(7n+5) a:hover,
-.sub-nav ul li:nth-child(7n+5) a:hover,
-.blog-list li:nth-child(7n+5) a:hover { color: #7eb8f7; } /* blue   */
-
-nav ul li:nth-child(7n+6) a:hover,
-.sub-nav ul li:nth-child(7n+6) a:hover,
-.blog-list li:nth-child(7n+6) a:hover { color: #9b8df0; } /* indigo */
-
-nav ul li:nth-child(7n+7) a:hover,
-.sub-nav ul li:nth-child(7n+7) a:hover,
-.blog-list li:nth-child(7n+7) a:hover { color: #c888f0; } /* violet */
-
-/* ─────────────────────────────────────────────────────────────────────────────
- *  LANGUAGE SWITCHER
- *  Fixed dropdown at the bottom right of every page. Driven by JS in
- *  script.js; styles live here so the page never flashes an unstyled control.
- *  ────────────────────────────────────────────────────────────────────────── */
-
-/* TEMPORARILY HIDDEN — widget has a bug; code preserved for future fix.
-   To restore: remove the display:none rule and the comment block. */
-.lang-switcher {
-  display: none !important;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 9999;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-}
-
-.lang-switcher select {
-  background: #0a0a0a;
-  color: #d4d4d4;
-  border: 1px solid #2a2a2a;
-  border-radius: 3px;
-  padding: 0.4rem 1.9rem 0.4rem 0.7rem;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path fill='%23777' d='M5 7L1 3h8z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 0.6rem center;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.lang-switcher select:hover,
-.lang-switcher select:focus {
-  border-color: #888888;
-  color: #fff;
-  outline: none;
-}
-
-.lang-notice {
-  position: fixed;
-  bottom: 3.6rem;
-  right: 1rem;
-  max-width: 300px;
-  background: #0a0a0a;
-  border: 1px solid #2a2a2a;
-  border-radius: 4px;
-  padding: 0.85rem 1rem;
-  color: #d4d4d4;
-  font-size: 0.85rem;
-  line-height: 1.45;
-  z-index: 9999;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
-}
-
-.lang-notice button {
-  background: none;
-  border: none;
-  color: #999999;
-  cursor: pointer;
-  float: right;
-  margin: -0.2rem -0.3rem 0 0.6rem;
-  font-size: 1.15rem;
-  line-height: 1;
-  padding: 0;
-}
-
-.lang-notice button:hover { color: #fff; }
-
-/* Hide Google's default widget UI — our own dropdown drives it. */
-#google_translate_element { display: none !important; }
-.goog-te-banner-frame.skiptranslate { display: none !important; }
-.goog-te-gadget { font-size: 0 !important; }
-.goog-te-gadget .goog-te-combo { display: none !important; }
-body.translated-ltr,
-body.translated-rtl { top: 0 !important; }
-.goog-tooltip,
-.goog-tooltip:hover { display: none !important; }
-.goog-text-highlight {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* ══════════════════════════════════════════════
-   SRS FLASHCARD WIDGET
-   Shared across all language-guide pages that
-   include an SRS component. Previously duplicated
-   as inline <style> blocks on each page.
-   ══════════════════════════════════════════════ */
-
-.srs-meta {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 0.85rem;
-  font-size: 0.8rem;
-  color: #888888;
-  min-height: 1.4rem;
-}
-
-.srs-count b { color: #d4d4d4; font-weight: 500; }
-
-.srs-bar-wrap {
-  flex: 1;
-  height: 2px;
-  background: #1a1a1a;
-  border-radius: 1px;
-  overflow: hidden;
-}
-
-.srs-bar {
-  height: 100%;
-  background: #2e2e2e;
-  border-radius: 1px;
-  transition: width 0.4s ease;
-}
-
-.srs-card {
-  border: 1px solid #1e1e1e;
-  border-radius: 4px;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 2rem 2.25rem;
-  cursor: pointer;
-  user-select: none;
-  transition: border-color 0.2s ease;
-  text-align: center;
-  position: relative;
-}
-
-.srs-card:hover           { border-color: #2a2a2a; }
-.srs-card.revealed        { cursor: default; }
-.srs-card.revealed:hover  { border-color: #1e1e1e; }
-
-/* The "prompt" side of the flashcard (target-language word).
-   Historically named .srs-turkish; the name is preserved to avoid
-   breaking existing JS, but the style applies to all language SRS widgets. */
-.srs-turkish {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
-
-.srs-pos {
-  font-size: 0.75rem;
-  color: #3a3a3a;
-  font-style: italic;
-  margin-top: 0.5rem;
-  letter-spacing: 0.04em;
-}
-
-.srs-divider {
-  width: 2rem;
-  height: 1px;
-  background: #222;
-  margin: 1.25rem auto 1rem;
-  flex-shrink: 0;
-}
-
-/* The "answer" side (L1 translation) */
-.srs-english {
-  font-size: 1.2rem;
-  color: #c4c4c4;
-  line-height: 1.45;
-}
-
-/* Card face text — front (target language) and back (translation) */
-.srs-front {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.srs-back {
-  font-size: 1.2rem;
-  color: #c4c4c4;
-  line-height: 1.45;
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-.srs-hint {
-  position: absolute;
-  bottom: 0.7rem;
-  font-size: 0.7rem;
-  color: #2c2c2c;
-  letter-spacing: 0.05em;
-}
-
-.srs-actions,
-.srs-controls {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-  min-height: 2.6rem;
-  justify-content: center;
-}
-
-/* Full-width "Show answer" flip button */
-.srs-btn-flip {
-  width: 100%;
-  margin-top: 0.75rem;
-  border: 1px solid #252525;
-  color: #999999;
-}
-.srs-btn-flip:hover { border-color: #888888; color: #d4d4d4; }
-
-.srs-btn {
-  flex: 1;
-  padding: 0.55rem 1rem;
-  border-radius: 3px;
-  background: none;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-}
-
-.srs-btn-again            { border: 1px solid #2e1a1a; color: #c07070; }
-.srs-btn-again:hover      { background: #1a0a0a; border-color: #c07070; color: #e08888; }
-
-.srs-btn-good             { border: 1px solid #1a2e1a; color: #7ed895; }
-.srs-btn-good:hover       { background: #0a180a; border-color: #7ed895; color: #9ef0b0; }
-
-.srs-key {
-  font-family: 'Courier New', monospace;
-  font-size: 0.67rem;
-  padding: 0.04rem 0.3rem;
-  border: 1px solid currentColor;
-  border-radius: 2px;
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-
-.srs-interval { font-size: 0.72rem; opacity: 0.6; }
-
-.srs-done {
-  border: 1px solid #1e1e1e;
-  border-radius: 4px;
-  text-align: center;
-  padding: 3rem 1.5rem;
-}
-
-.srs-done-title {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 0.4rem;
-}
-
-.srs-done-sub {
-  color: #888888;
-  font-size: 0.9rem;
-  margin-bottom: 0.85rem;
-  font-style: italic;
-}
-
-.srs-done-stats {
-  color: #888888;
-  font-size: 0.82rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.9;
-}
-
-.srs-action-btn {
-  background: none;
-  border: 1px solid #2a2a2a;
-  color: #999999;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.srs-action-btn:hover { border-color: #888888; color: #fff; }
-
-.srs-shortcuts {
-  font-size: 0.75rem;
-  color: #2e2e2e;
-  margin-top: 0.6rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.srs-shortcuts kbd {
-  font-family: 'Courier New', monospace;
-  font-size: 0.68rem;
-  padding: 0.05rem 0.3rem;
-  border: 1px solid #2a2a2a;
-  border-radius: 2px;
-  color: #3c3c3c;
-}
-
-@media (max-width: 480px) {
-  .srs-turkish  { font-size: 1.85rem; }
-  .srs-front    { font-size: 1.85rem; }
-  .srs-english  { font-size: 1.05rem; }
-  .srs-back     { font-size: 1.05rem; }
-  .srs-btn      { font-size: 0.82rem; padding: 0.5rem 0.6rem; }
-  .srs-meta     { gap: 0.75rem; }
-}
-
-/* ══════════════════════════════════════════════
-   RTL LAYOUT — Persian (Farsi) guide pages
-   Applied when <html dir="rtl"> is set. The
-   back-link and .lang-from spans are forced LTR
-   so the arrow and parenthetical always read
-   left-to-right regardless of base direction.
-   ══════════════════════════════════════════════ */
-
-html[dir="rtl"] body {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .back-link {
-  direction: ltr;
-  display: inline-block;
-}
-
-html[dir="rtl"] .lang-from {
-  direction: ltr;
-  unicode-bidi: embed;
-}
-
-html[dir="rtl"] .lang-table {
-  direction: rtl;
-}
-
-html[dir="rtl"] .lang-table th,
-html[dir="rtl"] .lang-table td {
-  text-align: right;
-}
-
-/* SRS meta bar reversed for RTL — progress bar should still read left→right
-   so the bar grows in the correct visual direction */
-html[dir="rtl"] .srs-meta {
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .srs-bar {
-  transform: scaleX(-1);
-}
-
-/* ══════════════════════════════════════════════
-   MULTILINGUAL TYPOGRAPHY — SCRIPT SUPPORT
-   System-font stacks for each writing system.
-   No web-font downloads — falls back to the
-   body serif stack when a script font is absent.
-   ══════════════════════════════════════════════ */
-
-/* Persian / Arabic script
-   Noto Naskh is the finest free Naskh face; most iOS/Android devices
-   have a system Arabic font. Windows uses Times New Roman Arabic. */
-:lang(fa) {
-  font-family:
-    'Noto Naskh Arabic', 'Scheherazade New', 'Arabic Typesetting',
-    'Times New Roman Arabic', 'Geeza Pro', 'Al Bayan',
-    var(--font-body);
-  line-height: 1.9;   /* Arabic needs more vertical rhythm */
-}
-
-/* Punjabi — Gurmukhi script (India) / Shahmukhi (Arabic, Pakistan).
-   Pages on this site use Gurmukhi. */
-:lang(pa) {
-  font-family:
-    'Noto Serif Gurmukhi', 'Raavi', 'Sat Sargun',
-    var(--font-body);
-  line-height: 1.85;
-}
-
-/* Simplified Chinese (Mandarin) */
-:lang(zh-Hans),
-:lang(zh-CN) {
-  font-family:
-    'Noto Serif SC', 'Source Han Serif SC', 'Songti SC',
-    'STSong', 'SimSun',
-    var(--font-body);
-  line-height: 1.75;
-  word-break: break-all; /* prevent CJK overflow */
-}
-
-/* Traditional Chinese (Cantonese, Taiwanese Mandarin) */
-:lang(zh-Hant),
-:lang(zh-TW),
-:lang(zh-HK) {
-  font-family:
-    'Noto Serif TC', 'Source Han Serif TC', 'Songti TC',
-    'STSong', 'MingLiU',
-    var(--font-body);
-  line-height: 1.75;
-  word-break: break-all;
-}
-
-/* Japanese — prefers proportional Mincho (serif) faces */
-:lang(ja) {
-  font-family:
-    'Hiragino Mincho ProN', 'Hiragino Mincho Pro',
-    'Yu Mincho', 'YuMincho',
-    'MS Mincho', 'MS PMincho',
-    var(--font-body);
-  line-height: 1.85;
-  word-break: break-all;
-}
-
-/* Russian / Ukrainian — Cyrillic
-   Times New Roman has good Cyrillic coverage on all platforms.
-   Noto Serif provides a consistent fallback on Linux. */
-:lang(ru),
-:lang(uk) {
-  /* Open Sans has a Cyrillic subset — clean, modern Cyrillic rendering. */
-  font-family:
-    'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-}
-
-/* Vietnamese — Latin script with extensive diacritics.
-   Times New Roman covers the full Unicode Latin Extended Additional
-   block (U+1E00–U+1EFF). The explicit stack just makes it more
-   reliable on systems where the default serif is incomplete. */
-:lang(vi) {
-  /* Open Sans has a Vietnamese subset — use it as primary. System serif fallback. */
-  font-family:
-    'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   LANGUAGE GUIDES PAGE — language-guides.html
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* ── Filter bar ────────────────────────────────────────────────────────── */
-.guide-filter-bar {
-  margin: 1.5rem 0 1rem;
-}
-
-.guide-filter-bar .filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.guide-filter-bar .filter-label {
-  font-size: 0.78rem;
-  color: #888888;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-right: 0.25rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.filter-pill {
-  appearance: none;
-  background: transparent;
-  border: 1px solid #3c3c3c;
-  border-radius: 20px;
-  color: #999999;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  padding: 0.2rem 0.7rem;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-  line-height: 1.5;
-}
-
-.filter-pill:hover {
-  border-color: #999999;
-  color: #d4d4d4;
-}
-
-.filter-pill.active {
-  background: #2a2a2a;
-  border-color: #b5b5b5;
-  color: #fff;
-}
-
-.guide-search-wrap {
-  margin-bottom: 0.75rem;
-  position: relative;
-}
-
-.guide-search-wrap input {
-  background: transparent;
-  border: 1px solid #2a2a2a;
-  border-radius: 4px;
-  color: #d4d4d4;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  padding: 0.4rem 0.75rem 0.4rem 2rem;
-  width: 100%;
-  transition: border-color 0.15s;
-}
-
-.guide-search-wrap input:focus {
-  border-color: #888888;
-  outline: none;
-}
-
-.guide-search-wrap input::placeholder { color: #888888; }
-
-.guide-search-wrap::before {
-  content: '⌕';
-  position: absolute;
-  left: 0.55rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888888;
-  font-size: 1rem;
-  pointer-events: none;
-}
-
-.filter-clear {
-  appearance: none;
-  background: none;
-  border: none;
-  color: #888888;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  padding: 0.2rem 0;
-  text-decoration: underline;
-  transition: color 0.15s;
-}
-
-.filter-clear:hover { color: #b5b5b5; }
-
-.filter-results-count {
-  font-size: 0.8rem;
-  color: #888888;
-  margin-bottom: 0.5rem;
-  min-height: 1.2em;
-}
-
-/* ── L1 group sections ─────────────────────────────────────────────────── */
-.l1-group {
-  margin-top: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.l1-group h2 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #e2e2e2;
-  margin-bottom: 0.15rem;
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.l1-group h2 .l1-flag {
-  font-size: 1.3rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-/* Custom icon (img) within the flag slot */
-.l1-group h2 .l1-flag img,
-.l2-flag img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.l1-group .l1-caption {
-  color: #888888;
-  font-size: 0.82rem;
-  font-style: italic;
-  margin-left: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.l1-group ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 1rem;
-}
-
-.l1-group li {
-  padding: 0.3rem 0;
-  padding-left: 2rem;
-  border-bottom: 1px solid #111;
-}
-
-.l1-group li:last-child { border-bottom: none; }
-
-.l1-group li a {
-  color: #d4d4d4;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.l1-group li a .l2-flag { font-size: 1rem; line-height: 1; }
-.l1-group li a .l2-name { font-size: 0.95rem; }
-.l1-group li a:hover .l2-name { color: #fff; }
-
-/* Hidden during filter */
-.l1-group[hidden],
-.l1-group li[hidden] { display: none !important; }
-
-/* Custom icon sizing — match emoji visual weight */
-.lang-icon {
-  display: inline-block;
-  width: 1.25em;
-  height: 1em;
-  vertical-align: middle;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-/* ─────────────────────────────────────────────────────────────────────────
-   HOMEPAGE LEAF ANIMATION
-   ───────────────────────────────────────────────────────────────────────── */
-
-.tagline-leaf-wrap {
-  position: relative;
-  display: inline-block;
-  width: 1.6em;
-  height: 1em;
-  vertical-align: middle;
-}
-
-.tagline-leaf {
-  display: inline-block;
-  cursor: default;
-  font-size: 1.2rem;
-  line-height: 1;
-  transform-origin: bottom center;
-  will-change: transform;
-}
-
-/* ── Wind gust spans (created by JS, fixed position) ────────────────────── */
-.leaf-wind {
-  position: fixed;
-  pointer-events: none;
-  white-space: nowrap;
-  will-change: transform, opacity;
-}
-
-/* ── Leaf keyframes ─────────────────────────────────────────────────────── */
-
-/* Gentle idle sway — small amplitude, slow pendulum */
-@keyframes leaf-idle-sway {
-  0%   { transform: rotate(-4deg); }
-  50%  { transform: rotate(4deg); }
-  100% { transform: rotate(-4deg); }
-}
-
-/* Brief wind-gust sway — larger amplitude */
-@keyframes leaf-wind-sway {
-  0%   { transform: rotate(-4deg); }
-  20%  { transform: rotate(16deg) scaleX(0.92); }
-  50%  { transform: rotate(-8deg); }
-  75%  { transform: rotate(10deg); }
-  100% { transform: rotate(-4deg); }
-}
-
-/* Wind gust: emoji drifts right and fades */
-@keyframes wind-gust {
-  0%   { transform: translateX(0);    opacity: 0; }
-  12%  { opacity: 0.85; }
-  80%  { opacity: 0.5; }
-  100% { transform: translateX(60vw); opacity: 0; }
-}
-
-/* ─────────────────────────────────────────────────────────────────────────
-   HOMEPAGE TITLE — clickable h1 link
-   ───────────────────────────────────────────────────────────────────────── */
-
-header h1 a.site-title-link {
-  color: inherit;
-  text-decoration: none;
-  letter-spacing: 0.04em; /* very subtle increase over default 0.01em */
-  transition: color 0.2s ease;
-}
-header h1 a.site-title-link:hover {
-  color: #d4d4d4;
-}
-
-/* ─────────────────────────────────────────────────────────────────────────
-   TAGLINE RAINBOW SWEEP
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* The .tagline-text span gets .rainbow-sweep added by JS on hover */
-.tagline-text {
-  position: relative;
-  display: inline;
-}
-
-/* Rainbow light sweep — a gradient mask slides across the text */
-.tagline-text.rainbow-sweep {
-  background: linear-gradient(
-    90deg,
-    #b5b5b5 0%,
-    #ff6b6b 10%,
-    #ffa94d 20%,
-    #ffe066 30%,
-    #69db7c 45%,
-    #4dabf7 60%,
-    #cc5de8 75%,
-    #b5b5b5 90%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbow-sweep-move 0.9s ease-out forwards;
-}
-
-@keyframes rainbow-sweep-move {
-  0%   { background-position: 200% center; }
-  100% { background-position: -20% center; }
-}
-
-/* ─────────────────────────────────────────────────────────────────────────
-   ARTICLE IMAGES — reusable hero + captioned figure helpers
-   Used by retro-gaming posts, book reviews, project pages, etc.
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* Full-width hero image sitting directly under the <header> heading/subheading,
-   spanning the horizontal width of the body content column. */
-.article-hero {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid #1e1e1e;
-  margin: 0 0 1.75rem;
-}
-
-/* Hero image PLACEHOLDER — a dark box matching .article-hero's footprint, shown
-   on subpages until a real hero image is dropped in. Swap for <img class="article-hero">
-   when artwork is ready. The centred glyph keeps the empty state from feeling broken. */
-.article-hero-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  border: 1px solid #1e1e1e;
-  background: #0c0c0c;
-  color: #555;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  margin: 0 0 1.75rem;
-}
-.article-hero-placeholder span { opacity: 0.7; }
-
-/* Captioned figure for in-body images (concept art, diagrams, screenshots). */
-.post-figure {
-  margin: 1.25rem 0 1.5rem;
-  border: 1px solid #222;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #0d0d0d;
-}
-
-.post-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.post-figure figcaption {
-  font-size: 0.85rem;
-  color: #999999;
-  padding: 0.55rem 0.85rem;
-  border-top: 1px solid #1a1a1a;
-  line-height: 1.55;
-}
-
-/* Lead-in note (e.g. "these are AI-generated concept images"). */
-.figure-note {
-  color: #b5b5b5;
-  font-style: italic;
-}
-
-/* PlayStation face-button glyphs used inline in prose (PS2 post). */
-.ps-btn {
-  font-weight: 700;
-  font-size: 1.05em;
-  padding: 0 0.05em;
-}
-
-/* ── Button-style link (external actions, e.g. Letterboxd) ──────────
-   Reusable pill button consistent with the site's dark theme and the
-   slideshow controls (.dogs-btn). */
-.btn-link {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.03em;
-  color: #ccc;
-  text-decoration: none;
-  background: #0d0d0d;
-  border: 1px solid #2a2a2a;
-  border-radius: 4px;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-}
-.btn-link:hover {
-  color: #fff;
-  border-color: #555;
-  background: #161616;
-}
-
-/* ── Resource cards ────────────────────────────────
-   Reusable article-style card grid used on the Resources hub and the
-   Language Learning page. Each card is a single anchor containing a hero
-   image (or emoji-tile fallback), a title, and a btn-link styled CTA.
-   Built from the same tokens as .blog-list cards for visual consistency. */
-.resource-grid {
-  list-style: none;
-  margin: 1.25rem 0 2.5rem;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.1rem;
-}
-
-.resource-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: #0c0c0c;
-  border: 1px solid #1e1e1e;
-  border-radius: 8px;
-  overflow: hidden;
-  text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-}
-.resource-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
-  border-color: #2e2e2e;
-}
-
-.resource-card .card-thumb {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: #111;
-  border-bottom: 1px solid #1a1a1a;
-}
-/* Emoji-tile fallback for pages without a hero image. */
-.resource-card .card-thumb.emoji {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.6rem;
-  line-height: 1;
-  background: radial-gradient(circle at 50% 40%, #1a1a1a, #0d0d0d);
-}
-
-.resource-card .card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.65rem;
-  padding: 0.9rem 1rem 1.05rem;
-  flex: 1;
-}
-.resource-card .card-title {
-  color: #fff;
-  font-size: 1.05rem;
-  line-height: 1.35;
-  margin: 0;
-  transition: color 0.2s ease;
-}
-.resource-card .card-cta {
-  margin-top: auto;          /* pin the CTA to the bottom of the card */
-}
-/* Mirror .btn-link:hover when hovering anywhere on the card. */
-.resource-card:hover .card-cta {
-  color: #fff;
-  border-color: #555;
-  background: #161616;
-}
-
-.resource-heading {
-  margin: 2.25rem 0 0.25rem;
-}
-.resource-heading:first-of-type {
-  margin-top: 1rem;
-}
-
-/* ── Footnotes / citations (Chicago notes) ─────── */
-sup.fn {
-  font-size: 0.7em;
-  line-height: 0;
-  margin-left: 1px;
-}
-sup.fn a {
-  color: #9aa6c4;
-  text-decoration: none;
-}
-sup.fn a:hover { color: #fff; }
-.footnotes {
-  margin-top: 1rem;
-  padding-left: 1.25rem;
-  font-size: 0.9rem;
-  color: #a6a6a6;
-  line-height: 1.5;
-}
-.footnotes li { margin-bottom: 0.55rem; }
-.footnotes li a { color: #9aa6c4; text-decoration: none; }
-.footnotes li a:hover { color: #fff; }
-#bibliography + p, #bibliography ~ p { font-size: 0.9rem; color: #a6a6a6; }
-article hr {
-  border: none;
-  border-top: 1px solid #2e2e2e;
-  margin: 2.25rem 0 1.25rem;
-}
-
-/* ── Clickable citation source links ───────────── */
-a.cite-link {
-  color: #4d9fff;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  word-break: break-word;
-}
-a.cite-link:hover { color: #82bbff; }
