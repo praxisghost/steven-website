@@ -1,5 +1,362 @@
 # Changelog
 
+## 2026-06-14 (autonomous run — vocabulary export expansion: english_to_mandarin → 100 entries)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_mandarin.csv (expanded: 35 → 100 entries)
+* public/downloads/vocabulary/tsv/english_to_mandarin.tsv (expanded: 35 → 100 entries)
+* content/vocabulary/metadata/index.json (entry_count updated to 100; date_updated and entry_count_history added)
+* LANGUAGE_VOCAB_PROGRESS.md (session 2026-06-14 appended)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary: Expanded English→Mandarin vocabulary export from 35 to 100 entries. Priority-1 target (100+ entries) now met for English→Mandarin — completing Priority-1 across all three major exports (Spanish, French, Mandarin). Added 65 HSK 1 entries across 10 categories: numbers (二/四–百), family nouns (爸爸/妈妈/儿子/女儿/人), food/drink (水/苹果/茶/米饭/水果), objects (书/电脑/电视/电影/桌子/椅子/钱), places/transport (学校/医院/商店/饭馆/飞机/出租车), occupations (医生/同学), time words (昨天/现在/上午/下午/中午/年/月/星期), grammar/function words (的/和/很/都/没有/可以/会/能), core verbs (认识/学习/写/做/坐/开/住/想/叫/工作), adjectives/phrases (热/冷/高兴/再见/请). All entries sourced from HSK 1 high-frequency Mandarin vocabulary. Zero duplicates; CSV and TSV validated identical (100 unique l2_word values confirmed programmatically).
+
+## 2026-06-12 (autonomous run — vocabulary export expansion: english_to_french → 100 entries)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_french.csv (expanded: 36 → 100 entries)
+* public/downloads/vocabulary/tsv/english_to_french.tsv (expanded: 36 → 100 entries)
+* content/vocabulary/metadata/index.json (entry_count updated to 100; date_updated and history added)
+* LANGUAGE_VOCAB_PROGRESS.md (session 2026-06-12 appended)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary: Expanded English→French vocabulary export from 36 to 100 entries. Priority-1 target (100+ entries) now met for English→French. Added 64 CEFR A1 entries across 11 categories: numbers, pronouns, colors, core verbs, time adverbs, food/drink, place nouns, object nouns, adjectives, greeting phrases, and family terms. All entries sourced from CEFR A1 high-frequency French vocabulary. Zero duplicates; CSV and TSV validated identical.
+
+## 2026-06-12 (autonomous run — isms dictionary enrichment: Batch E-02)
+
+Files changed:
+* public/isms/feminism.html (enriched: 3 dictionary definitions added)
+* public/isms/humanism.html (enriched: 3 dictionary definitions added)
+* public/isms/idealism.html (enriched: 3 dictionary definitions added)
+* public/isms/liberalism.html (enriched: 3 dictionary definitions added)
+* public/isms/nationalism.html (enriched: 3 dictionary definitions added)
+* ISMS_DICTIONARY_QUEUE.md (Batch E-02 moved to Done; E-03 marked next)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Enriched the 5 Batch E-02 isms pages with three dictionary definitions each. Sources used for all five terms: Merriam-Webster (primary), Oxford Advanced Learner's Dictionary (OED substitute — subscription required), Cambridge Dictionary. Placeholder paragraphs removed. Style preserved: OLED theme, no new colours, inline styles limited to secondary colour (#888) for grammar notes.
+
+Reason:
+Dictionary enrichment is the highest available task tier. Batch E-02 is the next pending batch in ISMS_DICTIONARY_QUEUE.md.
+
+Next recommended task:
+Dictionary enrichment — Batch E-03 (nihilism, realism, socialism, stoicism, surrealism).
+
+## 2026-06-12 (autonomous run — isms dictionary enrichment: Batch E-01)
+
+Files changed:
+* public/isms/absurdism.html (enriched: 3 dictionary definitions added)
+* public/isms/capitalism.html (enriched: 3 dictionary definitions added)
+* public/isms/communism.html (enriched: 3 dictionary definitions added)
+* public/isms/existentialism.html (enriched: 3 dictionary definitions added)
+* public/isms/fascism.html (enriched: 3 dictionary definitions added)
+* ISMS_DICTIONARY_QUEUE.md (Batch E-01 moved to Done; E-02 marked next)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Enriched the 5 highest-priority isms pages (Batch E-01) with three dictionary definitions each. Sources used: Merriam-Webster (primary for all), Oxford Advanced Learner's Dictionary (substitute for OED — subscription required — for all), Cambridge Dictionary (for capitalism, communism, existentialism, fascism). Cambridge has no full definition entry for absurdism; Collins English Dictionary used as the third source for that term. Each page now has an h2 "Dictionary Definitions" section with three subsections, each linking to the source dictionary. Placeholder paragraphs removed. Style preserved: OLED theme, no new colours, inline styles limited to secondary colour (#888) for grammar notes.
+
+Reason:
+Dictionary enrichment is the highest available task tier. Batch E-01 contained the five highest-traffic isms terms. ISMS_DICTIONARY_QUEUE.md was initialised last run, making this the first enrichment run.
+
+Next recommended task:
+Dictionary enrichment — Batch E-02 (feminism, humanism, idealism, liberalism, nationalism).
+
+## 2026-06-11 (autonomous run — vocabulary export: english_to_spanish expanded to 100 entries)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_spanish.csv (expanded: 68 → 100 entries)
+* public/downloads/vocabulary/tsv/english_to_spanish.tsv (expanded: 68 → 100 entries)
+* content/vocabulary/metadata/index.json (entry_count updated to 100, date_updated 2026-06-11)
+* LANGUAGE_VOCAB_PROGRESS.md (session entry appended)
+* CHANGELOG.md
+
+Summary:
+Appended 32 CEFR A1 English→Spanish entries to reach the Priority-1 target of 100+ entries. Categories added: numbers 6–10, subject pronouns, core verbs (saber/venir/vivir/necesitar/dar), time adverbs (hoy/ayer/después/antes), colour (amarillo), adjectives (caliente/fácil/difícil), household nouns (mesa/silla/puerta), place nouns (banco/restaurante), food/drink (leche/pan), family nouns (hijo/hija). All entries use seseo IPA consistent with the existing file. Zero duplicates. CSV and TSV verified identical. Priority-1 target for English→Spanish is now complete.
+
+Next recommended action: Expand english_to_french toward 100 entries (currently 36).
+
+## 2026-06-11 (autonomous run — language guide: Japanese for German speakers)
+
+Files changed:
+* public/japanese-from-german.html (new — full language guide, written in German)
+* public/japanese-srs-de.js (new — 112-card SRS deck, 日本語 front / Deutsch back)
+* public/language-guides.html (hub link added: German group, between Französisch and Persisch)
+* LANGUAGE_GUIDES_PROGRESS.md (entry appended for japanese-from-german)
+* CHANGELOG.md
+
+Summary:
+Created the Japanese-for-German-speakers guide per the next-recommended-guide entry in LANGUAGE_GUIDES_PROGRESS.md. The guide is written entirely in German and follows the structural standard of japanese-from-spanish.html. Key German-learner perspective highlights: (1) SOV advantage — German verb-final subordinate clauses (dass, weil, wenn, als) transfer directly to Japanese main clause word order, framed as the #1 structural advantage; (2) つ (tsu) = German z /ts/ — immediate phonetic advantage over all other learner groups (English, French, Spanish, etc.); (3) Japanese r is a flap [ɾ], NOT uvular /ʁ/ — German speakers must actively unlearn their r; (4) Japanese う /ɯ/ is unrounded (NOT German /u/); (5) Particles explained with German case analogies (を → Akkusativ, に → Dativ, の → Genitiv); (6) No grammatical gender in Japanese — relief from der/die/das; (7) Katakana German loanwords (アルバイト, テーマ, リュック, ゼミ, カルテ) as vocabulary head start. Resources: Japan Foundation Deutschland, JDZB Berlin, JLPT Germany, PONS DE-JA, Jisho, Genki, Tae Kim, WaniKani, Anki, NHK lessons, Comprehensible Japanese, iTalki. Cultural section covers Meiji-era Japan–Germany ties, German loanwords in Japanese, Japan as Germany's top Asian trading partner, OAG Tokyo community.
+
+Next recommended guide: Japanese for French speakers (`japanese-from-french`) — French (#3 source) is the next highest-priority source for Japanese (#4 target).
+
+## 2026-06-11 (autonomous run — isms infrastructure: ISMS_DICTIONARY_QUEUE.md initialised)
+
+Files changed:
+* ISMS_DICTIONARY_QUEUE.md (created — 30 enrichment batches, 150 unique terms in priority order covering all 300 isms pages)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+ISMS_DICTIONARY_QUEUE.md was empty/uninitialised. Created and populated it as a
+prerequisite infrastructure step before dictionary enrichment runs can begin. The file
+contains 30 batches of 5 terms each (E-01 through E-30), prioritised: highest-traffic
+isms first (Batch E-01: absurdism, capitalism, communism, existentialism, fascism),
+followed by major isms by conceptual importance, then alphabetically. Includes queue
+instructions, enrichment rules summary, a Done tracking section, and deduplication
+notes. No page HTML files were modified.
+
+Reason:
+Isms infrastructure is the highest-priority tier in the task-selection algorithm.
+ISMS_DICTIONARY_QUEUE.md must be populated before any enrichment run can execute
+correctly.
+
+Next recommended task:
+Dictionary enrichment — Batch E-01 (absurdism, capitalism, communism, existentialism,
+fascism): fetch definitions from Merriam-Webster, OED, Cambridge; update each page;
+mark Batch E-01 done in ISMS_DICTIONARY_QUEUE.md.
+
+## 2026-06-07 (autonomous run — vocabulary export expansion: english_to_spanish)
+
+Files changed:
+* public/downloads/vocabulary/csv/english_to_spanish.csv (expanded 36 → 68 entries)
+* public/downloads/vocabulary/tsv/english_to_spanish.tsv (expanded 36 → 68 entries)
+* content/vocabulary/metadata/index.json (entry_count updated, entry_count_history added)
+* LANGUAGE_VOCAB_PROGRESS.md (session entry appended)
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Per LANGUAGE_VOCAB_RULES.md / SKIP-vs-EXPAND guidance, expanded the existing
+english_to_spanish export rather than regenerating it. Appended 32 new rows (zero existing
+entries modified, removed, or duplicated): 3 entries newly extracted from the source guide's
+Practice Words table not previously captured (rojo, ciudad, lluvia — with IPA preserved
+verbatim from content/pronunciation-guides/generated/english-to-spanish.md), plus 29 curated
+high-frequency CEFR A1 core words/phrases (colors, numbers 4–5, family terms, common nouns,
+time words, adjectives, and core verbs ir/hacer/querer/poder/ver), all sourced per Decision
+001 (CEFR A1 frequency vocabulary). Matched the file's existing 10-column schema exactly
+(l2_word, l1_translation, ipa_pronunciation, part_of_speech, grammatical_gender,
+l2_example_sentence, l1_example_translation, cefr_level, tags, source) and its established
+source-label convention ("guide" for guide-extracted rows, "A1" for curated rows). A
+programmatic check confirmed 68 unique l2_word values (0 duplicates against the prior 36 or
+internally) and byte-identical data between the CSV and TSV. Total: 36 → 68 entries (closer
+to the 100-entry Priority-1 backlog target).
+
+## 2026-06-07 (autonomous run — Isms Batches 009–030 BULK COMPLETION, user override of run limits)
+
+Files changed:
+* public/isms/*.html — 199 new placeholder pages created; 21 pre-existing pages verified
+  (full list of new files: every term in ISMS_BACKLOG.md Batches 009–030 not already present
+  on disk — see ISMS_PROGRESS.md for the complete per-batch breakdown and the 21 pre-existing
+  names)
+* public/isms.html (navigation rebuilt — 306 entries, alphabetically sorted, deduplicated)
+* ISMS_BACKLOG.md (all 300 items across Batches 001–030 marked complete)
+* ISMS_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+The user explicitly instructed this run to disregard the AUTONOMOUS_RULES.md "one task per
+run" / ISMS_BACKLOG.md "5 pages per run" limits. Completed the entire remaining Isms
+page-creation backlog — Batches 009 through 030, 220 terms — in a single pass:
+
+- Generated 199 new placeholder pages programmatically from the standard -isms template
+  (verified character-for-character structure against the most recent reference page,
+  didacticism.html: DOCTYPE, meta charset/viewport, title "{Term} — Steven Legg", meta
+  description, back-link to ../isms.html, <h1>{Term}</h1>, the standard
+  "This page is a placeholder — content coming soon." paragraph, linktr.ee footer, script tag;
+  every file is exactly 27 lines).
+- Verified 21 pages that already existed on disk (and already had nav entries from an earlier
+  site iteration) conform to the same placeholder template: fascism, feminism, feudalism,
+  hedonism, idealism, imperialism, isolationism, modernism, nationalism, nihilism, optimism,
+  pessimism, realism, romanticism, skepticism, socialism, stoicism, surrealism, syndicalism,
+  totalitarianism, traditionalism.
+- Rebuilt public/isms.html's navigation programmatically rather than by hand: parsed all
+  existing <li> entries (106), merged in entries for all 220 batch terms (deduping by href),
+  sorted the combined 306-entry list alphabetically case-insensitively, and replaced the
+  <ul> contents in one shot. This avoids manual-insertion drift at this scale.
+- Filename/casing conventions followed the established pattern: proper-noun isms
+  (Fabianism, Gandhism, Hegelianism, Kantianism, Keynesianism, Lamarckism, Leninism,
+  Machiavellianism, Maoism, Marxism, Nazism, Protestantism, Stalinism, Taoism, Thatcherism,
+  Thomism, Trotskyism, Zionism) → lowercase filename + capitalized display text (matching
+  e.g. existing bolshevism.html → "Bolshevism"); hyphenated/compound terms → title-cased
+  with hyphens (neo-colonialism.html → "Neo-Colonialism", one-upmanship.html →
+  "One-Upmanship", "social constructionism" → social-constructionism.html →
+  "Social Constructionism").
+- Marked all remaining unchecked boxes in ISMS_BACKLOG.md (Batches 001–030, 300 terms total)
+  complete — Batches 001–008 were already verified done per ISMS_PROGRESS.md but their
+  checkboxes had never been ticked; this run brought ISMS_BACKLOG.md into sync with
+  ISMS_PROGRESS.md.
+
+Reason:
+Direct user instruction: "run again this time disregard one task per run rule and also run
+time or time limits." This overrides the project's self-imposed AUTONOMOUS_RULES.md /
+ISMS_BACKLOG.md run-size constraints for this session only — those are project-management
+conventions the user set up for unattended runs, and the user (their author) is entitled to
+suspend them. No content was fabricated: per ISMS_BACKLOG.md instructions, these are
+placeholder pages only ("Do NOT add dictionary definitions yet"), so no encyclopedic claims
+were made that could be wrong.
+
+Verification:
+* Every one of the 199 new files: exactly 27 lines, correct <title>, correct <h1>, contains
+  the standard placeholder marker — checked programmatically, 0 failures.
+* Nav: 306 total <li> entries, 306 unique hrefs (0 duplicates), 0 alphabetical-order
+  mismatches, 0 dangling links (every href resolves to a file on disk).
+* ISMS_BACKLOG.md: 300/300 items now checked, 0 remaining unchecked.
+
+Next recommended task:
+The Isms page-creation backlog (ISMS_BACKLOG.md) is now fully complete. Per the skill's
+priority order (infrastructure > page creation > dictionary enrichment), the next eligible
+Isms work is dictionary enrichment — but ISMS_DICTIONARY_QUEUE.md is currently empty, so a
+reasonable first step would be populating that queue (selecting which of the 300 pages to
+enrich first and in what order) before any enrichment writing begins. Outside of Isms work,
+all P1/P2 items remain blocked on source material (images, Aquaponics, PS2 article, journal
+entry — see BLOCKERS.md).
+
+## 2026-06-07 (autonomous run — Isms Batch 008 second half)
+
+Files changed:
+* public/isms/empiricism.html (new)
+* public/isms/environmentalism.html (pre-existing, verified)
+* public/isms/essentialism.html (new)
+* public/isms/evangelism.html (new)
+* public/isms/existentialism.html (pre-existing, verified)
+* public/isms.html (nav updated)
+* ISMS_BACKLOG.md
+* ISMS_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created placeholder pages for the Batch 008 second half: empiricism, essentialism, evangelism,
+using the standard -isms placeholder template. Verified environmentalism.html and
+existentialism.html as pre-existing and conformant — both already had nav entries and matching
+placeholder content. Nav links inserted/confirmed alphabetically in isms.html: Empiricism
+ahead of Environmentalism; Essentialism and Evangelism between Environmentalism and
+Existentialism (final order: Egoism → Empiricism → Environmentalism → Essentialism →
+Evangelism → Existentialism → Feminism → Feudalism...). Batch 008 is now 10/10 — COMPLETE.
+
+Reason:
+Isms page creation — continuing the next eligible unblocked task per the skill's priority order
+(Isms infrastructure > page creation > dictionary enrichment) and the prior run's recommendation.
+All P1/P2 image and personal-writing tasks remain blocked (see BLOCKERS.md). Within run limits
+(3 new pages + 2 verifications, 1 primary task — completing Batch 008).
+
+Verification:
+Confirmed each new page matches the canonical placeholder template structure (title, meta
+description, back-link, header, placeholder paragraph, footer, script tag). Confirmed exactly
+one nav <li> entry per term, in correct alphabetical position, with no duplicates or dangling
+links remaining for Batch 008.
+
+Next recommended task:
+Isms Batch 009 first half — expansionism, exceptionalism, expressionism, extremism, Fabianism.
+
+## 2026-06-07 (autonomous run — Isms Batch 008 first half)
+
+Files changed:
+* public/isms/digitalism.html (new)
+* public/isms/dualism.html (new)
+* public/isms/eclecticism.html (new)
+* public/isms/egalitarianism.html (new)
+* public/isms/egoism.html (pre-existing, verified)
+* public/isms.html (nav updated)
+* ISMS_BACKLOG.md
+* ISMS_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created placeholder pages for the Batch 008 first half: digitalism, dualism, eclecticism,
+egalitarianism, using the standard -isms placeholder template (modeled on didacticism.html).
+Verified egoism.html as pre-existing and conformant — its nav link already existed in isms.html
+but pointed to a missing file; the file is now present and the link is valid. Nav links inserted
+alphabetically in isms.html between Didacticism and the existing Egoism entry, in correct order:
+Digitalism → Dualism → Eclecticism → Egalitarianism → Egoism. Batch 008 is now 5/10 — IN PROGRESS.
+
+Reason:
+Isms page creation — next eligible unblocked task per PROJECT_STATUS recommendation and the
+skill's priority order (Isms infrastructure > page creation > dictionary enrichment). All P1/P2
+image and personal-writing tasks remain blocked (see BLOCKERS.md). Within run limits (5 pages,
+1 primary task).
+
+Verification:
+Confirmed each new page matches the canonical placeholder template structure (title, meta
+description, back-link, header, placeholder paragraph, footer, script tag) used by the most
+recent batch (didacticism.html). Confirmed exactly one nav <li> entry per term, inserted in
+correct alphabetical position, with no duplicate or dangling links remaining for this batch.
+
+Next recommended task:
+Isms Batch 008 second half — empiricism, environmentalism (verify pre-existing), essentialism,
+evangelism, existentialism (verify pre-existing).
+
+## 2026-06-05 (autonomous run — language guides: Japanese for Spanish speakers)
+
+Files changed:
+* public/japanese-from-spanish.html (new)
+* public/japanese-srs-es.js (new)
+* public/language-guides.html (hub link added to Spanish group, between Italiano and Mandarín, as data-l2="japanese" = Japonés, J > I and J < M)
+* LANGUAGE_GUIDES_PROGRESS.md
+* CHANGELOG.md
+
+Summary:
+Created one new language guide — Japanese for Spanish speakers (japanese-from-spanish) — written
+entirely in Spanish. Modelled on french-from-spanish.html for Spanish-language structure and
+spanish-from-japanese.html for Japanese content. 114-card SRS deck (日本語 front / Español back).
+All required sections: Tarjetas (SRS), intro with comparison table, Vocabulario base Top 112,
+Sistema de escritura (hiragana table, katakana loanwords, kanji on/kun table), Gramática esencial
+(SOV, 10-particle table, masu-form conjugation, い/な adjectives, です, あります/います,
+classifiers, 26-row example-sentence table), Pronunciación, 9 common errors, 11 resources,
+Cultura y contexto, Guías relacionadas.
+
+Key grammar focus: SOV word order (verb always at end — #1 structural challenge); particle
+system (は/が/を/に/で/の/も/と/から/まで) replacing Spanish prepositions + word order;
+は vs. が distinction with practical provisional rule; gustar-structure inversion explicitly
+explained; あります vs. います (inanimates vs. living beings); no gender, no articles;
+verb conjugation by tense/mood only (not by person); い vs. な adjective conjugation.
+
+Key pronunciation focus: Five vowels identical to Spanish — #1 advantage for all Hispanic
+learners; Spanish intervocalic r = Japanese ら行 direct transfer; no tonal system; long vowels
+(おばさん vs. おばあさん) flagged as meaning-changing; っ geminate; つ (tsu) via Italian analogy.
+
+Resources (11): NHK World Japan Easy Japanese ES (nhk.or.jp/lesson/es), JaponesTotal,
+Instituto Cervantes Tokio, Genki I&II, Tae Kim's Guide to Japanese, WaniKani, Anki,
+JLPT, JapanesePod101, Comprehensible Japanese YouTube, iTalki.
+
+Next recommended guide:
+Japanese for German speakers (japanese-from-german) — Japanese (#4 target), German (#2 source).
+Written in German. Focus: writing systems; SOV (German verb-final subordinates as bridge);
+particles mapped to German cases; no gender/articles (relief); Japan Foundation Germany resources.
+
+## 2026-06-05 (autonomous run — Isms Batch 007 second half)
+
+Files changed:
+* public/isms/deism.html (new)
+* public/isms/determinism.html (new)
+* public/isms/developmentalism.html (new)
+* public/isms/dialecticism.html (new)
+* public/isms/didacticism.html (new)
+* public/isms.html (nav updated)
+* ISMS_PROGRESS.md
+* PROJECT_STATUS.md
+* CHANGELOG.md
+
+Summary:
+Created placeholder pages for the Batch 007 second half: deism, determinism, developmentalism,
+dialecticism, didacticism, using the standard -isms placeholder template. Nav links inserted
+alphabetically in isms.html between Darwinism and Egoism. Batch 007 is now 10/10 — COMPLETE.
+
+Reason:
+Isms page creation — next eligible unblocked task per PROJECT_STATUS recommendation and the
+skill's priority order. All P1/P2 image and personal-writing tasks remain blocked. Within run
+limits (5 pages, 1 primary task).
+
+Next recommended task:
+Isms Batch 008 first half — digitalism, dualism, eclecticism, egalitarianism, egoism.
+
 ## 2026-06-05 (autonomous run — Isms Batch 007 first half)
 
 Files changed:

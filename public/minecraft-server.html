@@ -31,8 +31,8 @@
       margin-top: 0.35rem;
     }
 
-    /* ── IP copy box — the main event ──────────── */
-    .mc-ip-box {
+    /* ── Server access — address stays server-side until approved ── */
+    .mc-access-box {
       margin-top: 2rem;
       padding: 1.5rem;
       background: #0c0c0c;
@@ -41,7 +41,7 @@
       box-shadow: 0 0 24px rgba(90, 170, 110, 0.08);
     }
 
-    .mc-ip-label {
+    .mc-access-label {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -49,16 +49,73 @@
       margin-bottom: 0.6rem;
     }
 
+    .mc-access-form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .mc-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .mc-field label {
+      color: #eaeaea;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .mc-field small {
+      color: #a6a6a6;
+      line-height: 1.45;
+    }
+
+    .mc-text-input {
+      width: 100%;
+      box-sizing: border-box;
+      font: inherit;
+      color: #eaeaea;
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 6px;
+      padding: 0.7rem 0.9rem;
+    }
+
+    .mc-text-input:focus { outline: 1px solid #5aaa6e; }
+
+    .mc-privacy-check {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      color: #d4d4d4;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .mc-privacy-check input { margin-top: 0.28rem; }
+
+    .mc-access-result {
+      display: none;
+      padding: 1rem;
+      background: #101c12;
+      border: 1px solid #2b4a2f;
+      border-radius: 6px;
+    }
+
+    .mc-access-result.visible { display: block; }
+
     .mc-ip-row {
       display: flex;
       gap: 0.6rem;
       flex-wrap: wrap;
       align-items: stretch;
+      margin-top: 0.75rem;
     }
 
     .mc-ip-input {
       flex: 1;
-      min-width: 240px;
+      min-width: 220px;
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       font-size: 1.05rem;
       color: #eaeaea;
@@ -87,8 +144,25 @@
     .mc-copy-btn:hover { background: #6fc283; transform: translateY(-1px); }
     .mc-copy-btn.copied { background: #d4d4d4; }
 
+    .mc-access-message {
+      min-height: 1.4rem;
+      margin: 0;
+      color: #d4d4d4;
+    }
+
+    .mc-access-message.error { color: #ee8787; }
+    .mc-access-message.success { color: #81d490; }
+
+    .mc-honeypot {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
     .mc-version-note {
-      margin-top: 0.85rem;
+      margin: 0.85rem 0 0;
       font-size: 0.92rem;
       color: #a6a6a6;
     }
@@ -244,7 +318,7 @@
       <div>
         <h1>My Minecraft Server</h1>
         <p class="mc-motd">MEINKRAFT | Survival PvP | Red Blue Green Teams</p>
-        <span class="mc-status" id="mc-status"><span class="mc-status-dot"></span>Online</span>
+        <span class="mc-status" id="mc-status"><span class="mc-status-dot"></span>Checking status…</span>
       </div>
     </div>
   </header>
@@ -255,20 +329,58 @@
     base, and fight for your color. Vanilla at heart, spiced up with light server-side plugins:
     duels, jobs, quests, custom enchantments, blood moons, and proximity voice chat.</p>
 
-    <!-- ── THE MAIN EVENT: server IP ── -->
-    <section class="mc-ip-box">
-      <div class="mc-ip-label">Server Address — click to copy</div>
-      <div class="mc-ip-row">
-        <input class="mc-ip-input" id="mc-ip" type="text" value="sv6a2af09be2770.apexmc.co:1108" readonly>
-        <button class="mc-copy-btn" id="mc-copy-btn" type="button">Copy IP</button>
+    <!-- ── Human-verified server access ── -->
+    <section class="mc-access-box" aria-labelledby="mc-access-heading">
+      <div class="mc-access-label">Private server access</div>
+      <h2 id="mc-access-heading">Get whitelisted and reveal the server address</h2>
+      <p>Complete the human check, enter your email, and give us your Java Edition Minecraft username. We’ll try to add that username to the server whitelist before showing the address.</p>
+
+      <form class="mc-access-form" id="mc-access-form" novalidate>
+        <div class="mc-field">
+          <label for="mc-email">Email address</label>
+          <input class="mc-text-input" id="mc-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <small>Your email is only used to associate you with the server whitelist and to email you when the server goes down for maintenance or comes back up. It does not subscribe you to the site newsletter and is not shared with advertisers.</small>
+        </div>
+
+        <div class="mc-field">
+          <label for="mc-username">Minecraft username</label>
+          <input class="mc-text-input" id="mc-username" name="minecraftUsername" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" minlength="3" maxlength="16" pattern="[A-Za-z0-9_]{3,16}" required>
+          <small>Java Edition only. Use 3–16 letters, numbers, or underscores. We’ll use this to attempt an automatic whitelist entry.</small>
+        </div>
+
+        <div class="mc-field">
+          <label>Human verification</label>
+          <div id="mc-turnstile" aria-live="polite">Loading verification…</div>
+        </div>
+
+        <label class="mc-privacy-check">
+          <input id="mc-privacy" type="checkbox" required>
+          <span>I understand and agree to this limited use of my email for server access and maintenance-status messages.</span>
+        </label>
+
+        <div class="mc-honeypot" aria-hidden="true">
+          <label for="mc-website">Leave this field empty</label>
+          <input id="mc-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="mc-copy-btn" id="mc-submit-btn" type="submit" disabled>Verify and reveal address</button>
+        <p class="mc-access-message" id="mc-access-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="mc-access-result" id="mc-access-result" aria-live="polite">
+        <strong>Server address</strong>
+        <div class="mc-ip-row">
+          <input class="mc-ip-input" id="mc-ip" type="text" value="" readonly aria-label="Server address">
+          <button class="mc-copy-btn" id="mc-copy-btn" type="button">Copy address</button>
+        </div>
       </div>
+
       <p class="mc-version-note">You must be running <strong>Vanilla Minecraft 26.1 / 26.1.2</strong> (Java Edition).
-      No mods or client setup needed — just add the address under <em>Multiplayer → Add Server</em> and join.</p>
+      No mods or client setup needed — add the revealed address under <em>Multiplayer → Add Server</em> and join.</p>
     </section>
 
-    <p class="mc-notice"><strong>⚠️ The port recently changed.</strong> If you can't connect, don't reuse an old
-    saved address — re-copy the full IP <em>and</em> port from the box above and paste it into Minecraft
-    (<em>Multiplayer → Edit / Add Server</em>). Always grab the latest address from this page.</p>
+    <p class="mc-notice"><strong>⚠️ The port can change.</strong> If you can't connect, do not reuse an old
+    saved address — return here, complete the access check, and use the currently revealed full address and port.</p>
 
     <p class="mc-notice"><strong>🛠️ Server down?</strong> Check the status badge at the top of this page for live
     Online / Offline status. If it's down, it's almost certainly maintenance — expect it back within
@@ -380,10 +492,142 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
   <script>
     (function () {
+      var form = document.getElementById('mc-access-form');
+      var submit = document.getElementById('mc-submit-btn');
+      var message = document.getElementById('mc-access-message');
+      var result = document.getElementById('mc-access-result');
       var btn = document.getElementById('mc-copy-btn');
       var input = document.getElementById('mc-ip');
+      var status = document.getElementById('mc-status');
+      var captchaToken = '';
+      var captchaReady = false;
+
+      function setMessage(text, kind) {
+        message.textContent = text;
+        message.className = 'mc-access-message' + (kind ? ' ' + kind : '');
+      }
+
+      function setStatus(online) {
+        status.innerHTML = '<span class="mc-status-dot"></span>' + (online ? 'Online' : 'Offline / maintenance');
+        status.style.color = online ? '' : '#d4b24a';
+        status.style.borderColor = online ? '' : '#4a4325';
+        var dot = status.querySelector('.mc-status-dot');
+        if (!online && dot) {
+          dot.style.background = '#d4b24a';
+          dot.style.boxShadow = '0 0 8px rgba(212, 178, 74, 0.9)';
+        }
+      }
+
+      function loadStatus() {
+        fetch('/api/minecraft-status').then(function (response) {
+          return response.ok ? response.json() : null;
+        }).then(function (data) {
+          if (data && data.known) setStatus(Boolean(data.online));
+          else status.textContent = 'Status unavailable';
+        }).catch(function () {
+          status.textContent = 'Status unavailable';
+        });
+      }
+
+      function renderTurnstile(siteKey) {
+        var host = document.getElementById('mc-turnstile');
+        var tries = 0;
+        function render() {
+          if (window.turnstile && window.turnstile.render) {
+            host.textContent = '';
+            window.turnstile.render(host, {
+              sitekey: siteKey,
+              action: 'minecraft-access',
+              callback: function (token) {
+                captchaToken = token;
+                captchaReady = true;
+                submit.disabled = false;
+              },
+              'expired-callback': function () {
+                captchaToken = '';
+                captchaReady = false;
+                submit.disabled = true;
+              },
+              'error-callback': function () {
+                captchaToken = '';
+                captchaReady = false;
+                submit.disabled = true;
+                setMessage('Human verification could not load. Please refresh and try again.', 'error');
+              }
+            });
+            return;
+          }
+          tries++;
+          if (tries < 50) setTimeout(render, 100);
+          else host.textContent = 'Human verification could not load. Please refresh and try again.';
+        }
+        render();
+      }
+
+      fetch('/api/minecraft-access/config').then(function (response) {
+        return response.ok ? response.json() : null;
+      }).then(function (config) {
+        if (!config || !config.enabled || !config.turnstileSiteKey) {
+          document.getElementById('mc-turnstile').textContent = 'Server access requests are temporarily unavailable.';
+          setMessage('Server access requests are temporarily unavailable. Please try again later.', 'error');
+          return;
+        }
+        renderTurnstile(config.turnstileSiteKey);
+      }).catch(function () {
+        document.getElementById('mc-turnstile').textContent = 'Server access requests are temporarily unavailable.';
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!captchaReady || !captchaToken) {
+          setMessage('Please complete the human verification first.', 'error');
+          return;
+        }
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        submit.disabled = true;
+        setMessage('Adding your username to the whitelist…', '');
+        fetch('/api/minecraft-access', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: document.getElementById('mc-email').value,
+            minecraftUsername: document.getElementById('mc-username').value,
+            turnstileToken: captchaToken,
+            privacyAccepted: document.getElementById('mc-privacy').checked,
+            website: document.getElementById('mc-website').value
+          })
+        }).then(function (response) {
+          return response.json().then(function (data) {
+            return { ok: response.ok, data: data };
+          });
+        }).then(function (outcome) {
+          if (!outcome.ok || !outcome.data.serverAddress) {
+            setMessage(outcome.data.error || 'We could not process that request. Please try again.', 'error');
+            if (window.turnstile && window.turnstile.reset) window.turnstile.reset();
+            captchaToken = '';
+            captchaReady = false;
+            return;
+          }
+          input.value = outcome.data.serverAddress;
+          result.classList.add('visible');
+          setMessage(outcome.data.message || 'You are whitelisted. Your server address is ready below.', 'success');
+          form.querySelectorAll('input, button').forEach(function (element) { element.disabled = true; });
+        }).catch(function () {
+          setMessage('Network error. Please try again.', 'error');
+          if (window.turnstile && window.turnstile.reset) window.turnstile.reset();
+          captchaToken = '';
+          captchaReady = false;
+        }).finally(function () {
+          if (!result.classList.contains('visible') && captchaReady) submit.disabled = false;
+        });
+      });
 
       function flash(label) {
         var original = 'Copy IP';
@@ -423,6 +667,8 @@
         input.select();
         input.setSelectionRange(0, input.value.length);
       });
+
+      loadStatus();
     })();
   </script>
 </body>

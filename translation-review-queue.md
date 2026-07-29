@@ -1,4 +1,0 @@
-Page
-Language
-Issue
-Status

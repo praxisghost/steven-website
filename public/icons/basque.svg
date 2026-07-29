@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" role="img" aria-label="Ikurriña">
-  <rect width="36" height="24" fill="#D52B1E"/>
-  <g stroke="#009B48" stroke-width="4" fill="none">
-    <line x1="0" y1="0" x2="36" y2="24"/>
-    <line x1="36" y1="0" x2="0" y2="24"/>
-  </g>
-  <rect x="16" y="0" width="4" height="24" fill="#fff"/>
-  <rect x="0" y="10" width="36" height="4" fill="#fff"/>
-</svg>
