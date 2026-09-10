@@ -1,5 +1,78 @@
 # Changelog
 
+## v3.2.2 — Polish pass (unreleased)
+
+No change to rendered output, public routes, or the visual design. Every route
+returns the status and canonical URL it returned before.
+
+### Fixed
+
+- **Removed destructive DDL from server boot.** `initDB()` ran
+  `DROP TABLE IF EXISTS ... CASCADE` on `srs_progress`, `saved_guides`,
+  `pending_signups` and `users` on *every* boot — not once, but on every
+  restart, redeploy and scale event. Those four lines are gone. The tables
+  belong to the retired account system and are not referenced by any route.
+- **Moved schema creation out of the web process.** The five `CREATE TABLE IF
+  NOT EXISTS` statements now live in `scripts/migrate.ts`, run once per release
+  from Railway's pre-deploy command instead of once per instance at boot. The
+  migration runs in a transaction, refuses to start without `DATABASE_URL`, and
+  exits non-zero on failure so a bad migration fails the release rather than
+  shipping against no schema.
+- **`initDB()` replaced by `verifySchema()`** — a read-only check that every
+  expected table exists. Fails closed: if the migration has not run, `dbReady`
+  stays false and the database-backed endpoints answer 503 instead of throwing
+  `relation does not exist` at a visitor.
+- **Removed a duplicate `pool.on('error')` handler.** Two handlers were
+  registered, so every pool error was logged twice.
+
+### Added
+
+- `GET /healthz` — liveness probe. Returns 200 whenever the HTTP server is
+  serving, with database state in the body. Postgres is deliberately not a
+  pass/fail condition: the site, the blog and every static page serve without
+  it, so failing health on a database blip would take down a working site.
+- `railway.toml`: `preDeployCommand`, `healthcheckPath`, `healthcheckTimeout`.
+- `engines.node` in `package.json`, matching the `20` already in `.nvmrc`.
+- `.env.example`: `SITE_URL` and `SANITY_WRITE_TOKEN`, both of which the code
+  reads and neither of which was documented there. `SITE_URL` matters most —
+  unset, `sanity/client.ts` falls back to the production origin, so a staging
+  service would advertise production URLs in its canonicals, RSS and sitemap.
+- `.gitignore`: `.fuse_hidden*`, so the problem below cannot recur.
+
+### Moved
+
+Nothing was deleted. Seventeen files committed to `public/` in v2.0 and v2.5
+carried FUSE rename artifacts as filenames (`.fuse_hidden0000000700000001` and
+similar) — the result of a `git add .` on a mounted filesystem. They returned
+404 to the public (serve-static ignores dotfiles), so no URL changes by moving
+them. Fourteen are complete language guides and have been given their real
+names; three are superseded copies of `style.css`.
+
+| From | To | What it is |
+| --- | --- | --- |
+| `public/.fuse_hidden0000000700000001` | `_archive/language-guides/german-for-mandarin-speakers.html` | 德語（普通話母語者）— Steven Legg |
+| `public/.fuse_hidden0000000900000002` | `_archive/language-guides/german-for-vietnamese-speakers.html` | Tiếng Đức (Tiếng Việt) — Steven Legg |
+| `public/.fuse_hidden0000000b00000003` | `_archive/language-guides/mandarin-for-cantonese-speakers.html` | 普通話（廣東話母語者）— Steven Legg |
+| `public/.fuse_hidden0000000d00000004` | `_archive/language-guides/spanish-for-german-speakers.html` | Spanisch lernen (für Deutschsprachige) — Steven Legg |
+| `public/.fuse_hidden0000000f00000005` | `_archive/language-guides/spanish-for-mandarin-speakers.html` | 西班牙語（普通話母語者）— Steven Legg |
+| `public/.fuse_hidden0000001100000006` | `_archive/language-guides/turkish-for-mandarin-speakers.html` | 土耳其語（普通話母語者）— Steven Legg |
+| `public/.fuse_hidden0000001300000007` | `_archive/language-guides/turkish-for-spanish-speakers.html` | Turco (Español) — Steven Legg |
+| `public/.fuse_hidden0000001500000008` | `_archive/language-guides/german-for-turkish-speakers.html` | Almanca (Türkçe) — Steven Legg |
+| `public/.fuse_hidden0000001700000009` | `_archive/language-guides/turkish-for-german-speakers.html` | Türkisch (Deutsch) — Steven Legg |
+| `public/.fuse_hidden000000190000000a` | `_archive/language-guides/turkish-for-english-speakers.html` | Turkish (from English) — Steven Legg |
+| `public/.fuse_hidden0000001b0000000b` | `_archive/language-guides/german-for-persian-speakers.html` | آلمانی (فارسی‌زبانان) — Steven Legg |
+| `public/.fuse_hidden0000001d0000000c` | `_archive/language-guides/cantonese-for-persian-speakers.html` | یادگیری کانتونی برای فارسی‌زبانان — Steven Legg |
+| `public/.fuse_hidden0000001f0000000d` | `_archive/language-guides/turkish-for-persian-speakers.html` | یادگیری ترکی برای فارسی‌زبانان — Steven Legg |
+| `public/.fuse_hidden000000210000000e` | `_archive/language-guides/vietnamese-for-persian-speakers.html` | ویتنامی (فارسی‌زبانان) — Steven Legg |
+| `public/.fuse_hidden0000000900000001` | `_to_delete/style.superseded-d5e4e42d.css` | superseded copy of style.css |
+| `public/.fuse_hidden0000000a00000002` | `_to_delete/style.superseded-c204e760.css` | superseded copy of style.css |
+| `public/.fuse_hidden0000000b00000004` | `_to_delete/style.superseded-f1aad2c3.css` | superseded copy of style.css |
+| `MinecraftLogo.png` | `_to_delete/MinecraftLogo.png` | byte-identical duplicate of `public/minecraft-logo.png` |
+
+Restoring the fourteen guides to service would create fourteen new indexable
+URLs. That is a content decision, not polish, and was left alone.
+
+
 ## v3.0.0 — Blog redesign
 
 A deliberate narrowing: this is now a personal blog and nothing else.

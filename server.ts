@@ -82,11 +82,6 @@ pool.on('error', (err) => {
   console.error('[db] idle client error:', err instanceof Error ? err.message : err);
 });
 
-pool.on('error', (err) => {
-  // Pool-level errors (lost connection, etc.) should never crash the server.
-  console.error('Unexpected PG pool error:', err);
-});
-
 // ─────────────────────────────────────────────────────────────────────────────
 // SECURITY MIDDLEWARE
 // ─────────────────────────────────────────────────────────────────────────────
@@ -423,63 +418,63 @@ function requireDb(_req: Request, res: Response, next: NextFunction): void {
   next();
 }
 
-async function initDB(): Promise<void> {
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS page_views (
-      id         SERIAL PRIMARY KEY,
-      visited_at TIMESTAMP DEFAULT NOW()
-    );
-  `);
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS contact_messages (
-      id         SERIAL PRIMARY KEY,
-      name       TEXT NOT NULL,
-      email      TEXT NOT NULL,
-      message    TEXT NOT NULL,
-      sent_at    TIMESTAMP DEFAULT NOW()
-    );
-  `);
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS newsletter_subscribers (
-      id            SERIAL PRIMARY KEY,
-      email         TEXT NOT NULL UNIQUE,
-      subscribed_at TIMESTAMP DEFAULT NOW()
-    );
-  `);
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS minecraft_access_members (
-      minecraft_uuid     TEXT PRIMARY KEY,
-      minecraft_username TEXT NOT NULL UNIQUE,
-      email              TEXT NOT NULL,
-      created_at         TIMESTAMP DEFAULT NOW(),
-      updated_at         TIMESTAMP DEFAULT NOW()
-    );
-  `);
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS minecraft_server_status (
-      singleton  BOOLEAN PRIMARY KEY DEFAULT TRUE CHECK (singleton),
-      is_online  BOOLEAN NOT NULL,
-      checked_at TIMESTAMP DEFAULT NOW()
-    );
-  `);
+/**
+ * Tables the routes touch. Creating them is the migration's job
+ * (scripts/migrate.ts), run once per release from the pre-deploy command —
+ * never from here. A web process that issues DDL runs it once per instance and
+ * once per restart, which is exactly how a boot-time DROP reaches production
+ * more than once.
+ */
+const EXPECTED_TABLES = [
+  'page_views',
+  'contact_messages',
+  'newsletter_subscribers',
+  'minecraft_access_members',
+  'minecraft_server_status',
+] as const;
 
-  // ── Cleanup migration: remove the retired account system ──────────────────
-  // The account/auth feature (user accounts, email verification, server-side
-  // SRS progress, streaks, and saved guides) has been removed from the site.
-  // SRS now runs entirely client-side via localStorage, so these tables are
-  // no longer referenced by any route. Drop them if a previous deploy created
-  // them. Safe and idempotent (IF EXISTS); CASCADE clears dependent rows.
-  await pool.query(`DROP TABLE IF EXISTS srs_progress    CASCADE`);
-  await pool.query(`DROP TABLE IF EXISTS saved_guides    CASCADE`);
-  await pool.query(`DROP TABLE IF EXISTS pending_signups CASCADE`);
-  await pool.query(`DROP TABLE IF EXISTS users           CASCADE`);
-
-  console.log('DB tables ready.');
+/**
+ * Read-only readiness check: the connection works and every expected table is
+ * already there. Fails closed — if the migration has not run, dbReady stays
+ * false and the database-backed endpoints answer 503 rather than throwing
+ * "relation does not exist" at a visitor.
+ */
+async function verifySchema(): Promise<void> {
+  const { rows } = await pool.query<{ missing: string[] }>(
+    `SELECT coalesce(
+              array_agg(t.name) FILTER (WHERE to_regclass('public.' || t.name) IS NULL),
+              '{}'
+            ) AS missing
+       FROM unnest($1::text[]) AS t(name)`,
+    [[...EXPECTED_TABLES]],
+  );
+  const missing = rows[0]?.missing ?? [];
+  if (missing.length > 0) {
+    throw new Error(
+      `schema is not migrated \u2014 missing table(s): ${missing.join(', ')}. ` +
+      'Run `npm run migrate` (on Railway this is the pre-deploy command).',
+    );
+  }
+  console.log(`[db] schema verified \u2014 ${EXPECTED_TABLES.length} tables present.`);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ROUTES
 // ─────────────────────────────────────────────────────────────────────────────
+
+// ── Health check ────────────────────────────────────────────────────────────
+// The platform polls this to decide whether a release is live and whether to
+// keep routing traffic here. It returns 200 whenever the HTTP server is
+// serving. Postgres is deliberately not a pass/fail condition: the site, the
+// blog and every static page serve without it, so failing health on a database
+// blip would take down a working site. The db state is reported in the body.
+app.get('/healthz', (_req: Request, res: Response) => {
+  res.status(200).json({
+    status: 'ok',
+    db:     dbReady ? 'connected' : 'unavailable',
+    uptime: Math.round(process.uptime()),
+  });
+});
 
 // View counter (light rate limit — 60 inserts per IP per minute is plenty).
 app.post(
@@ -803,7 +798,7 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
  */
 async function connectDB(): Promise<void> {
   try {
-    await initDB();
+    await verifySchema();
     dbReady = true;
     console.log('[db] connected — all endpoints available.');
   } catch (err) {

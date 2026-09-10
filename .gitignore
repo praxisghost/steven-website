@@ -2,3 +2,10 @@ node_modules/
 .env
 .DS_Store
 dist/
+
+# FUSE rename artifacts. Seventeen of these were committed to public/ in v2.0
+# and v2.5 by a `git add .` on a mounted filesystem; see CHANGELOG v3.2.2.
+.fuse_hidden*
+
+# Staged for manual removal. Local only — never committed.
+_to_delete/
