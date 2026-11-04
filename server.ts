@@ -159,6 +159,7 @@ const PAGES: Record<string, string> = {
   '/about':    'about.html',
   '/projects': 'projects.html',
   '/contact':  'contact.html',
+  '/other':    'other.html',
 };
 for (const [route, file] of Object.entries(PAGES)) {
   app.get(route, (_req: Request, res: Response) => {

@@ -107,7 +107,7 @@ export function renderBody(body: PostDetail['body']): string {
 // CHROME
 // ─────────────────────────────────────────────────────────────────────────────
 
-type NavKey = 'blog' | 'about' | 'projects' | 'contact' | null;
+type NavKey = 'blog' | 'about' | 'projects' | 'contact' | 'other' | null;
 
 function header(active: NavKey): string {
   const item = (href: string, label: string, key: NavKey) =>
@@ -125,6 +125,7 @@ ${item('/', 'Blog', 'blog')}
 ${item('/about', 'About', 'about')}
 ${item('/projects', 'Projects', 'projects')}
 ${item('/contact', 'Contact', 'contact')}
+${item('/other', 'Other', 'other')}
         </ul>
       </nav>
     </div>
@@ -142,6 +143,7 @@ function footer(): string {
           <li><a href="/about">About</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><a href="/other">Other</a></li>
           <li><a href="${BLUESKY}" rel="me noopener noreferrer" target="_blank">Bluesky</a></li>
           <li><a href="${SUBSTACK}" rel="me noopener noreferrer" target="_blank">Substack</a></li>
           <li><a href="/feed.xml">RSS</a></li>
