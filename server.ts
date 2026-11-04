@@ -104,7 +104,7 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
       // added so the language-switcher dropdown can inject the translation
       // widget on demand. The script is only loaded when the user explicitly
       // selects a translated language — default English visits are unaffected.
-      "script-src 'self' https://translate.google.com https://translate.googleapis.com https://challenges.cloudflare.com",
+      "script-src 'self' https://translate.google.com https://translate.googleapis.com https://challenges.cloudflare.com 'sha256-mKepsaykMZwnersVAuBXdngSTqE2oGK7V7C6bfFsD3A='",
       // 'unsafe-inline' kept for the small page-scoped <style> block in
       // misc.html (the frog-slideshow styles). Same-origin otherwise.
       "style-src 'self' 'unsafe-inline'",

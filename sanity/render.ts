@@ -269,6 +269,7 @@ export function shell(o: ShellOptions): string {
   <meta property="og:type" content="${esc(o.ogType ?? 'website')}">${ogDesc}${og}
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" type="application/rss+xml" title="${SITE_NAME}" href="/feed.xml">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css?v=3.2.1">${o.extraHead ?? ''}
 </head>
 <body>
