@@ -9,3 +9,6 @@ dist/
 
 # Staged for manual removal. Local only — never committed.
 _to_delete/
+
+# The published timeline copy needs its dist/ folder (generic dist/ rule above).
+!public/timeline/dist/
