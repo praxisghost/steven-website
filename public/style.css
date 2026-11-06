@@ -281,6 +281,11 @@ a.chip:hover { background: var(--accent); color: #fff; }
 .bio__text { font-size: .94rem; color: var(--ink-soft); margin: 0 0 1rem; line-height: 1.6; }
 
 .newsletter__pitch { font-size: .94rem; color: var(--ink-soft); margin: 0 0 1rem; }
+.side-projects__name { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; margin: 0 0 .35rem; }
+.side-projects__text { font-size: .94rem; color: var(--ink-soft); margin: 0 0 .75rem; line-height: 1.55; }
+.side-projects__link { font-family: var(--sans); font-size: .86rem; font-weight: 600; margin: 0 0 .9rem; color: var(--ink-faint); }
+.side-projects__link a { color: var(--accent); }
+.side-projects__more { font-family: var(--sans); font-size: .82rem; margin: 0; padding-top: .7rem; border-top: 1px solid var(--rule); }
 .field { display: grid; gap: .6rem; }
 .field label {
   font-family: var(--sans); font-size: .78rem; font-weight: 600;

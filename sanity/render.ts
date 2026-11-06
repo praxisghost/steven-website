@@ -182,6 +182,22 @@ function bioCard(): string {
       </section>`;
 }
 
+/**
+ * Side projects that live on their own sites. The URL is not baked in here:
+ * the slot carries data-site-link and public/site-links.js fills it from
+ * public/links.config.js, the same single source /other uses. Until a project
+ * has a public address, readers (and no-JS readers) see "Coming soon".
+ */
+function projectsCard(): string {
+  return `      <section class="card side-projects" aria-labelledby="projects-title">
+        <h2 class="card__title" id="projects-title">Side projects</h2>
+        <p class="side-projects__name">World History Timeline</p>
+        <p class="side-projects__text">An interactive, source-checked timeline of world history, from the first civilizations to today.</p>
+        <p class="side-projects__link" data-site-link="timeline" data-site-link-text="Open the timeline">Coming soon — no public address yet.</p>
+        <p class="side-projects__more"><a href="/other">More side projects</a></p>
+      </section>`;
+}
+
 function recentCard(posts: PostSummary[], excludeSlug?: string): string {
   const items = posts
     .filter((p) => p.slug !== excludeSlug)
@@ -231,6 +247,7 @@ export interface SidebarData {
 function sidebar(data: SidebarData): string {
   return `    <aside class="sidebar">
 ${bioCard()}
+${projectsCard()}
 ${newsletterCard()}
 ${recentCard(data.recent, data.excludeSlug)}
 ${categoriesCard(data.categories)}
@@ -280,6 +297,8 @@ ${o.bodyHtml}
 
 ${footer()}
   <script src="/script.js"></script>
+  <script src="/links.config.js"></script>
+  <script src="/site-links.js"></script>
 </body>
 </html>
 `;
