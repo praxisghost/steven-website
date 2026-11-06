@@ -11,7 +11,10 @@
     "typecheck": "tsc --noEmit",
     "migrate": "tsx scripts/migrate.ts",
     "import:legacy": "tsx scripts/import-legacy-posts.ts",
-    "newsletter": "tsx send-newsletter.ts"
+    "newsletter": "tsx send-newsletter.ts",
+    "write": "sh scripts/write.sh",
+    "studio": "sh scripts/write.sh",
+    "studio:deploy": "sh scripts/write.sh deploy"
   },
   "dependencies": {
     "@portabletext/to-html": "^5.0.2",

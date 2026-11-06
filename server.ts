@@ -105,8 +105,8 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
       // widget on demand. The script is only loaded when the user explicitly
       // selects a translated language — default English visits are unaffected.
       "script-src 'self' https://translate.google.com https://translate.googleapis.com https://challenges.cloudflare.com",
-      // 'unsafe-inline' kept for the small page-scoped <style> block in
-      // misc.html (the frog-slideshow styles). Same-origin otherwise.
+      // 'unsafe-inline' kept for the page-scoped <style> blocks and style=""
+      // attributes in the static pages. Same-origin otherwise.
       "style-src 'self' 'unsafe-inline'",
       // data: kept for inline SVG icons on the About page.
       // translate.googleapis.com + gstatic.com for the translate widget's assets.
@@ -134,7 +134,52 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
 });
 
 // Cap JSON body size — protects against memory-exhaustion attacks.
-app.use(express.json({ limit: '32kb' }));
+// The Sanity revalidate webhook is exempt: it never reads the body, and Sanity
+// sends the whole post document by default, which can exceed 32 KB and would
+// otherwise be rejected before the cache is cleared.
+const jsonParser = express.json({ limit: '32kb' });
+app.use((req: Request, res: Response, next: NextFunction) => {
+  if (req.path === '/api/blog/revalidate') return next();
+  jsonParser(req, res, next);
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LEGACY URL REDIRECTS
+// ─────────────────────────────────────────────────────────────────────────────
+// Posts that used to be hand-written HTML now live in Sanity under new slugs
+// (see scripts/import-legacy-posts.ts). Permanently redirect the old addresses
+// so bookmarks, search results and inbound links keep working.
+const LEGACY_REDIRECTS: Record<string, string> = {
+  '/blog/american-education-what-we-owe.html':        '/blog/american-education-what-we-are-owed',
+  '/blog/american-education-what-we-owe':             '/blog/american-education-what-we-are-owed',
+  '/blog/divide-and-the-road-ahead.html':             '/blog/the-divide-and-the-road-ahead',
+  '/blog/divide-and-the-road-ahead':                  '/blog/the-divide-and-the-road-ahead',
+  '/blog/june-1st-2026.html':                         '/blog/june-1st-2026',
+  '/blog/may-2026-update.html':                       '/blog/may-2026-update',
+  '/technology/foldable-phones.html':                 '/blog/why-i-love-foldable-phones',
+  '/technology/smartphone-design.html':               '/blog/what-i-miss-from-2014-smartphones',
+  '/technology/return-to-linux.html':                 '/blog/my-recent-return-to-linux',
+  '/technology/macos.html':                           '/blog/macos',
+  '/technology/windows.html':                         '/blog/windows-11-guide',
+  '/technology/linux/fedora-kde-experience.html':     '/blog/fedora-kde-my-experience',
+  '/technology/linux/fedora-kde-guide.html':          '/blog/fedora-kde-guide',
+  '/technology/linux/arch.html':                      '/blog/arch-linux',
+  '/technology/linux/mint.html':                      '/blog/linux-mint',
+  '/technology/software-tutorials/audacity.html':     '/blog/audacity-tutorial',
+  '/technology/software-tutorials/gimp.html':         '/blog/gimp-tutorial',
+  '/technology/software-tutorials/kdenlive.html':     '/blog/kdenlive-tutorial',
+  '/technology/software-tutorials/darktable.html':    '/blog/darktable-tutorial',
+  '/technology/software-tutorials/obsidian.html':     '/blog/obsidian-tutorial',
+  '/technology/software-tutorials/notion.html':       '/blog/notion-tutorial',
+  '/book-reviews/midnight-library-matt-haig.html':    '/blog/the-midnight-library-matt-haig',
+  '/retro-gaming/playstation-2.html':                 '/blog/playstation-2',
+};
+app.use((req: Request, res: Response, next: NextFunction) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+  const target = LEGACY_REDIRECTS[req.path];
+  if (target) return res.redirect(301, target);
+  next();
+});
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BLOG (Sanity-backed)
@@ -191,9 +236,9 @@ const buckets = new Map<string, Bucket>();
 
 function rateLimit(opts: { windowMs: number; max: number; key?: (r: Request) => string }) {
   const keyFn = opts.key ?? ((req: Request) =>
-    // Prefer the first proxy-forwarded IP (Railway sets this).
-    (req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0]?.trim()
-    || req.ip
+    // req.ip already honours `trust proxy` (one hop: Railway's edge). The raw
+    // first X-Forwarded-For entry is client-supplied and trivially spoofable.
+    req.ip
     || 'unknown'
   );
 
@@ -254,9 +299,8 @@ type WhitelistEntry = {
 };
 
 function clientIp(req: Request): string {
-  return (req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0]?.trim()
-    || req.ip
-    || '';
+  // See rateLimit(): req.ip is the proxy-verified address.
+  return req.ip || '';
 }
 
 function minecraftAccessConfigured(): boolean {
@@ -783,7 +827,19 @@ app.use((_req: Request, res: Response) => {
 
 // Final error handler — keep stack traces out of responses.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+app.use((err: Error & { status?: number; statusCode?: number; expose?: boolean }, req: Request, res: Response, _next: NextFunction) => {
+  // Client errors raised by Express/body-parser (malformed JSON, oversized
+  // body, bad percent-encoding) carry a 4xx status — pass it through instead
+  // of reporting them as server faults.
+  const status = err.status ?? err.statusCode ?? 500;
+  if (status >= 400 && status < 500) {
+    if (!req.path.startsWith('/api') && status === 400) {
+      res.status(400).type('html').send(renderNotFound());
+      return;
+    }
+    res.status(status).json({ error: status === 413 ? 'Request too large' : 'Bad request' });
+    return;
+  }
   console.error('Unhandled error:', err);
   res.status(500).json({ error: 'Server error' });
 });

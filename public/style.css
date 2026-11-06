@@ -112,6 +112,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; }
   letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-top: .2rem;
 }
 .site-nav ul { list-style: none; display: flex; gap: clamp(.9rem, 2.5vw, 2rem); margin: 0; padding: 0; }
+/* Very narrow phones (≤360px): let the nav wrap instead of pushing the page sideways. */
+@media (max-width: 380px) { .site-nav ul { flex-wrap: wrap; justify-content: flex-end; row-gap: .45rem; } }
 .site-nav a {
   font-family: var(--sans); font-size: .78rem; font-weight: 600;
   letter-spacing: .08em; text-transform: uppercase;
@@ -130,7 +132,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; }
   gap: var(--gap); align-items: start;
 }
 .shell--narrow { max-width: 760px; }
-@media (max-width: 900px) { .shell--with-sidebar { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .shell--with-sidebar { grid-template-columns: minmax(0, 1fr); } }
 
 .page-head { margin-bottom: 2.5rem; }
 .page-head h1 { font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 .5rem; }
@@ -212,7 +214,7 @@ a.chip:hover { background: var(--accent); color: #fff; }
 }
 
 /* Long-form prose — everything Portable Text emits lands here */
-.prose { max-width: var(--measure); }
+.prose { max-width: var(--measure); overflow-wrap: break-word; } /* long URLs/commands wrap instead of overflowing on phones */
 .prose > * + * { margin-top: 1.4em; }
 .prose p { margin: 0; }
 .prose h2 { font-size: 1.65rem; line-height: 1.25; letter-spacing: -.015em; margin: 2.6rem 0 .65rem; }

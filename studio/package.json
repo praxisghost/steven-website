@@ -1,0 +1,23 @@
+{
+  "name": "steven-legg-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio for steven-legg.com — where blog posts are written.",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.18.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

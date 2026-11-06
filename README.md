@@ -6,12 +6,12 @@ or a phone without touching Git.
 
 ```
 this repo                 the site (Express + TypeScript)
-studio-steven-legg.com    the Sanity Studio — a SEPARATE project, not in this
-                          repo and not required to run or deploy the site
+studio/                   the Sanity Studio (own package.json; not part of the
+                          site build and not required to run or deploy it)
 ```
 
-The Studio is where posts are written. It is deployed to Sanity's own hosting,
-so publishing needs nothing checked out locally. See
+The Studio is where posts are written: run it locally with `npm run write`, or
+deploy it to Sanity's own hosting with `npm run studio:deploy`. See
 [`sanity/README.md`](sanity/README.md) for where it lives and how to run it.
 
 ## Running it
@@ -25,9 +25,25 @@ Postgres is optional in development. Without it the site still serves — only t
 contact form, newsletter, and view counter switch off. To enable them locally
 run `createdb $USER`, or set `DATABASE_URL` in `.env`.
 
-To write posts you do not need this repo at all — use the deployed Studio. To
-run the Studio locally instead, check it out separately and see
-[`sanity/README.md`](sanity/README.md).
+## Writing a post (quick start)
+
+```bash
+cd ~/Dev4/steven-website
+npm run write        # opens the Studio at http://localhost:3333
+```
+
+1. Log in with your Sanity account (first time only).
+2. **Post → +** (pencil icon). Fill in **Title**, click **Generate** next to
+   **Slug**, write the **Body**, add an **Excerpt** and optional **Main image**
+   (with alt text). Set **Categories** / **Tags** under **Details**.
+3. **Published at** defaults to now; set a future time to schedule.
+4. Click **Publish**. The post is live at `https://www.steven-legg.com/blog/<slug>`
+   within 60 seconds (instantly if the revalidate webhook is set up).
+
+No commit or deploy is needed to publish — posts live in Sanity, not Git. The
+Studio source is in `studio/` (needs Node 22.12+; `npm run write` switches to
+it via fnm automatically). `npm run studio:deploy` hosts it at
+`<name>.sanity.studio` so you can post from any device.
 
 The database schema is **not** created at boot. Create it once with:
 

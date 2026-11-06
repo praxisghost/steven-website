@@ -155,10 +155,14 @@ blogRouter.get('/category/:slug', async (req: Request, res: Response) => {
 // ── Tag archive ──────────────────────────────────────────────────────────────
 blogRouter.get('/tag/:tag', async (req: Request, res: Response) => {
   const raw = req.params.tag;
-  const tag = typeof raw === 'string' ? decodeURIComponent(raw) : '';
+  // Express has already percent-decoded the param. Decoding a second time
+  // threw a URIError on input like %25E0 and, inside this async handler,
+  // crashed the whole process via an unhandled rejection.
+  const tag = typeof raw === 'string' ? raw : '';
   if (!TAG_RE.test(tag)) { sendHtml(res, renderNotFound(), 404); return; }
 
-  const key = `tag:${tag.toLowerCase()}`;
+  // Exact-case key: the GROQ `$tag in tags` match is case-sensitive.
+  const key = `tag:${tag}`;
   const cached = getCached(key);
   if (cached) { sendHtml(res, cached); return; }
 

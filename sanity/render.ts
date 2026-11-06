@@ -9,7 +9,7 @@
  */
 
 import {toHTML, type PortableTextHtmlComponents} from '@portabletext/to-html';
-import {imageUrl} from './client';
+import {imageUrl, SITE_URL} from './client';
 import type {
   AdjacentPost,
   CategoryWithCount,
@@ -252,7 +252,9 @@ interface ShellOptions {
 
 export function shell(o: ShellOptions): string {
   const meta = o.description ? `\n  <meta name="description" content="${esc(o.description)}">` : '';
-  const canonical = o.canonical ? `\n  <link rel="canonical" href="${esc(o.canonical)}">` : '';
+  // Canonical URLs must be absolute; relative ones are only a hint to crawlers.
+  const canonicalUrl = o.canonical ? (o.canonical.startsWith('/') ? SITE_URL + o.canonical : o.canonical) : null;
+  const canonical = canonicalUrl ? `\n  <link rel="canonical" href="${esc(canonicalUrl)}">` : '';
   const og = o.ogImage ? `\n  <meta property="og:image" content="${esc(o.ogImage)}">` : '';
   const ogDesc = o.description ? `\n  <meta property="og:description" content="${esc(o.description)}">` : '';
 

@@ -3,7 +3,9 @@
 The blog is now driven by **Sanity**. Write a post in the Studio, hit Publish, and
 it appears on the site — no GitHub push, no redeploy.
 
-- **Studio:** `../studio-steven-legg.com` (standalone, sibling folder)
+- **Studio:** `studio/` in this repo — start it with `npm run write`. (The
+  original standalone `../studio-steven-legg.com` project is no longer on disk;
+  `studio/` was rebuilt from the live dataset's document shapes.)
 - **Project:** `mo87nuz0` · **Dataset:** `production` (public — reads need no token)
 
 ## Files
@@ -60,20 +62,16 @@ Run these **on your Mac** (the sandbox can't — it isn't logged in to Sanity, a
 `node_modules` here is built for macOS):
 
 ```bash
-# 1. Install the new dependencies
-cd ~/Desktop/Web-Dev/website
+# 1. Install the site's dependencies
+cd ~/Dev4/steven-website
 npm install
 
-# 2. Log in and push the schema to the Content Lake
-cd ../studio-steven-legg.com
-npx sanity login
-npx sanity schemas deploy
+# 2. Start the Studio and write a post (installs studio/ deps on first run,
+#    then opens http://localhost:3333 — log in with your Sanity account)
+npm run write
 
-# 3. Start the Studio and write a post
-npm run dev            # http://localhost:3333
-
-# 4. Start the site in another terminal
-cd ../website && npm run dev   # http://localhost:3000/blog
+# 3. Optional: preview the site in another terminal
+npm run dev                    # http://localhost:3000
 ```
 
 ## Publishing instantly (optional but recommended)
@@ -83,7 +81,9 @@ Posts appear within 60 seconds by default. To make it instant:
 1. Pick a long random string and set `SANITY_REVALIDATE_SECRET` to it in
    Railway's variables (and your local `.env`).
 2. `npx sanity manage` → **API → Webhooks → Create webhook**
-   - **URL:** `https://steven-legg.com/api/blog/revalidate`
+   - **URL:** `https://www.steven-legg.com/api/blog/revalidate` — the `www`
+     host. The bare `steven-legg.com` is a redirect on another host and does
+     not accept POSTs.
    - **Trigger on:** Create, Update, Delete
    - **Filter:** `_type == "post"`
    - **HTTP method:** POST
@@ -92,9 +92,11 @@ Posts appear within 60 seconds by default. To make it instant:
 ## Deploying the Studio
 
 ```bash
-cd ../studio-steven-legg.com
-npx sanity deploy      # hosts it at <name>.sanity.studio
+npm run studio:deploy  # hosts studio/ at <name>.sanity.studio
 ```
+
+If a Studio was deployed before, `npx sanity manage` → your project → **Studios**
+shows its hostname; reuse it to replace that deployment.
 
 That gives you a URL you can open from any machine — including your phone — to
 write posts without running anything locally.

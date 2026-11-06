@@ -1,5 +1,40 @@
 # Changelog
 
+## Unreleased — October 2026 audit
+
+No change to the visual design or to any post or page content.
+
+### Fixed
+
+- **One request could crash the server.** `/tag/:tag` decoded the already
+  decoded param a second time; input such as `/tag/%25E0%25A4%25A` threw a
+  `URIError` inside an async handler and killed the process (unhandled
+  rejection). Repeated, this exhausts Railway's 10-restart budget.
+- **Minecraft page script never ran.** Its inline `<script>` was blocked by the
+  site's own CSP (`script-src 'self'`). Moved to `public/minecraft-access.js`.
+- **Rate limits were bypassable** by sending a fake `X-Forwarded-For` header.
+  The limiter and Turnstile now use `req.ip`, which honours `trust proxy`.
+- **Client errors reported as 500s.** Malformed JSON, oversized bodies and bad
+  percent-encoding now return 400/413 instead of "Server error".
+- **Revalidate webhook rejected long posts.** Sanity sends the full document;
+  bodies over 32 KB were refused before the cache was cleared. The webhook
+  route now skips JSON parsing (it never reads the body).
+- **Old post URLs 404'd.** 16 pre-Sanity addresses (`/technology/*.html`,
+  `/book-reviews/*`, `/retro-gaming/*`) and the 4 duplicate `public/blog/*.html`
+  copies now 301 to their Sanity posts.
+- **Canonical links were relative**; they are now absolute (`SITE_URL`).
+- **Tag cache collapsed case** (`/tag/Linux` could serve `/tag/linux`'s page).
+- **Mobile horizontal scroll** on posts with long inline code, and on the
+  header nav below ~360 px. CSS-only; no visual change at normal widths.
+- Docs: webhook URL now uses `www.` (the apex can't receive POSTs); stale
+  `~/Desktop/Web-Dev` paths and the `misc.html` CSP comment corrected.
+
+### Added
+
+- `studio/` — Sanity Studio rebuilt in this repo (the standalone project was
+  missing). `npm run write` starts it and opens the browser;
+  `npm run studio:deploy` hosts it.
+
 ## v3.2.2 — Polish pass (unreleased)
 
 No change to rendered output, public routes, or the visual design. Every route
