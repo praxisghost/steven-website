@@ -10,7 +10,9 @@
 window.SITE_LINKS = {
   timeline: {
     label: 'World History Timeline',
-    url: '',
+    // Served by this site from public/timeline/ (a published copy of the
+    // world-history-timeline repository; see public/timeline/timeline-build.json).
+    url: '/timeline',
   },
   guitarSite: {
     label: 'Guitar Site',

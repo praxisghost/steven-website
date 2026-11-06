@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><base href="/timeline/">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World history, connected</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="menu">
+  <h1>World history, connected</h1>
+  <nav id="eras" class="collapsible" aria-label="Go to an era">
+    <button id="highlights" aria-pressed="false">Highlights</button>
+  </nav>
+  <button id="menu-toggle" aria-expanded="false" aria-controls="menu-options">Menu</button>
+  <output id="status" aria-live="polite"></output>
+  <section class="controls collapsible" id="menu-options" aria-label="Filter history">
+    <select id="topic" aria-label="Topic"><option value="">All topics</option></select>
+    <select id="region" aria-label="Region"><option value="">All regions</option></select>
+    <div id="lenses" role="group" aria-label="Explore a perspective"></div>
+    <input id="search" type="search" aria-label="Search" placeholder="Search">
+    <select id="calendar" aria-label="Calendar"></select>
+    <select id="format" aria-label="Date format"></select>
+    <button id="list" aria-pressed="false">List view</button>
+    <button id="edge-scroll" aria-pressed="true" title="Scroll when the mouse is at the left or right edge of the screen">Edge scroll</button>
+    <button id="clear">Clear</button>
+  </section>
+</header>
+
+<main>
+  <section id="stage" aria-label="Historical timeline, past on the left and present on the right">
+    <div id="scroller" tabindex="0" aria-label="Timeline. Use the left and right arrow keys to move through time.">
+      <div id="world"></div>
+    </div>
+    <span class="end" id="end-past">← PAST</span>
+    <span class="end" id="end-present">PRESENT →</span>
+    <div class="edge" id="edge-left" aria-hidden="true">‹‹</div>
+    <div class="edge" id="edge-right" aria-hidden="true">››</div>
+    <input id="rail" type="range" min="0" max="1000" value="0" aria-label="Position in time">
+    <div id="list-view" hidden></div>
+    <div id="empty" hidden>
+      <h2>No events match these filters</h2>
+      <p>Try a broader search or clear your filters.</p>
+      <button id="empty-clear" >Clear filters</button>
+    </div>
+  </section>
+
+  <section id="panel" aria-live="polite">
+    <div id="panel-inner" class="solo">
+      <figure id="figure" hidden></figure>
+      <div id="panel-text">
+        <div id="panel-peek">
+          <p id="peek-date"></p>
+          <h2 id="peek-title"></h2>
+          <p id="peek-summary"></p>
+          <span id="peek-hint" hidden>Scroll down for the full history ↓</span>
+        </div>
+        <div id="panel-body" hidden>
+          <article id="article"></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="about">
+    <details>
+      <summary>About this collection and its sources</summary>
+      <p>This collection awaits independent historical review. Dates follow the precision of their sources. BC dates precede AD, with no year zero, and “c.” means approximate. Dates and years in other calendars are converted from the Gregorian year, so a year marked ≈ can differ by one. The axis gives crowded periods more room and shortens long empty stretches, so equal distances do not mean equal time.</p>
+      <p>Every event links to Wikipedia, which is a starting point for further reading and not the final authority. Dates were compared with Wikidata, and exceptions were checked against source text. Images link to their Wikimedia Commons file pages and verified public-domain or Creative Commons terms. Background text comes from Wikipedia under CC BY-SA 4.0.</p>
+      <p id="pending" hidden>Chapter pending: China after 1912.</p>
+    </details>
+    <span>Explore with curiosity. Read with context.</span>
+  </footer>
+</main>
+
+<dialog id="calendar-dialog">
+  <h2>Custom calendars</h2>
+  <p class="small">Count years from any starting point. Your calendars stay in this browser.</p>
+  <form id="calendar-form" method="dialog">
+    <label>Name<input id="cal-name" required maxlength="40" placeholder="My calendar"></label>
+    <label>Abbreviation<input id="cal-suffix" required maxlength="10" placeholder="MC"></label>
+    <label>Year 1 of this calendar is the year<input id="cal-year" type="number" required min="1" max="20000" step="1" placeholder="1776"></label>
+    <label>Era<select id="cal-era"><option value="ad">AD</option><option value="bc">BC</option></select></label>
+    <p id="error" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" id="cal-close" >Close</button>
+      <button type="submit" class="primary">Add calendar</button>
+    </div>
+  </form>
+  <ul id="cal-list"></ul>
+</dialog>
+
+<script src="dist/timeline-data.js"></script>
+<script src="dist/article-context.js"></script>
+<script src="calendars.js"></script>
+<script src="layout.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

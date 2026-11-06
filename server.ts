@@ -94,8 +94,16 @@ pool.on('error', (err) => {
  *  • X-Frame-Options blocks clickjacking via iframe embedding.
  *  • Referrer-Policy avoids leaking the full URL on outbound clicks.
  *  • Permissions-Policy disables unused powerful APIs.
+ *  • /timeline (the World History Timeline, a static copy in public/timeline/)
+ *    additionally needs Wikimedia image hosts and the Wikipedia API, which its
+ *    language panel calls. Those origins are allowed for /timeline only.
  */
-app.use((_req: Request, res: Response, next: NextFunction) => {
+const TIMELINE_IMG = ' https://upload.wikimedia.org https://thumb.wikimedia.org';
+const TIMELINE_CONNECT = ' https://*.wikipedia.org';
+const isTimelinePath = (p: string) => p === '/timeline' || p.startsWith('/timeline/');
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const timeline = isTimelinePath(req.path);
   res.setHeader(
     'Content-Security-Policy',
     [
@@ -111,9 +119,9 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
       // data: kept for inline SVG icons on the About page.
       // translate.googleapis.com + gstatic.com for the translate widget's assets.
       // cdn.sanity.io serves blog images uploaded through the Sanity Studio.
-      "img-src 'self' data: https://cdn.sanity.io https://translate.googleapis.com https://www.gstatic.com",
+      "img-src 'self' data: https://cdn.sanity.io https://translate.googleapis.com https://www.gstatic.com" + (timeline ? TIMELINE_IMG : ''),
       "font-src 'self' data:",
-      "connect-src 'self' https://translate.googleapis.com https://challenges.cloudflare.com https://api.minecraftservices.com",
+      "connect-src 'self' https://translate.googleapis.com https://challenges.cloudflare.com https://api.minecraftservices.com" + (timeline ? TIMELINE_CONNECT : ''),
       // Allow embedding YouTube's privacy-enhanced player on the Guitar page.
       "frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com",
       "frame-ancestors 'none'",
@@ -166,6 +174,17 @@ for (const [route, file] of Object.entries(PAGES)) {
     res.sendFile(path.join(__dirname, 'public', file));
   });
 }
+
+// The World History Timeline: a static copy published into public/timeline/
+// from the world-history-timeline repository (with --base /timeline/, so its
+// relative assets resolve the same at /timeline and /timeline/). express.static
+// below serves its files; only the entry page needs a route, because
+// `index: false` there means a folder never serves its index.html. Non-strict
+// routing makes this match /timeline/ as well.
+app.get('/timeline', (_req: Request, res: Response) => {
+  res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
+  res.sendFile(path.join(__dirname, 'public', 'timeline', 'index.html'));
+});
 
 // Serve static assets with conservative cache headers.
 //

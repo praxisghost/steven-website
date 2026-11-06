@@ -10,7 +10,8 @@
  *
  *  Safety notes:
  *    • DOM writes use textContent / createElement — never innerHTML.
- *    • URLs come only from links.config.js, served same-origin.
+ *    • URLs come only from links.config.js, served same-origin. A URL may
+ *      be absolute (another site) or a path on this site, such as /timeline.
  *  ────────────────────────────────────────────────────────────────────────── */
 
 (() => {
@@ -26,8 +27,11 @@
     a.href = entry.url;
     // data-site-link-text lets a slot choose its wording; otherwise show the address.
     a.textContent = el.getAttribute('data-site-link-text') || entry.url.replace(/^https?:\/\//, '');
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
+    // Off-site projects open in a new tab; pages this site serves do not.
+    if (/^https?:\/\//.test(entry.url)) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
     el.textContent = '';
     el.appendChild(a);
   });
